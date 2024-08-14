@@ -1,2 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-https://rsamdio.netlify.app/* https://rsamdio.org/:splat 301!
