@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotaract Club Invoice Calculator | Rotaract South Asia MDIO</title>
+
+	<meta name="description" content="Club Invoice Calculator is an interactive tool by Rotaract South Asia MDIO (RSAMDIO) that helps Rotaractors to estimate their Club Invoices.">
+	<meta name="author" content="ZeoSpec">
+
+	<link rel="canonical" href="https://rsamdio.org/invoice"> 
+
+    <meta property="og:title" content="Rotaract Club Invoice Calculator | Rotaract South Asia MDIO">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rsamdio.org/invoice">
+    <meta property="og:site_name" content="Rotaract Club Invoice Calculator | Rotaract South Asia MDIO" />
+    <meta property="og:image" content="./img/favicon.png" />
+    <meta property="og:description" content="Club Invoice Calculator is an interactive tool by Rotaract South Asia MDIO (RSAMDIO) that helps Rotaractors to estimate their Club Invoices.">
+    
+    <meta name="keywords" content="Rotaract, Rotary, Rotaract South Asia, Club Invoice, RSAMDIO, RI Dues" />
+
+    <meta name="subject" content="Rotaract Club Invoice Calculator | Rotaract South Asia MDIO">
+
+	<meta name="url" content="https://rsamdio.org">
+    <meta name="identifier-URL" content="https://rsamdio.org">
+    
+	<meta http-equiv="cache-control" content="public" />
+    <meta http-equiv="Expires" content="0">
+    
+	
+	<!--Favicon-->
+	<link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+	<link rel="icon" href="./img/favicon.png" type="image/x-icon">
+	
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7fafc;
+            color: #4a5568;
+        }
+        .rotary-blue-dark { background-color: #003b8a; }
+        .rotary-blue-dark-text { color: #003b8a; }
+        .rotary-blue-light { background-color: #eaf2ff; }
+        .rotary-blue-light-text { color: #004aad; }
+        .btn {
+            padding: 0.625rem 1.25rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.2s ease-in-out;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid transparent;
+        }
+        .btn-primary {
+            background-color: #004aad;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #003b8a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 74, 173, 0.2);
+        }
+        .btn-danger {
+            background-color: #e53e3e;
+            color: white;
+        }
+        .btn-danger:hover {
+            background-color: #c53030;
+        }
+        .btn-secondary {
+            background-color: #edf2f7;
+            color: #4a5568;
+            border-color: #e2e8f0;
+        }
+        .btn-secondary:hover {
+            background-color: #e2e8f0;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e2e8f0;
+        }
+        input[type="text"], input[type="date"], select {
+            background-color: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            padding: 0.625rem 0.875rem;
+            transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        input[type="text"]:focus, input[type="date"]:focus, select:focus {
+            outline: none;
+            border-color: #0079ff;
+            box-shadow: 0 0 0 3px rgba(0, 121, 255, 0.15);
+            background-color: white;
+        }
+        .table-header {
+            background-color: #f7fafc;
+        }
+        .form-input-sm, .form-select-sm {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+        }
+    </style>
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-QZDYH5YMXH"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-QZDYH5YMXH');
+	</script>
+
+</head>
+<body class="antialiased">
+
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <img src="https://res.cloudinary.com/frontly/image/upload/v1719324049/pink_v5vpyh.png" alt="Rotaract Logo" class="mx-auto h-20 mb-4">
+            <h1 class="text-3xl sm:text-4xl font-bold rotary-blue-dark-text">Rotaract Club Invoice Calculator</h1>
+            <p class="text-gray-500 mt-3 max-w-2xl mx-auto">An interactive tool that helps Rotaractors to estimate their Club Invoices.</p>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- Left Column: Add Member -->
+            <div class="lg:col-span-1">
+                <div class="card p-6">
+                    <h2 class="text-xl font-bold mb-5 text-gray-800 text-center">Add New Member</h2>
+                    <form id="add-member-form" class="space-y-5">
+                        <div>
+                            <label for="member-name" class="block text-sm font-medium text-gray-600 mb-1 text-center">Member Name</label>
+                            <input type="text" id="member-name" required class="w-full text-center">
+                        </div>
+                        <div>
+                            <label for="member-type" class="block text-sm font-medium text-gray-600 mb-1 text-center">Member Type</label>
+                            <select id="member-type" required class="w-full text-center">
+                                <option value="8">Community-Based ($8)</option>
+                                <option value="5">University-Based ($5)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="join-date" class="block text-sm font-medium text-gray-600 mb-1 text-center">Join Date</label>
+                            <input type="date" id="join-date" required class="w-full text-center">
+                        </div>
+                        <button type="submit" id="add-member-button" class="btn btn-primary w-full !mt-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" /></svg>
+                            Add Member
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right Column: Summary & Roster -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Invoice Summary Card -->
+                <div class="card p-6">
+                    <h2 class="text-xl font-bold mb-4 text-gray-800 text-center">Invoice Summary</h2>
+                    <div class="mb-4 flex flex-col items-center">
+                        <label for="invoice-year-select" class="block text-sm font-medium text-gray-600 mb-1">Invoice for Jan 1st of Year:</label>
+                        <select id="invoice-year-select" class="mt-1 w-full max-w-xs text-center font-semibold"></select>
+                    </div>
+                    <div class="rotary-blue-light p-6 rounded-lg text-center">
+                        <p class="text-base rotary-blue-light-text font-medium">Total Estimated RI Dues</p>
+                        <p id="total-invoice-amount" class="text-5xl font-bold rotary-blue-dark-text tracking-tight my-1">$0.00</p>
+                        <p class="text-xs text-gray-500 mt-2">* Final invoice will include an additional Taxes as applicable (eg: 18% GST)</p>
+                    </div>
+                </div>
+
+                <!-- Member Roster Card -->
+                <div class="card p-6">
+                    <div class="flex flex-col sm:flex-row justify-between sm:items-center mb-4">
+                        <h2 class="text-xl font-bold text-gray-800">Member Roster</h2>
+                        <button id="reset-button" class="btn btn-secondary text-sm mt-3 sm:mt-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="h-4 w-4 mr-2 bi bi-arrow-counterclockwise" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2z"/><path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466"/></svg>
+                            Reset Roster
+                        </button>
+                    </div>
+                    <div class="overflow-x-auto -mx-6">
+                        <table class="min-w-full">
+                            <thead class="table-header">
+                                <tr>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Name</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Join Date</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Type</th>
+                                    <th scope="col" class="px-6 py-3 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Est. Due</th>
+                                    <th scope="col" class="relative px-6 py-3"><span class="sr-only">Actions</span></th>
+                                </tr>
+                            </thead>
+                            <tbody id="member-roster-body" class="bg-white divide-y divide-gray-200">
+                                <!-- Rows will be dynamically injected here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="text-center mt-12 py-4">
+            <p class="text-xs text-gray-500"><strong>Disclaimer:</strong> All calculations are indicative estimates. Actual figures may vary based on a multitude of factors, including but not limited to, changes in underlying data, and changes in RI Policies.</p>
+            
+            <p class="text-xs text-gray-500 mt-2">Created by: PDRR Arun Teja Godavarthi | For Queries/Feedback Contact: zeospec@gmail.com</p>
+
+            <p class="text-xs text-gray-500 mt-2">© <span id="current-year"></span> Rotaract South Asia MDIO. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const addMemberForm = document.getElementById('add-member-form');
+            const memberNameInput = document.getElementById('member-name');
+            const memberTypeInput = document.getElementById('member-type');
+            const joinDateInput = document.getElementById('join-date');
+            const memberRosterBody = document.getElementById('member-roster-body');
+            const totalInvoiceAmountEl = document.getElementById('total-invoice-amount');
+            const resetButton = document.getElementById('reset-button');
+            const invoiceYearSelect = document.getElementById('invoice-year-select');
+            const invoiceDateDisplay = document.getElementById('invoice-date-display');
+            const currentYearSpan = document.getElementById('current-year');
+
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0');
+            const dd = String(today.getDate()).padStart(2, '0');
+            const todayFormatted = `${yyyy}-${mm}-${dd}`;
+            joinDateInput.value = todayFormatted;
+            currentYearSpan.textContent = yyyy;
+
+            function populateYearSelector() {
+                const currentYear = new Date().getFullYear();
+                const startInvoiceYear = 2023;
+                const endInvoiceYear = currentYear + 25;
+                for (let year = startInvoiceYear; year <= endInvoiceYear; year++) {
+                    const option = document.createElement('option');
+                    option.value = year;
+                    option.textContent = year;
+                    invoiceYearSelect.appendChild(option);
+                }
+                invoiceYearSelect.value = currentYear + 1;
+                updateInvoiceDateDisplay();
+            }
+
+            function updateInvoiceDateDisplay() {
+                const selectedYear = invoiceYearSelect.value;
+                if(invoiceDateDisplay) invoiceDateDisplay.textContent = `Jan 1st, ${selectedYear}`;
+            }
+
+            function calculateIndividualDue(joinDateStr, memberType, invoiceYear) {
+                const joinDate = new Date(joinDateStr + 'T00:00:00');
+                const baseDues = parseFloat(memberType);
+                const joinYear = joinDate.getFullYear();
+                if (joinYear >= invoiceYear) return 0;
+                if (joinYear === invoiceYear - 1) {
+                    const joinMonth = joinDate.getMonth();
+                    const joinDay = joinDate.getDate();
+                    let effectiveJoinMonth = joinMonth;
+                    if (joinDay > 15) effectiveJoinMonth += 1;
+                    if (effectiveJoinMonth >= 12) return baseDues;
+                    const monthsInJoinYear = 12 - effectiveJoinMonth;
+                    const proratedDues = (baseDues / 12) * monthsInJoinYear;
+                    return baseDues + proratedDues;
+                }
+                if (joinYear < invoiceYear - 1) return baseDues;
+                return 0;
+            }
+
+            function updateTotal() {
+                let total = 0;
+                const memberRows = memberRosterBody.querySelectorAll('tr');
+                memberRows.forEach(row => {
+                    total += parseFloat(row.dataset.due || 0);
+                });
+                totalInvoiceAmountEl.textContent = `$${total.toFixed(2)}`;
+            }
+            
+            function recalculateAllDues() {
+                const selectedYear = parseInt(invoiceYearSelect.value, 10);
+                const memberRows = memberRosterBody.querySelectorAll('tr');
+                memberRows.forEach(row => {
+                    if (row.classList.contains('editing')) return; // Skip editing rows
+                    const joinDate = row.dataset.joinDate;
+                    const memberType = row.dataset.memberType;
+                    const individualDue = calculateIndividualDue(joinDate, memberType, selectedYear);
+                    row.dataset.due = individualDue;
+                    row.querySelector('.due-cell').textContent = `$${individualDue.toFixed(2)}`;
+                });
+                updateTotal();
+                updateInvoiceDateDisplay();
+            }
+
+            function addMember(e) {
+                e.preventDefault();
+                const name = memberNameInput.value;
+                const typeValue = memberTypeInput.value;
+                const typeText = memberTypeInput.options[memberTypeInput.selectedIndex].text.split(' (')[0];
+                const joinDate = joinDateInput.value;
+                if (!name || !typeValue || !joinDate) {
+                    alert('Please fill out all fields.');
+                    return;
+                }
+
+                const selectedYear = parseInt(invoiceYearSelect.value, 10);
+                const individualDue = calculateIndividualDue(joinDate, typeValue, selectedYear);
+                const memberId = `member-${Date.now()}`;
+                const row = document.createElement('tr');
+                row.id = memberId;
+                row.dataset.due = individualDue;
+                row.dataset.joinDate = joinDate;
+                row.dataset.memberType = typeValue;
+                row.dataset.name = name;
+                row.classList.add('hover:bg-gray-50', 'transition-colors');
+                
+                row.innerHTML = `
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">${name}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${joinDate}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${typeText}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-medium due-cell">$${individualDue.toFixed(2)}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                        <button class="btn btn-secondary btn-sm !p-2 edit-member-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" /><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" /></svg>
+                        </button>
+                        <button class="btn btn-danger btn-sm !p-2 remove-member-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm4 0a1 1 0 012 0v6a1 1 0 11-2 0V8z" clip-rule="evenodd" /></svg>
+                        </button>
+                    </td>
+                `;
+                memberRosterBody.appendChild(row);
+
+                row.querySelector('.edit-member-btn').addEventListener('click', () => editMember(memberId));
+                row.querySelector('.remove-member-btn').addEventListener('click', () => {
+                    row.remove();
+                    updateTotal();
+                });
+                
+                updateTotal();
+                addMemberForm.reset();
+                joinDateInput.value = todayFormatted;
+            }
+
+            function editMember(memberId) {
+                const row = document.getElementById(memberId);
+                if (!row || row.classList.contains('editing')) return;
+
+                document.querySelectorAll('.edit-member-btn').forEach(btn => btn.disabled = true);
+                row.classList.add('editing');
+
+                const name = row.dataset.name;
+                const joinDate = row.dataset.joinDate;
+                const memberType = row.dataset.memberType;
+
+                row.cells[0].innerHTML = `<input type="text" value="${name}" class="w-full form-input-sm">`;
+                row.cells[1].innerHTML = `<input type="date" value="${joinDate}" class="w-full form-input-sm">`;
+                row.cells[2].innerHTML = `
+                    <select class="w-full form-select-sm">
+                        <option value="8" ${memberType === '8' ? 'selected' : ''}>Community-Based ($8)</option>
+                        <option value="5" ${memberType === '5' ? 'selected' : ''}>University-Based ($5)</option>
+                    </select>
+                `;
+                row.cells[3].innerHTML = '';
+                row.cells[4].innerHTML = `
+                    <button class="btn btn-primary btn-sm !p-2 save-member-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                    </button>
+                    <button class="btn btn-secondary btn-sm !p-2 cancel-edit-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                    </button>
+                `;
+
+                row.querySelector('.save-member-btn').addEventListener('click', () => saveMember(memberId));
+                row.querySelector('.cancel-edit-btn').addEventListener('click', () => cancelEdit(memberId));
+            }
+
+            function saveMember(memberId) {
+                const row = document.getElementById(memberId);
+                if (!row) return;
+
+                const newName = row.cells[0].querySelector('input').value;
+                const newJoinDate = row.cells[1].querySelector('input').value;
+                const newMemberType = row.cells[2].querySelector('select').value;
+                const typeText = row.cells[2].querySelector('select').options[row.cells[2].querySelector('select').selectedIndex].text.split(' (')[0];
+
+                row.dataset.name = newName;
+                row.dataset.joinDate = newJoinDate;
+                row.dataset.memberType = newMemberType;
+
+                const selectedYear = parseInt(invoiceYearSelect.value, 10);
+                const individualDue = calculateIndividualDue(newJoinDate, newMemberType, selectedYear);
+                row.dataset.due = individualDue;
+
+                row.cells[0].textContent = newName;
+                row.cells[1].textContent = newJoinDate;
+                row.cells[2].textContent = typeText;
+                row.cells[3].textContent = `$${individualDue.toFixed(2)}`;
+                row.cells[3].classList.add('due-cell');
+                
+                finishEditing(row, memberId);
+                recalculateAllDues();
+            }
+
+            function cancelEdit(memberId) {
+                const row = document.getElementById(memberId);
+                if (!row) return;
+
+                const name = row.dataset.name;
+                const joinDate = row.dataset.joinDate;
+                const memberType = row.dataset.memberType;
+                const due = row.dataset.due;
+                const typeText = memberType === '8' ? 'Community-Based' : 'University-Based';
+
+                row.cells[0].textContent = name;
+                row.cells[1].textContent = joinDate;
+                row.cells[2].textContent = typeText;
+                row.cells[3].textContent = `$${parseFloat(due).toFixed(2)}`;
+                row.cells[3].classList.add('due-cell');
+
+                finishEditing(row, memberId);
+            }
+
+            function finishEditing(row, memberId) {
+                row.classList.remove('editing');
+                row.cells[4].innerHTML = `
+                    <button class="btn btn-secondary btn-sm !p-2 edit-member-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" /><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" /></svg>
+                    </button>
+                    <button class="btn btn-danger btn-sm !p-2 remove-member-btn">
+                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm4 0a1 1 0 012 0v6a1 1 0 11-2 0V8z" clip-rule="evenodd" /></svg>
+                    </button>
+                `;
+                row.querySelector('.edit-member-btn').addEventListener('click', () => editMember(memberId));
+                row.querySelector('.remove-member-btn').addEventListener('click', () => {
+                    row.remove();
+                    updateTotal();
+                });
+                document.querySelectorAll('.edit-member-btn').forEach(btn => btn.disabled = false);
+            }
+            
+            function resetCalculator() {
+                memberRosterBody.innerHTML = '';
+                updateTotal();
+            }
+
+            addMemberForm.addEventListener('submit', addMember);
+            resetButton.addEventListener('click', resetCalculator);
+            invoiceYearSelect.addEventListener('change', recalculateAllDues);
+
+            populateYearSelector();
+        });
+    </script>
+</body>
+</html>
