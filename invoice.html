@@ -227,6 +227,10 @@
                             <label for="join-date" class="block text-sm font-semibold text-gray-700 text-center">Join Date</label>
                             <input type="date" id="join-date" required class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-center">
                         </div>
+                        <div class="space-y-2">
+                            <label for="leave-date" class="block text-sm font-semibold text-gray-700 text-center">Leave Date (Optional)</label>
+                            <input type="date" id="leave-date" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-center">
+                        </div>
                         <button type="submit" id="add-member-button" class="btn btn-primary w-full !mt-6 py-3 text-base font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" /></svg>
                             Add Member
@@ -282,6 +286,10 @@
                             <div class="flex items-center">
                                 <span class="w-6 h-6 bg-blue-200 rounded-full flex items-center justify-center text-xs font-bold text-blue-800 mr-3">C</span>
                                 <span><strong>Member Type</strong> (Community-Based or University-Based)</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="w-6 h-6 bg-blue-200 rounded-full flex items-center justify-center text-xs font-bold text-blue-800 mr-3">D</span>
+                                <span><strong>Leave Date</strong> (YYYY-MM-DD format, leave blank if still active)</span>
                             </div>
                         </div>
                         <div class="mt-4 pt-3 border-t border-blue-200">
@@ -390,6 +398,7 @@
                                 <tr>
                                     <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Name</th>
                                     <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Join Date</th>
+                                    <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Leave Date</th>
                                     <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Type</th>
                                     <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Est. Due</th>
                                     <th scope="col" class="relative px-6 py-4"><span class="sr-only">Actions</span></th>
@@ -460,6 +469,7 @@
             const memberNameInput = document.getElementById('member-name');
             const memberTypeInput = document.getElementById('member-type');
             const joinDateInput = document.getElementById('join-date');
+            const leaveDateInput = document.getElementById('leave-date');
             const memberRosterBody = document.getElementById('member-roster-body');
             const totalInvoiceAmountEl = document.getElementById('total-invoice-amount');
             const resetButton = document.getElementById('reset-button');
@@ -494,7 +504,7 @@
 
             // Bulk Upload Functions
             function downloadCSVTemplate() {
-                const csvContent = "Member Name,Join Date,Member Type\nJohn Doe,2024-01-15,Community-Based\nJane Smith,2024-02-01,University-Based";
+                const csvContent = "Member Name,Join Date,Member Type,Leave Date\nJohn Doe,2024-01-15,Community-Based,\nJane Smith,2024-02-01,University-Based,2024-12-31";
                 const blob = new Blob([csvContent], { type: 'text/csv' });
                 const url = window.URL.createObjectURL(blob);
                 const a = document.createElement('a');
@@ -553,7 +563,7 @@
                 const errors = [];
 
                 data.forEach((row, index) => {
-                    const [name, joinDate, memberType] = row;
+                    const [name, joinDate, memberType, leaveDate] = row;
                     
                     // Validate name
                     if (!name || typeof name !== 'string' || name.trim() === '') {
@@ -575,10 +585,17 @@
                         return;
                     }
 
+                    // Validate leave date (optional)
+                    if (leaveDate && leaveDate.trim() !== '' && !dateRegex.test(leaveDate)) {
+                        errors.push(`Row ${index + 2}: Invalid leave date format (use YYYY-MM-DD or leave blank)`);
+                        return;
+                    }
+
                     validatedMembers.push({
                         name: name.trim(),
                         joinDate: joinDate,
-                        memberType: memberType
+                        memberType: memberType,
+                        leaveDate: leaveDate && leaveDate.trim() !== '' ? leaveDate : null
                     });
                 });
 
@@ -588,11 +605,12 @@
             function showPreview(members) {
                 const previewHTML = members.map((member, index) => {
                     const typeText = member.memberType === 'Community-Based' ? 'Community-Based ($8)' : 'University-Based ($5)';
+                    const leaveDateText = member.leaveDate ? ` | Left: ${member.leaveDate}` : '';
                     return `
                         <div class="flex justify-between items-center py-2 border-b border-gray-200 last:border-b-0">
                             <div class="flex-1">
                                 <span class="font-medium text-gray-800">${member.name}</span>
-                                <span class="text-gray-500 ml-3">${member.joinDate}</span>
+                                <span class="text-gray-500 ml-3">${member.joinDate}${leaveDateText}</span>
                                 <span class="text-gray-500 ml-3">${typeText}</span>
                             </div>
                         </div>
@@ -637,13 +655,14 @@
                 const selectedYear = parseInt(invoiceYearSelect.value, 10);
                 
                 parsedMembers.forEach(member => {
-                    const individualDue = calculateIndividualDue(member.joinDate, member.memberType, selectedYear);
+                    const individualDue = calculateIndividualDue(member.joinDate, member.memberType, selectedYear, member.leaveDate);
                     const memberId = `member-${Date.now()}-${Math.random()}`;
                     
                     const row = document.createElement('tr');
                     row.id = memberId;
                     row.dataset.due = individualDue;
                     row.dataset.joinDate = member.joinDate;
+                    row.dataset.leaveDate = member.leaveDate;
                     row.dataset.memberType = member.memberType;
                     row.dataset.name = member.name;
                     row.classList.add('member-row');
@@ -651,6 +670,7 @@
                     row.innerHTML = `
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">${member.name}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${member.joinDate}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${member.leaveDate || '-'}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${member.memberType}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-medium due-cell">$${individualDue.toFixed(2)}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
@@ -701,21 +721,43 @@
                 if(invoiceDateDisplay) invoiceDateDisplay.textContent = `Jan 1st, ${selectedYear}`;
             }
 
-            function calculateIndividualDue(joinDateStr, memberType, invoiceYear) {
+            function calculateIndividualDue(joinDateStr, memberType, invoiceYear, leaveDateStr = null) {
                 const joinDate = new Date(joinDateStr + 'T00:00:00');
+                const invoiceDate = new Date(invoiceYear, 0, 1); // January 1st of invoice year
                 const baseDues = memberType === 'Community-Based' ? 8 : 5;
                 const joinYear = joinDate.getFullYear();
-                if (joinYear >= invoiceYear) return 0;
+
+                // If joined in the year immediately preceding the invoice year
                 if (joinYear === invoiceYear - 1) {
                     const joinMonth = joinDate.getMonth();
                     const joinDay = joinDate.getDate();
                     let effectiveJoinMonth = joinMonth;
                     if (joinDay > 15) effectiveJoinMonth += 1;
-                    if (effectiveJoinMonth >= 12) return baseDues;
+                    if (effectiveJoinMonth >= 12) return 0; // Joined in December after 15th, not charged
+
                     const monthsInJoinYear = 12 - effectiveJoinMonth;
                     const proratedDues = (baseDues / 12) * monthsInJoinYear;
+
+                    if (leaveDateStr) {
+                        const leaveDate = new Date(leaveDateStr + 'T00:00:00');
+                        if (leaveDate < invoiceDate) {
+                            // Left before Jan 1st: charge only prorated dues for join year
+                            return proratedDues;
+                        }
+                    }
+                    // Still a member on Jan 1st: charge both base fee and prorated fee
                     return baseDues + proratedDues;
                 }
+
+                // If joined and left in the same year (not the year immediately preceding the invoice year), charge nothing
+                if (joinYear >= invoiceYear) return 0;
+
+                // If left before Jan 1st, charge nothing
+                if (leaveDateStr) {
+                    const leaveDate = new Date(leaveDateStr + 'T00:00:00');
+                    if (leaveDate < invoiceDate) return 0;
+                }
+
                 if (joinYear < invoiceYear - 1) return baseDues;
                 return 0;
             }
@@ -752,8 +794,9 @@
                 memberRows.forEach(row => {
                     if (row.classList.contains('editing')) return; // Skip editing rows
                     const joinDate = row.dataset.joinDate;
+                    const leaveDate = row.dataset.leaveDate;
                     const memberType = row.dataset.memberType;
-                    const individualDue = calculateIndividualDue(joinDate, memberType, selectedYear);
+                    const individualDue = calculateIndividualDue(joinDate, memberType, selectedYear, leaveDate);
                     row.dataset.due = individualDue;
                     row.querySelector('.due-cell').textContent = `$${individualDue.toFixed(2)}`;
                 });
@@ -766,18 +809,20 @@
                 const name = memberNameInput.value;
                 const typeValue = memberTypeInput.value;
                 const joinDate = joinDateInput.value;
+                const leaveDate = leaveDateInput.value;
                 if (!name || !typeValue || !joinDate) {
                     alert('Please fill out all fields.');
                     return;
                 }
 
                 const selectedYear = parseInt(invoiceYearSelect.value, 10);
-                const individualDue = calculateIndividualDue(joinDate, typeValue, selectedYear);
+                const individualDue = calculateIndividualDue(joinDate, typeValue, selectedYear, leaveDate);
                 const memberId = `member-${Date.now()}`;
                 const row = document.createElement('tr');
                 row.id = memberId;
                 row.dataset.due = individualDue;
                 row.dataset.joinDate = joinDate;
+                row.dataset.leaveDate = leaveDate;
                 row.dataset.memberType = typeValue;
                 row.dataset.name = name;
                 row.classList.add('member-row');
@@ -785,6 +830,7 @@
                 row.innerHTML = `
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">${name}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${joinDate}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${leaveDate || '-'}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${typeValue}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-medium due-cell">$${individualDue.toFixed(2)}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
@@ -820,18 +866,20 @@
 
                 const name = row.dataset.name;
                 const joinDate = row.dataset.joinDate;
+                const leaveDate = row.dataset.leaveDate;
                 const memberType = row.dataset.memberType;
 
                 row.cells[0].innerHTML = `<input type="text" value="${name}" class="w-full form-input-sm">`;
                 row.cells[1].innerHTML = `<input type="date" value="${joinDate}" class="w-full form-input-sm">`;
-                row.cells[2].innerHTML = `
+                row.cells[2].innerHTML = `<input type="date" value="${leaveDate || ''}" class="w-full form-input-sm">`;
+                row.cells[3].innerHTML = `
                     <select class="w-full form-select-sm">
                         <option value="Community-Based" ${memberType === 'Community-Based' ? 'selected' : ''}>Community-Based ($8)</option>
                         <option value="University-Based" ${memberType === 'University-Based' ? 'selected' : ''}>University-Based ($5)</option>
                     </select>
                 `;
-                row.cells[3].innerHTML = '';
-                row.cells[4].innerHTML = `
+                row.cells[4].innerHTML = '';
+                row.cells[5].innerHTML = `
                     <button class="btn btn-primary btn-sm !p-2 save-member-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
                     </button>
@@ -850,21 +898,24 @@
 
                 const newName = row.cells[0].querySelector('input').value;
                 const newJoinDate = row.cells[1].querySelector('input').value;
-                const newMemberType = row.cells[2].querySelector('select').value;
+                const newLeaveDate = row.cells[2].querySelector('input').value;
+                const newMemberType = row.cells[3].querySelector('select').value;
 
                 row.dataset.name = newName;
                 row.dataset.joinDate = newJoinDate;
+                row.dataset.leaveDate = newLeaveDate;
                 row.dataset.memberType = newMemberType;
 
                 const selectedYear = parseInt(invoiceYearSelect.value, 10);
-                const individualDue = calculateIndividualDue(newJoinDate, newMemberType, selectedYear);
+                const individualDue = calculateIndividualDue(newJoinDate, newMemberType, selectedYear, newLeaveDate);
                 row.dataset.due = individualDue;
 
                 row.cells[0].textContent = newName;
                 row.cells[1].textContent = newJoinDate;
-                row.cells[2].textContent = newMemberType;
-                row.cells[3].textContent = `$${individualDue.toFixed(2)}`;
-                row.cells[3].classList.add('due-cell');
+                row.cells[2].textContent = newLeaveDate || '-';
+                row.cells[3].textContent = newMemberType;
+                row.cells[4].textContent = `$${individualDue.toFixed(2)}`;
+                row.cells[4].classList.add('due-cell');
                 
                 finishEditing(row, memberId);
                 recalculateAllDues();
@@ -876,21 +927,23 @@
 
                 const name = row.dataset.name;
                 const joinDate = row.dataset.joinDate;
+                const leaveDate = row.dataset.leaveDate;
                 const memberType = row.dataset.memberType;
                 const due = row.dataset.due;
 
                 row.cells[0].textContent = name;
                 row.cells[1].textContent = joinDate;
-                row.cells[2].textContent = memberType;
-                row.cells[3].textContent = `$${parseFloat(due).toFixed(2)}`;
-                row.cells[3].classList.add('due-cell');
+                row.cells[2].textContent = leaveDate || '-';
+                row.cells[3].textContent = memberType;
+                row.cells[4].textContent = `$${parseFloat(due).toFixed(2)}`;
+                row.cells[4].classList.add('due-cell');
 
                 finishEditing(row, memberId);
             }
 
             function finishEditing(row, memberId) {
                 row.classList.remove('editing');
-                row.cells[4].innerHTML = `
+                row.cells[5].innerHTML = `
                     <button class="btn btn-secondary btn-sm !p-2 edit-member-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" /><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" /></svg>
                     </button>
