@@ -893,7 +893,7 @@
 
             // Bulk Upload Functions
             function downloadCSVTemplate() {
-                const csvContent = "Member Name,Join Date,Club Base,Leave Date\nJohn Doe,2024-01-15,Community-Based,\nJane Smith,2024-02-01,University-Based,2024-12-31";
+                const csvContent = "Member Name,Join Date,Club Base,Leave Date\nJohn Doe,2024-01-01,Community-Based,\nJane Smith,2024-02-01,University-Based,2024-12-31";
                 const blob = new Blob([csvContent], { type: 'text/csv' });
                 const url = window.URL.createObjectURL(blob);
                 const a = document.createElement('a');
@@ -1214,9 +1214,19 @@
                 if (joinYear === invoiceYear - 1) {
                     const joinMonth = joinDate.getMonth();
                     const joinDay = joinDate.getDate();
+                    
+                    // New logic: If member is added on or before the 1st of the month, they are billed for that month
+                    // If member is added after the 1st of the month, they are not billed for that month
                     let effectiveJoinMonth = joinMonth;
-                    if (joinDay > 15) effectiveJoinMonth += 1;
-                    if (effectiveJoinMonth >= 12) return { fullYear: 0, prorated: 0, total: 0 }; // Joined in December after 15th, not charged
+                    if (joinDay > 1) {
+                        // If joined after the 1st, don't count that month
+                        effectiveJoinMonth += 1;
+                    }
+                    
+                    // If effective join month is December or later, no charge for join year
+                    if (effectiveJoinMonth >= 12) {
+                        return { fullYear: 0, prorated: 0, total: 0 };
+                    }
 
                     const monthsInJoinYear = 12 - effectiveJoinMonth;
                     let proratedDues = (baseDues / 12) * monthsInJoinYear;
@@ -1228,8 +1238,12 @@
                             // Left before Jan 1st: charge only prorated dues for join year, but adjust for early departure
                             const leaveMonth = leaveDate.getMonth();
                             const leaveDay = leaveDate.getDate();
+                            
+                            // Apply same logic for leave date: if left after the 1st, count that month
                             let effectiveLeaveMonth = leaveMonth;
-                            if (leaveDay > 15) effectiveLeaveMonth += 1;
+                            if (leaveDay > 1) {
+                                effectiveLeaveMonth += 1;
+                            }
                             
                             // Calculate actual months of membership in join year
                             // If leave month is before join month, no charge
@@ -1237,23 +1251,8 @@
                                 return { fullYear: 0, prorated: 0, total: 0 };
                             }
                             
-                            // Calculate months: if join day <= 15, count that month; if join day > 15, don't count that month
-                            // If leave day <= 15, don't count that month; if leave day > 15, count that month
-                            let actualMonthsInJoinYear = 0;
-                            
-                            if (joinDay <= 15 && leaveDay > 15) {
-                                // Join month counts, leave month counts
-                                actualMonthsInJoinYear = leaveMonth - joinMonth + 1;
-                            } else if (joinDay <= 15 && leaveDay <= 15) {
-                                // Join month counts, leave month doesn't count
-                                actualMonthsInJoinYear = leaveMonth - joinMonth;
-                            } else if (joinDay > 15 && leaveDay > 15) {
-                                // Join month doesn't count, leave month counts
-                                actualMonthsInJoinYear = leaveMonth - joinMonth;
-                            } else if (joinDay > 15 && leaveDay <= 15) {
-                                // Join month doesn't count, leave month doesn't count
-                                actualMonthsInJoinYear = leaveMonth - joinMonth - 1;
-                            }
+                            // Calculate months based on effective join and leave months
+                            let actualMonthsInJoinYear = effectiveLeaveMonth - effectiveJoinMonth;
                             
                             // Ensure months is not negative
                             actualMonthsInJoinYear = Math.max(0, actualMonthsInJoinYear);
