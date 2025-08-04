@@ -33,13 +33,18 @@
 	<link rel="icon" href="./img/favicon.png" type="image/x-icon">
 	
 
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"></noscript>
+    
+    <!-- Optimized Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- SheetJS for Excel parsing -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <!-- PapaParse for CSV parsing -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    
+    <!-- Defer non-critical scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" defer></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        /* Remove duplicate font import since we're preloading it */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f7fafc;
@@ -109,6 +114,87 @@
             padding: 0.25rem 0.5rem;
             font-size: 0.875rem;
         }
+        
+        /* Enhanced styles for edit mode inputs */
+        .edit-mode-input {
+            width: 100% !important;
+            min-width: 120px;
+            padding: 0.5rem 0.75rem !important;
+            font-size: 0.875rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.375rem;
+            background-color: white;
+            transition: all 0.2s ease-in-out;
+            box-sizing: border-box;
+            margin: 0;
+            display: block;
+        }
+        
+        .edit-mode-input:focus {
+            outline: none;
+            border-color: #004aad;
+            box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
+            background-color: #f8fafc;
+        }
+        
+        .edit-mode-select {
+            width: 100% !important;
+            min-width: 140px;
+            padding: 0.5rem 0.75rem !important;
+            font-size: 0.875rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.375rem;
+            background-color: white;
+            transition: all 0.2s ease-in-out;
+            box-sizing: border-box;
+            cursor: pointer;
+            margin: 0;
+            display: block;
+        }
+        
+        .edit-mode-select:focus {
+            outline: none;
+            border-color: #004aad;
+            box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.1);
+            background-color: #f8fafc;
+        }
+        
+        /* Enhanced table cell styling for edit mode */
+        .editing td {
+            background-color: #f8fafc !important;
+            border-color: #e2e8f0;
+        }
+        
+        .editing td:focus-within {
+            background-color: #f0f9ff !important;
+        }
+        
+        /* Ensure table cells have proper spacing for edit mode - match header padding */
+        .editing td {
+            padding: 1rem 1.5rem !important; /* px-6 py-4 equivalent */
+            vertical-align: middle;
+        }
+        
+        /* Make sure inputs don't overflow table cells and maintain alignment */
+        .editing td input,
+        .editing td select {
+            max-width: 100%;
+            box-sizing: border-box;
+            position: static;
+        }
+        
+        /* Ensure table structure is maintained */
+        .editing td {
+            position: static;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        
+        /* Add subtle visual feedback for editing state without affecting layout */
+        .editing {
+            background-color: #f8fafc !important;
+            border-left: 3px solid #004aad;
+        }
         .file-upload-area {
             border: 2px dashed #d1d5db;
             border-radius: 0.5rem;
@@ -125,6 +211,66 @@
         .upload-preview {
             max-height: 200px;
             overflow-y: auto;
+        }
+        
+        /* Upload area transitions */
+        .upload-area-container {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .upload-area-container.hidden {
+            opacity: 0;
+            transform: translateY(-10px);
+            pointer-events: none;
+        }
+        
+        .upload-preview {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .upload-preview.hidden {
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+        }
+        
+        /* Success animation */
+        .success-animation {
+            animation: successPulse 1.5s ease-in-out;
+        }
+        
+        @keyframes successPulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .success-icon {
+            animation: successBounce 0.6s ease-in-out;
+        }
+        
+        @keyframes successBounce {
+            0%, 20%, 53%, 80%, 100% {
+                transform: translate3d(0,0,0);
+            }
+            40%, 43% {
+                transform: translate3d(0, -8px, 0);
+            }
+            70% {
+                transform: translate3d(0, -4px, 0);
+            }
+            90% {
+                transform: translate3d(0, -2px, 0);
+            }
         }
         .member-row {
             transition: all 0.2s ease-in-out;
@@ -150,6 +296,190 @@
                 opacity: .5;
             }
         }
+        
+        /* Enhanced UX Components */
+        .loading-spinner {
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .slide-up {
+            animation: slideUp 0.3s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* Enhanced form states */
+        .form-group {
+            position: relative;
+        }
+        
+        .error-message {
+            color: #e53e3e;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        
+        .input-error {
+            border-color: #e53e3e !important;
+            box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1) !important;
+        }
+        
+        .input-success {
+            border-color: #38a169 !important;
+            box-shadow: 0 0 0 3px rgba(56, 161, 105, 0.1) !important;
+            background-color: #f0fff4 !important;
+        }
+        
+        /* Enhanced validation feedback */
+        .form-group {
+            position: relative;
+            transition: all 0.2s ease-in-out;
+        }
+        
+        .form-group:has(.input-success) {
+            transform: translateY(-1px);
+        }
+        
+        .form-group:has(.input-error) {
+            animation: shake 0.5s ease-in-out;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        
+        /* Enhanced accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* Focus indicators */
+        .btn:focus,
+        input:focus,
+        select:focus {
+            outline: 2px solid #004aad;
+            outline-offset: 2px;
+        }
+        
+        /* Enhanced mobile responsiveness */
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .card {
+                padding: 1rem;
+            }
+            
+            .btn {
+                padding: 0.75rem 1rem;
+                font-size: 0.875rem;
+            }
+        }
+        
+        /* Loading overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .loading-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Enhanced table responsiveness */
+        @media (max-width: 768px) {
+            .table-responsive {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            .table-responsive table {
+                min-width: 600px;
+            }
+        }
+        
+        /* Enhanced button states */
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+        
+        .btn:disabled:hover {
+            transform: none !important;
+            box-shadow: none !important;
+        }
+        
+        /* Enhanced file upload area */
+        .file-upload-area.dragover {
+            border-color: #004aad;
+            background-color: #eaf2ff;
+            transform: scale(1.02);
+        }
+        
+        /* Enhanced success states */
+        .success-feedback {
+            background: linear-gradient(135deg, #f0fff4 0%, #e6fffa 100%);
+            border: 1px solid #68d391;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .error-feedback {
+            background: linear-gradient(135deg, #fed7d7 0%, #feb2b2 100%);
+            border: 1px solid #fc8181;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
     </style>
 
 	<!-- Google tag (gtag.js) -->
@@ -164,6 +494,13 @@
 
 </head>
 <body class="antialiased">
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="text-center">
+            <div class="loading-spinner w-8 h-8 border-4 border-blue-200 border-t-blue-600 rounded-full mx-auto mb-4"></div>
+            <p class="text-gray-600 font-medium">Loading...</p>
+        </div>
+    </div>
 
     <div class="container mx-auto p-4 sm:p-6 lg:p-8">
 
@@ -212,24 +549,39 @@
                         <p class="text-sm text-gray-500 mt-1">Add individual members to your roster</p>
                     </div>
                     <form id="add-member-form" class="space-y-5">
-                        <div class="space-y-2">
-                            <label for="member-name" class="block text-sm font-semibold text-gray-700 text-center">Member Name</label>
-                            <input type="text" id="member-name" required class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-center">
+                        <div class="form-group space-y-2">
+                            <label for="member-name" class="block text-sm font-semibold text-gray-700 text-center">Member Name <span class="text-red-500">*</span></label>
+                            <input type="text" id="member-name" 
+                                   class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-center"
+                                   placeholder="Enter member's full name"
+                                   aria-describedby="member-name-error">
+                            <div id="member-name-error" class="error-message text-center"></div>
                         </div>
-                        <div class="space-y-2">
-                            <label for="member-type" class="block text-sm font-semibold text-gray-700 text-center">Member Type</label>
-                            <select id="member-type" required class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-center">
+                        <div class="form-group space-y-2">
+                            <label for="member-type" class="block text-sm font-semibold text-gray-700 text-center">Club Base <span class="text-red-500">*</span></label>
+                            <select id="member-type" 
+                                    class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-center"
+                                    aria-describedby="member-type-error">
+                                <option value="">Select Club Base</option>
                                 <option value="Community-Based">Community-Based ($8)</option>
                                 <option value="University-Based">University-Based ($5)</option>
                             </select>
+                            <div id="member-type-error" class="error-message text-center"></div>
                         </div>
-                        <div class="space-y-2">
-                            <label for="join-date" class="block text-sm font-semibold text-gray-700 text-center">Join Date</label>
-                            <input type="date" id="join-date" required class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-center">
+                        <div class="form-group space-y-2">
+                            <label for="join-date" class="block text-sm font-semibold text-gray-700 text-center">Join Date <span class="text-red-500">*</span></label>
+                            <input type="date" id="join-date" 
+                                   class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-center"
+                                   aria-describedby="join-date-error">
+                            <div id="join-date-error" class="error-message text-center"></div>
                         </div>
-                        <div class="space-y-2">
+                        <div class="form-group space-y-2">
                             <label for="leave-date" class="block text-sm font-semibold text-gray-700 text-center">Leave Date (Optional)</label>
-                            <input type="date" id="leave-date" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-center">
+                            <input type="date" id="leave-date" 
+                                   class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-center"
+                                   placeholder="Leave blank if still active"
+                                   aria-describedby="leave-date-error">
+                            <div id="leave-date-error" class="error-message text-center"></div>
                         </div>
                         <button type="submit" id="add-member-button" class="btn btn-primary w-full !mt-6 py-3 text-base font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" /></svg>
@@ -251,7 +603,7 @@
                     </div>
                     
                     <!-- File Upload Area -->
-                    <div id="file-upload-area" class="file-upload-area p-8 text-center mb-6 bg-gradient-to-br from-gray-50 to-gray-100">
+                    <div id="file-upload-area" class="file-upload-area upload-area-container p-8 text-center mb-6 bg-gradient-to-br from-gray-50 to-gray-100">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-gray-400 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                         </svg>
@@ -263,7 +615,29 @@
                             </svg>
                             Browse Files
                         </button>
-                        <p class="text-xs text-gray-500 mt-3">Supports Excel (.xlsx, .xls) and CSV files</p>
+                        <p class="text-xs text-gray-500 mt-3">Supports Excel (.xlsx, .xls) and <br><b>CSV (Recommended)</b> files </p>
+                    </div>
+                    
+                    <!-- Upload Preview -->
+                    <div id="upload-preview" class="hidden mb-6">
+                        <h3 class="text-sm font-bold text-gray-700 mb-3 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            Preview
+                        </h3>
+                        <div id="preview-content" class="upload-preview bg-gray-50 p-4 rounded-lg border border-gray-200 text-sm"></div>
+                        <div class="flex gap-3 mt-4">
+                            <button type="button" id="confirm-upload" class="btn btn-primary text-sm flex-1 py-3 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                                Add to Roster
+                            </button>
+                            <button type="button" id="cancel-upload" class="btn btn-secondary text-sm py-3 px-4 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+                                Cancel
+                            </button>
+                        </div>
                     </div>
 
                     <!-- File Format Instructions -->
@@ -285,7 +659,7 @@
                             </div>
                             <div class="flex items-center">
                                 <span class="w-6 h-6 bg-blue-200 rounded-full flex items-center justify-center text-xs font-bold text-blue-800 mr-3">C</span>
-                                <span><strong>Member Type</strong> (Community-Based or University-Based)</span>
+                                <span><strong>Club Base</strong> (Community-Based or University-Based)</span>
                             </div>
                             <div class="flex items-center">
                                 <span class="w-6 h-6 bg-blue-200 rounded-full flex items-center justify-center text-xs font-bold text-blue-800 mr-3">D</span>
@@ -302,27 +676,7 @@
                         </div>
                     </div>
 
-                    <!-- Upload Preview -->
-                    <div id="upload-preview" class="hidden">
-                        <h3 class="text-sm font-bold text-gray-700 mb-3 flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            Preview
-                        </h3>
-                        <div id="preview-content" class="upload-preview bg-gray-50 p-4 rounded-lg border border-gray-200 text-sm"></div>
-                        <div class="flex gap-3 mt-4">
-                            <button type="button" id="confirm-upload" class="btn btn-primary text-sm flex-1 py-3 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                                Add to Roster
-                            </button>
-                            <button type="button" id="cancel-upload" class="btn btn-secondary text-sm py-3 px-4 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
-                                Cancel
-                            </button>
-                        </div>
-                    </div>
+
                 </div>
             </div>
 
@@ -340,15 +694,39 @@
                         <p class="text-gray-500">View your estimated club invoice</p>
                     </div>
                     
-                    <div class="mb-6 flex flex-col items-center space-y-4">
-                        <div class="flex flex-col sm:flex-row items-center gap-4">
-                            <div class="flex flex-col items-center">
-                                <label for="invoice-year-select" class="block text-sm font-semibold text-gray-700 mb-2 text-center">Invoice for Jan 1st of Year:</label>
-                                <select id="invoice-year-select" class="w-full max-w-xs px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-center font-semibold"></select>
+                    <div class="mb-8">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Invoice Year Selection -->
+                            <div class="bg-gradient-to-br from-gray-50 to-blue-50 p-6 rounded-xl border border-blue-100 shadow-sm hover:shadow-md transition-all duration-300">
+                                <div class="text-center mb-4">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-blue-700">Invoice Period</h3>
+                                        <p class="text-sm text-blue-600">Select the invoice year</p>
+                                    </div>
+                                </div>
+                                <label for="invoice-year-select" class="block text-sm font-semibold text-blue-600 mb-3 text-center">Invoice of January:</label>
+                                <select id="invoice-year-select" class="w-full px-4 py-3 border-2 border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-center font-semibold bg-white shadow-sm">
+                                    <!-- Options will be populated by JavaScript -->
+                                </select>
                             </div>
-                            <div class="flex flex-col items-center">
-                                <label for="tax-percentage" class="block text-sm font-semibold text-gray-700 mb-2 text-center">Tax Percentage (%):</label>
-                                <input type="number" id="tax-percentage" min="0" max="100" step="0.01" value="18" class="w-full max-w-xs px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-center font-semibold" placeholder="18">
+
+                            <!-- Tax Percentage Input -->
+                            <div class="bg-gradient-to-br from-gray-50 to-green-50 p-6 rounded-xl border border-green-100 shadow-sm hover:shadow-md transition-all duration-300">
+                                <div class="text-center mb-4">
+                                    <div>
+                                        <h3 class="text-lg font-bold text-green-700">Tax Settings</h3>
+                                        <p class="text-sm text-green-600">Configure tax percentage</p>
+                                    </div>
+                                </div>
+                                <label for="tax-percentage" class="block text-sm font-semibold text-green-600 mb-3 text-center">Tax Percentage (%):</label>
+                                <div class="relative">
+                                    <input type="number" id="tax-percentage" min="0" max="100" step="0.01" value="18" 
+                                           class="w-full px-4 py-3 pr-12 border-2 border-green-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200 text-center font-semibold bg-white shadow-sm" 
+                                           placeholder="18">
+                                    <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                        <span class="text-green-600 font-semibold">%</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -358,14 +736,13 @@
                             <div>
                                 <p class="text-lg text-blue-700 font-semibold mb-2">Base RI Dues</p>
                                 <p id="base-invoice-amount" class="text-4xl font-bold text-blue-800 tracking-tight my-2">$0.00</p>
+                                <p id="dues-breakdown" class="text-sm text-gray-600">Full Year: $0.00 + Prorated: $0.00</p>
                             </div>
                             <div>
                                 <p class="text-lg text-green-700 font-semibold mb-2">Total with Tax</p>
                                 <p id="total-invoice-amount" class="text-4xl font-bold text-green-800 tracking-tight my-2">$0.00</p>
+                                <p id="tax-breakdown" class="text-sm text-gray-600">Tax: $0.00 (18%)</p>
                             </div>
-                        </div>
-                        <div class="mt-4 pt-4 border-t border-blue-200">
-                            <p id="tax-breakdown" class="text-sm text-gray-600">Tax: $0.00 (18%)</p>
                         </div>
                     </div>
                 </div>
@@ -392,15 +769,18 @@
                         </button>
                     </div>
                     
-                    <div class="overflow-x-auto -mx-8">
-                        <table class="min-w-full">
+                    <div class="overflow-x-auto -mx-8 table-responsive">
+                        <table class="min-w-full" role="table" aria-label="Member roster">
                             <thead class="bg-gradient-to-r from-gray-50 to-gray-100">
                                 <tr>
-                                    <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Name</th>
-                                    <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Join Date</th>
-                                    <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Leave Date</th>
-                                    <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Type</th>
-                                    <th scope="col" class="px-6 py-4 text-left text-xs font-bold text-gray-600 uppercase tracking-wider">Est. Due</th>
+                                    <th scope="col" class="px-6 py-4 text-center text-xs font-bold text-gray-600 uppercase tracking-wider">Name</th>
+                                    <th scope="col" class="px-6 py-4 text-center text-xs font-bold text-gray-600 uppercase tracking-wider">Join Date</th>
+                                    <th scope="col" class="px-6 py-4 text-center text-xs font-bold text-gray-600 uppercase tracking-wider">Leave Date</th>
+                                    <th scope="col" class="px-6 py-4 text-center text-xs font-bold text-gray-600 uppercase tracking-wider">Club Base</th>
+                                    <th scope="col" class="px-6 py-4 text-center text-xs font-bold text-gray-600 uppercase tracking-wider">
+                                        Est. Due
+                                        <div class="text-xs font-normal text-gray-500 normal-case mt-1">(Full Year + Prorated)</div>
+                                    </th>
                                     <th scope="col" class="relative px-6 py-4"><span class="sr-only">Actions</span></th>
                                 </tr>
                             </thead>
@@ -464,7 +844,15 @@
     </div>
 
     <script>
+        // Performance optimization: Use requestIdleCallback for non-critical operations
+        const requestIdleCallback = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
+        
         document.addEventListener('DOMContentLoaded', () => {
+            // Hide loading overlay
+            const loadingOverlay = document.getElementById('loading-overlay');
+            if (loadingOverlay) {
+                loadingOverlay.classList.remove('active');
+            }
             const addMemberForm = document.getElementById('add-member-form');
             const memberNameInput = document.getElementById('member-name');
             const memberTypeInput = document.getElementById('member-type');
@@ -500,11 +888,12 @@
             joinDateInput.value = todayFormatted;
             currentYearSpan.textContent = yyyy;
 
-            let lastSelectedMemberType = memberTypeInput.value;
+            let lastSelectedClubBase = memberTypeInput.value;
+            let lastSelectedJoinDate = joinDateInput.value;
 
             // Bulk Upload Functions
             function downloadCSVTemplate() {
-                const csvContent = "Member Name,Join Date,Member Type,Leave Date\nJohn Doe,2024-01-15,Community-Based,\nJane Smith,2024-02-01,University-Based,2024-12-31";
+                const csvContent = "Member Name,Join Date,Club Base,Leave Date\nJohn Doe,2024-01-15,Community-Based,\nJane Smith,2024-02-01,University-Based,2024-12-31";
                 const blob = new Blob([csvContent], { type: 'text/csv' });
                 const url = window.URL.createObjectURL(blob);
                 const a = document.createElement('a');
@@ -578,10 +967,10 @@
                         return;
                     }
 
-                    // Validate member type
+                    // Validate club base
                     const validTypes = ['Community-Based', 'University-Based'];
                     if (!validTypes.includes(memberType)) {
-                        errors.push(`Row ${index + 2}: Invalid member type (use "Community-Based" or "University-Based")`);
+                        errors.push(`Row ${index + 2}: Invalid Club Base (use "Community-Based" or "University-Based")`);
                         return;
                     }
 
@@ -594,7 +983,7 @@
                     validatedMembers.push({
                         name: name.trim(),
                         joinDate: joinDate,
-                        memberType: memberType,
+                        clubBase: memberType,
                         leaveDate: leaveDate && leaveDate.trim() !== '' ? leaveDate : null
                     });
                 });
@@ -604,7 +993,7 @@
 
             function showPreview(members) {
                 const previewHTML = members.map((member, index) => {
-                    const typeText = member.memberType === 'Community-Based' ? 'Community-Based ($8)' : 'University-Based ($5)';
+                    const typeText = member.clubBase === 'Community-Based' ? 'Community-Based ($8)' : 'University-Based ($5)';
                     const leaveDateText = member.leaveDate ? ` | Left: ${member.leaveDate}` : '';
                     return `
                         <div class="flex justify-between items-center py-2 border-b border-gray-200 last:border-b-0">
@@ -618,10 +1007,29 @@
                 }).join('');
 
                 previewContent.innerHTML = previewHTML;
-                uploadPreview.classList.remove('hidden');
+                
+                // Show the action buttons (Add to Roster and Cancel) - restore them if they were hidden
+                const actionButtons = uploadPreview.querySelector('.flex.gap-3.mt-4');
+                if (actionButtons) {
+                    actionButtons.style.display = 'flex';
+                }
+                
+                // Hide upload area with smooth transition
+                fileUploadArea.classList.add('hidden');
+                
+                // Show preview after a short delay
+                setTimeout(() => {
+                    uploadPreview.classList.remove('hidden');
+                }, 300);
             }
 
             function handleFileUpload(file) {
+                // Show loading state
+                const loadingOverlay = document.getElementById('loading-overlay');
+                if (loadingOverlay) {
+                    loadingOverlay.classList.add('active');
+                }
+                
                 const fileExtension = file.name.split('.').pop().toLowerCase();
                 
                 let parsePromise;
@@ -630,7 +1038,7 @@
                 } else if (['xlsx', 'xls'].includes(fileExtension)) {
                     parsePromise = parseExcelFile(file);
                 } else {
-                    alert('Unsupported file format. Please upload a CSV or Excel file.');
+                    showErrorMessage('Unsupported file format. Please upload a CSV or Excel file.');
                     return;
                 }
 
@@ -638,14 +1046,20 @@
                     const validation = validateMemberData(data);
                     
                     if (validation.errors.length > 0) {
-                        alert('Validation errors found:\n\n' + validation.errors.join('\n'));
+                        const errorMessage = 'Validation errors found:\n\n' + validation.errors.join('\n');
+                        showErrorMessage(errorMessage);
                         return;
                     }
 
                     parsedMembers = validation.validatedMembers;
                     showPreview(parsedMembers);
                 }).catch(error => {
-                    alert('Error parsing file: ' + error.message);
+                    showErrorMessage('Error parsing file: ' + error.message);
+                }).finally(() => {
+                    // Hide loading state
+                    if (loadingOverlay) {
+                        loadingOverlay.classList.remove('active');
+                    }
                 });
             }
 
@@ -655,15 +1069,15 @@
                 const selectedYear = parseInt(invoiceYearSelect.value, 10);
                 
                 parsedMembers.forEach(member => {
-                    const individualDue = calculateIndividualDue(member.joinDate, member.memberType, selectedYear, member.leaveDate);
+                    const duesBreakdown = calculateIndividualDue(member.joinDate, member.clubBase, selectedYear, member.leaveDate);
                     const memberId = `member-${Date.now()}-${Math.random()}`;
                     
                     const row = document.createElement('tr');
                     row.id = memberId;
-                    row.dataset.due = individualDue;
+                    row.dataset.due = duesBreakdown.total;
                     row.dataset.joinDate = member.joinDate;
                     row.dataset.leaveDate = member.leaveDate;
-                    row.dataset.memberType = member.memberType;
+                    row.dataset.memberType = member.clubBase;
                     row.dataset.name = member.name;
                     row.classList.add('member-row');
                     
@@ -671,8 +1085,8 @@
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">${member.name}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${member.joinDate}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${member.leaveDate || '-'}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${member.memberType}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-medium due-cell">$${individualDue.toFixed(2)}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${member.clubBase}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-medium due-cell">${formatDuesBreakdown(duesBreakdown)}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                             <button class="btn btn-secondary btn-sm !p-2 edit-member-btn">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" /><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" /></svg>
@@ -693,13 +1107,62 @@
                 });
 
                 updateTotal();
-                resetBulkUpload();
+                
+                // Show success animation and return to upload area
+                showSuccessAnimation();
             }
 
             function resetBulkUpload() {
                 parsedMembers = [];
                 uploadPreview.classList.add('hidden');
                 fileInput.value = '';
+                
+                // Return to upload area after a short delay
+                setTimeout(() => {
+                    fileUploadArea.classList.remove('hidden');
+                }, 300);
+            }
+            
+            function showSuccessAnimation() {
+                // Replace preview content with success message
+                const successHTML = `
+                    <div class="text-center py-8 success-animation">
+                        <div class="success-icon mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-800 mb-2">Successfully Added!</h3>
+                        <p class="text-gray-600 mb-4">${parsedMembers.length} member(s) have been added to your roster.</p>
+                        <div class="flex gap-3 justify-center">
+                            <button type="button" id="upload-more-btn" class="btn btn-primary text-sm px-6 py-3 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                                </svg>
+                                Upload More
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                // Replace the entire preview content (including buttons)
+                previewContent.innerHTML = successHTML;
+                
+                // Hide the action buttons (Add to Roster and Cancel)
+                const actionButtons = uploadPreview.querySelector('.flex.gap-3.mt-4');
+                if (actionButtons) {
+                    actionButtons.style.display = 'none';
+                }
+                
+                // Add event listener for upload more button
+                document.getElementById('upload-more-btn').addEventListener('click', () => {
+                    resetBulkUpload();
+                });
+                
+                // Auto-return to upload area after 3 seconds
+                setTimeout(() => {
+                    resetBulkUpload();
+                }, 3000);
             }
 
             function populateYearSelector() {
@@ -721,10 +1184,30 @@
                 if(invoiceDateDisplay) invoiceDateDisplay.textContent = `Jan 1st, ${selectedYear}`;
             }
 
-            function calculateIndividualDue(joinDateStr, memberType, invoiceYear, leaveDateStr = null) {
+            function formatDuesBreakdown(duesBreakdown) {
+                const { fullYear, prorated, total } = duesBreakdown;
+                
+                if (total === 0) {
+                    return '<span class="text-gray-400">$0.00</span>';
+                }
+                
+                let breakdown = '';
+                
+                if (fullYear > 0 && prorated > 0) {
+                    breakdown = `$${fullYear.toFixed(2)} + $${prorated.toFixed(2)} = $${total.toFixed(2)}`;
+                } else if (fullYear > 0) {
+                    breakdown = `$${fullYear.toFixed(2)} + $0.00 = $${total.toFixed(2)}`;
+                } else if (prorated > 0) {
+                    breakdown = `$0.00 + $${prorated.toFixed(2)} = $${total.toFixed(2)}`;
+                }
+                
+                return breakdown;
+            }
+
+            function calculateIndividualDue(joinDateStr, clubBase, invoiceYear, leaveDateStr = null) {
                 const joinDate = new Date(joinDateStr + 'T00:00:00');
                 const invoiceDate = new Date(invoiceYear, 0, 1); // January 1st of invoice year
-                const baseDues = memberType === 'Community-Based' ? 8 : 5;
+                const baseDues = clubBase === 'Community-Based' ? 8 : 5;
                 const joinYear = joinDate.getFullYear();
 
                 // If joined in the year immediately preceding the invoice year
@@ -733,60 +1216,130 @@
                     const joinDay = joinDate.getDate();
                     let effectiveJoinMonth = joinMonth;
                     if (joinDay > 15) effectiveJoinMonth += 1;
-                    if (effectiveJoinMonth >= 12) return 0; // Joined in December after 15th, not charged
+                    if (effectiveJoinMonth >= 12) return { fullYear: 0, prorated: 0, total: 0 }; // Joined in December after 15th, not charged
 
                     const monthsInJoinYear = 12 - effectiveJoinMonth;
-                    const proratedDues = (baseDues / 12) * monthsInJoinYear;
+                    let proratedDues = (baseDues / 12) * monthsInJoinYear;
 
+                    // Check if member left before invoice date
                     if (leaveDateStr) {
                         const leaveDate = new Date(leaveDateStr + 'T00:00:00');
                         if (leaveDate < invoiceDate) {
-                            // Left before Jan 1st: charge only prorated dues for join year
-                            return proratedDues;
+                            // Left before Jan 1st: charge only prorated dues for join year, but adjust for early departure
+                            const leaveMonth = leaveDate.getMonth();
+                            const leaveDay = leaveDate.getDate();
+                            let effectiveLeaveMonth = leaveMonth;
+                            if (leaveDay > 15) effectiveLeaveMonth += 1;
+                            
+                            // Calculate actual months of membership in join year
+                            // If leave month is before join month, no charge
+                            if (effectiveLeaveMonth < effectiveJoinMonth) {
+                                return { fullYear: 0, prorated: 0, total: 0 };
+                            }
+                            
+                            // Calculate months: if join day <= 15, count that month; if join day > 15, don't count that month
+                            // If leave day <= 15, don't count that month; if leave day > 15, count that month
+                            let actualMonthsInJoinYear = 0;
+                            
+                            if (joinDay <= 15 && leaveDay > 15) {
+                                // Join month counts, leave month counts
+                                actualMonthsInJoinYear = leaveMonth - joinMonth + 1;
+                            } else if (joinDay <= 15 && leaveDay <= 15) {
+                                // Join month counts, leave month doesn't count
+                                actualMonthsInJoinYear = leaveMonth - joinMonth;
+                            } else if (joinDay > 15 && leaveDay > 15) {
+                                // Join month doesn't count, leave month counts
+                                actualMonthsInJoinYear = leaveMonth - joinMonth;
+                            } else if (joinDay > 15 && leaveDay <= 15) {
+                                // Join month doesn't count, leave month doesn't count
+                                actualMonthsInJoinYear = leaveMonth - joinMonth - 1;
+                            }
+                            
+                            // Ensure months is not negative
+                            actualMonthsInJoinYear = Math.max(0, actualMonthsInJoinYear);
+                            proratedDues = (baseDues / 12) * actualMonthsInJoinYear;
+                            
+                            return { fullYear: 0, prorated: proratedDues, total: proratedDues };
                         }
                     }
                     // Still a member on Jan 1st: charge both base fee and prorated fee
-                    return baseDues + proratedDues;
+                    return { fullYear: baseDues, prorated: proratedDues, total: baseDues + proratedDues };
                 }
 
                 // If joined and left in the same year (not the year immediately preceding the invoice year), charge nothing
-                if (joinYear >= invoiceYear) return 0;
+                if (joinYear >= invoiceYear) return { fullYear: 0, prorated: 0, total: 0 };
 
                 // If left before Jan 1st, charge nothing
                 if (leaveDateStr) {
                     const leaveDate = new Date(leaveDateStr + 'T00:00:00');
-                    if (leaveDate < invoiceDate) return 0;
+                    if (leaveDate < invoiceDate) return { fullYear: 0, prorated: 0, total: 0 };
                 }
 
-                if (joinYear < invoiceYear - 1) return baseDues;
-                return 0;
+                if (joinYear < invoiceYear - 1) return { fullYear: baseDues, prorated: 0, total: baseDues };
+                return { fullYear: 0, prorated: 0, total: 0 };
             }
 
+            // Debounced function for performance optimization
+            function debounce(func, wait) {
+                let timeout;
+                return function executedFunction(...args) {
+                    const later = () => {
+                        clearTimeout(timeout);
+                        func(...args);
+                    };
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                };
+            }
+            
             function updateTotal() {
-                let baseTotal = 0;
-                const memberRows = memberRosterBody.querySelectorAll('tr');
-                memberRows.forEach(row => {
-                    baseTotal += parseFloat(row.dataset.due || 0);
+                // Use requestIdleCallback for non-critical updates
+                requestIdleCallback(() => {
+                    let baseTotal = 0;
+                    let totalFullYear = 0;
+                    let totalProrated = 0;
+                    const selectedYear = parseInt(invoiceYearSelect.value, 10);
+                    const memberRows = memberRosterBody.querySelectorAll('tr');
+                    
+                    memberRows.forEach(row => {
+                        const joinDate = row.dataset.joinDate;
+                        const leaveDate = row.dataset.leaveDate;
+                        const memberType = row.dataset.memberType;
+                        const duesBreakdown = calculateIndividualDue(joinDate, memberType, selectedYear, leaveDate);
+                        
+                        baseTotal += duesBreakdown.total;
+                        totalFullYear += duesBreakdown.fullYear;
+                        totalProrated += duesBreakdown.prorated;
+                    });
+                    
+                    // Calculate tax
+                    const taxPercentage = parseFloat(taxPercentageInput.value) || 0;
+                    const taxAmount = (baseTotal * taxPercentage) / 100;
+                    const totalWithTax = baseTotal + taxAmount;
+                    
+                    // Update display with animation
+                    baseInvoiceAmountEl.textContent = `$${baseTotal.toFixed(2)}`;
+                    totalInvoiceAmountEl.textContent = `$${totalWithTax.toFixed(2)}`;
+                    taxBreakdownEl.textContent = `Tax: $${taxAmount.toFixed(2)} (${taxPercentage}%)`;
+                    
+                    // Update dues breakdown
+                    const duesBreakdownEl = document.getElementById('dues-breakdown');
+                    if (duesBreakdownEl) {
+                        duesBreakdownEl.textContent = `Full Year: $${totalFullYear.toFixed(2)} + Prorated: $${totalProrated.toFixed(2)}`;
+                    }
+                    
+                    // Show/hide empty state
+                    const emptyState = document.getElementById('empty-state');
+                    if (memberRows.length === 0) {
+                        emptyState.classList.remove('hidden');
+                    } else {
+                        emptyState.classList.add('hidden');
+                    }
                 });
-                
-                // Calculate tax
-                const taxPercentage = parseFloat(taxPercentageInput.value) || 0;
-                const taxAmount = (baseTotal * taxPercentage) / 100;
-                const totalWithTax = baseTotal + taxAmount;
-                
-                // Update display
-                baseInvoiceAmountEl.textContent = `$${baseTotal.toFixed(2)}`;
-                totalInvoiceAmountEl.textContent = `$${totalWithTax.toFixed(2)}`;
-                taxBreakdownEl.textContent = `Tax: $${taxAmount.toFixed(2)} (${taxPercentage}%)`;
-                
-                // Show/hide empty state
-                const emptyState = document.getElementById('empty-state');
-                if (memberRows.length === 0) {
-                    emptyState.classList.remove('hidden');
-                } else {
-                    emptyState.classList.add('hidden');
-                }
             }
+            
+            // Debounced version for input events
+            const debouncedUpdateTotal = debounce(updateTotal, 300);
             
             function recalculateAllDues() {
                 const selectedYear = parseInt(invoiceYearSelect.value, 10);
@@ -796,34 +1349,230 @@
                     const joinDate = row.dataset.joinDate;
                     const leaveDate = row.dataset.leaveDate;
                     const memberType = row.dataset.memberType;
-                    const individualDue = calculateIndividualDue(joinDate, memberType, selectedYear, leaveDate);
-                    row.dataset.due = individualDue;
-                    row.querySelector('.due-cell').textContent = `$${individualDue.toFixed(2)}`;
+                    const duesBreakdown = calculateIndividualDue(joinDate, memberType, selectedYear, leaveDate);
+                    row.dataset.due = duesBreakdown.total;
+                    row.querySelector('.due-cell').innerHTML = formatDuesBreakdown(duesBreakdown);
                 });
                 updateTotal();
                 updateInvoiceDateDisplay();
             }
 
-            function addMember(e) {
-                e.preventDefault();
-                const name = memberNameInput.value;
-                const typeValue = memberTypeInput.value;
-                const joinDate = joinDateInput.value;
-                const leaveDate = leaveDateInput.value;
-                if (!name || !typeValue || !joinDate) {
-                    alert('Please fill out all fields.');
-                    return;
+            // Unified Form Validation System
+            class FormValidator {
+                constructor() {
+                    this.errors = new Map();
+                    this.validationRules = {
+                        'member-name': [
+                            { test: (value) => value.trim().length > 0, message: 'Member name is required' },
+                            { test: (value) => value.trim().length >= 2, message: 'Name must be at least 2 characters' },
+                            { test: (value) => /^[a-zA-Z\s]+$/.test(value.trim()), message: 'Name should only contain letters and spaces' }
+                        ],
+                        'member-type': [
+                            { test: (value) => value.length > 0, message: 'Please select a Club Base' }
+                        ],
+                        'join-date': [
+                            { test: (value) => value.length > 0, message: 'Join date is required' },
+                            { test: (value) => this.isValidDate(value), message: 'Please enter a valid date' }
+                        ],
+                        'leave-date': [
+                            { test: (value) => !value || this.isValidDate(value), message: 'Please enter a valid date' },
+                            { test: (value) => !value || this.isLeaveDateValid(value), message: 'Leave date cannot be before join date' }
+                        ]
+                    };
                 }
 
+                isValidDate(dateString) {
+                    const date = new Date(dateString);
+                    return date instanceof Date && !isNaN(date);
+                }
+
+                isLeaveDateValid(leaveDate) {
+                    const joinDate = document.getElementById('join-date').value;
+                    if (!joinDate) return true; // If no join date, leave date is valid
+                    
+                    const leaveDateObj = new Date(leaveDate);
+                    const joinDateObj = new Date(joinDate);
+                    return leaveDateObj >= joinDateObj;
+                }
+
+                validateField(fieldId) {
+                    const field = document.getElementById(fieldId);
+                    if (!field || !this.validationRules[fieldId]) return true;
+
+                    const value = field.value;
+                    const rules = this.validationRules[fieldId];
+                    
+                    // Clear previous error for this field
+                    this.clearFieldError(fieldId);
+                    
+                    // Check each validation rule
+                    for (const rule of rules) {
+                        if (!rule.test(value)) {
+                            this.setFieldError(fieldId, rule.message);
+                            return false;
+                        }
+                    }
+                    
+                    // If we get here, field is valid
+                    this.setFieldSuccess(fieldId);
+                    return true;
+                }
+
+                validateAll() {
+                    this.clearAllErrors();
+                    
+                    let isValid = true;
+                    const fieldIds = Object.keys(this.validationRules);
+                    
+                    for (const fieldId of fieldIds) {
+                        if (!this.validateField(fieldId)) {
+                            isValid = false;
+                        }
+                    }
+                    
+                    return isValid;
+                }
+
+                setFieldError(fieldId, message) {
+                    const field = document.getElementById(fieldId);
+                    const errorElement = document.getElementById(`${fieldId}-error`);
+                    
+                    if (field && errorElement) {
+                        field.classList.remove('input-success');
+                        field.classList.add('input-error');
+                        errorElement.textContent = message;
+                        errorElement.style.display = 'block';
+                        
+                        // Add error to our tracking
+                        this.errors.set(fieldId, message);
+                    }
+                }
+
+                setFieldSuccess(fieldId) {
+                    const field = document.getElementById(fieldId);
+                    const errorElement = document.getElementById(`${fieldId}-error`);
+                    
+                    if (field && errorElement) {
+                        field.classList.remove('input-error');
+                        field.classList.add('input-success');
+                        errorElement.style.display = 'none';
+                        errorElement.textContent = '';
+                        
+                        // Remove error from our tracking
+                        this.errors.delete(fieldId);
+                    }
+                }
+
+                clearFieldError(fieldId) {
+                    const field = document.getElementById(fieldId);
+                    const errorElement = document.getElementById(`${fieldId}-error`);
+                    
+                    if (field && errorElement) {
+                        field.classList.remove('input-error', 'input-success');
+                        errorElement.style.display = 'none';
+                        errorElement.textContent = '';
+                        
+                        // Remove error from our tracking
+                        this.errors.delete(fieldId);
+                    }
+                }
+
+                clearAllErrors() {
+                    document.querySelectorAll('.error-message').forEach(el => {
+                        el.style.display = 'none';
+                        el.textContent = '';
+                    });
+                    document.querySelectorAll('.input-error, .input-success').forEach(el => {
+                        el.classList.remove('input-error', 'input-success');
+                    });
+                    this.errors.clear();
+                }
+
+                getFirstError() {
+                    return this.errors.size > 0 ? this.errors.values().next().value : null;
+                }
+
+                hasErrors() {
+                    return this.errors.size > 0;
+                }
+            }
+
+            // Initialize form validator
+            const formValidator = new FormValidator();
+            
+            // Legacy function for backward compatibility (now uses the new system)
+            function showFieldError(fieldId, message, shouldFocus = false) {
+                formValidator.setFieldError(fieldId, message);
+                if (shouldFocus) {
+                    const field = document.getElementById(fieldId);
+                    if (field) field.focus();
+                }
+            }
+            
+            function showSuccessMessage(message) {
+                const successDiv = document.createElement('div');
+                successDiv.className = 'success-feedback fade-in';
+                successDiv.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>${message}</span>
+                `;
+                
+                // Insert after the form
+                addMemberForm.parentNode.insertBefore(successDiv, addMemberForm.nextSibling);
+                
+                // Remove after 3 seconds
+                setTimeout(() => {
+                    successDiv.remove();
+                }, 3000);
+            }
+            
+            function showErrorMessage(message) {
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'error-feedback fade-in';
+                errorDiv.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>${message}</span>
+                `;
+                
+                // Insert after the form
+                addMemberForm.parentNode.insertBefore(errorDiv, addMemberForm.nextSibling);
+                
+                // Remove after 5 seconds
+                setTimeout(() => {
+                    errorDiv.remove();
+                }, 5000);
+            }
+            
+            function addMember(e) {
+                // e.preventDefault() is now handled in the event listener
+                
+                // Use the new unified validation system
+                if (!formValidator.validateAll()) {
+                    // Show a summary error message if there are multiple errors
+                    if (formValidator.errors.size > 1) {
+                        showErrorMessage(`Please fix ${formValidator.errors.size} validation errors before submitting.`);
+                    }
+                    return;
+                }
+                
+                const name = memberNameInput.value.trim();
+                const clubBase = memberTypeInput.value;
+                const joinDate = joinDateInput.value;
+                const leaveDate = leaveDateInput.value;
+
                 const selectedYear = parseInt(invoiceYearSelect.value, 10);
-                const individualDue = calculateIndividualDue(joinDate, typeValue, selectedYear, leaveDate);
+                const duesBreakdown = calculateIndividualDue(joinDate, clubBase, selectedYear, leaveDate);
                 const memberId = `member-${Date.now()}`;
                 const row = document.createElement('tr');
                 row.id = memberId;
-                row.dataset.due = individualDue;
+                row.dataset.due = duesBreakdown.total;
                 row.dataset.joinDate = joinDate;
                 row.dataset.leaveDate = leaveDate;
-                row.dataset.memberType = typeValue;
+                row.dataset.memberType = clubBase;
                 row.dataset.name = name;
                 row.classList.add('member-row');
                 
@@ -831,8 +1580,8 @@
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">${name}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${joinDate}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${leaveDate || '-'}</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${typeValue}</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-medium due-cell">$${individualDue.toFixed(2)}</td>
+                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${clubBase}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-medium due-cell">${formatDuesBreakdown(duesBreakdown)}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <button class="btn btn-secondary btn-sm !p-2 edit-member-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" /><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" /></svg>
@@ -850,11 +1599,22 @@
                     updateTotal();
                 });
                 
-                lastSelectedMemberType = typeValue;
+                lastSelectedClubBase = clubBase;
+                lastSelectedJoinDate = joinDate;
                 updateTotal();
+                
+                // Clear all validation states before resetting
+                formValidator.clearAllErrors();
+                
                 addMemberForm.reset();
-                joinDateInput.value = todayFormatted;
-                memberTypeInput.value = lastSelectedMemberType;
+                joinDateInput.value = lastSelectedJoinDate;
+                memberTypeInput.value = lastSelectedClubBase;
+                
+                // Show success message
+                showSuccessMessage('Member added successfully!');
+                
+                // Add success animation to the new row
+                row.classList.add('slide-up');
             }
 
             function editMember(memberId) {
@@ -869,37 +1629,81 @@
                 const leaveDate = row.dataset.leaveDate;
                 const memberType = row.dataset.memberType;
 
-                row.cells[0].innerHTML = `<input type="text" value="${name}" class="w-full form-input-sm">`;
-                row.cells[1].innerHTML = `<input type="date" value="${joinDate}" class="w-full form-input-sm">`;
-                row.cells[2].innerHTML = `<input type="date" value="${leaveDate || ''}" class="w-full form-input-sm">`;
+                // Enhanced input fields with better styling and visibility
+                row.cells[0].innerHTML = `<input type="text" value="${name}" class="edit-mode-input" placeholder="Enter member name">`;
+                row.cells[1].innerHTML = `<input type="date" value="${joinDate}" class="edit-mode-input">`;
+                row.cells[2].innerHTML = `<input type="date" value="${leaveDate || ''}" class="edit-mode-input" placeholder="Leave date (optional)">`;
                 row.cells[3].innerHTML = `
-                    <select class="w-full form-select-sm">
+                    <select class="edit-mode-select">
                         <option value="Community-Based" ${memberType === 'Community-Based' ? 'selected' : ''}>Community-Based ($8)</option>
                         <option value="University-Based" ${memberType === 'University-Based' ? 'selected' : ''}>University-Based ($5)</option>
                     </select>
                 `;
-                row.cells[4].innerHTML = '';
+                row.cells[4].innerHTML = '<span class="text-gray-400 italic">Calculating...</span>';
                 row.cells[5].innerHTML = `
-                    <button class="btn btn-primary btn-sm !p-2 save-member-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
-                    </button>
-                    <button class="btn btn-secondary btn-sm !p-2 cancel-edit-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
-                    </button>
+                    <div class="flex space-x-2">
+                        <button class="btn btn-primary btn-sm !p-2 save-member-btn" title="Save changes">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
+                        </button>
+                        <button class="btn btn-secondary btn-sm !p-2 cancel-edit-btn" title="Cancel editing">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" /></svg>
+                        </button>
+                    </div>
                 `;
 
+                // Add event listeners
                 row.querySelector('.save-member-btn').addEventListener('click', () => saveMember(memberId));
                 row.querySelector('.cancel-edit-btn').addEventListener('click', () => cancelEdit(memberId));
+                
+                // Auto-focus on the name input for better UX
+                setTimeout(() => {
+                    const nameInput = row.cells[0].querySelector('input');
+                    if (nameInput) {
+                        nameInput.focus();
+                        nameInput.select();
+                    }
+                }, 100);
+                
+                // Add keyboard support for better UX
+                const inputs = row.querySelectorAll('input, select');
+                inputs.forEach((input, index) => {
+                    input.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter') {
+                            e.preventDefault();
+                            if (index < inputs.length - 1) {
+                                inputs[index + 1].focus();
+                            } else {
+                                saveMember(memberId);
+                            }
+                        } else if (e.key === 'Escape') {
+                            e.preventDefault();
+                            cancelEdit(memberId);
+                        }
+                    });
+                });
             }
 
             function saveMember(memberId) {
                 const row = document.getElementById(memberId);
                 if (!row) return;
 
-                const newName = row.cells[0].querySelector('input').value;
+                const newName = row.cells[0].querySelector('input').value.trim();
                 const newJoinDate = row.cells[1].querySelector('input').value;
                 const newLeaveDate = row.cells[2].querySelector('input').value;
                 const newMemberType = row.cells[3].querySelector('select').value;
+
+                // Enhanced validation for edit mode
+                if (!newName) {
+                    showErrorMessage('Please enter a member name');
+                    row.cells[0].querySelector('input').focus();
+                    return;
+                }
+
+                if (!newJoinDate) {
+                    showErrorMessage('Please select a join date');
+                    row.cells[1].querySelector('input').focus();
+                    return;
+                }
 
                 row.dataset.name = newName;
                 row.dataset.joinDate = newJoinDate;
@@ -907,18 +1711,24 @@
                 row.dataset.memberType = newMemberType;
 
                 const selectedYear = parseInt(invoiceYearSelect.value, 10);
-                const individualDue = calculateIndividualDue(newJoinDate, newMemberType, selectedYear, newLeaveDate);
-                row.dataset.due = individualDue;
+                const duesBreakdown = calculateIndividualDue(newJoinDate, newMemberType, selectedYear, newLeaveDate);
+                row.dataset.due = duesBreakdown.total;
 
                 row.cells[0].textContent = newName;
                 row.cells[1].textContent = newJoinDate;
                 row.cells[2].textContent = newLeaveDate || '-';
                 row.cells[3].textContent = newMemberType;
-                row.cells[4].textContent = `$${individualDue.toFixed(2)}`;
+                row.cells[4].innerHTML = formatDuesBreakdown(duesBreakdown);
                 row.cells[4].classList.add('due-cell');
                 
                 finishEditing(row, memberId);
                 recalculateAllDues();
+                
+                // Show success feedback
+                row.style.backgroundColor = '#f0f9ff';
+                setTimeout(() => {
+                    row.style.backgroundColor = '';
+                }, 1000);
             }
 
             function cancelEdit(memberId) {
@@ -929,13 +1739,14 @@
                 const joinDate = row.dataset.joinDate;
                 const leaveDate = row.dataset.leaveDate;
                 const memberType = row.dataset.memberType;
-                const due = row.dataset.due;
+                const selectedYear = parseInt(invoiceYearSelect.value, 10);
+                const duesBreakdown = calculateIndividualDue(joinDate, memberType, selectedYear, leaveDate);
 
                 row.cells[0].textContent = name;
                 row.cells[1].textContent = joinDate;
                 row.cells[2].textContent = leaveDate || '-';
                 row.cells[3].textContent = memberType;
-                row.cells[4].textContent = `$${parseFloat(due).toFixed(2)}`;
+                row.cells[4].innerHTML = formatDuesBreakdown(duesBreakdown);
                 row.cells[4].classList.add('due-cell');
 
                 finishEditing(row, memberId);
@@ -964,10 +1775,13 @@
                 updateTotal();
             }
 
-            addMemberForm.addEventListener('submit', addMember);
+            addMemberForm.addEventListener('submit', (e) => {
+                e.preventDefault(); // Prevent default HTML5 validation
+                addMember(e);
+            });
             resetButton.addEventListener('click', resetCalculator);
             invoiceYearSelect.addEventListener('change', recalculateAllDues);
-            taxPercentageInput.addEventListener('input', updateTotal);
+            taxPercentageInput.addEventListener('input', debouncedUpdateTotal);
 
             // Bulk upload event listeners
             browseButton.addEventListener('click', () => fileInput.click());
@@ -1002,7 +1816,51 @@
             cancelUpload.addEventListener('click', resetBulkUpload);
             downloadTemplate.addEventListener('click', downloadCSVTemplate);
 
+            // Initialize the application
             populateYearSelector();
+            
+            // Add keyboard shortcuts
+            document.addEventListener('keydown', (e) => {
+                // Ctrl/Cmd + Enter to add member
+                if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                    const activeElement = document.activeElement;
+                    if (activeElement && activeElement.closest('#add-member-form')) {
+                        addMemberForm.dispatchEvent(new Event('submit'));
+                    }
+                }
+                
+                // Escape to close modals/overlays
+                if (e.key === 'Escape') {
+                    const loadingOverlay = document.getElementById('loading-overlay');
+                    if (loadingOverlay && loadingOverlay.classList.contains('active')) {
+                        loadingOverlay.classList.remove('active');
+                    }
+                }
+            });
+            
+            // Add form field validation on blur using the new system
+            [memberNameInput, memberTypeInput, joinDateInput, leaveDateInput].forEach(input => {
+                if (input) {
+                    input.addEventListener('blur', () => {
+                        // Validate only the specific field that lost focus
+                        formValidator.validateField(input.id);
+                    });
+                    
+                    // Add real-time validation on input for better UX
+                    input.addEventListener('input', () => {
+                        // Clear error state when user starts typing/selecting
+                        if (formValidator.errors.has(input.id)) {
+                            formValidator.clearFieldError(input.id);
+                        }
+                    });
+                }
+            });
+            
+            // Performance optimization: Preload critical resources
+            requestIdleCallback(() => {
+                // Preload any additional resources if needed
+                console.log('Application loaded successfully');
+            });
         });
     </script>
 </body>
