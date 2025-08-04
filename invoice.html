@@ -698,33 +698,31 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <!-- Invoice Year Selection -->
                             <div class="bg-gradient-to-br from-gray-50 to-blue-50 p-6 rounded-xl border border-blue-100 shadow-sm hover:shadow-md transition-all duration-300">
-                                <div class="text-center mb-4">
-                                    <div>
-                                        <h3 class="text-lg font-bold text-blue-700">Invoice Period</h3>
-                                        <p class="text-sm text-blue-600">Select the invoice year</p>
-                                    </div>
-                                </div>
-                                <label for="invoice-year-select" class="block text-sm font-semibold text-blue-600 mb-3 text-center">Invoice of January:</label>
+                                <label for="invoice-year-select" class="block text-m font-bold text-blue-700 mb-3 text-center">Invoice of January</label>
                                 <select id="invoice-year-select" class="w-full px-4 py-3 border-2 border-blue-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-center font-semibold bg-white shadow-sm">
                                     <!-- Options will be populated by JavaScript -->
                                 </select>
+                                <div class="text-center mt-3">
+                                    <div>        
+                                        <p class="text-sm text-blue-600">Select the invoice year</p>
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Tax Percentage Input -->
                             <div class="bg-gradient-to-br from-gray-50 to-green-50 p-6 rounded-xl border border-green-100 shadow-sm hover:shadow-md transition-all duration-300">
-                                <div class="text-center mb-4">
-                                    <div>
-                                        <h3 class="text-lg font-bold text-green-700">Tax Settings</h3>
-                                        <p class="text-sm text-green-600">Configure tax percentage</p>
-                                    </div>
-                                </div>
-                                <label for="tax-percentage" class="block text-sm font-semibold text-green-600 mb-3 text-center">Tax Percentage (%):</label>
+                                <label for="tax-percentage" class="block text-m font-bold text-green-700 mb-3 text-center">Tax Percentage (%)</label>
                                 <div class="relative">
                                     <input type="number" id="tax-percentage" min="0" max="100" step="0.01" value="18" 
                                            class="w-full px-4 py-3 pr-12 border-2 border-green-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200 text-center font-semibold bg-white shadow-sm" 
                                            placeholder="18">
                                     <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                                         <span class="text-green-600 font-semibold">%</span>
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <div>
+                                        <p class="text-sm text-green-600">Configure tax percentage</p>
                                     </div>
                                 </div>
                             </div>
@@ -742,6 +740,23 @@
                                 <p class="text-lg text-green-700 font-semibold mb-2">Total with Tax</p>
                                 <p id="total-invoice-amount" class="text-4xl font-bold text-green-800 tracking-tight my-2">$0.00</p>
                                 <p id="tax-breakdown" class="text-sm text-gray-600">Tax: $0.00 (18%)</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Horizontal Line -->
+                        <div class="border-t border-blue-200 my-6"></div>
+                        
+                        <!-- Additional Summary Data -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                            <div class="text-center">
+                                <p class="text-sm text-gray-500 font-medium mb-1">Members</p>
+                                <p id="total-members" class="text-2xl font-semibold text-gray-700 tracking-tight">0</p>
+                                <p class="text-xs text-gray-400">Total Full Year Dues</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-sm text-gray-500 font-medium mb-1">Months</p>
+                                <p id="total-prorated-months" class="text-2xl font-semibold text-gray-700 tracking-tight">0</p>
+                                <p class="text-xs text-gray-400">Total of Months in Prorata Calculation</p>
                             </div>
                         </div>
                     </div>
@@ -1215,20 +1230,16 @@
                     const joinMonth = joinDate.getMonth();
                     const joinDay = joinDate.getDate();
                     
-                    // New logic: If member is added on or before the 1st of the month, they are billed for that month
-                    // If member is added after the 1st of the month, they are not billed for that month
+                    // Logic: If member joins on the 1st of the month or before, that month is counted
+                    // If member joins after the 1st of the month, that month is not counted
                     let effectiveJoinMonth = joinMonth;
                     if (joinDay > 1) {
                         // If joined after the 1st, don't count that month
                         effectiveJoinMonth += 1;
                     }
                     
-                    // If effective join month is December or later, no charge for join year
-                    if (effectiveJoinMonth >= 12) {
-                        return { fullYear: 0, prorated: 0, total: 0 };
-                    }
-
-                    const monthsInJoinYear = 12 - effectiveJoinMonth;
+                    // Calculate prorated months for join year (even if joined in December)
+                    const monthsInJoinYear = Math.max(0, 12 - effectiveJoinMonth);
                     let proratedDues = (baseDues / 12) * monthsInJoinYear;
 
                     // Check if member left before invoice date
@@ -1239,7 +1250,8 @@
                             const leaveMonth = leaveDate.getMonth();
                             const leaveDay = leaveDate.getDate();
                             
-                            // Apply same logic for leave date: if left after the 1st, count that month
+                            // Logic for leave date: if they leave after the 1st, count that month
+                            // If they leave on or before the 1st, don't count that month
                             let effectiveLeaveMonth = leaveMonth;
                             if (leaveDay > 1) {
                                 effectiveLeaveMonth += 1;
@@ -1248,7 +1260,7 @@
                             // Calculate actual months of membership in join year
                             // If leave month is before join month, no charge
                             if (effectiveLeaveMonth < effectiveJoinMonth) {
-                                return { fullYear: 0, prorated: 0, total: 0 };
+                                return { fullYear: 0, prorated: 0, total: 0, proratedMonths: 0 };
                             }
                             
                             // Calculate months based on effective join and leave months
@@ -1258,24 +1270,24 @@
                             actualMonthsInJoinYear = Math.max(0, actualMonthsInJoinYear);
                             proratedDues = (baseDues / 12) * actualMonthsInJoinYear;
                             
-                            return { fullYear: 0, prorated: proratedDues, total: proratedDues };
+                            return { fullYear: 0, prorated: proratedDues, total: proratedDues, proratedMonths: actualMonthsInJoinYear };
                         }
                     }
                     // Still a member on Jan 1st: charge both base fee and prorated fee
-                    return { fullYear: baseDues, prorated: proratedDues, total: baseDues + proratedDues };
+                    return { fullYear: baseDues, prorated: proratedDues, total: baseDues + proratedDues, proratedMonths: monthsInJoinYear };
                 }
 
                 // If joined and left in the same year (not the year immediately preceding the invoice year), charge nothing
-                if (joinYear >= invoiceYear) return { fullYear: 0, prorated: 0, total: 0 };
+                if (joinYear >= invoiceYear) return { fullYear: 0, prorated: 0, total: 0, proratedMonths: 0 };
 
                 // If left before Jan 1st, charge nothing
                 if (leaveDateStr) {
                     const leaveDate = new Date(leaveDateStr + 'T00:00:00');
-                    if (leaveDate < invoiceDate) return { fullYear: 0, prorated: 0, total: 0 };
+                    if (leaveDate < invoiceDate) return { fullYear: 0, prorated: 0, total: 0, proratedMonths: 0 };
                 }
 
-                if (joinYear < invoiceYear - 1) return { fullYear: baseDues, prorated: 0, total: baseDues };
-                return { fullYear: 0, prorated: 0, total: 0 };
+                if (joinYear < invoiceYear - 1) return { fullYear: baseDues, prorated: 0, total: baseDues, proratedMonths: 0 };
+                return { fullYear: 0, prorated: 0, total: 0, proratedMonths: 0 };
             }
 
             // Debounced function for performance optimization
@@ -1297,6 +1309,8 @@
                     let baseTotal = 0;
                     let totalFullYear = 0;
                     let totalProrated = 0;
+                    let totalMembersWithFullYear = 0;
+                    let totalProratedMonths = 0;
                     const selectedYear = parseInt(invoiceYearSelect.value, 10);
                     const memberRows = memberRosterBody.querySelectorAll('tr');
                     
@@ -1309,6 +1323,14 @@
                         baseTotal += duesBreakdown.total;
                         totalFullYear += duesBreakdown.fullYear;
                         totalProrated += duesBreakdown.prorated;
+                        
+                        // Count members with full year dues
+                        if (duesBreakdown.fullYear > 0) {
+                            totalMembersWithFullYear++;
+                        }
+                        
+                        // Add prorated months directly from the calculation
+                        totalProratedMonths += duesBreakdown.proratedMonths || 0;
                     });
                     
                     // Calculate tax
@@ -1325,6 +1347,17 @@
                     const duesBreakdownEl = document.getElementById('dues-breakdown');
                     if (duesBreakdownEl) {
                         duesBreakdownEl.textContent = `Full Year: $${totalFullYear.toFixed(2)} + Prorated: $${totalProrated.toFixed(2)}`;
+                    }
+                    
+                    // Update new summary data
+                    const totalMembersEl = document.getElementById('total-members');
+                    const totalProratedMonthsEl = document.getElementById('total-prorated-months');
+                    
+                    if (totalMembersEl) {
+                        totalMembersEl.textContent = totalMembersWithFullYear;
+                    }
+                    if (totalProratedMonthsEl) {
+                        totalProratedMonthsEl.textContent = totalProratedMonths;
                     }
                     
                     // Show/hide empty state
