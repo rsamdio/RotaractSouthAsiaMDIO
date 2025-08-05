@@ -552,7 +552,7 @@
     <div id="loading-overlay" class="loading-overlay">
         <div class="loading-content">
             <div class="loading-spinner w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full mx-auto mb-4"></div>
-            <h3 class="text-lg font-bold text-gray-800 mb-2">Generating PDF Report</h3>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Generating Detailed Report</h3>
             <p id="loading-message" class="text-gray-600 font-medium mb-4">Preparing...</p>
             
             <div class="loading-progress">
@@ -846,7 +846,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                             </svg>
-                            <span>Generate PDF Report</span>
+                            <span>Generate Detailed Report</span>
                         </button>
                         
                         <div id="pdfStatus" class="mt-3 text-center hidden">
@@ -855,7 +855,7 @@
                                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                     <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                 </svg>
-                                <span>Generating PDF...</span>
+                                <span>Generating Detailed Report...</span>
                             </div>
                         </div>
                     </div>
@@ -2634,7 +2634,7 @@
                         doc.setFontSize(16);
                         doc.setFont('helvetica', 'bold');
                         doc.setTextColor(255, 255, 255); // White
-                        doc.text('Rotaract Club Dues Calculator', pageWidth / 2, 12, { align: 'center' });
+                        doc.text('Rotaract Club Invoice Calculator', pageWidth / 2, 12, { align: 'center' });
                         
                         doc.setFontSize(18);
                         doc.setFont('helvetica', 'bold');
@@ -2750,7 +2750,7 @@
 
                         // Update loading message and progress
                         if (loadingMessage) {
-                            loadingMessage.textContent = 'Generating PDF table...';
+                            loadingMessage.textContent = 'Generating Detailed Report table...';
                         }
                         if (progressBar) {
                             progressBar.style.width = '70%';
@@ -2839,7 +2839,7 @@
                                             doc.setFontSize(16);
                                             doc.setFont('helvetica', 'bold');
                                             doc.setTextColor(255, 255, 255); // White
-                                            doc.text('Rotaract Club Dues Calculator', pageWidth / 2, 12, { align: 'center' });
+                                            doc.text('Rotaract Club Invoice Calculator', pageWidth / 2, 12, { align: 'center' });
                                             
                                             doc.setFontSize(18);
                                             doc.setFont('helvetica', 'bold');
@@ -2911,7 +2911,7 @@
                             doc.setFontSize(16);
                             doc.setFont('helvetica', 'bold');
                             doc.setTextColor(255, 255, 255); // White
-                            doc.text('Rotaract Club Dues Calculator', pageWidth / 2, 12, { align: 'center' });
+                            doc.text('Rotaract Club Invoice Calculator', pageWidth / 2, 12, { align: 'center' });
                             
                             doc.setFontSize(18);
                             doc.setFont('helvetica', 'bold');
@@ -3009,7 +3009,7 @@
                         step4.classList.add('completed');
                     }
                     if (loadingMessage) {
-                        loadingMessage.textContent = 'PDF generated successfully!';
+                        loadingMessage.textContent = 'Detailed Report generated successfully!';
                     }
 
                     // Hide loading status and overlay after a brief delay
@@ -3022,7 +3022,7 @@
                     }, 1000);
 
                 } catch (error) {
-                    console.error('Error generating PDF:', error);
+                    console.error('Error generating Detailed Report:', error);
                     
                     // Hide loading status and overlay
                     downloadPdfBtn.disabled = false;
@@ -3032,7 +3032,7 @@
                     }
                     
                     // Show error message
-                    alert('Error generating PDF. Please try again.');
+                    alert('Error generating Detailed Report. Please try again.');
                 }
             }
         });
