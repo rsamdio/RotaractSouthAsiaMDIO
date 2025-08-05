@@ -411,7 +411,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -424,6 +424,57 @@
         .loading-overlay.active {
             opacity: 1;
             visibility: visible;
+        }
+        
+        .loading-content {
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            max-width: 400px;
+            width: 90%;
+        }
+        
+        .loading-progress {
+            width: 100%;
+            height: 8px;
+            background-color: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .loading-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+        
+        .loading-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            color: #6b7280;
+        }
+        
+        .loading-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+        
+        .loading-step.active {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        
+        .loading-step.completed {
+            color: #10b981;
         }
         
         /* Enhanced table responsiveness */
@@ -491,13 +542,41 @@
         gtag('config', 'G-Z4F8DL7KLQ');
     </script>
 
+    <!-- jsPDF Library for PDF Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+
 </head>
 <body class="antialiased">
     <!-- Loading Overlay -->
     <div id="loading-overlay" class="loading-overlay">
-        <div class="text-center">
-            <div class="loading-spinner w-8 h-8 border-4 border-blue-200 border-t-blue-600 rounded-full mx-auto mb-4"></div>
-            <p class="text-gray-600 font-medium">Loading...</p>
+        <div class="loading-content">
+            <div class="loading-spinner w-12 h-12 border-4 border-blue-200 border-t-blue-600 rounded-full mx-auto mb-4"></div>
+            <h3 class="text-lg font-bold text-gray-800 mb-2">Generating PDF Report</h3>
+            <p id="loading-message" class="text-gray-600 font-medium mb-4">Preparing...</p>
+            
+            <div class="loading-progress">
+                <div id="loading-progress-bar" class="loading-progress-bar"></div>
+            </div>
+            
+            <div class="loading-steps">
+                <div id="step-1" class="loading-step active">
+                    <div class="w-2 h-2 bg-blue-500 rounded-full mb-1"></div>
+                    <span>Prepare</span>
+                </div>
+                <div id="step-2" class="loading-step">
+                    <div class="w-2 h-2 bg-gray-300 rounded-full mb-1"></div>
+                    <span>Process</span>
+                </div>
+                <div id="step-3" class="loading-step">
+                    <div class="w-2 h-2 bg-gray-300 rounded-full mb-1"></div>
+                    <span>Generate</span>
+                </div>
+                <div id="step-4" class="loading-step">
+                    <div class="w-2 h-2 bg-gray-300 rounded-full mb-1"></div>
+                    <span>Complete</span>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -759,6 +838,27 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- PDF Generation Section -->
+                    <div class="mt-8 pt-6 border-t border-blue-200">
+
+                        <button id="downloadPdfBtn" class="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                            <span>Generate PDF Report</span>
+                        </button>
+                        
+                        <div id="pdfStatus" class="mt-3 text-center hidden">
+                            <div class="inline-flex items-center space-x-2 text-blue-600">
+                                <svg class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                <span>Generating PDF...</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Member Roster Card -->
@@ -792,9 +892,11 @@
                                     <th scope="col" class="px-6 py-4 text-center text-xs font-bold text-gray-600 uppercase tracking-wider">Leave Date</th>
                                     <th scope="col" class="px-6 py-4 text-center text-xs font-bold text-gray-600 uppercase tracking-wider">Club Base</th>
                                     <th scope="col" class="px-6 py-4 text-center text-xs font-bold text-gray-600 uppercase tracking-wider">
-                                        Est. Due
+                                        Est. Base Due
                                         <div class="text-xs font-normal text-gray-500 normal-case mt-1">(Full Year + Prorated)</div>
                                     </th>
+                                    <th scope="col" class="px-6 py-4 text-center text-xs font-bold text-gray-600 uppercase tracking-wider">Active Member</th>
+                                    <th scope="col" class="px-6 py-4 text-center text-xs font-bold text-gray-600 uppercase tracking-wider">Prorated Months</th>
                                     <th scope="col" class="relative px-6 py-4"><span class="sr-only">Actions</span></th>
                                 </tr>
                             </thead>
@@ -802,6 +904,75 @@
                                 <!-- Rows will be dynamically injected here -->
                             </tbody>
                         </table>
+                    </div>
+                    
+                    <!-- Pagination Controls -->
+                    <div id="pagination-controls" class="mt-6 px-6 hidden">
+                        <!-- Desktop Layout -->
+                        <div class="hidden md:flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm text-gray-700">Show</span>
+                                <select id="page-size-select" class="border border-gray-300 rounded-md px-2 py-1 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="10" selected>10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                                <span class="text-sm text-gray-700">entries per page</span>
+                            </div>
+                            
+                            <div class="flex items-center space-x-2">
+                                <span id="pagination-info" class="text-sm text-gray-700">
+                                    Showing <span id="start-entry">1</span> to <span id="end-entry">10</span> of <span id="total-entries">0</span> entries
+                                </span>
+                            </div>
+                            
+                            <div class="flex items-center space-x-1">
+                                <button id="prev-page" class="px-3 py-1 text-sm border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+                                    Previous
+                                </button>
+                                <div id="page-numbers" class="flex items-center space-x-1">
+                                    <!-- Page numbers will be dynamically generated -->
+                                </div>
+                                <button id="next-page" class="px-3 py-1 text-sm border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+                                    Next
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Mobile Layout -->
+                        <div class="md:hidden space-y-3">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-2">
+                                    <span class="text-sm text-gray-700">Show</span>
+                                    <select id="page-size-select-mobile" class="border border-gray-300 rounded-md px-2 py-1 text-sm focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                        <option value="10" selected>10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    </select>
+                                    <span class="text-sm text-gray-700">entries</span>
+                                </div>
+                                
+                                <span id="pagination-info-mobile" class="text-sm text-gray-700">
+                                    <span id="start-entry-mobile">1</span>-<span id="end-entry-mobile">10</span> of <span id="total-entries-mobile">0</span>
+                                </span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <button id="prev-page-mobile" class="px-3 py-1 text-sm border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+                                    Previous
+                                </button>
+                                
+                                <div id="page-numbers-mobile" class="flex items-center space-x-1">
+                                    <!-- Page numbers will be dynamically generated -->
+                                </div>
+                                
+                                <button id="next-page-mobile" class="px-3 py-1 text-sm border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
+                                    Next
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- Empty State -->
@@ -813,6 +984,8 @@
                         <p class="text-gray-500 mb-4">Add members individually or upload a roster file to get started</p>
                     </div>
                 </div>
+
+
             </div>
         </main>
 
@@ -914,6 +1087,8 @@
             </div>
         </section>
 
+
+
         <footer class="mt-12 py-6 bg-gradient-to-br from-gray-25 to-gray-50 border-t border-gray-100">
             <div class="max-w-5xl mx-auto px-6">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
@@ -1001,6 +1176,11 @@
 
             let lastSelectedClubBase = memberTypeInput.value;
             let lastSelectedJoinDate = joinDateInput.value;
+
+            // Pagination variables
+            let currentPage = 1;
+            let pageSize = 10;
+            let allMemberRows = [];
 
             // Bulk Upload Functions
             function downloadCSVTemplate() {
@@ -1198,6 +1378,8 @@
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${member.leaveDate || '-'}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${member.clubBase}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-medium due-cell">${formatDuesBreakdown(duesBreakdown)}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">${duesBreakdown.fullYear > 0 ? 'Yes' : 'No'}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">${duesBreakdown.proratedMonths || 0}</td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                             <button class="btn btn-secondary btn-sm !p-2 edit-member-btn">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" /><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" /></svg>
@@ -1214,10 +1396,12 @@
                     row.querySelector('.remove-member-btn').addEventListener('click', () => {
                         row.remove();
                         updateTotal();
+                        updatePagination();
                     });
                 });
 
                 updateTotal();
+                updatePagination();
                 
                 // Show success animation and return to upload area
                 showSuccessAnimation();
@@ -1295,6 +1479,11 @@
                 if(invoiceDateDisplay) invoiceDateDisplay.textContent = `Jan 1st, ${selectedYear}`;
             }
 
+            // Helper function for precise decimal arithmetic
+            function preciseDecimal(value, decimals = 2) {
+                return Math.round(value * Math.pow(10, decimals)) / Math.pow(10, decimals);
+            }
+
             function formatDuesBreakdown(duesBreakdown) {
                 const { fullYear, prorated, total } = duesBreakdown;
                 
@@ -1305,11 +1494,11 @@
                 let breakdown = '';
                 
                 if (fullYear > 0 && prorated > 0) {
-                    breakdown = `$${fullYear.toFixed(2)} + $${prorated.toFixed(2)} = $${total.toFixed(2)}`;
+                    breakdown = `$${preciseDecimal(fullYear).toFixed(2)} + $${preciseDecimal(prorated).toFixed(2)} = $${preciseDecimal(total).toFixed(2)}`;
                 } else if (fullYear > 0) {
-                    breakdown = `$${fullYear.toFixed(2)} + $0.00 = $${total.toFixed(2)}`;
+                    breakdown = `$${preciseDecimal(fullYear).toFixed(2)} + $0.00 = $${preciseDecimal(total).toFixed(2)}`;
                 } else if (prorated > 0) {
-                    breakdown = `$0.00 + $${prorated.toFixed(2)} = $${total.toFixed(2)}`;
+                    breakdown = `$0.00 + $${preciseDecimal(prorated).toFixed(2)} = $${preciseDecimal(total).toFixed(2)}`;
                 }
                 
                 return breakdown;
@@ -1336,7 +1525,7 @@
                     
                     // Calculate prorated months for join year (even if joined in December)
                     const monthsInJoinYear = Math.max(0, 12 - effectiveJoinMonth);
-                    let proratedDues = (baseDues / 12) * monthsInJoinYear;
+                    let proratedDues = Math.round((baseDues / 12) * monthsInJoinYear * 100) / 100;
 
                     // Check if member left before invoice date
                     if (leaveDateStr) {
@@ -1364,13 +1553,14 @@
                             
                             // Ensure months is not negative
                             actualMonthsInJoinYear = Math.max(0, actualMonthsInJoinYear);
-                            proratedDues = (baseDues / 12) * actualMonthsInJoinYear;
+                            proratedDues = Math.round((baseDues / 12) * actualMonthsInJoinYear * 100) / 100;
                             
                             return { fullYear: 0, prorated: proratedDues, total: proratedDues, proratedMonths: actualMonthsInJoinYear };
                         }
                     }
                     // Still a member on Jan 1st: charge both base fee and prorated fee
-                    return { fullYear: baseDues, prorated: proratedDues, total: baseDues + proratedDues, proratedMonths: monthsInJoinYear };
+                    const total = Math.round((baseDues + proratedDues) * 100) / 100;
+                    return { fullYear: baseDues, prorated: proratedDues, total: total, proratedMonths: monthsInJoinYear };
                 }
 
                 // If joined and left in the same year (not the year immediately preceding the invoice year), charge nothing
@@ -1429,20 +1619,22 @@
                         totalProratedMonths += duesBreakdown.proratedMonths || 0;
                     });
                     
-                    // Calculate tax
+                    // Calculate tax with precise arithmetic
                     const taxPercentage = parseFloat(taxPercentageInput.value) || 0;
-                    const taxAmount = (baseTotal * taxPercentage) / 100;
-                    const totalWithTax = baseTotal + taxAmount;
+                    const taxAmount = Math.round((baseTotal * taxPercentage) / 100 * 100) / 100;
+                    const totalWithTax = Math.round((baseTotal + taxAmount) * 100) / 100;
                     
-                    // Update display with animation
-                    baseInvoiceAmountEl.textContent = `$${baseTotal.toFixed(2)}`;
-                    totalInvoiceAmountEl.textContent = `$${totalWithTax.toFixed(2)}`;
-                    taxBreakdownEl.textContent = `Tax: $${taxAmount.toFixed(2)} (${taxPercentage}%)`;
+                    // Update display with animation and precise formatting
+                    baseInvoiceAmountEl.textContent = `$${Math.round(baseTotal * 100) / 100}`;
+                    totalInvoiceAmountEl.textContent = `$${Math.round(totalWithTax * 100) / 100}`;
+                    taxBreakdownEl.textContent = `Tax: $${Math.round(taxAmount * 100) / 100} (${taxPercentage}%)`;
                     
-                    // Update dues breakdown
+                    // Update dues breakdown with precise arithmetic
                     const duesBreakdownEl = document.getElementById('dues-breakdown');
                     if (duesBreakdownEl) {
-                        duesBreakdownEl.textContent = `Full Year: $${totalFullYear.toFixed(2)} + Prorated: $${totalProrated.toFixed(2)}`;
+                        const preciseFullYear = Math.round(totalFullYear * 100) / 100;
+                        const preciseProrated = Math.round(totalProrated * 100) / 100;
+                        duesBreakdownEl.textContent = `Full Year: $${preciseFullYear.toFixed(2)} + Prorated: $${preciseProrated.toFixed(2)}`;
                     }
                     
                     // Update new summary data
@@ -1480,6 +1672,13 @@
                     const duesBreakdown = calculateIndividualDue(joinDate, memberType, selectedYear, leaveDate);
                     row.dataset.due = duesBreakdown.total;
                     row.querySelector('.due-cell').innerHTML = formatDuesBreakdown(duesBreakdown);
+                    
+                    // Update the new columns
+                    const cells = row.querySelectorAll('td');
+                    if (cells.length >= 7) {
+                        cells[5].textContent = duesBreakdown.fullYear > 0 ? 'Yes' : 'No';
+                        cells[6].textContent = duesBreakdown.proratedMonths || 0;
+                    }
                 });
                 updateTotal();
                 updateInvoiceDateDisplay();
@@ -1704,18 +1903,20 @@
                 row.dataset.name = name;
                 row.classList.add('member-row');
                 
-                row.innerHTML = `
+                                row.innerHTML = `
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-800">${name}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${joinDate}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${leaveDate || '-'}</td>
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${clubBase}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-medium due-cell">${formatDuesBreakdown(duesBreakdown)}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">${clubBase}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 font-medium due-cell">${formatDuesBreakdown(duesBreakdown)}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">${duesBreakdown.fullYear > 0 ? 'Yes' : 'No'}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 text-center">${duesBreakdown.proratedMonths || 0}</td>
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                         <button class="btn btn-secondary btn-sm !p-2 edit-member-btn">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" /><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" /></svg>
                         </button>
                         <button class="btn btn-danger btn-sm !p-2 remove-member-btn">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm4 0a1 1 0 012 0v6a1 1 0 11-2 0V8z" clip-rule="evenodd" /></svg>
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm4 0a1 1 0 012 0v6a1 1 0 11-2 0V8z" clip-rule="evenodd" /></svg>
                         </button>
                     </td>
                 `;
@@ -1725,11 +1926,13 @@
                 row.querySelector('.remove-member-btn').addEventListener('click', () => {
                     row.remove();
                     updateTotal();
+                    updatePagination();
                 });
                 
                 lastSelectedClubBase = clubBase;
                 lastSelectedJoinDate = joinDate;
                 updateTotal();
+                updatePagination();
                 
                 // Clear all validation states before resetting
                 formValidator.clearAllErrors();
@@ -1768,7 +1971,9 @@
                     </select>
                 `;
                 row.cells[4].innerHTML = '<span class="text-gray-400 italic">Calculating...</span>';
-                row.cells[5].innerHTML = `
+                row.cells[5].innerHTML = '<span class="text-gray-400 italic">Calculating...</span>';
+                row.cells[6].innerHTML = '<span class="text-gray-400 italic">Calculating...</span>';
+                row.cells[7].innerHTML = `
                     <div class="flex space-x-2">
                         <button class="btn btn-primary btn-sm !p-2 save-member-btn" title="Save changes">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" /></svg>
@@ -1848,6 +2053,8 @@
                 row.cells[3].textContent = newMemberType;
                 row.cells[4].innerHTML = formatDuesBreakdown(duesBreakdown);
                 row.cells[4].classList.add('due-cell');
+                row.cells[5].textContent = duesBreakdown.fullYear > 0 ? 'Yes' : 'No';
+                row.cells[6].textContent = duesBreakdown.proratedMonths || 0;
                 
                 finishEditing(row, memberId);
                 recalculateAllDues();
@@ -1876,13 +2083,15 @@
                 row.cells[3].textContent = memberType;
                 row.cells[4].innerHTML = formatDuesBreakdown(duesBreakdown);
                 row.cells[4].classList.add('due-cell');
+                row.cells[5].textContent = duesBreakdown.fullYear > 0 ? 'Yes' : 'No';
+                row.cells[6].textContent = duesBreakdown.proratedMonths || 0;
 
                 finishEditing(row, memberId);
             }
 
             function finishEditing(row, memberId) {
                 row.classList.remove('editing');
-                row.cells[5].innerHTML = `
+                row.cells[7].innerHTML = `
                     <button class="btn btn-secondary btn-sm !p-2 edit-member-btn">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" /><path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" /></svg>
                     </button>
@@ -1900,7 +2109,156 @@
             
             function resetCalculator() {
                 memberRosterBody.innerHTML = '';
+                allMemberRows = [];
+                currentPage = 1;
                 updateTotal();
+                updatePagination();
+            }
+
+            // Pagination Functions
+            function updatePagination() {
+                const paginationControls = document.getElementById('pagination-controls');
+                const pageSizeSelect = document.getElementById('page-size-select');
+                const pageSizeSelectMobile = document.getElementById('page-size-select-mobile');
+                const prevPageBtn = document.getElementById('prev-page');
+                const nextPageBtn = document.getElementById('next-page');
+                const prevPageBtnMobile = document.getElementById('prev-page-mobile');
+                const nextPageBtnMobile = document.getElementById('next-page-mobile');
+                const pageNumbers = document.getElementById('page-numbers');
+                const pageNumbersMobile = document.getElementById('page-numbers-mobile');
+                const startEntry = document.getElementById('start-entry');
+                const endEntry = document.getElementById('end-entry');
+                const totalEntries = document.getElementById('total-entries');
+                const startEntryMobile = document.getElementById('start-entry-mobile');
+                const endEntryMobile = document.getElementById('end-entry-mobile');
+                const totalEntriesMobile = document.getElementById('total-entries-mobile');
+
+                // Get all member rows
+                allMemberRows = Array.from(memberRosterBody.querySelectorAll('tr.member-row'));
+                
+                const totalMembers = allMemberRows.length;
+                const totalPages = Math.ceil(totalMembers / pageSize);
+                
+                // Show/hide pagination controls
+                if (totalMembers > pageSize) {
+                    paginationControls.classList.remove('hidden');
+                } else {
+                    paginationControls.classList.add('hidden');
+                }
+                
+                // Update pagination info
+                const start = (currentPage - 1) * pageSize + 1;
+                const end = Math.min(currentPage * pageSize, totalMembers);
+                
+                startEntry.textContent = totalMembers > 0 ? start : 0;
+                endEntry.textContent = end;
+                totalEntries.textContent = totalMembers;
+                
+                // Update mobile pagination info
+                if (startEntryMobile) startEntryMobile.textContent = totalMembers > 0 ? start : 0;
+                if (endEntryMobile) endEntryMobile.textContent = end;
+                if (totalEntriesMobile) totalEntriesMobile.textContent = totalMembers;
+                
+                // Update page size selectors
+                pageSizeSelect.value = pageSize;
+                if (pageSizeSelectMobile) pageSizeSelectMobile.value = pageSize;
+                
+                // Update navigation buttons
+                prevPageBtn.disabled = currentPage === 1;
+                nextPageBtn.disabled = currentPage === totalPages;
+                
+                // Update mobile navigation buttons
+                if (prevPageBtnMobile) prevPageBtnMobile.disabled = currentPage === 1;
+                if (nextPageBtnMobile) nextPageBtnMobile.disabled = currentPage === totalPages;
+                
+                // Generate page numbers
+                pageNumbers.innerHTML = '';
+                const maxVisiblePages = 5;
+                let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+                let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+                
+                if (endPage - startPage + 1 < maxVisiblePages) {
+                    startPage = Math.max(1, endPage - maxVisiblePages + 1);
+                }
+                
+                for (let i = startPage; i <= endPage; i++) {
+                    const pageBtn = document.createElement('button');
+                    pageBtn.className = `px-3 py-1 text-sm border rounded-md transition-colors ${
+                        i === currentPage 
+                            ? 'bg-blue-500 text-white border-blue-500' 
+                            : 'border-gray-300 hover:bg-gray-50'
+                    }`;
+                    pageBtn.textContent = i;
+                    pageBtn.addEventListener('click', () => goToPage(i));
+                    pageNumbers.appendChild(pageBtn);
+                }
+                
+                // Generate mobile page numbers (show fewer pages on mobile)
+                if (pageNumbersMobile) {
+                    pageNumbersMobile.innerHTML = '';
+                    const maxVisiblePagesMobile = 3; // Show fewer pages on mobile
+                    let startPageMobile = Math.max(1, currentPage - Math.floor(maxVisiblePagesMobile / 2));
+                    let endPageMobile = Math.min(totalPages, startPageMobile + maxVisiblePagesMobile - 1);
+                    
+                    if (endPageMobile - startPageMobile + 1 < maxVisiblePagesMobile) {
+                        startPageMobile = Math.max(1, endPageMobile - maxVisiblePagesMobile + 1);
+                    }
+                    
+                    for (let i = startPageMobile; i <= endPageMobile; i++) {
+                        const pageBtnMobile = document.createElement('button');
+                        pageBtnMobile.className = `px-2 py-1 text-xs border rounded transition-colors ${
+                            i === currentPage 
+                                ? 'bg-blue-500 text-white border-blue-500' 
+                                : 'border-gray-300 hover:bg-gray-50'
+                        }`;
+                        pageBtnMobile.textContent = i;
+                        pageBtnMobile.addEventListener('click', () => goToPage(i));
+                        pageNumbersMobile.appendChild(pageBtnMobile);
+                    }
+                }
+                
+                // Show current page rows
+                displayCurrentPage();
+            }
+            
+            function displayCurrentPage() {
+                const start = (currentPage - 1) * pageSize;
+                const end = start + pageSize;
+                
+                // Hide all rows
+                allMemberRows.forEach(row => {
+                    row.style.display = 'none';
+                });
+                
+                // Show only current page rows
+                allMemberRows.slice(start, end).forEach(row => {
+                    row.style.display = '';
+                });
+            }
+            
+            function goToPage(page) {
+                currentPage = page;
+                displayCurrentPage();
+                updatePagination();
+            }
+            
+            function goToPreviousPage() {
+                if (currentPage > 1) {
+                    goToPage(currentPage - 1);
+                }
+            }
+            
+            function goToNextPage() {
+                const totalPages = Math.ceil(allMemberRows.length / pageSize);
+                if (currentPage < totalPages) {
+                    goToPage(currentPage + 1);
+                }
+            }
+            
+            function changePageSize(newSize) {
+                pageSize = parseInt(newSize);
+                currentPage = 1; // Reset to first page
+                updatePagination();
             }
 
             addMemberForm.addEventListener('submit', (e) => {
@@ -1944,8 +2302,33 @@
             cancelUpload.addEventListener('click', resetBulkUpload);
             downloadTemplate.addEventListener('click', downloadCSVTemplate);
 
+            // Pagination event listeners
+            const pageSizeSelect = document.getElementById('page-size-select');
+            const prevPageBtn = document.getElementById('prev-page');
+            const nextPageBtn = document.getElementById('next-page');
+            
+            pageSizeSelect.addEventListener('change', (e) => changePageSize(e.target.value));
+            prevPageBtn.addEventListener('click', goToPreviousPage);
+            nextPageBtn.addEventListener('click', goToNextPage);
+
+            // Mobile pagination event listeners
+            const pageSizeSelectMobile = document.getElementById('page-size-select-mobile');
+            const prevPageBtnMobile = document.getElementById('prev-page-mobile');
+            const nextPageBtnMobile = document.getElementById('next-page-mobile');
+            
+            if (pageSizeSelectMobile) {
+                pageSizeSelectMobile.addEventListener('change', (e) => changePageSize(e.target.value));
+            }
+            if (prevPageBtnMobile) {
+                prevPageBtnMobile.addEventListener('click', goToPreviousPage);
+            }
+            if (nextPageBtnMobile) {
+                nextPageBtnMobile.addEventListener('click', goToNextPage);
+            }
+
             // Initialize the application
             populateYearSelector();
+            updatePagination();
             
             // Add keyboard shortcuts
             document.addEventListener('keydown', (e) => {
@@ -1987,8 +2370,671 @@
             // Performance optimization: Preload critical resources
             requestIdleCallback(() => {
                 // Preload any additional resources if needed
-                console.log('Application loaded successfully');
+                // Application loaded successfully
             });
+
+            // PDF Generation Functionality
+            const downloadPdfBtn = document.getElementById('downloadPdfBtn');
+            const pdfStatus = document.getElementById('pdfStatus');
+
+            downloadPdfBtn.addEventListener('click', generatePDFReport);
+
+            function generatePDFReport() {
+                // Show loading overlay for better UX
+                const loadingOverlay = document.getElementById('loading-overlay');
+                if (loadingOverlay) {
+                    loadingOverlay.classList.add('active');
+                }
+                
+                // Show loading status
+                downloadPdfBtn.disabled = true;
+                pdfStatus.classList.remove('hidden');
+                
+                // Use setTimeout to allow UI to update before starting heavy processing
+                setTimeout(() => {
+                    generatePDFReportAsync();
+                }, 100);
+            }
+
+            async function generatePDFReportAsync() {
+                try {
+                    // Update loading message for better UX
+                    const loadingMessage = document.getElementById('loading-message');
+                    const progressBar = document.getElementById('loading-progress-bar');
+                    const step1 = document.getElementById('step-1');
+                    const step2 = document.getElementById('step-2');
+                    const step3 = document.getElementById('step-3');
+                    const step4 = document.getElementById('step-4');
+                    
+                    if (loadingMessage) {
+                        loadingMessage.textContent = 'Preparing PDF report...';
+                    }
+                    if (progressBar) {
+                        progressBar.style.width = '10%';
+                    }
+                    
+                    // Create new PDF document
+                    const { jsPDF } = window.jspdf;
+                    const doc = new jsPDF();
+                    
+                    // Set document properties
+                    doc.setProperties({
+                        title: 'Rotaract Club Invoice Report',
+                        subject: 'Invoice Calculation Report',
+                        author: 'Rotaract South Asia MDIO',
+                        creator: 'Club Invoice Calculator'
+                    });
+
+                    let yPosition = 25;
+                    const pageWidth = doc.internal.pageSize.width;
+                    const pageHeight = doc.internal.pageSize.height;
+                    const margin = 20;
+                    const contentWidth = pageWidth - (2 * margin);
+                    let currentPage = 1;
+
+                    // Add main title
+                    doc.setFontSize(25);
+                    doc.setFont('helvetica', 'bold');
+                    doc.setTextColor(25, 118, 210); // Blue color
+                    doc.text('ROTARACT CLUB INVOICE CALCULATOR', pageWidth / 2, yPosition, { align: 'center' });
+                    
+                    yPosition += 10;
+                    
+                    // Add subtitle
+                    doc.setFontSize(12);
+                    doc.setFont('helvetica', 'normal');
+                    doc.setTextColor(75, 85, 99); // Gray color
+                    doc.text('(A tool by Rotaract South Asia MDIO)', pageWidth / 2, yPosition, { align: 'center' });
+                    
+                    yPosition += 20;
+                    
+                    // Add gradient-like header background
+                    doc.setFillColor(25, 118, 210); // Blue
+                    doc.rect(0, yPosition - 5, pageWidth, 35, 'F');
+                    
+                    // Header with white text
+                    doc.setFontSize(22);
+                    doc.setFont('helvetica', 'bold');
+                    doc.setTextColor(255, 255, 255); // White
+                    doc.text('Estimation Report', pageWidth / 2, yPosition + 15, { align: 'center' });
+                    
+                    yPosition += 45;
+                    
+                    // Date and Year with colorful styling
+                    doc.setFontSize(12);
+                    doc.setFont('helvetica', 'normal');
+                    doc.setTextColor(75, 85, 99); // Gray color
+                    const currentDate = new Date().toLocaleDateString('en-US', { 
+                        year: 'numeric', 
+                        month: 'long', 
+                        day: 'numeric' 
+                    });
+                    doc.text(`Generated on: ${currentDate}`, pageWidth / 2, yPosition, { align: 'center' });
+                    
+                    yPosition += 10;
+                    doc.text(`Estimate for Invoice of January, ${invoiceYearSelect.value}`, pageWidth / 2, yPosition, { align: 'center' });
+                    
+                    yPosition += 15;
+
+                    // Invoice Summary Section with colorful header
+                    doc.setFillColor(59, 130, 246); // Blue background
+                    doc.rect(margin - 5, yPosition - 5, contentWidth + 10, 15, 'F');
+                    
+                    doc.setFontSize(16);
+                    doc.setFont('helvetica', 'bold');
+                    doc.setTextColor(255, 255, 255); // White text
+                    doc.text('Invoice Summary', pageWidth / 2, yPosition + 5, { align: 'center' });
+                    
+                    yPosition += 20;
+                    
+                    // Get summary data from the existing calculations
+                    const baseAmount = parseFloat(baseInvoiceAmountEl.textContent.replace(/[^0-9.-]+/g, '')) || 0;
+                    const taxAmount = parseFloat(taxBreakdownEl.textContent.replace(/[^0-9.-]+/g, '')) || 0;
+                    const totalAmount = parseFloat(totalInvoiceAmountEl.textContent.replace(/[^0-9.-]+/g, '')) || 0;
+                    const totalMembers = document.getElementById('total-members').textContent || '0';
+                    const totalProratedMonths = document.getElementById('total-prorated-months').textContent || '0';
+                    const taxPercentage = taxPercentageInput.value || '0';
+
+                    // Extract Full Year and Prorated amounts from the base amount breakdown
+                    // The base amount is the sum of full year + prorated amounts
+                    // We'll calculate the breakdown based on the member roster data
+                    let totalFullYearAmount = 0;
+                    let totalProratedAmount = 0;
+                    
+                    // Use the existing calculated values from member roster cells
+                    const memberRowsForSummary = memberRosterBody.querySelectorAll('tr');
+                    memberRowsForSummary.forEach(row => {
+                        const cells = row.querySelectorAll('td');
+                        if (cells.length >= 7) {
+                            const estBaseDue = cells[4].textContent.trim();
+                            const activeMember = cells[5].textContent.trim();
+                            const proratedMonths = parseInt(cells[6].textContent.trim()) || 0;
+                            
+                            // Extract amounts from the existing calculated estBaseDue cell
+                            const dueMatch = estBaseDue.match(/\$([0-9,]+\.?[0-9]*) \+ \$([0-9,]+\.?[0-9]*) = \$([0-9,]+\.?[0-9]*)/);
+                            if (dueMatch) {
+                                const fullYearAmount = parseFloat(dueMatch[1].replace(/,/g, '')) || 0;
+                                const proratedAmount = parseFloat(dueMatch[2].replace(/,/g, '')) || 0;
+                                
+                                totalFullYearAmount += fullYearAmount;
+                                totalProratedAmount += proratedAmount;
+                            }
+                        }
+                    });
+
+                    // Summary table with enhanced styling and better number formatting
+                    const summaryData = [
+                        ['(a) Base RI Dues', `$${baseAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`],
+                        ['  (a1) Full Year Dues', `$${totalFullYearAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`],
+                        ['  (a2) Prorated Dues', `$${totalProratedAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`],
+                        [`(b) Tax (${taxPercentage}%)`, `$${taxAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`],
+                        ['(c) Total with Tax', `$${totalAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`],
+                        ['', ''], // Empty row for spacing
+                        ['Members (Full Year)', totalMembers],
+                        ['Prorated Months', totalProratedMonths]
+                    ];
+
+                    doc.autoTable({
+                        startY: yPosition,
+                        head: [['Description', 'Amount']],
+                        body: summaryData,
+                        theme: 'plain',
+                        headStyles: {
+                            textColor: [55, 65, 81],
+                            fontStyle: 'bold',
+                            fontSize: 12,
+                            halign: 'center',
+                            valign: 'middle',
+                            cellPadding: 5,
+                            lineColor: [200, 200, 200],
+                            lineWidth: 0.1,
+                            fillColor: [248, 250, 252]
+                        },
+                        styles: {
+                            fontSize: 11,
+                            cellPadding: 4,
+                            textColor: [75, 85, 99],
+                            lineColor: [220, 220, 220],
+                            lineWidth: 0.1
+                        },
+                        columnStyles: {
+                            0: { fontStyle: 'bold', textColor: [55, 65, 81] },
+                            1: { halign: 'center', fontStyle: 'bold', textColor: [55, 65, 81] }
+                        },
+                        didParseCell: function(data) {
+                            // Make Full Year Dues and Prorated Dues rows muted/less significant
+                            if (data.row.raw[0] && (data.row.raw[0].includes('(a1) Full Year Dues') || data.row.raw[0].includes('(a2) Prorated Dues'))) {
+                                data.cell.styles.fontSize = 10;
+                                data.cell.styles.textColor = [156, 163, 175]; // Muted gray color
+                                data.cell.styles.fontStyle = 'normal';
+                            }
+                        },
+                        tableWidth: 'auto',
+                        margin: { left: margin, right: margin }
+                    });
+
+                    yPosition = doc.lastAutoTable.finalY + 8;
+                    
+                    // Add legend below the invoice summary table
+                    doc.setFontSize(8);
+                    doc.setFont('helvetica', 'normal');
+                    doc.setTextColor(156, 163, 175); // Muted gray color
+                    doc.text('Base RI Dues = Full Year Dues + Prorated Dues (a = a1 + a2)', pageWidth / 2, yPosition, { align: 'center' });
+                    yPosition += 6;
+                    doc.text('Total with Tax = Base RI Dues + Tax (c = a + b)', pageWidth / 2, yPosition, { align: 'center' });
+                    
+                    yPosition += 20;
+
+                    // Member Roster Section - Start on page 2
+                    if (memberRosterBody.children.length > 0) {
+                        // Check if we have members to process - use more specific selector
+                        let memberRows = memberRosterBody.querySelectorAll('tr.member-row');
+                        
+                        if (memberRows.length === 0) {
+                            // Fallback to all tr elements if no member-row class found
+                            const allRows = memberRosterBody.querySelectorAll('tr');
+                            
+                            if (allRows.length === 0) {
+                                // No members to process, skip to disclaimer
+                                if (loadingMessage) {
+                                    loadingMessage.textContent = 'No members found, generating summary only...';
+                                }
+                                if (progressBar) {
+                                    progressBar.style.width = '70%';
+                                }
+                            } else {
+                                // Use all rows as fallback
+                                memberRows = allRows;
+                            }
+                        }
+                        
+                        if (memberRows.length > 0) {
+                            // Update loading message and progress
+                            if (loadingMessage) {
+                                loadingMessage.textContent = 'Processing member roster...';
+                            }
+                            if (progressBar) {
+                                progressBar.style.width = '30%';
+                            }
+                            if (step1) {
+                                step1.classList.remove('active');
+                                step1.classList.add('completed');
+                            }
+                            if (step2) {
+                                step2.classList.add('active');
+                            }
+                            
+                            doc.addPage();
+                            currentPage = 2;
+                        
+                        // Page 2 header with branding
+                        doc.setFillColor(25, 118, 210); // Blue
+                        doc.rect(0, 0, pageWidth, 30, 'F');
+                        
+                        doc.setFontSize(16);
+                        doc.setFont('helvetica', 'bold');
+                        doc.setTextColor(255, 255, 255); // White
+                        doc.text('Rotaract Club Dues Calculator', pageWidth / 2, 12, { align: 'center' });
+                        
+                        doc.setFontSize(18);
+                        doc.setFont('helvetica', 'bold');
+                        doc.setTextColor(255, 255, 255); // White
+                        doc.text('Member Roster', pageWidth / 2, 22, { align: 'center' });
+                        
+                        yPosition = 40;
+
+                        // Prepare member data for table using existing calculated values - optimized for large datasets
+                        const memberData = [];
+                        let totalEstDue = 0;
+                        let totalFullYearMembers = 0;
+                        let totalProrataMonths = 0;
+                        let totalFullYearAmount = 0;
+                        let totalProratedAmount = 0;
+                        
+                        // Process members in batches for better performance with large datasets
+                        const batchSize = Math.min(200, Math.max(100, Math.floor(memberRows.length / 10))); // Larger batch size for better performance
+                        const totalMembers = memberRows.length;
+                        
+                        // Memory optimization: Clear any existing data
+                        memberData.length = 0;
+                        
+                        // Convert NodeList to Array once for better performance
+                        const memberRowsArray = Array.from(memberRows);
+                        
+                        for (let i = 0; i < totalMembers; i += batchSize) {
+                            const endIndex = Math.min(i + batchSize, totalMembers);
+                            
+                            // Update progress for large datasets
+                            if (totalMembers > 100 && loadingMessage && progressBar) {
+                                const progress = Math.round((i / totalMembers) * 100);
+                                const overallProgress = 30 + (progress * 0.4); // 30% to 70%
+                                loadingMessage.textContent = `Processing members ${i + 1}-${endIndex} of ${totalMembers}...`;
+                                progressBar.style.width = `${overallProgress}%`;
+                            }
+                            
+                            // Process current batch
+                            for (let j = i; j < endIndex; j++) {
+                                const row = memberRowsArray[j];
+                                const cells = row.querySelectorAll('td');
+                                if (cells.length >= 7) { // Updated to check for 7 columns (including new Active Member and Prorated Months)
+                                    const name = cells[0].textContent.trim();
+                                    const joinDate = cells[1].textContent.trim();
+                                    const leaveDate = cells[2].textContent.trim() || 'Active';
+                                    const clubBase = cells[3].textContent.trim();
+                                    const estBaseDue = cells[4].textContent.trim(); // Already calculated value
+                                    const activeMember = cells[5].textContent.trim(); // "Yes" or "No"
+                                    const proratedMonths = parseInt(cells[6].textContent.trim()) || 0;
+                                    
+                                    // Extract amounts from the existing calculated estBaseDue cell
+                                    // Format is typically: "$X.XX + $Y.YY = $Z.ZZ"
+                                    const dueMatch = estBaseDue.match(/\$([0-9,]+\.?[0-9]*) \+ \$([0-9,]+\.?[0-9]*) = \$([0-9,]+\.?[0-9]*)/);
+                                    let fullYearAmount = 0;
+                                    let proratedAmount = 0;
+                                    let totalAmount = 0;
+                                    
+                                    if (dueMatch) {
+                                        fullYearAmount = parseFloat(dueMatch[1].replace(/,/g, '')) || 0;
+                                        proratedAmount = parseFloat(dueMatch[2].replace(/,/g, '')) || 0;
+                                        totalAmount = parseFloat(dueMatch[3].replace(/,/g, '')) || 0;
+                                    } else {
+                                        // Fallback: extract total amount from the cell
+                                        const totalMatch = estBaseDue.match(/\$([0-9,]+\.?[0-9]*)/);
+                                        if (totalMatch) {
+                                            totalAmount = parseFloat(totalMatch[1].replace(/,/g, '')) || 0;
+                                        }
+                                    }
+                                    
+                                    // Accumulate totals using existing calculated values
+                                    totalEstDue += totalAmount;
+                                    totalFullYearAmount += fullYearAmount;
+                                    totalProratedAmount += proratedAmount;
+                                    if (activeMember === 'Yes') totalFullYearMembers++;
+                                    totalProrataMonths += proratedMonths;
+                                    
+                                    memberData.push([name, joinDate, leaveDate, clubBase, estBaseDue, activeMember, proratedMonths]);
+                                }
+                            }
+                            
+                            // Allow UI to update for large datasets
+                            if (totalMembers > 500) {
+                                await new Promise(resolve => setTimeout(resolve, 5));
+                            }
+                            
+                            // Memory cleanup for very large datasets
+                            if (totalMembers > 2000 && i % (batchSize * 5) === 0) {
+                                // Force garbage collection hint
+                                if (window.gc) {
+                                    window.gc();
+                                }
+                            }
+                        }
+                        
+                        // Add totals row with breakdown format
+                        const formattedTotalFullYear = totalFullYearAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                        const formattedTotalProrated = totalProratedAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                        const formattedTotalEstDue = totalEstDue.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                        
+                        const totalEstDueDisplay = `$${formattedTotalFullYear} + $${formattedTotalProrated} = $${formattedTotalEstDue}`;
+                        
+                        // All members processed successfully
+                        
+                        memberData.push([
+                            'TOTAL',
+                            '',
+                            '',
+                            '',
+                            totalEstDueDisplay,
+                            totalFullYearMembers,
+                            totalProrataMonths
+                        ]);
+
+                        // Update loading message and progress
+                        if (loadingMessage) {
+                            loadingMessage.textContent = 'Generating PDF table...';
+                        }
+                        if (progressBar) {
+                            progressBar.style.width = '70%';
+                        }
+                        if (step2) {
+                            step2.classList.remove('active');
+                            step2.classList.add('completed');
+                        }
+                        if (step3) {
+                            step3.classList.add('active');
+                        }
+
+                        // Member roster table with plain styling and performance optimizations for large datasets
+                        try {
+                            doc.autoTable({
+                                startY: yPosition,
+                                head: [['Name', 'Join Date', 'Leave Date', 'Club Base', 'Est. Base Due', 'Active Member', 'Prorated Months']],
+                                body: memberData,
+                                theme: 'plain',
+                                headStyles: {
+                                    textColor: [55, 65, 81],
+                                    fontStyle: 'bold',
+                                    fontSize: 8,
+                                    halign: 'center',
+                                    valign: 'middle',
+                                    cellPadding: 2,
+                                    lineColor: [200, 200, 200],
+                                    lineWidth: 0.1,
+                                    fillColor: [248, 250, 252]
+                                },
+                                columnStyles: {
+                                    0: { halign: 'left', fontStyle: 'bold', textColor: [55, 65, 81], cellWidth: 40 }, // Name - wider
+                                    1: { halign: 'center', textColor: [75, 85, 99], cellWidth: 20 }, // Join Date
+                                    2: { halign: 'center', textColor: [75, 85, 99], cellWidth: 20 }, // Leave Date
+                                    3: { halign: 'center', textColor: [75, 85, 99], cellWidth: 25 }, // Club Base
+                                    4: { halign: 'center', textColor: [75, 85, 99], cellWidth: 40 }, // Est. Base Due - wider for formula
+                                    5: { halign: 'center', textColor: [75, 85, 99], cellWidth: 25 }, // Active Member
+                                    6: { halign: 'center', textColor: [75, 85, 99], cellWidth: 30 }  // Prorated Months
+                                },
+                                tableWidth: pageWidth - 10, // Use almost full page width
+                                margin: { top: 40, bottom: 30, left: 5, right: 5 }, // Increased top margin to account for headers on overflow pages
+                                pageBreak: 'auto',
+                                showFoot: 'lastPage', // Show footer on last page only
+                                startY: yPosition, // Start table at the specified yPosition
+                                styles: {
+                                    fontSize: 7,
+                                    cellPadding: 2,
+                                    textColor: [75, 85, 99],
+                                    lineColor: [220, 220, 220],
+                                    lineWidth: 0.1,
+                                    overflow: 'linebreak',
+                                    halign: 'left'
+                                },
+                                                                // Additional options for large datasets
+                                didStartPage: function(data) {
+                                    // Set yPosition = 40 for overflow pages (page 3 and beyond)
+                                    if (data.pageNumber >= 3) {
+                                        yPosition = 40;
+                                    }
+                                },
+                                didDrawPage: function(data) {
+                                    // Add muted subtitle for "Est. Base Due" column on page 2
+                                    if (data.pageNumber === 2) {
+                                        try {
+                                            const tableX = data.table.x;
+                                            const tableY = data.table.y;
+                                            const columnWidth = data.table.width / 7; // 7 columns
+                                            const estBaseDueX = tableX + (columnWidth * 4); // 5th column (index 4)
+                                            
+                                            doc.setFontSize(6);
+                                            doc.setFont('helvetica', 'normal');
+                                            doc.setTextColor(156, 163, 175); // Muted gray color
+                                            doc.text('(Full Year + Prorated)', estBaseDueX + (columnWidth / 2), tableY - 2, { align: 'center' });
+                                        } catch (textError) {
+                                            // Could not add subtitle text
+                                        }
+                                    }
+                                    
+                                    // Add header to all overflow pages (page 3 and beyond)
+                                    if (data.pageNumber >= 2) {
+                                        try {
+                                            // Add page header for overflow pages
+                                            doc.setFillColor(25, 118, 210); // Blue
+                                            doc.rect(0, 0, pageWidth, 30, 'F');
+                                            
+                                            doc.setFontSize(16);
+                                            doc.setFont('helvetica', 'bold');
+                                            doc.setTextColor(255, 255, 255); // White
+                                            doc.text('Rotaract Club Dues Calculator', pageWidth / 2, 12, { align: 'center' });
+                                            
+                                            doc.setFontSize(18);
+                                            doc.setFont('helvetica', 'bold');
+                                            doc.setTextColor(255, 255, 255); // White
+                                            doc.text('Member Roster (Continued)', pageWidth / 2, 22, { align: 'center' });
+                                        } catch (headerError) {
+                                            // Could not add overflow page header
+                                        }
+                                    }
+                                    
+                                    // Update current page for footer
+                                    currentPage = data.pageNumber + 1; // +1 because we start from page 2
+                                },
+                                didParseCell: function(data) {
+                                    // Style the totals row
+                                    if (data.row.raw[0] === 'TOTAL') {
+                                        data.cell.styles.fontStyle = 'bold';
+                                        data.cell.styles.fillColor = [240, 240, 240];
+                                        data.cell.styles.textColor = [55, 65, 81];
+                                    }
+                                }
+                            });
+                        } catch (tableError) {
+                            console.error('Error generating member roster table:', tableError);
+                            console.error('memberData length:', memberData.length);
+                            console.error('memberData sample:', memberData.slice(0, 5));
+                            
+                            // Continue with disclaimer even if table fails
+                            // Add a simple text fallback for the member roster
+                            doc.setFontSize(12);
+                            doc.setFont('helvetica', 'bold');
+                            doc.setTextColor(220, 38, 127); // Red color for error
+                            doc.text('Error: Could not generate member roster table', pageWidth / 2, yPosition + 20, { align: 'center' });
+                            doc.setFontSize(10);
+                            doc.setFont('helvetica', 'normal');
+                            doc.setTextColor(75, 85, 99);
+                            doc.text(`Total members found: ${memberData.length - 1}`, pageWidth / 2, yPosition + 35, { align: 'center' });
+                            yPosition += 50;
+                        }
+                    }
+
+                    // Update loading message and progress
+                    if (loadingMessage) {
+                        loadingMessage.textContent = 'Adding disclaimer and finalizing...';
+                    }
+                    if (progressBar) {
+                        progressBar.style.width = '90%';
+                    }
+                    if (step3) {
+                        step3.classList.remove('active');
+                        step3.classList.add('completed');
+                    }
+                    if (step4) {
+                        step4.classList.add('active');
+                    }
+
+                    // Disclaimer Section after member roster
+                    yPosition = doc.lastAutoTable ? doc.lastAutoTable.finalY + 25 : yPosition + 25;
+                        
+                        // Check if we need a new page for disclaimer
+                        if (yPosition > pageHeight - 100) {
+                            doc.addPage();
+                            currentPage++;
+                            
+                            // Add header to new page
+                            doc.setFillColor(25, 118, 210); // Blue
+                            doc.rect(0, 0, pageWidth, 30, 'F');
+                            
+                            doc.setFontSize(16);
+                            doc.setFont('helvetica', 'bold');
+                            doc.setTextColor(255, 255, 255); // White
+                            doc.text('Rotaract Club Dues Calculator', pageWidth / 2, 12, { align: 'center' });
+                            
+                            doc.setFontSize(18);
+                            doc.setFont('helvetica', 'bold');
+                            doc.setTextColor(255, 255, 255); // White
+                            doc.text('Disclaimer', pageWidth / 2, 22, { align: 'center' });
+                            
+                            yPosition = 45;
+                        }
+                        
+                        // Disclaimer Section with colorful header
+                        doc.setFillColor(239, 68, 68); // Red background
+                        doc.rect(margin - 5, yPosition - 5, contentWidth + 10, 15, 'F');
+                        
+                        doc.setFontSize(14);
+                        doc.setFont('helvetica', 'bold');
+                        doc.setTextColor(255, 255, 255); // White text
+                        doc.text('Disclaimer', pageWidth / 2, yPosition + 5, { align: 'center' });
+                        
+                        yPosition += 20;
+                        
+                        doc.setFontSize(10);
+                        doc.setFont('helvetica', 'normal');
+                        doc.setTextColor(75, 85, 99);
+                        
+                        const disclaimerText = [
+                            'This report contains indicative estimates for Rotaract Club Invoice calculations. All calculations are based on the information provided and current Rotary International dues structure. Actual figures may vary based on various factors including but not limited to:',
+                            '',
+                            '• Changes in Rotary International dues structure',
+                            '• Currency exchange rates and fluctuations',
+                            '• Timing of member additions and removals',
+                            '• Outstanding dues from previous years',
+                            '• Previous year dues payment status of Rotaractors joining from other clubs',
+                            '',
+                            'Please verify all calculations with official Rotary International sources. This tool is designed to assist with preliminary estimates and should not be considered as official documentation.',
+                            '',
+                            'Generated by: Rotaract South Asia MDIO Club Invoice Calculator',
+                            'Powered by: ZeoSpec (https://rtr.zeospec.com/)'
+                        ];
+
+                        disclaimerText.forEach(line => {
+                            if (yPosition > pageHeight - 30) {
+                                doc.addPage();
+                                currentPage++;
+                                yPosition = 20;
+                            }
+                            
+                            if (line.trim() === '') {
+                                yPosition += 8; // Extra spacing for empty lines
+                            } else if (line.startsWith('•')) {
+                                // Bullet points
+                                doc.text(line, margin + 5, yPosition);
+                                yPosition += 8;
+                            } else {
+                                // Justified text for paragraphs
+                                const splitText = doc.splitTextToSize(line, contentWidth);
+                                splitText.forEach(textLine => {
+                                    doc.text(textLine, margin, yPosition, { align: 'justify' });
+                                    yPosition += 6;
+                                });
+                                yPosition += 2; // Extra spacing after paragraphs
+                            }
+                        });
+                    }
+
+                    // Enhanced footer with proper page counting
+                    const totalPages = currentPage;
+                    for (let i = 1; i <= totalPages; i++) {
+                        doc.setPage(i);
+                        
+                        // Footer background
+                        doc.setFillColor(248, 250, 252);
+                        doc.rect(0, pageHeight - 20, pageWidth, 20, 'F');
+                        
+                        // Footer text
+                        doc.setFontSize(8);
+                        doc.setTextColor(156, 163, 175);
+                        doc.text(`Page ${i} of ${totalPages}`, pageWidth / 2, pageHeight - 10, { align: 'center' });
+                        
+                        // Footer line
+                        doc.setDrawColor(229, 231, 235);
+                        doc.setLineWidth(0.5);
+                        doc.line(margin, pageHeight - 20, pageWidth - margin, pageHeight - 20);
+                    }
+
+                    // Save the PDF
+                    const fileName = `Rotaract_Club_Invoice_${invoiceYearSelect.value}_${new Date().toISOString().split('T')[0]}.pdf`;
+                    doc.save(fileName);
+
+                    // Complete progress
+                    if (progressBar) {
+                        progressBar.style.width = '100%';
+                    }
+                    if (step4) {
+                        step4.classList.remove('active');
+                        step4.classList.add('completed');
+                    }
+                    if (loadingMessage) {
+                        loadingMessage.textContent = 'PDF generated successfully!';
+                    }
+
+                    // Hide loading status and overlay after a brief delay
+                    setTimeout(() => {
+                        downloadPdfBtn.disabled = false;
+                        pdfStatus.classList.add('hidden');
+                        if (loadingOverlay) {
+                            loadingOverlay.classList.remove('active');
+                        }
+                    }, 1000);
+
+                } catch (error) {
+                    console.error('Error generating PDF:', error);
+                    
+                    // Hide loading status and overlay
+                    downloadPdfBtn.disabled = false;
+                    pdfStatus.classList.add('hidden');
+                    if (loadingOverlay) {
+                        loadingOverlay.classList.remove('active');
+                    }
+                    
+                    // Show error message
+                    alert('Error generating PDF. Please try again.');
+                }
+            }
         });
     </script>
 </body>
