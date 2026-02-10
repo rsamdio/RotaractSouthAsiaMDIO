@@ -1,96 +1,224 @@
 <!DOCTYPE html>
-<html class="full" lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Rotaract South Asia MDIO</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.css">
-  <link rel="stylesheet" href="css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4F8DL7KLQ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-Z4F8DL7KLQ');
-  </script>
-
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rotaract South Asia MDIO</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=Great+Vibes&amp;family=Marcellus&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "mystic-indigo": "#0a0e1a",
+                        "sacred-red": "#8b1e1e",
+                        "cosmic-gold": "#d4af37",
+                        "jade-spirit": "#006400",
+                        "aged-brass": "#a67c00",
+                    },
+                    fontFamily: {
+                        "serif": ["Playfair Display", "serif"],
+                        "display": ["Cinzel Decorative", "cursive"],
+                        "calligraphy": ["Great Vibes", "cursive"],
+                        "mystic": ["Marcellus", "serif"],
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                @apply bg-mystic-indigo text-cosmic-gold/90 font-serif overflow-hidden h-screen w-screen selection:bg-sacred-red/40;
+                background-image: 
+                    radial-gradient(circle at 50% 50%, rgba(20, 30, 60, 0.5) 0%, transparent 70%),
+                    url('https://www.transparenttextures.com/patterns/handmade-paper.png');
+            }
+        }
+        .mandala-bg {
+            background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAuVP_eJ4OGVzC2A84ECIZs9v-ymFfRG-GIxD-8wS70ctMIuZ1Tjq1rEzHw4YpLRZxSlwvra7QUlnnMPpbHxmGi2UXlOzp-3swKFbLqweE-ZFnUIJjE6vbDhRb2CWuevRgrRtKhvOqFiL3BrQvgqmd9SBolkXvsiwi-ulYkWHsh2YPiMnh9rcjlDVyTQACk-O5-Sqmxm8KV3sALU2Y2uihNEgAEZba3on7WsFLXjNUxE6yVthj6bTIbBO7jsECsGmsbPaAI0mglHfQW');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: sepia(100%) saturate(200%) hue-rotate(-10deg) brightness(0.6) contrast(1.2);
+            mix-blend-mode: screen;
+        }
+        .mystic-circle {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            position: relative;
+            background: radial-gradient(circle, rgba(139, 30, 30, 0.1) 0%, transparent 70%);
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.05), inset 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        .mystic-circle::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border: 1px dashed rgba(212, 175, 55, 0.2);
+            border-radius: 50%;
+        }
+        .text-spiritual-glow {
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5), 0 0 20px rgba(139, 30, 30, 0.3);
+        }
+        .ethno-border {
+            border-bottom: 2px solid;
+            border-image: linear-gradient(to right, transparent, #d4af37, transparent) 1;
+        }
+        .parallax-floating {
+            transition: transform 0.2s ease-out;
+        }
+        .floating-element {
+            animation: float 10s ease-in-out infinite alternate;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-30px) rotate(2deg); }
+        }
+    </style>
 </head>
-
 <body>
-  <div id="preloader">
-    <div id="status"> <img src="img/preloader.gif" height="64" width="64" alt=""> </div>
-  </div>
-  <div class="coming-soon">
-    <div class="container">
-      <div class="logo"><i class="fa fa-globe"></i></div>
-      <h2>Stay tuned!<br>
-        for a brand new website.</h2>
-
-        <div class="social"><a target="_blank" href="https://www.instagram.com/rsamdio/"><i class="fa fa-instagram"></i></a> <a href="https://www.linkedin.com/company/rsamdio/" target="_blank"><i class="fa fa-linkedin"></i></a></div> 
-        
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer-section">
-      <div class="container">
-        <div class="row">
-          <!-- Copyright & Organization -->
-          <div class="col-md-4 text-center text-md-left">
-            <h4 class="footer-title">Rotaract South Asia MDIO</h4>
-            <p class="footer-text">© <span id="current-year"></span> All rights reserved.</p>
-          </div>
-
-          <!-- Contact Information -->
-          <div class="col-md-4 text-center">
-            <h4 class="footer-title">Contact</h4>
-            <p class="footer-text">rsamdio@gmail.com</p>
-          </div>
-
-          <!-- Disclaimer -->
-          <div class="col-md-4 text-center text-md-right">
-            <h4 class="footer-title">Disclaimer</h4>
-            <p class="footer-text">Building connections and creating positive change across South Asia through Rotaract.</p>
-          </div>
-        </div>
-
-        <!-- Bottom Bar -->
-        <div class="footer-bottom">
-          <div class="row">
-            <div class="col-sm-8 text-center text-sm-left">
-              <p class="footer-description">This platform is designed to help Rotaractors connect and collaborate efficiently across South Asia.</p>
+<main class="relative w-full h-full flex flex-col items-center justify-center overflow-hidden" id="scene">
+<div class="absolute inset-0 z-0 opacity-40">
+<div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-sacred-red/10 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-jade-spirit/10 blur-[120px] rounded-full"></div>
+</div>
+<div class="absolute inset-0 z-10 flex items-center justify-center scale-150 md:scale-110 opacity-40 pointer-events-none layer" data-speed="0.03">
+<div class="mandala-bg w-full h-full max-w-4xl max-h-4xl"></div>
+</div>
+<div class="absolute inset-0 z-[15] pointer-events-none layer" data-speed="0.08">
+<span class="material-symbols-outlined absolute top-[15%] left-[20%] text-cosmic-gold/20 text-5xl">auto_awesome</span>
+<span class="material-symbols-outlined absolute bottom-[20%] right-[15%] text-jade-spirit/30 text-7xl">all_inclusive</span>
+<span class="material-symbols-outlined absolute top-[60%] left-[10%] text-sacred-red/20 text-6xl rotate-45">brightness_low</span>
+</div>
+<nav class="fixed top-0 w-full flex justify-center p-12 z-50">
+<div class="flex flex-col items-center gap-1 group cursor-default">
+<span class="text-[10px] font-mystic tracking-[0.6em] text-cosmic-gold/50 uppercase">Rotaract South Asia</span>
+<div class="w-24 h-px bg-gradient-to-r from-transparent via-cosmic-gold/40 to-transparent my-1"></div>
+<h2 class="text-xl font-display text-cosmic-gold tracking-widest">MDIO</h2>
+</div>
+</nav>
+<div class="relative z-[30] flex flex-col items-center gap-12 text-center px-4 max-w-4xl">
+<div class="layer" data-speed="0.12">
+<p class="font-calligraphy text-3xl text-sacred-red/80 mb-[-1rem] relative z-10">Limitless Journey to</p>
+<h1 class="text-4xl md:text-6xl font-display font-black text-spiritual-glow tracking-tight leading-none text-cosmic-gold">
+                    Create Lasting<br/>Impact
+                </h1>
+                <div class="ethno-border w-48 mx-auto mt-6"></div>
             </div>
-            <div class="col-sm-4 text-center text-sm-right">
-              <div class="footer-links-inline">
-                <span class="footer-text">Powered by</span>
-                <a href="https://rtr.zeospec.com/" target="_blank" rel="noopener noreferrer" class="footer-link">ZeoSpec</a>
-                <span class="footer-separator">•</span>
-                <a href="privacy.html" class="footer-link">Privacy</a>
-                <span class="footer-separator">•</span>
-                <a href="terms.html" class="footer-link">Terms</a>
-              </div>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 layer" data-speed="0.2">
+                <div class="flex flex-col items-center gap-4">
+                    <div class="mystic-circle size-32 md:size-48 flex flex-col items-center justify-center group hover:border-cosmic-gold/60 transition-all duration-700">
+                        <span id="countdown-days" class="font-calligraphy text-5xl md:text-7xl text-cosmic-gold group-hover:scale-110 transition-transform">00</span>
+                        <div class="absolute -bottom-4 bg-mystic-indigo px-3">
+                            <span class="text-[10px] font-mystic uppercase tracking-[0.3em] text-sacred-red">Days</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block text-cosmic-gold/20 text-4xl font-mystic">◈</div>
+                <div class="flex flex-col items-center gap-4">
+                    <div class="mystic-circle size-32 md:size-48 flex flex-col items-center justify-center group hover:border-cosmic-gold/60 transition-all duration-700">
+                        <span id="countdown-hours" class="font-calligraphy text-5xl md:text-7xl text-cosmic-gold group-hover:scale-110 transition-transform">00</span>
+                        <div class="absolute -bottom-4 bg-mystic-indigo px-3">
+                            <span class="text-[10px] font-mystic uppercase tracking-[0.3em] text-jade-spirit">Hours</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block text-cosmic-gold/20 text-4xl font-mystic">◈</div>
+                <div class="flex flex-col items-center gap-4">
+                    <div class="mystic-circle size-32 md:size-48 flex flex-col items-center justify-center group hover:border-cosmic-gold/60 transition-all duration-700">
+                        <span id="countdown-minutes" class="font-calligraphy text-5xl md:text-7xl text-cosmic-gold group-hover:scale-110 transition-transform">00</span>
+                        <div class="absolute -bottom-4 bg-mystic-indigo px-3">
+                            <span class="text-[10px] font-mystic uppercase tracking-[0.3em] text-cosmic-gold">Minutes</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-      <!-- Javascript --> 
-      <script src="js/jquery.1.11.1.js"></script> 
-      <script src="js/bootstrap.min.js"></script> 
-      <script src="js/custom.js"></script>
-      
-      <!-- Footer Year Script -->
-      <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-      </script>
-    </body>
-    </html>
-    
+<div class="w-full max-w-md mt-8 layer" data-speed="0.25">
+<div class="flex justify-center mt-6">
+<p class="text-[11px] font-mystic tracking-[0.5em] text-cosmic-gold/40 uppercase">
+                        Stay Tuned!
+                    </p>
+</div>
+</div>
+            </div>
+            <div class="fixed bottom-8 w-full flex flex-col gap-2 px-6 md:px-12 opacity-80">
+                <div class="w-full flex justify-between items-center pointer-events-none">
+                    <div class="flex gap-4">
+                        <span class="material-symbols-outlined text-xl">stat_3</span>
+                        <span class="material-symbols-outlined text-xl">stat_2</span>
+                        <span class="material-symbols-outlined text-xl">stat_1</span>
+                    </div>
+                    <div class="font-mystic text-[10px] tracking-widest uppercase">#RSAMDIO</div>
+                </div>
+                <div class="w-full flex justify-center gap-6 text-[11px] font-mystic tracking-[0.35em] uppercase pointer-events-auto">
+                    <a href="privacy" class="text-cosmic-gold/80 hover:text-cosmic-gold transition-colors">Privacy</a>
+                    <a href="terms" class="text-cosmic-gold/80 hover:text-cosmic-gold transition-colors">Terms</a>
+                </div>
+            </div>
+        </main>
+<script>
+        // Smooth Parallax for Mystic Elements
+        const layers = document.querySelectorAll('.layer');
+        window.addEventListener('mousemove', (e) => {
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            const moveX = (e.clientX - centerX); 
+            const moveY = (e.clientY - centerY);
+            layers.forEach(layer => {
+                const speed = parseFloat(layer.getAttribute('data-speed'));
+                const x = moveX * speed;
+                const y = moveY * speed;
+                const rotate = x * 0.01;
+                layer.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${rotate}deg)`;
+            });
+        });
+
+        // Mystic Countdown to Launch
+        // EDIT THIS VALUE to change launch time (ISO 8601, UTC or with offset)
+        // Example (same moment):
+        //   UTC:       "2026-05-30T13:30:00Z"
+        //   IST (+5:30): "2026-05-30T19:00:00+05:30"
+        (function () {
+            const LAUNCH_TIME_ISO = "2026-05-30T18:30:00+05:30"; // 30 May 2026, 7:00 PM IST
+            const launchTime = new Date(LAUNCH_TIME_ISO).getTime();
+
+            const daysEl = document.getElementById('countdown-days');
+            const hoursEl = document.getElementById('countdown-hours');
+            const minutesEl = document.getElementById('countdown-minutes');
+
+            if (!daysEl || !hoursEl || !minutesEl) return;
+
+            function pad(value) {
+                return String(value).padStart(2, '0');
+            }
+
+            function updateCountdown() {
+                const now = Date.now();
+                let distance = launchTime - now;
+
+                if (distance <= 0) {
+                    daysEl.textContent = '00';
+                    hoursEl.textContent = '00';
+                    minutesEl.textContent = '00';
+                    clearInterval(timer);
+                    return;
+                }
+
+                const totalMinutes = Math.floor(distance / (1000 * 60));
+                const days = Math.floor(totalMinutes / (60 * 24));
+                const hours = Math.floor((totalMinutes - days * 24 * 60) / 60);
+                const minutes = totalMinutes - days * 24 * 60 - hours * 60;
+
+                daysEl.textContent = pad(days);
+                hoursEl.textContent = pad(hours);
+                minutesEl.textContent = pad(minutes);
+            }
+
+            updateCountdown();
+            const timer = setInterval(updateCountdown, 1000 * 30); // update every 30 seconds
+        })();
+    </script>
+
+</body></html>
