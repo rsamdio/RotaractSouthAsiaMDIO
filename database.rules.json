@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "scores": {
+      ".read": "auth != null",
+      ".write": true
+    },
+    "top10": {
+      ".read": true,
+      ".write": false
+    },
+    "waitlist": {
+      ".read": "auth != null",
+      ".write": true
+    }
+  }
+}
