@@ -1,2 +1,39 @@
+# OS
 *.DS_Store
+Thumbs.db
+
+# Project-specific
 archieve.html
+
+# Node / Firebase Functions
+node_modules/
+functions/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Firebase
+firebase-debug.log
+firebase-debug.*.log
+.firebase/
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Optional: design / export artifacts (uncomment if used)
+# stitch/
+# stitch.zip
