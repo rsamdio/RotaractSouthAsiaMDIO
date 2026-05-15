@@ -2,7 +2,7 @@
   "rules": {
     "scores": {
       ".read": "auth != null",
-      ".write": true
+      ".write": false
     },
     "top10": {
       ".read": true,
@@ -10,7 +10,7 @@
     },
     "waitlist": {
       ".read": "auth != null",
-      ".write": true
+      ".write": false
     }
   }
 }

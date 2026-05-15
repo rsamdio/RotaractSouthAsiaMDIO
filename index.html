@@ -147,6 +147,7 @@
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-functions-compat.js"></script>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4F8DL7KLQ"></script>
@@ -329,11 +330,9 @@
     })();
   </script>
   <script>
-    // ---------- Firebase RTDB ----------
-    // 1. Replace firebaseConfig below with your project config (Project Settings > General in Firebase Console).
-    // 2. Enable Realtime Database in Firebase Console and set rules to allow read/write (e.g. for testing):
-    //    { "rules": { "scores": { ".read": true, ".write": true }, "waitlist": { ".read": false, ".write": true } } }
-    //    For production, restrict .read/.write with auth or validation.
+    // ---------- Firebase RTDB + Functions ----------
+    // Scores and waitlist are written only via HTTPS callables (submitScore, joinWaitlist);
+    // RTDB rules block direct client writes. Deploy functions + database rules together.
     const firebaseConfig = {
       apiKey: "AIzaSyB2fCU7kFtpu1sipKDBlIfa9WrWf7Jsocw",
       authDomain: "rsacomingsoon2627.firebaseapp.com",
@@ -344,9 +343,11 @@
       appId: "1:462437998846:web:a7556337b2f1b98ee9c5af"
     };
     let db = null;
+    let cloudFunctions = null;
     try {
       firebase.initializeApp(firebaseConfig);
       db = firebase.database();
+      cloudFunctions = firebase.app().functions('asia-southeast1');
     } catch (e) {
       console.warn('Firebase not configured or init failed:', e.message);
     }
@@ -645,10 +646,10 @@
     }, { passive: true });
     gridEl.addEventListener('contextmenu', (e) => e.preventDefault());
 
-    // ---------- Game Over: submit score to Firebase RTDB ----------
+    // ---------- Game Over: submit score via Cloud Function (server-validated) ----------
     document.getElementById('score-submit-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      if (!db) {
+      if (!db || !cloudFunctions) {
         document.getElementById('score-submit-status').textContent = 'Firebase not configured. Set your config in index.html.';
         document.getElementById('score-submit-status').classList.remove('hidden');
         return;
@@ -659,15 +660,15 @@
       status.classList.remove('hidden');
       status.textContent = 'Submitting...';
       status.classList.remove('text-green-600', 'text-red-600');
-      const data = {
+      var payload = {
         name: document.getElementById('score-name').value.trim(),
         phone: document.getElementById('score-phone').value.trim(),
         email: document.getElementById('score-email').value.trim(),
         districtNumber: document.getElementById('score-district').value.trim(),
-        score: score,
-        timestamp: Date.now()
+        score: score
       };
-      db.ref('scores').push(data)
+      var submitScore = cloudFunctions.httpsCallable('submitScore');
+      submitScore(payload)
         .then(function() {
           status.textContent = 'Score saved! You\'re on the leaderboard.';
           status.classList.add('text-green-600');
@@ -679,7 +680,11 @@
           }, 1500);
         })
         .catch(function(err) {
-          status.textContent = 'Could not save. Check Firebase config and RTDB rules.';
+          var msg = (err && err.message) ? err.message : 'Could not save. Try again.';
+          if (err && err.code === 'functions/not-found') {
+            msg = 'Server not updated yet. Deploy Cloud Functions (submitScore) and try again.';
+          }
+          status.textContent = msg;
           status.classList.add('text-red-600');
           btn.disabled = false;
         });
@@ -691,7 +696,7 @@
       gridEl.focus({ preventScroll: true });
     });
 
-    // ---------- Notify Me: save email to Firebase RTDB ----------
+    // ---------- Notify Me: join waitlist via Cloud Function ----------
     document.getElementById('notify-form').addEventListener('submit', function(e) {
       e.preventDefault();
       const input = document.getElementById('notify-email');
@@ -699,7 +704,7 @@
       const status = document.getElementById('notify-status');
       const email = (input.value || '').trim();
       if (!email) return;
-      if (!db) {
+      if (!db || !cloudFunctions) {
         status.textContent = 'Firebase not configured. Set your config in index.html.';
         status.classList.remove('hidden');
         status.classList.add('text-amber-600');
@@ -709,7 +714,8 @@
       status.classList.remove('hidden');
       status.textContent = 'Adding you to the list...';
       status.classList.remove('text-green-600', 'text-red-600', 'text-amber-600');
-      db.ref('waitlist').push({ email: email, timestamp: Date.now() })
+      var joinWaitlist = cloudFunctions.httpsCallable('joinWaitlist');
+      joinWaitlist({ email: email })
         .then(function() {
           status.textContent = 'Thanks! We\'ll notify you when we launch.';
           status.classList.add('text-green-600');
@@ -717,7 +723,11 @@
           btn.disabled = false;
         })
         .catch(function(err) {
-          status.textContent = 'Could not save. Check Firebase config and RTDB rules.';
+          var msg = (err && err.message) ? err.message : 'Could not save. Try again.';
+          if (err && err.code === 'functions/not-found') {
+            msg = 'Server not updated yet. Deploy Cloud Functions (joinWaitlist) and try again.';
+          }
+          status.textContent = msg;
           status.classList.add('text-red-600');
           btn.disabled = false;
         });
