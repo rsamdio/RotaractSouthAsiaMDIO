@@ -37,3 +37,7 @@ logs/
 # Optional: design / export artifacts (uncomment if used)
 # stitch/
 # stitch.zip
+
+# Next.js
+.next/
+out/

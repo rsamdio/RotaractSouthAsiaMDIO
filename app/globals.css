@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* ── Dark mode: triggered by .dark class on <html> (next-themes) ── */
+@variant dark (&:where(.dark, .dark *));
+
+/* ── Custom design tokens ─────────────────────────────────────── */
+@theme {
+  --color-navy-dark: #0B1426;
+  --color-navy-mid: #131F35;
+  --color-crimson: #D41B69;
+  --color-crimson-dark: #8A0F3E;
+  --color-gold: #F7A81B;
+  --color-gold-dark: #C87900;
+
+  --font-sans: var(--font-inter), Inter, system-ui, sans-serif;
+  --font-heading: "General Sans", Inter, system-ui, sans-serif;
+
+  --shadow-glow-pink: 0 0 40px -5px rgba(212,27,105,0.35);
+  --shadow-glow-gold: 0 0 40px -5px rgba(247,168,27,0.35);
+  --shadow-soft: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+/* ── Base styles ──────────────────────────────────────────────── */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+/* ── Custom scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(212,27,105,0.3); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(212,27,105,0.6); }
+
+/* ── Animations ───────────────────────────────────────────────── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+@keyframes drift-in {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-up   { animation: fade-up 0.5s ease both; }
+.animate-pulse-ring { animation: pulse-ring 1.4s ease-out infinite; }
+.animate-drift-in  { animation: drift-in 0.3s ease both; }
+
+/* ── Shadow utilities ─────────────────────────────────────────── */
+.shadow-glow-pink { box-shadow: var(--shadow-glow-pink); }
+.shadow-glow-gold { box-shadow: var(--shadow-glow-gold); }
+.shadow-soft      { box-shadow: var(--shadow-soft); }

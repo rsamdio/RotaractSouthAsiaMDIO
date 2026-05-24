@@ -1,16 +1,26 @@
 {
   "rules": {
     "scores": {
-      ".read": "auth != null",
-      ".write": true
+      ".read": "auth != null && auth.token.email.matches(/^[a-zA-Z0-9._%+-]+@rsamdio\\.org$/)",
+      ".write": true,
+      "$scoreId": {
+        ".validate": "newData.hasChildren(['name', 'phone', 'email', 'districtNumber', 'score', 'timestamp']) && newData.child('score').isNumber() && newData.child('score').val() < 100000 && newData.child('timestamp').isNumber()"
+      }
     },
     "top10": {
       ".read": true,
       ".write": false
     },
     "waitlist": {
-      ".read": "auth != null",
-      ".write": true
+      ".read": "auth != null && auth.token.email.matches(/^[a-zA-Z0-9._%+-]+@rsamdio\\.org$/)",
+      ".write": true,
+      "$waitlistId": {
+        ".validate": "newData.hasChildren(['email', 'timestamp']) && newData.child('email').isString() && newData.child('email').val().matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/)"
+      }
+    },
+    "events": {
+      ".read": true,
+      ".write": "auth != null && auth.token.email.matches(/^[a-zA-Z0-9._%+-]+@rsamdio\\.org$/)"
     }
   }
 }
