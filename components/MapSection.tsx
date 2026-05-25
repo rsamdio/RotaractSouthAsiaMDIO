@@ -5,14 +5,14 @@ import { Globe } from "lucide-react";
 
 // Geographic coordinates on the 1024x1024 centered South Asia map outline
 const countries = [
-  { key: "afg", label: "Afghanistan", x: 210, y: 200, color: "#D41B69" },
-  { key: "pak", label: "Pakistan",    x: 290, y: 330, color: "#D41B69" },
-  { key: "ind", label: "India",       x: 480, y: 550, color: "#D41B69" },
-  { key: "nep", label: "Nepal",       x: 610, y: 370, color: "#D41B69" },
-  { key: "bhu", label: "Bhutan",      x: 705, y: 370, color: "#D41B69" },
-  { key: "ban", label: "Bangladesh",  x: 710, y: 450, color: "#D41B69" },
-  { key: "sri", label: "Sri Lanka",   x: 575, y: 830, color: "#D41B69" },
-  { key: "mal", label: "Maldives",    x: 380, y: 900, color: "#D41B69" },
+  { key: "afg", label: "Afghanistan", x: 175, y: 215, color: "#D41B69" },
+  { key: "pak", label: "Pakistan",    x: 255, y: 360, color: "#D41B69" },
+  { key: "ind", label: "India",       x: 430, y: 590, color: "#D41B69" },
+  { key: "nep", label: "Nepal",       x: 565, y: 352, color: "#D41B69" },
+  { key: "bhu", label: "Bhutan",      x: 685, y: 365, color: "#D41B69" },
+  { key: "ban", label: "Bangladesh",  x: 722, y: 448, color: "#D41B69" },
+  { key: "sri", label: "Sri Lanka",   x: 540, y: 843, color: "#D41B69" },
+  { key: "mal", label: "Maldives",    x: 375, y: 920, color: "#D41B69" },
 ];
 
 const connections = [
