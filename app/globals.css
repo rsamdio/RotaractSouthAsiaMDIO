@@ -21,9 +21,16 @@
 }
 
 /* ── Base styles ──────────────────────────────────────────────── */
+/* Smooth scrolling is handled by Lenis (components/SmoothScroll.tsx);
+   native scroll-behavior is intentionally omitted to avoid double-easing. */
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
 body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+/* ── Lenis smooth-scroll requirements ─────────────────────────── */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
 
 /* ── Custom scrollbar ─────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; }
@@ -43,6 +50,19 @@ body { transition: background-color 0.3s ease, color 0.3s ease; }
 @keyframes drift-in {
   from { opacity: 0; transform: scale(0.97); }
   to   { opacity: 1; transform: scale(1); }
+}
+@keyframes hero-float {
+  from { transform: translateY(calc(var(--float-amp, 28px) * -1)); }
+  to   { transform: translateY(var(--float-amp, 28px)); }
+}
+.hero-float {
+  animation-name: hero-float;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-float { animation: none; }
 }
 
 .animate-fade-up   { animation: fade-up 0.5s ease both; }

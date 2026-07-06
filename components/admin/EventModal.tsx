@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { addDoc, updateDoc, collection, doc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
-import { type Event } from "@/components/EventsSection";
+import { type Event } from "@/config/events";
 import { X, Loader2, CalendarDays, MapPin, FileText, Tag } from "lucide-react";
 
 type Props = {
@@ -42,7 +42,7 @@ export function EventModal({ event, onClose }: Props) {
         await addDoc(collection(db, "events"), { ...form, createdAt: new Date() });
       }
       onClose();
-    } catch (e: unknown) {
+    } catch {
       setError("Failed to save. Check Firestore permissions.");
     } finally {
       setSaving(false);
@@ -52,7 +52,7 @@ export function EventModal({ event, onClose }: Props) {
   const catColors: Record<Event["category"], string> = {
     pink: "ring-[#D41B69] bg-[#D41B69]",
     gold: "ring-[#F7A81B] bg-[#F7A81B]",
-    blue: "ring-blue-500 bg-blue-500",
+    blue: "ring-[#17458F] bg-[#17458F]",
   };
 
   return (

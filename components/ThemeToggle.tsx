@@ -1,12 +1,14 @@
 "use client";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { Sun, Moon } from "lucide-react";
+
+const emptySubscribe = () => () => {};
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  // true once hydrated on the client, false during SSR — avoids a theme flash
+  const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
   if (!mounted) return <div className="h-9 w-9" />;
 
   return (

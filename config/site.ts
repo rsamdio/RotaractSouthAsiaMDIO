@@ -15,45 +15,19 @@ export const siteConfig = {
     districts: "38+",
     clubs: "3,500+",
     members: "120K+",
+    projects: "10K+",
+    volunteerHours: "2M+",
   },
   libraryUrl: "https://library.rsamdio.org/",
   social: {
     instagram: "https://instagram.com/rsamdio",
+    youtube: "https://youtube.com/@rsamdio",
+    linkedin: "https://linkedin.com/company/rsamdio",
+  },
+  contact: {
+    general: "secretariat@rsamdio.org",
+    districtUpdate: "districts@rsamdio.org",
+    partnership: "partnerships@rsamdio.org",
+    media: "media@rsamdio.org",
   },
 };
-
-// Board members — update each July
-export const boardMembers = [
-  {
-    name: "Arun Teja Godavarthi",
-    title: "MDIO President",
-    district: "District 3150",
-    country: "India",
-    image: "/img/profile1.jpg",
-    role: "president",
-  },
-  {
-    name: "Priya Sharma",
-    title: "Vice Chairperson",
-    district: "District 3291",
-    country: "Nepal",
-    image: "/img/profile2.jpg",
-    role: "vp",
-  },
-  {
-    name: "Rahul Fernando",
-    title: "Secretary General",
-    district: "District 3220",
-    country: "Sri Lanka",
-    image: "/img/profile3.jpg",
-    role: "secretary",
-  },
-  {
-    name: "Ayesha Khan",
-    title: "Treasurer",
-    district: "District 3271",
-    country: "Pakistan",
-    image: "/img/profile4.jpg",
-    role: "treasurer",
-  },
-];

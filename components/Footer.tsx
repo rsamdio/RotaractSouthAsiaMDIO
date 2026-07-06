@@ -3,6 +3,26 @@ import Image from "next/image";
 import { ExternalLink, Globe, Shield } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
+// Brand icons hand-rolled as SVG — lucide-react removed brand glyphs.
+function YoutubeIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+      <path d="m10 15 5-3-5-3z" />
+    </svg>
+  );
+}
+
+function LinkedinIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect width="4" height="12" x="2" y="9" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  );
+}
+
 function InstagramIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -21,44 +41,78 @@ function InstagramIcon({ className }: { className?: string }) {
   );
 }
 
-const footerLinks = [
+const footerColumns = [
   {
-    heading: "Portal",
+    heading: "About",
     items: [
-      { label: "Home", href: "/" },
-      { label: "Regional Map", href: "#ecosystem" },
-      { label: "Knowledge Library", href: "#ecosystem" },
-      { label: "2048 Challenge", href: "#game-challenge" },
+      { label: "About RSAMDIO", href: "/about" },
+      { label: "Vision & Mission", href: "/about#vision-mission" },
+      { label: "Districts & Countries", href: "/districts" },
     ],
   },
   {
-    heading: "Organization",
+    heading: "Leadership",
     items: [
-      { label: "About RSAMDIO", href: "#about-section" },
-      { label: "Leadership Board", href: "#leadership-section" },
-      { label: "Events & Forums", href: "#events-section" },
-      { label: "Join the Network", href: "#waitlist-section" },
+      { label: "Executive Board", href: "/leadership#executive-board" },
+      { label: "DRRs", href: "/leadership#drrs" },
+      { label: "Committee Members", href: "/leadership#committee" },
+      { label: "Past Leadership Archive", href: "/leadership#past-leadership" },
+    ],
+  },
+  {
+    heading: "Initiatives",
+    items: [
+      { label: "Signature Initiatives", href: "/initiatives/signature-initiatives" },
+      { label: "Leadership Development", href: "/initiatives/leadership-development" },
+      { label: "Service & Impact", href: "/initiatives/service-impact" },
+      { label: "Public Image", href: "/initiatives/public-image" },
+    ],
+  },
+  {
+    heading: "Events",
+    items: [
+      { label: "Upcoming Events", href: "/events#upcoming" },
+      { label: "Signature Events", href: "/events#signature" },
+      { label: "Calendar View", href: "/events#calendar" },
     ],
   },
   {
     heading: "Resources",
     items: [
-      { label: "Resource Library", href: "https://library.rsamdio.org", external: true },
-      { label: "Brand Kit", href: "#ecosystem" },
+      { label: "Rotaract Library", href: "https://library.rsamdio.org", external: true },
+      { label: "Brand Kit", href: "/resources" },
       { label: "Admin Portal", href: "/admin" },
       { label: "Privacy Policy", href: "/privacy" },
+    ],
+  },
+  {
+    heading: "News & Media",
+    items: [
+      { label: "Stories", href: "/news#stories" },
+      { label: "Press Releases", href: "/news#press" },
+      { label: "Publications Hub", href: "/news#publications" },
+      { label: "Gallery", href: "/news#gallery" },
+    ],
+  },
+  {
+    heading: "Contact",
+    items: [
+      { label: "Contact Us", href: "/contact" },
+      { label: "Submit an Update", href: "/contact?type=district-update" },
+      { label: "Partnership Inquiry", href: "/contact?type=partnership" },
+      { label: "Media Inquiry", href: "/contact?type=media" },
     ],
   },
 ];
 
 export function Footer() {
   return (
-    <footer className="bg-[#07101E] border-t border-white/8">
+    <footer className="bg-gradient-to-br from-[#0B1426] via-[#581033] to-[#8A0F3E] border-t border-white/8">
       {/* Main footer */}
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 py-16">
-        <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+        <div className="grid grid-cols-2 gap-10 md:grid-cols-4 xl:grid-cols-[1.3fr_repeat(7,0.85fr)] xl:gap-12">
           {/* Brand column */}
-          <div className="space-y-5">
+          <div className="space-y-5 col-span-2 md:col-span-4 xl:col-span-1">
             <Link href="/" className="flex items-center gap-3">
               <Image
                 src="/img/rsamdio.webp"
@@ -90,6 +144,24 @@ export function Footer() {
                 <InstagramIcon className="h-4 w-4" />
               </a>
               <a
+                href={siteConfig.social.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/50 hover:bg-[#D41B69]/15 hover:text-[#D41B69] hover:border-[#D41B69]/30 transition"
+                aria-label="YouTube"
+              >
+                <YoutubeIcon className="h-4 w-4" />
+              </a>
+              <a
+                href={siteConfig.social.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/50 hover:bg-[#D41B69]/15 hover:text-[#D41B69] hover:border-[#D41B69]/30 transition"
+                aria-label="LinkedIn"
+              >
+                <LinkedinIcon className="h-4 w-4" />
+              </a>
+              <a
                 href="https://library.rsamdio.org"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -102,7 +174,7 @@ export function Footer() {
           </div>
 
           {/* Link columns */}
-          {footerLinks.map((col) => (
+          {footerColumns.map((col) => (
             <div key={col.heading}>
               <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 mb-5">
                 {col.heading}
@@ -141,10 +213,10 @@ export function Footer() {
         <div className="mx-auto max-w-7xl flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-wrap gap-8">
             {[
-              { label: "Nations", value: "8" },
-              { label: "Districts", value: "38+" },
-              { label: "Clubs", value: "3,500+" },
-              { label: "Members", value: "120K+" },
+              { label: "Nations", value: siteConfig.stats.countries },
+              { label: "Districts", value: siteConfig.stats.districts },
+              { label: "Clubs", value: siteConfig.stats.clubs },
+              { label: "Members", value: siteConfig.stats.members },
             ].map(({ label, value }) => (
               <div key={label} className="text-center">
                 <div className="text-base font-bold text-white">{value}</div>

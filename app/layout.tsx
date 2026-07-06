@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
-import { SubpageModal } from "@/components/SubpageModal";
+import { SmoothScroll } from "@/components/SmoothScroll";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -28,10 +28,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://api.fontshare.com" />
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=general-sans@500,600,700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className={`${inter.variable} font-sans antialiased bg-white dark:bg-[#0B1426] text-[#0B1426] dark:text-white transition-colors duration-300`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <SmoothScroll />
           {children}
-          <SubpageModal />
         </ThemeProvider>
       </body>
     </html>

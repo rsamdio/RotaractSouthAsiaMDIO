@@ -22,9 +22,9 @@ export default function AdminLoginPage() {
         setError("Unauthorized. Access is restricted to @rsamdio.org administration emails.");
         await signOut();
       }
-    } catch (err: any) {
+    } catch (err) {
       console.error("Google Sign-In failed:", err);
-      setError(err.message || "Sign-in failed. Please try again.");
+      setError(err instanceof Error ? err.message : "Sign-in failed. Please try again.");
     } finally {
       setLoading(false);
     }
