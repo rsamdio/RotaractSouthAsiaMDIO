@@ -40,13 +40,13 @@ export function PillNav({ items = homeItems }: { items?: PillItem[] }) {
   }, []);
 
   return (
-    <nav className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-40 flex max-w-[calc(100vw-2rem)] items-center gap-1 overflow-x-auto rounded-full border border-white/10 bg-[#0B1426]/90 px-2 py-2 shadow-2xl backdrop-blur-2xl [&::-webkit-scrollbar]:hidden">
+    <nav className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-40 flex max-w-[calc(100vw-2rem)] items-center gap-1 overflow-x-auto rounded-2xl border border-[#0B1426]/5 bg-white px-2 py-2 shadow-[0_8px_30px_rgba(39,43,36,0.12)] [&::-webkit-scrollbar]:hidden">
       {items.map((item) => (
         <button
           key={item.id}
           onClick={() => handleClick(item.id)}
-          className={`shrink-0 whitespace-nowrap rounded-full px-3.5 sm:px-4 py-2 text-[11px] sm:text-xs font-bold uppercase tracking-wide transition-colors cursor-pointer ${
-            active === item.id ? "bg-[#D41B69] text-white" : "text-white/50 hover:text-white"
+          className={`shrink-0 whitespace-nowrap rounded-xl px-3.5 sm:px-4 py-2 text-[11px] sm:text-xs font-bold uppercase tracking-wide transition-colors cursor-pointer ${
+            active === item.id ? "bg-[#D41B69] text-white" : "text-[#0B1426]/60 hover:text-[#0B1426]"
           }`}
         >
           {item.label}

@@ -51,18 +51,18 @@ html.lenis, html.lenis body { height: auto; }
   from { opacity: 0; transform: scale(0.97); }
   to   { opacity: 1; transform: scale(1); }
 }
-@keyframes hero-float {
-  from { transform: translateY(calc(var(--float-amp, 28px) * -1)); }
-  to   { transform: translateY(var(--float-amp, 28px)); }
+/* Hero image lanes: vertical tracks drift continuously; each track holds two
+   copies of its card set so the -50% keyframe loops seamlessly. */
+@keyframes drift {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
 }
-.hero-float {
-  animation-name: hero-float;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+@keyframes drift-rev {
+  from { transform: translateY(-50%); }
+  to   { transform: translateY(0); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-float { animation: none; }
+  .hero-lane-track { animation: none !important; }
 }
 
 .animate-fade-up   { animation: fade-up 0.5s ease both; }
