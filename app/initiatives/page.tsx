@@ -15,12 +15,13 @@ export default function InitiativesPage() {
   return (
     <>
       <Navbar />
-      <PageHero
-        eyebrow="Initiatives"
-        title="Driving Impact Across Communities"
-        description="Focused multi-district initiatives addressing the most pressing challenges facing our region — and the leaders who take them on."
-        crumbs={[{ label: "Initiatives" }]}
-      />
+      <main id="main-content">
+        <PageHero
+          eyebrow="Initiatives"
+          title="Driving Impact Across Communities"
+          description="Focused multi-district initiatives addressing the most pressing challenges facing our region — and the leaders who take them on."
+          crumbs={[{ label: "Initiatives" }]}
+        />
 
       <section className="py-24 px-5 sm:px-6 lg:px-8 bg-white dark:bg-[#0B1426]">
         <div className="mx-auto max-w-7xl grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -48,6 +49,7 @@ export default function InitiativesPage() {
           ))}
         </div>
       </section>
+      </main>
 
       <Footer />
       <ScrollToTop />

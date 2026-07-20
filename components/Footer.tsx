@@ -4,7 +4,7 @@ import { ExternalLink, Globe, Shield } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 // Brand icons hand-rolled as SVG — lucide-react removed brand glyphs.
-function YoutubeIcon({ className }: { className?: string }) {
+export function YoutubeIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
@@ -13,7 +13,7 @@ function YoutubeIcon({ className }: { className?: string }) {
   );
 }
 
-function LinkedinIcon({ className }: { className?: string }) {
+export function LinkedinIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -23,7 +23,7 @@ function LinkedinIcon({ className }: { className?: string }) {
   );
 }
 
-function InstagramIcon({ className }: { className?: string }) {
+export function InstagramIcon({ className }: { className?: string }) {
   return (
     <svg
       className={className}
@@ -37,6 +37,22 @@ function InstagramIcon({ className }: { className?: string }) {
       <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
       <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
       <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
+
+export function FacebookIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
     </svg>
   );
 }
@@ -107,7 +123,7 @@ const footerColumns = [
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-[#0B1426] via-[#581033] to-[#8A0F3E] border-t border-white/8">
+    <footer className="bg-slate-50 border-t border-slate-200/80">
       {/* Main footer */}
       <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-4 xl:grid-cols-[1.3fr_repeat(7,0.85fr)] xl:gap-12">
@@ -119,18 +135,18 @@ export function Footer() {
                 alt="RSAMDIO Logo"
                 width={40}
                 height={40}
-                className="object-contain drop-shadow-lg"
+                className="object-contain drop-shadow-sm"
               />
               <div>
-                <div className="text-lg font-bold tracking-tight text-white" style={{ fontFamily: "General Sans, sans-serif" }}>
+                <div className="text-lg font-bold tracking-tight text-[#17458F]" style={{ fontFamily: "General Sans, sans-serif" }}>
                   RSAMDIO
                 </div>
-                <div className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#D41B69]">
+                <div className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#D41367]">
                   Rotaract South Asia
                 </div>
               </div>
             </Link>
-            <p className="text-sm text-white/45 leading-relaxed max-w-xs">
+            <p className="text-sm text-slate-500 leading-relaxed max-w-xs">
               The regional coordination hub for Rotaract across South Asia — unifying 8 nations through shared knowledge, standards, and service.
             </p>
             <div className="flex items-center gap-3">
@@ -138,7 +154,7 @@ export function Footer() {
                 href={siteConfig.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/50 hover:bg-[#D41B69]/15 hover:text-[#D41B69] hover:border-[#D41B69]/30 transition"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400 hover:bg-[#D41367]/10 hover:text-[#D41367] hover:border-[#D41367]/20 transition"
                 aria-label="Instagram"
               >
                 <InstagramIcon className="h-4 w-4" />
@@ -147,7 +163,7 @@ export function Footer() {
                 href={siteConfig.social.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/50 hover:bg-[#D41B69]/15 hover:text-[#D41B69] hover:border-[#D41B69]/30 transition"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400 hover:bg-[#D41367]/10 hover:text-[#D41367] hover:border-[#D41367]/20 transition"
                 aria-label="YouTube"
               >
                 <YoutubeIcon className="h-4 w-4" />
@@ -156,7 +172,7 @@ export function Footer() {
                 href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/50 hover:bg-[#D41B69]/15 hover:text-[#D41B69] hover:border-[#D41B69]/30 transition"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400 hover:bg-[#D41367]/10 hover:text-[#D41367] hover:border-[#D41367]/20 transition"
                 aria-label="LinkedIn"
               >
                 <LinkedinIcon className="h-4 w-4" />
@@ -165,7 +181,7 @@ export function Footer() {
                 href="https://library.rsamdio.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/50 hover:bg-white/10 hover:text-white transition"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400 hover:bg-slate-100 hover:text-slate-700 hover:border-slate-300 transition"
                 aria-label="Resource Library"
               >
                 <Globe className="h-4 w-4" />
@@ -176,7 +192,7 @@ export function Footer() {
           {/* Link columns */}
           {footerColumns.map((col) => (
             <div key={col.heading}>
-              <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 mb-5">
+              <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-5">
                 {col.heading}
               </h4>
               <ul className="space-y-3">
@@ -187,7 +203,7 @@ export function Footer() {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-sm text-white/45 hover:text-white transition"
+                        className="flex items-center gap-1.5 text-sm text-slate-600 hover:text-[#D41367] transition"
                       >
                         {item.label}
                         <ExternalLink className="h-3 w-3 flex-shrink-0" />
@@ -195,7 +211,7 @@ export function Footer() {
                     ) : (
                       <Link
                         href={item.href}
-                        className="text-sm text-white/45 hover:text-white transition"
+                        className="text-sm text-slate-600 hover:text-[#D41367] transition"
                       >
                         {item.label}
                       </Link>
@@ -209,7 +225,7 @@ export function Footer() {
       </div>
 
       {/* Stats strip */}
-      <div className="border-t border-white/8 py-6 px-5 sm:px-6 lg:px-8">
+      <div className="border-t border-slate-200 py-6 px-5 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-wrap gap-8">
             {[
@@ -219,12 +235,12 @@ export function Footer() {
               { label: "Members", value: siteConfig.stats.members },
             ].map(({ label, value }) => (
               <div key={label} className="text-center">
-                <div className="text-base font-bold text-white">{value}</div>
-                <div className="text-[10px] text-white/30 uppercase tracking-widest">{label}</div>
+                <div className="text-base font-bold text-slate-800">{value}</div>
+                <div className="text-[10px] text-slate-500 uppercase tracking-widest">{label}</div>
               </div>
             ))}
           </div>
-          <div className="flex items-center gap-1.5 text-xs text-white/20">
+          <div className="flex items-center gap-1.5 text-xs text-slate-400">
             <Shield className="h-3 w-3" />
             GDPR Compliant · RY {siteConfig.rotaryYear}
           </div>
@@ -232,12 +248,12 @@ export function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/5 py-5 px-5 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-white/25">
+      <div className="border-t border-slate-200 py-5 px-5 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-400">
           <p>© {new Date().getFullYear()} Rotaract South Asia MDIO. All rights reserved.</p>
           <div className="flex gap-4">
-            <Link href="/privacy" className="hover:text-white/60 transition">Privacy Policy</Link>
-            <Link href="/admin" className="hover:text-white/60 transition">Admin</Link>
+            <Link href="/privacy" className="hover:text-slate-700 transition">Privacy Policy</Link>
+            <Link href="/admin" className="hover:text-slate-700 transition">Admin</Link>
           </div>
         </div>
       </div>

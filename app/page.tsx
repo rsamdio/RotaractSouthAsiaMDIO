@@ -1,6 +1,5 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { StatsBar } from "@/components/StatsBar";
 import { AboutSnapshot } from "@/components/AboutSnapshot";
 import { GlobalParticipation } from "@/components/GlobalParticipation";
 import { FocusAreas } from "@/components/FocusAreas";
@@ -12,22 +11,24 @@ import { CTAStrip } from "@/components/CTAStrip";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { PillNav } from "@/components/PillNav";
+// Force layout rebuild to clear CSS font variables cache
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <PillNav />
-      <Hero />
-      <StatsBar />
-      <AboutSnapshot />
-      <GlobalParticipation />
-      <FocusAreas />
-      <InitiativesShowcase />
-      <LeadershipSnapshot />
-      <UpcomingEventsPreview />
-      <StoriesGallery />
-      <CTAStrip />
+      <main id="main-content">
+        <Hero />
+        <AboutSnapshot />
+        <GlobalParticipation />
+        <FocusAreas />
+        <InitiativesShowcase />
+        <LeadershipSnapshot />
+        <UpcomingEventsPreview />
+        <StoriesGallery />
+        <CTAStrip />
+      </main>
       <Footer />
       <ScrollToTop />
     </>

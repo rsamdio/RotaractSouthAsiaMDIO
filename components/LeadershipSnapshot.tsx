@@ -1,93 +1,51 @@
 import Link from "next/link";
 import { ArrowRight, Globe, Star } from "lucide-react";
 import { executiveBoard } from "@/config/leadership";
+import { MemberCard } from "./MemberCard";
 import { Reveal } from "./Reveal";
-
-const avatarColors = [
-  { bg: "from-[#D41B69] to-[#8A0F3E]", ring: "ring-[#D41B69]/40" },
-  { bg: "from-[#7E22CE] to-[#581033]", ring: "ring-[#7E22CE]/40" },
-  { bg: "from-[#17458F] to-[#0B1426]", ring: "ring-[#17458F]/40" },
-  { bg: "from-[#F7A81B] to-[#C87900]", ring: "ring-[#F7A81B]/40" },
-];
-
-function getInitials(name: string) {
-  return name.split(" ").map((n) => n[0]).join("").toUpperCase().slice(0, 2);
-}
 
 export function LeadershipSnapshot() {
   const president = executiveBoard.find((m) => m.role === "president");
   const rest = executiveBoard.filter((m) => m.role !== "president");
 
   return (
-    <section id="leadership" className="relative py-24 px-5 sm:px-6 lg:px-8 bg-[#0B1426] scroll-mt-24">
+    <section id="leadership" className="relative py-24 px-5 sm:px-6 lg:px-8 bg-slate-50 scroll-mt-24">
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 h-72 w-[600px] rounded-full bg-[#D41B69]/10 blur-[120px]" />
+        <div className="absolute left-1/2 top-0 -translate-x-1/2 h-72 w-[600px] rounded-full bg-[#D41B69]/5 blur-[120px]" />
       </div>
 
       <div className="relative mx-auto max-w-5xl">
         <Reveal className="text-center mb-14">
-          <span className="inline-flex items-center gap-2 rounded-full bg-[#D41B69]/15 border border-[#D41B69]/25 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#D41B69] mb-5">
+          <span className="inline-flex items-center gap-2 rounded-full bg-[#D41B69]/10 border border-[#D41B69]/20 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#D41B69] mb-5">
             <Star className="h-3 w-3" />
             Leadership
           </span>
-          <h2 className="text-4xl font-bold text-white" style={{ fontFamily: "General Sans, sans-serif" }}>
+          <h2 className="text-4xl font-bold text-[#0B1426]" style={{ fontFamily: "General Sans, sans-serif" }}>
             Meet the Leadership
           </h2>
-          <p className="mt-3 text-white/55 max-w-xl mx-auto">
+          <p className="mt-3 text-slate-500 max-w-xl mx-auto">
             The dedicated Executive Board guiding Rotaract South Asia forward for Rotary Year 2026–27.
           </p>
         </Reveal>
 
         {president && (
-          <Reveal delay={0.1} className="mb-8 rounded-3xl border border-[#F7A81B]/25 bg-gradient-to-br from-[#F7A81B]/10 via-[#0B1426] to-[#D41B69]/10 p-7 flex flex-col sm:flex-row items-center gap-6 shadow-2xl hover:shadow-[#F7A81B]/20 transition-all duration-500">
-            <div className={`relative flex-shrink-0 h-24 w-24 rounded-2xl bg-gradient-to-br ${avatarColors[0].bg} ring-4 ${avatarColors[0].ring} flex items-center justify-center text-white text-3xl font-bold shadow-xl`}>
-              {getInitials(president.name)}
-              <span className="absolute -top-2 -right-2 h-7 w-7 rounded-full bg-[#F7A81B] flex items-center justify-center shadow-lg">
-                <Star className="h-3.5 w-3.5 text-[#0B1426]" fill="currentColor" />
-              </span>
-            </div>
-            <div className="text-center sm:text-left">
-              <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#F7A81B] mb-1">MDIO President · RY 2026–27</div>
-              <h3 className="text-2xl font-bold text-white" style={{ fontFamily: "General Sans, sans-serif" }}>
-                {president.name}
-              </h3>
-              <div className="flex items-center gap-2 mt-2 justify-center sm:justify-start">
-                <Globe className="h-3.5 w-3.5 text-white/40" />
-                <span className="text-sm text-white/55">{president.district} · {president.country}</span>
-              </div>
-            </div>
+          <Reveal delay={0.1}>
+            <MemberCard member={president} index={0} isFeatured />
           </Reveal>
         )}
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {rest.map((member, i) => {
-            const colors = avatarColors[(i + 1) % avatarColors.length];
-            return (
-              <Reveal key={member.name} delay={i * 0.08}>
-                <div className="group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-[#D41B69]/30 hover:shadow-glow-pink hover:bg-white/8">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className={`h-14 w-14 rounded-xl bg-gradient-to-br ${colors.bg} ring-2 ${colors.ring} flex items-center justify-center text-white text-lg font-bold flex-shrink-0 shadow-md`}>
-                      {getInitials(member.name)}
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-white text-sm leading-tight">{member.name}</h4>
-                      <p className="text-xs text-[#D41B69] font-semibold mt-0.5">{member.title}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-1.5 text-xs text-white/40">
-                    <Globe className="h-3 w-3 flex-shrink-0" />
-                    <span>{member.district} · {member.country}</span>
-                  </div>
-                </div>
-              </Reveal>
-            );
-          })}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {rest.map((member, i) => (
+            <Reveal key={member.name} delay={i * 0.08}>
+              <MemberCard member={member} index={i + 1} />
+            </Reveal>
+          ))}
         </div>
 
         <div className="mt-10 text-center">
           <Link
             href="/leadership"
-            className="inline-flex items-center gap-2 text-base font-semibold text-white hover:text-[#F7A81B] border-b-2 border-transparent hover:border-[#F7A81B] pb-1 transition-colors"
+            className="inline-flex items-center gap-2 text-base font-semibold text-[#0B1426] hover:text-[#D41B69] border-b-2 border-transparent hover:border-[#D41B69] pb-1 transition-colors"
           >
             View Full Board
             <ArrowRight className="h-4 w-4" />

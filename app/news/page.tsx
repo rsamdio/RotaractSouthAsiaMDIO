@@ -24,12 +24,13 @@ export default function NewsPage() {
           { id: "gallery", label: "Gallery" },
         ]}
       />
-      <PageHero
-        eyebrow="News & Media"
-        title="Stories, Updates & Opportunities"
-        description="Real stories of service, leadership, and fellowship — plus official communications from the Secretariat."
-        crumbs={[{ label: "News & Media" }]}
-      />
+      <main id="main-content">
+        <PageHero
+          eyebrow="News & Media"
+          title="Stories, Updates & Opportunities"
+          description="Real stories of service, leadership, and fellowship — plus official communications from the Secretariat."
+          crumbs={[{ label: "News & Media" }]}
+        />
 
       {/* Stories */}
       <section id="stories" className="py-24 px-5 sm:px-6 lg:px-8 bg-white dark:bg-[#0B1426] scroll-mt-24">
@@ -142,6 +143,7 @@ export default function NewsPage() {
           </div>
         </div>
       </section>
+      </main>
 
       <Footer />
       <ScrollToTop />

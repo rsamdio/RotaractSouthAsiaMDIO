@@ -22,24 +22,25 @@ export default function AboutPage() {
           { id: "vision-mission", label: "Vision & Mission" },
         ]}
       />
-      <PageHero
-        eyebrow="Who We Are"
-        title="About RSAMDIO"
-        description="The Rotaract South Asia Multi-District Information Organization is the official sub-regional coordination body of Rotary International."
-        crumbs={[{ label: "About" }]}
-      />
+      <main id="main-content">
+        <PageHero
+          eyebrow="Who We Are"
+          title="About RSAMDIO"
+          description="The Rotaract South Asia Multi-District Information Organization is the official sub-regional coordination body of Rotary International."
+          crumbs={[{ label: "About" }]}
+        />
 
       <section id="overview" className="py-24 bg-white dark:bg-[#0D1825] px-5 sm:px-6 lg:px-8 scroll-mt-24">
         <div className="mx-auto max-w-6xl grid lg:grid-cols-2 gap-16 items-start">
           <div>
-            <p className="text-lg leading-relaxed text-slate-600 dark:text-white/65">
-              The <strong className="text-[#0B1426] dark:text-white">Rotaract South Asia Multi-District Information Organization</strong>{" "}
+            <p className="text-lg leading-relaxed text-slate-650 font-serif">
+              The <strong className="text-[#0B1426] dark:text-white font-serif">Rotaract South Asia Multi-District Information Organization</strong>{" "}
               (RSAMDIO) is the official sub-regional coordination body of Rotary International, serving the South Asia region spanning Afghanistan, Pakistan, India, Nepal, Bhutan, Bangladesh, Sri Lanka, and the Maldives.
             </p>
-            <p className="mt-5 text-lg leading-relaxed text-slate-600 dark:text-white/65">
+            <p className="mt-5 text-lg leading-relaxed text-slate-650 font-serif">
               Established to bridge the gap between RI global standards and district-level implementation, RSAMDIO operates as the primary knowledge-sharing and governance hub for over{" "}
-              <strong className="text-[#0B1426] dark:text-white">3,500 Rotaract clubs</strong> and{" "}
-              <strong className="text-[#0B1426] dark:text-white">120,000+ members</strong> across 38+ districts.
+              <strong className="text-[#0B1426] dark:text-white font-serif">3,500 Rotaract clubs</strong> and{" "}
+              <strong className="text-[#0B1426] dark:text-white font-serif font-bold">120,000+ members</strong> across 38+ districts.
             </p>
 
             {/* Districts & Countries teaser */}
@@ -121,6 +122,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      </main>
 
       <Footer />
       <ScrollToTop />

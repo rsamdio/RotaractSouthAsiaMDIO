@@ -5,19 +5,36 @@
 
 /* ── Custom design tokens ─────────────────────────────────────── */
 @theme {
-  --color-navy-dark: #0B1426;
-  --color-navy-mid: #131F35;
-  --color-crimson: #D41B69;
-  --color-crimson-dark: #8A0F3E;
+  --color-navy-dark: #17458F;
+  --color-navy-mid: #00246C;
+  --color-crimson: #D41367;
+  --color-crimson-dark: #B01057;
   --color-gold: #F7A81B;
   --color-gold-dark: #C87900;
 
-  --font-sans: var(--font-inter), Inter, system-ui, sans-serif;
-  --font-heading: "General Sans", Inter, system-ui, sans-serif;
+  --font-sans: var(--font-open-sans), "Open Sans", Arial, sans-serif;
+  --font-heading: var(--font-open-sans), "Open Sans", Arial, sans-serif;
+  --font-serif: var(--font-sentinel), Georgia, serif;
 
-  --shadow-glow-pink: 0 0 40px -5px rgba(212,27,105,0.35);
+  --shadow-glow-pink: 0 0 40px -5px rgba(212,19,103,0.35);
   --shadow-glow-gold: 0 0 40px -5px rgba(247,168,27,0.35);
   --shadow-soft: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+body {
+  --font-sans: var(--font-open-sans), "Open Sans", Arial, sans-serif !important;
+  --font-heading: var(--font-open-sans), "Open Sans", Arial, sans-serif !important;
+  --font-serif: var(--font-sentinel), Georgia, serif !important;
+}
+
+/* Force any legacy inline fontFamily overrides to use Open Sans */
+[style*="font-family"] {
+  font-family: var(--font-open-sans), "Open Sans", Arial, sans-serif !important;
+}
+
+/* Force Sentinel serif font on Tailwind .font-serif utility class */
+.font-serif {
+  font-family: var(--font-sentinel), Georgia, serif !important;
 }
 
 /* ── Base styles ──────────────────────────────────────────────── */

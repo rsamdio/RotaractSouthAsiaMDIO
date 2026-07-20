@@ -17,7 +17,7 @@ export const executiveBoard: LeadershipMember[] = [
     title: "MDIO President",
     district: "District 3150",
     country: "India",
-    image: "/img/profile1.jpg",
+    image: "/img/profile1.png",
     role: "president",
   },
   {
@@ -25,7 +25,7 @@ export const executiveBoard: LeadershipMember[] = [
     title: "Vice Chairperson",
     district: "District 3291",
     country: "Nepal",
-    image: "/img/profile2.jpg",
+    image: "/img/profile2.png",
     role: "vp",
   },
   {
@@ -33,7 +33,7 @@ export const executiveBoard: LeadershipMember[] = [
     title: "Secretary General",
     district: "District 3220",
     country: "Sri Lanka",
-    image: "/img/profile3.jpg",
+    image: "/img/profile3.png",
     role: "secretary",
   },
   {
@@ -41,7 +41,7 @@ export const executiveBoard: LeadershipMember[] = [
     title: "Treasurer",
     district: "District 3271",
     country: "Pakistan",
-    image: "/img/profile4.jpg",
+    image: "/img/profile4.png",
     role: "treasurer",
   },
 ];

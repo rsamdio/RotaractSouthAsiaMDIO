@@ -30,12 +30,13 @@ export default function EventsPage() {
           { id: "calendar", label: "Calendar" },
         ]}
       />
-      <PageHero
-        eyebrow="Conventions & Forums"
-        title="Events"
-        description="Major regional activities, conventions, and training seminars across South Asia."
-        crumbs={[{ label: "Events" }]}
-      />
+      <main id="main-content">
+        <PageHero
+          eyebrow="Conventions & Forums"
+          title="Events"
+          description="Major regional activities, conventions, and training seminars across South Asia."
+          crumbs={[{ label: "Events" }]}
+        />
 
       {/* Upcoming */}
       <section id="upcoming" className="py-24 px-5 sm:px-6 lg:px-8 bg-slate-50 dark:bg-[#0B1426] scroll-mt-24">
@@ -113,6 +114,7 @@ export default function EventsPage() {
           </div>
         </div>
       </section>
+      </main>
 
       <Footer />
       <ScrollToTop />

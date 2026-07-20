@@ -11,17 +11,17 @@ const config: Config = {
     extend: {
       colors: {
         navy: {
-          dark: "#0B1426",
-          mid: "#131F35",
+          dark: "#17458F",
+          mid: "#00246C",
         },
-        crimson: "#D41B69",
-        "crimson-dark": "#8A0F3E",
+        crimson: "#D41367",
+        "crimson-dark": "#B01057",
         gold: "#F7A81B",
         "gold-dark": "#C87900",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "Inter", "system-ui", "sans-serif"],
-        heading: ["General Sans", "Inter", "system-ui", "sans-serif"],
+        sans: ["var(--font-open-sans)", "Open Sans", "Arial", "sans-serif"],
+        serif: ["var(--font-sentinel)", "Georgia", "serif"],
       },
       boxShadow: {
         "glow-pink": "0 0 40px -5px rgba(212,27,105,0.35)",

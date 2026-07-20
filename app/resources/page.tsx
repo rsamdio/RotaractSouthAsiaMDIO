@@ -18,12 +18,13 @@ export default function ResourcesPage() {
   return (
     <>
       <Navbar />
-      <PageHero
-        eyebrow="Resources — Rotaract Library"
-        title="Everything Your Club Needs, in One Place"
-        description="Five named platforms power every club and district — from templates to certification to administration."
-        crumbs={[{ label: "Resources" }]}
-      />
+      <main id="main-content">
+        <PageHero
+          eyebrow="Resources — Rotaract Library"
+          title="Everything Your Club Needs, in One Place"
+          description="Five named platforms power every club and district — from templates to certification to administration."
+          crumbs={[{ label: "Resources" }]}
+        />
 
       <section className="py-24 px-5 sm:px-6 lg:px-8 bg-white dark:bg-[#0B1426]">
         <div className="mx-auto max-w-6xl">
@@ -78,6 +79,7 @@ export default function ResourcesPage() {
           </Reveal>
         </div>
       </section>
+      </main>
 
       <Footer />
       <ScrollToTop />

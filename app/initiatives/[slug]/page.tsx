@@ -6,6 +6,25 @@ import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { initiatives, getInitiative } from "@/config/initiatives";
+import { Metadata } from "next";
+
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const initiative = getInitiative(slug);
+  if (!initiative) {
+    return {
+      title: "Initiative Not Found",
+    };
+  }
+  return {
+    title: `${initiative.title} | Initiatives`,
+    description: initiative.summary || `Learn more about the Rotaract South Asia initiative: ${initiative.title}.`,
+  };
+}
 
 export function generateStaticParams() {
   return initiatives.map((i) => ({ slug: i.slug }));
@@ -19,12 +38,13 @@ export default async function InitiativeDetailPage({ params }: { params: Promise
   return (
     <>
       <Navbar />
-      <PageHero
-        eyebrow={initiative.category}
-        title={initiative.title}
-        description={initiative.summary}
-        crumbs={[{ label: "Initiatives", href: "/initiatives" }, { label: initiative.title }]}
-      />
+      <main id="main-content">
+        <PageHero
+          eyebrow={initiative.category}
+          title={initiative.title}
+          description={initiative.summary}
+          crumbs={[{ label: "Initiatives", href: "/initiatives" }, { label: initiative.title }]}
+        />
 
       <section className="py-24 px-5 sm:px-6 lg:px-8 bg-white dark:bg-[#0B1426]">
         <div className="mx-auto max-w-4xl grid md:grid-cols-[1fr_1.1fr] gap-12 items-start">
@@ -48,13 +68,14 @@ export default async function InitiativeDetailPage({ params }: { params: Promise
             </ul>
             <Link
               href="/contact?type=partnership"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#D41B69] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#D41B69]/20 transition hover:bg-[#8A0F3E]"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#D41367] px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-[#D41367]/20 transition hover:bg-[#B01057]"
             >
               Get Involved <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
       </section>
+      </main>
 
       <Footer />
       <ScrollToTop />
