@@ -33,8 +33,8 @@ export function FocusAreas() {
     <section className="relative py-24 px-5 sm:px-6 lg:px-8 bg-slate-50 dark:bg-[#0D1825]">
       <div className="relative mx-auto max-w-6xl">
         <Reveal className="text-center mb-14 max-w-2xl mx-auto">
-          <span className="inline-block rounded-full bg-slate-100 dark:bg-white/10 border border-slate-200 dark:border-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-slate-600 dark:text-white/50 mb-4">
-            Focus Areas
+          <span className="inline-block rounded-full bg-[#D41B69]/10 dark:bg-[#D41B69]/20 border border-[#D41B69]/20 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#D41B69] mb-4">
+            Rotary Areas of Focus
           </span>
           <h2 className="text-4xl font-bold text-[#0B1426] dark:text-white" style={{ fontFamily: "General Sans, sans-serif" }}>
             What We Do
@@ -43,18 +43,41 @@ export function FocusAreas() {
             Driving impact and collaboration across South Asia through focused initiatives and structured support.
           </p>
         </Reveal>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
           {pillars.map((p, i) => (
-            <Reveal key={p.title} delay={i * 0.08}>
-              <div className="group rounded-2xl border border-slate-100 dark:border-white/10 bg-white dark:bg-white/5 p-6 hover:shadow-soft transition-all duration-300 hover:-translate-y-1">
-                <div
-                  className="h-11 w-11 rounded-xl flex items-center justify-center mb-4 transition-all duration-300"
-                  style={{ backgroundColor: p.color + "20", color: p.color }}
+            <Reveal key={p.title} delay={i * 0.1}>
+              <div className="group relative rounded-[2.5rem] border border-slate-200/80 dark:border-white/10 bg-white/70 dark:bg-white/5 p-8 sm:p-12 shadow-sm hover:shadow-2xl hover:border-slate-300 transition-all duration-500 overflow-hidden backdrop-blur-sm h-full flex flex-col">
+                {/* Large Background Decorative Icon */}
+                <div 
+                  className="absolute -right-6 -top-6 w-56 h-56 opacity-[0.03] group-hover:scale-125 group-hover:-rotate-12 group-hover:opacity-[0.06] transition-all duration-700 pointer-events-none"
+                  style={{ color: p.color }}
                 >
-                  <p.icon className="h-5 w-5" />
+                  <p.icon className="w-full h-full" strokeWidth={1} />
                 </div>
-                <h4 className="font-bold text-[#0B1426] dark:text-white text-sm mb-2">{p.title}</h4>
-                <p className="text-xs text-slate-500 dark:text-white/50 leading-relaxed">{p.desc}</p>
+                
+                {/* Icon Box */}
+                <div
+                  className="h-16 w-16 rounded-2xl flex items-center justify-center mb-8 shadow-sm transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-1 relative z-10"
+                  style={{ backgroundColor: p.color, color: "#fff" }}
+                >
+                  <p.icon className="h-7 w-7" strokeWidth={2.5} />
+                </div>
+                
+                {/* Text Content */}
+                <div className="relative z-10 flex-grow">
+                  <h4 className="font-extrabold text-[#0B1426] dark:text-white text-2xl mb-4 tracking-tight group-hover:text-[#D41B69] transition-colors duration-300">
+                    {p.title}
+                  </h4>
+                  <p className="text-base text-slate-600 dark:text-white/60 leading-relaxed font-medium">
+                    {p.desc}
+                  </p>
+                </div>
+
+                {/* Animated Bottom Line */}
+                <div 
+                  className="absolute bottom-0 left-0 h-1.5 w-0 group-hover:w-full transition-all duration-700 ease-out" 
+                  style={{ backgroundColor: p.color }} 
+                />
               </div>
             </Reveal>
           ))}

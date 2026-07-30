@@ -18,30 +18,33 @@ type Lane = {
   gap: string; // vertical space between cards
   hide?: string; // responsive visibility classes
   cards: Card[];
+  zClass: string;
 };
 
 const lanes: Lane[] = [
   {
     side: "left", offset: "4%", width: "w-[180px]", duration: 95, phase: 0.12, gap: "55vh",
-    hide: "hidden sm:block",
+    hide: "hidden sm:block", zClass: "z-[1]",
     cards: [{ aspect: "sq" }, { aspect: "sq" }, { aspect: "port" }],
   },
   {
     side: "left", offset: "13%", width: "w-[190px] lg:w-[330px]", duration: 110, phase: 0.42, reverse: true, gap: "48vh",
+    zClass: "z-[10]",
     cards: [{ aspect: "land" }, { aspect: "port" }, { aspect: "land" }],
   },
   {
     side: "left", offset: "36%", width: "w-[200px]", duration: 100, phase: 0.68, gap: "55vh",
-    hide: "hidden lg:block",
+    hide: "hidden lg:block", zClass: "z-[1]",
     cards: [{ aspect: "sq" }, { aspect: "port" }, { aspect: "sq" }],
   },
   {
     side: "right", offset: "12%", width: "w-[210px] lg:w-[440px]", duration: 120, phase: 0.25, reverse: true, gap: "52vh",
+    zClass: "z-[10]",
     cards: [{ aspect: "land" }, { aspect: "land" }, { aspect: "port" }],
   },
   {
     side: "right", offset: "1%", width: "w-[220px]", duration: 105, phase: 0.55, gap: "55vh",
-    hide: "hidden sm:block",
+    hide: "hidden sm:block", zClass: "z-[1]",
     cards: [{ aspect: "sq" }, { aspect: "port" }, { aspect: "sq" }],
   },
 ];
@@ -55,14 +58,14 @@ const aspectClass: Record<Card["aspect"], string> = {
 export function HeroLanes() {
   let imageIndex = 0;
   return (
-    <div className="absolute inset-0 z-[1] pointer-events-none select-none" aria-hidden>
+    <div className="absolute inset-0 pointer-events-none select-none" aria-hidden>
       {lanes.map((lane, li) => {
         // Assign images sequentially across lanes, cycling the gallery.
         const laneImages = lane.cards.map(() => heroImages[imageIndex++ % heroImages.length]);
         return (
           <div
             key={li}
-            className={`absolute overflow-hidden ${lane.width} ${lane.hide ?? ""}`}
+            className={`absolute overflow-hidden ${lane.width} ${lane.hide ?? ""} ${lane.zClass}`}
             style={{
               top: "-15vh",
               height: "130vh",

@@ -41,3 +41,10 @@ logs/
 # Next.js
 .next/
 out/
+tsconfig.tsbuildinfo
+
+# Scratch and export artifacts
+scratch/
+pages_export/
+pages_export.zip
+*.xlsx

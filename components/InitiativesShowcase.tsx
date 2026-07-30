@@ -234,7 +234,7 @@ export function InitiativesShowcase() {
                 <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4" /> {active.primaryBtnText}
               </a>
               <a
-                href="/resources"
+                href="/initiatives"
                 className="inline-flex items-center justify-center rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 px-6 py-3 sm:px-7 sm:py-3.5 text-xs sm:text-sm font-bold text-slate-700 dark:text-white hover:bg-slate-50 dark:hover:bg-white/10 transition-all duration-300 cursor-pointer"
               >
                 View All Platforms

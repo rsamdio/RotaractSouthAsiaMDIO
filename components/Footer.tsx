@@ -78,27 +78,10 @@ const footerColumns = [
   {
     heading: "Initiatives",
     items: [
-      { label: "Signature Initiatives", href: "/initiatives/signature-initiatives" },
-      { label: "Leadership Development", href: "/initiatives/leadership-development" },
-      { label: "Service & Impact", href: "/initiatives/service-impact" },
-      { label: "Public Image", href: "/initiatives/public-image" },
-    ],
-  },
-  {
-    heading: "Events",
-    items: [
-      { label: "Upcoming Events", href: "/events#upcoming" },
-      { label: "Signature Events", href: "/events#signature" },
-      { label: "Calendar View", href: "/events#calendar" },
-    ],
-  },
-  {
-    heading: "Resources",
-    items: [
-      { label: "Rotaract Library", href: "https://library.rsamdio.org", external: true },
-      { label: "Brand Kit", href: "/resources" },
-      { label: "Admin Portal", href: "/admin" },
-      { label: "Privacy Policy", href: "/privacy" },
+      { label: "Rotaract Library", href: "https://library.rsamdio.org/essentials", external: true },
+      { label: "Rotaract Certify", href: "https://library.rsamdio.org/", external: true },
+      { label: "Brand Kit", href: "https://library.rsamdio.org/#brand-identity", external: true },
+      { label: "Publications Hub", href: "https://library.rsamdio.org/#publications", external: true },
     ],
   },
   {
@@ -141,7 +124,7 @@ export function Footer() {
                 <div className="text-lg font-bold tracking-tight text-[#17458F]" style={{ fontFamily: "General Sans, sans-serif" }}>
                   RSAMDIO
                 </div>
-                <div className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#D41367]">
+                <div className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#D41B69]">
                   Rotaract South Asia
                 </div>
               </div>
@@ -154,7 +137,7 @@ export function Footer() {
                 href={siteConfig.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400 hover:bg-[#D41367]/10 hover:text-[#D41367] hover:border-[#D41367]/20 transition"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400 hover:bg-[#D41B69]/10 hover:text-[#D41B69] hover:border-[#D41B69]/20 transition"
                 aria-label="Instagram"
               >
                 <InstagramIcon className="h-4 w-4" />
@@ -163,7 +146,7 @@ export function Footer() {
                 href={siteConfig.social.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400 hover:bg-[#D41367]/10 hover:text-[#D41367] hover:border-[#D41367]/20 transition"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400 hover:bg-[#D41B69]/10 hover:text-[#D41B69] hover:border-[#D41B69]/20 transition"
                 aria-label="YouTube"
               >
                 <YoutubeIcon className="h-4 w-4" />
@@ -172,7 +155,7 @@ export function Footer() {
                 href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400 hover:bg-[#D41367]/10 hover:text-[#D41367] hover:border-[#D41367]/20 transition"
+                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400 hover:bg-[#D41B69]/10 hover:text-[#D41B69] hover:border-[#D41B69]/20 transition"
                 aria-label="LinkedIn"
               >
                 <LinkedinIcon className="h-4 w-4" />
@@ -203,7 +186,7 @@ export function Footer() {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-sm text-slate-600 hover:text-[#D41367] transition"
+                        className="flex items-center gap-1.5 text-sm text-slate-600 hover:text-[#D41B69] transition"
                       >
                         {item.label}
                         <ExternalLink className="h-3 w-3 flex-shrink-0" />
@@ -211,7 +194,7 @@ export function Footer() {
                     ) : (
                       <Link
                         href={item.href}
-                        className="text-sm text-slate-600 hover:text-[#D41367] transition"
+                        className="text-sm text-slate-600 hover:text-[#D41B69] transition"
                       >
                         {item.label}
                       </Link>

@@ -18,10 +18,12 @@ export function UpcomingEventsSection() {
   if (events.length === 0) return <EventCardEmpty />;
 
   return (
-    <div className="space-y-4">
+    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
       {events.map((ev, i) => (
-        <Reveal key={ev.id} delay={i * 0.06}>
-          <EventCard event={ev} />
+        <Reveal key={ev.id} delay={i * 0.06} className="h-full">
+          <div className="h-full">
+            <EventCard event={ev} />
+          </div>
         </Reveal>
       ))}
     </div>

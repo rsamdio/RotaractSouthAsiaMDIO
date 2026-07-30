@@ -10,31 +10,37 @@ const categoryStyles: Record<Event["category"], { bg: string; text: string; bord
 export function EventCard({ event }: { event: Event }) {
   const s = categoryStyles[event.category] ?? categoryStyles.pink;
   return (
-    <div className={`flex gap-5 rounded-2xl border ${s.border} ${s.bg} p-5 transition-all hover:shadow-soft`}>
-      <div className={`${s.dot} rounded-xl text-white p-3 text-center shrink-0 min-w-[60px] flex flex-col items-center justify-center`}>
-        <div className="text-sm font-bold">{event.month}</div>
-        <div className="text-[10px] opacity-80">{event.year}</div>
+    <div className={`flex flex-col h-full rounded-2xl border ${s.border} ${s.bg} overflow-hidden transition-all hover:shadow-md group block`}>
+      <div className="h-32 bg-slate-100 dark:bg-white/10 relative">
+        <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-medium text-xs">
+          Image Preview
+        </div>
+        <div className={`absolute top-3 right-3 ${s.dot} text-white px-3 py-1 rounded-full text-[10px] font-bold shadow-sm`}>
+          {event.month} {event.year}
+        </div>
       </div>
-      <div className="flex-1 min-w-0">
-        <h4 className="font-bold text-[#0B1426] dark:text-white text-base">{event.title}</h4>
+      <div className="p-4 flex-1 flex flex-col">
+        <h4 className="font-bold text-[#0B1426] dark:text-white text-sm group-hover:text-[#D41B69] transition-colors line-clamp-2">{event.title}</h4>
         {event.location && (
-          <p className="flex items-center gap-1 text-xs text-slate-500 dark:text-white/50 mt-0.5">
+          <p className="flex items-center gap-1 text-[10px] text-slate-500 dark:text-white/50 mt-1.5 uppercase tracking-wider font-semibold">
             <MapPin className="h-3 w-3" /> {event.location}
           </p>
         )}
         {event.description && (
-          <p className="text-xs text-slate-600 dark:text-white/60 mt-2 leading-relaxed">{event.description}</p>
+          <p className="text-[11px] text-slate-600 dark:text-white/60 mt-2 leading-relaxed line-clamp-2">{event.description}</p>
         )}
-        {event.link && (
-          <a
-            href={event.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-full bg-[#D41B69] hover:bg-[#8A0F3E] text-white text-[10px] font-bold px-3 py-1.5 mt-3.5 transition-all shadow-md shadow-[#D41B69]/10"
-          >
-            Visit Event Site →
-          </a>
-        )}
+        <div className="mt-auto pt-4">
+          {event.link && (
+            <a
+              href={event.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full bg-[#D41B69] hover:bg-[#8A0F3E] text-white text-[10px] font-bold px-3 py-1.5 transition-all shadow-md shadow-[#D41B69]/10"
+            >
+              Visit Event Site →
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -12,7 +12,6 @@ const homeItems: PillItem[] = [
   { id: "global", label: "Network" },
   { id: "initiatives", label: "Initiatives" },
   { id: "leadership", label: "Leadership" },
-  { id: "events", label: "Events" },
 ];
 
 export function PillNav({ items = homeItems }: { items?: PillItem[] }) {

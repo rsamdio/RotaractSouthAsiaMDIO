@@ -101,7 +101,8 @@ export default async function DistrictProfilePage({ params }: { params: Promise<
                       {d.isNonMDIO && <span className="text-[#D41B69] ml-0.5">*</span>}
                     </h4>
                     <p className="text-xs text-slate-400 mt-0.5">
-                      DRR: {d.drr} · Country: {d.country}
+                      DRR: <span className="font-medium text-slate-600">{d.drr}</span> · {d.country}
+                      {d.homeClub && <span className="text-slate-300 ml-1">· {d.homeClub}</span>}
                     </p>
                   </div>
                   <span className="text-xs font-bold uppercase tracking-wider text-[#D41B69] bg-[#D41B69]/10 px-3 py-1.5 rounded-full">

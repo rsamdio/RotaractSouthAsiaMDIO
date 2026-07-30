@@ -25,8 +25,8 @@ export default function Home() {
         <FocusAreas />
         <InitiativesShowcase />
         <LeadershipSnapshot />
-        <UpcomingEventsPreview />
-        <StoriesGallery />
+        {/* <UpcomingEventsPreview /> */}
+        {/* <StoriesGallery /> */}
         <CTAStrip />
       </main>
       <Footer />

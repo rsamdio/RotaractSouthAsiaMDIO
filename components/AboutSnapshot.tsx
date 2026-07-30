@@ -10,9 +10,9 @@ export function AboutSnapshot() {
           <div className="absolute inset-0 bg-gradient-to-tr from-[#FCE8F1] to-transparent dark:from-[#D41B69]/10 rounded-[3rem] transform -rotate-3 scale-105 z-0" />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=1000&q=80"
-            alt="Rotaract South Asia leadership meeting"
-            className="relative z-10 w-full rounded-[2.5rem] shadow-soft object-cover aspect-[4/3] border border-slate-100 dark:border-white/10"
+            src="/img/ananta-installation.jpg"
+            alt="Rotaract South Asia MDIO 17th Installation Ceremony - ANANTA"
+            className="relative z-10 w-full rounded-[2.5rem] shadow-soft object-cover aspect-[16/10] border border-slate-100 dark:border-white/10"
           />
           <div className="absolute -bottom-8 -right-4 sm:-right-8 bg-white dark:bg-[#131F35] p-5 rounded-3xl shadow-xl border border-slate-100 dark:border-white/10 z-20">
             <div className="flex items-center gap-4">

@@ -17,10 +17,10 @@ export function CTAStrip() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
-              href="/resources"
+              href="/initiatives"
               className="w-full sm:w-auto bg-[#0B1426] text-white rounded-full px-8 py-4 text-lg font-semibold hover:bg-[#1a2b4c] transition-colors shadow-lg"
             >
-              Access Resources
+              Explore Initiatives
             </Link>
             <Link
               href="/contact"

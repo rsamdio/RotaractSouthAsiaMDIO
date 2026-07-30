@@ -12,8 +12,8 @@ export const siteConfig = {
   rotaryYear: "2026–27", // ← update each July
   stats: {
     countries: "8",
-    districts: "38+",
-    clubs: "3,500+",
+    districts: "40+",
+    clubs: "3,000+",
     members: "120K+",
     projects: "10K+",
     volunteerHours: "2M+",

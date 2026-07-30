@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { ref, push, set } from "firebase/database";
-import { rtdb } from "@/lib/firebase";
 import { Mail, User, Phone, CheckCircle, Loader2, MessageSquare } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
@@ -33,11 +31,17 @@ export function ContactForm() {
     e.preventDefault();
     setStatus("loading");
     try {
-      const payload = { ...form, type, timestamp: Date.now(), submittedAt: new Date().toISOString() };
-      const newRef = push(ref(rtdb, "inquiries"));
-      await set(newRef, payload);
-      setStatus("success");
-      setForm({ name: "", email: "", phone: "", message: "" });
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, type }),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setForm({ name: "", email: "", phone: "", message: "" });
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }
@@ -70,7 +74,7 @@ export function ContactForm() {
         <select
           value={type}
           onChange={(e) => setType(e.target.value as InquiryType)}
-          className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-[#0B1426] focus:outline-none focus:ring-2 focus:ring-[#D41367]/40 transition"
+          className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-[#0B1426] focus:outline-none focus:ring-2 focus:ring-[#D41B69]/40 transition"
         >
           {inquiryOptions.map((o) => (
             <option key={o.value} value={o.value}>{o.label}</option>
@@ -92,7 +96,7 @@ export function ContactForm() {
             value={form.name}
             onChange={(e) => update("name", e.target.value)}
             placeholder="Your full name"
-            className="w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-4 py-3 text-sm text-[#0B1426] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D41367]/40 transition"
+            className="w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-4 py-3 text-sm text-[#0B1426] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D41B69]/40 transition"
           />
         </div>
       </div>
@@ -111,7 +115,7 @@ export function ContactForm() {
               value={form.email}
               onChange={(e) => update("email", e.target.value)}
               placeholder="name@district.org"
-              className="w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-4 py-3 text-sm text-[#0B1426] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D41367]/40 transition"
+              className="w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-4 py-3 text-sm text-[#0B1426] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D41B69]/40 transition"
             />
           </div>
         </div>
@@ -126,7 +130,7 @@ export function ContactForm() {
               value={form.phone}
               onChange={(e) => update("phone", e.target.value)}
               placeholder="+91 ..."
-              className="w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-4 py-3 text-sm text-[#0B1426] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D41367]/40 transition"
+              className="w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-4 py-3 text-sm text-[#0B1426] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D41B69]/40 transition"
             />
           </div>
         </div>
@@ -145,7 +149,7 @@ export function ContactForm() {
             value={form.message}
             onChange={(e) => update("message", e.target.value)}
             placeholder="How can the Secretariat help?"
-            className="w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-4 py-3 text-sm text-[#0B1426] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D41367]/40 transition resize-none"
+            className="w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-4 py-3 text-sm text-[#0B1426] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D41B69]/40 transition resize-none"
           />
         </div>
       </div>
@@ -159,7 +163,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#D41367] py-3.5 text-sm font-bold text-white hover:bg-[#B01057] transition shadow-lg shadow-[#D41367]/25 hover:shadow-[#D41367]/40 disabled:opacity-60 mt-2"
+        className="w-full flex items-center justify-center gap-2 rounded-xl bg-[#D41B69] py-3.5 text-sm font-bold text-white hover:bg-[#9A0E4E] transition shadow-lg shadow-[#D41B69]/25 hover:shadow-[#D41B69]/40 disabled:opacity-60 mt-2"
       >
         {status === "loading" ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
         {status === "loading" ? "Sending…" : "Send Message →"}
@@ -167,7 +171,7 @@ export function ContactForm() {
 
       <p className="text-center text-[11px] text-slate-400">
         Your information is kept private and never shared. See our{" "}
-        <a href="/privacy" className="underline hover:text-[#D41367] transition">Privacy Policy</a>.
+        <a href="/privacy" className="underline hover:text-[#D41B69] transition">Privacy Policy</a>.
       </p>
     </form>
   );

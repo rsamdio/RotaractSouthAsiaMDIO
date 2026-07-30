@@ -20,7 +20,7 @@ export function PageHero({ eyebrow, title, description, crumbs }: Props) {
         backgroundSize: "28px 28px, 100% 100%",
       }}
     >
-      <div className="absolute left-10 top-10 h-72 w-72 rounded-full bg-[#D41367]/5 blur-[110px] pointer-events-none" />
+      <div className="absolute left-10 top-10 h-72 w-72 rounded-full bg-[#D41B69]/5 blur-[110px] pointer-events-none" />
       <div className="absolute bottom-0 right-10 h-80 w-80 rounded-full bg-[#F7A81B]/5 blur-[110px] pointer-events-none" />
 
 
@@ -28,12 +28,12 @@ export function PageHero({ eyebrow, title, description, crumbs }: Props) {
       <div className="relative mx-auto max-w-5xl">
         {crumbs && crumbs.length > 0 && (
           <nav className="mb-6 flex flex-wrap items-center gap-1.5 text-xs font-semibold text-slate-400">
-            <Link href="/" className="hover:text-[#D41367] transition">Home</Link>
+            <Link href="/" className="hover:text-[#D41B69] transition">Home</Link>
             {crumbs.map((c, i) => (
               <span key={i} className="flex items-center gap-1.5">
                 <ChevronRight className="h-3 w-3 text-slate-300" />
                 {c.href ? (
-                  <Link href={c.href} className="hover:text-[#D41367] transition">{c.label}</Link>
+                  <Link href={c.href} className="hover:text-[#D41B69] transition">{c.label}</Link>
                 ) : (
                   <span className="text-slate-650">{c.label}</span>
                 )}
@@ -43,7 +43,7 @@ export function PageHero({ eyebrow, title, description, crumbs }: Props) {
         )}
 
         <Reveal>
-          <span className="inline-block rounded-full bg-[#D41367]/10 border border-[#D41367]/20 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-[#D41367] mb-5">
+          <span className="inline-block rounded-full bg-[#D41B69]/10 border border-[#D41B69]/20 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-[#D41B69] mb-5">
             {eyebrow}
           </span>
         </Reveal>

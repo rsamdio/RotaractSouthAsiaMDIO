@@ -25,7 +25,7 @@ export default function ContactPage() {
 
       <section className="relative py-24 px-5 sm:px-6 lg:px-8 bg-slate-50">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute left-1/2 bottom-0 -translate-x-1/2 h-72 w-[700px] rounded-full bg-[#D41367]/5 blur-[120px]" />
+          <div className="absolute left-1/2 bottom-0 -translate-x-1/2 h-72 w-[700px] rounded-full bg-[#D41B69]/5 blur-[120px]" />
         </div>
         <div className="relative mx-auto max-w-6xl">
           <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] items-start">
@@ -53,13 +53,13 @@ export default function ContactPage() {
                     href="https://www.instagram.com/rsamdio/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 group text-slate-700 hover:text-[#D41367] transition-colors"
+                    className="flex items-center gap-4 group text-slate-700 hover:text-[#D41B69] transition-colors"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center shrink-0 group-hover:bg-[#D41367]/10 transition-colors">
-                      <InstagramIcon className="w-5 h-5 text-[#D41367]" />
+                    <div className="w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center shrink-0 group-hover:bg-[#D41B69]/10 transition-colors">
+                      <InstagramIcon className="w-5 h-5 text-[#D41B69]" />
                     </div>
                     <div>
-                      <div className="text-sm font-bold text-slate-900 group-hover:text-[#D41367] transition-colors">Instagram</div>
+                      <div className="text-sm font-bold text-slate-900 group-hover:text-[#D41B69] transition-colors">Instagram</div>
                       <div className="text-xs text-slate-500">@rsamdio</div>
                     </div>
                   </a>
@@ -67,7 +67,7 @@ export default function ContactPage() {
                     href="https://www.linkedin.com/company/rsamdio/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 group text-slate-700 hover:text-[#D41367] transition-colors"
+                    className="flex items-center gap-4 group text-slate-700 hover:text-[#D41B69] transition-colors"
                   >
                     <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 group-hover:bg-blue-600/10 transition-colors">
                       <LinkedinIcon className="h-5 w-5 text-blue-600" />
@@ -81,7 +81,7 @@ export default function ContactPage() {
                     href="https://www.facebook.com/rsamdio/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 group text-slate-700 hover:text-[#D41367] transition-colors"
+                    className="flex items-center gap-4 group text-slate-700 hover:text-[#D41B69] transition-colors"
                   >
                     <div className="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center shrink-0 group-hover:bg-blue-700/10 transition-colors">
                       <FacebookIcon className="w-5 h-5 text-blue-700" />
@@ -107,33 +107,14 @@ export default function ContactPage() {
                     "General Rotaract South Asia questions",
                   ].map((item) => (
                     <li key={item} className="flex gap-3 text-slate-600">
-                      <CheckCircle2 className="h-5 w-5 text-[#D41367] shrink-0 mt-0.5" />
+                      <CheckCircle2 className="h-5 w-5 text-[#D41B69] shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Events Quick Link */}
-              <div className="rounded-3xl border border-rose-100 bg-rose-50/60 p-6 flex gap-4 items-center">
-                <div className="h-12 w-12 rounded-2xl bg-white border border-rose-100 flex items-center justify-center text-2xl shadow-sm shrink-0">
-                  📅
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-slate-900 mb-0.5">Looking for Events?</div>
-                  <p className="text-xs text-slate-500 leading-relaxed mb-1.5">
-                    All RSA MDIO events, timelines, and registrations are managed on our Luma calendar.
-                  </p>
-                  <a
-                    href="https://lu.ma/rsamdio"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs font-bold text-[#D41367] hover:text-[#B01057] transition-colors inline-flex items-center gap-1"
-                  >
-                    View Events Calendar →
-                  </a>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
