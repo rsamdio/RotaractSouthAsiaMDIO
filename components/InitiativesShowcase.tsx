@@ -2,7 +2,7 @@
 import { useState } from "react";
 import {
   BookOpen, Download, ExternalLink, Newspaper, Award, CheckCircle2,
-  Search, User, ShieldCheck, ChevronLeft, ChevronRight, Route,
+  Search, User, ShieldCheck, ChevronLeft, ChevronRight, ChevronDown, Route,
   Image as ImageIcon, Check,
 } from "lucide-react";
 
@@ -135,6 +135,9 @@ export function InitiativesShowcase() {
   // Certify mockup
   const [certName, setCertName] = useState("District Leader");
 
+  // Mobile preview toggle
+  const [showMobileDemo, setShowMobileDemo] = useState(false);
+
   const active = tabData[activeTab];
 
   const simulateDownload = (filename: string) => {
@@ -233,6 +236,13 @@ export function InitiativesShowcase() {
               >
                 <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4" /> {active.primaryBtnText}
               </a>
+              <button
+                onClick={() => setShowMobileDemo(!showMobileDemo)}
+                className="inline-flex lg:hidden items-center justify-center gap-2 rounded-full border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 px-5 py-3 text-xs font-bold text-slate-700 dark:text-white transition-all cursor-pointer"
+              >
+                {showMobileDemo ? "Hide Interactive Preview" : "Try Interactive Preview"}
+                <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${showMobileDemo ? "rotate-180" : ""}`} />
+              </button>
               <a
                 href="/initiatives"
                 className="inline-flex items-center justify-center rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 px-6 py-3 sm:px-7 sm:py-3.5 text-xs sm:text-sm font-bold text-slate-700 dark:text-white hover:bg-slate-50 dark:hover:bg-white/10 transition-all duration-300 cursor-pointer"
@@ -243,7 +253,7 @@ export function InitiativesShowcase() {
           </div>
 
           {/* Right: browser-frame mockup */}
-          <div className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] border border-slate-250/20 dark:border-white/15 bg-[#0B1426]/75 p-3.5 sm:p-5 shadow-2xl flex flex-col justify-center backdrop-blur-md min-h-[400px] lg:min-h-[460px]">
+          <div className={`relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] border border-slate-250/20 dark:border-white/15 bg-[#0B1426]/75 p-3.5 sm:p-5 shadow-2xl flex-col justify-center backdrop-blur-md min-h-[360px] lg:min-h-[460px] ${showMobileDemo ? "flex" : "hidden lg:flex"}`}>
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[#D41B69]/30 dark:bg-[#D41B69]/20 blur-3xl pointer-events-none" />
             <div className="absolute -bottom-20 left-10 h-72 w-72 rounded-full bg-[#17458F]/30 dark:bg-[#17458F]/20 blur-3xl pointer-events-none" />
 

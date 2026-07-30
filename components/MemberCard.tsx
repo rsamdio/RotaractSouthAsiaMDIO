@@ -101,33 +101,33 @@ export function MemberCard({
       </div>
 
       {/* Detail Area */}
-      <div className="p-5 flex flex-col justify-between flex-grow bg-white">
+      <div className="p-3.5 sm:p-5 flex flex-col justify-between flex-grow bg-white">
         <div>
-          <h4 className="font-bold text-[#0B1426] text-lg leading-tight group-hover:text-[#D41B69] transition-colors">
+          <h4 className="font-bold text-[#0B1426] text-sm sm:text-lg leading-tight group-hover:text-[#D41B69] transition-colors">
             {member.name}
           </h4>
-          <p className="text-xs text-[#D41B69] font-bold mt-1.5 capitalize tracking-wide">
+          <p className="text-[11px] sm:text-xs text-[#D41B69] font-bold mt-1 sm:mt-1.5 capitalize tracking-wide">
             {member.title}
           </p>
           {member.committee && (
-            <span className="inline-block mt-1 text-[10px] font-extrabold uppercase tracking-wider text-[#17458F] bg-[#17458F]/10 px-2 py-0.5 rounded-md">
+            <span className="inline-block mt-1 text-[9px] sm:text-[10px] font-extrabold uppercase tracking-wider text-[#17458F] bg-[#17458F]/10 px-1.5 sm:px-2 py-0.5 rounded-md truncate max-w-full">
               {member.committee}
             </span>
           )}
           {member.profession && (
-            <p className="text-[11px] text-slate-500 mt-1 line-clamp-1 italic">
+            <p className="text-[10px] sm:text-[11px] text-slate-500 mt-1 line-clamp-1 italic">
               {member.profession}
             </p>
           )}
         </div>
         
-        <div className="mt-4 pt-3 border-t border-slate-100 space-y-1 text-xs text-slate-500">
-          <div className="flex items-center gap-2">
-            <Globe className="h-3.5 w-3.5 text-slate-400 shrink-0" />
+        <div className="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-slate-100 space-y-0.5 sm:space-y-1 text-[11px] sm:text-xs text-slate-500">
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <Globe className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-slate-400 shrink-0" />
             <span className="truncate">{member.district} · {member.country}</span>
           </div>
           {member.homeClub && (
-            <div className="text-[11px] text-slate-400 truncate pl-5">
+            <div className="text-[10px] sm:text-[11px] text-slate-400 truncate pl-4 sm:pl-5">
               {member.homeClub}
             </div>
           )}
