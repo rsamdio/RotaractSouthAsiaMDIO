@@ -74,7 +74,7 @@ export function ContactForm() {
         <select
           value={type}
           onChange={(e) => setType(e.target.value as InquiryType)}
-          className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-[#0B1426] focus:outline-none focus:ring-2 focus:ring-[#D41B69]/40 transition"
+          className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-base sm:text-sm text-[#0B1426] focus:outline-none focus:ring-2 focus:ring-[#D41B69]/40 transition"
         >
           {inquiryOptions.map((o) => (
             <option key={o.value} value={o.value}>{o.label}</option>
@@ -96,7 +96,7 @@ export function ContactForm() {
             value={form.name}
             onChange={(e) => update("name", e.target.value)}
             placeholder="Your full name"
-            className="w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-4 py-3 text-sm text-[#0B1426] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D41B69]/40 transition"
+            className="w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-4 py-3 text-base sm:text-sm text-[#0B1426] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D41B69]/40 transition"
           />
         </div>
       </div>
@@ -115,7 +115,7 @@ export function ContactForm() {
               value={form.email}
               onChange={(e) => update("email", e.target.value)}
               placeholder="name@district.org"
-              className="w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-4 py-3 text-sm text-[#0B1426] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D41B69]/40 transition"
+              className="w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-4 py-3 text-base sm:text-sm text-[#0B1426] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D41B69]/40 transition"
             />
           </div>
         </div>
@@ -130,7 +130,7 @@ export function ContactForm() {
               value={form.phone}
               onChange={(e) => update("phone", e.target.value)}
               placeholder="+91 ..."
-              className="w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-4 py-3 text-sm text-[#0B1426] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D41B69]/40 transition"
+              className="w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-4 py-3 text-base sm:text-sm text-[#0B1426] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D41B69]/40 transition"
             />
           </div>
         </div>
@@ -149,7 +149,7 @@ export function ContactForm() {
             value={form.message}
             onChange={(e) => update("message", e.target.value)}
             placeholder="How can the Secretariat help?"
-            className="w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-4 py-3 text-sm text-[#0B1426] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D41B69]/40 transition resize-none"
+            className="w-full rounded-xl border border-slate-200 bg-slate-50 pl-10 pr-4 py-3 text-base sm:text-sm text-[#0B1426] placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D41B69]/40 transition resize-none"
           />
         </div>
       </div>
