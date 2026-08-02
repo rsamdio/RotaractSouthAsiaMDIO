@@ -44,7 +44,11 @@ export default function LeadershipPage() {
   }, [selectedZone, searchQuery]);
 
   const filteredCommittee = useMemo(
-    () => committeeMembers.filter(matchesSearch),
+    () =>
+      committeeMembers
+        .filter(matchesSearch)
+        .slice()
+        .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" })),
     [searchQuery]
   );
 
@@ -65,7 +69,7 @@ export default function LeadershipPage() {
         <PageHero
           eyebrow="Leadership Network"
           title="Executive Board & Regional Leaders"
-          description="The elected officers, District Rotaract Representatives, and committee chairs coordinating Rotaract South Asia for Rotary Year 2026–27."
+          description="The elected officers, District Rotaract Representatives, and committee members coordinating Rotaract South Asia for Rotary Year 2026–27."
           crumbs={[{ label: "Leadership" }]}
         />
 
@@ -202,7 +206,7 @@ export default function LeadershipPage() {
                 <div className="flex items-center gap-2">
                   <UserCheck className="h-5 w-5 text-[#17458F]" />
                   <h2 className="text-xl sm:text-2xl font-bold text-[#0B1426]" style={{ fontFamily: "General Sans, sans-serif" }}>
-                    Committee Chairs & Members
+                    Committee Members
                   </h2>
                 </div>
                 <span className="text-xs font-bold text-slate-400 bg-slate-100 px-3 py-1 rounded-full">

@@ -829,7 +829,7 @@ export const committeeMembers: LeadershipMember[] = [
     homeClub: "Rotaract Club of Mit Fgc",
     profession: "Intern at Vtech solutions (STU-DEV)"
   }
-];
+].sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }));
 
 export type PastLeadershipYear = {
   year: string;
