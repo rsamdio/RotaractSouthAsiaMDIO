@@ -1,11 +1,22 @@
 import type { Metadata, Viewport } from "next";
-import { Open_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import "./globals.css";
 
-const openSans = Open_Sans({ subsets: ["latin"], variable: "--font-open-sans" });
+// Self-hosted so local/dev does not depend on fonts.gstatic.com at compile time.
+const openSans = localFont({
+  src: [
+    { path: "../public/fonts/open-sans/open-sans-300.ttf", weight: "300", style: "normal" },
+    { path: "../public/fonts/open-sans/open-sans-400.ttf", weight: "400", style: "normal" },
+    { path: "../public/fonts/open-sans/open-sans-500.ttf", weight: "500", style: "normal" },
+    { path: "../public/fonts/open-sans/open-sans-600.ttf", weight: "600", style: "normal" },
+    { path: "../public/fonts/open-sans/open-sans-700.ttf", weight: "700", style: "normal" },
+    { path: "../public/fonts/open-sans/open-sans-800.ttf", weight: "800", style: "normal" },
+  ],
+  variable: "--font-open-sans",
+  display: "swap",
+});
 
 const sentinel = localFont({
   src: [

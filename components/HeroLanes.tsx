@@ -29,7 +29,8 @@ const lanes: Lane[] = [
   },
   {
     side: "left", offset: "13%", width: "w-[190px] lg:w-[330px]", duration: 110, phase: 0.42, reverse: true, gap: "48vh",
-    zClass: "z-[10]",
+    // Keep all lanes below the hero cranberry shelf (z-[2]) and copy (z-[3]).
+    zClass: "z-[1]",
     cards: [{ aspect: "land" }, { aspect: "port" }, { aspect: "land" }],
   },
   {
@@ -39,7 +40,7 @@ const lanes: Lane[] = [
   },
   {
     side: "right", offset: "12%", width: "w-[210px] lg:w-[440px]", duration: 120, phase: 0.25, reverse: true, gap: "52vh",
-    zClass: "z-[10]",
+    zClass: "z-[1]",
     cards: [{ aspect: "land" }, { aspect: "land" }, { aspect: "port" }],
   },
   {

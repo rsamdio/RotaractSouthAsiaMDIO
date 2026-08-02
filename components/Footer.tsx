@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ExternalLink, Globe, Shield } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 // Brand icons hand-rolled as SVG — lucide-react removed brand glyphs.
@@ -57,186 +57,176 @@ export function FacebookIcon({ className }: { className?: string }) {
   );
 }
 
-const footerColumns = [
+type FooterLink = {
+  label: string;
+  href: string;
+  external?: boolean;
+};
+
+type FooterColumn = {
+  id: string;
+  heading: string;
+  items: FooterLink[];
+};
+
+// Agreed IA (UI / UX / UXR / Frontend / Critic): brand + 3 equal link columns.
+// No 5–8 column dump, no stats band, no duplicate Publications Hub.
+const footerColumns: FooterColumn[] = [
   {
-    heading: "About",
+    id: "organization",
+    heading: "Organization",
     items: [
       { label: "About RSAMDIO", href: "/about" },
       { label: "Vision & Mission", href: "/about#vision-mission" },
       { label: "Districts & Countries", href: "/districts" },
+      { label: "Leadership", href: "/leadership" },
+      { label: "Events", href: "/events" },
     ],
   },
   {
-    heading: "Leadership",
+    id: "platforms",
+    heading: "Platforms",
     items: [
-      { label: "Executive Board", href: "/leadership#executive-board" },
-      { label: "DRRs", href: "/leadership#drrs" },
-      { label: "Committee Members", href: "/leadership#committee" },
-      { label: "Past Leadership Archive", href: "/leadership#past-leadership" },
+      { label: "Rotaract Library", href: "https://library.rsamdio.org/", external: true },
+      { label: "Invoice Calculator", href: "https://dues.rsamdio.org/", external: true },
+      { label: "Rotaract Certify", href: "https://certify.rsamdio.org/", external: true },
+      { label: "Publications Hub", href: "https://publications.rsamdio.org/", external: true },
+      { label: "All platforms", href: "/initiatives" },
     ],
   },
   {
-    heading: "Initiatives",
-    items: [
-      { label: "Rotaract Library", href: "https://library.rsamdio.org/essentials", external: true },
-      { label: "Rotaract Certify", href: "https://library.rsamdio.org/", external: true },
-      { label: "Brand Kit", href: "https://library.rsamdio.org/#brand-identity", external: true },
-      { label: "Publications Hub", href: "https://library.rsamdio.org/#publications", external: true },
-    ],
-  },
-  {
-    heading: "News & Media",
-    items: [
-      { label: "Stories", href: "/news#stories" },
-      { label: "Press Releases", href: "/news#press" },
-      { label: "Publications Hub", href: "/news#publications" },
-      { label: "Gallery", href: "/news#gallery" },
-    ],
-  },
-  {
-    heading: "Contact",
+    id: "connect",
+    heading: "Connect",
     items: [
       { label: "Contact Us", href: "/contact" },
-      { label: "Submit an Update", href: "/contact?type=district-update" },
-      { label: "Partnership Inquiry", href: "/contact?type=partnership" },
-      { label: "Media Inquiry", href: "/contact?type=media" },
+      { label: "Submit an Update", href: "/contact" },
+      { label: "News & Stories", href: "/news" },
+      { label: "Gallery", href: "/news#gallery" },
+      { label: "Privacy Policy", href: "/privacy" },
     ],
   },
 ];
 
+const socialLinks = [
+  { label: "Instagram", href: siteConfig.social.instagram, Icon: InstagramIcon },
+  { label: "YouTube", href: siteConfig.social.youtube, Icon: YoutubeIcon },
+  { label: "LinkedIn", href: siteConfig.social.linkedin, Icon: LinkedinIcon },
+] as const;
+
+function FooterNavLink({ item }: { item: FooterLink }) {
+  const className =
+    "inline-flex items-center gap-1.5 text-sm text-slate-600 transition hover:text-[#D41B69] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D41B69]/35 focus-visible:ring-offset-2 rounded-sm";
+
+  if (item.external) {
+    return (
+      <a
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={className}
+        aria-label={`${item.label} (opens in a new tab)`}
+      >
+        {item.label}
+        <ExternalLink className="h-3 w-3 shrink-0 opacity-50" aria-hidden />
+      </a>
+    );
+  }
+
+  return (
+    <Link href={item.href} className={className}>
+      {item.label}
+    </Link>
+  );
+}
+
 export function Footer() {
   return (
-    <footer className="bg-slate-50 border-t border-slate-200/80">
-      {/* Main footer */}
-      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-2 gap-10 md:grid-cols-4 xl:grid-cols-[1.3fr_repeat(7,0.85fr)] xl:gap-12">
-          {/* Brand column */}
-          <div className="space-y-5 col-span-2 md:col-span-4 xl:col-span-1">
-            <Link href="/" className="flex items-center gap-3">
+    <footer className="border-t border-slate-200/80 bg-[#FAFAF8]">
+      <div className="mx-auto max-w-7xl px-5 py-14 sm:px-6 lg:px-8 lg:py-16">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:gap-10">
+          {/* Brand */}
+          <div className="flex flex-col gap-5 lg:col-span-4">
+            <Link
+              href="/"
+              className="inline-flex w-fit rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D41B69]/35 focus-visible:ring-offset-2"
+            >
               <Image
                 src="/img/rsamdio.webp"
-                alt="RSAMDIO Logo"
-                width={40}
-                height={40}
-                className="object-contain drop-shadow-sm"
+                alt="RSAMDIO — Rotaract South Asia"
+                width={72}
+                height={72}
+                className="h-16 w-auto object-contain sm:h-[4.5rem]"
               />
-              <div>
-                <div className="text-lg font-bold tracking-tight text-[#17458F]" style={{ fontFamily: "General Sans, sans-serif" }}>
-                  RSAMDIO
-                </div>
-                <div className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#D41B69]">
-                  Rotaract South Asia
-                </div>
-              </div>
             </Link>
-            <p className="text-sm text-slate-500 leading-relaxed max-w-xs">
-              The regional coordination hub for Rotaract across South Asia — unifying 8 nations through shared knowledge, standards, and service.
-            </p>
-            <div className="flex items-center gap-3">
-              <a
-                href={siteConfig.social.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400 hover:bg-[#D41B69]/10 hover:text-[#D41B69] hover:border-[#D41B69]/20 transition"
-                aria-label="Instagram"
-              >
-                <InstagramIcon className="h-4 w-4" />
-              </a>
-              <a
-                href={siteConfig.social.youtube}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400 hover:bg-[#D41B69]/10 hover:text-[#D41B69] hover:border-[#D41B69]/20 transition"
-                aria-label="YouTube"
-              >
-                <YoutubeIcon className="h-4 w-4" />
-              </a>
-              <a
-                href={siteConfig.social.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400 hover:bg-[#D41B69]/10 hover:text-[#D41B69] hover:border-[#D41B69]/20 transition"
-                aria-label="LinkedIn"
-              >
-                <LinkedinIcon className="h-4 w-4" />
-              </a>
-              <a
-                href="https://library.rsamdio.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-400 hover:bg-slate-100 hover:text-slate-700 hover:border-slate-300 transition"
-                aria-label="Resource Library"
-              >
-                <Globe className="h-4 w-4" />
-              </a>
-            </div>
-          </div>
 
-          {/* Link columns */}
-          {footerColumns.map((col) => (
-            <div key={col.heading}>
-              <h4 className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-5">
-                {col.heading}
-              </h4>
-              <ul className="space-y-3">
-                {col.items.map((item) => (
-                  <li key={item.label}>
-                    {"external" in item && item.external ? (
-                      <a
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-sm text-slate-600 hover:text-[#D41B69] transition"
-                      >
-                        {item.label}
-                        <ExternalLink className="h-3 w-3 flex-shrink-0" />
-                      </a>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        className="text-sm text-slate-600 hover:text-[#D41B69] transition"
-                      >
-                        {item.label}
-                      </Link>
-                    )}
+            <p className="max-w-sm text-sm leading-relaxed text-slate-500">
+              The regional coordination hub for Rotaract across South Asia — unifying 8 nations
+              through shared knowledge, standards, and service.
+            </p>
+
+            <nav aria-label="Social media">
+              <ul className="flex items-center gap-2.5">
+                {socialLinks.map(({ label, href, Icon }) => (
+                  <li key={label}>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-500 transition hover:border-[#D41B69]/25 hover:bg-[#D41B69]/5 hover:text-[#D41B69] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D41B69]/35 focus-visible:ring-offset-2"
+                    >
+                      <Icon className="h-4 w-4" />
+                    </a>
                   </li>
                 ))}
               </ul>
+            </nav>
+          </div>
+
+          {/* Link columns — equal tracks */}
+          <nav aria-label="Footer" className="lg:col-span-8">
+            <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 sm:gap-8">
+              {footerColumns.map((col) => (
+                <section key={col.id} aria-labelledby={`footer-${col.id}`}>
+                  <h2
+                    id={`footer-${col.id}`}
+                    className="mb-4 text-xs font-semibold uppercase tracking-[0.14em] text-[#17458F]/80"
+                  >
+                    {col.heading}
+                  </h2>
+                  <ul className="space-y-2.5">
+                    {col.items.map((item) => (
+                      <li key={item.label}>
+                        <FooterNavLink item={item} />
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ))}
             </div>
-          ))}
+          </nav>
         </div>
       </div>
 
-      {/* Stats strip */}
-      <div className="border-t border-slate-200 py-6 px-5 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl flex flex-wrap items-center justify-between gap-4">
-          <div className="flex flex-wrap gap-8">
-            {[
-              { label: "Nations", value: siteConfig.stats.countries },
-              { label: "Districts", value: siteConfig.stats.districts },
-              { label: "Clubs", value: siteConfig.stats.clubs },
-              { label: "Members", value: siteConfig.stats.members },
-            ].map(({ label, value }) => (
-              <div key={label} className="text-center">
-                <div className="text-base font-bold text-slate-800">{value}</div>
-                <div className="text-[10px] text-slate-500 uppercase tracking-widest">{label}</div>
-              </div>
-            ))}
-          </div>
-          <div className="flex items-center gap-1.5 text-xs text-slate-400">
-            <Shield className="h-3 w-3" />
-            GDPR Compliant · RY {siteConfig.rotaryYear}
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom bar */}
-      <div className="border-t border-slate-200 py-5 px-5 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-400">
-          <p>© {new Date().getFullYear()} Rotaract South Asia MDIO. All rights reserved.</p>
-          <div className="flex gap-4">
-            <Link href="/privacy" className="hover:text-slate-700 transition">Privacy Policy</Link>
-            <Link href="/admin" className="hover:text-slate-700 transition">Admin</Link>
+      {/* Single utility bar */}
+      <div className="border-t border-slate-200/80">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-5 py-5 text-xs text-slate-500 sm:flex-row sm:items-center sm:px-6 lg:px-8">
+          <p>
+            © {new Date().getFullYear()} Rotaract South Asia MDIO · RY {siteConfig.rotaryYear}
+          </p>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <Link
+              href="/privacy"
+              className="transition hover:text-[#D41B69] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D41B69]/35 focus-visible:ring-offset-2 rounded-sm"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              href="/admin"
+              className="text-slate-400 transition hover:text-slate-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D41B69]/35 focus-visible:ring-offset-2 rounded-sm"
+            >
+              Admin
+            </Link>
           </div>
         </div>
       </div>

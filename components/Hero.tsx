@@ -29,8 +29,8 @@ export function Hero() {
         </h1>
       </div>
 
-      {/* Cranberry thin line */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#D41B69] z-[2]" />
+      {/* Cranberry shelf — sits above drifting images so cards tuck behind it */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#D41B69] z-[2] pointer-events-none" />
     </section>
   );
 }

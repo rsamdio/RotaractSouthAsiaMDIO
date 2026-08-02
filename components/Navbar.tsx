@@ -33,15 +33,15 @@ export function Navbar() {
 
   return (
     <nav className="fixed left-0 right-0 top-4 z-50 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between rounded-[2rem] border border-slate-200 bg-white/95 px-5 shadow-lg backdrop-blur-2xl sm:px-8 text-slate-700">
+      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between rounded-3xl border border-slate-200 bg-white/95 px-4 shadow-lg backdrop-blur-2xl sm:px-6 text-slate-700">
         {/* Logo */}
-        <Link href="/" className="flex items-center shrink-0">
+        <Link href="/" className="flex items-center shrink-0 py-1.5">
           <Image
             src="/img/rsamdio.webp"
             alt="RSAMDIO Logo"
-            width={120}
-            height={48}
-            className="object-contain drop-shadow-sm h-14 sm:h-16 w-auto"
+            width={100}
+            height={40}
+            className="object-contain h-10 sm:h-11 w-auto"
           />
         </Link>
 
@@ -51,7 +51,7 @@ export function Navbar() {
             <div key={item.label} className="relative group">
               <Link
                 href={item.href}
-                className="rounded-full px-4 py-2.5 text-sm font-semibold text-slate-600 transition hover:bg-slate-100/80 hover:text-[#D41B69] flex items-center gap-1"
+                className="rounded-full px-4 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100/80 hover:text-[#D41B69] flex items-center gap-1"
               >
                 {item.label}
                 {item.dropdown && <ChevronDown className="h-3 w-3 opacity-60 group-hover:rotate-180 transition-transform duration-200" />}
@@ -79,7 +79,7 @@ export function Navbar() {
         <div className="flex items-center gap-3 shrink-0">
           <Link
             href="/contact"
-            className="hidden rounded-full bg-[#D41B69] px-6 py-2.5 text-sm font-bold text-white transition hover:bg-[#9A0E4E] hover:shadow-lg hover:shadow-[#D41B69]/20 lg:inline-flex"
+            className="hidden rounded-full bg-[#D41B69] px-5 py-2 text-sm font-bold text-white transition hover:bg-[#9A0E4E] hover:shadow-lg hover:shadow-[#D41B69]/20 lg:inline-flex"
           >
             Get in Touch
           </Link>

@@ -1,4 +1,4 @@
-import { ExternalLink, ArrowRight, BookOpen, ImageIcon, Newspaper, Route, Award } from "lucide-react";
+import { ExternalLink, ArrowRight, BookOpen, Newspaper, Route, Award, Receipt, Radio } from "lucide-react";
 import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 import { PageHero } from "@/components/PageHero";
@@ -7,7 +7,14 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { Reveal } from "@/components/Reveal";
 import { initiatives } from "@/config/initiatives";
 
-const iconMap = { "book-open": BookOpen, "award": Award, "image": ImageIcon, "newspaper": Newspaper, "route": Route };
+const iconMap = {
+  "book-open": BookOpen,
+  award: Award,
+  newspaper: Newspaper,
+  route: Route,
+  receipt: Receipt,
+  radio: Radio,
+};
 
 export const metadata = {
   title: "Initiatives | RSAMDIO",
@@ -22,7 +29,7 @@ export default function InitiativesPage() {
         <PageHero
           eyebrow="Initiatives"
           title="Everything Your Club Needs, in One Place"
-          description="Five signature platforms power every club and district — from templates to certification to administration."
+          description="Signature platforms power every club and district — from the Library and Invoice Calculator to NAVIGATE, Publications, Certify, and PULSE."
           crumbs={[{ label: "Initiatives" }]}
         />
 
