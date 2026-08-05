@@ -35,7 +35,11 @@ export function PillNav({ items = homeItems }: { items?: PillItem[] }) {
   }, [items]);
 
   const handleClick = useCallback((id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const el = document.getElementById(id);
+    if (!el) return;
+    const lenis = window.__lenis;
+    if (lenis) lenis.scrollTo(el, { offset: 0 });
+    else el.scrollIntoView({ behavior: "smooth", block: "start" });
   }, []);
 
   return (

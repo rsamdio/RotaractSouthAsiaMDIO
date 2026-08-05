@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Reveal } from "./Reveal";
@@ -7,7 +8,7 @@ type Crumb = { label: string; href?: string };
 type Props = {
   eyebrow: string;
   title: string;
-  description?: string;
+  description?: ReactNode;
   crumbs?: Crumb[];
 };
 
@@ -22,8 +23,6 @@ export function PageHero({ eyebrow, title, description, crumbs }: Props) {
     >
       <div className="absolute left-10 top-10 h-72 w-72 rounded-full bg-[#D41B69]/5 blur-[110px] pointer-events-none" />
       <div className="absolute bottom-0 right-10 h-80 w-80 rounded-full bg-[#F7A81B]/5 blur-[110px] pointer-events-none" />
-
-
 
       <div className="relative mx-auto max-w-5xl">
         {crumbs && crumbs.length > 0 && (
@@ -57,9 +56,9 @@ export function PageHero({ eyebrow, title, description, crumbs }: Props) {
         </Reveal>
         {description && (
           <Reveal delay={0.16}>
-            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
+            <div className="mt-5 max-w-2xl text-lg leading-8 text-slate-600">
               {description}
-            </p>
+            </div>
           </Reveal>
         )}
       </div>

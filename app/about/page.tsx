@@ -43,22 +43,22 @@ export default function AboutPage() {
               <strong className="text-[#0B1426] dark:text-white font-serif font-bold">120,000+ members</strong> across 38+ districts.
             </p>
 
-            {/* Districts & Countries teaser */}
+            {/* Member Districts teaser */}
             <div className="mt-10 rounded-[2rem] border border-slate-100 dark:border-white/10 bg-slate-50 dark:bg-white/5 p-7">
               <div className="flex items-center gap-3 mb-3">
                 <div className="h-10 w-10 rounded-xl bg-[#D41B69]/10 dark:bg-[#D41B69]/15 flex items-center justify-center text-[#D41B69]">
                   <Globe className="h-5 w-5" />
                 </div>
-                <h3 className="font-bold text-[#0B1426] dark:text-white text-lg">Districts & Countries</h3>
+                <h3 className="font-bold text-[#0B1426] dark:text-white text-lg">Member Districts</h3>
               </div>
               <p className="text-sm text-slate-600 dark:text-white/60 leading-relaxed mb-4">
-                Explore the {countryList.length} member nations and district directory that make up the RSAMDIO network.
+                Explore the {countryList.length} member nations and member districts that make up the RSAMDIO network.
               </p>
               <Link
                 href="/districts"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-[#D41B69] hover:text-[#8A0F3E] transition"
               >
-                View District Directory <ArrowRight className="h-4 w-4" />
+                View Member Districts <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
 

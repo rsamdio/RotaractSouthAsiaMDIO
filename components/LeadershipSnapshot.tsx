@@ -42,7 +42,7 @@ export function LeadershipSnapshot() {
             href="/leadership"
             className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-[#0B1426] hover:text-[#D41B69] border-b-2 border-transparent hover:border-[#D41B69] pb-1 transition-colors"
           >
-            View Full Board & DRRs
+            View Full Leadership Team
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

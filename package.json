@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "import:member-data": "python3 scripts/import-member-data.py",
+    "predev": "npm run import:member-data",
+    "prebuild": "npm run import:member-data",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

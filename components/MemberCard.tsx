@@ -2,9 +2,19 @@
 import { useState } from "react";
 import { Globe, Star } from "lucide-react";
 import { type LeadershipMember } from "@/config/leadership";
+import { RotaryMarkIcon } from "@/components/RotaryMarkIcon";
 
 function getInitials(name: string) {
   return name.split(" ").map((n) => n[0]).join("").toUpperCase().slice(0, 2);
+}
+
+/** Strip club-type prefixes so cards show only the club name. */
+function formatHomeClub(name: string) {
+  return name
+    .replace(/^Rotaract E-Club of(?:\s+Club of)?\s+/i, "")
+    .replace(/^Rotaract Club of\s+/i, "")
+    .replace(/^Rotary Club of\s+/i, "")
+    .trim();
 }
 
 // Facebook-style neutral silhouette profile vector icon
@@ -31,10 +41,12 @@ export function MemberCard({
   member,
   index,
   isFeatured = false,
+  showProfession = true,
 }: {
   member: LeadershipMember;
   index: number;
   isFeatured?: boolean;
+  showProfession?: boolean;
 }) {
   const [imageError, setImageError] = useState(false);
   const initials = getInitials(member.name);
@@ -63,20 +75,25 @@ export function MemberCard({
         {/* Featured Details */}
         <div className="text-center sm:text-left flex-grow">
           <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#C87900] mb-1.5">
-            MDIO President · RY 2026–27
+            {member.title}
           </div>
           <h3 className="text-2xl font-bold text-[#0B1426] leading-tight" style={{ fontFamily: "General Sans, sans-serif" }}>
             {member.name}
           </h3>
-          <div className="flex items-center gap-2 mt-3 justify-center sm:justify-start text-sm text-slate-500">
-            <Globe className="h-4 w-4 text-slate-400 shrink-0" />
-            <span>{member.district} · {member.country}</span>
-          </div>
-          {member.homeClub && (
-            <div className="text-xs text-slate-400 mt-1">
-              {member.homeClub}
+          <div className="mt-3 space-y-1 text-sm text-slate-500">
+            <div className="flex items-start gap-2 justify-center sm:justify-start">
+              <Globe className="h-4 w-4 text-slate-400 shrink-0 mt-0.5" />
+              <span className="min-w-0 break-words">
+                {member.district} · {member.country}
+              </span>
             </div>
-          )}
+            {member.homeClub && (
+              <div className="flex items-start gap-2 justify-center sm:justify-start text-xs text-slate-400">
+                <RotaryMarkIcon className="h-4 w-4 text-slate-400 shrink-0 mt-0.5" />
+                <span className="min-w-0 break-words">{formatHomeClub(member.homeClub)}</span>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     );
@@ -114,21 +131,26 @@ export function MemberCard({
               {member.committee}
             </span>
           )}
-          {member.profession && (
+          {showProfession && member.profession && (
             <p className="text-[10px] sm:text-[11px] text-slate-500 mt-1 line-clamp-1 italic">
               {member.profession}
             </p>
           )}
         </div>
         
-        <div className="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-slate-100 space-y-0.5 sm:space-y-1 text-[11px] sm:text-xs text-slate-500">
-          <div className="flex items-center gap-1.5 sm:gap-2">
-            <Globe className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-slate-400 shrink-0" />
-            <span className="truncate">{member.district} · {member.country}</span>
+        <div className="mt-3 sm:mt-4 pt-2.5 sm:pt-3 border-t border-slate-100 space-y-1 sm:space-y-1.5 text-[11px] sm:text-xs text-slate-500">
+          <div className="flex items-start gap-1.5 sm:gap-2">
+            <Globe className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-slate-400 shrink-0 mt-0.5" />
+            <span className="min-w-0 break-words leading-snug">
+              {member.district} · {member.country}
+            </span>
           </div>
           {member.homeClub && (
-            <div className="text-[10px] sm:text-[11px] text-slate-400 truncate pl-4 sm:pl-5">
-              {member.homeClub}
+            <div className="flex items-start gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] text-slate-400">
+              <RotaryMarkIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-slate-400 shrink-0 mt-0.5" />
+              <span className="min-w-0 break-words leading-snug">
+                {formatHomeClub(member.homeClub)}
+              </span>
             </div>
           )}
         </div>

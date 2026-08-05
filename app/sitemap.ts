@@ -1,4 +1,5 @@
 import { MetadataRoute } from "next";
+import { memberDistricts } from "@/config/memberDistricts";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://rsamdio.org";
@@ -7,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/about",
     "/leadership",
+    "/presidents",
     "/districts",
     "/initiatives",
     "/news",
@@ -19,8 +21,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "" ? 1.0 : 0.8,
   }));
 
-  const zoneRoutes = ["zone-4", "zone-5", "zone-6", "zone-7"].map((slug) => ({
-    url: `${baseUrl}/districts/${slug}`,
+  const districtRoutes = memberDistricts.map((d) => ({
+    url: `${baseUrl}/districts/${d.number}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.7,
@@ -37,5 +39,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...zoneRoutes, ...newsRoutes];
+  return [...staticRoutes, ...districtRoutes, ...newsRoutes];
 }

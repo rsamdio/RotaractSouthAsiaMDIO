@@ -479,35 +479,28 @@ export const executiveBoard: LeadershipMember[] = [
 ];
 
 // District Rotaract Representatives — Full Official Roster RY 2026–27
+// Zones aligned to RI Zone sheet (District → RI Zone)
 export const drrs: LeadershipMember[] = [
   // Zone 4
   { name: "Harshita Dhakad", title: "DRR, District 3012", district: "District 3012", country: "India", homeClub: "Rotaract Club of O.P.Jindal Global University", group: "Zone 4" },
-  { name: "Yashovardhan Kothari", title: "DRR, District 3040", district: "District 3040", country: "India", image: "/img/drr/yashovardhan-kothari.jpg", homeClub: "Rotaract E-Club of Indore Royals", group: "Zone 4" },
   { name: "Khushi Chauhan", title: "DRR, District 3053", district: "District 3053", country: "India", homeClub: "Rotaract Club of Gwalior Heritage", group: "Zone 4" },
   { name: "Aneri Nilesh Bhatt", title: "DRR, District 3055", district: "District 3055", country: "India", image: "/img/drr/aneri-bhatt.jpg", homeClub: "Rotaract Club of Ahmedabad Elysium", group: "Zone 4" },
   { name: "Aishwarya Singh", title: "DRR, District 3056", district: "District 3056", country: "India", homeClub: "Rotaract Club of Aishwarya", group: "Zone 4" },
-  { name: "Bhavya Samirkumar Shah", title: "DRR, District 3060", district: "District 3060", country: "India", image: "/img/drr/bhavya-shah.jpg", homeClub: "Rotaract Club of Navsari Young Turks", group: "Zone 4" },
   { name: "Rohan Tuli", title: "DRR, District 3070", district: "District 3070", country: "India", homeClub: "Rotaract Club of Ludhiana North", group: "Zone 4" },
   { name: "Manu Gupta", title: "DRR, District 3080", district: "District 3080", country: "India", image: "/img/drr/manu-gupta.jpg", homeClub: "Rotaract Club of chandigarh", group: "Zone 4" },
   { name: "Kashish Narula", title: "DRR, District 3090", district: "District 3090", country: "India", homeClub: "Rotaract Club of Nabha Greater", group: "Zone 4" },
-  { name: "Shreehari Nair", title: "DRR, District 3141", district: "District 3141", country: "India", image: "/img/drr/shree-nair.jpg", homeClub: "Rotaract Club of Bombay Pier", group: "Zone 4" },
-  { name: "Himanshu R Dapurkar", title: "DRR, District 3142", district: "District 3142", country: "India", homeClub: "Rotaract Club of Thane Downtown", group: "Zone 4" },
 
   // Zone 5
   { name: "M Manikandan", title: "DRR, District 2982", district: "District 2982", country: "India", image: "/img/drr/manikandan-m.jpg", homeClub: "Rotaract Club of Salem", group: "Zone 5" },
   { name: "Harish Amudavel", title: "DRR, District 3000", district: "District 3000", country: "India", image: "/img/drr/harish-amudavel.jpg", homeClub: "Rotaract Club of Boiler City Trichy", group: "Zone 5" },
   { name: "Varun Kumar", title: "DRR, District 3203", district: "District 3203", country: "India", image: "/img/drr/varun-kumar.jpg", homeClub: "Rotaract Club of Udumalpet Yuvas", group: "Zone 5" },
-  { name: "Sooraj Babu Parambath", title: "DRR, District 3204", district: "District 3204", country: "India", homeClub: "Rotaract Club of Calicut East", group: "Zone 5" },
-  { name: "Namith Krishna", title: "DRR, District 3205", district: "District 3205", country: "India", homeClub: "Rotaract Club of Cochin East", group: "Zone 5" },
   { name: "Vijay Vignesh V K", title: "DRR, District 3206", district: "District 3206", country: "India", image: "/img/drr/vijay-vignesh-v-k.jpg", homeClub: "Rotaract Club of Coimbatore Gaalaxy", group: "Zone 5" },
-  { name: "Muhammed Sha S L", title: "DRR, District 3211", district: "District 3211", country: "India", homeClub: "Rotaract Club of Trivandrum Suburban NSSA", group: "Zone 5" },
   { name: "Vigneshwaran Prabakaran", title: "DRR, District 3212", district: "District 3212", country: "India", homeClub: "Rotaract Club of virudhunagar", group: "Zone 5" },
   { name: "Jude Shannon Lucian", title: "DRR, District 3220", district: "District 3220", country: "Sri Lanka", image: "/img/drr/jude-lucian.jpg", homeClub: "Rotaract Club of Kandy Metropolitan", group: "Zone 5" },
   { name: "Harivignesh M", title: "DRR, District 3233", district: "District 3233", country: "India", image: "/img/drr/harivignesh-m.jpg", homeClub: "Rotaract Club of Green Galaxy", group: "Zone 5" },
   { name: "Vignesh Chandran", title: "DRR, District 3234", district: "District 3234", country: "India", homeClub: "Rotaract Club of Coastal Legacy", group: "Zone 5" },
 
   // Zone 6
-  { name: "Yogesh Ashok Jadhav", title: "DRR, District 3030", district: "District 3030", country: "India", homeClub: "Rotaract Club of Satana Pride", group: "Zone 6" },
   { name: "Garima Singh", title: "DRR, District 3120", district: "District 3120", country: "India", homeClub: "Rotaract Club of Prayagraj Sangam City", group: "Zone 6" },
   { name: "Pintu Sharma", title: "DRR, District 3240", district: "District 3240", country: "India", homeClub: "Rotaract Club of Gangtok Hills", group: "Zone 6" },
   { name: "Sadashiv Khatri", title: "DRR, District 3250", district: "District 3250", country: "India", homeClub: "Rotaract Club of Chaibasa", group: "Zone 6" },
@@ -517,8 +510,6 @@ export const drrs: LeadershipMember[] = [
 
   // Zone 7
   { name: "Prabhu Kalyan Ratnala", title: "DRR, District 3020", district: "District 3020", country: "India", homeClub: "Rotaract Club of Royal City Bezawada", group: "Zone 7" },
-  { name: "Karishma Awari", title: "DRR, District 3131", district: "District 3131", country: "India", image: "/img/drr/karishma-awari.jpg", homeClub: "Rotaract Club of Pune Shaniwarwada", group: "Zone 7" },
-  { name: "Amit Pravin Bhosale", title: "DRR, District 3132", district: "District 3132", country: "India", image: "/img/drr/amit-bhosale.jpg", homeClub: "Rotaract Club of Karad City", group: "Zone 7" },
   { name: "Sudheeshna Muthyapu", title: "DRR, District 3150", district: "District 3150", country: "India", image: "/img/drr/sudheeshna.jpg", homeClub: "Rotaract Club of Sunrise", group: "Zone 7" },
   { name: "Managala Purushotham", title: "DRR, District 3160", district: "District 3160", country: "India", homeClub: "Rotaract Club of Srit", group: "Zone 7" },
   { name: "Amey Mangesh Varerkar", title: "DRR, District 3170", district: "District 3170", country: "India", image: "/img/drr/amey-varerkar.jpg", homeClub: "Rotaract Club of Mapusa", group: "Zone 7" },
@@ -526,7 +517,25 @@ export const drrs: LeadershipMember[] = [
   { name: "Reshma Ramesh", title: "DRR, District 3182", district: "District 3182", country: "India", image: "/img/drr/reshma-r.jpg", homeClub: "Rotaract Club of Manipal Central", group: "Zone 7" },
   { name: "Anirudh G Kulkarni", title: "DRR, District 3191", district: "District 3191", country: "India", image: "/img/drr/anirudh-kulkarni.jpg", homeClub: "Rotaract Club of Bangalore JP Nagar", group: "Zone 7" },
   { name: "Sanjay R", title: "DRR, District 3192", district: "District 3192", country: "India", image: "/img/drr/sanjay-r.jpg", homeClub: "Rotaract Club of Bangalore Udyog", group: "Zone 7" },
-];
+  { name: "Sooraj Babu Parambath", title: "DRR, District 3204", district: "District 3204", country: "India", homeClub: "Rotaract Club of Calicut East", group: "Zone 7" },
+  { name: "Namith Krishna", title: "DRR, District 3205", district: "District 3205", country: "India", homeClub: "Rotaract Club of Cochin East", group: "Zone 7" },
+  { name: "Muhammed Sha S L", title: "DRR, District 3211", district: "District 3211", country: "India", homeClub: "Rotaract Club of Trivandrum Suburban NSSA", group: "Zone 7" },
+
+  // Zone 8
+  { name: "Yogesh Ashok Jadhav", title: "DRR, District 3030", district: "District 3030", country: "India", homeClub: "Rotaract Club of Satana Pride", group: "Zone 8" },
+  { name: "Yashovardhan Kothari", title: "DRR, District 3040", district: "District 3040", country: "India", image: "/img/drr/yashovardhan-kothari.jpg", homeClub: "Rotaract E-Club of Indore Royals", group: "Zone 8" },
+  { name: "Bhavya Samirkumar Shah", title: "DRR, District 3060", district: "District 3060", country: "India", image: "/img/drr/bhavya-shah.jpg", homeClub: "Rotaract Club of Navsari Young Turks", group: "Zone 8" },
+  { name: "Karishma Awari", title: "DRR, District 3131", district: "District 3131", country: "India", image: "/img/drr/karishma-awari.jpg", homeClub: "Rotaract Club of Pune Shaniwarwada", group: "Zone 8" },
+  { name: "Amit Pravin Bhosale", title: "DRR, District 3132", district: "District 3132", country: "India", image: "/img/drr/amit-bhosale.jpg", homeClub: "Rotaract Club of Karad City", group: "Zone 8" },
+  { name: "Shreehari Nair", title: "DRR, District 3141", district: "District 3141", country: "India", image: "/img/drr/shree-nair.jpg", homeClub: "Rotaract Club of Bombay Pier", group: "Zone 8" },
+  { name: "Himanshu R Dapurkar", title: "DRR, District 3142", district: "District 3142", country: "India", homeClub: "Rotaract Club of Thane Downtown", group: "Zone 8" },
+].sort((a, b) => {
+  const num = (district: string) => {
+    const match = district.match(/\d+/);
+    return match ? Number(match[0]) : Number.POSITIVE_INFINITY;
+  };
+  return num(a.district) - num(b.district);
+});
 
 export const committeeMembers: LeadershipMember[] = [
   {

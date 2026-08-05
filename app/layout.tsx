@@ -63,9 +63,13 @@ export const metadata: Metadata = {
   creator: "Rotaract South Asia MDIO",
   publisher: "Rotaract South Asia MDIO",
   icons: {
-    icon: "/img/rsamdio.webp",
-    shortcut: "/img/rsamdio.webp",
-    apple: "/img/rsamdio.webp",
+    icon: [
+      { url: "/img/favicon.ico", sizes: "32x32" },
+      { url: "/img/favicon.png", type: "image/png", sizes: "100x100" },
+      { url: "/img/favicon.webp", type: "image/webp", sizes: "100x100" },
+    ],
+    shortcut: "/img/favicon.ico",
+    apple: [{ url: "/img/favicon.png", sizes: "100x100", type: "image/png" }],
   },
   openGraph: {
     title: "RSAMDIO | Rotaract South Asia MDIO",

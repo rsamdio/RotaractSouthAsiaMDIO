@@ -1,35 +1,71 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
+import { useState, type MouseEvent } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { stashScrollToSection, scrollToSection } from "@/lib/scrollToSection";
 
-// Nav items with dropdown support
-const navItems = [
-  { 
-    label: "About", 
+type NavDrop = {
+  label: string;
+  href: string;
+  /** Scroll to this element id on the target page without adding a URL hash. */
+  scrollTo?: string;
+};
+
+type NavItem = {
+  label: string;
+  href: string;
+  dropdown?: NavDrop[];
+};
+
+const navItems: NavItem[] = [
+  {
+    label: "About",
     href: "/about",
     dropdown: [
       { label: "About RSAMDIO", href: "/about" },
-      { label: "Vision & Mission", href: "/about#vision-mission" },
-      { label: "Districts & Countries", href: "/districts" }
-    ]
+      { label: "Member Districts", href: "/districts" },
+      { label: "College of Presidents", href: "/presidents" },
+    ],
   },
-  { 
-    label: "Leadership", 
+  {
+    label: "Leadership",
     href: "/leadership",
     dropdown: [
-      { label: "Executive Board", href: "/leadership#executive-board" },
-      { label: "DRRs", href: "/leadership#drrs" },
-      { label: "Committee Members", href: "/leadership#committee" },
-    ]
+      { label: "Executive Board", href: "/leadership", scrollTo: "executive-board" },
+      { label: "DRRs", href: "/leadership", scrollTo: "drrs" },
+      { label: "Committee Members", href: "/leadership", scrollTo: "committee" },
+    ],
   },
   { label: "Initiatives", href: "/initiatives" },
-  { label: "Districts", href: "/districts" },
+  { label: "News & Stories", href: "/news" },
 ];
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const goTo = (drop: NavDrop, e: MouseEvent<HTMLAnchorElement>) => {
+    if (!drop.scrollTo) {
+      setMobileOpen(false);
+      return;
+    }
+
+    e.preventDefault();
+    setMobileOpen(false);
+
+    if (pathname === drop.href) {
+      scrollToSection(drop.scrollTo);
+      return;
+    }
+
+    stashScrollToSection(drop.scrollTo);
+    // Prevent Next.js from forcing scroll-to-top after navigation,
+    // which would cancel our section scroll.
+    router.push(drop.href, { scroll: false });
+  };
 
   return (
     <nav className="fixed left-0 right-0 top-4 z-50 px-4 sm:px-6 lg:px-8">
@@ -54,15 +90,18 @@ export function Navbar() {
                 className="rounded-full px-4 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-100/80 hover:text-[#D41B69] flex items-center gap-1"
               >
                 {item.label}
-                {item.dropdown && <ChevronDown className="h-3 w-3 opacity-60 group-hover:rotate-180 transition-transform duration-200" />}
+                {item.dropdown && (
+                  <ChevronDown className="h-3 w-3 opacity-60 group-hover:rotate-180 transition-transform duration-200" />
+                )}
               </Link>
               {item.dropdown && (
                 <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                   <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-2 min-w-[200px] flex flex-col gap-1">
-                    {item.dropdown.map(drop => (
+                    {item.dropdown.map((drop) => (
                       <Link
                         key={drop.label}
                         href={drop.href}
+                        onClick={(e) => goTo(drop, e)}
                         className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-[#D41B69] hover:bg-slate-50 rounded-xl transition"
                       >
                         {drop.label}
@@ -83,7 +122,6 @@ export function Navbar() {
           >
             Get in Touch
           </Link>
-          {/* Mobile hamburger */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-slate-700 lg:hidden cursor-pointer hover:bg-slate-100"
@@ -109,11 +147,11 @@ export function Navbar() {
                 </Link>
                 {item.dropdown && (
                   <div className="pl-6 pr-4 space-y-1 mt-1 mb-2">
-                    {item.dropdown.map(drop => (
+                    {item.dropdown.map((drop) => (
                       <Link
                         key={drop.label}
                         href={drop.href}
-                        onClick={() => setMobileOpen(false)}
+                        onClick={(e) => goTo(drop, e)}
                         className="block rounded-lg px-4 py-2 text-sm font-medium text-slate-500 hover:bg-rose-50/50 hover:text-[#D41B69] transition"
                       >
                         {drop.label}
@@ -124,7 +162,6 @@ export function Navbar() {
               </div>
             ))}
           </div>
-
         </div>
       )}
     </nav>

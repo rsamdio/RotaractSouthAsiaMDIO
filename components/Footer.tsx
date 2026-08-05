@@ -77,9 +77,9 @@ const footerColumns: FooterColumn[] = [
     heading: "Organization",
     items: [
       { label: "About RSAMDIO", href: "/about" },
-      { label: "Vision & Mission", href: "/about#vision-mission" },
-      { label: "Districts & Countries", href: "/districts" },
+      { label: "Member Districts", href: "/districts" },
       { label: "Leadership", href: "/leadership" },
+      { label: "College of Presidents", href: "/presidents" },
       { label: "Events", href: "/events" },
     ],
   },
