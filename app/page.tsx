@@ -12,8 +12,11 @@ import { CTAStrip } from "@/components/CTAStrip";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { PillNav } from "@/components/PillNav";
+import { loadFeaturedPrograms } from "@/sanity/lib/content";
 
-export default function Home() {
+export default async function Home() {
+  const featuredPrograms = await loadFeaturedPrograms(3);
+
   return (
     <>
       <Navbar />
@@ -24,7 +27,7 @@ export default function Home() {
         <GlobalParticipation />
         <FocusAreas />
         <InitiativesShowcase />
-        <ProgramsInitiatives variant="home" />
+        <ProgramsInitiatives variant="home" programs={featuredPrograms} />
         <LeadershipSnapshot />
         <NewsUpdatesPreview />
         <UpcomingEventsPreview />

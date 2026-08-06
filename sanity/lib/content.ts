@@ -12,6 +12,12 @@ import {
   type EventAccent,
   type EventKind,
 } from "@/config/events";
+import {
+  programInitiatives as fsPrograms,
+  type ProgramIconKey,
+  type ProgramInitiative,
+  type ProgramStatus,
+} from "@/config/initiatives";
 import { useFilesystemContent } from "../env";
 import { sanityFetch } from "./client";
 import {
@@ -20,6 +26,8 @@ import {
   chroniclesQuery,
   eventBySlugQuery,
   eventsQuery,
+  programBySlugQuery,
+  programsQuery,
   storiesQuery,
   storyBySlugQuery,
 } from "./queries";
@@ -62,6 +70,21 @@ type SanityEvent = {
   signature?: boolean;
   registrationUrl?: string;
   registrationLabel?: string;
+  image?: string | null;
+};
+
+type SanityProgram = {
+  slug: string;
+  title: string;
+  category: string;
+  status: ProgramStatus;
+  summary: string;
+  livingNote: string;
+  icon: ProgramIconKey;
+  accent: string;
+  body?: string;
+  featured?: boolean;
+  ctaLabel?: string;
   image?: string | null;
 };
 
@@ -112,6 +135,32 @@ function mapEvent(e: SanityEvent): SiteEvent {
   };
 }
 
+const programIconKeys: ProgramIconKey[] = [
+  "service",
+  "sports",
+  "leadership",
+  "fellowship",
+  "environment",
+];
+
+function mapProgram(p: SanityProgram): ProgramInitiative {
+  const icon = programIconKeys.includes(p.icon) ? p.icon : "service";
+  return {
+    slug: p.slug,
+    title: p.title,
+    category: p.category,
+    status: p.status,
+    summary: p.summary,
+    livingNote: p.livingNote,
+    icon,
+    accent: p.accent || "#D41B69",
+    image: p.image || "",
+    body: p.body || p.summary,
+    featured: p.featured,
+    ctaLabel: p.ctaLabel,
+  };
+}
+
 export async function loadStories(): Promise<Story[]> {
   if (useFilesystemContent()) return fsStories;
   const data = await sanityFetch<SanityPost[]>(storiesQuery);
@@ -152,6 +201,25 @@ export async function loadEvent(slug: string): Promise<SiteEvent | undefined> {
   if (useFilesystemContent()) return fsEvents.find((e) => e.slug === slug);
   const data = await sanityFetch<SanityEvent | null>(eventBySlugQuery, { slug });
   return data ? mapEvent(data) : undefined;
+}
+
+export async function loadPrograms(): Promise<ProgramInitiative[]> {
+  if (useFilesystemContent()) return fsPrograms;
+  const data = await sanityFetch<SanityProgram[]>(programsQuery);
+  return (data ?? []).map(mapProgram);
+}
+
+export async function loadProgram(slug: string): Promise<ProgramInitiative | undefined> {
+  if (useFilesystemContent()) return fsPrograms.find((p) => p.slug === slug);
+  const data = await sanityFetch<SanityProgram | null>(programBySlugQuery, { slug });
+  return data ? mapProgram(data) : undefined;
+}
+
+export async function loadFeaturedPrograms(limit = 3): Promise<ProgramInitiative[]> {
+  const all = await loadPrograms();
+  const featured = all.filter((p) => p.featured);
+  const pool = featured.length > 0 ? featured : all;
+  return pool.slice(0, limit);
 }
 
 export async function loadNewsPost(slug: string): Promise<

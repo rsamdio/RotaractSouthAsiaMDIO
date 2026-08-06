@@ -1,5 +1,5 @@
 /**
- * Seed Sanity with demo stories, announcements, chronicles, and events.
+ * Seed Sanity with demo stories, announcements, chronicles, events, and programs.
  * Idempotent: re-running upserts the same document IDs.
  *
  * Usage: npx tsx scripts/seed-sanity-demo.ts
@@ -325,6 +325,104 @@ const events = [
   },
 ];
 
+const programs = [
+  {
+    _id: "demo.program.service-week",
+    slug: "south-asia-service-week",
+    title: "South Asia Service Week",
+    category: "Service",
+    status: "active",
+    summary:
+      "A region-wide week of coordinated club and district service: health camps, literacy drives, and community clean-ups under one shared banner.",
+    livingNote: "RY 2026–27 window · Clubs report projects through their DRR",
+    icon: "service",
+    accent: "#D41B69",
+    featured: true,
+    ctaLabel: "Learn more",
+    body: "South Asia Service Week brings clubs and districts under one coordinated service banner each Rotary Year.\n\n## How it works\n- Clubs plan local projects under the shared week window\n- Districts collect impact stories and photos through their DRR\n- RSAMDIO amplifies the regional narrative through News & Updates\n\n## Who can join\nAny member club in RSAMDIO nations. Coordinate timing and reporting with your District Rotaract Representative.",
+    image: {
+      url: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80",
+      filename: "demo-program-service.jpg",
+    },
+  },
+  {
+    _id: "demo.program.sports-meet",
+    slug: "rotaract-sports-meet",
+    title: "Rotaract Sports Meet",
+    category: "Sports",
+    status: "upcoming",
+    summary:
+      "Inter-district sports and fellowship that bring Rotaractors together beyond boardrooms: cricket, football, athletics, and team challenges.",
+    livingNote: "Hosting bids open · Tentative Q3 regional meet",
+    icon: "sports",
+    accent: "#F7A81B",
+    featured: true,
+    ctaLabel: "Learn more",
+    body: "The Rotaract Sports Meet is a fellowship-forward gathering that pairs competition with regional friendship.\n\n## Focus areas\n- Team sports and athletics open to club and district squads\n- Host district hospitality and cultural evenings\n- Inclusive formats for mixed skill levels\n\n## Hosting\nDistricts may submit hosting bids to the Secretariat. Dates for the next meet will be published under Events once confirmed.",
+    image: {
+      url: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1200&q=80",
+      filename: "demo-program-sports.jpg",
+    },
+  },
+  {
+    _id: "demo.program.leaders-series",
+    slug: "leaders-series",
+    title: "Leaders Series",
+    category: "Leadership",
+    status: "active",
+    summary:
+      "A continuing conversation series with Rotary leaders, alumni, and changemakers. Hybrid sessions designed for club and district boards.",
+    livingNote: "Monthly sessions · Next guest announced via News",
+    icon: "leadership",
+    accent: "#17458F",
+    featured: true,
+    ctaLabel: "Learn more",
+    body: "Leaders Series is RSAMDIO's ongoing conversation programme for boards and emerging leaders.\n\n## Format\nHybrid sessions with guest speakers from Rotary, Rotaract alumni, and partner organisations. Recordings and takeaways are shared through RSA Chronicles and the News hub when available.\n\n## Who should attend\nClub presidents, district officers, and Rotaractors preparing for leadership roles.",
+    image: {
+      url: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=80",
+      filename: "demo-program-leaders.jpg",
+    },
+  },
+  {
+    _id: "demo.program.fellowship",
+    slug: "fellowship-exchanges",
+    title: "Cross-Border Fellowship",
+    category: "Fellowship",
+    status: "seasonal",
+    summary:
+      "Structured club twinning and short fellowship exchanges that connect Rotaractors across South Asian districts and cultures.",
+    livingNote: "Seasonal cohorts · Pairing facilitated by Secretariat",
+    icon: "fellowship",
+    accent: "#7E22CE",
+    featured: false,
+    ctaLabel: "Learn more",
+    body: "Cross-Border Fellowship pairs clubs and small cohorts for short exchanges that build lasting regional friendship.\n\n## What to expect\n- Facilitated twinning between districts\n- Host club programmes focused on culture, service, and leadership\n- Seasonal application windows announced by the Secretariat",
+    image: {
+      url: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
+      filename: "demo-program-fellowship.jpg",
+    },
+  },
+  {
+    _id: "demo.program.green",
+    slug: "green-south-asia",
+    title: "Green South Asia",
+    category: "Environment",
+    status: "active",
+    summary:
+      "A shared environmental campaign: tree planting, climate literacy, and local conservation projects with a common regional impact story.",
+    livingNote: "Year-round · District green champions coordinate locally",
+    icon: "environment",
+    accent: "#059669",
+    featured: false,
+    ctaLabel: "Learn more",
+    body: "Green South Asia is a year-round campaign that helps districts tell one regional environmental story while acting locally.\n\n## Project types\n- Tree planting and urban greening\n- Climate literacy in schools and clubs\n- Conservation partnerships with local organisations\n\nReport outcomes through your DRR so RSAMDIO can amplify shared impact.",
+    image: {
+      url: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80",
+      filename: "demo-program-green.jpg",
+    },
+  },
+];
+
 async function main() {
   console.log(`Seeding Sanity project ${projectId} / ${dataset} …`);
 
@@ -416,6 +514,26 @@ async function main() {
     tx = tx.createOrReplace(doc as Parameters<typeof tx.createOrReplace>[0]);
   }
 
+  for (const p of programs) {
+    const assetId = await cachedUpload(p.image);
+    tx = tx.createOrReplace({
+      _id: p._id,
+      _type: "programInitiative",
+      title: p.title,
+      slug: { _type: "slug", current: p.slug },
+      category: p.category,
+      status: p.status,
+      summary: p.summary,
+      livingNote: p.livingNote,
+      icon: p.icon,
+      accent: p.accent,
+      featured: p.featured,
+      ctaLabel: p.ctaLabel,
+      body: p.body,
+      image: imageRef(assetId),
+    });
+  }
+
   console.log("  committing transaction…");
   await tx.commit();
 
@@ -424,11 +542,13 @@ async function main() {
     announcements: number;
     chronicles: number;
     events: number;
+    programs: number;
   }>(`{
     "stories": count(*[_type == "story"]),
     "announcements": count(*[_type == "announcement"]),
     "chronicles": count(*[_type == "chronicleEdition"]),
-    "events": count(*[_type == "event"])
+    "events": count(*[_type == "event"]),
+    "programs": count(*[_type == "programInitiative"])
   }`);
 
   console.log("Done. Dataset counts:", counts);

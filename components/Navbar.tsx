@@ -142,14 +142,18 @@ export function Navbar() {
 
       <div className="relative z-50 mx-auto flex h-16 w-full max-w-7xl items-center justify-between rounded-3xl border border-slate-200 bg-white/95 px-4 shadow-lg backdrop-blur-2xl sm:px-6 text-slate-700">
         {/* Logo */}
-        <Link href="/" className="flex items-center shrink-0 py-1.5" onClick={() => setMobileOpen(false)}>
+        <Link
+          href="/"
+          className="relative block h-9 w-[86px] shrink-0 sm:h-10 sm:w-[96px]"
+          onClick={() => setMobileOpen(false)}
+        >
           <Image
             src="/img/rsamdio.webp"
             alt="RSAMDIO Logo"
-            width={100}
-            height={40}
-            className="h-auto w-[86px] object-contain sm:w-[96px]"
-            style={{ height: "auto" }}
+            fill
+            className="object-contain object-left"
+            sizes="(min-width: 640px) 96px, 86px"
+            priority
           />
         </Link>
 

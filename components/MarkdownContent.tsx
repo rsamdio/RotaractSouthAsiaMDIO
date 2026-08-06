@@ -11,7 +11,7 @@ export function MarkdownContent({
   if (!html) return null;
   return (
     <div
-      className={`rbe-md-preview ${className}`}
+      className={`rsa-md-preview ${className}`}
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );

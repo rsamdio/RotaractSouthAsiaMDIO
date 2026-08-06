@@ -351,3 +351,126 @@ export const event = defineType({
     }),
   },
 });
+
+export const programInitiative = defineType({
+  name: "programInitiative",
+  title: "Initiative",
+  type: "document",
+  fields: [
+    defineField({
+      name: "title",
+      title: "Title",
+      type: "string",
+      validation: (r) => r.required(),
+    }),
+    defineField({
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: { source: "title", maxLength: 96 },
+      validation: (r) => r.required(),
+    }),
+    defineField({
+      name: "category",
+      title: "Category label",
+      type: "string",
+      description: 'Short label on cards, e.g. "Service" or "Sports".',
+      validation: (r) => r.required(),
+    }),
+    defineField({
+      name: "status",
+      title: "Status",
+      type: "string",
+      options: {
+        list: [
+          { title: "Active", value: "active" },
+          { title: "Upcoming", value: "upcoming" },
+          { title: "Seasonal", value: "seasonal" },
+        ],
+        layout: "radio",
+      },
+      initialValue: "active",
+      validation: (r) => r.required(),
+    }),
+    defineField({
+      name: "summary",
+      title: "Summary",
+      type: "text",
+      rows: 3,
+      description: "Card teaser and social/search summary.",
+      validation: (r) => r.required().max(320),
+    }),
+    defineField({
+      name: "livingNote",
+      title: "Living note",
+      type: "string",
+      description: "One-line status on cards, e.g. timing or how clubs join.",
+      validation: (r) => r.required().max(160),
+    }),
+    defineField({
+      name: "icon",
+      title: "Icon",
+      type: "string",
+      options: {
+        list: [
+          { title: "Service", value: "service" },
+          { title: "Sports", value: "sports" },
+          { title: "Leadership", value: "leadership" },
+          { title: "Fellowship", value: "fellowship" },
+          { title: "Environment", value: "environment" },
+        ],
+        layout: "dropdown",
+      },
+      initialValue: "service",
+      validation: (r) => r.required(),
+    }),
+    defineField({
+      name: "accent",
+      title: "Accent color",
+      type: "string",
+      description: "Hex color for badges, e.g. #D41B69.",
+      initialValue: "#D41B69",
+      validation: (r) => r.required(),
+    }),
+    defineField({
+      name: "image",
+      title: "Hero / card image",
+      type: "image",
+      options: { hotspot: true },
+      validation: (r) => r.required(),
+    }),
+    defineField({
+      name: "featured",
+      title: "Featured on homepage",
+      type: "boolean",
+      initialValue: false,
+    }),
+    defineField({
+      name: "ctaLabel",
+      title: "Card CTA label",
+      type: "string",
+      initialValue: "Learn more",
+    }),
+    markdownBody,
+  ],
+  orderings: [
+    {
+      title: "Title, A–Z",
+      name: "titleAsc",
+      by: [{ field: "title", direction: "asc" }],
+    },
+  ],
+  preview: {
+    select: {
+      title: "title",
+      subtitle: "category",
+      media: "image",
+      status: "status",
+    },
+    prepare: ({ title, subtitle, media, status }) => ({
+      title,
+      subtitle: `${subtitle ?? "Program"} · ${status ?? ""}`,
+      media,
+    }),
+  },
+});

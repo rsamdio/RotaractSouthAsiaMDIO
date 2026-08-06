@@ -1,3 +1,9 @@
-import { story, announcement, chronicleEdition, event } from "./documents";
+import { story, announcement, chronicleEdition, event, programInitiative } from "./documents";
 
-export const schemaTypes = [story, announcement, chronicleEdition, event];
+export const schemaTypes = [
+  story,
+  announcement,
+  chronicleEdition,
+  event,
+  programInitiative,
+];

@@ -1,12 +1,9 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import {
-  getFeaturedPrograms,
-  programInitiatives,
-  type ProgramInitiative,
-  type ProgramStatus,
-} from "@/config/initiatives";
+import type { ProgramInitiative, ProgramStatus } from "@/config/initiatives";
+import { getProgramIcon } from "@/lib/programIcons";
 import { Reveal } from "@/components/Reveal";
+import { SectionNavLink } from "@/components/SectionNavLink";
 
 function statusLabel(status: ProgramStatus) {
   switch (status) {
@@ -30,12 +27,11 @@ function ProgramCard({
   program: ProgramInitiative;
   featured?: boolean;
 }) {
-  const Icon = program.icon;
-  const href = program.href ?? "/initiatives#programs";
+  const Icon = getProgramIcon(program.icon);
 
   return (
     <Link
-      href={href}
+      href={`/initiatives/${program.slug}`}
       className={`group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white transition hover:border-[#D41B69]/25 hover:shadow-lg sm:rounded-[2rem] ${
         featured ? "sm:flex-row" : ""
       }`}
@@ -91,13 +87,13 @@ function ProgramCard({
 }
 
 type Props = {
+  programs: ProgramInitiative[];
   /** Homepage: show a few; page: show all */
   variant?: "home" | "page";
 };
 
-export function ProgramsInitiatives({ variant = "page" }: Props) {
+export function ProgramsInitiatives({ programs, variant = "page" }: Props) {
   const isHome = variant === "home";
-  const programs = isHome ? getFeaturedPrograms(3) : programInitiatives;
   const [featured, ...rest] = isHome ? programs : [programs[0], ...programs.slice(1)];
 
   return (
@@ -135,17 +131,22 @@ export function ProgramsInitiatives({ variant = "page" }: Props) {
             </p>
           </div>
           {isHome && (
-            <Link
-              href="/initiatives#programs"
+            <SectionNavLink
+              href="/initiatives"
+              scrollTo="programs"
               className="inline-flex items-center gap-2 text-sm font-semibold text-[#0B1426] transition hover:text-[#D41B69]"
             >
               All programs
               <ArrowRight className="h-4 w-4" />
-            </Link>
+            </SectionNavLink>
           )}
         </Reveal>
 
-        {isHome ? (
+        {programs.length === 0 ? (
+          <p className="text-sm text-slate-500">
+            Programs will appear here as they are published.
+          </p>
+        ) : isHome ? (
           <div className="grid gap-5 lg:grid-cols-3">
             {programs.map((program, i) => (
               <Reveal key={program.slug} delay={i * 0.06}>

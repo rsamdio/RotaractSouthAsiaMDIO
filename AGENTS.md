@@ -20,11 +20,12 @@ Firebase has been **removed** from the app. Do not reintroduce Firebase for site
 ## Commands
 
 ```bash
-npm run dev          # predev imports member CSVs, then next dev
-npm run build        # prebuild imports member CSVs, then next build
+npm run dev               # predev imports member CSVs, then next dev
+npm run build             # prebuild imports member CSVs, then next build
 npm run import:member-data
+npm run seed:sanity       # upsert demo.* CMS docs (needs write token in .env.local)
 npm run lint
-npm run sanity       # standalone Studio on :3333 (optional; site uses /admin)
+npm run sanity            # standalone Studio on :3333 (optional; site uses /admin)
 ```
 
 Env template: `.env.example`. Local secrets stay in `.env.local` (never commit).
@@ -33,13 +34,14 @@ Env template: `.env.example`. Local secrets stay in `.env.local` (never commit).
 
 ```
 app/                 Next.js routes (pages + /admin studio)
-components/          UI (homepage sections, news, events, initiatives embeds)
-config/              Site chrome, leadership, seeds, generated member JSON
+components/          UI (homepage sections, news, events, initiatives)
+config/              Site chrome, leadership, history, seeds, generated member JSON
 data/                Source CSVs for districts & clubs (edit these)
-scripts/             CSV → JSON import
-sanity/              Schemas, queries, content loaders, studio branding
+scripts/             CSV → JSON import; Sanity demo seed
+sanity/              Schemas, queries, content loaders, Studio input + styles
+styles/              Shared CSS (e.g. markdown-preview.css for site + Studio)
 docs/CMS.md          Sanity setup + webhook rebuild notes
-lib/                 Shared helpers (markdown, news nav, etc.)
+lib/                 Shared helpers (markdown, section scroll, news nav, etc.)
 ```
 
 ### Important routes
@@ -49,27 +51,32 @@ lib/                 Shared helpers (markdown, news nav, etc.)
 | `/` | Homepage |
 | `/about`, `/leadership`, `/presidents` | Org / people |
 | `/districts`, `/districts/[number]` | Member districts + clubs |
-| `/initiatives` | Digital ecosystem explorer (live embeds) |
+| `/initiatives` | Digital ecosystem explorer + initiatives listing |
+| `/initiatives/[slug]` | Initiative (program / campaign) detail |
 | `/events`, `/events/[slug]` | Events |
 | `/news`, `/news/[slug]` | News & Updates hub + story/announcement detail |
 | `/stories` | Full stories listing |
 | `/announcements` | Full announcements listing |
 | `/chronicles` | RSA Chronicles newsletter editions |
-| `/contact`, `/privacy` | Contact + legal |
+| `/contact`, `/privacy`, `/terms` | Contact + legal |
 | `/admin` | Sanity Studio |
 
 ## Content ownership (do not mix)
 
 ### Sanity (editorial — publish via Studio)
 
-Types in `sanity/schemaTypes/`: `story`, `announcement`, `chronicleEdition`, `event`.
+Types in `sanity/schemaTypes/`: `story`, `announcement`, `chronicleEdition`, `event`, `programInitiative`.
+
+Studio Structure labels: Stories, Announcements, RSA Chronicles, Events, **Initiatives** (`programInitiative`).
 
 Fetch via `sanity/lib/content.ts`:
 
 - If `NEXT_PUBLIC_SANITY_PROJECT_ID` is set → Sanity
-- Else → filesystem seeds in `config/news.ts` and `config/events.ts`
+- Else (or `USE_FS_CONTENT=1`) → filesystem seeds in `config/news.ts`, `config/events.ts`, and `config/initiatives.ts`
 
 Site pages are largely **static**. Publish live by wiring Sanity webhooks → Netlify build hook (see `docs/CMS.md`). Never put `SANITY_API_WRITE_TOKEN` on Netlify.
+
+Markdown bodies share one renderer (`lib/markdown.ts`) and one preview stylesheet (`styles/markdown-preview.css`) between public pages (`MarkdownContent`) and Studio EasyMDE (`MarkdownBodyInput`).
 
 ### Disk / repo (not Sanity)
 
@@ -78,7 +85,9 @@ Site pages are largely **static**. Publish live by wiring Sanity webhooks → Ne
 | `data/member-districts.csv`, `data/rotaract-clubs.csv` | **Only** edit CSVs. Generated `config/memberDistricts.json` + `config/memberClubs.json` are build artifacts — do not hand-edit. |
 | `config/leadership.ts` | Single source of truth for Executive Board, committee, **DRRs** (photos/names/clubs). Do not put DRR names in district CSVs. |
 | `config/platformTools.ts` | Shared digital-ecosystem tool definitions (home + `/initiatives`). |
+| `config/history.ts` | About-page organizational history. |
 | `config/site.ts`, hall of fame, hero gallery, legal copy | Code-owned |
+| `config/initiatives.ts` | Filesystem **seed / fallback** for CMS initiatives only — not the live source when Sanity is configured. |
 
 Member data workflow: replace CSVs → `npm run import:member-data` (or just `dev`/`build`). Details in `data/README.md`.
 
@@ -94,20 +103,23 @@ Order in `app/page.tsx`:
 
 1. Hero
 2. About snapshot
-3. Global participation
+3. Global participation (Presence)
 4. Focus areas
-5. Initiatives showcase (live embeds)
-6. Leadership snapshot
-7. **News & Updates** (`NewsUpdatesPreview` — stories + announcements + latest Chronicle)
-8. Upcoming events
-9. CTA strip
+5. Initiatives showcase (live digital-ecosystem embeds)
+6. Programs & campaigns (`ProgramsInitiatives` — featured CMS initiatives)
+7. Leadership snapshot
+8. **News & Updates** (`NewsUpdatesPreview` — stories + announcements + latest Chronicle)
+9. Upcoming events
+10. CTA strip
 
 Bottom `PillNav` section ids include `hero`, `about-snapshot`, `global` (label: Presence), `initiatives`, `leadership`, `news`, `events`.
 
+Cross-page section jumps use hash-free scroll (`lib/scrollToSection.ts`, `SectionNavLink`, `SmoothScroll` stash) — prefer that over writing `#fragment` into the URL (e.g. home “All programs” → `/initiatives` + scroll to `programs`).
+
 ## Initiatives (two spectra)
 
-1. **Digital ecosystem** — `config/platformTools.ts` + live iframe embeds (`InitiativesShowcase` on home, `InitiativesExplorer` on `/initiatives#ecosystem`). Embeds stay visible on mobile.
-2. **Programs & campaigns** — `config/initiatives.ts` (`programInitiatives`) + `ProgramsInitiatives` cards on home (3 featured) and `/initiatives#programs` (full list). Sample data for now; detail routes `/initiatives/[slug]` can come later.
+1. **Digital ecosystem** — `config/platformTools.ts` + live iframe embeds (`InitiativesShowcase` on home, `InitiativesExplorer` on `/initiatives` under `#ecosystem`). Embeds stay visible on mobile.
+2. **Programs & campaigns** — Sanity `programInitiative` (Studio: **Initiatives**; seed fallback in `config/initiatives.ts`) + `ProgramsInitiatives` on home (featured) and `/initiatives` (full list). Detail routes: `/initiatives/[slug]`.
 
 Homepage order places Programs directly under the digital showcase. `/initiatives` hero covers both; PillNav switches Ecosystem ↔ Programs.
 
@@ -130,7 +142,7 @@ Contact page: email CTA only (form UI may exist but product direction is email-f
 
 1. **No commits unless the user asks.** No force-push / destructive git unless explicitly requested.
 2. **Edit member CSVs, not generated JSON.**
-3. **Don’t put districts/clubs/leadership into Sanity** — editorial CMS is for stories, announcements, chronicles, events only.
+3. **Don’t put districts/clubs/leadership/platform tools into Sanity** — editorial CMS is for stories, announcements, chronicles, events, and initiatives (`programInitiative`) only.
 4. **Don’t reintroduce Firebase** for app content/admin.
 5. Prefer small, focused diffs; match local naming and component style.
 6. After substantive TS/UI changes, run `npx tsc --noEmit` (or project lint/build) before claiming done.
@@ -151,6 +163,7 @@ These appear as live embeds / links from Initiatives; they are **not** this Next
 ## Docs to update when architecture changes
 
 - This file (`AGENTS.md`) — durable agent context
+- `README.md` — human-oriented project overview
 - `docs/CMS.md` — Sanity / webhook / rebuild
 - `data/README.md` — CSV columns and import
 - `.env.example` — env surface area

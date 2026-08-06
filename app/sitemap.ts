@@ -1,6 +1,11 @@
 import { MetadataRoute } from "next";
 import { memberDistricts } from "@/config/memberDistricts";
-import { loadAnnouncements, loadEvents, loadStories } from "@/sanity/lib/content";
+import {
+  loadAnnouncements,
+  loadEvents,
+  loadPrograms,
+  loadStories,
+} from "@/sanity/lib/content";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://rsamdio.org";
@@ -34,10 +39,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  const [stories, announcements, events] = await Promise.all([
+  const [stories, announcements, events, programs] = await Promise.all([
     loadStories(),
     loadAnnouncements(),
     loadEvents(),
+    loadPrograms(),
   ]);
 
   const newsRoutes = [...stories, ...announcements].map((p) => ({
@@ -54,5 +60,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...districtRoutes, ...newsRoutes, ...eventRoutes];
+  const programRoutes = programs.map((p) => ({
+    url: `${baseUrl}/initiatives/${p.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [
+    ...staticRoutes,
+    ...districtRoutes,
+    ...newsRoutes,
+    ...eventRoutes,
+    ...programRoutes,
+  ];
 }

@@ -1,5 +1,5 @@
 "use client";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { Star, Landmark, Search, X, UserCheck } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { PageHero } from "@/components/PageHero";
@@ -8,30 +8,10 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { PillNav } from "@/components/PillNav";
 import { MemberCard } from "@/components/MemberCard";
 import { executiveBoard, drrs, committeeMembers, LeadershipMember } from "@/config/leadership";
-import { peekScrollToSection, consumeScrollToSection, scrollToSectionWhenReady } from "@/lib/scrollToSection";
 
 export default function LeadershipPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedZone, setSelectedZone] = useState<string>("All");
-
-  useEffect(() => {
-    const id = peekScrollToSection();
-    if (!id) return;
-
-    let cancelled = false;
-    // Wait past SmoothScroll's route-change frame, then scroll when the section exists.
-    const timer = window.setTimeout(() => {
-      void scrollToSectionWhenReady(id).then((ok) => {
-        if (cancelled) return;
-        if (ok) consumeScrollToSection();
-      });
-    }, 80);
-
-    return () => {
-      cancelled = true;
-      window.clearTimeout(timer);
-    };
-  }, []);
 
   const zones = ["All", "Zone 1", "Zone 4", "Zone 5", "Zone 6", "Zone 7", "Zone 8"];
 

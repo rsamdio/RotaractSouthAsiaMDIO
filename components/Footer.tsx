@@ -167,15 +167,14 @@ export function Footer() {
           <div className="flex flex-col gap-5 lg:col-span-4">
             <Link
               href="/"
-              className="inline-flex w-fit rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D41B69]/35 focus-visible:ring-offset-2"
+              className="relative inline-block h-16 w-16 shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D41B69]/35 focus-visible:ring-offset-2 sm:h-[4.5rem] sm:w-[4.5rem]"
             >
               <Image
                 src="/img/rsamdio.webp"
                 alt="RSAMDIO Rotaract South Asia"
-                width={72}
-                height={72}
-                className="h-auto w-16 object-contain sm:w-[4.5rem]"
-                style={{ height: "auto" }}
+                fill
+                className="object-contain object-left"
+                sizes="(min-width: 640px) 72px, 64px"
               />
             </Link>
 

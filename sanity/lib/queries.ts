@@ -92,3 +92,33 @@ export const eventBySlugQuery = `*[_type == "event" && slug.current == $slug][0]
   registrationLabel,
   "image": image.asset->url
 }`;
+
+export const programsQuery = `*[_type == "programInitiative"] | order(title asc) {
+  "slug": slug.current,
+  title,
+  category,
+  status,
+  summary,
+  livingNote,
+  icon,
+  accent,
+  body,
+  featured,
+  ctaLabel,
+  "image": image.asset->url
+}`;
+
+export const programBySlugQuery = `*[_type == "programInitiative" && slug.current == $slug][0] {
+  "slug": slug.current,
+  title,
+  category,
+  status,
+  summary,
+  livingNote,
+  icon,
+  accent,
+  body,
+  featured,
+  ctaLabel,
+  "image": image.asset->url
+}`;

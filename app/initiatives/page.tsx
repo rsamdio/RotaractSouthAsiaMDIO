@@ -5,6 +5,7 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { PillNav } from "@/components/PillNav";
 import { InitiativesExplorer } from "@/components/initiatives/InitiativesExplorer";
 import { ProgramsInitiatives } from "@/components/initiatives/ProgramsInitiatives";
+import { loadPrograms } from "@/sanity/lib/content";
 
 export const metadata = {
   title: "Initiatives",
@@ -12,7 +13,9 @@ export const metadata = {
     "RSAMDIO initiatives across South Asia: digital platforms for leaders, plus regional programs, campaigns, and fellowship that move Rotaractors into action.",
 };
 
-export default function InitiativesPage() {
+export default async function InitiativesPage() {
+  const programs = await loadPrograms();
+
   return (
     <>
       <Navbar />
@@ -52,7 +55,7 @@ export default function InitiativesPage() {
           <InitiativesExplorer />
         </div>
 
-        <ProgramsInitiatives variant="page" />
+        <ProgramsInitiatives variant="page" programs={programs} />
       </main>
       <Footer />
       <ScrollToTop />
