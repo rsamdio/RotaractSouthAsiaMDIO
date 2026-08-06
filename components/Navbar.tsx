@@ -40,7 +40,15 @@ const navItems: NavItem[] = [
   },
   { label: "Initiatives", href: "/initiatives" },
   { label: "Events", href: "/events" },
-  { label: "News & Updates", href: "/news" },
+  {
+    label: "News & Updates",
+    href: "/news",
+    dropdown: [
+      { label: "Stories", href: "/stories" },
+      { label: "Announcements", href: "/announcements" },
+      { label: "RSA Chronicles", href: "/chronicles" },
+    ],
+  },
 ];
 
 export function Navbar() {
