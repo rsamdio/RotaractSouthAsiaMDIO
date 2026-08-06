@@ -25,11 +25,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { number } = await params;
   const district = getMemberDistrict(number);
   if (!district) {
-    return { title: "District Not Found | RSAMDIO" };
+    return { title: "District Not Found" };
   }
   return {
-    title: `District ${district.number} | Member Districts`,
-    description: `Rotaract South Asia member district ${district.number} — ${district.countriesLabel}. ${district.clubs} clubs, ${district.members} members.`,
+    title: `District ${district.number}`,
+    description: `Rotaract South Asia member district ${district.number}: ${district.countriesLabel}. ${district.clubs} clubs, ${district.members} members.`,
   };
 }
 

@@ -5,9 +5,9 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { MemberDistrictDirectory } from "@/components/MemberDistrictDirectory";
 
 export const metadata = {
-  title: "Member Districts | RSAMDIO",
+  title: "Member Districts",
   description:
-    "Browse Rotaract South Asia member countries and member districts — DRR details, clubs, members, coverage, and highlights.",
+    "Browse Rotaract South Asia member countries and member districts: DRR details, clubs, members, coverage, and highlights.",
 };
 
 export default function DistrictsPage() {
@@ -18,7 +18,7 @@ export default function DistrictsPage() {
         <PageHero
           eyebrow="South Asia Overview"
           title="Member Districts"
-          description="Every member district across South Asia — DRRs, membership, coverage, and club directories."
+          description="Every member district across South Asia: DRRs, membership, coverage, and club directories."
           crumbs={[{ label: "Member Districts" }]}
         />
 

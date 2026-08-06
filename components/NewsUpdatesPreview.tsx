@@ -78,7 +78,7 @@ export async function NewsUpdatesPreview() {
               Stories, Announcements & Chronicles
             </h2>
             <p className="mt-3 max-w-xl text-sm text-slate-500 sm:text-base">
-              The latest from across South Asia — field stories, secretariat
+              The latest from across South Asia: field stories, secretariat
               updates, and the RSA Chronicles newsletter.
             </p>
           </div>
@@ -247,7 +247,7 @@ function ChronicleRail({ edition }: { edition: ChronicleEdition }) {
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={edition.heroImage}
-              alt={`RSA Chronicles — ${edition.editionName} cover`}
+              alt={`RSA Chronicles ${edition.editionName} cover`}
               className="absolute inset-0 h-full w-full object-cover object-top"
             />
           ) : (
@@ -299,7 +299,7 @@ function AnnouncementsRail({ items }: { items: Story[] }) {
           Announcements
         </p>
         <Link
-          href="/news#announcements"
+          href="/announcements"
           className="text-xs font-bold text-slate-500 transition hover:text-[#D41B69]"
         >
           See all

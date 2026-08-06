@@ -130,7 +130,7 @@ export function ProgramsInitiatives({ variant = "page" }: Props) {
             </h2>
             <p className="mt-3 text-sm text-slate-500 sm:text-base">
               Service weeks, sports meets, leadership conversations, fellowship
-              exchanges, and campaigns — the programmes that get Rotaractors into
+              exchanges, and campaigns: the programmes that get Rotaractors into
               the field together across South Asia.
             </p>
           </div>

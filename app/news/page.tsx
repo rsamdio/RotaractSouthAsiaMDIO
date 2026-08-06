@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { Megaphone } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
@@ -13,9 +11,9 @@ import {
 import { loadAnnouncements, loadChronicles, loadStories } from "@/sanity/lib/content";
 
 export const metadata = {
-  title: "News & Stories | RSAMDIO",
+  title: "News & Updates",
   description:
-    "Stories, announcements, and RSA Chronicles — the official newsletter of Rotaract South Asia MDIO.",
+    "Stories, announcements, and RSA Chronicles, the official newsletter of Rotaract South Asia MDIO.",
 };
 
 export default async function NewsPage() {
@@ -25,6 +23,9 @@ export default async function NewsPage() {
     loadChronicles(),
   ]);
   const recentStories = [...stories]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .slice(0, 4);
+  const recentAnnouncements = [...announcements]
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, 4);
   const recentChronicles = [...chronicles]
@@ -43,10 +44,10 @@ export default async function NewsPage() {
       />
       <main id="main-content">
         <PageHero
-          eyebrow="News & Stories"
+          eyebrow="News & Updates"
           title="Stories & Announcements"
-          description="Service and leadership stories from across South Asia — plus official updates and RSA Chronicles from the Secretariat."
-          crumbs={[{ label: "News & Stories" }]}
+          description="Service and leadership stories from across South Asia, plus official updates and RSA Chronicles from the Secretariat."
+          crumbs={[{ label: "News & Updates" }]}
         />
 
         <section id="stories" className="scroll-mt-24 bg-white px-5 py-24 sm:px-6 lg:px-8">
@@ -67,17 +68,14 @@ export default async function NewsPage() {
 
         <section id="announcements" className="scroll-mt-24 bg-slate-50 px-5 py-24 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
-            <div className="mb-8 flex items-center gap-2">
-              <Megaphone className="h-4 w-4 text-[#D41B69]" />
-              <h2
-                className="text-2xl font-bold text-[#0B1426]"
-                style={{ fontFamily: "General Sans, sans-serif" }}
-              >
-                Announcements
-              </h2>
-            </div>
+            <ChronicleSectionHeader
+              title="Announcements"
+              subtitle="Official updates and notices from the Secretariat."
+              href="/announcements"
+              linkLabel="View all announcements →"
+            />
             <PostGrid
-              posts={announcements}
+              posts={recentAnnouncements}
               featuredCta="Read Announcement"
               secondaryCta="Read Announcement"
             />
@@ -88,7 +86,7 @@ export default async function NewsPage() {
           <div className="mx-auto max-w-6xl">
             <ChronicleSectionHeader
               title="Publications"
-              subtitle="RSA Chronicles — the official monthly newsletter of Rotaract South Asia MDIO."
+              subtitle="RSA Chronicles, the official monthly newsletter of Rotaract South Asia MDIO."
               href="/chronicles"
               linkLabel="View all editions →"
             />

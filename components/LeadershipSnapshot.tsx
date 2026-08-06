@@ -32,7 +32,7 @@ export function LeadershipSnapshot() {
         <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {top4Officers.map((member, i) => (
             <Reveal key={member.name} delay={i * 0.08}>
-              <MemberCard member={member} index={i} />
+              <MemberCard member={member} index={i} showProfession={false} />
             </Reveal>
           ))}
         </div>

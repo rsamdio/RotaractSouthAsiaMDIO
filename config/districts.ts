@@ -2,6 +2,8 @@
 // Member district roster (clubs, members, coverage, highlights, DRRs) lives in
 // config/memberDistricts.json + config/memberDistricts.ts.
 
+import { memberDistrictSummary } from "@/config/memberDistricts";
+
 export type District = {
   slug: string;
   number: string;
@@ -28,10 +30,10 @@ export const countryData: Record<string, Country> = {
     flag: "🌍",
     code: "globe",
     country: "Rotaract South Asia",
-    capital: "8 Member Nations",
-    districts: "38+ Districts",
-    clubs: "3,500+ Clubs",
-    desc: "Unifying regional district committees, streamlining brand communication, and supporting collective youth-led action across 8 nations.",
+    capital: `${memberDistrictSummary.countries} Member Nations`,
+    districts: `${memberDistrictSummary.districts} Districts`,
+    clubs: `${memberDistrictSummary.clubs} Clubs`,
+    desc: "Coordinating regional district committees, brand communication, and youth-led action across South Asia.",
   },
   afg: {
     slug: "afghanistan",

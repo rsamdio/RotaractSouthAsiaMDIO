@@ -36,7 +36,7 @@ export const programInitiatives: ProgramInitiative[] = [
     category: "Service",
     status: "active",
     summary:
-      "A region-wide week of coordinated club and district service — health camps, literacy drives, and community clean-ups under one shared banner.",
+      "A region-wide week of coordinated club and district service: health camps, literacy drives, and community clean-ups under one shared banner.",
     livingNote: "RY 2026–27 window · Clubs report projects through their DRR",
     icon: HeartHandshake,
     accent: "#D41B69",
@@ -51,7 +51,7 @@ export const programInitiatives: ProgramInitiative[] = [
     category: "Sports",
     status: "upcoming",
     summary:
-      "Inter-district sports and fellowship that bring Rotaractors together beyond boardrooms — cricket, football, athletics, and team challenges.",
+      "Inter-district sports and fellowship that bring Rotaractors together beyond boardrooms: cricket, football, athletics, and team challenges.",
     livingNote: "Hosting bids open · Tentative Q3 regional meet",
     icon: Trophy,
     accent: "#F7A81B",
@@ -66,7 +66,7 @@ export const programInitiatives: ProgramInitiative[] = [
     category: "Leadership",
     status: "active",
     summary:
-      "A continuing conversation series with Rotary leaders, alumni, and changemakers — hybrid sessions designed for club and district boards.",
+      "A continuing conversation series with Rotary leaders, alumni, and changemakers. Hybrid sessions designed for club and district boards.",
     livingNote: "Monthly sessions · Next guest announced via News",
     icon: Mic2,
     accent: "#17458F",
@@ -96,7 +96,7 @@ export const programInitiatives: ProgramInitiative[] = [
     category: "Environment",
     status: "active",
     summary:
-      "A shared environmental campaign — tree planting, climate literacy, and local conservation projects with a common regional impact story.",
+      "A shared environmental campaign: tree planting, climate literacy, and local conservation projects with a common regional impact story.",
     livingNote: "Year-round · District green champions coordinate locally",
     icon: Leaf,
     accent: "#059669",

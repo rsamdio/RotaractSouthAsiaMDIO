@@ -54,9 +54,10 @@ export const executiveBoard: LeadershipMember[] = [
     title: "Chief Counsellor",
     district: "District 3141",
     country: "India",
+    image: "/img/board/harikrishnan-pillai.jpg",
     role: "officer",
     email: "hari@tsbi.in",
-    homeClub: "Rotaract Club of Rid 3141",
+    homeClub: "Rotaract Club of District 3141",
     profession: "Executive Leadership",
   },
   {

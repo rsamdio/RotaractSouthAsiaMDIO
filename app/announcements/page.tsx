@@ -5,16 +5,16 @@ import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { PostGrid } from "@/components/PostGrid";
-import { loadStories } from "@/sanity/lib/content";
+import { loadAnnouncements } from "@/sanity/lib/content";
 
 export const metadata = {
-  title: "Stories",
+  title: "Announcements",
   description:
-    "Service and leadership stories from Rotaract clubs and districts across South Asia.",
+    "Official announcements and updates from the Rotaract South Asia MDIO Secretariat.",
 };
 
-export default async function StoriesPage() {
-  const stories = [...(await loadStories())].sort((a, b) =>
+export default async function AnnouncementsPage() {
+  const announcements = [...(await loadAnnouncements())].sort((a, b) =>
     b.date.localeCompare(a.date)
   );
 
@@ -23,12 +23,12 @@ export default async function StoriesPage() {
       <Navbar />
       <main id="main-content">
         <PageHero
-          eyebrow="Field & Fellowship"
-          title="Stories"
-          description="Service projects, leadership moments, and impact from Rotaract clubs and districts across South Asia."
+          eyebrow="Secretariat"
+          title="Announcements"
+          description="Official updates, appointments, and programme notices from Rotaract South Asia MDIO."
           crumbs={[
             { label: "News & Updates", href: "/news" },
-            { label: "Stories" },
+            { label: "Announcements" },
           ]}
         />
 
@@ -36,22 +36,22 @@ export default async function StoriesPage() {
           <div className="mx-auto max-w-6xl">
             <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
               <p className="max-w-xl text-sm leading-6 text-slate-500">
-                {stories.length === 0
-                  ? "New stories will appear here as they are published."
-                  : `${stories.length} stor${stories.length === 1 ? "y" : "ies"} from across the region.`}
+                {announcements.length === 0
+                  ? "New announcements will appear here as they are published."
+                  : `${announcements.length} announcement${announcements.length === 1 ? "" : "s"} from the Secretariat.`}
               </p>
               <Link
-                href="/announcements"
+                href="/stories"
                 className="inline-flex items-center gap-1.5 text-sm font-bold text-[#D41B69] transition hover:underline"
               >
-                Announcements
+                Stories
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
             <PostGrid
-              posts={stories}
-              featuredCta="Read Story"
-              secondaryCta="Read Story"
+              posts={announcements}
+              featuredCta="Read Announcement"
+              secondaryCta="Read Announcement"
             />
           </div>
         </section>

@@ -7,9 +7,9 @@ import { InitiativesExplorer } from "@/components/initiatives/InitiativesExplore
 import { ProgramsInitiatives } from "@/components/initiatives/ProgramsInitiatives";
 
 export const metadata = {
-  title: "Initiatives | RSAMDIO",
+  title: "Initiatives",
   description:
-    "RSAMDIO initiatives across South Asia — digital platforms for leaders, plus regional programs, campaigns, and fellowship that move Rotaractors into action.",
+    "RSAMDIO initiatives across South Asia: digital platforms for leaders, plus regional programs, campaigns, and fellowship that move Rotaractors into action.",
 };
 
 export default function InitiativesPage() {
@@ -26,7 +26,7 @@ export default function InitiativesPage() {
         <PageHero
           eyebrow="Initiatives"
           title="Platforms, Programs & Campaigns"
-          description="Two sides of the same mission — a digital ecosystem for boards and administrators, and regional programmes that bring Rotaractors together in service, sport, leadership, and fellowship."
+          description="Two sides of the same mission: a digital ecosystem for boards and administrators, and regional programmes that bring Rotaractors together in service, sport, leadership, and fellowship."
           crumbs={[{ label: "Initiatives" }]}
         />
 
@@ -44,7 +44,7 @@ export default function InitiativesPage() {
               </h2>
               <p className="mt-2 max-w-2xl text-sm text-slate-500 sm:text-base">
                 Live previews of Library, Invoice Calculator, NAVIGATE,
-                Publications, Certify, and PULSE — open any platform in a new tab
+                Publications, Certify, and PULSE. Open any platform in a new tab
                 when you are ready.
               </p>
             </div>

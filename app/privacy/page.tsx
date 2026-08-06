@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Shield, ArrowLeft, Mail } from "lucide-react";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | RSAMDIO",
+  title: "Privacy Policy",
   description:
-    "Privacy policy for the Rotaract South Asia MDIO portal — covering data collection, usage, and your rights under GDPR.",
+    "Privacy policy for the Rotaract South Asia MDIO portal, covering data collection, usage, and your rights under GDPR.",
 };
 
 export default function PrivacyPage() {
@@ -115,8 +116,8 @@ export default function PrivacyPage() {
           </div>
           <p className="text-sm text-slate-600 dark:text-white/65 leading-relaxed">
             For privacy-related inquiries, data access requests, or to exercise your rights under GDPR, please contact the RSAMDIO Secretariat at{" "}
-            <a href="mailto:secretary@rsamdio.org" className="text-[#D41B69] underline hover:no-underline transition">
-              secretary@rsamdio.org
+            <a href={`mailto:${siteConfig.contact.general}`} className="text-[#D41B69] underline hover:no-underline transition">
+              {siteConfig.contact.general}
             </a>. We will respond within 30 days.
           </p>
         </div>

@@ -11,9 +11,9 @@ import { filterPast, filterSignature, filterUpcoming } from "@/config/events";
 import { loadEvents } from "@/sanity/lib/content";
 
 export const metadata = {
-  title: "Events | RSAMDIO",
+  title: "Events",
   description:
-    "Upcoming, signature, and past events across Rotaract South Asia — conventions, training, and sessions.",
+    "Upcoming, signature, and past events across Rotaract South Asia: conventions, training, and sessions.",
 };
 
 export default async function EventsPage() {
@@ -37,7 +37,7 @@ export default async function EventsPage() {
         <PageHero
           eyebrow="Conventions & Forums"
           title="Events"
-          description="Signature programmes, regional gatherings, and working sessions across South Asia — browse upcoming dates, revisit past events, or open the calendar."
+          description="Signature programmes, regional gatherings, and working sessions across South Asia. Browse upcoming dates, revisit past events, or open the calendar."
           crumbs={[{ label: "Events" }]}
         />
 
@@ -73,7 +73,7 @@ export default async function EventsPage() {
               </h2>
             </div>
             <p className="mb-8 max-w-2xl text-sm leading-6 text-slate-500">
-              Flagship MDIO programmes that define the regional year — installations,
+              Flagship MDIO programmes that define the regional year: installations,
               academies, summits, and the annual convention.
             </p>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

@@ -51,8 +51,9 @@ lib/                 Shared helpers (markdown, news nav, etc.)
 | `/districts`, `/districts/[number]` | Member districts + clubs |
 | `/initiatives` | Digital ecosystem explorer (live embeds) |
 | `/events`, `/events/[slug]` | Events |
-| `/news`, `/news/[slug]` | News hub + story/announcement detail |
+| `/news`, `/news/[slug]` | News & Updates hub + story/announcement detail |
 | `/stories` | Full stories listing |
+| `/announcements` | Full announcements listing |
 | `/chronicles` | RSA Chronicles newsletter editions |
 | `/contact`, `/privacy` | Contact + legal |
 | `/admin` | Sanity Studio |
@@ -101,7 +102,7 @@ Order in `app/page.tsx`:
 8. Upcoming events
 9. CTA strip
 
-Bottom `PillNav` section ids include `hero`, `about-snapshot`, `global`, `initiatives`, `leadership`, `news`, `events`.
+Bottom `PillNav` section ids include `hero`, `about-snapshot`, `global` (label: Presence), `initiatives`, `leadership`, `news`, `events`.
 
 ## Initiatives (two spectra)
 

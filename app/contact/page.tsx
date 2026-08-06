@@ -6,7 +6,7 @@ import { siteConfig } from "@/config/site";
 import { CheckCircle2, Mail } from "lucide-react";
 
 export const metadata = {
-  title: "Contact | RSAMDIO",
+  title: "Contact",
   description:
     "Contact the RSAMDIO Secretariat for general questions, district updates, partnership proposals, or media inquiries.",
 };

@@ -6,9 +6,9 @@ import { ChronicleCards } from "@/components/ChronicleCards";
 import { loadChronicles } from "@/sanity/lib/content";
 
 export const metadata = {
-  title: "RSA Chronicles | RSAMDIO",
+  title: "RSA Chronicles",
   description:
-    "RSA Chronicles — the official monthly newsletter of Rotaract South Asia MDIO. Preview editions and open the full reader.",
+    "RSA Chronicles, the official monthly newsletter of Rotaract South Asia MDIO. Preview editions and open the full reader.",
 };
 
 export default async function ChroniclesPage() {
@@ -23,9 +23,9 @@ export default async function ChroniclesPage() {
         <PageHero
           eyebrow="Publications"
           title="RSA Chronicles"
-          description="The official monthly newsletter of Rotaract South Asia MDIO — regional updates, district highlights, and programmes worth knowing."
+          description="The official monthly newsletter of Rotaract South Asia MDIO: regional updates, district highlights, and programmes worth knowing."
           crumbs={[
-            { label: "News & Stories", href: "/news" },
+            { label: "News & Updates", href: "/news" },
             { label: "RSA Chronicles" },
           ]}
         />

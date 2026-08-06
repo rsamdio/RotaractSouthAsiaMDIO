@@ -76,15 +76,15 @@ export function GlobalParticipation() {
       <div className="relative mx-auto max-w-7xl">
         <Reveal className="text-center mb-16">
           <span className="inline-block rounded-full bg-[#D41B69]/10 border border-[#D41B69]/20 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.24em] text-[#D41B69] mb-5">
-            Global Presence
+            Our Presence
           </span>
           <h2
             className="text-4xl sm:text-5xl font-bold tracking-tight text-[#0B1426] dark:text-white"
           >
-            <span className="text-[#D41B69]">{memberDistrictSummary.countries} Countries.</span> One Leadership Network.
+            <span className="text-[#D41B69]">{memberDistrictSummary.countries} nations.</span> One regional force.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-            Connecting Rotaract movements across South Asia to collaborate, learn, and lead with purpose.
+            Member districts and Rotaractors across South Asia, connected to collaborate, learn, and lead.
           </p>
         </Reveal>
 

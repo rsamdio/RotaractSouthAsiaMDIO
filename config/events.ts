@@ -94,12 +94,12 @@ export const siteEvents: SiteEvent[] = [
     title: "South Asia Rotaract Convention (RSACon)",
     tagline: "Annual regional delegate convention",
     description:
-      "The MDIO's largest annual gathering — delegates from all 8 member nations convene for keynotes, elections, awards, and cross-district fellowship.",
+      "The MDIO's largest annual gathering. Delegates from all 8 member nations convene for keynotes, elections, awards, and cross-district fellowship.",
     startDate: "2027-05-14",
     endDate: "2027-05-16",
     startTime: "09:00",
     timezoneLabel: "IST",
-    location: "South Asia — host city TBA",
+    location: "South Asia (host city TBA)",
     image:
       "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1400&q=80",
     kind: "signature",
@@ -128,7 +128,7 @@ export const siteEvents: SiteEvent[] = [
     title: "Public Image Clinic",
     tagline: "Storytelling & brand clinic for club editors",
     description:
-      "A short evening clinic for club and district public-image chairs — framing service stories, photo standards, and how to submit updates to RSA Chronicles.",
+      "A short evening clinic for club and district public-image chairs: framing service stories, photo standards, and how to submit updates to RSA Chronicles.",
     startDate: "2026-09-12",
     startTime: "18:30",
     endTime: "20:00",
@@ -174,7 +174,7 @@ export const siteEvents: SiteEvent[] = [
     title: "Year-End Secretariat Sync",
     tagline: "Closing RY 2025–26 operations review",
     description:
-      "Internal sync for the outgoing and incoming Secretariat teams — handovers, open programmes, and calendar priorities for the next Rotary Year.",
+      "Internal sync for the outgoing and incoming Secretariat teams: handovers, open programmes, and calendar priorities for the next Rotary Year.",
     startDate: "2025-12-20",
     startTime: "16:00",
     endTime: "17:30",

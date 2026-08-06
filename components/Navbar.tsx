@@ -40,7 +40,7 @@ const navItems: NavItem[] = [
   },
   { label: "Initiatives", href: "/initiatives" },
   { label: "Events", href: "/events" },
-  { label: "News & Stories", href: "/news" },
+  { label: "News & Updates", href: "/news" },
 ];
 
 export function Navbar() {
@@ -78,8 +78,8 @@ export function Navbar() {
             alt="RSAMDIO Logo"
             width={100}
             height={40}
-            className="object-contain h-10 sm:h-11 w-auto"
-            style={{ width: "auto" }}
+            className="h-auto w-[86px] object-contain sm:w-[96px]"
+            style={{ height: "auto" }}
           />
         </Link>
 

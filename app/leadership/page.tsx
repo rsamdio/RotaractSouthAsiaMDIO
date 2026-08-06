@@ -93,7 +93,7 @@ export default function LeadershipPage() {
       />
       <main id="main-content">
         <PageHero
-          eyebrow="Leadership Network"
+          eyebrow="Leadership"
           title="Executive Board & Regional Leaders"
           description="The elected officers, District Rotaract Representatives, and committee members coordinating Rotaract South Asia for Rotary Year 2026–27."
           crumbs={[{ label: "Leadership" }]}

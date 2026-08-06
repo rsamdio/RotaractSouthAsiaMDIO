@@ -91,7 +91,6 @@ const footerColumns: FooterColumn[] = [
       { label: "Invoice Calculator", href: "https://dues.rsamdio.org/", external: true },
       { label: "Rotaract Certify", href: "https://certify.rsamdio.org/", external: true },
       { label: "Publications Hub", href: "https://publications.rsamdio.org/", external: true },
-      { label: "RSA Chronicles", href: "/chronicles" },
       { label: "Initiatives", href: "/initiatives" },
     ],
   },
@@ -100,10 +99,10 @@ const footerColumns: FooterColumn[] = [
     heading: "Connect",
     items: [
       { label: "Contact Us", href: "/contact" },
-      { label: "News & Stories", href: "/news" },
+      { label: "News & Updates", href: "/news" },
       { label: "Stories", href: "/stories" },
+      { label: "Announcements", href: "/announcements" },
       { label: "RSA Chronicles", href: "/chronicles" },
-      { label: "Privacy Policy", href: "/privacy" },
     ],
   },
 ];
@@ -153,16 +152,16 @@ export function Footer() {
             >
               <Image
                 src="/img/rsamdio.webp"
-                alt="RSAMDIO — Rotaract South Asia"
+                alt="RSAMDIO Rotaract South Asia"
                 width={72}
                 height={72}
-                className="h-16 w-auto object-contain sm:h-[4.5rem]"
-                style={{ width: "auto" }}
+                className="h-auto w-16 object-contain sm:w-[4.5rem]"
+                style={{ height: "auto" }}
               />
             </Link>
 
             <p className="max-w-sm text-sm leading-relaxed text-slate-500">
-              The regional coordination hub for Rotaract across South Asia — unifying 8 nations
+              The regional coordination hub for Rotaract across South Asia, connecting 8 nations
               through shared knowledge, standards, and service.
             </p>
 
@@ -222,6 +221,12 @@ export function Footer() {
               className="transition hover:text-[#D41B69] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D41B69]/35 focus-visible:ring-offset-2 rounded-sm"
             >
               Privacy Policy
+            </Link>
+            <Link
+              href="/terms"
+              className="transition hover:text-[#D41B69] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D41B69]/35 focus-visible:ring-offset-2 rounded-sm"
+            >
+              Terms of Use
             </Link>
             <Link
               href="/admin"

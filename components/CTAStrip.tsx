@@ -10,10 +10,10 @@ export function CTAStrip() {
             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6"
             style={{ fontFamily: "General Sans, sans-serif" }}
           >
-            Be Part of the Movement
+            Serve with South Asia
           </h2>
           <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto">
-            Join a regional network of leaders shaping the future of South Asia through service, leadership, and collaboration.
+            Explore regional programmes and platforms, or write to the Secretariat to connect with Rotaract South Asia.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link

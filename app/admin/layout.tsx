@@ -6,7 +6,7 @@ import {
 
 export const metadata: Metadata = {
   ...studioMetadata,
-  title: "RSAMDIO Admin",
+  title: { absolute: "RSAMDIO Admin" },
   robots: { index: false, follow: false },
 };
 

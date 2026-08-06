@@ -88,7 +88,7 @@ export function InitiativesExplorer() {
         </div>
 
         <p className="mt-8 text-center text-xs text-slate-500 sm:text-sm">
-          Tip: scroll and tap inside the preview to explore — or open the full
+          Tip: scroll and tap inside the preview to explore, or open the full
           platform in a new tab.
         </p>
       </div>

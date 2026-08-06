@@ -77,7 +77,7 @@ function ChronicleFeaturedCard({ edition }: { edition: ChronicleEdition }) {
         <div className="mx-auto w-full max-w-[200px] lg:mx-0 lg:max-w-none">
           <CoverPreview
             src={edition.heroImage}
-            alt={`RSA Chronicles — ${edition.editionName} cover`}
+            alt={`RSA Chronicles ${edition.editionName} cover`}
           />
         </div>
         <div className="flex flex-col justify-center text-center lg:text-left">
@@ -88,7 +88,7 @@ function ChronicleFeaturedCard({ edition }: { edition: ChronicleEdition }) {
             className="mt-3 text-2xl font-bold tracking-tight text-[#0B1426] sm:text-3xl"
             style={{ fontFamily: "General Sans, sans-serif" }}
           >
-            RSA Chronicles — {edition.editionName}
+            RSA Chronicles: {edition.editionName}
           </h3>
           <p className="mt-2 text-sm text-slate-500">
             Released {formatReleaseDate(edition.date)}
@@ -115,7 +115,7 @@ function ChronicleCard({ edition }: { edition: ChronicleEdition }) {
       <div className="mx-auto w-full max-w-[180px]">
         <CoverPreview
           src={edition.heroImage}
-          alt={`RSA Chronicles — ${edition.editionName} cover`}
+          alt={`RSA Chronicles ${edition.editionName} cover`}
           className="transition duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_18px_44px_-14px_rgba(11,20,38,0.4)]"
         />
       </div>

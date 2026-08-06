@@ -58,6 +58,11 @@ export function EventsCalendar({ events }: { events: SiteEvent[] }) {
   const selectedEvents = selectedIso
     ? monthEvents.filter((e) => eventTouchesDay(e, selectedIso))
     : [];
+  const selectedSlugs = new Set(selectedEvents.map((e) => e.slug));
+  const otherMonthEvents = monthEvents
+    .filter((e) => !selectedSlugs.has(e.slug))
+    .slice()
+    .sort((a, b) => a.startDate.localeCompare(b.startDate));
 
   function shiftMonth(delta: number) {
     const d = new Date(year, monthIndex + delta, 1);
@@ -179,30 +184,78 @@ export function EventsCalendar({ events }: { events: SiteEvent[] }) {
           <ul className="mt-4 space-y-3">
             {selectedEvents.map((e) => (
               <li key={e.slug}>
-                <Link
-                  href={`/events/${e.slug}`}
-                  className="block rounded-2xl border border-slate-200 bg-white p-4 transition hover:border-[#D41B69]/30"
-                >
-                  <div className="flex items-center gap-2">
-                    <span className={`h-2 w-2 rounded-full ${accentClass[e.accent]}`} />
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                      {e.kind}
-                    </span>
-                  </div>
-                  <p className="mt-1.5 text-sm font-bold text-[#0B1426]">{e.title}</p>
-                  <p className="mt-1 text-xs text-slate-500 line-clamp-2">{e.tagline}</p>
-                </Link>
+                <CalendarEventLink event={e} />
               </li>
             ))}
           </ul>
         )}
 
-        {monthEvents.length > 0 && (
-          <p className="mt-6 text-xs text-slate-400">
-            {monthEvents.length} event{monthEvents.length === 1 ? "" : "s"} this month
-          </p>
+        {otherMonthEvents.length > 0 && (
+          <div className="mt-6 border-t border-slate-200 pt-5">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">
+              {selectedEvents.length > 0
+                ? "Other events this month"
+                : "Events this month"}
+            </p>
+            <ul className="mt-4 space-y-3">
+              {otherMonthEvents.map((e) => (
+                <li key={e.slug}>
+                  <CalendarEventLink event={e} showDate />
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {monthEvents.length === 0 && (
+          <p className="mt-6 text-xs text-slate-400">No events scheduled this month.</p>
         )}
       </div>
     </div>
+  );
+}
+
+function formatEventDateRange(event: SiteEvent) {
+  const start = new Date(`${event.startDate}T12:00:00`);
+  const endIso = event.endDate ?? event.startDate;
+  const end = new Date(`${endIso}T12:00:00`);
+  const startLabel = start.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+  });
+  if (event.startDate === endIso) return startLabel;
+  const endLabel = end.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+  });
+  return `${startLabel} to ${endLabel}`;
+}
+
+function CalendarEventLink({
+  event,
+  showDate = false,
+}: {
+  event: SiteEvent;
+  showDate?: boolean;
+}) {
+  return (
+    <Link
+      href={`/events/${event.slug}`}
+      className="block rounded-2xl border border-slate-200 bg-white p-4 transition hover:border-[#D41B69]/30"
+    >
+      <div className="flex items-center gap-2">
+        <span className={`h-2 w-2 rounded-full ${accentClass[event.accent]}`} />
+        <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+          {event.kind}
+        </span>
+        {showDate && (
+          <span className="ml-auto text-[10px] font-semibold tabular-nums text-slate-400">
+            {formatEventDateRange(event)}
+          </span>
+        )}
+      </div>
+      <p className="mt-1.5 text-sm font-bold text-[#0B1426]">{event.title}</p>
+      <p className="mt-1 text-xs text-slate-500 line-clamp-2">{event.tagline}</p>
+    </Link>
   );
 }

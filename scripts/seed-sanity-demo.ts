@@ -129,7 +129,7 @@ const announcements = [
     category: "Announcement",
     excerpt:
       "The 17th RSA MDIO Installation Ceremony and ROAR Awards will be hosted in Bengaluru, India, marking the start of RY 2026–27.",
-    body: "Rotaract South Asia MDIO is pleased to announce ANANTA 2026 — the 17th RSA MDIO Installation Ceremony and ROAR Awards — to be hosted in Bengaluru, India.\n\nThe gathering will mark the formal start of Rotary Year 2026–27 and bring together District Rotaract Representatives, Executive Board members, and Rotaractors from across the region.",
+    body: "Rotaract South Asia MDIO is pleased to announce ANANTA 2026, the 17th RSA MDIO Installation Ceremony and ROAR Awards, to be hosted in Bengaluru, India.\n\nThe gathering will mark the formal start of Rotary Year 2026–27 and bring together District Rotaract Representatives, Executive Board members, and Rotaractors from across the region.",
     date: "2026-01-10",
     featured: true,
     image: {
@@ -292,7 +292,7 @@ const events = [
     title: "Public Image Clinic",
     tagline: "Storytelling & brand clinic for club editors",
     description:
-      "A short evening clinic for club and district public-image chairs — framing service stories and RSA Chronicles submissions.",
+      "A short evening clinic for club and district public-image chairs: framing service stories and RSA Chronicles submissions.",
     startDate: "2026-09-12",
     startTime: "18:30",
     endTime: "20:00",

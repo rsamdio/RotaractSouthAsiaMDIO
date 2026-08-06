@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const event = await loadEvent(slug);
   if (!event) return { title: "Event Not Found" };
   return {
-    title: `${event.title} | Events`,
+    title: event.title,
     description: event.tagline || event.description,
   };
 }

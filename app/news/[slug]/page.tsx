@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const resolved = await loadNewsPost(slug);
   if (!resolved) return { title: "Post Not Found" };
   return {
-    title: `${resolved.post.title} | News & Stories`,
+    title: resolved.post.title,
     description: resolved.post.excerpt,
   };
 }
@@ -48,7 +48,7 @@ export default async function NewsDetailPage({ params }: Props) {
   const kindCrumb =
     kind === "story"
       ? { label: "Stories", href: "/stories" }
-      : { label: "Announcements", href: "/news#announcements" };
+      : { label: "Announcements", href: "/announcements" };
 
   return (
     <>
@@ -59,7 +59,7 @@ export default async function NewsDetailPage({ params }: Props) {
           title={post.title}
           description={post.excerpt}
           crumbs={[
-            { label: "News & Stories", href: "/news" },
+            { label: "News & Updates", href: "/news" },
             kindCrumb,
             { label: post.title },
           ]}

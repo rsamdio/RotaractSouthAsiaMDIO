@@ -1,6 +1,14 @@
 "use client";
 
-import { useCallback, useEffect, useId, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useId,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
+import { createPortal } from "react-dom";
 import { Check, Link2, Send, Share2 } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
@@ -11,6 +19,8 @@ type Props = {
   /** Optional category / kind chip (e.g. "Service", "Announcement") */
   tag?: string;
 };
+
+const VIEWPORT_PAD = 8;
 
 function XIcon({ className }: { className?: string }) {
   return (
@@ -42,6 +52,9 @@ const iconBtn =
 const iconBtnPrimary =
   "inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#D41B69] text-white transition hover:bg-[#9A0E4E] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D41B69]/40";
 
+const menuItemClass =
+  "flex w-full items-center gap-3 px-3.5 py-2.5 text-left text-sm font-medium text-[#0B1426] transition hover:bg-[#FCE8F1]";
+
 export function ShareBar({ path, title, tag }: Props) {
   const absoluteUrl = `${siteConfig.url}${path.startsWith("/") ? path : `/${path}`}`;
   const encodedUrl = encodeURIComponent(absoluteUrl);
@@ -49,9 +62,17 @@ export function ShareBar({ path, title, tag }: Props) {
 
   const menuId = useId();
   const rootRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const triggerBtnRef = useRef<HTMLButtonElement>(null);
+
+  const [mounted, setMounted] = useState(false);
   const [open, setOpen] = useState(false);
   const [canNativeShare, setCanNativeShare] = useState(false);
   const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     if (typeof navigator === "undefined" || typeof navigator.share !== "function") {
@@ -60,9 +81,7 @@ export function ShareBar({ path, title, tag }: Props) {
     }
     const payload = { title, text: title, url: absoluteUrl };
     try {
-      setCanNativeShare(
-        !navigator.canShare || navigator.canShare(payload),
-      );
+      setCanNativeShare(!navigator.canShare || navigator.canShare(payload));
     } catch {
       setCanNativeShare(true);
     }
@@ -72,12 +91,16 @@ export function ShareBar({ path, title, tag }: Props) {
     if (!open) return;
 
     function onPointerDown(event: MouseEvent) {
-      if (!rootRef.current?.contains(event.target as Node)) {
-        setOpen(false);
-      }
+      const target = event.target as Node;
+      if (rootRef.current?.contains(target)) return;
+      if (menuRef.current?.contains(target)) return;
+      setOpen(false);
     }
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") {
+        setOpen(false);
+        triggerBtnRef.current?.focus();
+      }
     }
 
     document.addEventListener("mousedown", onPointerDown);
@@ -87,6 +110,62 @@ export function ShareBar({ path, title, tag }: Props) {
       document.removeEventListener("keydown", onKeyDown);
     };
   }, [open]);
+
+  // Portal + fixed position with viewport clamp (same approach as Publications Hub).
+  useLayoutEffect(() => {
+    if (!open) return;
+
+    const place = () => {
+      const trigger = rootRef.current;
+      const menu = menuRef.current;
+      if (!trigger || !menu) return;
+
+      const tr = trigger.getBoundingClientRect();
+      const mw = menu.offsetWidth;
+      const mh = menu.offsetHeight;
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      const pad = VIEWPORT_PAD;
+
+      let top = tr.bottom + 4;
+      if (top + mh > vh - pad) top = tr.top - mh - 4;
+      if (top < pad) top = pad;
+      if (top + mh > vh - pad) top = Math.max(pad, vh - pad - mh);
+
+      // Prefer end-aligned to the trigger so right-edge buttons stay on-screen.
+      let left = tr.right - mw;
+      if (left < pad) left = pad;
+      if (left + mw > vw - pad) left = Math.max(pad, vw - pad - mw);
+
+      menu.style.position = "fixed";
+      menu.style.top = `${Math.round(top)}px`;
+      menu.style.left = `${Math.round(left)}px`;
+      menu.style.right = "auto";
+      menu.style.bottom = "auto";
+      menu.style.minWidth = "13rem";
+      menu.style.zIndex = "80";
+    };
+
+    place();
+    const raf = requestAnimationFrame(place);
+    window.addEventListener("resize", place);
+    window.addEventListener("scroll", place, true);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", place);
+      window.removeEventListener("scroll", place, true);
+    };
+  }, [open, canNativeShare, copied]);
+
+  useEffect(() => {
+    if (!open || !mounted) return;
+    const raf = requestAnimationFrame(() => {
+      menuRef.current
+        ?.querySelector<HTMLElement>('[role="menuitem"]')
+        ?.focus();
+    });
+    return () => cancelAnimationFrame(raf);
+  }, [open, mounted, canNativeShare]);
 
   const shareNative = useCallback(async () => {
     if (!navigator.share) return;
@@ -121,6 +200,51 @@ export function ShareBar({ path, title, tag }: Props) {
     setOpen(false);
   }, [absoluteUrl]);
 
+  const menu =
+    open && mounted
+      ? createPortal(
+          <div
+            ref={menuRef}
+            id={menuId}
+            role="menu"
+            aria-label="Share"
+            className="overflow-hidden rounded-xl border border-slate-200 bg-white py-1.5 shadow-xl"
+          >
+            {canNativeShare ? (
+              <button
+                type="button"
+                role="menuitem"
+                className={menuItemClass}
+                onClick={() => {
+                  void shareNative();
+                }}
+              >
+                <Send className="h-4 w-4 shrink-0 text-[#D41B69]" />
+                <span className="whitespace-nowrap">Share via device…</span>
+              </button>
+            ) : null}
+            <button
+              type="button"
+              role="menuitem"
+              className={menuItemClass}
+              onClick={() => {
+                void copyLink();
+              }}
+            >
+              {copied ? (
+                <Check className="h-4 w-4 shrink-0 text-[#0f766e]" />
+              ) : (
+                <Link2 className="h-4 w-4 shrink-0 text-slate-600" />
+              )}
+              <span className="whitespace-nowrap">
+                {copied ? "Copied!" : "Copy link"}
+              </span>
+            </button>
+          </div>,
+          document.body,
+        )
+      : null;
+
   return (
     <div className="mt-10 flex flex-wrap items-center gap-3 border-t border-slate-200 pt-6">
       <span className="text-sm font-semibold text-[#0B1426]">Share</span>
@@ -154,8 +278,9 @@ export function ShareBar({ path, title, tag }: Props) {
           <LinkedinIcon className="h-4 w-4" />
         </a>
 
-        <div className="relative" ref={rootRef}>
+        <div className="relative shrink-0" ref={rootRef}>
           <button
+            ref={triggerBtnRef}
             type="button"
             className={iconBtnPrimary}
             aria-expanded={open}
@@ -166,45 +291,7 @@ export function ShareBar({ path, title, tag }: Props) {
           >
             <Share2 className="h-5 w-5" strokeWidth={2.25} />
           </button>
-
-          {open ? (
-            <div
-              id={menuId}
-              role="menu"
-              className="absolute left-0 top-full z-[60] mt-2 min-w-[14.5rem] rounded-xl border border-slate-200 bg-white py-1.5 shadow-lg"
-            >
-              {canNativeShare ? (
-                <button
-                  type="button"
-                  role="menuitem"
-                  className="flex w-full items-center gap-3 px-3.5 py-2.5 text-left text-sm font-medium text-[#0B1426] transition hover:bg-[#FCE8F1]"
-                  onClick={() => {
-                    void shareNative();
-                  }}
-                >
-                  <Send className="h-4 w-4 shrink-0 text-[#D41B69]" />
-                  <span className="whitespace-nowrap">Share via device…</span>
-                </button>
-              ) : null}
-              <button
-                type="button"
-                role="menuitem"
-                className="flex w-full items-center gap-3 px-3.5 py-2.5 text-left text-sm font-medium text-[#0B1426] transition hover:bg-[#FCE8F1]"
-                onClick={() => {
-                  void copyLink();
-                }}
-              >
-                {copied ? (
-                  <Check className="h-4 w-4 shrink-0 text-[#0f766e]" />
-                ) : (
-                  <Link2 className="h-4 w-4 shrink-0 text-slate-600" />
-                )}
-                <span className="whitespace-nowrap">
-                  {copied ? "Copied!" : "Copy link"}
-                </span>
-              </button>
-            </div>
-          ) : null}
+          {menu}
         </div>
       </div>
 

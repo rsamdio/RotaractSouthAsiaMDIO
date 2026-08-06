@@ -9,7 +9,7 @@ export const siteConfig = {
   fullName: "Rotaract South Asia MDIO",
   tagline: "Create Lasting Impact",
   description:
-    "The regional coordination hub for Rotaract across South Asia — unifying clubs and members across 8 nations through shared knowledge, standards, and service.",
+    "The regional coordination hub for Rotaract across South Asia, serving clubs and members in 8 nations through shared knowledge, standards, and service.",
   url: "https://rsamdio.org",
   rotaryYear: "2026–27", // ← update each July
   stats: {

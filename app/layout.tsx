@@ -2,7 +2,10 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import { memberDistrictSummary } from "@/config/memberDistricts";
 import "./globals.css";
+
+const siteDescription = `The official regional coordination hub for Rotaract across South Asia, serving ${memberDistrictSummary.districts} member districts, ${memberDistrictSummary.clubs} clubs, and ${memberDistrictSummary.members} Rotaractors across 8 nations.`;
 
 // Self-hosted so local/dev does not depend on fonts.gstatic.com at compile time.
 const openSans = localFont({
@@ -44,11 +47,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://rsamdio.org"),
   title: {
-    default: "RSAMDIO | Rotaract South Asia MDIO",
-    template: "%s | RSAMDIO",
+    default: "Rotaract South Asia MDIO (RSAMDIO)",
+    template: "%s | Rotaract South Asia MDIO",
   },
-  description:
-    "The official regional coordination hub for Rotaract across South Asia — unifying 3,000+ clubs and 120K+ members across 8 nations through shared knowledge, standards, and service.",
+  description: siteDescription,
   keywords: [
     "Rotaract",
     "Rotaract South Asia",
@@ -72,9 +74,8 @@ export const metadata: Metadata = {
     apple: [{ url: "/img/favicon.png", sizes: "100x100", type: "image/png" }],
   },
   openGraph: {
-    title: "RSAMDIO | Rotaract South Asia MDIO",
-    description:
-      "The official regional coordination hub for Rotaract across South Asia — unifying 3,000+ clubs and 120K+ members across 8 nations.",
+    title: "Rotaract South Asia MDIO (RSAMDIO)",
+    description: siteDescription,
     url: "https://rsamdio.org",
     siteName: "Rotaract South Asia MDIO",
     images: [
@@ -90,9 +91,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "RSAMDIO | Rotaract South Asia MDIO",
-    description:
-      "Regional coordination hub unifying Rotaract leaders across South Asia.",
+    title: "Rotaract South Asia MDIO (RSAMDIO)",
+    description: siteDescription,
     images: ["/img/ananta-installation.jpg"],
   },
   robots: {

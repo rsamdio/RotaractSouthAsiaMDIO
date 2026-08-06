@@ -11,8 +11,7 @@ type Props = {
 
 export function PostAdjacentNav({ kind, newer, older, indexLabel }: Props) {
   const streamLabel = kind === "story" ? "Stories" : "Announcements";
-  const streamHref =
-    kind === "story" ? "/news#stories" : "/news#announcements";
+  const streamHref = kind === "story" ? "/stories" : "/announcements";
   const olderLabel = kind === "story" ? "Older story" : "Older announcement";
   const newerLabel = kind === "story" ? "Newer story" : "Newer announcement";
 

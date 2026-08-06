@@ -63,7 +63,7 @@ export const announcements: Announcement[] = [
     category: "Announcement",
     excerpt:
       "The 17th RSA MDIO Installation Ceremony and ROAR Awards will be hosted in Bengaluru, India, marking the start of RY 2026–27.",
-    body: "Rotaract South Asia MDIO is pleased to announce ANANTA 2026 — the 17th RSA MDIO Installation Ceremony and ROAR Awards — to be hosted in Bengaluru, India. The gathering will mark the formal start of Rotary Year 2026–27 and bring together District Rotaract Representatives, Executive Board members, and Rotaractors from across the region.",
+    body: "Rotaract South Asia MDIO is pleased to announce ANANTA 2026, the 17th RSA MDIO Installation Ceremony and ROAR Awards, to be hosted in Bengaluru, India. The gathering will mark the formal start of Rotary Year 2026–27 and bring together District Rotaract Representatives, Executive Board members, and Rotaractors from across the region.",
     image:
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80",
     date: "2026-01-10",

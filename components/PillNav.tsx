@@ -9,7 +9,7 @@ export type PillItem = { id: string; label: string };
 const homeItems: PillItem[] = [
   { id: "hero", label: "Home" },
   { id: "about-snapshot", label: "About" },
-  { id: "global", label: "Network" },
+  { id: "global", label: "Presence" },
   { id: "initiatives", label: "Initiatives" },
   { id: "leadership", label: "Leadership" },
   { id: "news", label: "News" },

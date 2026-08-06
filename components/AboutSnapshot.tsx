@@ -11,7 +11,7 @@ export function AboutSnapshot() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/img/ananta-installation.jpg"
-            alt="Rotaract South Asia MDIO 17th Installation Ceremony - ANANTA"
+            alt="Rotaract South Asia MDIO 17th Installation Ceremony, ANANTA"
             className="relative z-10 w-full rounded-[2.5rem] shadow-soft object-cover aspect-[16/10] border border-slate-100 dark:border-white/10"
           />
           <div className="absolute -bottom-8 -right-4 sm:-right-8 bg-white dark:bg-[#131F35] p-5 rounded-3xl shadow-xl border border-slate-100 dark:border-white/10 z-20">
@@ -23,7 +23,7 @@ export function AboutSnapshot() {
                 <div className="text-lg font-bold tracking-tight text-[#0B1426] dark:text-white" style={{ fontFamily: "General Sans, sans-serif" }}>
                   South Asia
                 </div>
-                <div className="text-sm text-slate-500 dark:text-white/50">United Network</div>
+                <div className="text-sm text-slate-500 dark:text-white/50">Regional presence</div>
               </div>
             </div>
           </div>
@@ -37,15 +37,15 @@ export function AboutSnapshot() {
             className="text-4xl sm:text-5xl font-bold text-[#0B1426] dark:text-white leading-tight"
             style={{ fontFamily: "General Sans, sans-serif" }}
           >
-            A Network Built on{" "}
-            <span className="text-[#D41B69]">Leadership, Service & Collaboration</span>
+            South Asia&apos;s home for{" "}
+            <span className="text-[#D41B69]">Rotaract coordination</span>
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-slate-600 dark:text-white/65">
             The <strong className="text-[#0B1426] dark:text-white">Rotaract South Asia Multi-District Information Organization</strong>{" "}
-            (RSAMDIO) is the official sub-regional coordination body of Rotary International, bridging RI global standards with district-level implementation across Afghanistan, Pakistan, India, Nepal, Bhutan, Bangladesh, Sri Lanka, and the Maldives.
+            (RSAMDIO) is Rotary International&apos;s sub-regional coordination body for Rotaract across Afghanistan, Pakistan, India, Nepal, Bhutan, Bangladesh, Sri Lanka, and the Maldives.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-slate-600 dark:text-white/65">
-            Governed by an elected Executive Board under the oversight of Rotary International Zones 6A and 6B, RSAMDIO operates as the region&apos;s primary knowledge-sharing and governance hub.
+            An elected Executive Board leads the work, supporting member districts with standards, programmes, digital tools, and regional leadership under Rotary International Zones 1, 4, 5, 6, 7, and 8.
           </p>
           <Link
             href="/about"
