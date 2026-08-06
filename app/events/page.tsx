@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { History, Star } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { PageHero } from "@/components/PageHero";
@@ -7,6 +6,7 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { PillNav } from "@/components/PillNav";
 import { EventCard, EventCardEmpty } from "@/components/EventCard";
 import { EventsCalendar } from "@/components/EventsCalendar";
+import { SectionScrollButton } from "@/components/SectionScrollButton";
 import { filterPast, filterSignature, filterUpcoming } from "@/config/events";
 import { loadEvents } from "@/sanity/lib/content";
 
@@ -121,9 +121,12 @@ export default async function EventsPage() {
                   Navigate months, select a day, and open any event page.
                 </p>
               </div>
-              <Link href="#upcoming" className="text-sm font-bold text-[#D41B69] hover:underline">
+              <SectionScrollButton
+                sectionId="upcoming"
+                className="cursor-pointer text-sm font-bold text-[#D41B69] hover:underline"
+              >
                 Back to upcoming
-              </Link>
+              </SectionScrollButton>
             </div>
             <EventsCalendar events={events} />
           </div>

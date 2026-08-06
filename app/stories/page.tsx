@@ -23,7 +23,7 @@ export default async function StoriesPage() {
       <Navbar />
       <main id="main-content">
         <PageHero
-          eyebrow="Field & Fellowship"
+          eyebrow="From the Field"
           title="Stories"
           description="Service projects, leadership moments, and impact from Rotaract clubs and districts across South Asia."
           crumbs={[

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { useState, type MouseEvent } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { stashScrollToSection, scrollToSection } from "@/lib/scrollToSection";
 
@@ -56,6 +56,59 @@ export function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
 
+  // Close the sheet on navigation.
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
+  // Lock page + Lenis scroll while the mobile menu is open so only the sheet scrolls.
+  useEffect(() => {
+    if (!mobileOpen) return;
+
+    const lenis = window.__lenis;
+    const scrollY = typeof lenis?.scroll === "number" ? lenis.scroll : window.scrollY;
+    const html = document.documentElement;
+    const body = document.body;
+
+    const prev = {
+      htmlOverflow: html.style.overflow,
+      bodyOverflow: body.style.overflow,
+      bodyPosition: body.style.position,
+      bodyTop: body.style.top,
+      bodyWidth: body.style.width,
+      bodyLeft: body.style.left,
+      bodyRight: body.style.right,
+    };
+
+    lenis?.stop();
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.left = "0";
+    body.style.right = "0";
+    body.style.width = "100%";
+
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      html.style.overflow = prev.htmlOverflow;
+      body.style.overflow = prev.bodyOverflow;
+      body.style.position = prev.bodyPosition;
+      body.style.top = prev.bodyTop;
+      body.style.left = prev.bodyLeft;
+      body.style.right = prev.bodyRight;
+      body.style.width = prev.bodyWidth;
+      lenis?.start();
+      if (lenis) lenis.scrollTo(scrollY, { immediate: true });
+      else window.scrollTo(0, scrollY);
+    };
+  }, [mobileOpen]);
+
   const goTo = (drop: NavDrop, e: MouseEvent<HTMLAnchorElement>) => {
     if (!drop.scrollTo) {
       setMobileOpen(false);
@@ -78,9 +131,18 @@ export function Navbar() {
 
   return (
     <nav className="fixed left-0 right-0 top-4 z-50 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between rounded-3xl border border-slate-200 bg-white/95 px-4 shadow-lg backdrop-blur-2xl sm:px-6 text-slate-700">
+      {mobileOpen && (
+        <button
+          type="button"
+          aria-label="Close menu"
+          className="fixed inset-0 z-40 cursor-default bg-[#0B1426]/35 backdrop-blur-[2px] lg:hidden"
+          onClick={() => setMobileOpen(false)}
+        />
+      )}
+
+      <div className="relative z-50 mx-auto flex h-16 w-full max-w-7xl items-center justify-between rounded-3xl border border-slate-200 bg-white/95 px-4 shadow-lg backdrop-blur-2xl sm:px-6 text-slate-700">
         {/* Logo */}
-        <Link href="/" className="flex items-center shrink-0 py-1.5">
+        <Link href="/" className="flex items-center shrink-0 py-1.5" onClick={() => setMobileOpen(false)}>
           <Image
             src="/img/rsamdio.webp"
             alt="RSAMDIO Logo"
@@ -133,9 +195,12 @@ export function Navbar() {
             Get in Touch
           </Link>
           <button
-            onClick={() => setMobileOpen(!mobileOpen)}
+            type="button"
+            onClick={() => setMobileOpen((open) => !open)}
             className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-slate-700 lg:hidden cursor-pointer hover:bg-slate-100"
-            aria-label="Toggle menu"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-nav-panel"
           >
             {mobileOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
@@ -144,7 +209,13 @@ export function Navbar() {
 
       {/* Mobile nav */}
       {mobileOpen && (
-        <div className="mx-auto mt-2 max-h-[75vh] max-w-7xl overflow-y-auto rounded-2xl border border-slate-200 bg-white p-4 shadow-xl backdrop-blur-2xl lg:hidden">
+        <div
+          id="mobile-nav-panel"
+          data-lenis-prevent
+          data-lenis-prevent-wheel
+          data-lenis-prevent-touch
+          className="relative z-50 mx-auto mt-2 max-h-[min(75vh,calc(100dvh-5.5rem))] max-w-7xl overflow-y-auto overscroll-contain touch-pan-y rounded-2xl border border-slate-200 bg-white p-4 shadow-xl backdrop-blur-2xl [-webkit-overflow-scrolling:touch] lg:hidden"
+        >
           <div className="space-y-1">
             {navItems.map((item) => (
               <div key={item.label}>
@@ -171,6 +242,13 @@ export function Navbar() {
                 )}
               </div>
             ))}
+            <Link
+              href="/contact"
+              onClick={() => setMobileOpen(false)}
+              className="mt-3 flex items-center justify-center rounded-full bg-[#D41B69] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#9A0E4E]"
+            >
+              Get in Touch
+            </Link>
           </div>
         </div>
       )}

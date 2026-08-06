@@ -7,10 +7,12 @@ import {
   type PlatformKey,
 } from "@/config/platformTools";
 import { BrowserChrome } from "@/components/initiatives/LiveSitePreview";
+import { useScrollActiveTabIntoView } from "@/lib/useScrollActiveTabIntoView";
 
 export function InitiativesShowcase() {
   const [activeKey, setActiveKey] = useState<PlatformKey>("library");
   const active = platformTools.find((t) => t.key === activeKey) ?? platformTools[0];
+  const { scrollerRef, setTabRef } = useScrollActiveTabIntoView(activeKey);
 
   return (
     <section
@@ -38,10 +40,14 @@ export function InitiativesShowcase() {
           </p>
         </div>
 
-        <div className="mx-auto mb-8 flex max-w-5xl gap-2 overflow-x-auto rounded-full border border-slate-200/50 bg-slate-100/70 p-1.5 shadow-sm backdrop-blur-xl sm:mb-10 [&::-webkit-scrollbar]:hidden">
+        <div
+          ref={scrollerRef}
+          className="mx-auto mb-8 flex max-w-5xl gap-2 overflow-x-auto rounded-full border border-slate-200/50 bg-slate-100/70 p-1.5 shadow-sm backdrop-blur-xl sm:mb-10 [&::-webkit-scrollbar]:hidden"
+        >
           {platformTools.map((tool) => (
             <button
               key={tool.key}
+              ref={setTabRef(tool.key)}
               type="button"
               onClick={() => setActiveKey(tool.key)}
               className={`shrink-0 cursor-pointer whitespace-nowrap rounded-full px-4 py-2.5 text-center text-xs font-bold transition-all duration-300 sm:flex-1 sm:px-5 sm:py-3 sm:text-sm ${

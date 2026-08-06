@@ -1,6 +1,14 @@
 import { Navbar } from "@/components/Navbar";
 import { PageHero } from "@/components/PageHero";
-import { Footer, InstagramIcon, LinkedinIcon, FacebookIcon } from "@/components/Footer";
+import {
+  Footer,
+  InstagramIcon,
+  LinkedinIcon,
+  FacebookIcon,
+  XIcon,
+  WhatsAppIcon,
+  YoutubeIcon,
+} from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { siteConfig } from "@/config/site";
 import { CheckCircle2, Mail } from "lucide-react";
@@ -19,6 +27,57 @@ const helpItems = [
   "Resource & story submissions",
   "General Rotaract South Asia questions",
 ];
+
+const followLinks = [
+  {
+    label: "Instagram",
+    handle: "@rsamdio",
+    href: siteConfig.social.instagram,
+    Icon: InstagramIcon,
+    iconWrap: "bg-rose-50 group-hover:bg-[#D41B69]/10",
+    iconClass: "text-[#D41B69]",
+  },
+  {
+    label: "Facebook",
+    handle: "@rsamdio",
+    href: siteConfig.social.facebook,
+    Icon: FacebookIcon,
+    iconWrap: "bg-sky-50 group-hover:bg-blue-700/10",
+    iconClass: "text-blue-700",
+  },
+  {
+    label: "X",
+    handle: "@rsa_mdio",
+    href: siteConfig.social.x,
+    Icon: XIcon,
+    iconWrap: "bg-slate-100 group-hover:bg-slate-200/80",
+    iconClass: "text-slate-800",
+  },
+  {
+    label: "YouTube",
+    handle: "@rsamdio",
+    href: siteConfig.social.youtube,
+    Icon: YoutubeIcon,
+    iconWrap: "bg-red-50 group-hover:bg-red-100/80",
+    iconClass: "text-red-600",
+  },
+  {
+    label: "LinkedIn",
+    handle: "Rotaract South Asia MDIO",
+    href: siteConfig.social.linkedin,
+    Icon: LinkedinIcon,
+    iconWrap: "bg-blue-50 group-hover:bg-blue-600/10",
+    iconClass: "text-blue-600",
+  },
+  {
+    label: "WhatsApp Channel",
+    handle: "go.rsamdio.org/WAchannel",
+    href: siteConfig.social.whatsapp,
+    Icon: WhatsAppIcon,
+    iconWrap: "bg-emerald-50 group-hover:bg-emerald-100/80",
+    iconClass: "text-emerald-600",
+  },
+] as const;
 
 export default function ContactPage() {
   return (
@@ -71,54 +130,27 @@ export default function ContactPage() {
                   Follow Us
                 </h3>
                 <div className="space-y-4">
-                  <a
-                    href="https://www.instagram.com/rsamdio/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 group text-slate-700 hover:text-[#D41B69] transition-colors"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center shrink-0 group-hover:bg-[#D41B69]/10 transition-colors">
-                      <InstagramIcon className="w-5 h-5 text-[#D41B69]" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-bold text-slate-900 group-hover:text-[#D41B69] transition-colors">
-                        Instagram
+                  {followLinks.map(({ label, handle, href, Icon, iconWrap, iconClass }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 group text-slate-700 hover:text-[#D41B69] transition-colors"
+                    >
+                      <div
+                        className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-colors ${iconWrap}`}
+                      >
+                        <Icon className={`w-5 h-5 ${iconClass}`} />
                       </div>
-                      <div className="text-xs text-slate-500">@rsamdio</div>
-                    </div>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/company/rsamdio/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 group text-slate-700 hover:text-[#D41B69] transition-colors"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 group-hover:bg-blue-600/10 transition-colors">
-                      <LinkedinIcon className="h-5 w-5 text-blue-600" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
-                        LinkedIn
+                      <div>
+                        <div className="text-sm font-bold text-slate-900 group-hover:text-[#D41B69] transition-colors">
+                          {label}
+                        </div>
+                        <div className="text-xs text-slate-500">{handle}</div>
                       </div>
-                      <div className="text-xs text-slate-500">Rotaract South Asia MDIO</div>
-                    </div>
-                  </a>
-                  <a
-                    href="https://www.facebook.com/rsamdio/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-4 group text-slate-700 hover:text-[#D41B69] transition-colors"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-sky-50 flex items-center justify-center shrink-0 group-hover:bg-blue-700/10 transition-colors">
-                      <FacebookIcon className="w-5 h-5 text-blue-700" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
-                        Facebook
-                      </div>
-                      <div className="text-xs text-slate-500">@rsamdio</div>
-                    </div>
-                  </a>
+                    </a>
+                  ))}
                 </div>
               </div>
 

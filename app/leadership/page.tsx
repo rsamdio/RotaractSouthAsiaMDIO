@@ -225,7 +225,7 @@ export default function LeadershipPage() {
             ) : (
               <div className="grid gap-3.5 sm:gap-6 grid-cols-2 sm:grid-cols-2 lg:grid-cols-4">
                 {filteredCommittee.map((member, i) => (
-                  <MemberCard key={`${member.name}-${member.committee || i}`} member={member} index={i} />
+                  <MemberCard key={`${member.name}-${member.committee || i}`} member={member} index={i} showProfession={false} />
                 ))}
               </div>
             )}

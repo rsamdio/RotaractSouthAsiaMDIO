@@ -7,11 +7,13 @@ import {
   type PlatformKey,
 } from "@/config/platformTools";
 import { BrowserChrome } from "@/components/initiatives/LiveSitePreview";
+import { useScrollActiveTabIntoView } from "@/lib/useScrollActiveTabIntoView";
 
 export function InitiativesExplorer() {
   const [activeKey, setActiveKey] = useState<PlatformKey>("library");
   const active = platformTools.find((t) => t.key === activeKey) ?? platformTools[0];
   const Icon = active.icon;
+  const { scrollerRef, setTabRef } = useScrollActiveTabIntoView(activeKey);
 
   return (
     <section className="relative bg-gradient-to-b from-white via-[#FCE8F1]/25 to-slate-50 px-3 py-14 sm:px-6 sm:py-20 lg:px-8">
@@ -20,10 +22,14 @@ export function InitiativesExplorer() {
 
       <div className="relative mx-auto max-w-7xl">
         <div className="mb-8 sticky top-20 z-30 -mx-1 px-1 sm:mb-10">
-          <div className="flex gap-2 overflow-x-auto rounded-full border border-slate-200/60 bg-white/95 p-1.5 shadow-md backdrop-blur-xl [&::-webkit-scrollbar]:hidden">
+          <div
+            ref={scrollerRef}
+            className="flex gap-2 overflow-x-auto rounded-full border border-slate-200/60 bg-white/95 p-1.5 shadow-md backdrop-blur-xl [&::-webkit-scrollbar]:hidden"
+          >
             {platformTools.map((tool) => (
               <button
                 key={tool.key}
+                ref={setTabRef(tool.key)}
                 type="button"
                 onClick={() => setActiveKey(tool.key)}
                 className={`shrink-0 cursor-pointer whitespace-nowrap rounded-full px-4 py-2.5 text-xs font-bold transition-all sm:flex-1 sm:px-5 sm:text-sm ${

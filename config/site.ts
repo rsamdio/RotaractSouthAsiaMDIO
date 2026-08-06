@@ -21,8 +21,11 @@ export const siteConfig = {
   libraryUrl: "https://library.rsamdio.org/",
   social: {
     instagram: "https://instagram.com/rsamdio",
+    facebook: "https://www.facebook.com/rsamdio/",
+    x: "https://x.com/rsa_mdio",
     youtube: "https://youtube.com/@rsamdio",
     linkedin: "https://linkedin.com/company/rsamdio",
+    whatsapp: "https://go.rsamdio.org/WAchannel",
   },
   contact: {
     general: "rsamdio@gmail.com",
