@@ -101,6 +101,7 @@ const footerColumns: FooterColumn[] = [
     items: [
       { label: "Contact Us", href: "/contact" },
       { label: "News & Stories", href: "/news" },
+      { label: "Stories", href: "/stories" },
       { label: "RSA Chronicles", href: "/chronicles" },
       { label: "Privacy Policy", href: "/privacy" },
     ],

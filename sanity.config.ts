@@ -8,7 +8,9 @@ import { media } from "sanity-plugin-media";
 import { schemaTypes } from "./sanity/schemaTypes";
 import { structure } from "./sanity/structure";
 import { StudioLogo } from "./sanity/components/StudioLogo";
+import { MarkdownBodyInput } from "./sanity/components/MarkdownBodyInput";
 import { dataset, projectId } from "./sanity/env";
+import "easymde/dist/easymde.min.css";
 
 const brandTheme = buildLegacyTheme({
   "--black": "#0B1426",
@@ -41,7 +43,7 @@ export default defineConfig({
   basePath: "/admin",
   plugins: [
     structureTool({ structure }),
-    markdownSchema(),
+    markdownSchema({ input: MarkdownBodyInput }),
     media(),
     visionTool({ defaultApiVersion: "2025-01-01" }),
   ],

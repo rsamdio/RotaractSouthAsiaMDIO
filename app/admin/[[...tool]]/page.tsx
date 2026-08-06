@@ -3,6 +3,7 @@
 import { NextStudio } from "next-sanity/studio";
 import config from "@/sanity.config";
 import { projectId } from "@/sanity/env";
+import "easymde/dist/easymde.min.css";
 import "@/sanity/styles/studio.css";
 
 export default function AdminStudioPage() {

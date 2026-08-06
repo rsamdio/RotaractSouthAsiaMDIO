@@ -12,8 +12,18 @@ declare global {
 
 export function SmoothScroll() {
   const pathname = usePathname();
+  const isAdmin = pathname?.startsWith("/admin") ?? false;
 
   useEffect(() => {
+    // Sanity Studio owns its own pane scroll; Lenis wheel capture breaks it.
+    if (isAdmin) {
+      if (window.__lenis) {
+        window.__lenis.destroy();
+        delete window.__lenis;
+      }
+      return;
+    }
+
     if ("scrollRestoration" in history) {
       history.scrollRestoration = "manual";
     }
@@ -36,11 +46,13 @@ export function SmoothScroll() {
       lenis.destroy();
       if (window.__lenis === lenis) delete window.__lenis;
     };
-  }, []);
+  }, [isAdmin]);
 
   // Lenis keeps the previous page's scroll Y across client navigations.
   // Reset to top on route change — unless a nav dropdown stashed a section target.
   useEffect(() => {
+    if (isAdmin) return;
+
     const frame = requestAnimationFrame(() => {
       if (peekScrollToSection()) return;
 
@@ -49,7 +61,7 @@ export function SmoothScroll() {
       else window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     });
     return () => cancelAnimationFrame(frame);
-  }, [pathname]);
+  }, [pathname, isAdmin]);
 
   return null;
 }

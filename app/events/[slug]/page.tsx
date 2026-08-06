@@ -12,6 +12,7 @@ import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { MarkdownContent } from "@/components/MarkdownContent";
+import { ShareBar } from "@/components/ShareBar";
 import {
   formatEventDateRange,
   formatEventTime,
@@ -74,10 +75,15 @@ export default async function EventDetailPage({ params }: Props) {
                 />
               )}
               <MarkdownContent source={body} className="text-lg" />
+              <ShareBar
+                path={`/events/${event.slug}`}
+                title={event.title}
+                tag={past ? "Past event" : event.kind}
+              />
 
               <Link
                 href="/events"
-                className="mt-10 inline-flex items-center gap-2 text-sm font-semibold text-slate-500 transition hover:text-[#D41B69]"
+                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-slate-500 transition hover:text-[#D41B69]"
               >
                 <ArrowLeft className="h-4 w-4" />
                 All events

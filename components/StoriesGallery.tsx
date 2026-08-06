@@ -18,7 +18,7 @@ export function StoriesGallery() {
             Latest Stories
           </h2>
           <Link
-            href="/news"
+            href="/stories"
             className="inline-flex items-center gap-2 text-sm font-bold text-[#F7A81B] hover:text-white transition"
           >
             View all <ArrowRight className="h-4 w-4" />

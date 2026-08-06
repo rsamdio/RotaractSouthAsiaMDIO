@@ -1,14 +1,71 @@
-/* Studio-only: markdown preview mirrors public prose tones */
-.rbe-md-preview {
-  font-family: "Open Sans", system-ui, sans-serif;
-  color: #0b1426;
-  line-height: 1.75;
-  font-size: 1.05rem;
+/**
+ * EasyMDE chrome + preview typography for Sanity Studio.
+ * Scoped so the rest of Studio UI stays intact.
+ */
+
+/* Sticky toolbar so formatting stays reachable while editing long bodies */
+.EasyMDEContainer .editor-toolbar:not(.fullscreen) {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: var(--card-bg-color, #fafaf8);
+  border-bottom: 1px solid var(--card-border-color, #e2e8f0);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
 
-.rbe-md-preview h1,
-.rbe-md-preview h2,
-.rbe-md-preview h3 {
+.EasyMDEContainer {
+  overflow: visible;
+}
+
+.admin-studio .editor-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #fafaf8 !important;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Preview mirrors public site prose tones */
+.editor-preview .rsa-md-preview,
+.editor-preview-side .rsa-md-preview {
+  box-sizing: border-box;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 1.5rem;
+  color: #0b1426;
+  background: #fff;
+  font-family: "Open Sans", system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.editor-preview .rsa-md-preview *,
+.editor-preview-side .rsa-md-preview * {
+  box-sizing: border-box;
+}
+
+.editor-preview .rsa-md-preview > :first-child,
+.editor-preview-side .rsa-md-preview > :first-child {
+  margin-top: 0;
+}
+
+.editor-preview .rsa-md-preview > :last-child,
+.editor-preview-side .rsa-md-preview > :last-child {
+  margin-bottom: 0;
+}
+
+.editor-preview .rsa-md-preview p,
+.editor-preview-side .rsa-md-preview p {
+  margin: 0.85em 0;
+}
+
+.editor-preview .rsa-md-preview h1,
+.editor-preview .rsa-md-preview h2,
+.editor-preview .rsa-md-preview h3,
+.editor-preview-side .rsa-md-preview h1,
+.editor-preview-side .rsa-md-preview h2,
+.editor-preview-side .rsa-md-preview h3 {
   font-family: "General Sans", "Open Sans", system-ui, sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -16,49 +73,128 @@
   color: #0b1426;
 }
 
-.rbe-md-preview h1 { font-size: 1.85rem; }
-.rbe-md-preview h2 { font-size: 1.45rem; }
-.rbe-md-preview h3 { font-size: 1.2rem; }
-
-.rbe-md-preview p { margin: 0.85em 0; }
-.rbe-md-preview a { color: #d41b69; text-decoration: underline; }
-.rbe-md-preview ul,
-.rbe-md-preview ol { padding-left: 1.35rem; margin: 0.85em 0; }
-.rbe-md-preview img {
-  max-width: 100%;
-  border-radius: 1rem;
-  margin: 1rem 0;
+.editor-preview .rsa-md-preview h1,
+.editor-preview-side .rsa-md-preview h1 {
+  font-size: 1.85rem;
 }
-.rbe-md-preview blockquote {
-  border-left: 3px solid #d41b69;
+
+.editor-preview .rsa-md-preview h2,
+.editor-preview-side .rsa-md-preview h2 {
+  font-size: 1.45rem;
+}
+
+.editor-preview .rsa-md-preview h3,
+.editor-preview-side .rsa-md-preview h3 {
+  font-size: 1.2rem;
+}
+
+.editor-preview .rsa-md-preview a,
+.editor-preview-side .rsa-md-preview a {
+  color: #d41b69;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.editor-preview .rsa-md-preview strong,
+.editor-preview-side .rsa-md-preview strong {
+  font-weight: 600;
+}
+
+.editor-preview .rsa-md-preview ul,
+.editor-preview-side .rsa-md-preview ul {
+  margin: 0.85em 0;
+  padding-left: 1.35rem;
+  list-style: disc;
+}
+
+.editor-preview .rsa-md-preview ol,
+.editor-preview-side .rsa-md-preview ol {
+  margin: 0.85em 0;
+  padding-left: 1.35rem;
+  list-style: decimal;
+}
+
+.editor-preview .rsa-md-preview li,
+.editor-preview-side .rsa-md-preview li {
+  margin: 0.35em 0;
+}
+
+.editor-preview .rsa-md-preview blockquote,
+.editor-preview-side .rsa-md-preview blockquote {
   margin: 1rem 0;
   padding-left: 1rem;
+  border-left: 3px solid #d41b69;
   color: #475569;
+  font-style: italic;
 }
-.rbe-md-preview table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1rem 0;
-  font-size: 0.95rem;
-}
-.rbe-md-preview th,
-.rbe-md-preview td {
-  border: 1px solid #e2e8f0;
-  padding: 0.5rem 0.65rem;
-  text-align: left;
-}
-.rbe-md-preview code {
+
+.editor-preview .rsa-md-preview code,
+.editor-preview-side .rsa-md-preview code {
   background: #f1f5f9;
   padding: 0.1em 0.35em;
   border-radius: 0.3rem;
   font-size: 0.9em;
 }
 
-/* Sticky EasyMDE toolbar when using markdown plugin */
-.admin-studio .editor-toolbar {
-  position: sticky;
-  top: 0;
-  z-index: 5;
-  background: #fafaf8 !important;
-  border-bottom: 1px solid #e2e8f0;
+.editor-preview .rsa-md-preview pre,
+.editor-preview-side .rsa-md-preview pre {
+  margin: 1rem 0;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  background: #0b1426;
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+.editor-preview .rsa-md-preview pre code,
+.editor-preview-side .rsa-md-preview pre code {
+  padding: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.editor-preview .rsa-md-preview hr,
+.editor-preview-side .rsa-md-preview hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+}
+
+.editor-preview .rsa-md-preview img,
+.editor-preview-side .rsa-md-preview img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+  border-radius: 1rem;
+}
+
+.editor-preview .rsa-md-preview table,
+.editor-preview-side .rsa-md-preview table {
+  width: 100%;
+  margin: 1rem 0;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.editor-preview .rsa-md-preview th,
+.editor-preview .rsa-md-preview td,
+.editor-preview-side .rsa-md-preview th,
+.editor-preview-side .rsa-md-preview td {
+  border: 1px solid #e2e8f0;
+  padding: 0.5rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.editor-preview .rsa-md-preview th,
+.editor-preview-side .rsa-md-preview th {
+  background: #f8fafc;
+  font-weight: 600;
+}
+
+.editor-preview,
+.editor-preview-side {
+  background: #fff !important;
 }

@@ -127,17 +127,38 @@ export async function NewsUpdatesPreview() {
   );
 }
 
-function KindBadge({ kind, category }: { kind: NewsKind; category: string }) {
+function KindBadge({
+  kind,
+  category,
+  onDark = false,
+}: {
+  kind: NewsKind;
+  category: string;
+  /** Solid chips for photo overlays (matches /news featured card). */
+  onDark?: boolean;
+}) {
   if (kind === "announcement") {
     return (
-      <span className="inline-flex items-center gap-1 rounded-full bg-[#FCE8F1] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#D41B69]">
+      <span
+        className={
+          onDark
+            ? "inline-flex items-center gap-1 rounded-full bg-[#FCE8F1] px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-[#D41B69]"
+            : "inline-flex items-center gap-1 rounded-full bg-[#FCE8F1] px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#D41B69]"
+        }
+      >
         <Megaphone className="h-3 w-3" />
         Announcement
       </span>
     );
   }
   return (
-    <span className="inline-flex rounded-full bg-[#F7A81B]/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#8A5A00]">
+    <span
+      className={
+        onDark
+          ? "inline-flex rounded-full bg-[#F7A81B] px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-[#0B1426]"
+          : "inline-flex rounded-full bg-[#F7A81B]/15 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#8A5A00]"
+      }
+    >
       {category}
     </span>
   );
@@ -162,7 +183,7 @@ function FeaturedPost({ post }: { post: FeedItem }) {
       <div className="absolute inset-0 bg-gradient-to-t from-[#0B1426]/90 via-[#0B1426]/35 to-transparent" />
       <div className="relative mt-auto p-6 sm:p-8">
         <div className="flex flex-wrap items-center gap-2">
-          <KindBadge kind={post.kind} category={post.category} />
+          <KindBadge kind={post.kind} category={post.category} onDark />
           <span className="text-[11px] font-semibold text-white/70">
             {formatDate(post.date)}
           </span>

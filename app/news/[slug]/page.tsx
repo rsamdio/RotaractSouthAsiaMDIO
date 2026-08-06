@@ -4,6 +4,7 @@ import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { PostAdjacentNav } from "@/components/PostAdjacentNav";
+import { ShareBar } from "@/components/ShareBar";
 import { MarkdownContent } from "@/components/MarkdownContent";
 import { getAdjacentFromList } from "@/lib/newsNav";
 import {
@@ -46,7 +47,7 @@ export default async function NewsDetailPage({ params }: Props) {
   const adjacent = getAdjacentFromList(stream, slug, kind);
   const kindCrumb =
     kind === "story"
-      ? { label: "Stories", href: "/news#stories" }
+      ? { label: "Stories", href: "/stories" }
       : { label: "Announcements", href: "/news#announcements" };
 
   return (
@@ -75,6 +76,11 @@ export default async function NewsDetailPage({ params }: Props) {
               />
             ) : null}
             <MarkdownContent source={post.body} className="text-lg" />
+            <ShareBar
+              path={`/news/${post.slug}`}
+              title={post.title}
+              tag={post.category}
+            />
             {adjacent && (
               <PostAdjacentNav
                 kind={adjacent.kind}

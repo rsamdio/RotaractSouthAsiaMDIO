@@ -3,9 +3,11 @@
   publish = ".next"
 
 [build.environment]
+  # Public Sanity config (safe to commit — no secrets)
+  NEXT_PUBLIC_SANITY_PROJECT_ID = "gsebaki2"
   NEXT_PUBLIC_SANITY_DATASET = "production"
   NEXT_PUBLIC_SANITY_API_VERSION = "2025-01-01"
-  # Set NEXT_PUBLIC_SANITY_PROJECT_ID in the Netlify UI (not committed).
+  # Do NOT put SANITY_API_WRITE_TOKEN here — local .env.local only
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
