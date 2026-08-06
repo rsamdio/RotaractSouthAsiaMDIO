@@ -111,7 +111,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning className="overflow-x-hidden">
-      <body className={`${sentinel.variable} ${openSans.variable} font-sans antialiased bg-white dark:bg-[#0B1426] text-[#0B1426] dark:text-white transition-colors duration-300 overflow-x-hidden min-h-screen`}>
+      <body
+        suppressHydrationWarning
+        className={`${sentinel.variable} ${openSans.variable} font-sans antialiased bg-white dark:bg-[#0B1426] text-[#0B1426] dark:text-white transition-colors duration-300 overflow-x-hidden min-h-screen`}
+      >
         <ThemeProvider attribute="class" defaultTheme="light" forcedTheme="light">
           <SmoothScroll />
           {children}

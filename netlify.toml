@@ -2,6 +2,11 @@
   command = "npm run build"
   publish = ".next"
 
+[build.environment]
+  NEXT_PUBLIC_SANITY_DATASET = "production"
+  NEXT_PUBLIC_SANITY_API_VERSION = "2025-01-01"
+  # Set NEXT_PUBLIC_SANITY_PROJECT_ID in the Netlify UI (not committed).
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 

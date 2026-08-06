@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Lenis from "lenis";
+import { peekScrollToSection } from "@/lib/scrollToSection";
 
 declare global {
   interface Window {
@@ -38,9 +39,11 @@ export function SmoothScroll() {
   }, []);
 
   // Lenis keeps the previous page's scroll Y across client navigations.
-  // Always reset to top on route change; section targets re-scroll after.
+  // Reset to top on route change — unless a nav dropdown stashed a section target.
   useEffect(() => {
     const frame = requestAnimationFrame(() => {
+      if (peekScrollToSection()) return;
+
       const lenis = window.__lenis;
       if (lenis) lenis.scrollTo(0, { immediate: true });
       else window.scrollTo({ top: 0, left: 0, behavior: "instant" });

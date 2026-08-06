@@ -1,0 +1,64 @@
+/* Studio-only: markdown preview mirrors public prose tones */
+.rbe-md-preview {
+  font-family: "Open Sans", system-ui, sans-serif;
+  color: #0b1426;
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+.rbe-md-preview h1,
+.rbe-md-preview h2,
+.rbe-md-preview h3 {
+  font-family: "General Sans", "Open Sans", system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 1.4em 0 0.5em;
+  color: #0b1426;
+}
+
+.rbe-md-preview h1 { font-size: 1.85rem; }
+.rbe-md-preview h2 { font-size: 1.45rem; }
+.rbe-md-preview h3 { font-size: 1.2rem; }
+
+.rbe-md-preview p { margin: 0.85em 0; }
+.rbe-md-preview a { color: #d41b69; text-decoration: underline; }
+.rbe-md-preview ul,
+.rbe-md-preview ol { padding-left: 1.35rem; margin: 0.85em 0; }
+.rbe-md-preview img {
+  max-width: 100%;
+  border-radius: 1rem;
+  margin: 1rem 0;
+}
+.rbe-md-preview blockquote {
+  border-left: 3px solid #d41b69;
+  margin: 1rem 0;
+  padding-left: 1rem;
+  color: #475569;
+}
+.rbe-md-preview table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+.rbe-md-preview th,
+.rbe-md-preview td {
+  border: 1px solid #e2e8f0;
+  padding: 0.5rem 0.65rem;
+  text-align: left;
+}
+.rbe-md-preview code {
+  background: #f1f5f9;
+  padding: 0.1em 0.35em;
+  border-radius: 0.3rem;
+  font-size: 0.9em;
+}
+
+/* Sticky EasyMDE toolbar when using markdown plugin */
+.admin-studio .editor-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #fafaf8 !important;
+  border-bottom: 1px solid #e2e8f0;
+}

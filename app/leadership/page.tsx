@@ -8,18 +8,29 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { PillNav } from "@/components/PillNav";
 import { MemberCard } from "@/components/MemberCard";
 import { executiveBoard, drrs, committeeMembers, LeadershipMember } from "@/config/leadership";
-import { consumeScrollToSection, scrollToSectionWhenReady } from "@/lib/scrollToSection";
+import { peekScrollToSection, consumeScrollToSection, scrollToSectionWhenReady } from "@/lib/scrollToSection";
 
 export default function LeadershipPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedZone, setSelectedZone] = useState<string>("All");
 
   useEffect(() => {
-    const id = consumeScrollToSection();
+    const id = peekScrollToSection();
     if (!id) return;
-    // Run after SmoothScroll's route-change reset to top.
-    const timer = window.setTimeout(() => scrollToSectionWhenReady(id), 60);
-    return () => window.clearTimeout(timer);
+
+    let cancelled = false;
+    // Wait past SmoothScroll's route-change frame, then scroll when the section exists.
+    const timer = window.setTimeout(() => {
+      void scrollToSectionWhenReady(id).then((ok) => {
+        if (cancelled) return;
+        if (ok) consumeScrollToSection();
+      });
+    }, 80);
+
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timer);
+    };
   }, []);
 
   const zones = ["All", "Zone 1", "Zone 4", "Zone 5", "Zone 6", "Zone 7", "Zone 8"];
@@ -122,7 +133,7 @@ export default function LeadershipPage() {
         </section>
 
         {/* Executive Board Section */}
-        <section id="executive-board" className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white scroll-mt-24">
+        <section id="executive-board" className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white scroll-mt-36">
           <div className="relative mx-auto max-w-7xl">
             <div className="flex items-center justify-between mb-8 sm:mb-10">
               <div className="flex items-center gap-2">
@@ -149,7 +160,7 @@ export default function LeadershipPage() {
         </section>
 
         {/* DRRs Section */}
-        <section id="drrs" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 scroll-mt-24 border-t border-slate-100">
+        <section id="drrs" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-slate-50 scroll-mt-36 border-t border-slate-100">
           <div className="mx-auto max-w-7xl">
             <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-10 gap-4">
               <div>
@@ -195,7 +206,7 @@ export default function LeadershipPage() {
         </section>
 
         {/* Committee Section */}
-        <section id="committee" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white scroll-mt-24 border-t border-slate-100">
+        <section id="committee" className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white scroll-mt-36 border-t border-slate-100">
           <div className="mx-auto max-w-7xl">
             <div className="flex items-center justify-between mb-8 sm:mb-10">
               <div className="flex items-center gap-2">

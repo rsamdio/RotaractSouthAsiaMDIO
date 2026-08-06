@@ -12,19 +12,19 @@ export default function PrivacyPage() {
   const sections = [
     {
       title: "1. Information We Collect",
-      content: `When you submit our Contact form — including general inquiries, district updates, partnership proposals, or media inquiries — we collect your full name, email address, phone number (optional), inquiry type, and message. We do not collect any payment information, sensitive personal data, or location data beyond what you voluntarily provide.`,
+      content: `When you email the RSAMDIO Secretariat (for example via addresses listed on the Contact page), we receive your name, email address, and whatever you include in the message. We do not collect payment information or sensitive personal data beyond what you voluntarily provide.`,
     },
     {
       title: "2. How We Use Your Information",
-      content: `Contact form submissions are used solely to route and respond to your inquiry through the appropriate RSAMDIO Secretariat channel. We do not use your data for automated decision-making, profiling, or marketing to third parties.`,
+      content: `Messages are used solely to respond to your inquiry through the Secretariat. We do not use your data for automated decision-making, profiling, or marketing to third parties.`,
     },
     {
       title: "3. Data Storage & Security",
-      content: `All data is stored securely using Google Firebase (Realtime Database and Firestore), hosted on Google Cloud infrastructure in the Asia-Southeast1 region. Database access rules are enforced at the server level — unauthenticated users cannot read inquiry data. Administrative access is restricted to verified @rsamdio.org accounts only.`,
+      content: `Email correspondence is handled through the Secretariat's Google Workspace mailboxes. Editorial website content is managed in Sanity CMS and published as static pages on Netlify. Access to publishing tools is limited to invited editors.`,
     },
     {
       title: "4. Data Sharing",
-      content: `We do not sell, trade, or share your personal information with third parties. Data may be shared internally with RSAMDIO Secretariat members (authorized @rsamdio.org accounts) for operational purposes. We may disclose information if required by law or legal process.`,
+      content: `We do not sell, trade, or share your personal information with third parties. Data may be shared internally with RSAMDIO Secretariat members for operational purposes. We may disclose information if required by law or legal process.`,
     },
     {
       title: "5. Your Rights (GDPR)",

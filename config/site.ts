@@ -25,9 +25,9 @@ export const siteConfig = {
     linkedin: "https://linkedin.com/company/rsamdio",
   },
   contact: {
-    general: "secretariat@rsamdio.org",
-    districtUpdate: "districts@rsamdio.org",
-    partnership: "partnerships@rsamdio.org",
-    media: "media@rsamdio.org",
+    general: "rsamdio@gmail.com",
+    districtUpdate: "rsamdio@gmail.com",
+    partnership: "rsamdio@gmail.com",
+    media: "rsamdio@gmail.com",
   },
 };

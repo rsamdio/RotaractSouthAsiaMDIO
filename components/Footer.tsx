@@ -91,7 +91,8 @@ const footerColumns: FooterColumn[] = [
       { label: "Invoice Calculator", href: "https://dues.rsamdio.org/", external: true },
       { label: "Rotaract Certify", href: "https://certify.rsamdio.org/", external: true },
       { label: "Publications Hub", href: "https://publications.rsamdio.org/", external: true },
-      { label: "All platforms", href: "/initiatives" },
+      { label: "RSA Chronicles", href: "/chronicles" },
+      { label: "Initiatives", href: "/initiatives" },
     ],
   },
   {
@@ -99,9 +100,8 @@ const footerColumns: FooterColumn[] = [
     heading: "Connect",
     items: [
       { label: "Contact Us", href: "/contact" },
-      { label: "Submit an Update", href: "/contact" },
       { label: "News & Stories", href: "/news" },
-      { label: "Gallery", href: "/news#gallery" },
+      { label: "RSA Chronicles", href: "/chronicles" },
       { label: "Privacy Policy", href: "/privacy" },
     ],
   },
@@ -156,6 +156,7 @@ export function Footer() {
                 width={72}
                 height={72}
                 className="h-16 w-auto object-contain sm:h-[4.5rem]"
+                style={{ width: "auto" }}
               />
             </Link>
 

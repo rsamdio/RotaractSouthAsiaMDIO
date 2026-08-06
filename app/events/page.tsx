@@ -1,25 +1,27 @@
 import Link from "next/link";
-import { Star, CalendarCheck } from "lucide-react";
+import { History, Star } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { PillNav } from "@/components/PillNav";
-import { UpcomingEventsSection } from "@/components/UpcomingEventsSection";
-import { signatureEvents, calendarHighlights } from "@/config/events";
+import { EventCard, EventCardEmpty } from "@/components/EventCard";
+import { EventsCalendar } from "@/components/EventsCalendar";
+import { filterPast, filterSignature, filterUpcoming } from "@/config/events";
+import { loadEvents } from "@/sanity/lib/content";
 
 export const metadata = {
   title: "Events | RSAMDIO",
-  description: "Upcoming and signature events across Rotaract South Asia.",
+  description:
+    "Upcoming, signature, and past events across Rotaract South Asia — conventions, training, and sessions.",
 };
 
-const highlightColor: Record<string, string> = {
-  pink: "bg-[#D41B69]",
-  gold: "bg-[#F7A81B] text-[#0B1426]",
-  blue: "bg-[#17458F]",
-};
+export default async function EventsPage() {
+  const events = await loadEvents();
+  const upcoming = filterUpcoming(events);
+  const past = filterPast(events);
+  const signature = filterSignature(events);
 
-export default function EventsPage() {
   return (
     <>
       <Navbar />
@@ -27,6 +29,7 @@ export default function EventsPage() {
         items={[
           { id: "upcoming", label: "Upcoming" },
           { id: "signature", label: "Signature" },
+          { id: "past", label: "Past" },
           { id: "calendar", label: "Calendar" },
         ]}
       />
@@ -34,93 +37,97 @@ export default function EventsPage() {
         <PageHero
           eyebrow="Conventions & Forums"
           title="Events"
-          description="Major regional activities, conventions, and training seminars across South Asia."
+          description="Signature programmes, regional gatherings, and working sessions across South Asia — browse upcoming dates, revisit past events, or open the calendar."
           crumbs={[{ label: "Events" }]}
         />
 
-      {/* Upcoming */}
-      <section id="upcoming" className="py-24 px-5 sm:px-6 lg:px-8 bg-slate-50 dark:bg-[#0B1426] scroll-mt-24">
-        <div className="mx-auto max-w-5xl">
-          <h2 className="text-2xl font-bold text-[#0B1426] dark:text-white mb-8" style={{ fontFamily: "General Sans, sans-serif" }}>
-            Upcoming Events
-          </h2>
-          <UpcomingEventsSection />
-        </div>
-      </section>
-
-      {/* Signature */}
-      <section id="signature" className="py-24 px-5 sm:px-6 lg:px-8 bg-white dark:bg-[#0D1825] scroll-mt-24">
-        <div className="mx-auto max-w-5xl">
-          <div className="flex items-center gap-2 mb-8">
-            <Star className="h-4 w-4 text-[#F7A81B]" />
-            <h2 className="text-2xl font-bold text-[#0B1426] dark:text-white" style={{ fontFamily: "General Sans, sans-serif" }}>
-              Signature Events
+        <section id="upcoming" className="scroll-mt-24 bg-slate-50 px-5 py-24 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <h2
+              className="mb-8 text-2xl font-bold text-[#0B1426]"
+              style={{ fontFamily: "General Sans, sans-serif" }}
+            >
+              Upcoming Events
             </h2>
+            {upcoming.length === 0 ? (
+              <EventCardEmpty message="No upcoming events right now. Check Past Events or the calendar." />
+            ) : (
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {upcoming.map((ev) => (
+                  <EventCard key={ev.slug} event={ev} />
+                ))}
+              </div>
+            )}
           </div>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            {signatureEvents.map((ev) => (
-              <Link
-                key={ev.slug}
-                href={`/events/${ev.slug}`}
-                className="group rounded-2xl border border-slate-100 dark:border-white/10 bg-white dark:bg-white/5 overflow-hidden hover:shadow-md transition-all duration-300 hover:-translate-y-1 block"
+        </section>
+
+        <section id="signature" className="scroll-mt-24 bg-white px-5 py-24 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-8 flex items-center gap-2">
+              <Star className="h-4 w-4 text-[#F7A81B]" />
+              <h2
+                className="text-2xl font-bold text-[#0B1426]"
+                style={{ fontFamily: "General Sans, sans-serif" }}
               >
-                <div className="h-32 bg-slate-100 dark:bg-white/10 relative">
-                  <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-medium text-xs">
-                    Image Preview
-                  </div>
-                </div>
-                <div className="p-4">
-                  <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-[#D41B69] mb-2">
-                    <span>{ev.month} {ev.year}</span>
-                  </div>
-                  <h3 className="font-bold text-[#0B1426] dark:text-white text-sm group-hover:text-[#D41B69] transition-colors line-clamp-1">{ev.title}</h3>
-                  <p className="text-[11px] text-slate-500 dark:text-white/50 mt-1.5 line-clamp-2">{ev.tagline}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Calendar */}
-      <section id="calendar" className="py-24 px-5 sm:px-6 lg:px-8 bg-slate-50 dark:bg-[#0B1426] scroll-mt-24">
-        <div className="mx-auto max-w-3xl">
-          <div className="flex items-center gap-2 mb-8">
-            <CalendarCheck className="h-4 w-4 text-[#D41B69]" />
-            <h2 className="text-2xl font-bold text-[#0B1426] dark:text-white" style={{ fontFamily: "General Sans, sans-serif" }}>
-              Calendar Highlights
-            </h2>
-          </div>
-          <div className="rounded-[2rem] border border-slate-100 dark:border-white/10 bg-white dark:bg-white/5 p-8">
-            <div className="grid grid-cols-7 gap-2 text-center text-xs font-semibold text-slate-400 dark:text-white/30 mb-3">
-              <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+                Signature Events
+              </h2>
             </div>
-            <div className="grid grid-cols-7 gap-2 text-center text-sm font-semibold text-slate-700 dark:text-white/70">
-              {Array.from({ length: 31 }, (_, i) => {
-                const day = String(i + 1);
-                const highlight = calendarHighlights.find((h) => h.date === day);
-                return (
-                  <span
-                    key={day}
-                    className={`p-2 rounded-xl ${highlight ? `${highlightColor[highlight.color]} text-white` : ""}`}
-                    title={highlight?.label}
-                  >
-                    {day}
-                  </span>
-                );
-              })}
-            </div>
-            <div className="mt-6 space-y-2">
-              {calendarHighlights.map((h) => (
-                <div key={h.date} className="flex items-center gap-2 text-xs text-slate-600 dark:text-white/60">
-                  <span className={`h-2.5 w-2.5 rounded-full ${highlightColor[h.color]}`} />
-                  {h.label}
-                </div>
+            <p className="mb-8 max-w-2xl text-sm leading-6 text-slate-500">
+              Flagship MDIO programmes that define the regional year — installations,
+              academies, summits, and the annual convention.
+            </p>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {signature.map((ev) => (
+                <EventCard key={ev.slug} event={ev} />
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section id="past" className="scroll-mt-24 bg-slate-50 px-5 py-24 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-8 flex items-center gap-2">
+              <History className="h-4 w-4 text-[#D41B69]" />
+              <h2
+                className="text-2xl font-bold text-[#0B1426]"
+                style={{ fontFamily: "General Sans, sans-serif" }}
+              >
+                Past Events
+              </h2>
+            </div>
+            {past.length === 0 ? (
+              <EventCardEmpty message="Past events will appear here after they conclude." />
+            ) : (
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {past.map((ev) => (
+                  <EventCard key={ev.slug} event={ev} />
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+
+        <section id="calendar" className="scroll-mt-24 bg-white px-5 py-24 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-8 flex flex-wrap items-end justify-between gap-3">
+              <div>
+                <h2
+                  className="text-2xl font-bold text-[#0B1426]"
+                  style={{ fontFamily: "General Sans, sans-serif" }}
+                >
+                  Event Calendar
+                </h2>
+                <p className="mt-2 text-sm text-slate-500">
+                  Navigate months, select a day, and open any event page.
+                </p>
+              </div>
+              <Link href="#upcoming" className="text-sm font-bold text-[#D41B69] hover:underline">
+                Back to upcoming
+              </Link>
+            </div>
+            <EventsCalendar events={events} />
+          </div>
+        </section>
       </main>
 
       <Footer />

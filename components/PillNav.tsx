@@ -12,6 +12,8 @@ const homeItems: PillItem[] = [
   { id: "global", label: "Network" },
   { id: "initiatives", label: "Initiatives" },
   { id: "leadership", label: "Leadership" },
+  { id: "news", label: "News" },
+  { id: "events", label: "Events" },
 ];
 
 export function PillNav({ items = homeItems }: { items?: PillItem[] }) {
@@ -38,7 +40,7 @@ export function PillNav({ items = homeItems }: { items?: PillItem[] }) {
     const el = document.getElementById(id);
     if (!el) return;
     const lenis = window.__lenis;
-    if (lenis) lenis.scrollTo(el, { offset: 0 });
+    if (lenis) lenis.scrollTo(el, { offset: -112 });
     else el.scrollIntoView({ behavior: "smooth", block: "start" });
   }, []);
 

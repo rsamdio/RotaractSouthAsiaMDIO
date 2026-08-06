@@ -1,7 +1,8 @@
 import { MetadataRoute } from "next";
 import { memberDistricts } from "@/config/memberDistricts";
+import { loadAnnouncements, loadEvents, loadStories } from "@/sanity/lib/content";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://rsamdio.org";
 
   const staticRoutes = [
@@ -12,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/districts",
     "/initiatives",
     "/news",
+    "/chronicles",
+    "/events",
     "/contact",
     "/privacy",
   ].map((route) => ({
@@ -28,16 +31,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  const newsRoutes = [
-    "rebuilding-after-floods-district-3220",
-    "south-asia-summit-record-attendance",
-    "clean-water-project-nepal",
-  ].map((slug) => ({
-    url: `${baseUrl}/news/${slug}`,
+  const [stories, announcements, events] = await Promise.all([
+    loadStories(),
+    loadAnnouncements(),
+    loadEvents(),
+  ]);
+
+  const newsRoutes = [...stories, ...announcements].map((p) => ({
+    url: `${baseUrl}/news/${p.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...districtRoutes, ...newsRoutes];
+  const eventRoutes = events.map((e) => ({
+    url: `${baseUrl}/events/${e.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...districtRoutes, ...newsRoutes, ...eventRoutes];
 }
