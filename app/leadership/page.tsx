@@ -118,7 +118,7 @@ export default function LeadershipPage() {
             <div className="flex items-center justify-between mb-8 sm:mb-10">
               <div className="flex items-center gap-2">
                 <Star className="h-5 w-5 text-[#F7A81B]" fill="currentColor" />
-                <h2 className="text-xl sm:text-2xl font-bold text-[#0B1426]" style={{ fontFamily: "General Sans, sans-serif" }}>
+                <h2 className="text-xl sm:text-2xl font-bold text-[#0B1426]">
                   Executive Board RY 2026–27
                 </h2>
               </div>
@@ -146,7 +146,7 @@ export default function LeadershipPage() {
               <div>
                 <div className="flex items-center gap-2 mb-2">
                   <Landmark className="h-5 w-5 text-[#D41B69]" />
-                  <h2 className="text-xl sm:text-2xl font-bold text-[#0B1426]" style={{ fontFamily: "General Sans, sans-serif" }}>
+                  <h2 className="text-xl sm:text-2xl font-bold text-[#0B1426]">
                     District Rotaract Representatives (DRRs)
                   </h2>
                 </div>
@@ -191,7 +191,7 @@ export default function LeadershipPage() {
             <div className="flex items-center justify-between mb-8 sm:mb-10">
               <div className="flex items-center gap-2">
                 <UserCheck className="h-5 w-5 text-[#17458F]" />
-                <h2 className="text-xl sm:text-2xl font-bold text-[#0B1426]" style={{ fontFamily: "General Sans, sans-serif" }}>
+                <h2 className="text-xl sm:text-2xl font-bold text-[#0B1426]">
                   Committee Members
                 </h2>
               </div>

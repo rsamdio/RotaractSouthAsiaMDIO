@@ -131,10 +131,12 @@ Embedding `publications.rsamdio.org` works for home/about inside the preview. Na
 
 Preserve the established system when editing existing surfaces:
 
-- Pink / crimson `#D41B69`, navy `#17458F` / `#0B1426`, gold `#F7A81B`
-- Soft rounded sections, pink eyebrow pills, General Sans / Open Sans heading usage already in components
+- **CTA hierarchy:** crimson (`#D41B69` / `bg-crimson`) = primary filled actions; hover `crimson-hover` (`#9A0E4E`). Navy (`#17458F`) = stats / institutional chrome only — not primary buttons. Gold = rare highlight.
+- **Surfaces:** ice white, `slate-50`, hero canvas `ice-cream` (`#F7F5F0`), soft blush `#FCE8F1`. Body ink `#0B1426` (`ink`). Tokens live in `app/globals.css` `@theme`.
+- Soft rounded sections, pink eyebrow pills for marketing sections, Open Sans for UI (Sentinel only where `font-serif` is intentional, e.g. About body)
 - Lenis smooth scroll via `components/SmoothScroll.tsx` — don’t add competing `scroll-behavior: smooth` on `html`
 - Prefer existing patterns (`PageHero`, `Reveal`, `PillNav`, card styles) over inventing a new design language
+- Avoid off-brand purple / lavender washes; green only for success or platform-native icons
 
 Contact page: email CTA only (form UI may exist but product direction is email-first).
 

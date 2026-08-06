@@ -36,7 +36,6 @@ export function DistrictClubsPanel({ clubs }: Props) {
       <div>
         <h2
           className="text-xl font-bold text-[#0B1426] mb-2"
-          style={{ fontFamily: "General Sans, sans-serif" }}
         >
           Clubs
         </h2>
@@ -58,7 +57,6 @@ export function DistrictClubsPanel({ clubs }: Props) {
     <div>
       <h2
         className="text-xl font-bold text-[#0B1426] mb-4"
-        style={{ fontFamily: "General Sans, sans-serif" }}
       >
         Clubs
       </h2>

@@ -63,7 +63,6 @@ export function MemberDistrictDirectory() {
       <div className="mb-12">
         <h2
           className="text-xl font-bold text-[#0B1426] mb-5"
-          style={{ fontFamily: "General Sans, sans-serif" }}
         >
           Member Countries
         </h2>
@@ -88,7 +87,6 @@ export function MemberDistrictDirectory() {
       {/* Member districts list */}
       <h2
         className="text-xl font-bold text-[#0B1426] mb-5"
-        style={{ fontFamily: "General Sans, sans-serif" }}
       >
         Member Districts
       </h2>

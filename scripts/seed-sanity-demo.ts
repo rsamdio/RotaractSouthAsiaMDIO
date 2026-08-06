@@ -393,7 +393,7 @@ const programs = [
       "Structured club twinning and short fellowship exchanges that connect Rotaractors across South Asian districts and cultures.",
     livingNote: "Seasonal cohorts · Pairing facilitated by Secretariat",
     icon: "fellowship",
-    accent: "#7E22CE",
+    accent: "#17458F",
     featured: false,
     ctaLabel: "Learn more",
     body: "Cross-Border Fellowship pairs clubs and small cohorts for short exchanges that build lasting regional friendship.\n\n## What to expect\n- Facilitated twinning between districts\n- Host club programmes focused on culture, service, and leadership\n- Seasonal application windows announced by the Secretariat",

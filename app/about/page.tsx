@@ -74,7 +74,7 @@ export default function AboutPage() {
                 </p>
                 <Link
                   href="/districts"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#D41B69] transition hover:text-[#8A0F3E]"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-crimson transition hover:text-crimson-hover"
                 >
                   View Member Districts <ArrowRight className="h-4 w-4" />
                 </Link>
@@ -118,7 +118,7 @@ export default function AboutPage() {
                 </p>
                 <Link
                   href="/leadership"
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#D41B69] transition hover:text-[#8A0F3E]"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-crimson transition hover:text-crimson-hover"
                 >
                   Meet the Board <ArrowRight className="h-4 w-4" />
                 </Link>
@@ -135,7 +135,6 @@ export default function AboutPage() {
               </span>
               <h2
                 className="text-3xl font-bold text-[#0B1426] dark:text-white sm:text-4xl"
-                style={{ fontFamily: "General Sans, sans-serif" }}
               >
                 From first recorded leadership to today
               </h2>
@@ -166,7 +165,7 @@ export default function AboutPage() {
             <div className="mt-10">
               <Link
                 href="/presidents"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[#D41B69] transition hover:text-[#8A0F3E]"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-crimson transition hover:text-crimson-hover"
               >
                 View College of Presidents <ArrowRight className="h-4 w-4" />
               </Link>

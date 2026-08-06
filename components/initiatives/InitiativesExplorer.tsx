@@ -57,7 +57,6 @@ export function InitiativesExplorer() {
               </span>
               <h2
                 className="text-2xl font-bold leading-tight text-[#0B1426] sm:text-3xl"
-                style={{ fontFamily: "General Sans, sans-serif" }}
               >
                 {active.title}
               </h2>
@@ -82,7 +81,7 @@ export function InitiativesExplorer() {
               href={active.primaryBtnUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative z-10 mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#D41B69] px-6 py-3.5 text-sm font-bold text-white shadow-md shadow-[#D41B69]/20 transition hover:bg-[#8A0F3E] sm:mt-10 sm:w-auto"
+              className="relative z-10 mt-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-crimson px-6 py-3.5 text-sm font-bold text-white shadow-md shadow-crimson/20 transition hover:bg-crimson-hover sm:mt-10 sm:w-auto"
             >
               <ExternalLink className="h-4 w-4" />
               {active.primaryBtnText}

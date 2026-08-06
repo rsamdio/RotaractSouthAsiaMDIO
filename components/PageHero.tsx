@@ -49,7 +49,6 @@ export function PageHero({ eyebrow, title, description, crumbs }: Props) {
         <Reveal delay={0.08}>
           <h1
             className="text-4xl sm:text-5xl font-bold tracking-tight text-[#0B1426] leading-[1.1]"
-            style={{ fontFamily: "General Sans, sans-serif" }}
           >
             {title}
           </h1>

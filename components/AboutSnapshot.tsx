@@ -20,7 +20,7 @@ export function AboutSnapshot() {
                 <Users2 className="h-7 w-7" />
               </div>
               <div>
-                <div className="text-lg font-bold tracking-tight text-[#0B1426] dark:text-white" style={{ fontFamily: "General Sans, sans-serif" }}>
+                <div className="text-lg font-bold tracking-tight text-[#0B1426] dark:text-white">
                   South Asia
                 </div>
                 <div className="text-sm text-slate-500 dark:text-white/50">Regional presence</div>
@@ -35,7 +35,6 @@ export function AboutSnapshot() {
           </span>
           <h2
             className="text-4xl sm:text-5xl font-bold text-[#0B1426] dark:text-white leading-tight"
-            style={{ fontFamily: "General Sans, sans-serif" }}
           >
             South Asia&apos;s home for{" "}
             <span className="text-[#D41B69]">Rotaract coordination</span>
@@ -49,7 +48,7 @@ export function AboutSnapshot() {
           </p>
           <Link
             href="/about"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#D41B69] px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-[#D41B69]/20 transition hover:-translate-y-0.5 hover:bg-[#8A0F3E]"
+            className="mt-8 inline-flex items-center gap-2 rounded-full bg-crimson px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-crimson/20 transition hover:-translate-y-0.5 hover:bg-crimson-hover"
           >
             Learn More About RSAMDIO
             <ArrowRight className="h-5 w-5" />

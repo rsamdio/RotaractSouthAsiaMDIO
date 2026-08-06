@@ -77,7 +77,7 @@ export function MemberCard({
           <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#C87900] mb-1.5">
             {member.title}
           </div>
-          <h3 className="text-2xl font-bold text-[#0B1426] leading-tight" style={{ fontFamily: "General Sans, sans-serif" }}>
+          <h3 className="text-2xl font-bold text-[#0B1426] leading-tight">
             {member.name}
           </h3>
           <div className="mt-3 space-y-1 text-sm text-slate-500">

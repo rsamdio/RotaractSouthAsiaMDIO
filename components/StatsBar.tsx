@@ -18,7 +18,6 @@ export function StatsBar() {
             <Reveal key={stat.key} delay={i * 0.06} y={16}>
               <div
                 className="text-4xl lg:text-5xl font-bold tracking-tight text-[#0B1426] tabular-nums"
-                style={{ fontFamily: "General Sans, sans-serif" }}
               >
                 {stat.value}
               </div>

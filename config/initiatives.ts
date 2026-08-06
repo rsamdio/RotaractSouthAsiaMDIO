@@ -109,7 +109,7 @@ Club presidents, district officers, and Rotaractors preparing for leadership rol
       "Structured club twinning and short fellowship exchanges that connect Rotaractors across South Asian districts and cultures.",
     livingNote: "Seasonal cohorts · Pairing facilitated by Secretariat",
     icon: "fellowship",
-    accent: "#7E22CE",
+    accent: "#17458F",
     image:
       "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
     featured: false,

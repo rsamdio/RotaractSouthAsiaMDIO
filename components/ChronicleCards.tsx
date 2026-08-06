@@ -86,7 +86,6 @@ function ChronicleFeaturedCard({ edition }: { edition: ChronicleEdition }) {
           </p>
           <h3
             className="mt-3 text-2xl font-bold tracking-tight text-[#0B1426] sm:text-3xl"
-            style={{ fontFamily: "General Sans, sans-serif" }}
           >
             RSA Chronicles: {edition.editionName}
           </h3>
@@ -157,7 +156,6 @@ export function ChronicleSectionHeader({
       <div>
         <h2
           className="text-2xl font-bold text-[#0B1426]"
-          style={{ fontFamily: "General Sans, sans-serif" }}
         >
           {title}
         </h2>

@@ -18,7 +18,7 @@ const pillars = [
     icon: Landmark,
     title: "Standards & Governance",
     desc: "Publishing constitutional templates, bylaws, and operational standards that strengthen club foundations.",
-    color: "#7E22CE",
+    color: "#17458F",
   },
   {
     icon: Sparkles,
@@ -36,7 +36,7 @@ export function FocusAreas() {
           <span className="inline-block rounded-full bg-[#D41B69]/10 dark:bg-[#D41B69]/20 border border-[#D41B69]/20 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#D41B69] mb-4">
             How We Serve
           </span>
-          <h2 className="text-4xl font-bold text-[#0B1426] dark:text-white" style={{ fontFamily: "General Sans, sans-serif" }}>
+          <h2 className="text-4xl font-bold text-[#0B1426] dark:text-white">
             What We Do
           </h2>
           <p className="mt-4 text-slate-600 dark:text-white/60">

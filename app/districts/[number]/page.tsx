@@ -115,7 +115,6 @@ export default async function MemberDistrictPage({ params }: Props) {
             <div>
               <h2
                 className="text-xl font-bold text-[#0B1426] mb-4"
-                style={{ fontFamily: "General Sans, sans-serif" }}
               >
                 District Rotaract Representative
               </h2>
@@ -143,7 +142,6 @@ export default async function MemberDistrictPage({ params }: Props) {
             <div>
               <h2
                 className="text-xl font-bold text-[#0B1426] mb-4 inline-flex items-center gap-2"
-                style={{ fontFamily: "General Sans, sans-serif" }}
               >
                 <MapPin className="h-5 w-5 text-[#D41B69]" />
                 Area of Coverage
@@ -159,7 +157,6 @@ export default async function MemberDistrictPage({ params }: Props) {
             <div>
               <h2
                 className="text-xl font-bold text-[#0B1426] mb-4 inline-flex items-center gap-2"
-                style={{ fontFamily: "General Sans, sans-serif" }}
               >
                 <Sparkles className="h-5 w-5 text-[#F7A81B]" />
                 Highlights

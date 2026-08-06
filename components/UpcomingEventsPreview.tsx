@@ -25,7 +25,6 @@ export async function UpcomingEventsPreview() {
           </span>
           <h2
             className="text-4xl font-bold text-[#0B1426]"
-            style={{ fontFamily: "General Sans, sans-serif" }}
           >
             Upcoming Events
           </h2>

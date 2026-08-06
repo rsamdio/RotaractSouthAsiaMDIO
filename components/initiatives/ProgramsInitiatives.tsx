@@ -69,7 +69,6 @@ function ProgramCard({
           className={`mt-2 font-bold text-[#0B1426] transition group-hover:text-[#D41B69] ${
             featured ? "text-xl sm:text-2xl" : "text-lg"
           }`}
-          style={{ fontFamily: "General Sans, sans-serif" }}
         >
           {program.title}
         </h3>
@@ -113,13 +112,10 @@ export function ProgramsInitiatives({ programs, variant = "page" }: Props) {
       <div className="relative mx-auto max-w-7xl">
         <Reveal className="mb-10 flex flex-wrap items-end justify-between gap-4 sm:mb-12">
           <div className={isHome ? "max-w-2xl" : "max-w-3xl"}>
-            <span className="mb-4 inline-block rounded-full border border-[#17458F]/15 bg-[#17458F]/8 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#17458F]">
+            <span className="mb-4 inline-block rounded-full border border-crimson/20 bg-crimson/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-crimson">
               Programs & Campaigns
             </span>
-            <h2
-              className="text-3xl font-bold text-[#0B1426] sm:text-4xl"
-              style={{ fontFamily: "General Sans, sans-serif" }}
-            >
+            <h2 className="text-3xl font-bold text-ink sm:text-4xl">
               {isHome
                 ? "Initiatives Beyond the Platforms"
                 : "Regional Programs That Move People"}

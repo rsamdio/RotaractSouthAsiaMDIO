@@ -13,7 +13,6 @@ export function StoriesGallery() {
         <div className="flex items-end justify-between mb-10 gap-4 flex-wrap">
           <h2
             className="text-3xl sm:text-4xl font-bold text-white tracking-tight"
-            style={{ fontFamily: "General Sans, sans-serif" }}
           >
             Latest Stories
           </h2>

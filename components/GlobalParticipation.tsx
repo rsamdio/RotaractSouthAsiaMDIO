@@ -123,7 +123,7 @@ export function GlobalParticipation() {
         <Reveal delay={0.2} y={15} className="text-center">
           <Link
             href="/districts"
-            className="inline-flex items-center gap-3 rounded-full bg-[#17458F] px-8 py-4 text-sm font-bold text-white shadow-lg hover:bg-[#0B1426] hover:shadow-xl transition-all duration-300 group"
+            className="inline-flex items-center gap-3 rounded-full bg-crimson px-8 py-4 text-sm font-bold text-white shadow-lg shadow-crimson/20 hover:bg-crimson-hover hover:shadow-xl transition-all duration-300 group"
           >
             Explore Member Districts
             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />

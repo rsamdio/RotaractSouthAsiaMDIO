@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Shield, ArrowLeft, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { siteConfig } from "@/config/site";
+import { Navbar } from "@/components/Navbar";
+import { PageHero } from "@/components/PageHero";
+import { Footer } from "@/components/Footer";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -46,92 +50,81 @@ export default function PrivacyPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0B1426]">
-      {/* Header */}
-      <div className="bg-[#0B1426] border-b border-white/10 py-16 px-5 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute -top-40 -right-40 h-80 w-80 rounded-full bg-[#D41B69]/15 blur-[100px] pointer-events-none" />
-        <div className="absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-[#F7A81B]/10 blur-[100px] pointer-events-none" />
-        <div className="relative mx-auto max-w-4xl">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-sm text-white/50 hover:text-white transition mb-8"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Portal
-          </Link>
-          <div className="flex items-center gap-4 mb-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#D41B69]/15 border border-[#D41B69]/25 text-[#D41B69]">
-              <Shield className="h-6 w-6" />
-            </div>
-            <div>
-              <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#D41B69]">
-                Legal Document
-              </div>
-              <h1 className="text-3xl font-bold text-white" style={{ fontFamily: "General Sans, sans-serif" }}>
-                Privacy Policy
-              </h1>
-            </div>
-          </div>
-          <p className="text-white/50 text-sm">
-            Rotaract South Asia MDIO (RSAMDIO) · rsamdio.org
-          </p>
-          <p className="text-white/30 text-xs mt-1">
-            Last updated: May 2026 · Effective: June 1, 2026
-          </p>
-        </div>
-      </div>
+    <>
+      <Navbar />
+      <main id="main-content">
+        <PageHero
+          eyebrow="Legal"
+          title="Privacy Policy"
+          description={
+            <>
+              Rotaract South Asia MDIO (RSAMDIO) · rsamdio.org
+              <br />
+              <span className="text-base text-slate-500">
+                Last updated: May 2026 · Effective: June 1, 2026
+              </span>
+            </>
+          }
+          crumbs={[{ label: "Privacy Policy" }]}
+        />
 
-      {/* Content */}
-      <div className="mx-auto max-w-4xl px-5 sm:px-6 lg:px-8 py-16">
-        {/* Intro */}
-        <div className="rounded-3xl border border-[#D41B69]/20 bg-[#D41B69]/5 dark:bg-[#D41B69]/8 p-7 mb-10">
-          <p className="text-slate-700 dark:text-white/75 leading-relaxed text-sm">
-            Rotaract South Asia MDIO (&quot;RSAMDIO&quot;, &quot;we&quot;, &quot;our&quot;, &quot;us&quot;) is committed to protecting your personal information. This Privacy Policy describes how we collect, use, and safeguard data you provide when using the RSAMDIO portal at{" "}
-            <a href="https://rsamdio.org" className="text-[#D41B69] underline">rsamdio.org</a>. By using our portal, you agree to this policy.
-          </p>
-        </div>
-
-        {/* Sections */}
-        <div className="space-y-6">
-          {sections.map((sec) => (
-            <div
-              key={sec.title}
-              className="rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 p-7 shadow-soft dark:shadow-none"
-            >
-              <h2 className="font-bold text-[#0B1426] dark:text-white mb-3 text-base">
-                {sec.title}
-              </h2>
-              <p className="text-sm text-slate-600 dark:text-white/60 leading-relaxed">
-                {sec.content}
+        <div className="bg-slate-50 px-5 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-10 rounded-3xl border border-[#D41B69]/20 bg-[#D41B69]/5 p-7">
+              <p className="text-sm leading-relaxed text-slate-700">
+                Rotaract South Asia MDIO (&quot;RSAMDIO&quot;, &quot;we&quot;, &quot;our&quot;, &quot;us&quot;) is
+                committed to protecting your personal information. This Privacy Policy describes how we
+                collect, use, and safeguard data you provide when using the RSAMDIO portal at{" "}
+                <a href="https://rsamdio.org" className="text-[#D41B69] underline">
+                  rsamdio.org
+                </a>
+                . By using our portal, you agree to this policy.
               </p>
             </div>
-          ))}
-        </div>
 
-        {/* Contact */}
-        <div className="mt-10 rounded-3xl border border-[#F7A81B]/20 bg-[#F7A81B]/5 dark:bg-[#F7A81B]/8 p-7">
-          <div className="flex items-center gap-3 mb-3">
-            <Mail className="h-5 w-5 text-[#F7A81B]" />
-            <h3 className="font-bold text-[#0B1426] dark:text-white">Contact Us</h3>
+            <div className="space-y-6">
+              {sections.map((sec) => (
+                <div
+                  key={sec.title}
+                  className="rounded-2xl border border-slate-200 bg-white p-7 shadow-soft"
+                >
+                  <h2 className="mb-3 text-base font-bold text-[#0B1426]">{sec.title}</h2>
+                  <p className="text-sm leading-relaxed text-slate-600">{sec.content}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-10 rounded-3xl border border-[#F7A81B]/20 bg-[#F7A81B]/5 p-7">
+              <div className="mb-3 flex items-center gap-3">
+                <Mail className="h-5 w-5 text-[#F7A81B]" />
+                <h3 className="font-bold text-[#0B1426]">Contact Us</h3>
+              </div>
+              <p className="text-sm leading-relaxed text-slate-600">
+                For privacy-related inquiries, data access requests, or to exercise your rights under
+                GDPR, please contact the RSAMDIO Secretariat at{" "}
+                <a
+                  href={`mailto:${siteConfig.contact.general}`}
+                  className="text-[#D41B69] underline transition hover:no-underline"
+                >
+                  {siteConfig.contact.general}
+                </a>
+                . We will respond within 30 days.
+              </p>
+            </div>
+
+            <div className="mt-8 text-center">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-soft transition hover:bg-slate-50"
+              >
+                Return to Portal
+              </Link>
+            </div>
           </div>
-          <p className="text-sm text-slate-600 dark:text-white/65 leading-relaxed">
-            For privacy-related inquiries, data access requests, or to exercise your rights under GDPR, please contact the RSAMDIO Secretariat at{" "}
-            <a href={`mailto:${siteConfig.contact.general}`} className="text-[#D41B69] underline hover:no-underline transition">
-              {siteConfig.contact.general}
-            </a>. We will respond within 30 days.
-          </p>
         </div>
-
-        <div className="mt-8 text-center">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-white/5 px-6 py-3 text-sm font-semibold text-slate-700 dark:text-white hover:bg-slate-50 dark:hover:bg-white/10 transition shadow-soft dark:shadow-none"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Return to Portal
-          </Link>
-        </div>
-      </div>
-    </div>
+      </main>
+      <Footer />
+      <ScrollToTop />
+    </>
   );
 }

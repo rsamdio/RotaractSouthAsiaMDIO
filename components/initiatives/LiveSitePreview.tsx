@@ -73,7 +73,7 @@ export function LiveSitePreview({ tool, tall = false }: Props) {
         href={tool.previewUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className={`relative block h-full ${minH} bg-[#FBF6EC] overflow-hidden group`}
+        className={`relative block h-full ${minH} bg-ice-cream overflow-hidden group`}
       >
         {tool.fallbackImage ? (
           // eslint-disable-next-line @next/next/no-img-element

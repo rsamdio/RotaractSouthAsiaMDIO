@@ -99,7 +99,6 @@ export default function ContactPage() {
           <div className="relative mx-auto max-w-4xl space-y-6">
             <h2
               className="text-2xl font-bold text-[#0B1426]"
-              style={{ fontFamily: "General Sans, sans-serif" }}
             >
               Connect with RSA MDIO
             </h2>

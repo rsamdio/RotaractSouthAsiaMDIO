@@ -10,7 +10,7 @@ export default function AdminStudioPage() {
   if (!projectId) {
     return (
       <main className="mx-auto flex min-h-screen max-w-lg flex-col justify-center gap-4 px-6 py-16 text-[#0B1426]">
-        <h1 className="text-2xl font-bold" style={{ fontFamily: "General Sans, sans-serif" }}>
+        <h1 className="text-2xl font-bold">
           RSAMDIO Admin
         </h1>
         <p className="text-sm leading-6 text-slate-600">

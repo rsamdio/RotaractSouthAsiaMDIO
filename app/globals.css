@@ -8,10 +8,14 @@
 @theme {
   --color-navy-dark: #17458F;
   --color-navy-mid: #00246C;
+  --color-ink: #0B1426;
   --color-crimson: #D41B69;
   --color-crimson-dark: #9A0E4E;
+  --color-crimson-hover: #9A0E4E;
   --color-gold: #F7A81B;
   --color-gold-dark: #C87900;
+  --color-ice-cream: #F7F5F0;
+  --color-blush: #FCE8F1;
 
   --font-sans: var(--font-open-sans), "Open Sans", Arial, sans-serif;
   --font-heading: var(--font-open-sans), "Open Sans", Arial, sans-serif;

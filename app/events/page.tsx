@@ -45,7 +45,6 @@ export default async function EventsPage() {
           <div className="mx-auto max-w-6xl">
             <h2
               className="mb-8 text-2xl font-bold text-[#0B1426]"
-              style={{ fontFamily: "General Sans, sans-serif" }}
             >
               Upcoming Events
             </h2>
@@ -67,7 +66,6 @@ export default async function EventsPage() {
               <Star className="h-4 w-4 text-[#F7A81B]" />
               <h2
                 className="text-2xl font-bold text-[#0B1426]"
-                style={{ fontFamily: "General Sans, sans-serif" }}
               >
                 Signature Events
               </h2>
@@ -90,7 +88,6 @@ export default async function EventsPage() {
               <History className="h-4 w-4 text-[#D41B69]" />
               <h2
                 className="text-2xl font-bold text-[#0B1426]"
-                style={{ fontFamily: "General Sans, sans-serif" }}
               >
                 Past Events
               </h2>
@@ -113,7 +110,6 @@ export default async function EventsPage() {
               <div>
                 <h2
                   className="text-2xl font-bold text-[#0B1426]"
-                  style={{ fontFamily: "General Sans, sans-serif" }}
                 >
                   Event Calendar
                 </h2>

@@ -20,7 +20,7 @@ export function LeadershipSnapshot() {
             <Star className="h-3 w-3" fill="currentColor" />
             Leadership
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1426]" style={{ fontFamily: "General Sans, sans-serif" }}>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1426]">
             Meet the Leadership
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-500 max-w-xl mx-auto">

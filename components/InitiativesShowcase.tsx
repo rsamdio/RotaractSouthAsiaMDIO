@@ -29,7 +29,6 @@ export function InitiativesShowcase() {
           </span>
           <h2
             className="px-2 text-3xl font-bold leading-tight text-[#0B1426] sm:text-4xl lg:text-5xl"
-            style={{ fontFamily: "General Sans, sans-serif" }}
           >
             A Smarter Digital Ecosystem for Rotaract Leaders
           </h2>
@@ -71,7 +70,6 @@ export function InitiativesShowcase() {
               </span>
               <h3
                 className="text-2xl font-bold leading-tight text-[#0B1426] sm:text-3xl"
-                style={{ fontFamily: "General Sans, sans-serif" }}
               >
                 {active.title}
               </h3>
@@ -97,7 +95,7 @@ export function InitiativesShowcase() {
                 href={active.primaryBtnUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-[#D41B69] px-6 py-3 text-xs font-bold text-white shadow-md shadow-[#D41B69]/20 transition hover:bg-[#8A0F3E] sm:px-7 sm:py-3.5 sm:text-sm"
+                className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-full bg-crimson px-6 py-3 text-xs font-bold text-white shadow-md shadow-crimson/20 transition hover:bg-crimson-hover sm:px-7 sm:py-3.5 sm:text-sm"
               >
                 <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4" />{" "}
                 {active.primaryBtnText}

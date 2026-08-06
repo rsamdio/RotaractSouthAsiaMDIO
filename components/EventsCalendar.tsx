@@ -89,7 +89,6 @@ export function EventsCalendar({ events }: { events: SiteEvent[] }) {
           <div className="text-center">
             <h3
               className="text-lg font-bold text-[#0B1426]"
-              style={{ fontFamily: "General Sans, sans-serif" }}
             >
               {monthLabel}
             </h3>

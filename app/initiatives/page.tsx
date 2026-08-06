@@ -41,7 +41,6 @@ export default async function InitiativesPage() {
               </span>
               <h2
                 className="mt-4 text-2xl font-bold text-[#0B1426] sm:text-3xl"
-                style={{ fontFamily: "General Sans, sans-serif" }}
               >
                 Tools Built for Rotaract Leaders
               </h2>

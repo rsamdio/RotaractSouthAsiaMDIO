@@ -73,7 +73,6 @@ export async function NewsUpdatesPreview() {
             </span>
             <h2
               className="text-3xl font-bold text-[#0B1426] sm:text-4xl"
-              style={{ fontFamily: "General Sans, sans-serif" }}
             >
               Stories, Announcements & Chronicles
             </h2>
@@ -190,7 +189,6 @@ function FeaturedPost({ post }: { post: FeedItem }) {
         </div>
         <h3
           className="mt-3 text-xl font-bold leading-snug text-white sm:text-2xl"
-          style={{ fontFamily: "General Sans, sans-serif" }}
         >
           {post.title}
         </h3>
@@ -215,7 +213,6 @@ function CompactPost({ post }: { post: FeedItem }) {
       <KindBadge kind={post.kind} category={post.category} />
       <h3
         className="mt-3 line-clamp-3 text-sm font-bold leading-snug text-[#0B1426] transition group-hover:text-[#D41B69]"
-        style={{ fontFamily: "General Sans, sans-serif" }}
       >
         {post.title}
       </h3>
@@ -228,7 +225,7 @@ function CompactPost({ post }: { post: FeedItem }) {
 
 function ChronicleRail({ edition }: { edition: ChronicleEdition }) {
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-gradient-to-br from-[#FBF6EC] to-white p-5 sm:p-6">
+    <article className="flex h-full flex-col overflow-hidden rounded-[2rem] border border-slate-200 bg-gradient-to-br from-ice-cream to-white p-5 sm:p-6">
       <div className="mb-4 flex items-center gap-2">
         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#D41B69]/10 text-[#D41B69]">
           <Newspaper className="h-4 w-4" />
@@ -259,7 +256,6 @@ function ChronicleRail({ edition }: { edition: ChronicleEdition }) {
       <div className="mt-4 flex flex-col text-center">
         <h3
           className="text-base font-bold text-[#0B1426] sm:text-lg"
-          style={{ fontFamily: "General Sans, sans-serif" }}
         >
           {edition.editionName}
         </h3>

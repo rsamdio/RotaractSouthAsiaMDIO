@@ -53,7 +53,6 @@ export function PostGrid({
               </span>
               <h3
                 className="mt-5 text-3xl font-bold tracking-tight text-white"
-                style={{ fontFamily: "General Sans, sans-serif" }}
               >
                 {posts[0].title}
               </h3>
@@ -79,7 +78,6 @@ export function PostGrid({
             </span>
             <h3
               className="mt-5 text-xl font-bold tracking-tight text-[#0B1426]"
-              style={{ fontFamily: "General Sans, sans-serif" }}
             >
               {post.title}
             </h3>

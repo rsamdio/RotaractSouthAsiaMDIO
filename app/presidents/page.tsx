@@ -79,7 +79,6 @@ export default function HallOfFamePage() {
                 <Award className="h-5 w-5 text-[#F7A81B]" />
                 <h2
                   className="text-xl sm:text-2xl font-bold text-[#0B1426]"
-                  style={{ fontFamily: "General Sans, sans-serif" }}
                 >
                   Past &amp; Present Presidents
                 </h2>
