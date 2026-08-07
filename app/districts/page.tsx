@@ -25,8 +25,12 @@ export default function DistrictsPage() {
           crumbs={[{ label: "Member Districts" }]}
         />
 
-        <section className="py-24 px-5 sm:px-6 lg:px-8 bg-white">
-          <MemberDistrictDirectory />
+        <section className="relative overflow-hidden border-t border-slate-100 bg-gradient-to-b from-white via-blush/20 to-ice-cream/40 px-5 py-24 sm:px-6 lg:px-8 lg:py-28">
+          <div className="pointer-events-none absolute -left-20 top-20 h-72 w-72 rounded-full bg-crimson/5 blur-[100px]" />
+          <div className="pointer-events-none absolute -right-16 bottom-10 h-80 w-80 rounded-full bg-navy-dark/5 blur-[100px]" />
+          <div className="relative">
+            <MemberDistrictDirectory />
+          </div>
         </section>
       </main>
 

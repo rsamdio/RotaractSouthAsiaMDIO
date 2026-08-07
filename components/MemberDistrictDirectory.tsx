@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, MapPin, Users, Building2, Globe2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import {
   memberDistricts,
   memberDistrictSummary,
@@ -7,135 +7,99 @@ import {
   getDrrProfile,
 } from "@/config/memberDistricts";
 import { siteConfig } from "@/config/site";
+import { Reveal } from "@/components/Reveal";
+import { FlagTile } from "@/components/districts/FlagTile";
+import { PresenceStatStrip } from "@/components/districts/PresenceStatStrip";
 
-const summaryCards = [
+const listingStats = [
+  { key: "nations", label: "Nations", value: siteConfig.stats.countries },
   {
-    label: "Nations",
-    value: siteConfig.stats.countries,
-    icon: Globe2,
-    tone: "text-[#D41B69] bg-[#D41B69]/10",
-  },
-  {
-    label: "Member Districts",
+    key: "districts",
+    label: "Districts",
     value: String(memberDistrictSummary.districts),
-    icon: MapPin,
-    tone: "text-[#17458F] bg-[#17458F]/10",
   },
-  {
-    label: "Clubs",
-    value: memberDistrictSummary.clubs,
-    icon: Building2,
-    tone: "text-[#F7A81B] bg-[#F7A81B]/10",
-  },
-  {
-    label: "Members",
-    value: memberDistrictSummary.members,
-    icon: Users,
-    tone: "text-[#0B1426] bg-slate-200/70",
-  },
-] as const;
+  { key: "clubs", label: "Clubs", value: memberDistrictSummary.clubs },
+  { key: "members", label: "Members", value: memberDistrictSummary.members },
+];
 
 export function MemberDistrictDirectory() {
   return (
-    <div className="mx-auto max-w-4xl">
-      {/* Overview summary */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-12">
-        {summaryCards.map((card) => (
-          <div
-            key={card.label}
-            className="rounded-2xl border border-slate-100 bg-slate-50 p-4 sm:p-5"
-          >
-            <div
-              className={`h-9 w-9 rounded-xl flex items-center justify-center mb-3 ${card.tone}`}
-            >
-              <card.icon className="h-4 w-4" />
-            </div>
-            <p className="text-xl sm:text-2xl font-bold text-[#0B1426] tracking-tight">
-              {card.value}
-            </p>
-            <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 mt-1">
-              {card.label}
-            </p>
-          </div>
-        ))}
-      </div>
+    <div className="mx-auto max-w-7xl">
+      <Reveal y={16} className="mx-auto mb-14 max-w-5xl sm:mb-16">
+        <PresenceStatStrip stats={listingStats} />
+      </Reveal>
 
-      {/* Member countries */}
-      <div className="mb-12">
-        <h2
-          className="text-xl font-bold text-[#0B1426] mb-5"
-        >
-          Member Nations
-        </h2>
-        <div className="flex flex-wrap gap-3">
+      <Reveal y={12} className="mb-14 sm:mb-16">
+        <div className="flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-10">
           {memberNations.map((nation) => (
             <div
               key={nation.code}
-              className="inline-flex items-center gap-2.5 rounded-2xl border border-slate-100 bg-slate-50 px-4 py-2.5"
+              className="group flex flex-col items-center gap-3"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`https://flagcdn.com/w80/${nation.code}.png`}
-                alt=""
-                className="h-4 w-6 rounded object-contain bg-white shadow-sm border border-slate-200"
+              <FlagTile
+                code={nation.code}
+                alt={`${nation.name} flag`}
+                size="md"
+                interactive
               />
-              <span className="text-sm font-semibold text-[#0B1426]">{nation.name}</span>
+              <span className="text-center text-[10px] font-bold uppercase tracking-wider text-slate-600 transition-colors group-hover:text-crimson sm:text-xs">
+                {nation.name}
+              </span>
             </div>
           ))}
         </div>
-      </div>
+      </Reveal>
 
-      {/* Member districts list */}
-      <h2
-        className="text-xl font-bold text-[#0B1426] mb-5"
-      >
-        Member Districts
-      </h2>
+      <div>
+        <h2 className="mb-6 text-xl font-bold tracking-tight text-ink sm:mb-8 sm:text-2xl">
+          Member Districts
+        </h2>
 
-      <div className="space-y-3">
-        {memberDistricts.map((d) => {
-          const drr = getDrrProfile(d.number);
-          return (
-            <Link
-              key={d.number}
-              href={`/districts/${d.number}`}
-              className="group flex items-center justify-between gap-4 rounded-2xl border border-slate-100 bg-slate-50 px-5 sm:px-6 py-4 hover:bg-white hover:shadow-sm hover:border-slate-200 transition"
-            >
-              <div className="min-w-0 flex items-center gap-3">
-                <div className="flex items-center gap-1 shrink-0">
-                  {d.countryCodes.map((code) => (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      key={code}
-                      src={`https://flagcdn.com/w80/${code}.png`}
-                      alt=""
-                      className="h-4 w-6 rounded object-contain bg-white shadow-sm border border-slate-200"
-                    />
-                  ))}
+        <div className="space-y-3 sm:space-y-3.5">
+          {memberDistricts.map((d) => {
+            const drr = getDrrProfile(d.number);
+            return (
+              <Link
+                key={d.number}
+                href={`/districts/${d.number}`}
+                className="group flex flex-col gap-3 rounded-2xl border border-slate-200/80 bg-white px-4 py-4 shadow-sm transition hover:border-crimson/20 hover:shadow-md sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:rounded-3xl sm:px-6 sm:py-5"
+              >
+                <div className="flex min-w-0 items-center gap-3.5 sm:gap-5">
+                  <div className="flex shrink-0 items-center gap-1.5">
+                    {d.countryCodes.map((code) => (
+                      <FlagTile key={code} code={code} size="sm" />
+                    ))}
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-bold text-ink transition-colors group-hover:text-crimson sm:text-base">
+                      District {d.number}
+                    </h3>
+                    <p className="mt-0.5 truncate text-xs text-slate-500 sm:text-sm">
+                      {d.countriesLabel}
+                    </p>
+                    <p className="mt-1 text-xs text-slate-400">
+                      DRR:{" "}
+                      <span className="font-medium text-slate-600">
+                        {drr?.name ?? "TBD"}
+                      </span>
+                    </p>
+                  </div>
                 </div>
-                <div className="min-w-0">
-                  <h3 className="font-bold text-[#0B1426] text-sm sm:text-base group-hover:text-[#D41B69] transition-colors">
-                    District {d.number}
-                  </h3>
-                  <p className="text-xs text-slate-400 mt-0.5 truncate">
-                    DRR:{" "}
-                    <span className="font-medium text-slate-600">
-                      {drr?.name ?? "TBD"}
+                <div className="flex items-center justify-between gap-2 pl-[calc(1.75rem+0.875rem)] sm:justify-end sm:gap-2.5 sm:pl-0">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="rounded-full bg-crimson/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-crimson sm:px-3 sm:text-xs">
+                      {d.clubs} Clubs
                     </span>
-                    {" · "}
-                    {d.countriesLabel}
-                  </p>
+                    <span className="rounded-full bg-[#17458F]/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-[#17458F] sm:px-3 sm:text-xs">
+                      {d.members} Members
+                    </span>
+                  </div>
+                  <ArrowRight className="h-4 w-4 shrink-0 text-slate-300 transition-colors group-hover:text-crimson" />
                 </div>
-              </div>
-              <div className="flex items-center gap-2 shrink-0">
-                <span className="hidden sm:inline text-xs font-bold uppercase tracking-wider text-[#D41B69] bg-[#D41B69]/10 px-2.5 py-1 rounded-full">
-                  {d.clubs} Clubs
-                </span>
-                <ArrowRight className="h-4 w-4 text-slate-300 group-hover:text-[#D41B69] transition-colors" />
-              </div>
-            </Link>
-          );
-        })}
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
