@@ -174,6 +174,7 @@ These appear as live embeds / links from Initiatives; they are **not** this Next
 - publications.rsamdio.org (PubHub — see embed note above)
 - certify.rsamdio.org
 - pulse.rsamdio.org
+- clubs.rsamdio.org (Club Finder — separate product surface)
 
 ## Docs to update when architecture changes
 

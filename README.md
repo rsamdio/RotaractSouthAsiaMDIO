@@ -74,4 +74,4 @@ Editorial bodies (stories, announcements, events, initiatives) are Markdown. Pub
 Live embeds / links from Initiatives — separate codebases:
 
 - library.rsamdio.org · dues.rsamdio.org · navigate.rsamdio.org
-- publications.rsamdio.org · certify.rsamdio.org · pulse.rsamdio.org
+- publications.rsamdio.org · certify.rsamdio.org · pulse.rsamdio.org · clubs.rsamdio.org

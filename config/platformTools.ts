@@ -5,16 +5,18 @@ import {
   Route,
   Receipt,
   Radio,
+  MapPin,
   type LucideIcon,
 } from "lucide-react";
 
 export type PlatformKey =
   | "library"
   | "invoice"
-  | "navigate"
   | "publications"
+  | "clubs"
   | "certify"
-  | "pulse";
+  | "pulse"
+  | "navigate";
 
 export type PlatformTool = {
   key: PlatformKey;
@@ -77,25 +79,6 @@ export const platformTools: PlatformTool[] = [
     primaryBtnUrl: "https://dues.rsamdio.org/",
   },
   {
-    key: "navigate",
-    label: "NAVIGATE",
-    eyebrow: "Administration Suite",
-    title: "NAVIGATE",
-    copy: "Guided pathways that help Rotaractors plan their leadership journey, from club roles to district administration and capacity seminars.",
-    displayUrl: "navigate.rsamdio.org",
-    previewUrl: "https://navigate.rsamdio.org/",
-    embeddable: true,
-    icon: Route,
-    checklist: [
-      "Guided Pathways for Rotaract Leaders",
-      "District Administration Resources",
-      "Officer Onboarding Support",
-      "Capacity Seminar & Training Links",
-    ],
-    primaryBtnText: "Launch NAVIGATE",
-    primaryBtnUrl: "https://navigate.rsamdio.org/",
-  },
-  {
     key: "publications",
     label: "Publications Hub",
     eyebrow: "Reports & publications",
@@ -114,6 +97,25 @@ export const platformTools: PlatformTool[] = [
     ],
     primaryBtnText: "Browse Publications",
     primaryBtnUrl: "https://publications.rsamdio.org/",
+  },
+  {
+    key: "clubs",
+    label: "Club Finder",
+    eyebrow: "Discover Clubs",
+    title: "Club Finder",
+    copy: "Explore Rotaract clubs across South Asia on an interactive map. Search by city, district, or club name and find a club near you.",
+    displayUrl: "clubs.rsamdio.org",
+    previewUrl: "https://clubs.rsamdio.org/",
+    embeddable: true,
+    icon: MapPin,
+    checklist: [
+      "Map-Based Club Discovery",
+      "Search by City, District & Club Name",
+      "Community & Institution Filters",
+      "Near Me Discovery",
+    ],
+    primaryBtnText: "Open Club Finder",
+    primaryBtnUrl: "https://clubs.rsamdio.org/",
   },
   {
     key: "certify",
@@ -152,6 +154,25 @@ export const platformTools: PlatformTool[] = [
     ],
     primaryBtnText: "Open PULSE",
     primaryBtnUrl: "https://pulse.rsamdio.org/",
+  },
+  {
+    key: "navigate",
+    label: "NAVIGATE",
+    eyebrow: "Administration Suite",
+    title: "NAVIGATE",
+    copy: "Guided pathways that help Rotaractors plan their leadership journey, from club roles to district administration and capacity seminars.",
+    displayUrl: "navigate.rsamdio.org",
+    previewUrl: "https://navigate.rsamdio.org/",
+    embeddable: true,
+    icon: Route,
+    checklist: [
+      "Guided Pathways for Rotaract Leaders",
+      "District Administration Resources",
+      "Officer Onboarding Support",
+      "Capacity Seminar & Training Links",
+    ],
+    primaryBtnText: "Launch NAVIGATE",
+    primaryBtnUrl: "https://navigate.rsamdio.org/",
   },
 ];
 

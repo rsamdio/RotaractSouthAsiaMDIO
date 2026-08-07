@@ -194,12 +194,12 @@ export function Navbar() {
         {/* Right actions */}
         <div className="flex items-center gap-3 shrink-0">
           <a
-            href={siteConfig.connectUrl}
+            href={siteConfig.clubsUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="hidden rounded-full bg-crimson px-5 py-2 text-sm font-bold text-white transition hover:bg-crimson-hover hover:shadow-lg hover:shadow-crimson/20 lg:inline-flex"
           >
-            Sign in to RSA Connect
+            Find a Club
           </a>
           <button
             type="button"
@@ -250,13 +250,13 @@ export function Navbar() {
               </div>
             ))}
             <a
-              href={siteConfig.connectUrl}
+              href={siteConfig.clubsUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
               className="mt-3 flex items-center justify-center rounded-full bg-crimson px-5 py-3 text-sm font-bold text-white transition hover:bg-crimson-hover"
             >
-              Sign in to RSA Connect
+              Find a Club
             </a>
           </div>
         </div>

@@ -105,10 +105,11 @@ const footerColumns: FooterColumn[] = [
     items: [
       { label: "Rotaract Library", href: "https://library.rsamdio.org/", external: true },
       { label: "Invoice Calculator", href: "https://dues.rsamdio.org/", external: true },
-      { label: "NAVIGATE", href: "https://navigate.rsamdio.org/", external: true },
       { label: "Publications Hub", href: "https://publications.rsamdio.org/", external: true },
+      { label: "Club Finder", href: "https://clubs.rsamdio.org/", external: true },
       { label: "Rotaract Certify", href: "https://certify.rsamdio.org/", external: true },
       { label: "PULSE", href: "https://pulse.rsamdio.org/", external: true },
+      { label: "NAVIGATE", href: "https://navigate.rsamdio.org/", external: true },
       { label: "Initiatives", href: "/initiatives" },
     ],
   },

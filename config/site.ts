@@ -23,6 +23,7 @@ export const siteConfig = {
     members: memberDistrictSummary.members,
   },
   libraryUrl: "https://library.rsamdio.org/",
+  clubsUrl: "https://clubs.rsamdio.org/",
   connectUrl: "https://connect.rsamdio.org",
   social: {
     instagram: "https://instagram.com/rsamdio",
