@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/config/site";
@@ -14,6 +15,7 @@ import {
 import "./globals.css";
 
 const siteDescription = siteConfig.description;
+const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 // Self-hosted so local/dev does not depend on fonts.gstatic.com at compile time.
 const openSans = localFont({
@@ -121,6 +123,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SmoothScroll />
           {children}
         </ThemeProvider>
+        {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
       </body>
     </html>
   );

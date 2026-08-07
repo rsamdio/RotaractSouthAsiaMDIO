@@ -7,6 +7,8 @@
   NEXT_PUBLIC_SANITY_PROJECT_ID = "gsebaki2"
   NEXT_PUBLIC_SANITY_DATASET = "production"
   NEXT_PUBLIC_SANITY_API_VERSION = "2025-01-01"
+  # Google Analytics 4 (public measurement ID)
+  NEXT_PUBLIC_GA_MEASUREMENT_ID = "G-Z4F8DL7KLQ"
   # Do NOT put SANITY_API_WRITE_TOKEN here — local .env.local only
 
 [[plugins]]

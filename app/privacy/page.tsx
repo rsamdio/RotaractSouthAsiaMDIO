@@ -31,7 +31,7 @@ export default function PrivacyPage() {
     },
     {
       title: "4. Data Sharing",
-      content: `We do not sell, trade, or share your personal information with third parties. Data may be shared internally with RSAMDIO Secretariat members for operational purposes. We may disclose information if required by law or legal process.`,
+      content: `We do not sell or trade your personal information. Data may be shared internally with RSAMDIO Secretariat members for operational purposes. We use Google Analytics 4 to understand aggregate site usage (pages viewed, traffic sources, device type). That service may process usage data under Google's terms. We may also disclose information if required by law or legal process.`,
     },
     {
       title: "5. Your Rights (GDPR)",
@@ -39,7 +39,7 @@ export default function PrivacyPage() {
     },
     {
       title: "6. Cookies",
-      content: `This site stores a theme preference (light/dark) in your browser when you change appearance. We do not use advertising or third-party analytics cookies.`,
+      content: `This site may store a theme preference (light/dark) in your browser when you change appearance. We also use Google Analytics 4 (measurement ID G-Z4F8DL7KLQ), which sets cookies or similar identifiers to collect anonymized or aggregated usage statistics. We do not use advertising cookies.`,
     },
     {
       title: "7. Children's Privacy",
@@ -63,7 +63,7 @@ export default function PrivacyPage() {
               Rotaract South Asia MDIO (RSAMDIO) · rsamdio.org
               <br />
               <span className="text-base text-slate-500">
-                Last updated: May 2026 · Effective: June 1, 2026
+                Last updated: August 2026 · Effective: June 1, 2026
               </span>
             </>
           }
