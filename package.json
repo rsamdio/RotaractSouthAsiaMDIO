@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "import:member-data": "python3 scripts/import-member-data.py",
-    "seed:sanity": "tsx scripts/seed-sanity-demo.ts",
     "predev": "npm run import:member-data",
     "prebuild": "npm run import:member-data",
     "dev": "next dev",
@@ -12,8 +11,7 @@
     "start": "next start",
     "lint": "eslint",
     "sanity": "sanity dev --port 3333",
-    "sanity:deploy": "sanity deploy",
-    "clear:sanity": "tsx scripts/clear-sanity-demo.ts"
+    "sanity:deploy": "sanity deploy"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",

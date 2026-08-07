@@ -23,8 +23,6 @@ Firebase has been **removed** from the app. Do not reintroduce Firebase for site
 npm run dev               # predev imports member CSVs, then next dev
 npm run build             # prebuild imports member CSVs, then next build
 npm run import:member-data
-npm run seed:sanity       # upsert demo.* CMS docs (needs write token in .env.local)
-npm run clear:sanity      # delete demo.* docs + demo-* assets (pre-production)
 npm run lint
 npm run sanity            # standalone Studio on :3333 (optional; site uses /admin)
 ```
@@ -38,7 +36,7 @@ app/                 Next.js routes (pages + /admin studio)
 components/          UI (homepage sections, news, events, initiatives)
 config/              Site chrome, leadership, history, seeds, generated member JSON
 data/                Source CSVs for districts & clubs (edit these)
-scripts/             CSV → JSON import; Sanity demo seed
+scripts/             CSV → JSON import
 sanity/              Schemas, queries, content loaders, Studio input + styles
 styles/              Shared CSS (e.g. markdown-preview.css for site + Studio)
 docs/CMS.md          Sanity setup + webhook rebuild notes

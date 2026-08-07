@@ -17,18 +17,10 @@ Agent-oriented durable context lives in [`AGENTS.md`](./AGENTS.md). Sanity setup
 ## Quick start
 
 ```bash
-cp .env.example .env.local   # add Sanity project id (and write token for seeding)
+cp .env.example .env.local   # add Sanity project id (optional write token for fresher local fetches)
 npm install
 npm run dev                  # imports member CSVs, then next dev → http://localhost:3000
 ```
-
-Optional: seed demo CMS content (stories, announcements, chronicles, events, initiatives):
-
-```bash
-npm run seed:sanity
-```
-
-Demo docs use ids prefixed `demo.*` — safe to delete later in Studio.
 
 ## Commands
 
@@ -37,7 +29,6 @@ Demo docs use ids prefixed `demo.*` — safe to delete later in Studio.
 | `npm run dev` | Import member CSVs, then Next.js dev server |
 | `npm run build` | Import member CSVs, then production build |
 | `npm run import:member-data` | CSV → `config/memberDistricts.json` / `memberClubs.json` |
-| `npm run seed:sanity` | Upsert demo Sanity documents |
 | `npm run lint` | ESLint |
 | `npm run sanity` | Standalone Studio on `:3333` (optional; site embeds Studio at `/admin`) |
 

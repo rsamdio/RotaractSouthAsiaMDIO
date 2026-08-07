@@ -59,25 +59,11 @@ Pages are static. Wire:
 
 Optional: daily scheduled rebuild so upcoming/past event buckets stay accurate.
 
-## Demo seed (local)
-
-```bash
-npm run seed:sanity
-```
-
-Upserts sample stories, announcements, chronicles, events, and initiatives (ids prefixed `demo.*`) into the configured dataset. Safe to re-run.
-
-Before production, clear demo docs and their `demo-*` image assets:
-
-```bash
-npm run clear:sanity
-```
-
 ## Tokens
 
 - Public project id + dataset are safe to expose.
 - **`SANITY_API_WRITE_TOKEN`** (also accepts `SANITY_API_TOKEN`): put only in **`.env.local`** (gitignored).
   - Create at Sanity Manage → API → Tokens → add token with **Editor** (or Admin) rights.
-  - Enables local API writes / seed scripts via `sanityWriteClient` in `sanity/lib/client.ts`.
-  - Server fetches prefer this client when present (no CDN lag while authoring).
+  - Optional: enables fresher local server fetches via `sanityWriteClient` in `sanity/lib/client.ts` (no CDN lag while authoring).
+  - Server fetches prefer this client when present.
 - Never put the write token on Netlify or in `NEXT_PUBLIC_*` vars.
