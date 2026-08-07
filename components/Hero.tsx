@@ -14,7 +14,7 @@ export function Hero() {
 
       {/* Centered copy */}
       <div className="relative z-[3] text-center px-6 pt-36 pb-32 pointer-events-none">
-        <h1 className="font-bold text-ink leading-[1.0] tracking-[-0.03em] text-[clamp(36px,8.5vw,150px)]">
+        <h1 className="font-bold text-ink leading-[1.0] tracking-[-0.03em] text-[clamp(48px,12.5vw,64px)] md:text-[clamp(48px,8.5vw,150px)]">
           We Are
           <br />
           <span className="text-crimson">Rotaract</span>
