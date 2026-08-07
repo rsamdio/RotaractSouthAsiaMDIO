@@ -31,7 +31,7 @@ export default function HallOfFamePage() {
         <PageHero
           eyebrow="College of Presidents"
           title="College of Presidents"
-          description="Honoring every President of Rotaract South Asia MDIO since Rotary Year 2010–11."
+          description="Honoring every President of Rotaract South Asia MDIO"
           crumbs={[{ label: "College of Presidents" }]}
         />
 

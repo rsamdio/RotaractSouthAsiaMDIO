@@ -32,6 +32,12 @@ import {
   storyBySlugQuery,
 } from "./queries";
 
+type SanitySeo = {
+  title?: string | null;
+  description?: string | null;
+  ogImage?: string | null;
+};
+
 type SanityPost = {
   slug: string;
   title: string;
@@ -41,6 +47,7 @@ type SanityPost = {
   date: string;
   featured?: boolean;
   image?: string | null;
+  seo?: SanitySeo | null;
 };
 
 type SanityChronicle = {
@@ -71,6 +78,7 @@ type SanityEvent = {
   registrationUrl?: string;
   registrationLabel?: string;
   image?: string | null;
+  seo?: SanitySeo | null;
 };
 
 type SanityProgram = {
@@ -86,7 +94,19 @@ type SanityProgram = {
   featured?: boolean;
   ctaLabel?: string;
   image?: string | null;
+  seo?: SanitySeo | null;
 };
+
+function mapSeo(seo?: SanitySeo | null) {
+  if (!seo) return undefined;
+  const mapped = {
+    title: seo.title || undefined,
+    description: seo.description || undefined,
+    ogImage: seo.ogImage || undefined,
+  };
+  if (!mapped.title && !mapped.description && !mapped.ogImage) return undefined;
+  return mapped;
+}
 
 function mapPost(p: SanityPost): Story {
   return {
@@ -98,6 +118,7 @@ function mapPost(p: SanityPost): Story {
     image: p.image || "",
     date: p.date,
     featured: p.featured,
+    seo: mapSeo(p.seo),
   };
 }
 
@@ -132,6 +153,7 @@ function mapEvent(e: SanityEvent): SiteEvent {
     registrationUrl: e.registrationUrl,
     registrationLabel: e.registrationLabel,
     image: e.image || undefined,
+    seo: mapSeo(e.seo),
   };
 }
 
@@ -158,6 +180,7 @@ function mapProgram(p: SanityProgram): ProgramInitiative {
     body: p.body || p.summary,
     featured: p.featured,
     ctaLabel: p.ctaLabel,
+    seo: mapSeo(p.seo),
   };
 }
 

@@ -10,12 +10,15 @@ import { SectionScrollButton } from "@/components/SectionScrollButton";
 import { PastEventsLoadMore } from "@/components/PastEventsLoadMore";
 import { filterPast, filterSignature, filterUpcoming } from "@/config/events";
 import { loadEvents } from "@/sanity/lib/content";
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Events",
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Events',
   description:
-    "Upcoming, signature, and past events across Rotaract South Asia: conventions, training, and sessions.",
-};
+    'Upcoming, signature, and past events across Rotaract South Asia: conventions, leadership learning, and sessions.',
+  path: '/events',
+});
 
 export default async function EventsPage() {
   const events = await loadEvents();

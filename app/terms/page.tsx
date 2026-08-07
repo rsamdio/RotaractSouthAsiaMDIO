@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { siteConfig } from "@/config/site";
@@ -7,11 +8,12 @@ import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 
-export const metadata: Metadata = {
-  title: "Terms of Use",
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Terms of Use',
   description:
-    "Terms of use for the Rotaract South Asia MDIO portal, including acceptable use, intellectual property, and liability limitations.",
-};
+    'Terms of use for the Rotaract South Asia MDIO portal, including acceptable use, intellectual property, and liability limitations.',
+  path: '/terms',
+});
 
 export default function TermsPage() {
   const sections = [

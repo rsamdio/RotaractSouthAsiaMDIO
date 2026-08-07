@@ -19,6 +19,16 @@ import {
   isPastEvent,
 } from "@/config/events";
 import { loadEvent, loadEvents } from "@/sanity/lib/content";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  breadcrumbNode,
+  buildPageMetadata,
+  eventNode,
+  graph,
+  organizationNode,
+  resolveSeo,
+  webSiteNode,
+} from "@/lib/seo";
 import { Metadata } from "next";
 
 type Props = {
@@ -28,11 +38,21 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const event = await loadEvent(slug);
-  if (!event) return { title: "Event Not Found" };
-  return {
+  if (!event) {
+    return { title: "Event Not Found", robots: { index: false, follow: false } };
+  }
+  const seo = resolveSeo({
     title: event.title,
     description: event.tagline || event.description,
-  };
+    image: event.image,
+    seo: event.seo,
+  });
+  return buildPageMetadata({
+    title: seo.title,
+    description: seo.description,
+    path: `/events/${event.slug}`,
+    image: seo.image,
+  });
 }
 
 export async function generateStaticParams() {
@@ -51,6 +71,27 @@ export default async function EventDetailPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd
+        data={graph(
+          organizationNode(),
+          webSiteNode(),
+          eventNode({
+            title: event.title,
+            description: event.tagline || event.description,
+            path: `/events/${event.slug}`,
+            startDate: event.startDate,
+            endDate: event.endDate,
+            location: event.location,
+            venue: event.venue,
+            image: event.seo?.ogImage || event.image,
+            registrationUrl: event.registrationUrl,
+          }),
+          breadcrumbNode([
+            { name: "Events", path: "/events" },
+            { name: event.title, path: `/events/${event.slug}` },
+          ])
+        )}
+      />
       <Navbar />
       <main id="main-content">
         <PageHero
@@ -70,7 +111,7 @@ export default async function EventDetailPage({ params }: Props) {
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={event.image}
-                  alt=""
+                  alt={event.title}
                   className="mb-8 aspect-video w-full rounded-[2rem] object-cover shadow-lg"
                 />
               )}

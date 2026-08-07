@@ -11,9 +11,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "kill-chrome": "node kill_chrome.js",
     "sanity": "sanity dev --port 3333",
-    "sanity:deploy": "sanity deploy"
+    "sanity:deploy": "sanity deploy",
+    "clear:sanity": "tsx scripts/clear-sanity-demo.ts"
   },
   "dependencies": {
     "@sanity/image-url": "^2.1.1",
@@ -41,7 +41,6 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/styled-components": "^5.1.36",
-    "ejs": "^6.0.1",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",

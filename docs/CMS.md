@@ -38,6 +38,18 @@ Public Sanity vars live in **`netlify.toml`** `[build.environment]` — no need 
 
 Never add `SANITY_API_WRITE_TOKEN` to Netlify or `netlify.toml`.
 
+## Search & social (SEO)
+
+Stories, announcements, events, and initiatives include an optional **Search & social** fieldset (`seo`):
+
+- `title` — overrides document title in `<title>` / Open Graph (max ~60)
+- `description` — overrides card teaser for SERP/social (max 160)
+- `ogImage` — share image; else hero image; else site default `/img/og-default.png`
+
+Leave blank to use title + excerpt/tagline/summary. Do **not** claim RSAMDIO governs districts. Chronicle editions have **no** on-site SEO pages (external reader URLs on Publications Hub).
+
+Canonical meta and JSON-LD live in `lib/seo.ts`. Definitional copy for Organization schema comes from `siteConfig.description`.
+
 ## Publish → live site
 
 Pages are static. Wire:
@@ -53,7 +65,13 @@ Optional: daily scheduled rebuild so upcoming/past event buckets stay accurate.
 npm run seed:sanity
 ```
 
-Upserts sample stories, announcements, chronicles, events, and initiatives (ids prefixed `demo.*`) into the configured dataset. Safe to re-run; delete those docs in Studio when you no longer need them.
+Upserts sample stories, announcements, chronicles, events, and initiatives (ids prefixed `demo.*`) into the configured dataset. Safe to re-run.
+
+Before production, clear demo docs and their `demo-*` image assets:
+
+```bash
+npm run clear:sanity
+```
 
 ## Tokens
 

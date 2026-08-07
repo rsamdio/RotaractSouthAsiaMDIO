@@ -24,6 +24,7 @@ npm run dev               # predev imports member CSVs, then next dev
 npm run build             # prebuild imports member CSVs, then next build
 npm run import:member-data
 npm run seed:sanity       # upsert demo.* CMS docs (needs write token in .env.local)
+npm run clear:sanity      # delete demo.* docs + demo-* assets (pre-production)
 npm run lint
 npm run sanity            # standalone Studio on :3333 (optional; site uses /admin)
 ```
@@ -106,7 +107,8 @@ District UI conventions:
 - Compact brand **RSAMDIO** (never “RSA MDIO”). Product: **RSA Connect**, newsletter **RSA Chronicles**. **Publications Hub** is the external tool only — do not label Chronicles as Publications.
 - Public leadership label: **Executive Board**. Only the **President** is elected; fellow officers/council members are appointed. Never “elected Executive Board” / “elected officers” (plural). Soften copy that implies MDIO governs member districts.
 - **RI Zones** in chrome: **1, 4, 5, 6, 7, and 8** (write Zone 1, not 1(b)). Always use `siteConfig.rotaryYear` for the current year.
-- Prefer `siteConfig.description` for Footer + root metadata so blurbs do not drift.
+- Prefer `siteConfig.description` for Footer + root metadata + Organization JSON-LD so blurbs do not drift.
+- **SEO / GEO:** Use `lib/seo.ts` helpers (`buildPageMetadata`, JSON-LD builders). Optional Sanity `seo` object on story/announcement/event/programInitiative overrides leaf meta. No `/chronicles/[slug]`. No `keywords` meta. No `parentOrganization` to Rotary International.
 
 ## Homepage composition (current)
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { siteConfig } from "@/config/site";
@@ -7,11 +8,12 @@ import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Privacy Policy',
   description:
-    "Privacy policy for the Rotaract South Asia MDIO portal, covering data collection, usage, and your rights under GDPR.",
-};
+    'Privacy policy for the Rotaract South Asia MDIO portal, covering data collection, usage, and your rights under GDPR.',
+  path: '/privacy',
+});
 
 export default function PrivacyPage() {
   const sections = [

@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { memberDistricts } from "@/config/memberDistricts";
+import { SITE_URL } from "@/lib/seo";
 import {
   loadAnnouncements,
   loadEvents,
@@ -7,9 +8,16 @@ import {
   loadStories,
 } from "@/sanity/lib/content";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://rsamdio.org";
+/** Stable lastmod for evergreen hub pages (avoid build-time "now"). */
+const HUB_LASTMOD = new Date("2026-08-01T00:00:00.000Z");
 
+function parseDate(value?: string): Date {
+  if (!value) return HUB_LASTMOD;
+  const d = new Date(`${value}T12:00:00.000Z`);
+  return Number.isNaN(d.getTime()) ? HUB_LASTMOD : d;
+}
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
     "",
     "/about",
@@ -26,17 +34,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/privacy",
     "/terms",
   ].map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: route === "" ? 1.0 : 0.8,
+    url: `${SITE_URL}${route}`,
+    lastModified: HUB_LASTMOD,
   }));
 
   const districtRoutes = memberDistricts.map((d) => ({
-    url: `${baseUrl}/districts/${d.number}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
+    url: `${SITE_URL}/districts/${d.number}`,
+    lastModified: HUB_LASTMOD,
   }));
 
   const [stories, announcements, events, programs] = await Promise.all([
@@ -47,24 +51,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]);
 
   const newsRoutes = [...stories, ...announcements].map((p) => ({
-    url: `${baseUrl}/news/${p.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
+    url: `${SITE_URL}/news/${p.slug}`,
+    lastModified: parseDate(p.date),
   }));
 
   const eventRoutes = events.map((e) => ({
-    url: `${baseUrl}/events/${e.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.7,
+    url: `${SITE_URL}/events/${e.slug}`,
+    lastModified: parseDate(e.startDate),
   }));
 
   const programRoutes = programs.map((p) => ({
-    url: `${baseUrl}/initiatives/${p.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
+    url: `${SITE_URL}/initiatives/${p.slug}`,
+    lastModified: HUB_LASTMOD,
   }));
 
   return [

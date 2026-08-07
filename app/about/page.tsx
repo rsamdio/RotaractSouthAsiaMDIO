@@ -5,25 +5,45 @@ import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { PillNav } from "@/components/PillNav";
+import { AboutFaq } from "@/components/about/AboutFaq";
+import { JsonLd } from "@/components/JsonLd";
 import { memberDistrictSummary } from "@/config/memberDistricts";
 import { organizationHistory } from "@/config/history";
+import { aboutFaqs } from "@/config/faq";
 import { siteConfig } from "@/config/site";
+import type { Metadata } from "next";
+import {
+  buildPageMetadata,
+  faqPageNode,
+  graph,
+  organizationNode,
+  webSiteNode,
+} from "@/lib/seo";
 
-export const metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "About",
   description:
     "About Rotaract South Asia MDIO: who we are, how we serve member districts, and our history as the regional MDIO for Rotaract.",
-};
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={graph(
+          organizationNode(),
+          webSiteNode(),
+          faqPageNode(aboutFaqs)
+        )}
+      />
       <Navbar />
       <PillNav
         items={[
           { id: "overview", label: "Overview" },
-          { id: "history", label: "History" },
           { id: "vision-mission", label: "Vision & Mission" },
+          { id: "history", label: "History" },
+          { id: "faq", label: "FAQ" },
         ]}
       />
       <main id="main-content">
@@ -42,7 +62,7 @@ export default function AboutPage() {
                 <strong className="font-serif text-[#0B1426] dark:text-white">
                   Rotaract South Asia Multi-District Information Organization
                 </strong>{" "}
-                (RSAMDIO) serves Rotaract across Afghanistan, Bangladesh, Bhutan, India, the Maldives, Nepal, Pakistan, and Sri Lanka.
+                (RSAMDIO) serves Rotaract across Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, and Sri Lanka.
               </p>
               <p className="mt-5 font-serif text-lg leading-relaxed text-slate-600 dark:text-white/65">
                 We disseminate information and facilitate communication among Rotaract clubs, and support leadership learning and multidistrict programs across the region. Today that presence includes{" "}
@@ -172,6 +192,8 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        <AboutFaq />
       </main>
 
       <Footer />

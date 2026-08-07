@@ -6,6 +6,14 @@ import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { DistrictClubsPanel } from "@/components/DistrictClubsPanel";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  breadcrumbNode,
+  buildPageMetadata,
+  graph,
+  organizationNode,
+  webSiteNode,
+} from "@/lib/seo";
 import {
   getDistrictClubs,
   getDrrProfile,
@@ -25,12 +33,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { number } = await params;
   const district = getMemberDistrict(number);
   if (!district) {
-    return { title: "District Not Found" };
+    return { title: "District Not Found", robots: { index: false, follow: false } };
   }
-  return {
+  return buildPageMetadata({
     title: `District ${district.number}`,
     description: `Rotaract South Asia member district ${district.number}: ${district.countriesLabel}. ${district.clubs} clubs, ${district.members} members.`,
-  };
+    path: `/districts/${district.number}`,
+  });
 }
 
 function DrrInitials({ name }: { name: string }) {
@@ -61,6 +70,19 @@ export default async function MemberDistrictPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd
+        data={graph(
+          organizationNode(),
+          webSiteNode(),
+          breadcrumbNode([
+            { name: "Member Districts", path: "/districts" },
+            {
+              name: `District ${district.number}`,
+              path: `/districts/${district.number}`,
+            },
+          ])
+        )}
+      />
       <Navbar />
       <main id="main-content">
         <PageHero

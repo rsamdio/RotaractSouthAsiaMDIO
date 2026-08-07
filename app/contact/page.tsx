@@ -12,12 +12,15 @@ import {
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { siteConfig } from "@/config/site";
 import { CheckCircle2, Mail } from "lucide-react";
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Contact",
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Contact',
   description:
-    "Contact the RSAMDIO Secretariat for general questions, district updates, partnership proposals, or media inquiries.",
-};
+    'Contact the RSAMDIO Secretariat for general questions, district updates, partnership proposals, or media inquiries.',
+  path: '/contact',
+});
 
 const helpItems = [
   "District & club collaboration",

@@ -6,12 +6,15 @@ import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { PostLoadMoreList } from "@/components/PostLoadMoreList";
 import { loadStories } from "@/sanity/lib/content";
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Stories",
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Stories',
   description:
-    "Stories of impact from Rotaract clubs and districts across South Asia.",
-};
+    'Stories of impact from Rotaract clubs and districts across South Asia.',
+  path: '/stories',
+});
 
 export default async function StoriesPage() {
   const stories = [...(await loadStories())].sort((a, b) =>

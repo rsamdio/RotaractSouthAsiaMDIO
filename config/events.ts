@@ -26,6 +26,11 @@ export type SiteEvent = {
   registrationUrl?: string;
   registrationLabel?: string;
   signature?: boolean;
+  seo?: {
+    title?: string;
+    description?: string;
+    ogImage?: string;
+  };
 };
 
 export const siteEvents: SiteEvent[] = [

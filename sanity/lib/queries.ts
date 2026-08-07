@@ -1,3 +1,9 @@
+export const seoProjection = `seo {
+  title,
+  description,
+  "ogImage": ogImage.asset->url
+}`;
+
 export const storiesQuery = `*[_type == "story"] | order(date desc) {
   "slug": slug.current,
   title,
@@ -6,7 +12,8 @@ export const storiesQuery = `*[_type == "story"] | order(date desc) {
   body,
   date,
   featured,
-  "image": image.asset->url
+  "image": image.asset->url,
+  ${seoProjection}
 }`;
 
 export const storyBySlugQuery = `*[_type == "story" && slug.current == $slug][0] {
@@ -17,7 +24,8 @@ export const storyBySlugQuery = `*[_type == "story" && slug.current == $slug][0]
   body,
   date,
   featured,
-  "image": image.asset->url
+  "image": image.asset->url,
+  ${seoProjection}
 }`;
 
 export const announcementsQuery = `*[_type == "announcement"] | order(date desc) {
@@ -28,7 +36,8 @@ export const announcementsQuery = `*[_type == "announcement"] | order(date desc)
   body,
   date,
   featured,
-  "image": image.asset->url
+  "image": image.asset->url,
+  ${seoProjection}
 }`;
 
 export const announcementBySlugQuery = `*[_type == "announcement" && slug.current == $slug][0] {
@@ -39,7 +48,8 @@ export const announcementBySlugQuery = `*[_type == "announcement" && slug.curren
   body,
   date,
   featured,
-  "image": image.asset->url
+  "image": image.asset->url,
+  ${seoProjection}
 }`;
 
 export const chroniclesQuery = `*[_type == "chronicleEdition"] | order(date desc) {
@@ -69,7 +79,8 @@ export const eventsQuery = `*[_type == "event"] | order(startDate asc) {
   signature,
   registrationUrl,
   registrationLabel,
-  "image": image.asset->url
+  "image": image.asset->url,
+  ${seoProjection}
 }`;
 
 export const eventBySlugQuery = `*[_type == "event" && slug.current == $slug][0] {
@@ -90,7 +101,8 @@ export const eventBySlugQuery = `*[_type == "event" && slug.current == $slug][0]
   signature,
   registrationUrl,
   registrationLabel,
-  "image": image.asset->url
+  "image": image.asset->url,
+  ${seoProjection}
 }`;
 
 export const programsQuery = `*[_type == "programInitiative"] | order(title asc) {
@@ -105,7 +117,8 @@ export const programsQuery = `*[_type == "programInitiative"] | order(title asc)
   body,
   featured,
   ctaLabel,
-  "image": image.asset->url
+  "image": image.asset->url,
+  ${seoProjection}
 }`;
 
 export const programBySlugQuery = `*[_type == "programInitiative" && slug.current == $slug][0] {
@@ -120,5 +133,6 @@ export const programBySlugQuery = `*[_type == "programInitiative" && slug.curren
   body,
   featured,
   ctaLabel,
-  "image": image.asset->url
+  "image": image.asset->url,
+  ${seoProjection}
 }`;

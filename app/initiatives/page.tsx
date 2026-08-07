@@ -6,12 +6,15 @@ import { PillNav } from "@/components/PillNav";
 import { InitiativesExplorer } from "@/components/initiatives/InitiativesExplorer";
 import { ProgramsInitiatives } from "@/components/initiatives/ProgramsInitiatives";
 import { loadPrograms } from "@/sanity/lib/content";
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Initiatives",
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Initiatives',
   description:
-    "RSAMDIO platforms that support information, communication, and learning, plus multidistrict programs and campaigns for Rotaract clubs across South Asia.",
-};
+    'RSAMDIO platforms that support information, communication, and learning, plus multidistrict programs and campaigns for Rotaract clubs across South Asia.',
+  path: '/initiatives',
+});
 
 export default async function InitiativesPage() {
   const programs = await loadPrograms();

@@ -3,12 +3,15 @@ import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { MemberDistrictDirectory } from "@/components/MemberDistrictDirectory";
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Member Districts",
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Member Districts',
   description:
-    "Browse Rotaract South Asia member nations and member districts: DRR details, clubs, members, coverage, and highlights.",
-};
+    'Browse Rotaract South Asia member nations and member districts: DRR details, clubs, members, coverage, and highlights.',
+  path: '/districts',
+});
 
 export default function DistrictsPage() {
   return (

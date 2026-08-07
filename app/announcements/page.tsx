@@ -6,12 +6,15 @@ import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { PostLoadMoreList } from "@/components/PostLoadMoreList";
 import { loadAnnouncements } from "@/sanity/lib/content";
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Announcements",
+export const metadata: Metadata = buildPageMetadata({
+  title: 'Announcements',
   description:
-    "Official announcements and updates from the Rotaract South Asia MDIO Secretariat.",
-};
+    'Official announcements and updates from the Rotaract South Asia MDIO Secretariat.',
+  path: '/announcements',
+});
 
 export default async function AnnouncementsPage() {
   const announcements = [...(await loadAnnouncements())].sort((a, b) =>

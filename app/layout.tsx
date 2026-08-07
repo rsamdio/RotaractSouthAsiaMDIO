@@ -2,7 +2,15 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import { JsonLd } from "@/components/JsonLd";
 import { siteConfig } from "@/config/site";
+import {
+  DEFAULT_OG_PATH,
+  SITE_URL,
+  graph,
+  organizationNode,
+  webSiteNode,
+} from "@/lib/seo";
 import "./globals.css";
 
 const siteDescription = siteConfig.description;
@@ -45,25 +53,18 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rsamdio.org"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Rotaract South Asia MDIO (RSAMDIO)",
     template: "%s | Rotaract South Asia MDIO",
   },
   description: siteDescription,
-  keywords: [
-    "Rotaract",
-    "Rotaract South Asia",
-    "RSAMDIO",
-    "Rotary International",
-    "Rotary South Asia",
-    "District Rotaract Representative",
-    "DRR",
-    "Youth Leadership South Asia",
-  ],
   authors: [{ name: "RSAMDIO Executive Board" }],
   creator: "Rotaract South Asia MDIO",
   publisher: "Rotaract South Asia MDIO",
+  alternates: {
+    canonical: SITE_URL,
+  },
   icons: {
     icon: [
       { url: "/img/favicon.ico", sizes: "32x32" },
@@ -76,14 +77,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Rotaract South Asia MDIO (RSAMDIO)",
     description: siteDescription,
-    url: "https://rsamdio.org",
+    url: SITE_URL,
     siteName: "Rotaract South Asia MDIO",
     images: [
       {
-        url: "/img/ananta-installation.jpg",
+        url: DEFAULT_OG_PATH,
         width: 1200,
         height: 630,
-        alt: "Rotaract South Asia MDIO Leadership & Installation",
+        alt: "Rotaract South Asia MDIO (RSAMDIO)",
       },
     ],
     locale: "en_US",
@@ -93,7 +94,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Rotaract South Asia MDIO (RSAMDIO)",
     description: siteDescription,
-    images: ["/img/ananta-installation.jpg"],
+    images: [DEFAULT_OG_PATH],
   },
   robots: {
     index: true,
@@ -115,6 +116,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         suppressHydrationWarning
         className={`${sentinel.variable} ${openSans.variable} font-sans antialiased bg-white dark:bg-[#0B1426] text-[#0B1426] dark:text-white transition-colors duration-300 overflow-x-hidden min-h-screen`}
       >
+        <JsonLd data={graph(organizationNode(), webSiteNode(true))} />
         <ThemeProvider attribute="class" defaultTheme="light" forcedTheme="light">
           <SmoothScroll />
           {children}

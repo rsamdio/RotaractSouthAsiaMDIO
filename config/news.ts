@@ -3,6 +3,12 @@
 
 export type NewsKind = "story" | "announcement";
 
+export type ContentSeo = {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+};
+
 export type Story = {
   slug: string;
   title: string;
@@ -12,6 +18,7 @@ export type Story = {
   image: string;
   date: string; // ISO date
   featured?: boolean;
+  seo?: ContentSeo;
 };
 
 /** Alias — announcements use the same post shape as stories. */

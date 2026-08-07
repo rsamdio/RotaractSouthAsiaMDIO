@@ -9,12 +9,15 @@ import {
   ChronicleSectionHeader,
 } from "@/components/ChronicleCards";
 import { loadAnnouncements, loadChronicles, loadStories } from "@/sanity/lib/content";
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "News & Updates",
+export const metadata: Metadata = buildPageMetadata({
+  title: 'News & Updates',
   description:
-    "Stories of impact from across South Asia, plus official updates and RSA Chronicles from Rotaract South Asia MDIO.",
-};
+    'Stories of impact from across South Asia, plus official updates and RSA Chronicles from Rotaract South Asia MDIO.',
+  path: '/news',
+});
 
 export default async function NewsPage() {
   const [stories, announcements, chronicles] = await Promise.all([

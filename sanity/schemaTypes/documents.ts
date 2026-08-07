@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity";
+import { seoField } from "./seo";
 
 /** Shared markdown body — full EasyMDE toolbar via MarkdownBodyInput. */
 const markdownBody = defineField({
@@ -61,6 +62,7 @@ export const story = defineType({
       validation: (r) => r.required().max(280),
     }),
     markdownBody,
+    seoField,
   ],
   orderings: [
     {
@@ -125,6 +127,7 @@ export const announcement = defineType({
       validation: (r) => r.required().max(280),
     }),
     markdownBody,
+    seoField,
   ],
   orderings: [
     {
@@ -329,6 +332,7 @@ export const event = defineType({
       type: "string",
       initialValue: "Register",
     }),
+    seoField,
   ],
   orderings: [
     {
@@ -452,6 +456,7 @@ export const programInitiative = defineType({
       initialValue: "Learn more",
     }),
     markdownBody,
+    seoField,
   ],
   orderings: [
     {

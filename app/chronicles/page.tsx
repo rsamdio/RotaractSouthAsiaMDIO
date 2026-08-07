@@ -4,12 +4,15 @@ import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { ChronicleCards } from "@/components/ChronicleCards";
 import { loadChronicles } from "@/sanity/lib/content";
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "RSA Chronicles",
+export const metadata: Metadata = buildPageMetadata({
+  title: 'RSA Chronicles',
   description:
-    "RSA Chronicles, the official monthly newsletter of Rotaract South Asia MDIO. Preview editions and open the full reader.",
-};
+    'RSA Chronicles, the official monthly newsletter of Rotaract South Asia MDIO. Preview editions and open the full reader.',
+  path: '/chronicles',
+});
 
 export default async function ChroniclesPage() {
   const editions = [...(await loadChronicles())].sort((a, b) =>

@@ -26,6 +26,11 @@ export type ProgramInitiative = {
   body?: string;
   featured?: boolean;
   ctaLabel?: string;
+  seo?: {
+    title?: string;
+    description?: string;
+    ogImage?: string;
+  };
 };
 
 /** Filesystem / demo seed used when Sanity project id is not configured. */

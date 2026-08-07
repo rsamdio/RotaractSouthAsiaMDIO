@@ -9,6 +9,15 @@ import { MarkdownContent } from "@/components/MarkdownContent";
 import { ShareBar } from "@/components/ShareBar";
 import { getProgramIcon } from "@/lib/programIcons";
 import { loadProgram, loadPrograms } from "@/sanity/lib/content";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  breadcrumbNode,
+  buildPageMetadata,
+  graph,
+  organizationNode,
+  resolveSeo,
+  webSiteNode,
+} from "@/lib/seo";
 import type { Metadata } from "next";
 
 type Props = {
@@ -31,11 +40,21 @@ function statusLabel(status: string) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const program = await loadProgram(slug);
-  if (!program) return { title: "Program Not Found" };
-  return {
+  if (!program) {
+    return { title: "Program Not Found", robots: { index: false, follow: false } };
+  }
+  const seo = resolveSeo({
     title: program.title,
     description: program.summary,
-  };
+    image: program.image,
+    seo: program.seo,
+  });
+  return buildPageMetadata({
+    title: seo.title,
+    description: seo.description,
+    path: `/initiatives/${program.slug}`,
+    image: seo.image,
+  });
 }
 
 export async function generateStaticParams() {
@@ -53,6 +72,16 @@ export default async function ProgramDetailPage({ params }: Props) {
 
   return (
     <>
+      <JsonLd
+        data={graph(
+          organizationNode(),
+          webSiteNode(),
+          breadcrumbNode([
+            { name: "Initiatives", path: "/initiatives" },
+            { name: program.title, path: `/initiatives/${program.slug}` },
+          ])
+        )}
+      />
       <Navbar />
       <main id="main-content">
         <PageHero
@@ -72,7 +101,7 @@ export default async function ProgramDetailPage({ params }: Props) {
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={program.image}
-                  alt=""
+                  alt={program.title}
                   className="mb-8 aspect-video w-full rounded-[2rem] object-cover shadow-lg"
                 />
               ) : null}
