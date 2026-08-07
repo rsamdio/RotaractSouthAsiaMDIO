@@ -1,0 +1,98 @@
+@import "tailwindcss";
+@import "../styles/markdown-preview.css";
+
+/* ── Dark mode: triggered by .dark class on <html> (next-themes) ── */
+@variant dark (&:where(.dark, .dark *));
+
+/* ── Custom design tokens ─────────────────────────────────────── */
+@theme {
+  --color-navy-dark: #17458F;
+  --color-navy-mid: #00246C;
+  --color-ink: #0B1426;
+  --color-crimson: #D41B69;
+  --color-crimson-dark: #9A0E4E;
+  --color-crimson-hover: #9A0E4E;
+  --color-gold: #F7A81B;
+  --color-gold-dark: #C87900;
+  --color-ice-cream: #F7F5F0;
+  --color-blush: #FCE8F1;
+
+  --font-sans: var(--font-open-sans), "Open Sans", Arial, sans-serif;
+  --font-heading: var(--font-open-sans), "Open Sans", Arial, sans-serif;
+  --font-serif: var(--font-sentinel), Georgia, serif;
+
+  --shadow-glow-pink: 0 0 40px -5px rgba(212,19,103,0.35);
+  --shadow-glow-gold: 0 0 40px -5px rgba(247,168,27,0.35);
+  --shadow-soft: 0 4px 24px rgba(0,0,0,0.06);
+}
+
+body {
+  --font-sans: var(--font-open-sans), "Open Sans", Arial, sans-serif !important;
+  --font-heading: var(--font-open-sans), "Open Sans", Arial, sans-serif !important;
+  --font-serif: var(--font-sentinel), Georgia, serif !important;
+}
+
+/* Force any legacy inline fontFamily overrides to use Open Sans */
+[style*="font-family"] {
+  font-family: var(--font-open-sans), "Open Sans", Arial, sans-serif !important;
+}
+
+/* Force Sentinel serif font on Tailwind .font-serif utility class */
+.font-serif {
+  font-family: var(--font-sentinel), Georgia, serif !important;
+}
+
+/* ── Base styles ──────────────────────────────────────────────── */
+/* Smooth scrolling is handled by Lenis (components/SmoothScroll.tsx);
+   native scroll-behavior is intentionally omitted to avoid double-easing. */
+* { box-sizing: border-box; }
+body { transition: background-color 0.3s ease, color 0.3s ease; }
+
+/* ── Lenis smooth-scroll requirements ─────────────────────────── */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* ── Custom scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(212,27,105,0.3); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(212,27,105,0.6); }
+
+/* ── Animations ───────────────────────────────────────────────── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(1); opacity: 0.7; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+@keyframes drift-in {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}
+/* Hero image lanes: vertical tracks drift continuously; each track holds two
+   copies of its card set so the -50% keyframe loops seamlessly. */
+@keyframes drift {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+@keyframes drift-rev {
+  from { transform: translateY(-50%); }
+  to   { transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-lane-track { animation: none !important; }
+}
+
+.animate-fade-up   { animation: fade-up 0.5s ease both; }
+.animate-pulse-ring { animation: pulse-ring 1.4s ease-out infinite; }
+.animate-drift-in  { animation: drift-in 0.3s ease both; }
+
+/* ── Shadow utilities ─────────────────────────────────────────── */
+.shadow-glow-pink { box-shadow: var(--shadow-glow-pink); }
+.shadow-glow-gold { box-shadow: var(--shadow-glow-gold); }
+.shadow-soft      { box-shadow: var(--shadow-soft); }
+

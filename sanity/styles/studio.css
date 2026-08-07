@@ -1,0 +1,51 @@
+/**
+ * EasyMDE chrome + Studio-only framing for the shared markdown preview.
+ * Typography/prose rules live in styles/markdown-preview.css.
+ */
+
+@import "../../styles/markdown-preview.css";
+
+/* Sticky toolbar so formatting stays reachable while editing long bodies */
+.EasyMDEContainer .editor-toolbar:not(.fullscreen) {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: var(--card-bg-color, #fafaf8);
+  border-bottom: 1px solid var(--card-border-color, #e2e8f0);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.EasyMDEContainer {
+  overflow: visible;
+}
+
+.admin-studio .editor-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #fafaf8 !important;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Frame the shared .rsa-md-preview like a public article column */
+.editor-preview .rsa-md-preview,
+.editor-preview-side .rsa-md-preview {
+  box-sizing: border-box;
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 1rem 1.25rem 1.5rem;
+  background: #fff;
+  /* Matches MarkdownContent className="text-lg" on public detail pages */
+  font-size: 1.125rem;
+}
+
+.editor-preview .rsa-md-preview *,
+.editor-preview-side .rsa-md-preview * {
+  box-sizing: border-box;
+}
+
+.editor-preview,
+.editor-preview-side {
+  background: #fff !important;
+}

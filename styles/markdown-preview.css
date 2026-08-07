@@ -1,0 +1,135 @@
+/**
+ * Shared markdown body styles — public pages (MarkdownContent) and
+ * Sanity Studio EasyMDE preview (MarkdownBodyInput). Keep in sync by editing
+ * only this file; both surfaces import it.
+ */
+.rsa-md-preview {
+  color: #0b1426;
+  line-height: 1.75;
+  font-family: "Open Sans", system-ui, sans-serif;
+}
+
+.rsa-md-preview > :first-child {
+  margin-top: 0;
+}
+
+.rsa-md-preview > :last-child {
+  margin-bottom: 0;
+}
+
+.rsa-md-preview p {
+  margin: 0.85em 0;
+}
+
+.rsa-md-preview h1,
+.rsa-md-preview h2,
+.rsa-md-preview h3 {
+  font-family: "Open Sans", system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 1.4em 0 0.5em;
+  color: #0b1426;
+}
+
+.rsa-md-preview h1 {
+  font-size: 1.85rem;
+}
+
+.rsa-md-preview h2 {
+  font-size: 1.45rem;
+}
+
+.rsa-md-preview h3 {
+  font-size: 1.2rem;
+}
+
+.rsa-md-preview a {
+  color: #d41b69;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.rsa-md-preview strong {
+  font-weight: 600;
+}
+
+.rsa-md-preview ul {
+  margin: 0.85em 0;
+  padding-left: 1.35rem;
+  list-style: disc;
+}
+
+.rsa-md-preview ol {
+  margin: 0.85em 0;
+  padding-left: 1.35rem;
+  list-style: decimal;
+}
+
+.rsa-md-preview li {
+  margin: 0.35em 0;
+}
+
+.rsa-md-preview blockquote {
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid #d41b69;
+  color: #475569;
+  font-style: italic;
+}
+
+.rsa-md-preview code {
+  background: #f1f5f9;
+  padding: 0.1em 0.35em;
+  border-radius: 0.3rem;
+  font-size: 0.9em;
+}
+
+.rsa-md-preview pre {
+  margin: 1rem 0;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  background: #0b1426;
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+.rsa-md-preview pre code {
+  padding: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.rsa-md-preview hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid #e2e8f0;
+}
+
+.rsa-md-preview img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
+  border-radius: 1rem;
+}
+
+.rsa-md-preview table {
+  width: 100%;
+  margin: 1rem 0;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.rsa-md-preview th,
+.rsa-md-preview td {
+  border: 1px solid #e2e8f0;
+  padding: 0.5rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.rsa-md-preview th {
+  background: #f8fafc;
+  font-weight: 600;
+}
