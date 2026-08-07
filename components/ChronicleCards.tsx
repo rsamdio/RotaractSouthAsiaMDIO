@@ -20,7 +20,13 @@ type Props = {
 };
 
 export function ChronicleCards({ editions, featuredFirst = false }: Props) {
-  if (editions.length === 0) return null;
+  if (editions.length === 0) {
+    return (
+      <p className="text-sm text-slate-500">
+        RSA Chronicles editions will appear here as they are published.
+      </p>
+    );
+  }
 
   if (featuredFirst && editions.length > 0) {
     const [latest, ...rest] = editions;
@@ -141,7 +147,7 @@ function ChronicleCard({ edition }: { edition: ChronicleEdition }) {
 }
 
 export function ChronicleSectionHeader({
-  title = "Publications",
+  title = "RSA Chronicles",
   subtitle,
   href,
   linkLabel,

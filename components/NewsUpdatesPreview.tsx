@@ -77,7 +77,7 @@ export async function NewsUpdatesPreview() {
               Stories, Announcements & Chronicles
             </h2>
             <p className="mt-3 max-w-xl text-sm text-slate-500 sm:text-base">
-              The latest from across South Asia: field stories, secretariat
+              The latest from across South Asia: stories, secretariat
               updates, and the RSA Chronicles newsletter.
             </p>
           </div>
@@ -85,7 +85,7 @@ export async function NewsUpdatesPreview() {
             href="/news"
             className="inline-flex items-center gap-2 text-sm font-semibold text-[#0B1426] transition-colors hover:text-[#D41B69]"
           >
-            View all news
+            View all updates
             <ArrowRight className="h-4 w-4" />
           </Link>
         </Reveal>

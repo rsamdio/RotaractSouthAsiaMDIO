@@ -88,7 +88,7 @@ export default async function ProgramDetailPage({ params }: Props) {
                 className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-slate-500 transition hover:text-[#D41B69]"
               >
                 <ArrowLeft className="h-4 w-4" />
-                All initiatives
+                All programs & campaigns
               </Link>
             </div>
 

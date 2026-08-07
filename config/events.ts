@@ -32,7 +32,7 @@ export const siteEvents: SiteEvent[] = [
   {
     slug: "ananta-2026",
     title: "ANANTA 2026",
-    tagline: "17th RSA MDIO Installation Ceremony & ROAR Awards",
+    tagline: "17th RSAMDIO Installation Ceremony & ROAR Awards",
     description:
       "The historic 17th Rotaract South Asia MDIO Installation Ceremony and ROAR Awards at Ramada by Wyndham Yelahanka, marking the regional leadership transition for RY 2026–27 under President Arun Teja Godavarthi.",
     startDate: "2026-05-23",
@@ -111,7 +111,7 @@ export const siteEvents: SiteEvent[] = [
     title: "DRR Onboarding Webinar",
     tagline: "Virtual session for newly confirmed DRRs",
     description:
-      "A focused virtual briefing covering MDIO reporting rhythms, brand standards, and how districts plug into regional programmes for RY 2026–27.",
+      "A focused virtual briefing covering MDIO reporting rhythms, brand standards, and how districts plug into regional programs for RY 2026–27.",
     startDate: "2026-08-08",
     startTime: "19:00",
     endTime: "20:30",
@@ -174,7 +174,7 @@ export const siteEvents: SiteEvent[] = [
     title: "Year-End Secretariat Sync",
     tagline: "Closing RY 2025–26 operations review",
     description:
-      "Internal sync for the outgoing and incoming Secretariat teams: handovers, open programmes, and calendar priorities for the next Rotary Year.",
+      "Internal sync for the outgoing and incoming Secretariat teams: handovers, open programs, and calendar priorities for the next Rotary Year.",
     startDate: "2025-12-20",
     startTime: "16:00",
     endTime: "17:30",

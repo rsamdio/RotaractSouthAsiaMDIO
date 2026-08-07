@@ -62,8 +62,8 @@ export const announcements: Announcement[] = [
     title: "RSAMDIO Announces ANANTA 2026 Installation Ceremony",
     category: "Announcement",
     excerpt:
-      "The 17th RSA MDIO Installation Ceremony and ROAR Awards will be hosted in Bengaluru, India, marking the start of RY 2026–27.",
-    body: "Rotaract South Asia MDIO is pleased to announce ANANTA 2026, the 17th RSA MDIO Installation Ceremony and ROAR Awards, to be hosted in Bengaluru, India. The gathering will mark the formal start of Rotary Year 2026–27 and bring together District Rotaract Representatives, Executive Board members, and Rotaractors from across the region.",
+      "The 17th RSAMDIO Installation Ceremony and ROAR Awards will be hosted in Bengaluru, India, marking the start of RY 2026–27.",
+    body: "Rotaract South Asia MDIO is pleased to announce ANANTA 2026, the 17th RSAMDIO Installation Ceremony and ROAR Awards, to be hosted in Bengaluru, India. The gathering will mark the formal start of Rotary Year 2026–27 and bring together District Rotaract Representatives, Executive Board members, and Rotaractors from across the region.",
     image:
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=80",
     date: "2026-01-10",
@@ -122,7 +122,7 @@ export const rsaChronicles: ChronicleEdition[] = [
     editionName: "January 2026",
     date: "2026-01-01",
     preview:
-      "New year priorities, DRR confirmations, and the first look at regional programmes for the term.",
+      "New year priorities, DRR confirmations, and the first look at regional programs for the term.",
     heroImage:
       "https://images.unsplash.com/photo-1585829365295-ab7cd400c167?auto=format&fit=crop&w=1200&q=80",
     readerUrl: "https://publications.rsamdio.org/",

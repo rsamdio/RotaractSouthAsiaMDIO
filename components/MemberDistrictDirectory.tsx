@@ -6,11 +6,12 @@ import {
   memberNations,
   getDrrProfile,
 } from "@/config/memberDistricts";
+import { siteConfig } from "@/config/site";
 
 const summaryCards = [
   {
-    label: "Countries",
-    value: String(memberDistrictSummary.countries),
+    label: "Nations",
+    value: siteConfig.stats.countries,
     icon: Globe2,
     tone: "text-[#D41B69] bg-[#D41B69]/10",
   },
@@ -64,7 +65,7 @@ export function MemberDistrictDirectory() {
         <h2
           className="text-xl font-bold text-[#0B1426] mb-5"
         >
-          Member Countries
+          Member Nations
         </h2>
         <div className="flex flex-wrap gap-3">
           {memberNations.map((nation) => (

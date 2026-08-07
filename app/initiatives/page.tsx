@@ -10,7 +10,7 @@ import { loadPrograms } from "@/sanity/lib/content";
 export const metadata = {
   title: "Initiatives",
   description:
-    "RSAMDIO initiatives across South Asia: digital platforms for leaders, plus regional programs, campaigns, and fellowship that move Rotaractors into action.",
+    "RSAMDIO platforms that support information, communication, and learning, plus multidistrict programs and campaigns for Rotaract clubs across South Asia.",
 };
 
 export default async function InitiativesPage() {
@@ -29,7 +29,7 @@ export default async function InitiativesPage() {
         <PageHero
           eyebrow="Initiatives"
           title="Platforms, Programs & Campaigns"
-          description="Two sides of the same mission: a digital ecosystem for boards and administrators, and regional programmes that bring Rotaractors together in service, sport, leadership, and fellowship."
+          description="Platforms that help disseminate information, connect Rotaract clubs, and support leadership learning, alongside multidistrict programs and campaigns across South Asia."
           crumbs={[{ label: "Initiatives" }]}
         />
 
@@ -42,11 +42,11 @@ export default async function InitiativesPage() {
               <h2
                 className="mt-4 text-2xl font-bold text-[#0B1426] sm:text-3xl"
               >
-                Tools Built for Rotaract Leaders
+                Platforms for Rotaract clubs and leaders
               </h2>
               <p className="mt-2 max-w-2xl text-sm text-slate-500 sm:text-base">
                 Live previews of Library, Invoice Calculator, NAVIGATE,
-                Publications, Certify, and PULSE. Open any platform in a new tab
+                Publications Hub, Certify, and PULSE. Open any platform in a new tab
                 when you are ready.
               </p>
             </div>

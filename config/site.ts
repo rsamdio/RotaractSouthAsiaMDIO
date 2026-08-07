@@ -4,21 +4,26 @@
 
 import { memberDistrictSummary } from "@/config/memberDistricts";
 
+/** Regional footprint claim — fixed; not derived from CSV (some nations may be absent from the directory). */
+export const NATION_COUNT = "8";
+
 export const siteConfig = {
   name: "RSAMDIO",
   fullName: "Rotaract South Asia MDIO",
-  tagline: "Create Lasting Impact",
+  tagline:
+    "Regional MDIO for Rotaract information and communication across South Asia.",
   description:
-    "The regional coordination hub for Rotaract across South Asia, serving clubs and members in 8 nations through shared knowledge, standards, and service.",
+    "Rotaract South Asia MDIO is a regional group of member districts formed to disseminate information and facilitate communication among Rotaract clubs across 8 nations, and to support leadership learning and multidistrict programs.",
   url: "https://rsamdio.org",
   rotaryYear: "2026–27", // ← update each July
   stats: {
-    countries: String(memberDistrictSummary.countries),
+    countries: NATION_COUNT,
     districts: String(memberDistrictSummary.districts),
     clubs: memberDistrictSummary.clubs,
     members: memberDistrictSummary.members,
   },
   libraryUrl: "https://library.rsamdio.org/",
+  connectUrl: "https://connect.rsamdio.org",
   social: {
     instagram: "https://instagram.com/rsamdio",
     facebook: "https://www.facebook.com/rsamdio/",

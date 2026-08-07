@@ -21,9 +21,9 @@ export default function TermsPage() {
         "By accessing or using rsamdio.org, you agree to these Terms of Use. If you do not agree with any part of these terms, please discontinue use of the portal.",
     },
     {
-      title: "2. Purpose of the Portal",
+      title: "2. Purpose of this website",
       content:
-        "This portal is an informational and coordination platform for Rotaract South Asia MDIO. Content is provided for members, districts, clubs, partners, and the public to understand initiatives, events, and official updates.",
+        "This website is an informational platform for Rotaract South Asia MDIO. Content is provided for members, districts, clubs, partners, and the public to understand initiatives, events, and official updates.",
     },
     {
       title: "3. Acceptable Use",

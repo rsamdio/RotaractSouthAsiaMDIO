@@ -92,10 +92,10 @@ Districts may submit hosting bids to the Secretariat. Dates for the next meet wi
       "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=80",
     featured: true,
     ctaLabel: "Learn more",
-    body: `Leaders Series is RSAMDIO's ongoing conversation programme for boards and emerging leaders.
+    body: `Leaders Series is RSAMDIO's ongoing conversation program for boards and emerging leaders.
 
 ## Format
-Hybrid sessions with guest speakers from Rotary, Rotaract alumni, and partner organisations. Recordings and takeaways are shared through RSA Chronicles and the News hub when available.
+Hybrid sessions with guest speakers from Rotary, Rotaract alumni, and partner organizations. Recordings and takeaways are shared through RSA Chronicles and the News hub when available.
 
 ## Who should attend
 Club presidents, district officers, and Rotaractors preparing for leadership roles.`,
@@ -118,7 +118,7 @@ Club presidents, district officers, and Rotaractors preparing for leadership rol
 
 ## What to expect
 - Facilitated twinning between districts
-- Host club programmes focused on culture, service, and leadership
+- Host club programs focused on culture, service, and leadership
 - Seasonal application windows announced by the Secretariat`,
   },
   {
@@ -140,7 +140,7 @@ Club presidents, district officers, and Rotaractors preparing for leadership rol
 ## Project types
 - Tree planting and urban greening
 - Climate literacy in schools and clubs
-- Conservation partnerships with local organisations
+- Conservation partnerships with local organizations
 
 Report outcomes through your DRR so RSAMDIO can amplify shared impact.`,
   },

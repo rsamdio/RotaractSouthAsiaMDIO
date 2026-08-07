@@ -21,7 +21,7 @@ export async function UpcomingEventsPreview() {
       <div className="relative mx-auto max-w-6xl">
         <Reveal className="mb-12 text-center">
           <span className="mb-4 inline-block rounded-full border border-[#D41B69]/20 bg-[#D41B69]/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-[#D41B69]">
-            Conventions & Forums
+            Gatherings & Sessions
           </span>
           <h2
             className="text-4xl font-bold text-[#0B1426]"
@@ -29,7 +29,7 @@ export async function UpcomingEventsPreview() {
             Upcoming Events
           </h2>
           <p className="mt-3 text-slate-600">
-            Major regional activities, training, and sessions across South Asia.
+            Major regional activities and sessions across South Asia.
           </p>
         </Reveal>
 

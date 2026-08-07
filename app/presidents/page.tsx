@@ -30,8 +30,8 @@ export default function HallOfFamePage() {
       <main id="main-content">
         <PageHero
           eyebrow="College of Presidents"
-          title="Hall of Fame"
-          description="Honoring every President of Rotaract South Asia MDIO. The leaders who have stewarded our organization since Rotary Year 2010 - 2011."
+          title="College of Presidents"
+          description="Honoring every President of Rotaract South Asia MDIO since Rotary Year 2010–11."
           crumbs={[{ label: "College of Presidents" }]}
         />
 
@@ -45,7 +45,7 @@ export default function HallOfFamePage() {
                 </p>
               ) : (
                 <p className="text-xs text-slate-500 font-medium hidden sm:block">
-                  {pastPresidents.length} Presidents · Rotary Year 2010 - 2011 to 2027 - 2028
+                  {pastPresidents.length} Presidents · Rotary Year 2010–11 to 2027–28
                 </p>
               )}
             </div>

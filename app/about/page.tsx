@@ -5,14 +5,14 @@ import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { PillNav } from "@/components/PillNav";
-import { memberDistrictSummary, memberNations } from "@/config/memberDistricts";
+import { memberDistrictSummary } from "@/config/memberDistricts";
 import { organizationHistory } from "@/config/history";
 import { siteConfig } from "@/config/site";
 
 export const metadata = {
   title: "About",
   description:
-    "About Rotaract South Asia MDIO: who we are, how we serve member districts, and our history as the regional coordination body for Rotaract.",
+    "About Rotaract South Asia MDIO: who we are, how we serve member districts, and our history as the regional MDIO for Rotaract.",
 };
 
 export default function AboutPage() {
@@ -30,7 +30,7 @@ export default function AboutPage() {
         <PageHero
           eyebrow="Who We Are"
           title="About RSAMDIO"
-          description="The Rotaract South Asia Multi-District Information Organization is Rotary International's sub-regional coordination body for Rotaract in South Asia."
+          description="The Rotaract South Asia Multi-District Information Organization is Rotary International's recognized MDIO: a regional group of member districts formed to disseminate information and facilitate communication among Rotaract Clubs and Rotaractors across eight nations in South Asia."
           crumbs={[{ label: "About" }]}
         />
 
@@ -42,10 +42,10 @@ export default function AboutPage() {
                 <strong className="font-serif text-[#0B1426] dark:text-white">
                   Rotaract South Asia Multi-District Information Organization
                 </strong>{" "}
-                (RSAMDIO) serves Rotaract across Afghanistan, Pakistan, India, Nepal, Bhutan, Bangladesh, Sri Lanka, and the Maldives.
+                (RSAMDIO) serves Rotaract across Afghanistan, Bangladesh, Bhutan, India, the Maldives, Nepal, Pakistan, and Sri Lanka.
               </p>
               <p className="mt-5 font-serif text-lg leading-relaxed text-slate-600 dark:text-white/65">
-                We help member districts apply Rotary International standards at the local level. Today that presence includes{" "}
+                We disseminate information and facilitate communication among Rotaract clubs, and support leadership learning and multidistrict programs across the region. Today that presence includes{" "}
                 <strong className="font-serif text-[#0B1426] dark:text-white">
                   {memberDistrictSummary.districts} districts
                 </strong>
@@ -57,7 +57,7 @@ export default function AboutPage() {
                 <strong className="font-serif font-bold text-[#0B1426] dark:text-white">
                   {memberDistrictSummary.members} Rotaractors
                 </strong>{" "}
-                across {memberNations.length} nations.
+                across {siteConfig.stats.countries} nations.
               </p>
 
               <div className="mt-10 rounded-[2rem] border border-slate-100 bg-slate-50 p-7 dark:border-white/10 dark:bg-white/5">
@@ -70,7 +70,7 @@ export default function AboutPage() {
                   </h3>
                 </div>
                 <p className="mb-4 text-sm leading-relaxed text-slate-600 dark:text-white/60">
-                  Explore the {memberNations.length} member nations and districts that form RSAMDIO&apos;s regional presence.
+                  {`Explore the ${siteConfig.stats.countries} member nations and districts that form RSAMDIO's regional presence.`}
                 </p>
                 <Link
                   href="/districts"
@@ -90,7 +90,7 @@ export default function AboutPage() {
                   <h3 className="font-bold text-[#0B1426] dark:text-white">Our Vision</h3>
                 </div>
                 <p className="text-sm leading-relaxed text-slate-600 dark:text-white/65">
-                  A unified Rotaract South Asia where every club can access strong resources, sound governance, and a community of service-minded youth leaders.
+                  A Rotaract South Asia where every club and Rotaractor can find clear information, stay connected with peers, and take part in regional programs.
                 </p>
               </div>
 
@@ -102,7 +102,7 @@ export default function AboutPage() {
                   <h3 className="font-bold text-[#0B1426] dark:text-white">Our Mission</h3>
                 </div>
                 <p className="text-sm leading-relaxed text-slate-600 dark:text-white/65">
-                  To coordinate, support, and amplify district-level Rotaract efforts through standardized resources, leadership development, and cross-regional collaboration.
+                  To disseminate information and facilitate communication among Rotaract clubs across South Asia, and to provide leadership learning and organize multidistrict service projects and programs.
                 </p>
               </div>
 
@@ -111,10 +111,10 @@ export default function AboutPage() {
                   <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-100 dark:bg-white/10">
                     <Landmark className="h-4 w-4 text-slate-600 dark:text-white/60" />
                   </div>
-                  <h3 className="font-bold text-[#0B1426] dark:text-white">Governance</h3>
+                  <h3 className="font-bold text-[#0B1426] dark:text-white">How we are organized</h3>
                 </div>
                 <p className="text-sm leading-relaxed text-slate-600 dark:text-white/65">
-                  RSAMDIO is led by an elected Executive Board, including the President, Vice President, General Secretary, and Treasurer, working with District Rotaract Representatives across RI Zones 1, 4, 5, 6, 7, and 8 for Rotary Year {siteConfig.rotaryYear}.
+                  RSAMDIO is led by an elected President, supported by an appointed Executive Board and committees for the term, and works with District Rotaract Representatives.
                 </p>
                 <Link
                   href="/leadership"

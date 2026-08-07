@@ -117,13 +117,12 @@ export function ProgramsInitiatives({ programs, variant = "page" }: Props) {
             </span>
             <h2 className="text-3xl font-bold text-ink sm:text-4xl">
               {isHome
-                ? "Initiatives Beyond the Platforms"
-                : "Regional Programs That Move People"}
+                ? "Programs & campaigns across South Asia"
+                : "Multidistrict programs across South Asia"}
             </h2>
             <p className="mt-3 text-sm text-slate-500 sm:text-base">
-              Service weeks, sports meets, leadership conversations, fellowship
-              exchanges, and campaigns: the programmes that get Rotaractors into
-              the field together across South Asia.
+              Multidistrict programs that bring Rotaract clubs together across
+              South Asia.
             </p>
           </div>
           {isHome && (

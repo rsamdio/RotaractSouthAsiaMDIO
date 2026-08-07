@@ -21,9 +21,9 @@ export default async function ChroniclesPage() {
       <Navbar />
       <main id="main-content">
         <PageHero
-          eyebrow="Publications"
+          eyebrow="Newsletter"
           title="RSA Chronicles"
-          description="The official monthly newsletter of Rotaract South Asia MDIO: regional updates, district highlights, and programmes worth knowing."
+          description="The official monthly newsletter of Rotaract South Asia MDIO: regional updates, district highlights, and programs worth knowing."
           crumbs={[
             { label: "News & Updates", href: "/news" },
             { label: "RSA Chronicles" },

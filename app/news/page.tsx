@@ -13,7 +13,7 @@ import { loadAnnouncements, loadChronicles, loadStories } from "@/sanity/lib/con
 export const metadata = {
   title: "News & Updates",
   description:
-    "Stories, announcements, and RSA Chronicles, the official newsletter of Rotaract South Asia MDIO.",
+    "Stories of impact from across South Asia, plus official updates and RSA Chronicles from Rotaract South Asia MDIO.",
 };
 
 export default async function NewsPage() {
@@ -39,14 +39,14 @@ export default async function NewsPage() {
         items={[
           { id: "stories", label: "Stories" },
           { id: "announcements", label: "Announcements" },
-          { id: "publications", label: "Publications" },
+          { id: "chronicles", label: "RSA Chronicles" },
         ]}
       />
       <main id="main-content">
         <PageHero
           eyebrow="News & Updates"
-          title="Stories & Announcements"
-          description="Service and leadership stories from across South Asia, plus official updates and RSA Chronicles from the Secretariat."
+          title="Stories, Announcements & Chronicles"
+          description="Stories of service, impact, and leadership from across South Asia, plus official updates from the RSAMDIO Secretariat and RSA Chronicles."
           crumbs={[{ label: "News & Updates" }]}
         />
 
@@ -54,7 +54,7 @@ export default async function NewsPage() {
           <div className="mx-auto max-w-6xl">
             <ChronicleSectionHeader
               title="Stories"
-              subtitle="Field reports and leadership moments from clubs and districts."
+              subtitle="Stories of impact from clubs and districts across South Asia."
               href="/stories"
               linkLabel="View all stories →"
             />
@@ -70,7 +70,7 @@ export default async function NewsPage() {
           <div className="mx-auto max-w-6xl">
             <ChronicleSectionHeader
               title="Announcements"
-              subtitle="Official updates and notices from the Secretariat."
+              subtitle="Official updates and notices from the RSAMDIO Secretariat."
               href="/announcements"
               linkLabel="View all announcements →"
             />
@@ -82,10 +82,10 @@ export default async function NewsPage() {
           </div>
         </section>
 
-        <section id="publications" className="scroll-mt-24 bg-white px-5 py-24 sm:px-6 lg:px-8">
+        <section id="chronicles" className="scroll-mt-24 bg-white px-5 py-24 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <ChronicleSectionHeader
-              title="Publications"
+              title="RSA Chronicles"
               subtitle="RSA Chronicles, the official monthly newsletter of Rotaract South Asia MDIO."
               href="/chronicles"
               linkLabel="View all editions →"

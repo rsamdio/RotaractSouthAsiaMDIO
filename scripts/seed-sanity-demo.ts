@@ -128,8 +128,8 @@ const announcements = [
     title: "RSAMDIO Announces ANANTA 2026 Installation Ceremony",
     category: "Announcement",
     excerpt:
-      "The 17th RSA MDIO Installation Ceremony and ROAR Awards will be hosted in Bengaluru, India, marking the start of RY 2026–27.",
-    body: "Rotaract South Asia MDIO is pleased to announce ANANTA 2026, the 17th RSA MDIO Installation Ceremony and ROAR Awards, to be hosted in Bengaluru, India.\n\nThe gathering will mark the formal start of Rotary Year 2026–27 and bring together District Rotaract Representatives, Executive Board members, and Rotaractors from across the region.",
+      "The 17th RSAMDIO Installation Ceremony and ROAR Awards will be hosted in Bengaluru, India, marking the start of RY 2026–27.",
+    body: "Rotaract South Asia MDIO is pleased to announce ANANTA 2026, the 17th RSAMDIO Installation Ceremony and ROAR Awards, to be hosted in Bengaluru, India.\n\nThe gathering will mark the formal start of Rotary Year 2026–27 and bring together District Rotaract Representatives, Executive Board members, and Rotaractors from across the region.",
     date: "2026-01-10",
     featured: true,
     image: {
@@ -187,7 +187,7 @@ const chronicles = [
     editionName: "January 2026",
     date: "2026-01-01",
     preview:
-      "New year priorities, DRR confirmations, and the first look at regional programmes for the term.",
+      "New year priorities, DRR confirmations, and the first look at regional programs for the term.",
     readerUrl: "https://publications.rsamdio.org/",
     image: {
       url: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=800&q=80",
@@ -201,7 +201,7 @@ const events = [
     _id: "demo.event.ananta-2026",
     slug: "ananta-2026",
     title: "ANANTA 2026",
-    tagline: "17th RSA MDIO Installation Ceremony & ROAR Awards",
+    tagline: "17th RSAMDIO Installation Ceremony & ROAR Awards",
     description:
       "The historic 17th Rotaract South Asia MDIO Installation Ceremony and ROAR Awards at Ramada by Wyndham Yelahanka, marking the regional leadership transition for RY 2026–27.",
     body: "Join Rotaractors from across South Asia for installation ceremonies, ROAR Awards, and fellowship in Bengaluru.",
@@ -273,7 +273,7 @@ const events = [
     title: "DRR Onboarding Webinar",
     tagline: "Virtual session for newly confirmed DRRs",
     description:
-      "A focused virtual briefing covering MDIO reporting rhythms, brand standards, and regional programmes.",
+      "A focused virtual briefing covering MDIO reporting rhythms, brand standards, and regional programs.",
     startDate: "2026-08-08",
     startTime: "19:00",
     endTime: "20:30",
@@ -377,7 +377,7 @@ const programs = [
     accent: "#17458F",
     featured: true,
     ctaLabel: "Learn more",
-    body: "Leaders Series is RSAMDIO's ongoing conversation programme for boards and emerging leaders.\n\n## Format\nHybrid sessions with guest speakers from Rotary, Rotaract alumni, and partner organisations. Recordings and takeaways are shared through RSA Chronicles and the News hub when available.\n\n## Who should attend\nClub presidents, district officers, and Rotaractors preparing for leadership roles.",
+    body: "Leaders Series is RSAMDIO's ongoing conversation program for boards and emerging leaders.\n\n## Format\nHybrid sessions with guest speakers from Rotary, Rotaract alumni, and partner organizations. Recordings and takeaways are shared through RSA Chronicles and the News hub when available.\n\n## Who should attend\nClub presidents, district officers, and Rotaractors preparing for leadership roles.",
     image: {
       url: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=80",
       filename: "demo-program-leaders.jpg",
@@ -396,7 +396,7 @@ const programs = [
     accent: "#17458F",
     featured: false,
     ctaLabel: "Learn more",
-    body: "Cross-Border Fellowship pairs clubs and small cohorts for short exchanges that build lasting regional friendship.\n\n## What to expect\n- Facilitated twinning between districts\n- Host club programmes focused on culture, service, and leadership\n- Seasonal application windows announced by the Secretariat",
+    body: "Cross-Border Fellowship pairs clubs and small cohorts for short exchanges that build lasting regional friendship.\n\n## What to expect\n- Facilitated twinning between districts\n- Host club programs focused on culture, service, and leadership\n- Seasonal application windows announced by the Secretariat",
     image: {
       url: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
       filename: "demo-program-fellowship.jpg",
@@ -415,7 +415,7 @@ const programs = [
     accent: "#059669",
     featured: false,
     ctaLabel: "Learn more",
-    body: "Green South Asia is a year-round campaign that helps districts tell one regional environmental story while acting locally.\n\n## Project types\n- Tree planting and urban greening\n- Climate literacy in schools and clubs\n- Conservation partnerships with local organisations\n\nReport outcomes through your DRR so RSAMDIO can amplify shared impact.",
+    body: "Green South Asia is a year-round campaign that helps districts tell one regional environmental story while acting locally.\n\n## Project types\n- Tree planting and urban greening\n- Climate literacy in schools and clubs\n- Conservation partnerships with local organizations\n\nReport outcomes through your DRR so RSAMDIO can amplify shared impact.",
     image: {
       url: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80",
       filename: "demo-program-green.jpg",

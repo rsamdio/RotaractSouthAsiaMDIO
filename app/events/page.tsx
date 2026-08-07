@@ -7,6 +7,7 @@ import { PillNav } from "@/components/PillNav";
 import { EventCard, EventCardEmpty } from "@/components/EventCard";
 import { EventsCalendar } from "@/components/EventsCalendar";
 import { SectionScrollButton } from "@/components/SectionScrollButton";
+import { PastEventsLoadMore } from "@/components/PastEventsLoadMore";
 import { filterPast, filterSignature, filterUpcoming } from "@/config/events";
 import { loadEvents } from "@/sanity/lib/content";
 
@@ -35,9 +36,9 @@ export default async function EventsPage() {
       />
       <main id="main-content">
         <PageHero
-          eyebrow="Conventions & Forums"
+          eyebrow="Gatherings & Sessions"
           title="Events"
-          description="Signature programmes, regional gatherings, and working sessions across South Asia. Browse upcoming dates, revisit past events, or open the calendar."
+          description="Signature programs, regional gatherings, and working sessions across South Asia. Browse upcoming dates, revisit past events, or open the calendar."
           crumbs={[{ label: "Events" }]}
         />
 
@@ -70,10 +71,6 @@ export default async function EventsPage() {
                 Signature Events
               </h2>
             </div>
-            <p className="mb-8 max-w-2xl text-sm leading-6 text-slate-500">
-              Flagship MDIO programmes that define the regional year: installations,
-              academies, summits, and the annual convention.
-            </p>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {signature.map((ev) => (
                 <EventCard key={ev.slug} event={ev} />
@@ -85,22 +82,10 @@ export default async function EventsPage() {
         <section id="past" className="scroll-mt-24 bg-slate-50 px-5 py-24 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <div className="mb-8 flex items-center gap-2">
-              <History className="h-4 w-4 text-[#D41B69]" />
-              <h2
-                className="text-2xl font-bold text-[#0B1426]"
-              >
-                Past Events
-              </h2>
+              <History className="h-4 w-4 text-crimson" />
+              <h2 className="text-2xl font-bold text-ink">Past Events</h2>
             </div>
-            {past.length === 0 ? (
-              <EventCardEmpty message="Past events will appear here after they conclude." />
-            ) : (
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {past.map((ev) => (
-                  <EventCard key={ev.slug} event={ev} />
-                ))}
-              </div>
-            )}
+            <PastEventsLoadMore events={past} />
           </div>
         </section>
 

@@ -4,13 +4,13 @@ import { Navbar } from "@/components/Navbar";
 import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
-import { PostGrid } from "@/components/PostGrid";
+import { PostLoadMoreList } from "@/components/PostLoadMoreList";
 import { loadStories } from "@/sanity/lib/content";
 
 export const metadata = {
   title: "Stories",
   description:
-    "Service and leadership stories from Rotaract clubs and districts across South Asia.",
+    "Stories of impact from Rotaract clubs and districts across South Asia.",
 };
 
 export default async function StoriesPage() {
@@ -25,7 +25,7 @@ export default async function StoriesPage() {
         <PageHero
           eyebrow="From the Field"
           title="Stories"
-          description="Service projects, leadership moments, and impact from Rotaract clubs and districts across South Asia."
+          description="Stories of impact from clubs and districts across South Asia."
           crumbs={[
             { label: "News & Updates", href: "/news" },
             { label: "Stories" },
@@ -42,16 +42,17 @@ export default async function StoriesPage() {
               </p>
               <Link
                 href="/announcements"
-                className="inline-flex items-center gap-1.5 text-sm font-bold text-[#D41B69] transition hover:underline"
+                className="inline-flex items-center gap-1.5 text-sm font-bold text-crimson transition hover:underline"
               >
                 Announcements
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
-            <PostGrid
+            <PostLoadMoreList
               posts={stories}
               featuredCta="Read Story"
               secondaryCta="Read Story"
+              itemLabel="stories"
             />
           </div>
         </section>

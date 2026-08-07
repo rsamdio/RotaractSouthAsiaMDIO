@@ -53,10 +53,10 @@ lib/                 Shared helpers (markdown, section scroll, news nav, etc.)
 | `/districts`, `/districts/[number]` | Member districts + clubs |
 | `/initiatives` | Digital ecosystem explorer + initiatives listing |
 | `/initiatives/[slug]` | Initiative (program / campaign) detail |
-| `/events`, `/events/[slug]` | Events |
+| `/events`, `/events/[slug]` | Events (Past: Load more ×8; Upcoming / Signature / Calendar full) |
 | `/news`, `/news/[slug]` | News & Updates hub + story/announcement detail |
-| `/stories` | Full stories listing |
-| `/announcements` | Full announcements listing |
+| `/stories` | Full stories listing (Load more ×9) |
+| `/announcements` | Full announcements listing (Load more ×9) |
 | `/chronicles` | RSA Chronicles newsletter editions |
 | `/contact`, `/privacy`, `/terms` | Contact + legal |
 | `/admin` | Sanity Studio |
@@ -93,9 +93,20 @@ Member data workflow: replace CSVs → `npm run import:member-data` (or just `de
 
 District UI conventions:
 
-- Countries A–Z; exact club/member counts (no `+` suffix)
+- Nations A–Z in directory listings; **nation count in marketing is fixed at 8** (`siteConfig.stats.countries` / `NATION_COUNT`) — do not derive from CSV (some nations may be absent from the member-district directory)
+- Exact club/member counts (no `+` suffix); districts/clubs/Rotaractors stay CSV-dynamic
 - DRR card = photo + name + club only
 - Clubs: search + Community/University filters; list always visible (no accordion)
+
+## Site copy house rules
+
+- **Positioning (RI MDIO):** RSAMDIO is a regional group of member districts formed to **disseminate information** and **facilitate communication among Rotaract clubs**. In marketing chrome prefer **leadership learning** (RI directory wording: leadership training) and **multidistrict service projects / programs**. Speak to Rotaractors, clubs, and member districts. Prefer initiatives / platforms / programs; avoid marketing **tools** / **digital tools** except intentional Digital Ecosystem product copy. “Hub” is brand shorthand only; definitional copy must state the RI purpose. Zone lists belong on Leadership filter UI, not home chrome.
+- **No em dashes (—)** in user-facing copy. Prefer commas, periods, or short rewrites so prose reads human-written. En dashes in Rotary years (`2026–27`) are fine.
+- **American English** in marketing chrome: **programs**, **organization** (not programmes / organisations). Official leadership titles in `config/leadership.ts` stay as stored.
+- Compact brand **RSAMDIO** (never “RSA MDIO”). Product: **RSA Connect**, newsletter **RSA Chronicles**. **Publications Hub** is the external tool only — do not label Chronicles as Publications.
+- Public leadership label: **Executive Board**. Only the **President** is elected; fellow officers/council members are appointed. Never “elected Executive Board” / “elected officers” (plural). Soften copy that implies MDIO governs member districts.
+- **RI Zones** in chrome: **1, 4, 5, 6, 7, and 8** (write Zone 1, not 1(b)). Always use `siteConfig.rotaryYear` for the current year.
+- Prefer `siteConfig.description` for Footer + root metadata so blurbs do not drift.
 
 ## Homepage composition (current)
 
@@ -112,7 +123,7 @@ Order in `app/page.tsx`:
 9. Upcoming events
 10. CTA strip
 
-Bottom `PillNav` section ids include `hero`, `about-snapshot`, `global` (label: Presence), `initiatives`, `leadership`, `news`, `events`.
+Bottom `PillNav` section ids include `hero`, `about-snapshot`, `global` (label: Presence), `initiatives` (label: Platforms), `programs` (label: Programs), `leadership`, `news`, `events`.
 
 Cross-page section jumps use hash-free scroll (`lib/scrollToSection.ts`, `SectionNavLink`, `SmoothScroll` stash) — prefer that over writing `#fragment` into the URL (e.g. home “All programs” → `/initiatives` + scroll to `programs`).
 
@@ -134,6 +145,7 @@ Preserve the established system when editing existing surfaces:
 - **CTA hierarchy:** crimson (`#D41B69` / `bg-crimson`) = primary filled actions; hover `crimson-hover` (`#9A0E4E`). Navy (`#17458F`) = stats / institutional chrome only — not primary buttons. Gold = rare highlight.
 - **Surfaces:** ice white, `slate-50`, hero canvas `ice-cream` (`#F7F5F0`), soft blush `#FCE8F1`. Body ink `#0B1426` (`ink`). Tokens live in `app/globals.css` `@theme`.
 - Soft rounded sections, pink eyebrow pills for marketing sections, Open Sans for UI (Sentinel only where `font-serif` is intentional, e.g. About body)
+- **Listing archives:** `/stories` and `/announcements` use client Load more (batch **9**); `/events` Past uses Load more (batch **8**). `/news` hub stays capped to recent items.
 - Lenis smooth scroll via `components/SmoothScroll.tsx` — don’t add competing `scroll-behavior: smooth` on `html`
 - Prefer existing patterns (`PageHero`, `Reveal`, `PillNav`, card styles) over inventing a new design language
 - Avoid off-brand purple / lavender washes; green only for success or platform-native icons
@@ -156,6 +168,7 @@ Contact page: email CTA only (form UI may exist but product direction is email-f
 These appear as live embeds / links from Initiatives; they are **not** this Next app:
 
 - library.rsamdio.org
+- connect.rsamdio.org
 - dues.rsamdio.org
 - navigate.rsamdio.org
 - publications.rsamdio.org (PubHub — see embed note above)

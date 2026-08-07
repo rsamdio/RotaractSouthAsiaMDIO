@@ -18,7 +18,7 @@ export const executiveBoard: LeadershipMember[] = [
   // --- CORE EXECUTIVE OFFICERS ---
   {
     name: "Arun Teja Godavarthi",
-    title: "MDIO President",
+    title: "President",
     district: "District 3191",
     country: "India",
     image: "/img/board/arun-teja-godavarthi.jpg",

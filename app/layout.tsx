@@ -2,10 +2,10 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import { SmoothScroll } from "@/components/SmoothScroll";
-import { memberDistrictSummary } from "@/config/memberDistricts";
+import { siteConfig } from "@/config/site";
 import "./globals.css";
 
-const siteDescription = `The official regional coordination hub for Rotaract across South Asia, serving ${memberDistrictSummary.districts} member districts, ${memberDistrictSummary.clubs} clubs, and ${memberDistrictSummary.members} Rotaractors across 8 nations.`;
+const siteDescription = siteConfig.description;
 
 // Self-hosted so local/dev does not depend on fonts.gstatic.com at compile time.
 const openSans = localFont({

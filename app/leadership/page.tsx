@@ -8,6 +8,7 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { PillNav } from "@/components/PillNav";
 import { MemberCard } from "@/components/MemberCard";
 import { executiveBoard, drrs, committeeMembers, LeadershipMember } from "@/config/leadership";
+import { siteConfig } from "@/config/site";
 
 export default function LeadershipPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -75,7 +76,7 @@ export default function LeadershipPage() {
         <PageHero
           eyebrow="Leadership"
           title="Executive Board & Regional Leaders"
-          description="The elected officers, District Rotaract Representatives, and committee members coordinating Rotaract South Asia for Rotary Year 2026–27."
+          description={`The Executive Board, District Rotaract Representatives, and Committee members serving Rotaract South Asia for Rotary Year ${siteConfig.rotaryYear}.`}
           crumbs={[{ label: "Leadership" }]}
         />
 
@@ -119,7 +120,7 @@ export default function LeadershipPage() {
               <div className="flex items-center gap-2">
                 <Star className="h-5 w-5 text-[#F7A81B]" fill="currentColor" />
                 <h2 className="text-xl sm:text-2xl font-bold text-[#0B1426]">
-                  Executive Board RY 2026–27
+                  Executive Board
                 </h2>
               </div>
               <span className="text-xs font-bold text-slate-400 bg-slate-100 px-3 py-1 rounded-full">
@@ -151,7 +152,7 @@ export default function LeadershipPage() {
                   </h2>
                 </div>
                 <p className="text-xs sm:text-sm text-slate-500 max-w-2xl">
-                  District Rotaract Representatives leading member districts across South Asia (RI Zones 1, 4, 5, 6, 7, and 8) for RY 2026–27.
+                  District Rotaract Representatives leading member districts across South Asia.
                 </p>
               </div>
 

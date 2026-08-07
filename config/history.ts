@@ -15,26 +15,25 @@ export type HistoryMilestone = {
 export const organizationHistory: HistoryMilestone[] = [
   {
     period: "Rotary Year 2010–11",
-    title: "Regional leadership takes formal shape",
+    title: "Regional MDIO record begins",
     summary:
-      "RSAMDIO's presidential record begins with Rotary Year 2010–11, marking the start of continuous regional leadership for Rotaract South Asia.",
+      "RSAMDIO's presidential record begins with Rotary Year 2010–11, marking continuous regional service for Rotaract South Asia as a multidistrict information organization.",
   },
   {
     period: "2011–2020",
     title: "A decade of multi-district continuity",
     summary:
-      "Successive Rotary Years strengthened coordination across member districts, with the College of Presidents preserving institutional memory year after year.",
+      "Successive Rotary Years deepened information sharing and communication across member districts, with the College of Presidents preserving institutional memory year after year.",
   },
   {
     period: "2020s",
-    title: "Digital tools for district and club boards",
+    title: "Platforms that support the region",
     summary:
-      "RSAMDIO expanded its digital ecosystem to support administration and collaboration, including the Rotaract Library, dues tools, Certify, Publications Hub, and related platforms.",
+      "RSAMDIO expanded platforms that help disseminate information and connect clubs across the region, including the Rotaract Library, dues platforms, Certify, Publications Hub, and related initiatives.",
   },
   {
     period: `Rotary Year ${siteConfig.rotaryYear}`,
     title: "Presence across South Asia today",
-    summary:
-      `Today RSAMDIO coordinates Rotaract across ${memberDistrictSummary.countries} nations, ${memberDistrictSummary.districts} member districts, ${memberDistrictSummary.clubs} clubs, and ${memberDistrictSummary.members} Rotaractors, guided by the elected Executive Board for Rotary Year ${siteConfig.rotaryYear}.`,
+    summary: `Today RSAMDIO brings together member districts across ${siteConfig.stats.countries} nations, ${memberDistrictSummary.districts} districts, ${memberDistrictSummary.clubs} clubs, and ${memberDistrictSummary.members} Rotaractors, guided by the Executive Board under an elected President for Rotary Year ${siteConfig.rotaryYear}.`,
   },
 ];

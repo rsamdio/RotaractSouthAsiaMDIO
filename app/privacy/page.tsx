@@ -37,7 +37,7 @@ export default function PrivacyPage() {
     },
     {
       title: "6. Cookies",
-      content: `The RSAMDIO portal uses minimal cookies for session management and theme preferences (light/dark mode). We do not use tracking cookies, advertising cookies, or third-party analytics cookies. You can disable cookies in your browser settings; this may affect certain portal functionality.`,
+      content: `This site stores a theme preference (light/dark) in your browser when you change appearance. We do not use advertising or third-party analytics cookies.`,
     },
     {
       title: "7. Children's Privacy",
@@ -117,7 +117,7 @@ export default function PrivacyPage() {
                 href="/"
                 className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-soft transition hover:bg-slate-50"
               >
-                Return to Portal
+                Return home
               </Link>
             </div>
           </div>

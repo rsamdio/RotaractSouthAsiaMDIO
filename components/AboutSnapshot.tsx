@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Users2 } from "lucide-react";
 import { Reveal } from "./Reveal";
+import { siteConfig } from "@/config/site";
 
 export function AboutSnapshot() {
   return (
@@ -10,8 +11,8 @@ export function AboutSnapshot() {
           <div className="absolute inset-0 bg-gradient-to-tr from-[#FCE8F1] to-transparent dark:from-[#D41B69]/10 rounded-[3rem] transform -rotate-3 scale-105 z-0" />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/img/ananta-installation.jpg"
-            alt="Rotaract South Asia MDIO 17th Installation Ceremony, ANANTA"
+            src="/img/south-asia-hub.webp"
+            alt="Map of Rotaract South Asia MDIO member nations"
             className="relative z-10 w-full rounded-[2.5rem] shadow-soft object-cover aspect-[16/10] border border-slate-100 dark:border-white/10"
           />
           <div className="absolute -bottom-8 -right-4 sm:-right-8 bg-white dark:bg-[#131F35] p-5 rounded-3xl shadow-xl border border-slate-100 dark:border-white/10 z-20">
@@ -21,7 +22,7 @@ export function AboutSnapshot() {
               </div>
               <div>
                 <div className="text-lg font-bold tracking-tight text-[#0B1426] dark:text-white">
-                  South Asia
+                  {siteConfig.stats.countries} nations
                 </div>
                 <div className="text-sm text-slate-500 dark:text-white/50">Regional presence</div>
               </div>
@@ -36,15 +37,15 @@ export function AboutSnapshot() {
           <h2
             className="text-4xl sm:text-5xl font-bold text-[#0B1426] dark:text-white leading-tight"
           >
-            South Asia&apos;s home for{" "}
-            <span className="text-[#D41B69]">Rotaract coordination</span>
+            South Asia&apos;s MDIO for{" "}
+            <span className="text-[#D41B69]">Rotaract information</span>
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-slate-600 dark:text-white/65">
             The <strong className="text-[#0B1426] dark:text-white">Rotaract South Asia Multi-District Information Organization</strong>{" "}
-            (RSAMDIO) is Rotary International&apos;s sub-regional coordination body for Rotaract across Afghanistan, Pakistan, India, Nepal, Bhutan, Bangladesh, Sri Lanka, and the Maldives.
+            (RSAMDIO) is Rotary International&apos;s recognized MDIO: a regional group of member districts formed to disseminate information and facilitate communication among Rotaract Clubs and Rotaractors across eight nations in South Asia.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-slate-600 dark:text-white/65">
-            An elected Executive Board leads the work, supporting member districts with standards, programmes, digital tools, and regional leadership under Rotary International Zones 1, 4, 5, 6, 7, and 8.
+            RSAMDIO also provides leadership learning for clubs and future district Rotaract leaders, and organizes multidistrict programs across the region.
           </p>
           <Link
             href="/about"

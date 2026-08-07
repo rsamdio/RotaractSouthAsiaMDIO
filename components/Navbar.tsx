@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState, type MouseEvent } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { stashScrollToSection, scrollToSection } from "@/lib/scrollToSection";
+import { siteConfig } from "@/config/site";
 
 type NavDrop = {
   label: string;
@@ -192,12 +193,14 @@ export function Navbar() {
 
         {/* Right actions */}
         <div className="flex items-center gap-3 shrink-0">
-          <Link
-            href="/contact"
-            className="hidden rounded-full bg-[#D41B69] px-5 py-2 text-sm font-bold text-white transition hover:bg-[#9A0E4E] hover:shadow-lg hover:shadow-[#D41B69]/20 lg:inline-flex"
+          <a
+            href={siteConfig.connectUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden rounded-full bg-crimson px-5 py-2 text-sm font-bold text-white transition hover:bg-crimson-hover hover:shadow-lg hover:shadow-crimson/20 lg:inline-flex"
           >
-            Get in Touch
-          </Link>
+            Sign in to RSA Connect
+          </a>
           <button
             type="button"
             onClick={() => setMobileOpen((open) => !open)}
@@ -246,13 +249,15 @@ export function Navbar() {
                 )}
               </div>
             ))}
-            <Link
-              href="/contact"
+            <a
+              href={siteConfig.connectUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
-              className="mt-3 flex items-center justify-center rounded-full bg-[#D41B69] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#9A0E4E]"
+              className="mt-3 flex items-center justify-center rounded-full bg-crimson px-5 py-3 text-sm font-bold text-white transition hover:bg-crimson-hover"
             >
-              Get in Touch
-            </Link>
+              Sign in to RSA Connect
+            </a>
           </div>
         </div>
       )}

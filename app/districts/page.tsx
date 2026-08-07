@@ -7,7 +7,7 @@ import { MemberDistrictDirectory } from "@/components/MemberDistrictDirectory";
 export const metadata = {
   title: "Member Districts",
   description:
-    "Browse Rotaract South Asia member countries and member districts: DRR details, clubs, members, coverage, and highlights.",
+    "Browse Rotaract South Asia member nations and member districts: DRR details, clubs, members, coverage, and highlights.",
 };
 
 export default function DistrictsPage() {

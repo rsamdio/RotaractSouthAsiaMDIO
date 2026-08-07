@@ -105,8 +105,10 @@ const footerColumns: FooterColumn[] = [
     items: [
       { label: "Rotaract Library", href: "https://library.rsamdio.org/", external: true },
       { label: "Invoice Calculator", href: "https://dues.rsamdio.org/", external: true },
-      { label: "Rotaract Certify", href: "https://certify.rsamdio.org/", external: true },
+      { label: "NAVIGATE", href: "https://navigate.rsamdio.org/", external: true },
       { label: "Publications Hub", href: "https://publications.rsamdio.org/", external: true },
+      { label: "Rotaract Certify", href: "https://certify.rsamdio.org/", external: true },
+      { label: "PULSE", href: "https://pulse.rsamdio.org/", external: true },
       { label: "Initiatives", href: "/initiatives" },
     ],
   },
@@ -179,8 +181,7 @@ export function Footer() {
             </Link>
 
             <p className="max-w-sm text-sm leading-relaxed text-slate-500">
-              The regional coordination hub for Rotaract across South Asia, connecting 8 nations
-              through shared knowledge, standards, and service.
+              {siteConfig.description}
             </p>
 
             <nav aria-label="Social media">

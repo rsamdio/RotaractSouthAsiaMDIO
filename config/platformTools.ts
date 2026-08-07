@@ -98,7 +98,7 @@ export const platformTools: PlatformTool[] = [
   {
     key: "publications",
     label: "Publications Hub",
-    eyebrow: "Strategic Library Assets",
+    eyebrow: "Reports & publications",
     title: "Publications Hub",
     copy: "Official annual reports, strategic frameworks, service portfolios, and district publications from across South Asia.",
     displayUrl: "publications.rsamdio.org",
@@ -117,10 +117,10 @@ export const platformTools: PlatformTool[] = [
   },
   {
     key: "certify",
-    label: "Certify",
+    label: "Rotaract Certify",
     eyebrow: "Digital Credentials",
     title: "Rotaract Certify",
-    copy: "A cryptographically secure certification engine to issue and verify participation records, seminar graduations, and outstanding service credentials.",
+    copy: "Issue and verify seminar, service, and recognition credentials for Rotaractors across South Asia.",
     displayUrl: "certify.rsamdio.org",
     previewUrl: "https://certify.rsamdio.org/",
     embeddable: true,

@@ -100,7 +100,7 @@ export default function ContactPage() {
             <h2
               className="text-2xl font-bold text-[#0B1426]"
             >
-              Connect with RSA MDIO
+              Connect with RSAMDIO
             </h2>
 
             <div className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">

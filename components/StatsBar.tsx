@@ -1,8 +1,9 @@
 import { memberDistrictSummary } from "@/config/memberDistricts";
+import { siteConfig } from "@/config/site";
 import { Reveal } from "./Reveal";
 
 const stats = [
-  { key: "countries", label: "Countries", value: String(memberDistrictSummary.countries) },
+  { key: "countries", label: "Nations", value: siteConfig.stats.countries },
   { key: "districts", label: "Districts", value: String(memberDistrictSummary.districts) },
   { key: "clubs", label: "Clubs", value: memberDistrictSummary.clubs },
   { key: "members", label: "Rotaractors", value: memberDistrictSummary.members },

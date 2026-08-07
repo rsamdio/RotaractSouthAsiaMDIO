@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Star } from "lucide-react";
 import { executiveBoard } from "@/config/leadership";
+import { siteConfig } from "@/config/site";
 import { MemberCard } from "./MemberCard";
 import { Reveal } from "./Reveal";
 
@@ -21,14 +22,13 @@ export function LeadershipSnapshot() {
             Leadership
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-[#0B1426]">
-            Meet the Leadership
+            Executive Board
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-500 max-w-xl mx-auto">
-            The dedicated Executive Board guiding Rotaract South Asia forward for Rotary Year 2026–27.
+            Officers for Rotary Year {siteConfig.rotaryYear}.
           </p>
         </Reveal>
 
-        {/* 4 Card Standard Grid Layout */}
         <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
           {top4Officers.map((member, i) => (
             <Reveal key={member.name} delay={i * 0.08}>
@@ -42,7 +42,7 @@ export function LeadershipSnapshot() {
             href="/leadership"
             className="inline-flex items-center gap-2 text-sm sm:text-base font-semibold text-[#0B1426] hover:text-[#D41B69] border-b-2 border-transparent hover:border-[#D41B69] pb-1 transition-colors"
           >
-            View Full Leadership Team
+            Full leadership & DRRs
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

@@ -30,11 +30,10 @@ export function InitiativesShowcase() {
           <h2
             className="px-2 text-3xl font-bold leading-tight text-[#0B1426] sm:text-4xl lg:text-5xl"
           >
-            A Smarter Digital Ecosystem for Rotaract Leaders
+            Platforms for Rotaractors
           </h2>
           <p className="mx-auto mt-4 max-w-2xl px-2 text-sm text-slate-600 sm:mt-5 sm:text-base">
-            Explore our growing suite of platforms, tools, and standardized governance
-            templates designed to simplify administration and strengthen collaboration
+            Explore the digital ecosystem of tools by RSAMDIO for Rotaractors
             across South Asia.
           </p>
         </div>
@@ -104,7 +103,7 @@ export function InitiativesShowcase() {
                 href="/initiatives"
                 className="inline-flex cursor-pointer items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-xs font-bold text-slate-700 transition hover:bg-slate-50 sm:px-7 sm:py-3.5 sm:text-sm"
               >
-                All Initiatives
+                Explore platforms & programs
               </a>
             </div>
           </div>

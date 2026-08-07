@@ -8,25 +8,56 @@ type Props = {
   secondaryCta: string;
   /** Base path for post links — default `/news` */
   hrefBase?: string;
+  /**
+   * Cap cards in the side column (featured stays posts[0]).
+   * When set, posts beyond 1 + sideLimit are not rendered here — use an overflow grid.
+   */
+  sideLimit?: number;
 };
+
+export function PostSecondaryCard({
+  post,
+  cta,
+  hrefBase = "/news",
+}: {
+  post: Story;
+  cta: string;
+  hrefBase?: string;
+}) {
+  return (
+    <Link
+      href={`${hrefBase}/${post.slug}`}
+      className="block rounded-[2rem] bg-slate-50 p-7 shadow-xl transition hover:-translate-y-1"
+    >
+      <span className="rounded-full bg-blush px-3 py-1 text-xs font-bold text-crimson">
+        {post.category}
+      </span>
+      <h3 className="mt-5 text-xl font-bold tracking-tight text-ink">{post.title}</h3>
+      <p className="mt-3 text-sm leading-7 text-slate-600">{post.excerpt}</p>
+      <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-crimson">
+        {cta} <ArrowRight className="h-4 w-4" />
+      </span>
+    </Link>
+  );
+}
 
 export function PostGrid({
   posts,
   featuredCta,
   secondaryCta,
   hrefBase = "/news",
+  sideLimit,
 }: Props) {
   if (posts.length === 0) {
     return (
       <p className="text-sm text-slate-500">
-        No posts yet. Publish from{" "}
-        <Link href="/admin" className="font-semibold text-[#D41B69] hover:underline">
-          /admin
-        </Link>
-        .
+        Stories will appear here as they are published.
       </p>
     );
   }
+
+  const sidePosts =
+    sideLimit == null ? posts.slice(1) : posts.slice(1, 1 + sideLimit);
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
@@ -46,48 +77,36 @@ export function PostGrid({
             ) : (
               <div className="h-full w-full bg-slate-200" />
             )}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1426]/80 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
             <div className="absolute bottom-8 left-8 right-8">
-              <span className="rounded-full bg-[#F7A81B] px-4 py-2 text-xs font-bold uppercase tracking-wide text-[#0B1426]">
+              <span className="rounded-full bg-gold px-4 py-2 text-xs font-bold uppercase tracking-wide text-ink">
                 {posts[0].category}
               </span>
-              <h3
-                className="mt-5 text-3xl font-bold tracking-tight text-white"
-              >
+              <h3 className="mt-5 text-3xl font-bold tracking-tight text-white">
                 {posts[0].title}
               </h3>
             </div>
           </div>
           <div className="p-8">
             <p className="text-lg leading-8 text-slate-700">{posts[0].excerpt}</p>
-            <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-[#D41B69]">
+            <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-crimson">
               {featuredCta} <ArrowRight className="h-4 w-4" />
             </span>
           </div>
         </Link>
       )}
-      <div className="grid gap-6">
-        {posts.slice(1).map((post) => (
-          <Link
-            key={post.slug}
-            href={`${hrefBase}/${post.slug}`}
-            className="block rounded-[2rem] bg-slate-50 p-7 shadow-xl transition hover:-translate-y-1"
-          >
-            <span className="rounded-full bg-[#FCE8F1] px-3 py-1 text-xs font-bold text-[#D41B69]">
-              {post.category}
-            </span>
-            <h3
-              className="mt-5 text-xl font-bold tracking-tight text-[#0B1426]"
-            >
-              {post.title}
-            </h3>
-            <p className="mt-3 text-sm leading-7 text-slate-600">{post.excerpt}</p>
-            <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-[#D41B69]">
-              {secondaryCta} <ArrowRight className="h-4 w-4" />
-            </span>
-          </Link>
-        ))}
-      </div>
+      {sidePosts.length > 0 && (
+        <div className="grid gap-6">
+          {sidePosts.map((post) => (
+            <PostSecondaryCard
+              key={post.slug}
+              post={post}
+              cta={secondaryCta}
+              hrefBase={hrefBase}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
