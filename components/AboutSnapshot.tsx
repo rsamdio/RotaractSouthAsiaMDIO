@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Users2 } from "lucide-react";
+import { ArrowRight, Globe2 } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { siteConfig } from "@/config/site";
 
@@ -18,7 +18,7 @@ export function AboutSnapshot() {
           <div className="absolute -bottom-8 -right-4 sm:-right-8 bg-white dark:bg-[#131F35] p-5 rounded-3xl shadow-xl border border-slate-100 dark:border-white/10 z-20">
             <div className="flex items-center gap-4">
               <div className="w-14 h-14 bg-[#FCE8F1] dark:bg-[#D41B69]/15 text-[#D41B69] rounded-2xl flex items-center justify-center shrink-0">
-                <Users2 className="h-7 w-7" />
+                <Globe2 className="h-7 w-7" />
               </div>
               <div>
                 <div className="text-lg font-bold tracking-tight text-[#0B1426] dark:text-white">
