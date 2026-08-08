@@ -76,12 +76,16 @@ export function buildPageMetadata({
   const url = absoluteUrl(path);
   const desc = truncateMeta(description);
   const imagePath = image || DEFAULT_OG_PATH;
+  // Match layout title template for OG/Twitter (Next only templates <title>).
+  const displayTitle = absoluteTitle
+    ? title
+    : `${title} | Rotaract South Asia MDIO`;
   const ogImages = [
     {
       url: imagePath,
       width: 1200,
       height: 630,
-      alt: title,
+      alt: displayTitle,
     },
   ];
 
@@ -90,7 +94,7 @@ export function buildPageMetadata({
     description: desc,
     alternates: { canonical: url },
     openGraph: {
-      title,
+      title: displayTitle,
       description: desc,
       url,
       siteName: siteConfig.fullName,
@@ -100,7 +104,7 @@ export function buildPageMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: displayTitle,
       description: desc,
       images: [imagePath],
     },
