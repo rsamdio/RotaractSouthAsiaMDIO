@@ -159,7 +159,7 @@ export default function AboutPage() {
                 From first recorded leadership to today
               </h2>
               <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-white/65">
-                A concise organizational timeline drawn from RSAMDIO&apos;s presidential record and the platforms now serving the region. Full presidential chronology lives in the College of Presidents.
+                A concise organizational timeline drawn from RSAMDIO&apos;s formation and the movement we are now serving in the region.
               </p>
             </div>
 
@@ -178,6 +178,16 @@ export default function AboutPage() {
                   <p className="mt-2 max-w-3xl text-sm leading-relaxed text-slate-600 dark:text-white/65">
                     {item.summary}
                   </p>
+                  {item.image ? (
+                    <figure className="mt-5 max-w-md overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-white/5">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={item.image.src}
+                        alt={item.image.alt}
+                        className="h-auto w-full object-contain"
+                      />
+                    </figure>
+                  ) : null}
                 </li>
               ))}
             </ol>

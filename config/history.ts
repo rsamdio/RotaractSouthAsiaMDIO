@@ -5,6 +5,11 @@ export type HistoryMilestone = {
   period: string;
   title: string;
   summary: string;
+  /** Optional document or photo under the summary */
+  image?: {
+    src: string;
+    alt: string;
+  };
 };
 
 /**
@@ -18,18 +23,16 @@ export const organizationHistory: HistoryMilestone[] = [
     title: "Regional MDIO record begins",
     summary:
       "RSAMDIO's presidential record begins with Rotary Year 2010–11, marking continuous regional service for Rotaract South Asia as a multidistrict information organization.",
+    image: {
+      src: "/img/about/rsamdio-charter.jpeg",
+      alt: "Decision of the 2010–11 RI Board of Directors authorizing formation of Rotaract South Asia Multidistrict Information Organization, signed 19 July 2010",
+    },
   },
   {
     period: "2011–2020",
     title: "A decade of multi-district continuity",
     summary:
       "Successive Rotary Years deepened information sharing and communication across member districts, with the College of Presidents preserving institutional memory year after year.",
-  },
-  {
-    period: "2020s",
-    title: "Platforms that support the region",
-    summary:
-      "RSAMDIO expanded platforms that help disseminate information and connect clubs across the region, including the Rotaract Library, dues platforms, Certify, Publications Hub, and related initiatives.",
   },
   {
     period: `Rotary Year ${siteConfig.rotaryYear}`,
