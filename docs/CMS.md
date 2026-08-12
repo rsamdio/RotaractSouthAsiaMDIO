@@ -44,7 +44,7 @@ Stories, announcements, events, and initiatives include an optional **Search & s
 
 - `title` — overrides document title in `<title>` / Open Graph (max ~60)
 - `description` — overrides card teaser for SERP/social (max 160)
-- `ogImage` — share image; else hero image; else site default `/img/og-default.png`
+- `ogImage` — share image; else hero image; else site default `/img/og-default.webp`
 
 Leave blank to use title + excerpt/tagline/summary. Do **not** claim RSAMDIO governs districts. Chronicle editions have **no** on-site SEO pages (external reader URLs on Publications Hub).
 

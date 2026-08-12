@@ -3,7 +3,7 @@ import { siteConfig } from "@/config/site";
 import { platformTools } from "@/config/platformTools";
 
 export const SITE_URL = siteConfig.url.replace(/\/$/, "");
-export const DEFAULT_OG_PATH = "/img/og-default.png";
+export const DEFAULT_OG_PATH = "/img/og-default.webp";
 export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 

@@ -134,7 +134,7 @@ export default function AboutPage() {
                   <h3 className="font-bold text-[#0B1426] dark:text-white">How we are organized</h3>
                 </div>
                 <p className="text-sm leading-relaxed text-slate-600 dark:text-white/65">
-                  RSAMDIO is led by an elected President, supported by an appointed Executive Board and committees for the term, and works with District Rotaract Representatives.
+                  RSAMDIO is led by an elected President, supported by an appointed Executive Board and committees for the term, and collaborates with District Rotaract Representatives to support the Rotaract Clubs and Rotaractors from the Member Districts.
                 </p>
                 <Link
                   href="/leadership"

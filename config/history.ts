@@ -20,9 +20,9 @@ export type HistoryMilestone = {
 export const organizationHistory: HistoryMilestone[] = [
   {
     period: "Rotary Year 2010–11",
-    title: "Regional MDIO record begins",
+    title: "Foundation of Rotaract South Asia MDIO",
     summary:
-      "RSAMDIO's presidential record begins with Rotary Year 2010–11, marking continuous regional service for Rotaract South Asia as a multidistrict information organization.",
+      "The formation of the Rotaract South Asia MDIO received official certification on Jul 19, 2010 from General Secretary Ed Futa, acting on behalf of the Rotary International Board. The initial founding districts comprised Districts 3080, 3150, 3160, 3190, 3260, and 3291.",
     image: {
       src: "/img/about/rsamdio-charter.jpeg",
       alt: "Decision of the 2010–11 RI Board of Directors authorizing formation of Rotaract South Asia Multidistrict Information Organization, signed 19 July 2010",
