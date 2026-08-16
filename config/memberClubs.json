@@ -500,17 +500,24 @@
       "country": "India"
     },
     {
+      "id": "8828622",
+      "name": "Hosur Dynamic",
+      "base": "Community",
+      "members": 14,
+      "country": "India"
+    },
+    {
       "id": "8826466",
       "name": "Hosur Midtown Youngsters",
       "base": "Community",
-      "members": 14,
+      "members": 13,
       "country": "India"
     },
     {
       "id": "8827524",
       "name": "Idappadi",
       "base": "Community",
-      "members": 17,
+      "members": 19,
       "country": "India"
     },
     {
@@ -678,7 +685,7 @@
       "id": "8826592",
       "name": "Salem Metropolis",
       "base": "Community",
-      "members": 10,
+      "members": 11,
       "country": "India"
     },
     {
@@ -710,10 +717,24 @@
       "country": "India"
     },
     {
+      "id": "8828633",
+      "name": "Shri Sakthikailassh Women's College",
+      "base": "University",
+      "members": 4,
+      "country": "India"
+    },
+    {
       "id": "8827859",
       "name": "Shri Sowdesvari Women’s College Salem",
       "base": "University",
       "members": 12,
+      "country": "India"
+    },
+    {
+      "id": "8828634",
+      "name": "Sivaraj Medical College Salem",
+      "base": "University",
+      "members": 4,
       "country": "India"
     },
     {
@@ -762,7 +783,7 @@
       "id": "8825577",
       "name": "Theivanai Ammal College for Women",
       "base": "University",
-      "members": 12,
+      "members": 13,
       "country": "India"
     },
     {
@@ -770,6 +791,13 @@
       "name": "Thiruvalluvar Govt. Arts College",
       "base": "University",
       "members": 11,
+      "country": "India"
+    },
+    {
+      "id": "8828580",
+      "name": "Valapady",
+      "base": "Community",
+      "members": 17,
       "country": "India"
     },
     {
@@ -960,7 +988,7 @@
       "id": "90543",
       "name": "Dindigul Rock Fort",
       "base": "Community",
-      "members": 9,
+      "members": 12,
       "country": "India"
     },
     {
@@ -1023,7 +1051,7 @@
       "id": "89500",
       "name": "Government Arts College-Karur",
       "base": "University",
-      "members": 10,
+      "members": 9,
       "country": "India"
     },
     {
@@ -1058,7 +1086,7 @@
       "id": "5063",
       "name": "Holy Cross College",
       "base": "University",
-      "members": 7,
+      "members": 4,
       "country": "India"
     },
     {
@@ -1079,7 +1107,7 @@
       "id": "5061",
       "name": "Jamal Mohamed College",
       "base": "University",
-      "members": 6,
+      "members": 7,
       "country": "India"
     },
     {
@@ -1093,7 +1121,7 @@
       "id": "8828540",
       "name": "Jayaraj Annapackiam College for Women (Autonomous)",
       "base": "University",
-      "members": 250,
+      "members": null,
       "country": "India"
     },
     {
@@ -1247,7 +1275,7 @@
       "id": "215568",
       "name": "Madurai Elite",
       "base": "Community",
-      "members": 7,
+      "members": 8,
       "country": "India"
     },
     {
@@ -1289,7 +1317,7 @@
       "id": "47480",
       "name": "Madurai North",
       "base": "Community",
-      "members": 27,
+      "members": 24,
       "country": "India"
     },
     {
@@ -1408,7 +1436,7 @@
       "id": "8827922",
       "name": "NPR Arts and Science College",
       "base": "University",
-      "members": 21,
+      "members": 33,
       "country": "India"
     },
     {
@@ -1632,7 +1660,7 @@
       "id": "217254",
       "name": "Sri Amaravathi College of Arts & Science",
       "base": "University",
-      "members": 4,
+      "members": 5,
       "country": "India"
     },
     {
@@ -1737,7 +1765,7 @@
       "id": "8827360",
       "name": "Trichy Celestial",
       "base": "Community",
-      "members": 14,
+      "members": 15,
       "country": "India"
     },
     {
@@ -1862,10 +1890,17 @@
       "country": "India"
     },
     {
+      "id": "8828587",
+      "name": "Delhi Catalyst",
+      "base": "Community",
+      "members": 12,
+      "country": "India"
+    },
+    {
       "id": "8825852",
       "name": "Delhi Dynamic Leaders",
       "base": "Community",
-      "members": 12,
+      "members": 13,
       "country": "India"
     },
     {
@@ -1893,14 +1928,21 @@
       "id": "8826199",
       "name": "Delhi Genesis Midwest",
       "base": "Community",
-      "members": 5,
+      "members": 21,
       "country": "India"
     },
     {
       "id": "8826601",
       "name": "Delhi Heights",
       "base": "Community",
-      "members": 27,
+      "members": 37,
+      "country": "India"
+    },
+    {
+      "id": "8828605",
+      "name": "Delhi Imperia",
+      "base": "Community",
+      "members": 15,
       "country": "India"
     },
     {
@@ -1970,7 +2012,7 @@
       "id": "8826153",
       "name": "Delhi South East",
       "base": "Community",
-      "members": 26,
+      "members": 21,
       "country": "India"
     },
     {
@@ -1984,7 +2026,7 @@
       "id": "8825160",
       "name": "Delhi Yuva",
       "base": "Community",
-      "members": 7,
+      "members": 8,
       "country": "India"
     },
     {
@@ -2005,7 +2047,7 @@
       "id": "217457",
       "name": "DPSRU",
       "base": "University",
-      "members": 38,
+      "members": 35,
       "country": "India"
     },
     {
@@ -2026,7 +2068,7 @@
       "id": "218073",
       "name": "DUSC",
       "base": "Community",
-      "members": 25,
+      "members": 6,
       "country": "India"
     },
     {
@@ -2040,7 +2082,7 @@
       "id": "88674",
       "name": "Galgotia Educational Institute",
       "base": "University",
-      "members": 12,
+      "members": 36,
       "country": "India"
     },
     {
@@ -2075,7 +2117,7 @@
       "id": "212955",
       "name": "Indira Gandhi Delhi Technical University for Women",
       "base": "University",
-      "members": 21,
+      "members": 37,
       "country": "India"
     },
     {
@@ -2089,7 +2131,7 @@
       "id": "218201",
       "name": "Ingenious Minds",
       "base": "Community",
-      "members": 18,
+      "members": 19,
       "country": "India"
     },
     {
@@ -2131,14 +2173,14 @@
       "id": "216061",
       "name": "Maharaja Agarsain",
       "base": "Community",
-      "members": 5,
+      "members": 15,
       "country": "India"
     },
     {
       "id": "8823679",
       "name": "Meraki",
       "base": "Community",
-      "members": 18,
+      "members": 12,
       "country": "India"
     },
     {
@@ -2152,7 +2194,7 @@
       "id": "84694",
       "name": "N.S.I.T. Regency",
       "base": "University",
-      "members": 12,
+      "members": 13,
       "country": "India"
     },
     {
@@ -2187,7 +2229,7 @@
       "id": "218552",
       "name": "Rever",
       "base": "Community",
-      "members": 15,
+      "members": 10,
       "country": "India"
     },
     {
@@ -2222,7 +2264,7 @@
       "id": "8827675",
       "name": "Shri Ram College of Commerce",
       "base": "University",
-      "members": 16,
+      "members": 8,
       "country": "India"
     },
     {
@@ -2312,17 +2354,17 @@
   ],
   "3012": [
     {
-      "id": "214267",
-      "name": "'DRISHTI' Bhagwan Parshuram Institute of Technology",
-      "base": "University",
-      "members": 4,
-      "country": "India"
-    },
-    {
       "id": "215308",
       "name": "ABES Sapphire",
       "base": "University",
       "members": 2,
+      "country": "India"
+    },
+    {
+      "id": "8828619",
+      "name": "Ajay Kumar Garg Institute of Management",
+      "base": "University",
+      "members": 12,
       "country": "India"
     },
     {
@@ -2336,7 +2378,7 @@
       "id": "216961",
       "name": "Ashoka Artisans",
       "base": "Community",
-      "members": 11,
+      "members": 12,
       "country": "India"
     },
     {
@@ -2466,6 +2508,13 @@
       "country": "India"
     },
     {
+      "id": "214267",
+      "name": "DRISHTI' Bhagwan Parshuram Institute of Technology",
+      "base": "University",
+      "members": 6,
+      "country": "India"
+    },
+    {
       "id": "8823169",
       "name": "Dyal Singh College",
       "base": "University",
@@ -2476,7 +2525,7 @@
       "id": "212235",
       "name": "G.I. Bajaj Institute of Technology & Management",
       "base": "University",
-      "members": 17,
+      "members": 14,
       "country": "India"
     },
     {
@@ -2484,6 +2533,13 @@
       "name": "Ganaur",
       "base": "Community",
       "members": 1,
+      "country": "India"
+    },
+    {
+      "id": "8828620",
+      "name": "Ghaziabad Altruism",
+      "base": "Community",
+      "members": 13,
       "country": "India"
     },
     {
@@ -2540,6 +2596,20 @@
       "name": "Ideal Institute of Management and Technology",
       "base": "University",
       "members": 6,
+      "country": "India"
+    },
+    {
+      "id": "8828604",
+      "name": "IIMT College of Engineering",
+      "base": "University",
+      "members": 23,
+      "country": "India"
+    },
+    {
+      "id": "8828589",
+      "name": "Inmantec Institution",
+      "base": "University",
+      "members": 14,
       "country": "India"
     },
     {
@@ -2613,6 +2683,13 @@
       "country": "India"
     },
     {
+      "id": "8828607",
+      "name": "Ram Chameli Chadha Vishvas Girls College",
+      "base": "University",
+      "members": 26,
+      "country": "India"
+    },
+    {
       "id": "215549",
       "name": "Ram Eesh Institute",
       "base": "University",
@@ -2651,7 +2728,7 @@
       "id": "218274",
       "name": "Sonepat",
       "base": "Community",
-      "members": 5,
+      "members": 6,
       "country": "India"
     },
     {
@@ -2665,7 +2742,7 @@
       "id": "215327",
       "name": "USME",
       "base": "University",
-      "members": 14,
+      "members": 17,
       "country": "India"
     },
     {
@@ -2695,7 +2772,7 @@
       "id": "8826955",
       "name": "Aarunya of Aditya Degree College",
       "base": "University",
-      "members": 19,
+      "members": 18,
       "country": "India"
     },
     {
@@ -2723,7 +2800,7 @@
       "id": "8823977",
       "name": "Coastal Andhra (Tuni)",
       "base": "Community",
-      "members": 17,
+      "members": 15,
       "country": "India"
     },
     {
@@ -2793,7 +2870,7 @@
       "id": "8826956",
       "name": "Narthanasala Dance Academy",
       "base": "University",
-      "members": 15,
+      "members": 13,
       "country": "India"
     },
     {
@@ -2821,7 +2898,7 @@
       "id": "8823836",
       "name": "PSCMR College of Engineering & Technology",
       "base": "University",
-      "members": 15,
+      "members": 22,
       "country": "India"
     },
     {
@@ -2835,7 +2912,7 @@
       "id": "8823973",
       "name": "Rajahmundry River City",
       "base": "Community",
-      "members": 24,
+      "members": 22,
       "country": "India"
     },
     {
@@ -2856,7 +2933,7 @@
       "id": "8825812",
       "name": "Royal City Bezawada",
       "base": "Community",
-      "members": 30,
+      "members": 32,
       "country": "India"
     },
     {
@@ -2870,7 +2947,7 @@
       "id": "88253",
       "name": "Sabala of Sri Prakash",
       "base": "University",
-      "members": 20,
+      "members": 19,
       "country": "India"
     },
     {
@@ -2905,21 +2982,21 @@
       "id": "8826929",
       "name": "Vijayawada Elite League",
       "base": "Community",
-      "members": 16,
+      "members": 19,
       "country": "India"
     },
     {
       "id": "90679",
       "name": "Vijayawada Mid-Town",
       "base": "Community",
-      "members": 33,
+      "members": 9,
       "country": "India"
     },
     {
       "id": "8827185",
       "name": "Vijayawada Sena",
       "base": "Community",
-      "members": 11,
+      "members": 13,
       "country": "India"
     },
     {
@@ -2940,7 +3017,7 @@
       "id": "8825824",
       "name": "Vizag Champions",
       "base": "Community",
-      "members": 15,
+      "members": 20,
       "country": "India"
     },
     {
@@ -2975,7 +3052,7 @@
       "id": "216101",
       "name": "Vizianagarram Central Ekta",
       "base": "Community",
-      "members": 63,
+      "members": 54,
       "country": "India"
     },
     {
@@ -3110,7 +3187,7 @@
       "id": "8826686",
       "name": "G H Raisoni College of Arts, Commerce and Science",
       "base": "University",
-      "members": 7,
+      "members": 5,
       "country": "India"
     },
     {
@@ -3124,7 +3201,7 @@
       "id": "8827813",
       "name": "G H Raisoni Skill Tech University",
       "base": "University",
-      "members": 23,
+      "members": 22,
       "country": "India"
     },
     {
@@ -3159,7 +3236,7 @@
       "id": "8826006",
       "name": "Godavari Elite",
       "base": "University",
-      "members": 12,
+      "members": 13,
       "country": "India"
     },
     {
@@ -3250,7 +3327,7 @@
       "id": "8826140",
       "name": "MSGCOPER Nasik Grapecity",
       "base": "University",
-      "members": 12,
+      "members": 17,
       "country": "India"
     },
     {
@@ -3285,7 +3362,7 @@
       "id": "218107",
       "name": "Nagpur Down Town",
       "base": "Community",
-      "members": 1,
+      "members": 2,
       "country": "India"
     },
     {
@@ -3306,7 +3383,7 @@
       "id": "86045",
       "name": "Nagpur Jit",
       "base": "University",
-      "members": 4,
+      "members": 5,
       "country": "India"
     },
     {
@@ -3320,14 +3397,14 @@
       "id": "216137",
       "name": "Nagpur Vision",
       "base": "Community",
-      "members": 7,
+      "members": 4,
       "country": "India"
     },
     {
       "id": "8826732",
       "name": "Nagpur West Illuminate",
       "base": "Community",
-      "members": 10,
+      "members": 13,
       "country": "India"
     },
     {
@@ -3390,14 +3467,14 @@
       "id": "8826480",
       "name": "Nasik North",
       "base": "Community",
-      "members": 17,
+      "members": 15,
       "country": "India"
     },
     {
       "id": "218605",
       "name": "Nasik Youth Force",
       "base": "Community",
-      "members": 10,
+      "members": 11,
       "country": "India"
     },
     {
@@ -3405,6 +3482,13 @@
       "name": "National Fire Service College",
       "base": "University",
       "members": 19,
+      "country": "India"
+    },
+    {
+      "id": "8828558",
+      "name": "Orange City Nagpur",
+      "base": "Community",
+      "members": 13,
       "country": "India"
     },
     {
@@ -3425,7 +3509,7 @@
       "id": "8826625",
       "name": "Raisoni Jalgaon",
       "base": "University",
-      "members": 8,
+      "members": 9,
       "country": "India"
     },
     {
@@ -3516,7 +3600,7 @@
       "id": "8827888",
       "name": "St. Vincent Pallotti College of Engineering and Technology",
       "base": "University",
-      "members": 21,
+      "members": 14,
       "country": "India"
     },
     {
@@ -3588,21 +3672,21 @@
       "id": "8825807",
       "name": "Acropolis Civil",
       "base": "University",
-      "members": 13,
+      "members": 12,
       "country": "India"
     },
     {
       "id": "213780",
       "name": "Acropolis Professionals",
       "base": "University",
-      "members": 9,
+      "members": 8,
       "country": "India"
     },
     {
       "id": "8823921",
       "name": "Acropolis Royals",
       "base": "University",
-      "members": 52,
+      "members": 58,
       "country": "India"
     },
     {
@@ -3644,7 +3728,7 @@
       "id": "218435",
       "name": "E-Club of Indore North",
       "base": "Community",
-      "members": 15,
+      "members": 14,
       "country": "India"
     },
     {
@@ -3686,7 +3770,7 @@
       "id": "212669",
       "name": "IEHE Bhopal",
       "base": "University",
-      "members": 22,
+      "members": 13,
       "country": "India"
     },
     {
@@ -3700,14 +3784,14 @@
       "id": "8826775",
       "name": "Indore Adarsh Tarang",
       "base": "Community",
-      "members": 14,
+      "members": 12,
       "country": "India"
     },
     {
       "id": "8824098",
       "name": "Indore City-Young Leaders",
       "base": "Community",
-      "members": 31,
+      "members": 46,
       "country": "India"
     },
     {
@@ -3721,7 +3805,7 @@
       "id": "71344",
       "name": "Indore Professionals",
       "base": "Community",
-      "members": 30,
+      "members": 28,
       "country": "India"
     },
     {
@@ -3735,7 +3819,7 @@
       "id": "8825876",
       "name": "Lake City Bhopal",
       "base": "Community",
-      "members": 8,
+      "members": 13,
       "country": "India"
     },
     {
@@ -3791,7 +3875,7 @@
       "id": "8827443",
       "name": "Ratlam Legacy",
       "base": "Community",
-      "members": 12,
+      "members": 9,
       "country": "India"
     },
     {
@@ -4047,7 +4131,7 @@
       "id": "218141",
       "name": "Ahmedabad Asmita",
       "base": "Community",
-      "members": 10,
+      "members": 9,
       "country": "India"
     },
     {
@@ -4096,7 +4180,7 @@
       "id": "8828294",
       "name": "Ahmedabad Majesty Stars",
       "base": "Community",
-      "members": 14,
+      "members": 15,
       "country": "India"
     },
     {
@@ -4110,7 +4194,7 @@
       "id": "213985",
       "name": "Ahmedabad Midtown",
       "base": "Community",
-      "members": 38,
+      "members": 37,
       "country": "India"
     },
     {
@@ -4194,7 +4278,7 @@
       "id": "8827431",
       "name": "B J Medical College and Civil hospital (Ahmedabad)",
       "base": "University",
-      "members": 17,
+      "members": 19,
       "country": "India"
     },
     {
@@ -4215,7 +4299,7 @@
       "id": "218251",
       "name": "Deesa",
       "base": "Community",
-      "members": 8,
+      "members": 9,
       "country": "India"
     },
     {
@@ -4278,7 +4362,7 @@
       "id": "217372",
       "name": "Indus University",
       "base": "University",
-      "members": 18,
+      "members": 11,
       "country": "India"
     },
     {
@@ -4292,7 +4376,7 @@
       "id": "216107",
       "name": "Kadi",
       "base": "Community",
-      "members": 19,
+      "members": 18,
       "country": "India"
     },
     {
@@ -4327,14 +4411,14 @@
       "id": "8825131",
       "name": "New L.J.I.E.T.",
       "base": "University",
-      "members": 16,
+      "members": 15,
       "country": "India"
     },
     {
       "id": "5705",
       "name": "Palanpur",
       "base": "Community",
-      "members": 22,
+      "members": 23,
       "country": "India"
     },
     {
@@ -4597,7 +4681,7 @@
       "id": "215922",
       "name": "Bardoli",
       "base": "Community",
-      "members": 23,
+      "members": 22,
       "country": "India"
     },
     {
@@ -4618,21 +4702,21 @@
       "id": "43098",
       "name": "Bhavnagar (Youth)",
       "base": "Community",
-      "members": 69,
+      "members": 64,
       "country": "India"
     },
     {
       "id": "89957",
       "name": "Bhavnagar Royal",
       "base": "Community",
-      "members": 33,
+      "members": 40,
       "country": "India"
     },
     {
       "id": "8825032",
       "name": "Charusat University",
       "base": "University",
-      "members": 7,
+      "members": 12,
       "country": "India"
     },
     {
@@ -4653,7 +4737,7 @@
       "id": "5963",
       "name": "Dhulia",
       "base": "Community",
-      "members": 29,
+      "members": 26,
       "country": "India"
     },
     {
@@ -4681,14 +4765,14 @@
       "id": "214370",
       "name": "Harijyot",
       "base": "University",
-      "members": 14,
+      "members": 16,
       "country": "India"
     },
     {
       "id": "89948",
       "name": "Jamnagar",
       "base": "Community",
-      "members": 51,
+      "members": 76,
       "country": "India"
     },
     {
@@ -4744,7 +4828,7 @@
       "id": "8828523",
       "name": "Nadiad Next",
       "base": "Community",
-      "members": 12,
+      "members": 10,
       "country": "India"
     },
     {
@@ -4779,7 +4863,7 @@
       "id": "215263",
       "name": "Rajkot",
       "base": "Community",
-      "members": 38,
+      "members": 31,
       "country": "India"
     },
     {
@@ -4793,7 +4877,7 @@
       "id": "8827518",
       "name": "RNG Patel Institute of Technology",
       "base": "University",
-      "members": 13,
+      "members": 14,
       "country": "India"
     },
     {
@@ -4814,7 +4898,7 @@
       "id": "5881",
       "name": "Surat Community",
       "base": "Community",
-      "members": 11,
+      "members": 10,
       "country": "India"
     },
     {
@@ -4828,7 +4912,7 @@
       "id": "49489",
       "name": "Surat East",
       "base": "Community",
-      "members": 258,
+      "members": 138,
       "country": "India"
     },
     {
@@ -4849,7 +4933,7 @@
       "id": "215199",
       "name": "Tarsadi Kosamba",
       "base": "Community",
-      "members": 31,
+      "members": 28,
       "country": "India"
     },
     {
@@ -4863,14 +4947,14 @@
       "id": "5869",
       "name": "Umbergaom",
       "base": "Community",
-      "members": 22,
+      "members": 19,
       "country": "India"
     },
     {
       "id": "89451",
       "name": "Vadodara",
       "base": "Community",
-      "members": 11,
+      "members": 20,
       "country": "India"
     },
     {
@@ -4884,7 +4968,14 @@
       "id": "5981",
       "name": "Valsad",
       "base": "Community",
-      "members": 19,
+      "members": 20,
+      "country": "India"
+    },
+    {
+      "id": "8828617",
+      "name": "Valsad Rangers",
+      "base": "Community",
+      "members": 21,
       "country": "India"
     },
     {
@@ -4949,7 +5040,7 @@
       "id": "8823989",
       "name": "Amritsar West",
       "base": "Community",
-      "members": 9,
+      "members": 10,
       "country": "India"
     },
     {
@@ -5075,7 +5166,7 @@
       "id": "8825721",
       "name": "Lovely Professional University",
       "base": "University",
-      "members": 21,
+      "members": 22,
       "country": "India"
     },
     {
@@ -5089,7 +5180,7 @@
       "id": "8828105",
       "name": "Ludhiana Supporter",
       "base": "Community",
-      "members": 23,
+      "members": 13,
       "country": "India"
     },
     {
@@ -5138,7 +5229,7 @@
       "id": "8824099",
       "name": "S.S.S.S. College Of Commerce For Women",
       "base": "University",
-      "members": 25,
+      "members": 24,
       "country": "India"
     },
     {
@@ -5252,7 +5343,7 @@
       "id": "82399",
       "name": "Chandigarh Himalayan",
       "base": "Community",
-      "members": 11,
+      "members": 12,
       "country": "India"
     },
     {
@@ -5273,7 +5364,7 @@
       "id": "8826107",
       "name": "Chandigarh University",
       "base": "University",
-      "members": 15,
+      "members": 14,
       "country": "India"
     },
     {
@@ -5364,7 +5455,7 @@
       "id": "8823498",
       "name": "Govt. Dental College, Shimla",
       "base": "University",
-      "members": 14,
+      "members": 22,
       "country": "India"
     },
     {
@@ -5399,7 +5490,7 @@
       "id": "8827285",
       "name": "Himachal Institute of Dental Sciences (Paonta Sahib)",
       "base": "University",
-      "members": 17,
+      "members": 10,
       "country": "India"
     },
     {
@@ -5413,7 +5504,7 @@
       "id": "8825274",
       "name": "HPNLU Shimla",
       "base": "University",
-      "members": 18,
+      "members": 19,
       "country": "India"
     },
     {
@@ -5504,7 +5595,7 @@
       "id": "8824189",
       "name": "Legis Social",
       "base": "Community",
-      "members": 68,
+      "members": 70,
       "country": "India"
     },
     {
@@ -5546,7 +5637,7 @@
       "id": "8826498",
       "name": "Noble Nexus",
       "base": "Community",
-      "members": 9,
+      "members": 8,
       "country": "India"
     },
     {
@@ -5560,7 +5651,7 @@
       "id": "218463",
       "name": "Panchkula Beautiful",
       "base": "Community",
-      "members": 182,
+      "members": 185,
       "country": "India"
     },
     {
@@ -5672,7 +5763,7 @@
       "id": "8824396",
       "name": "Sri Guru Gobind Singh College",
       "base": "University",
-      "members": 21,
+      "members": 1,
       "country": "India"
     },
     {
@@ -5693,14 +5784,14 @@
       "id": "8826331",
       "name": "University College of Business Studies",
       "base": "University",
-      "members": 11,
+      "members": 15,
       "country": "India"
     },
     {
       "id": "8827484",
       "name": "University Institute of Applied Management Sciences",
       "base": "University",
-      "members": 18,
+      "members": 16,
       "country": "India"
     },
     {
@@ -5898,7 +5989,7 @@
       "id": "8823932",
       "name": "Shine-Sunam",
       "base": "Community",
-      "members": 1,
+      "members": 2,
       "country": "India"
     },
     {
@@ -6012,7 +6103,7 @@
       "id": "8826731",
       "name": "Chandausi Optometry",
       "base": "University",
-      "members": 9,
+      "members": 10,
       "country": "India"
     },
     {
@@ -6342,6 +6433,13 @@
       "country": "India"
     },
     {
+      "id": "8828595",
+      "name": "Allahabad University",
+      "base": "University",
+      "members": 15,
+      "country": "India"
+    },
+    {
       "id": "8826619",
       "name": "Balrampur Greater",
       "base": "Community",
@@ -6393,6 +6491,13 @@
     {
       "id": "8826332",
       "name": "Devipatan Tulsipur",
+      "base": "Community",
+      "members": 12,
+      "country": "India"
+    },
+    {
+      "id": "8828593",
+      "name": "EYS Prayagraj",
       "base": "Community",
       "members": 12,
       "country": "India"
@@ -6475,6 +6580,13 @@
       "country": "India"
     },
     {
+      "id": "8828553",
+      "name": "Integrated Federation of Social Activist & Doctors",
+      "base": "Community",
+      "members": 12,
+      "country": "India"
+    },
+    {
       "id": "216310",
       "name": "Jaitwara",
       "base": "University",
@@ -6524,6 +6636,20 @@
       "country": "India"
     },
     {
+      "id": "8828599",
+      "name": "Motilal Nehru Medical College",
+      "base": "University",
+      "members": 16,
+      "country": "India"
+    },
+    {
+      "id": "8828598",
+      "name": "Motilal Nehru NIT College",
+      "base": "University",
+      "members": 25,
+      "country": "India"
+    },
+    {
       "id": "8827636",
       "name": "Mughalsarai",
       "base": "Community",
@@ -6535,6 +6661,13 @@
       "name": "Panini Kanya Mahavidyalay",
       "base": "University",
       "members": 12,
+      "country": "India"
+    },
+    {
+      "id": "8828616",
+      "name": "Prayagraj Initiator",
+      "base": "Community",
+      "members": 21,
       "country": "India"
     },
     {
@@ -6555,7 +6688,7 @@
       "id": "8826600",
       "name": "Prayagraj Sangam City",
       "base": "Community",
-      "members": 15,
+      "members": 13,
       "country": "India"
     },
     {
@@ -6580,6 +6713,13 @@
       "country": "India"
     },
     {
+      "id": "8828596",
+      "name": "Renaissance Allahabad",
+      "base": "Community",
+      "members": 13,
+      "country": "India"
+    },
+    {
       "id": "8828524",
       "name": "Sant Kabir Nagar",
       "base": "Community",
@@ -6601,6 +6741,13 @@
       "country": "India"
     },
     {
+      "id": "8828590",
+      "name": "State Unani Medical College",
+      "base": "University",
+      "members": 15,
+      "country": "India"
+    },
+    {
       "id": "218109",
       "name": "Uday Veer",
       "base": "Community",
@@ -6617,6 +6764,13 @@
     {
       "id": "8827628",
       "name": "Varanasi Jai Gange",
+      "base": "Community",
+      "members": 12,
+      "country": "India"
+    },
+    {
+      "id": "8828611",
+      "name": "Varanasi Rudra",
       "base": "Community",
       "members": 12,
       "country": "India"
@@ -6690,7 +6844,7 @@
       "id": "214181",
       "name": "ALUMNI",
       "base": "Community",
-      "members": 18,
+      "members": 17,
       "country": "India"
     },
     {
@@ -6711,7 +6865,7 @@
       "id": "91876",
       "name": "Aundh",
       "base": "Community",
-      "members": 17,
+      "members": 15,
       "country": "India"
     },
     {
@@ -6725,14 +6879,14 @@
       "id": "8826659",
       "name": "Balewadi High Street",
       "base": "Community",
-      "members": 7,
+      "members": 14,
       "country": "India"
     },
     {
       "id": "8824186",
       "name": "Baramati",
       "base": "Community",
-      "members": 15,
+      "members": 6,
       "country": "India"
     },
     {
@@ -6753,14 +6907,14 @@
       "id": "215167",
       "name": "Bibwewadi Pune",
       "base": "Community",
-      "members": 58,
+      "members": 30,
       "country": "India"
     },
     {
       "id": "8826632",
       "name": "Brihan Maharashtra College of Commerce",
       "base": "University",
-      "members": 34,
+      "members": 11,
       "country": "India"
     },
     {
@@ -6781,14 +6935,14 @@
       "id": "216012",
       "name": "D. Y. Patil International University",
       "base": "University",
-      "members": 43,
+      "members": 19,
       "country": "India"
     },
     {
       "id": "215158",
       "name": "Daund College",
       "base": "University",
-      "members": 17,
+      "members": 19,
       "country": "India"
     },
     {
@@ -6837,7 +6991,7 @@
       "id": "8826700",
       "name": "Genba Sopanrao Moze College of Engineering",
       "base": "University",
-      "members": 23,
+      "members": 13,
       "country": "India"
     },
     {
@@ -6886,14 +7040,14 @@
       "id": "218693",
       "name": "Khopoli",
       "base": "Community",
-      "members": 16,
+      "members": 15,
       "country": "India"
     },
     {
       "id": "8825261",
       "name": "Konkan Gyanpeeth Rahul Dharkar College of Pharmacy Karjat",
       "base": "University",
-      "members": 12,
+      "members": 25,
       "country": "India"
     },
     {
@@ -6907,14 +7061,14 @@
       "id": "8824104",
       "name": "Magarpatta TrendSetters",
       "base": "Community",
-      "members": 16,
+      "members": 20,
       "country": "India"
     },
     {
       "id": "8826014",
       "name": "MGM's Institute of Management Studies and Research",
       "base": "University",
-      "members": 47,
+      "members": 46,
       "country": "India"
     },
     {
@@ -6935,7 +7089,7 @@
       "id": "216452",
       "name": "Modern College Ganeshkhind Pune",
       "base": "University",
-      "members": 9,
+      "members": 8,
       "country": "India"
     },
     {
@@ -6963,7 +7117,7 @@
       "id": "8825815",
       "name": "Nigdi-Pune",
       "base": "Community",
-      "members": 13,
+      "members": 16,
       "country": "India"
     },
     {
@@ -7005,7 +7159,7 @@
       "id": "7295",
       "name": "Pimpri",
       "base": "Community",
-      "members": 58,
+      "members": 45,
       "country": "India"
     },
     {
@@ -7075,7 +7229,7 @@
       "id": "8826615",
       "name": "Pune City Legends",
       "base": "Community",
-      "members": 15,
+      "members": 18,
       "country": "India"
     },
     {
@@ -7096,7 +7250,7 @@
       "id": "213166",
       "name": "Pune Heritage",
       "base": "Community",
-      "members": 28,
+      "members": 20,
       "country": "India"
     },
     {
@@ -7110,14 +7264,14 @@
       "id": "80991",
       "name": "Pune Katraj",
       "base": "Community",
-      "members": 12,
+      "members": 13,
       "country": "India"
     },
     {
       "id": "8825935",
       "name": "Pune Metro",
       "base": "Community",
-      "members": 29,
+      "members": 15,
       "country": "India"
     },
     {
@@ -7159,7 +7313,7 @@
       "id": "8824344",
       "name": "Pune Pristine Paradise",
       "base": "Community",
-      "members": 25,
+      "members": 26,
       "country": "India"
     },
     {
@@ -7180,21 +7334,21 @@
       "id": "8826718",
       "name": "Pune Samrajya",
       "base": "Community",
-      "members": 32,
+      "members": 24,
       "country": "India"
     },
     {
       "id": "45125",
       "name": "Pune Shaniwarwada",
       "base": "Community",
-      "members": 9,
+      "members": 12,
       "country": "India"
     },
     {
       "id": "49040",
       "name": "Pune Sinhagad Road",
       "base": "Community",
-      "members": 30,
+      "members": 29,
       "country": "India"
     },
     {
@@ -7208,7 +7362,7 @@
       "id": "8827499",
       "name": "Pune University",
       "base": "University",
-      "members": 18,
+      "members": 19,
       "country": "India"
     },
     {
@@ -7222,14 +7376,14 @@
       "id": "91641",
       "name": "Pune Warje",
       "base": "Community",
-      "members": 21,
+      "members": 19,
       "country": "India"
     },
     {
       "id": "8826885",
       "name": "Pune Westside",
       "base": "Community",
-      "members": 11,
+      "members": 17,
       "country": "India"
     },
     {
@@ -7257,14 +7411,14 @@
       "id": "215402",
       "name": "Rajarshi Shahu College of Engineering- Tathawade",
       "base": "University",
-      "members": 4,
+      "members": 5,
       "country": "India"
     },
     {
       "id": "8824661",
       "name": "Ramkrishna More College",
       "base": "University",
-      "members": 10,
+      "members": 11,
       "country": "India"
     },
     {
@@ -7292,7 +7446,7 @@
       "id": "8825271",
       "name": "Sancheti Healthcare Academy",
       "base": "University",
-      "members": 17,
+      "members": 6,
       "country": "India"
     },
     {
@@ -7341,7 +7495,7 @@
       "id": "8826658",
       "name": "Universal AI University",
       "base": "University",
-      "members": 22,
+      "members": 18,
       "country": "India"
     },
     {
@@ -7355,7 +7509,7 @@
       "id": "215996",
       "name": "Viman Nagar",
       "base": "Community",
-      "members": 10,
+      "members": 21,
       "country": "India"
     },
     {
@@ -7385,7 +7539,7 @@
       "id": "51381",
       "name": "Aurangabad Airport",
       "base": "Community",
-      "members": 13,
+      "members": 14,
       "country": "India"
     },
     {
@@ -7462,7 +7616,7 @@
       "id": "8823911",
       "name": "Karad City",
       "base": "Community",
-      "members": 27,
+      "members": 30,
       "country": "India"
     },
     {
@@ -7476,14 +7630,14 @@
       "id": "7317",
       "name": "Latur Mid-Town",
       "base": "Community",
-      "members": 52,
+      "members": 28,
       "country": "India"
     },
     {
       "id": "8827478",
       "name": "Malkapur",
       "base": "Community",
-      "members": 14,
+      "members": 29,
       "country": "India"
     },
     {
@@ -7497,7 +7651,7 @@
       "id": "8826044",
       "name": "Panchgani",
       "base": "Community",
-      "members": 23,
+      "members": 19,
       "country": "India"
     },
     {
@@ -7639,7 +7793,7 @@
       "id": "7517",
       "name": "Andheri",
       "base": "Community",
-      "members": 13,
+      "members": 33,
       "country": "India"
     },
     {
@@ -7674,14 +7828,14 @@
       "id": "214812",
       "name": "Bombay Airport",
       "base": "Community",
-      "members": 9,
+      "members": 29,
       "country": "India"
     },
     {
       "id": "47609",
       "name": "Bombay Chembur West",
       "base": "Community",
-      "members": 21,
+      "members": 30,
       "country": "India"
     },
     {
@@ -7702,14 +7856,14 @@
       "id": "84117",
       "name": "Bombay Hills South",
       "base": "Community",
-      "members": 4,
+      "members": 35,
       "country": "India"
     },
     {
       "id": "88876",
       "name": "Bombay Juhu Beach",
       "base": "Community",
-      "members": 11,
+      "members": 25,
       "country": "India"
     },
     {
@@ -7737,14 +7891,14 @@
       "id": "90868",
       "name": "Bombay Northwest-Malad",
       "base": "Community",
-      "members": 3,
+      "members": 14,
       "country": "India"
     },
     {
       "id": "218327",
       "name": "Bombay Pier",
       "base": "Community",
-      "members": 45,
+      "members": 53,
       "country": "India"
     },
     {
@@ -7765,21 +7919,21 @@
       "id": "91040",
       "name": "Bombay Uptown",
       "base": "Community",
-      "members": 19,
+      "members": 25,
       "country": "India"
     },
     {
       "id": "7465",
       "name": "Bombay West",
       "base": "Community",
-      "members": 3,
+      "members": 22,
       "country": "India"
     },
     {
       "id": "214699",
       "name": "Borivali Heights",
       "base": "Community",
-      "members": 27,
+      "members": 25,
       "country": "India"
     },
     {
@@ -7793,21 +7947,21 @@
       "id": "7459",
       "name": "Churchgate",
       "base": "Community",
-      "members": 20,
+      "members": 29,
       "country": "India"
     },
     {
       "id": "7455",
       "name": "Dahisar Coast",
       "base": "Community",
-      "members": 4,
+      "members": 19,
       "country": "India"
     },
     {
       "id": "7451",
       "name": "Deonar",
       "base": "Community",
-      "members": 14,
+      "members": 13,
       "country": "India"
     },
     {
@@ -7849,7 +8003,7 @@
       "id": "213286",
       "name": "Ghanshyamdas Saraf College",
       "base": "University",
-      "members": 13,
+      "members": 29,
       "country": "India"
     },
     {
@@ -7877,7 +8031,7 @@
       "id": "48641",
       "name": "Hinduja College",
       "base": "University",
-      "members": 8,
+      "members": 16,
       "country": "India"
     },
     {
@@ -7891,7 +8045,7 @@
       "id": "8827651",
       "name": "IHM Mumbai",
       "base": "University",
-      "members": 7,
+      "members": 14,
       "country": "India"
     },
     {
@@ -7912,7 +8066,7 @@
       "id": "42321",
       "name": "Jaihind College",
       "base": "University",
-      "members": 33,
+      "members": 71,
       "country": "India"
     },
     {
@@ -7933,7 +8087,7 @@
       "id": "7373",
       "name": "K.C. College",
       "base": "University",
-      "members": 39,
+      "members": 169,
       "country": "India"
     },
     {
@@ -7961,14 +8115,14 @@
       "id": "213174",
       "name": "King's Circle Matunga",
       "base": "Community",
-      "members": 8,
+      "members": 9,
       "country": "India"
     },
     {
       "id": "88252",
       "name": "Lala Lajpat Rai College of Commerce",
       "base": "University",
-      "members": 34,
+      "members": 42,
       "country": "India"
     },
     {
@@ -8010,7 +8164,7 @@
       "id": "218330",
       "name": "Medicrew",
       "base": "Community",
-      "members": 16,
+      "members": 26,
       "country": "India"
     },
     {
@@ -8038,21 +8192,21 @@
       "id": "92272",
       "name": "Mulund Hill View",
       "base": "Community",
-      "members": 10,
+      "members": 9,
       "country": "India"
     },
     {
       "id": "213037",
       "name": "Mulund Hills",
       "base": "Community",
-      "members": 11,
+      "members": 14,
       "country": "India"
     },
     {
       "id": "91947",
       "name": "Mumbai Anchors",
       "base": "Community",
-      "members": 15,
+      "members": 14,
       "country": "India"
     },
     {
@@ -8063,24 +8217,31 @@
       "country": "India"
     },
     {
+      "id": "8828562",
+      "name": "Mumbai Bhandup",
+      "base": "Community",
+      "members": 22,
+      "country": "India"
+    },
+    {
       "id": "7505",
       "name": "Mumbai Downtown",
       "base": "Community",
-      "members": 3,
+      "members": 17,
       "country": "India"
     },
     {
       "id": "8823907",
       "name": "Mumbai Elegant",
       "base": "Community",
-      "members": 5,
+      "members": 7,
       "country": "India"
     },
     {
       "id": "7503",
       "name": "Mumbai Ghatkopar",
       "base": "Community",
-      "members": 28,
+      "members": 29,
       "country": "India"
     },
     {
@@ -8101,7 +8262,14 @@
       "id": "222307",
       "name": "Mumbai Jewels",
       "base": "Community",
-      "members": 13,
+      "members": 25,
+      "country": "India"
+    },
+    {
+      "id": "8828592",
+      "name": "Mumbai JVLR Connect",
+      "base": "Community",
+      "members": 15,
       "country": "India"
     },
     {
@@ -8119,10 +8287,17 @@
       "country": "India"
     },
     {
+      "id": "8828554",
+      "name": "Mumbai Malabar Hill Coast",
+      "base": "Community",
+      "members": 19,
+      "country": "India"
+    },
+    {
       "id": "8823706",
       "name": "Mumbai Marvels",
       "base": "Community",
-      "members": 6,
+      "members": 1,
       "country": "India"
     },
     {
@@ -8136,7 +8311,7 @@
       "id": "7365",
       "name": "Mumbai Mulund South",
       "base": "Community",
-      "members": 19,
+      "members": 18,
       "country": "India"
     },
     {
@@ -8150,42 +8325,49 @@
       "id": "8824998",
       "name": "Mumbai Nova",
       "base": "Community",
-      "members": 8,
+      "members": 9,
       "country": "India"
     },
     {
       "id": "213245",
       "name": "Mumbai Salt City",
       "base": "Community",
-      "members": 8,
+      "members": 16,
       "country": "India"
     },
     {
       "id": "69205",
       "name": "Mumbai Shivaji Park",
       "base": "Community",
-      "members": 25,
+      "members": 16,
       "country": "India"
     },
     {
       "id": "216900",
       "name": "Mumbai Sky City",
       "base": "Community",
-      "members": 12,
+      "members": 26,
       "country": "India"
     },
     {
       "id": "8827497",
       "name": "Mumbai Southern Empire",
       "base": "Community",
-      "members": 9,
+      "members": 14,
+      "country": "India"
+    },
+    {
+      "id": "8828586",
+      "name": "Mumbai Spark",
+      "base": "Community",
+      "members": 13,
       "country": "India"
     },
     {
       "id": "8828042",
       "name": "Mumbai Versova",
       "base": "Community",
-      "members": 16,
+      "members": 28,
       "country": "India"
     },
     {
@@ -8199,14 +8381,14 @@
       "id": "213639",
       "name": "Mumbai Western Elite",
       "base": "Community",
-      "members": 54,
+      "members": 28,
       "country": "India"
     },
     {
       "id": "43378",
       "name": "Narsee Monjee College",
       "base": "University",
-      "members": 14,
+      "members": 12,
       "country": "India"
     },
     {
@@ -8234,7 +8416,7 @@
       "id": "215636",
       "name": "Northern Suburbs",
       "base": "Community",
-      "members": 15,
+      "members": 16,
       "country": "India"
     },
     {
@@ -8248,21 +8430,21 @@
       "id": "90680",
       "name": "Palghar",
       "base": "Community",
-      "members": 20,
+      "members": 22,
       "country": "India"
     },
     {
       "id": "43442",
       "name": "Parle Tilak Vidyalaya Association's M.L.Dahanukar College of Commerce",
       "base": "University",
-      "members": 42,
+      "members": 45,
       "country": "India"
     },
     {
       "id": "8824218",
       "name": "Parleshwar GenZ",
       "base": "Community",
-      "members": 17,
+      "members": 22,
       "country": "India"
     },
     {
@@ -8297,21 +8479,21 @@
       "id": "42889",
       "name": "R.J. College",
       "base": "University",
-      "members": 8,
+      "members": 77,
       "country": "India"
     },
     {
       "id": "90344",
       "name": "Ramnarain Ruia College",
       "base": "University",
-      "members": 9,
+      "members": 36,
       "country": "India"
     },
     {
       "id": "217272",
       "name": "S P C E",
       "base": "University",
-      "members": 2,
+      "members": 3,
       "country": "India"
     },
     {
@@ -8332,7 +8514,7 @@
       "id": "7415",
       "name": "Sathaye College",
       "base": "University",
-      "members": 7,
+      "members": 32,
       "country": "India"
     },
     {
@@ -8346,14 +8528,14 @@
       "id": "89259",
       "name": "SIES College Sion (W)",
       "base": "University",
-      "members": 4,
+      "members": 49,
       "country": "India"
     },
     {
       "id": "216121",
       "name": "SIES Sion (East)",
       "base": "University",
-      "members": 10,
+      "members": 31,
       "country": "India"
     },
     {
@@ -8388,7 +8570,7 @@
       "id": "214435",
       "name": "Sophia College for Women",
       "base": "University",
-      "members": 18,
+      "members": 87,
       "country": "India"
     },
     {
@@ -8402,14 +8584,14 @@
       "id": "218485",
       "name": "Sydenham College",
       "base": "University",
-      "members": 8,
+      "members": 25,
       "country": "India"
     },
     {
       "id": "215309",
       "name": "TCET",
       "base": "University",
-      "members": 17,
+      "members": 48,
       "country": "India"
     },
     {
@@ -8437,7 +8619,7 @@
       "id": "69323",
       "name": "Usha Pravin Gandhi College of Arts, Science and Commerce",
       "base": "University",
-      "members": 8,
+      "members": 17,
       "country": "India"
     },
     {
@@ -8451,7 +8633,7 @@
       "id": "213632",
       "name": "VES College of Pharmacy",
       "base": "University",
-      "members": 18,
+      "members": 47,
       "country": "India"
     },
     {
@@ -8465,7 +8647,7 @@
       "id": "8826741",
       "name": "Virar",
       "base": "Community",
-      "members": 18,
+      "members": 21,
       "country": "India"
     },
     {
@@ -8479,14 +8661,14 @@
       "id": "91371",
       "name": "Wilson College",
       "base": "University",
-      "members": 22,
+      "members": 57,
       "country": "India"
     },
     {
       "id": "215384",
       "name": "Worli Lalbaug",
       "base": "Community",
-      "members": 11,
+      "members": 25,
       "country": "India"
     }
   ],
@@ -8649,7 +8831,7 @@
       "id": "8827239",
       "name": "Kalyan Heritage City",
       "base": "Community",
-      "members": 13,
+      "members": 19,
       "country": "India"
     },
     {
@@ -8761,7 +8943,7 @@
       "id": "42507",
       "name": "S.I.E.S. (Nerul) College of Arts, Science, & Commerce",
       "base": "University",
-      "members": 22,
+      "members": 23,
       "country": "India"
     },
     {
@@ -8824,14 +9006,14 @@
       "id": "215136",
       "name": "Thane East",
       "base": "Community",
-      "members": 13,
+      "members": 10,
       "country": "India"
     },
     {
       "id": "8824182",
       "name": "Thane Greenspans",
       "base": "Community",
-      "members": 9,
+      "members": 8,
       "country": "India"
     },
     {
@@ -8866,7 +9048,7 @@
       "id": "89852",
       "name": "Thane Suburban",
       "base": "Community",
-      "members": 27,
+      "members": 28,
       "country": "India"
     },
     {
@@ -8903,7 +9085,7 @@
       "id": "8825385",
       "name": "BBCIT (Bankatlal Badruka College of Information Technology)",
       "base": "University",
-      "members": 53,
+      "members": 46,
       "country": "India"
     },
     {
@@ -8917,7 +9099,7 @@
       "id": "8825322",
       "name": "BVRIT Hyderabad College of Engineering for Women",
       "base": "University",
-      "members": 97,
+      "members": 108,
       "country": "India"
     },
     {
@@ -8981,6 +9163,13 @@
       "name": "Hyderabad East",
       "base": "Community",
       "members": 67,
+      "country": "India"
+    },
+    {
+      "id": "8828575",
+      "name": "Hyderabad Emerald",
+      "base": "Community",
+      "members": 17,
       "country": "India"
     },
     {
@@ -9099,7 +9288,7 @@
       "id": "8826951",
       "name": "Mahindra University",
       "base": "University",
-      "members": 30,
+      "members": 16,
       "country": "India"
     },
     {
@@ -9225,14 +9414,14 @@
       "id": "90953",
       "name": "St. Peters Engineering College",
       "base": "University",
-      "members": 42,
+      "members": 37,
       "country": "India"
     },
     {
       "id": "84497",
       "name": "Sunrise",
       "base": "Community",
-      "members": 20,
+      "members": 15,
       "country": "India"
     },
     {
@@ -9260,7 +9449,7 @@
       "id": "8827312",
       "name": "Woxsen University",
       "base": "University",
-      "members": 27,
+      "members": 20,
       "country": "India"
     }
   ],
@@ -9297,7 +9486,7 @@
       "id": "8828236",
       "name": "B. V. Bhoomaraddi College of Arts, Science and Commerce Bidar",
       "base": "University",
-      "members": 20,
+      "members": 13,
       "country": "India"
     },
     {
@@ -9332,7 +9521,7 @@
       "id": "8828527",
       "name": "D. K. Govt. College for Women Nellore",
       "base": "University",
-      "members": 14,
+      "members": 6,
       "country": "India"
     },
     {
@@ -9360,7 +9549,7 @@
       "id": "8827057",
       "name": "Guntakal Elites",
       "base": "Community",
-      "members": 10,
+      "members": 7,
       "country": "India"
     },
     {
@@ -9381,7 +9570,7 @@
       "id": "8828313",
       "name": "Karnataka Arts, Science and Commerce College Bidar",
       "base": "University",
-      "members": 15,
+      "members": 8,
       "country": "India"
     },
     {
@@ -9444,7 +9633,7 @@
       "id": "8828404",
       "name": "SJM Institute of Technology",
       "base": "University",
-      "members": 15,
+      "members": 6,
       "country": "India"
     },
     {
@@ -9513,6 +9702,13 @@
       "country": "India"
     },
     {
+      "id": "8828572",
+      "name": "Anandibai Raorane College Vaibhavwadi",
+      "base": "University",
+      "members": 15,
+      "country": "India"
+    },
+    {
       "id": "217897",
       "name": "Annasaheb Dange College Hatkanangale",
       "base": "University",
@@ -9551,7 +9747,7 @@
       "id": "8827698",
       "name": "Belgaum Elite",
       "base": "Community",
-      "members": 14,
+      "members": 21,
       "country": "India"
     },
     {
@@ -9565,7 +9761,7 @@
       "id": "7813",
       "name": "Belgaum South",
       "base": "Community",
-      "members": 24,
+      "members": 25,
       "country": "India"
     },
     {
@@ -9660,6 +9856,20 @@
       "country": "India"
     },
     {
+      "id": "8828603",
+      "name": "Don Bosco College Panjim",
+      "base": "University",
+      "members": 17,
+      "country": "India"
+    },
+    {
+      "id": "8828627",
+      "name": "GFGC for Women Karwar",
+      "base": "University",
+      "members": 4,
+      "country": "India"
+    },
+    {
       "id": "8823356",
       "name": "GIC",
       "base": "University",
@@ -9712,7 +9922,7 @@
       "id": "8827557",
       "name": "Hubbali",
       "base": "Community",
-      "members": 11,
+      "members": 10,
       "country": "India"
     },
     {
@@ -9800,10 +10010,31 @@
       "country": "India"
     },
     {
+      "id": "8828613",
+      "name": "Kankavli",
+      "base": "Community",
+      "members": 15,
+      "country": "India"
+    },
+    {
+      "id": "8828601",
+      "name": "Karwar",
+      "base": "Community",
+      "members": 14,
+      "country": "India"
+    },
+    {
       "id": "8827416",
       "name": "Karwar Paschim",
       "base": "Community",
       "members": 5,
+      "country": "India"
+    },
+    {
+      "id": "8828621",
+      "name": "Kharepatan",
+      "base": "Community",
+      "members": 12,
       "country": "India"
     },
     {
@@ -9817,7 +10048,7 @@
       "id": "216141",
       "name": "KIT Sunshine",
       "base": "University",
-      "members": 8,
+      "members": 7,
       "country": "India"
     },
     {
@@ -9846,6 +10077,13 @@
       "name": "KLE College of BCA Khanapur",
       "base": "University",
       "members": 16,
+      "country": "India"
+    },
+    {
+      "id": "8828612",
+      "name": "KLE MCA PCJSC",
+      "base": "University",
+      "members": 20,
       "country": "India"
     },
     {
@@ -9884,6 +10122,13 @@
       "country": "India"
     },
     {
+      "id": "8828610",
+      "name": "KLE's Degree College, Ankali",
+      "base": "University",
+      "members": 25,
+      "country": "India"
+    },
+    {
       "id": "225525",
       "name": "KLE's GH BCA Haveri",
       "base": "University",
@@ -9908,14 +10153,14 @@
       "id": "8825361",
       "name": "KLECBA Hubli",
       "base": "University",
-      "members": 31,
+      "members": 25,
       "country": "India"
     },
     {
       "id": "8828041",
       "name": "KLS Gogte Institute of Technology",
       "base": "University",
-      "members": 18,
+      "members": 15,
       "country": "India"
     },
     {
@@ -9930,6 +10175,13 @@
       "name": "Kolhapur Central",
       "base": "Community",
       "members": 16,
+      "country": "India"
+    },
+    {
+      "id": "8828582",
+      "name": "Kolhapur Legacy",
+      "base": "Community",
+      "members": 12,
       "country": "India"
     },
     {
@@ -9951,6 +10203,20 @@
       "name": "Krishna Valley",
       "base": "Community",
       "members": 20,
+      "country": "India"
+    },
+    {
+      "id": "8828577",
+      "name": "Kudal",
+      "base": "Community",
+      "members": 16,
+      "country": "India"
+    },
+    {
+      "id": "8828581",
+      "name": "Kumta Coastal",
+      "base": "Community",
+      "members": 16,
       "country": "India"
     },
     {
@@ -9989,8 +10255,22 @@
       "country": "India"
     },
     {
+      "id": "8828631",
+      "name": "MES Vasant Joshi College of Arts and Commerce",
+      "base": "University",
+      "members": 4,
+      "country": "India"
+    },
+    {
       "id": "8828331",
       "name": "Narayan Zantye College of Commerce Champions",
+      "base": "University",
+      "members": 12,
+      "country": "India"
+    },
+    {
+      "id": "8828606",
+      "name": "Oxford Group of Institutions",
       "base": "University",
       "members": 12,
       "country": "India"
@@ -10020,7 +10300,7 @@
       "id": "8827921",
       "name": "Ponda",
       "base": "Community",
-      "members": 15,
+      "members": 12,
       "country": "India"
     },
     {
@@ -10101,6 +10381,13 @@
       "country": "India"
     },
     {
+      "id": "8828624",
+      "name": "Sanjeevini Ayurveda Medical College & Hospital Elite",
+      "base": "University",
+      "members": 4,
+      "country": "India"
+    },
+    {
       "id": "8824549",
       "name": "Sanjeevini Pharmacy College",
       "base": "University",
@@ -10118,7 +10405,7 @@
       "id": "218023",
       "name": "Sawantwadi",
       "base": "Community",
-      "members": 19,
+      "members": 18,
       "country": "India"
     },
     {
@@ -10126,6 +10413,13 @@
       "name": "SDM Degree College, Honnavar",
       "base": "University",
       "members": 2,
+      "country": "India"
+    },
+    {
+      "id": "8828630",
+      "name": "SDM Dental Impact",
+      "base": "University",
+      "members": 4,
       "country": "India"
     },
     {
@@ -10178,6 +10472,13 @@
       "country": "India"
     },
     {
+      "id": "8828579",
+      "name": "Smt. A.R.P. Kanya Mahavidyalaya Ichalkaranji",
+      "base": "University",
+      "members": 14,
+      "country": "India"
+    },
+    {
       "id": "8824632",
       "name": "Smt. C. B. Shah Mahila Mahavidyalay",
       "base": "University",
@@ -10189,6 +10490,20 @@
       "name": "Smt. Shakuntala Institute of Nursing Education",
       "base": "University",
       "members": 12,
+      "country": "India"
+    },
+    {
+      "id": "8828626",
+      "name": "Sridora Caculo College of Commerce & Management Studies",
+      "base": "University",
+      "members": 4,
+      "country": "India"
+    },
+    {
+      "id": "8828602",
+      "name": "SSA Government College and Research Center Pernem",
+      "base": "University",
+      "members": 28,
       "country": "India"
     },
     {
@@ -10227,6 +10542,13 @@
       "country": "India"
     },
     {
+      "id": "8828571",
+      "name": "Twin City",
+      "base": "Community",
+      "members": 15,
+      "country": "India"
+    },
+    {
       "id": "8827402",
       "name": "Uttara Kannada United",
       "base": "Community",
@@ -10237,7 +10559,14 @@
       "id": "7827",
       "name": "Vasco Da Gama",
       "base": "Community",
-      "members": 20,
+      "members": 29,
+      "country": "India"
+    },
+    {
+      "id": "8828576",
+      "name": "Vengurla",
+      "base": "Community",
+      "members": 13,
       "country": "India"
     },
     {
@@ -10252,6 +10581,13 @@
       "name": "Vidya P Hanchinmani PU Science College",
       "base": "University",
       "members": 1,
+      "country": "India"
+    },
+    {
+      "id": "8828578",
+      "name": "Vishrambag Zenith",
+      "base": "Community",
+      "members": 14,
       "country": "India"
     },
     {
@@ -10393,7 +10729,7 @@
       "id": "8823284",
       "name": "JSS Law College Mysore North",
       "base": "University",
-      "members": 21,
+      "members": 9,
       "country": "India"
     },
     {
@@ -10463,7 +10799,7 @@
       "id": "90722",
       "name": "Mysore East",
       "base": "Community",
-      "members": 15,
+      "members": 12,
       "country": "India"
     },
     {
@@ -10471,6 +10807,13 @@
       "name": "Mysore Mid Town",
       "base": "Community",
       "members": 12,
+      "country": "India"
+    },
+    {
+      "id": "8828608",
+      "name": "Mysore North",
+      "base": "Community",
+      "members": 15,
       "country": "India"
     },
     {
@@ -10491,7 +10834,7 @@
       "id": "8825969",
       "name": "Mysore South East",
       "base": "Community",
-      "members": 11,
+      "members": 10,
       "country": "India"
     },
     {
@@ -10589,14 +10932,14 @@
       "id": "215162",
       "name": "Srinivas University College of Engineering & Technology",
       "base": "University",
-      "members": 3,
+      "members": 4,
       "country": "India"
     },
     {
       "id": "8825680",
       "name": "St Aloysius College",
       "base": "University",
-      "members": 12,
+      "members": 4,
       "country": "India"
     },
     {
@@ -10882,6 +11225,13 @@
       "country": "India"
     },
     {
+      "id": "8828568",
+      "name": "Manipal College of Dental Sciences",
+      "base": "University",
+      "members": 20,
+      "country": "India"
+    },
+    {
       "id": "217487",
       "name": "Milagres College Kallianpur",
       "base": "University",
@@ -11076,7 +11426,7 @@
       "id": "218259",
       "name": "Bangalore Aagneya",
       "base": "University",
-      "members": 31,
+      "members": 27,
       "country": "India"
     },
     {
@@ -11097,7 +11447,7 @@
       "id": "8826633",
       "name": "Bangalore High Grounds",
       "base": "Community",
-      "members": 24,
+      "members": 23,
       "country": "India"
     },
     {
@@ -11132,7 +11482,7 @@
       "id": "214015",
       "name": "Bangalore Orchards",
       "base": "Community",
-      "members": 12,
+      "members": 18,
       "country": "India"
     },
     {
@@ -11181,7 +11531,7 @@
       "id": "8167",
       "name": "Bangalore Vijayanagar",
       "base": "Community",
-      "members": 17,
+      "members": 19,
       "country": "India"
     },
     {
@@ -11192,10 +11542,17 @@
       "country": "India"
     },
     {
+      "id": "8828567",
+      "name": "Bengaluru Binnypet",
+      "base": "Community",
+      "members": 15,
+      "country": "India"
+    },
+    {
       "id": "8826232",
       "name": "Bengaluru BTM",
       "base": "Community",
-      "members": 28,
+      "members": 37,
       "country": "India"
     },
     {
@@ -11209,14 +11566,14 @@
       "id": "8823262",
       "name": "Bengaluru HSR",
       "base": "Community",
-      "members": 20,
+      "members": 19,
       "country": "India"
     },
     {
       "id": "217243",
       "name": "Bengaluru South End",
       "base": "Community",
-      "members": 21,
+      "members": 26,
       "country": "India"
     },
     {
@@ -11237,7 +11594,7 @@
       "id": "91509",
       "name": "BMSCE",
       "base": "University",
-      "members": 74,
+      "members": 39,
       "country": "India"
     },
     {
@@ -11300,28 +11657,28 @@
       "id": "8143",
       "name": "Jyoti Nivas College",
       "base": "University",
-      "members": 7,
+      "members": 20,
       "country": "India"
     },
     {
       "id": "215974",
       "name": "K.G.F. Community",
       "base": "Community",
-      "members": 9,
+      "members": 8,
       "country": "India"
     },
     {
       "id": "8826417",
       "name": "KLE Law College",
       "base": "University",
-      "members": 62,
+      "members": 47,
       "country": "India"
     },
     {
       "id": "89212",
       "name": "Koramangala",
       "base": "Community",
-      "members": 40,
+      "members": 76,
       "country": "India"
     },
     {
@@ -11335,7 +11692,7 @@
       "id": "8824521",
       "name": "Krupanidhi Group of Institutions",
       "base": "University",
-      "members": 18,
+      "members": 1,
       "country": "India"
     },
     {
@@ -11375,7 +11732,7 @@
     },
     {
       "id": "212627",
-      "name": "Mount Carmel College",
+      "name": "Mount Carmel (Deemed to be University)",
       "base": "University",
       "members": 48,
       "country": "India"
@@ -11384,7 +11741,7 @@
       "id": "8823249",
       "name": "Narsee Monjee Institute of Mangement Studies, Bangalore",
       "base": "University",
-      "members": 47,
+      "members": 45,
       "country": "India"
     },
     {
@@ -11468,7 +11825,7 @@
       "id": "68941",
       "name": "R.V.C.E.",
       "base": "University",
-      "members": 57,
+      "members": 33,
       "country": "India"
     },
     {
@@ -11503,7 +11860,7 @@
       "id": "84598",
       "name": "S.S.M.R.V. College",
       "base": "University",
-      "members": 52,
+      "members": 51,
       "country": "India"
     },
     {
@@ -11531,7 +11888,7 @@
       "id": "8826819",
       "name": "SEI College Tejas",
       "base": "University",
-      "members": 43,
+      "members": 25,
       "country": "India"
     },
     {
@@ -11545,14 +11902,14 @@
       "id": "8825547",
       "name": "Seshadripuram Institute of Commerce & Management",
       "base": "University",
-      "members": 6,
+      "members": 15,
       "country": "India"
     },
     {
       "id": "91568",
       "name": "Shantiniketan",
       "base": "University",
-      "members": 5,
+      "members": 3,
       "country": "India"
     },
     {
@@ -11601,7 +11958,7 @@
       "id": "8081",
       "name": "St. Joseph's College Of Commerce",
       "base": "University",
-      "members": 11,
+      "members": 4,
       "country": "India"
     },
     {
@@ -11659,7 +12016,7 @@
       "id": "216045",
       "name": "AIMS Institute of Higher Education",
       "base": "University",
-      "members": 18,
+      "members": 5,
       "country": "India"
     },
     {
@@ -11701,7 +12058,7 @@
       "id": "89917",
       "name": "Bangalore Golden Rock",
       "base": "Community",
-      "members": 10,
+      "members": 14,
       "country": "India"
     },
     {
@@ -11729,14 +12086,14 @@
       "id": "90196",
       "name": "Bangalore North West",
       "base": "Community",
-      "members": 14,
+      "members": 18,
       "country": "India"
     },
     {
       "id": "8826605",
       "name": "Bangalore Oasis",
       "base": "Community",
-      "members": 14,
+      "members": 15,
       "country": "India"
     },
     {
@@ -11757,7 +12114,7 @@
       "id": "8825840",
       "name": "Bangalore Udyog",
       "base": "Community",
-      "members": 32,
+      "members": 44,
       "country": "India"
     },
     {
@@ -11771,7 +12128,7 @@
       "id": "8165",
       "name": "Bangalore West",
       "base": "Community",
-      "members": 32,
+      "members": 31,
       "country": "India"
     },
     {
@@ -11799,14 +12156,14 @@
       "id": "8826606",
       "name": "Bengaluru Nava Chaitanya",
       "base": "Community",
-      "members": 9,
+      "members": 10,
       "country": "India"
     },
     {
       "id": "8823923",
       "name": "Bengaluru Orion Gateway",
       "base": "Community",
-      "members": 19,
+      "members": 18,
       "country": "India"
     },
     {
@@ -11848,7 +12205,7 @@
       "id": "8827833",
       "name": "Christ University Bangalore Yeshwanthpur Campus",
       "base": "University",
-      "members": 163,
+      "members": 168,
       "country": "India"
     },
     {
@@ -11869,7 +12226,7 @@
       "id": "8828466",
       "name": "Christ University Kengeri Campus",
       "base": "University",
-      "members": 61,
+      "members": 60,
       "country": "India"
     },
     {
@@ -11939,7 +12296,7 @@
       "id": "8826152",
       "name": "Jyothy Institute of Technology",
       "base": "University",
-      "members": 28,
+      "members": 27,
       "country": "India"
     },
     {
@@ -11974,7 +12331,7 @@
       "id": "212892",
       "name": "MES College",
       "base": "University",
-      "members": 31,
+      "members": 22,
       "country": "India"
     },
     {
@@ -11982,6 +12339,13 @@
       "name": "MES Institute of Management",
       "base": "University",
       "members": 2,
+      "country": "India"
+    },
+    {
+      "id": "8828574",
+      "name": "MKPM RV Institute of Legal Studies",
+      "base": "University",
+      "members": 29,
       "country": "India"
     },
     {
@@ -12016,7 +12380,7 @@
       "id": "8827584",
       "name": "Rajanukunte Royals",
       "base": "Community",
-      "members": 7,
+      "members": 8,
       "country": "India"
     },
     {
@@ -12044,7 +12408,7 @@
       "id": "8825021",
       "name": "RUAS",
       "base": "University",
-      "members": 14,
+      "members": 15,
       "country": "India"
     },
     {
@@ -12086,7 +12450,7 @@
       "id": "8825501",
       "name": "Silicon City",
       "base": "University",
-      "members": 21,
+      "members": 23,
       "country": "India"
     },
     {
@@ -12177,7 +12541,7 @@
       "id": "91484",
       "name": "Swarna Bengaluru",
       "base": "Community",
-      "members": 41,
+      "members": 47,
       "country": "India"
     },
     {
@@ -12191,7 +12555,7 @@
       "id": "8827575",
       "name": "United International Business School",
       "base": "University",
-      "members": 30,
+      "members": 38,
       "country": "India"
     },
     {
@@ -12288,10 +12652,17 @@
       "country": "India"
     },
     {
+      "id": "8828570",
+      "name": "Cauvery Nexus",
+      "base": "Community",
+      "members": 12,
+      "country": "India"
+    },
+    {
       "id": "8828379",
       "name": "Christ The King Engineering College Karamadai Youth",
       "base": "University",
-      "members": 20,
+      "members": 19,
       "country": "India"
     },
     {
@@ -12473,7 +12844,14 @@
       "id": "8825553",
       "name": "Kongu Arts and Science College",
       "base": "University",
-      "members": 8,
+      "members": 6,
+      "country": "India"
+    },
+    {
+      "id": "8828573",
+      "name": "Kongu Naturopathy and Yoga Medical College",
+      "base": "University",
+      "members": 25,
       "country": "India"
     },
     {
@@ -12610,6 +12988,13 @@
       "country": "India"
     },
     {
+      "id": "8828569",
+      "name": "Sri Vasavi College (Self Finance Wing)",
+      "base": "University",
+      "members": 25,
+      "country": "India"
+    },
+    {
       "id": "8828364",
       "name": "St. Joseph's College for Women Amarpana",
       "base": "University",
@@ -12628,6 +13013,13 @@
       "name": "Theeran Chinnamalai College of Arts and Science for Women",
       "base": "University",
       "members": 8,
+      "country": "India"
+    },
+    {
+      "id": "8828632",
+      "name": "Tiruppur Maniax",
+      "base": "Community",
+      "members": 3,
       "country": "India"
     },
     {
@@ -12662,14 +13054,21 @@
       "id": "8825697",
       "name": "Tirupur Royals",
       "base": "University",
-      "members": 5,
+      "members": 18,
+      "country": "India"
+    },
+    {
+      "id": "8828623",
+      "name": "Tirupur Smart Unity",
+      "base": "Community",
+      "members": 4,
       "country": "India"
     },
     {
       "id": "212277",
       "name": "Tirupur Young Generation",
       "base": "Community",
-      "members": 10,
+      "members": 11,
       "country": "India"
     },
     {
@@ -12690,7 +13089,7 @@
       "id": "63181",
       "name": "Velalar College of Engineering and Technology",
       "base": "University",
-      "members": 14,
+      "members": 13,
       "country": "India"
     },
     {
@@ -12776,7 +13175,7 @@
       "id": "8827118",
       "name": "Calicut East",
       "base": "Community",
-      "members": 16,
+      "members": 20,
       "country": "India"
     },
     {
@@ -12925,7 +13324,7 @@
       "id": "8828000",
       "name": "Christ College of Engineering (Autonomous)",
       "base": "University",
-      "members": 31,
+      "members": 33,
       "country": "India"
     },
     {
@@ -13023,7 +13422,7 @@
       "id": "8828321",
       "name": "Kochi United",
       "base": "Community",
-      "members": 18,
+      "members": 17,
       "country": "India"
     },
     {
@@ -13135,7 +13534,7 @@
       "id": "8827831",
       "name": "St. Joseph's College Irinjalakkuda",
       "base": "University",
-      "members": 24,
+      "members": 34,
       "country": "India"
     },
     {
@@ -13207,7 +13606,7 @@
       "id": "216522",
       "name": "AIHSHEW",
       "base": "University",
-      "members": 18,
+      "members": 13,
       "country": "India"
     },
     {
@@ -13221,7 +13620,7 @@
       "id": "8827856",
       "name": "Akshaya College of Arts and Science",
       "base": "University",
-      "members": 22,
+      "members": 13,
       "country": "India"
     },
     {
@@ -13242,7 +13641,7 @@
       "id": "8827828",
       "name": "Coimbatore Central",
       "base": "Community",
-      "members": 27,
+      "members": 26,
       "country": "India"
     },
     {
@@ -13263,14 +13662,14 @@
       "id": "8315",
       "name": "Coimbatore Comito",
       "base": "Community",
-      "members": 24,
+      "members": 23,
       "country": "India"
     },
     {
       "id": "91843",
       "name": "Coimbatore Cosmopolitan",
       "base": "Community",
-      "members": 14,
+      "members": 25,
       "country": "India"
     },
     {
@@ -13284,7 +13683,7 @@
       "id": "215195",
       "name": "Coimbatore Crystals",
       "base": "Community",
-      "members": 21,
+      "members": 27,
       "country": "India"
     },
     {
@@ -13298,7 +13697,7 @@
       "id": "8827477",
       "name": "Coimbatore Green City",
       "base": "Community",
-      "members": 14,
+      "members": 16,
       "country": "India"
     },
     {
@@ -13312,7 +13711,7 @@
       "id": "90938",
       "name": "Coimbatore Ikons",
       "base": "Community",
-      "members": 18,
+      "members": 24,
       "country": "India"
     },
     {
@@ -13326,21 +13725,21 @@
       "id": "8331",
       "name": "Coimbatore Institute Of Technology",
       "base": "University",
-      "members": 36,
+      "members": 30,
       "country": "India"
     },
     {
       "id": "77966",
       "name": "Coimbatore Main",
       "base": "Community",
-      "members": 12,
+      "members": 13,
       "country": "India"
     },
     {
       "id": "8329",
       "name": "Coimbatore Majestic",
       "base": "Community",
-      "members": 19,
+      "members": 26,
       "country": "India"
     },
     {
@@ -13354,14 +13753,14 @@
       "id": "8825936",
       "name": "Coimbatore New Gen",
       "base": "Community",
-      "members": 19,
+      "members": 27,
       "country": "India"
     },
     {
       "id": "8828315",
       "name": "Coimbatore Nexus",
       "base": "Community",
-      "members": 21,
+      "members": 25,
       "country": "India"
     },
     {
@@ -13375,14 +13774,14 @@
       "id": "8826467",
       "name": "Coimbatore RS Puram",
       "base": "Community",
-      "members": 12,
+      "members": 11,
       "country": "India"
     },
     {
       "id": "8823645",
       "name": "Coimbatore Smart City",
       "base": "Community",
-      "members": 17,
+      "members": 19,
       "country": "India"
     },
     {
@@ -13417,14 +13816,14 @@
       "id": "8319",
       "name": "Coimbatore Texcity",
       "base": "Community",
-      "members": 36,
+      "members": 42,
       "country": "India"
     },
     {
       "id": "8826134",
       "name": "Coimbatore Unicorns",
       "base": "Community",
-      "members": 15,
+      "members": 4,
       "country": "India"
     },
     {
@@ -13459,7 +13858,7 @@
       "id": "84140",
       "name": "Cug (Covai User Group)",
       "base": "Community",
-      "members": 11,
+      "members": 14,
       "country": "India"
     },
     {
@@ -13473,7 +13872,7 @@
       "id": "217835",
       "name": "Dr. N.G.P Arts & Science College",
       "base": "University",
-      "members": 11,
+      "members": 17,
       "country": "India"
     },
     {
@@ -13487,7 +13886,7 @@
       "id": "90418",
       "name": "GCT Coimbatore",
       "base": "University",
-      "members": 0,
+      "members": 26,
       "country": "India"
     },
     {
@@ -13501,21 +13900,21 @@
       "id": "92108",
       "name": "HICAS",
       "base": "University",
-      "members": 24,
+      "members": 17,
       "country": "India"
     },
     {
       "id": "218638",
       "name": "Hindusthan College of Engineering and Technology",
       "base": "University",
-      "members": 17,
+      "members": 20,
       "country": "India"
     },
     {
       "id": "89603",
       "name": "Info Institute of Engineering",
       "base": "University",
-      "members": 26,
+      "members": 20,
       "country": "India"
     },
     {
@@ -13557,7 +13956,7 @@
       "id": "8824529",
       "name": "Karpagam College of Engineering",
       "base": "University",
-      "members": 10,
+      "members": 22,
       "country": "India"
     },
     {
@@ -13578,7 +13977,7 @@
       "id": "214602",
       "name": "Karunya School of Management",
       "base": "University",
-      "members": 37,
+      "members": 23,
       "country": "India"
     },
     {
@@ -13627,7 +14026,7 @@
       "id": "8823913",
       "name": "KPRCAS",
       "base": "University",
-      "members": 13,
+      "members": 20,
       "country": "India"
     },
     {
@@ -13648,7 +14047,7 @@
       "id": "8277",
       "name": "Kumaraguru College of Technology",
       "base": "University",
-      "members": 20,
+      "members": 21,
       "country": "India"
     },
     {
@@ -13669,7 +14068,7 @@
       "id": "90062",
       "name": "LIA (Lead India Ahead)",
       "base": "Community",
-      "members": 8,
+      "members": 13,
       "country": "India"
     },
     {
@@ -13697,14 +14096,14 @@
       "id": "91518",
       "name": "Nehru College of Aeronautics and Applied Sciences",
       "base": "University",
-      "members": 3,
+      "members": 1,
       "country": "India"
     },
     {
       "id": "215499",
       "name": "Nehru Institute of Engineering and Technology",
       "base": "University",
-      "members": 11,
+      "members": 12,
       "country": "India"
     },
     {
@@ -13725,7 +14124,7 @@
       "id": "61218",
       "name": "PSG CAS",
       "base": "University",
-      "members": 11,
+      "members": 22,
       "country": "India"
     },
     {
@@ -13739,7 +14138,7 @@
       "id": "8255",
       "name": "PSGR Krishnammal College for Women",
       "base": "University",
-      "members": 10,
+      "members": 20,
       "country": "India"
     },
     {
@@ -13774,7 +14173,7 @@
       "id": "8247",
       "name": "Saibaba Colony",
       "base": "Community",
-      "members": 5,
+      "members": 6,
       "country": "India"
     },
     {
@@ -13788,21 +14187,21 @@
       "id": "8825947",
       "name": "SNS College of Technology",
       "base": "University",
-      "members": 23,
+      "members": 15,
       "country": "India"
     },
     {
       "id": "74476",
       "name": "Sri Krishna Arts & Science College",
       "base": "University",
-      "members": 18,
+      "members": 21,
       "country": "India"
     },
     {
       "id": "92267",
-      "name": "Sri Krishna college of Technology",
+      "name": "Sri Krishna College of Engineering and Technology",
       "base": "University",
-      "members": 7,
+      "members": 21,
       "country": "India"
     },
     {
@@ -13816,7 +14215,7 @@
       "id": "8826933",
       "name": "Sri Ramakrishna Institute of Technology",
       "base": "University",
-      "members": 6,
+      "members": 30,
       "country": "India"
     },
     {
@@ -13830,7 +14229,7 @@
       "id": "8824228",
       "name": "Sri Shakti Institute of Engineering & Technology",
       "base": "University",
-      "members": 22,
+      "members": 24,
       "country": "India"
     },
     {
@@ -13844,7 +14243,7 @@
       "id": "87600",
       "name": "UIT",
       "base": "University",
-      "members": 7,
+      "members": 18,
       "country": "India"
     },
     {
@@ -13900,7 +14299,7 @@
       "id": "215194",
       "name": "Young Vibrants",
       "base": "Community",
-      "members": 17,
+      "members": 21,
       "country": "India"
     },
     {
@@ -14021,7 +14420,7 @@
       "id": "8827205",
       "name": "Paippad",
       "base": "Community",
-      "members": 7,
+      "members": 9,
       "country": "India"
     },
     {
@@ -14380,7 +14779,7 @@
       "id": "8827596",
       "name": "Literary Wing of Mohamed Sathak Hamid College",
       "base": "University",
-      "members": 8,
+      "members": 14,
       "country": "India"
     },
     {
@@ -14688,7 +15087,7 @@
       "id": "8828299",
       "name": "V.V.Vanniaperumal College for Women Youth Force",
       "base": "University",
-      "members": 15,
+      "members": 16,
       "country": "India"
     },
     {
@@ -14753,35 +15152,35 @@
       "id": "88675",
       "name": "Achievers Lanka Business School",
       "base": "University",
-      "members": 22,
+      "members": 35,
       "country": "Sri Lanka"
     },
     {
       "id": "8828405",
       "name": "Aegis Nexus",
       "base": "Community",
-      "members": 19,
+      "members": 21,
       "country": "Sri Lanka"
     },
     {
       "id": "91220",
       "name": "Alumni of University of Moratuwa",
       "base": "Community",
-      "members": 51,
+      "members": 75,
       "country": "Sri Lanka"
     },
     {
       "id": "67964",
       "name": "American National College",
       "base": "University",
-      "members": 37,
+      "members": 34,
       "country": "Sri Lanka"
     },
     {
       "id": "217094",
       "name": "APIIT",
       "base": "University",
-      "members": 102,
+      "members": 96,
       "country": "Sri Lanka"
     },
     {
@@ -14802,7 +15201,7 @@
       "id": "8826934",
       "name": "Batticaloa",
       "base": "Community",
-      "members": 16,
+      "members": 15,
       "country": "Sri Lanka"
     },
     {
@@ -14830,28 +15229,28 @@
       "id": "42519",
       "name": "Chunnakam",
       "base": "Community",
-      "members": 23,
+      "members": 31,
       "country": "Sri Lanka"
     },
     {
       "id": "215957",
       "name": "CINEC",
       "base": "University",
-      "members": 81,
+      "members": 94,
       "country": "Sri Lanka"
     },
     {
       "id": "44751",
       "name": "Cinnamon Gardens",
       "base": "Community",
-      "members": 67,
+      "members": 73,
       "country": "Sri Lanka"
     },
     {
       "id": "90435",
       "name": "College of Chemical Sciences",
       "base": "University",
-      "members": 28,
+      "members": 43,
       "country": "Sri Lanka"
     },
     {
@@ -14865,105 +15264,105 @@
       "id": "8826917",
       "name": "Colombo Citadel",
       "base": "Community",
-      "members": 29,
+      "members": 30,
       "country": "Sri Lanka"
     },
     {
       "id": "8609",
       "name": "Colombo East",
       "base": "Community",
-      "members": 33,
+      "members": 31,
       "country": "Sri Lanka"
     },
     {
       "id": "213876",
       "name": "Colombo Fort",
       "base": "Community",
-      "members": 45,
+      "members": 50,
       "country": "Sri Lanka"
     },
     {
       "id": "8823186",
       "name": "Colombo Heritage",
       "base": "Community",
-      "members": 55,
+      "members": 40,
       "country": "Sri Lanka"
     },
     {
       "id": "8827207",
       "name": "Colombo Infinity",
       "base": "Community",
-      "members": 41,
+      "members": 25,
       "country": "Sri Lanka"
     },
     {
       "id": "8825180",
       "name": "Colombo Metropolitan",
       "base": "Community",
-      "members": 32,
+      "members": 39,
       "country": "Sri Lanka"
     },
     {
       "id": "8603",
       "name": "Colombo Mid-City",
       "base": "Community",
-      "members": 14,
+      "members": 17,
       "country": "Sri Lanka"
     },
     {
       "id": "8601",
       "name": "Colombo Mid-Town",
       "base": "Community",
-      "members": 41,
+      "members": 42,
       "country": "Sri Lanka"
     },
     {
       "id": "8569",
       "name": "Colombo North",
       "base": "Community",
-      "members": 75,
+      "members": 72,
       "country": "Sri Lanka"
     },
     {
       "id": "8825223",
       "name": "Colombo Port City",
       "base": "Community",
-      "members": 18,
+      "members": 46,
       "country": "Sri Lanka"
     },
     {
       "id": "8823460",
       "name": "Colombo Regency",
       "base": "Community",
-      "members": 5,
+      "members": 11,
       "country": "Sri Lanka"
     },
     {
       "id": "42613",
       "name": "Colombo Regent",
       "base": "Community",
-      "members": 12,
+      "members": 17,
       "country": "Sri Lanka"
     },
     {
       "id": "8827805",
       "name": "Colombo South",
       "base": "Community",
-      "members": 24,
+      "members": 27,
       "country": "Sri Lanka"
     },
     {
       "id": "42577",
       "name": "Colombo Up-Town",
       "base": "Community",
-      "members": 40,
+      "members": 38,
       "country": "Sri Lanka"
     },
     {
       "id": "8599",
       "name": "Colombo West",
       "base": "Community",
-      "members": 67,
+      "members": 81,
       "country": "Sri Lanka"
     },
     {
@@ -14977,7 +15376,7 @@
       "id": "91932",
       "name": "Edith Cowan University",
       "base": "University",
-      "members": 78,
+      "members": 77,
       "country": "Sri Lanka"
     },
     {
@@ -14998,42 +15397,42 @@
       "id": "89963",
       "name": "Faculty of Law, University of Colombo",
       "base": "University",
-      "members": 74,
+      "members": 70,
       "country": "Sri Lanka"
     },
     {
       "id": "216481",
       "name": "Faculty of Medicine University of Colombo",
       "base": "University",
-      "members": 37,
+      "members": 62,
       "country": "Sri Lanka"
     },
     {
       "id": "8823817",
       "name": "Faculty of Medicine, Sabaragamuwa Univesity of Sri Lanka",
       "base": "University",
-      "members": 15,
+      "members": 26,
       "country": "Sri Lanka"
     },
     {
       "id": "74274",
       "name": "Faculty of Science, University of Colombo",
       "base": "University",
-      "members": 38,
+      "members": 64,
       "country": "Sri Lanka"
     },
     {
       "id": "8828235",
       "name": "Galle",
       "base": "Community",
-      "members": 23,
+      "members": 25,
       "country": "Sri Lanka"
     },
     {
       "id": "8826468",
       "name": "Gampaha",
       "base": "Community",
-      "members": 42,
+      "members": 40,
       "country": "Sri Lanka"
     },
     {
@@ -15047,42 +15446,42 @@
       "id": "91117",
       "name": "General Sir John Kotelawala Defence",
       "base": "University",
-      "members": 98,
+      "members": 48,
       "country": "Sri Lanka"
     },
     {
       "id": "8828348",
       "name": "General Sir John Kotelawala Defence University South",
       "base": "University",
-      "members": 33,
+      "members": 26,
       "country": "Sri Lanka"
     },
     {
       "id": "8825008",
       "name": "Horizon Campus",
       "base": "University",
-      "members": 88,
+      "members": 41,
       "country": "Sri Lanka"
     },
     {
       "id": "216053",
       "name": "ICBT",
       "base": "University",
-      "members": 27,
+      "members": 26,
       "country": "Sri Lanka"
     },
     {
       "id": "218404",
       "name": "Imperial College of Business and Studies",
       "base": "University",
-      "members": 33,
+      "members": 38,
       "country": "Sri Lanka"
     },
     {
       "id": "88758",
       "name": "Informatics Institute of Technology",
       "base": "University",
-      "members": 104,
+      "members": 44,
       "country": "Sri Lanka"
     },
     {
@@ -15103,28 +15502,28 @@
       "id": "8591",
       "name": "Kandy",
       "base": "Community",
-      "members": 42,
+      "members": 40,
       "country": "Sri Lanka"
     },
     {
       "id": "8824330",
       "name": "Kandy Hill Capital",
       "base": "Community",
-      "members": 18,
+      "members": 26,
       "country": "Sri Lanka"
     },
     {
       "id": "8823202",
       "name": "Kandy Metropolitan",
       "base": "Community",
-      "members": 49,
+      "members": 48,
       "country": "Sri Lanka"
     },
     {
       "id": "215233",
       "name": "Katugastota Region",
       "base": "Community",
-      "members": 33,
+      "members": 41,
       "country": "Sri Lanka"
     },
     {
@@ -15138,14 +15537,14 @@
       "id": "8823624",
       "name": "Kilinochchi Town",
       "base": "Community",
-      "members": 13,
+      "members": 23,
       "country": "Sri Lanka"
     },
     {
       "id": "8827591",
       "name": "KIU",
       "base": "University",
-      "members": 26,
+      "members": 33,
       "country": "Sri Lanka"
     },
     {
@@ -15159,14 +15558,14 @@
       "id": "8827204",
       "name": "Management & Science University (MSU)",
       "base": "University",
-      "members": 2,
+      "members": 33,
       "country": "Sri Lanka"
     },
     {
       "id": "8824925",
       "name": "Mannar Town",
       "base": "Community",
-      "members": 19,
+      "members": 22,
       "country": "Sri Lanka"
     },
     {
@@ -15194,28 +15593,28 @@
       "id": "8826877",
       "name": "National Institute of Business Management Kandy",
       "base": "University",
-      "members": 22,
+      "members": 24,
       "country": "Sri Lanka"
     },
     {
       "id": "91233",
       "name": "National School of Business Management",
       "base": "University",
-      "members": 62,
+      "members": 76,
       "country": "Sri Lanka"
     },
     {
       "id": "90577",
       "name": "Negombo",
       "base": "Community",
-      "members": 30,
+      "members": 36,
       "country": "Sri Lanka"
     },
     {
       "id": "217664",
       "name": "NIBM",
       "base": "University",
-      "members": 83,
+      "members": 97,
       "country": "Sri Lanka"
     },
     {
@@ -15229,21 +15628,21 @@
       "id": "84520",
       "name": "Panadura",
       "base": "Community",
-      "members": 34,
+      "members": 36,
       "country": "Sri Lanka"
     },
     {
       "id": "217172",
       "name": "PanColombo",
       "base": "University",
-      "members": 18,
+      "members": 27,
       "country": "Sri Lanka"
     },
     {
       "id": "55709",
       "name": "Peradeniya University",
       "base": "University",
-      "members": 43,
+      "members": 42,
       "country": "Sri Lanka"
     },
     {
@@ -15264,14 +15663,14 @@
       "id": "216028",
       "name": "Ratnapura",
       "base": "Community",
-      "members": 24,
+      "members": 29,
       "country": "Sri Lanka"
     },
     {
       "id": "218249",
       "name": "Royal Institute of Colombo",
       "base": "University",
-      "members": 30,
+      "members": 42,
       "country": "Sri Lanka"
     },
     {
@@ -15292,7 +15691,7 @@
       "id": "8828210",
       "name": "Seethawaka Regent",
       "base": "Community",
-      "members": 29,
+      "members": 30,
       "country": "Sri Lanka"
     },
     {
@@ -15306,14 +15705,14 @@
       "id": "91071",
       "name": "Sri Lanka Institute of Information Technology (SLIIT)",
       "base": "University",
-      "members": 164,
+      "members": 162,
       "country": "Sri Lanka"
     },
     {
       "id": "8824798",
       "name": "Sri Lanka Technological Campus",
       "base": "University",
-      "members": 30,
+      "members": 28,
       "country": "Sri Lanka"
     },
     {
@@ -15334,49 +15733,49 @@
       "id": "8824929",
       "name": "University of Colombo School of Computing",
       "base": "University",
-      "members": 49,
+      "members": 28,
       "country": "Sri Lanka"
     },
     {
       "id": "88705",
       "name": "University of Colombo, Arts Faculty",
       "base": "University",
-      "members": 44,
+      "members": 26,
       "country": "Sri Lanka"
     },
     {
       "id": "89105",
       "name": "University of Colombo, Faculty of Management & Finance",
       "base": "University",
-      "members": 144,
+      "members": 151,
       "country": "Sri Lanka"
     },
     {
       "id": "88865",
       "name": "University of Kelaniya",
       "base": "University",
-      "members": 500,
+      "members": 144,
       "country": "Sri Lanka"
     },
     {
       "id": "42733",
       "name": "University of Moratuwa",
       "base": "University",
-      "members": 36,
+      "members": 46,
       "country": "Sri Lanka"
     },
     {
       "id": "8824712",
       "name": "University of Ruhuna",
       "base": "University",
-      "members": 32,
+      "members": 25,
       "country": "Sri Lanka"
     },
     {
       "id": "89653",
       "name": "University of Sri Jayewardenepura",
       "base": "University",
-      "members": 30,
+      "members": 33,
       "country": "Sri Lanka"
     },
     {
@@ -15390,7 +15789,7 @@
       "id": "90872",
       "name": "Uva Wellassa University-Badulla",
       "base": "University",
-      "members": 46,
+      "members": 73,
       "country": "Sri Lanka"
     },
     {
@@ -15411,7 +15810,7 @@
       "id": "8573",
       "name": "Wellawatte",
       "base": "Community",
-      "members": 29,
+      "members": 32,
       "country": "Sri Lanka"
     }
   ],
@@ -15842,7 +16241,7 @@
       "id": "91893",
       "name": "Dexterous",
       "base": "Community",
-      "members": 46,
+      "members": 41,
       "country": "India"
     },
     {
@@ -15947,7 +16346,7 @@
       "id": "90693",
       "name": "Madras Cosmos",
       "base": "Community",
-      "members": 32,
+      "members": 25,
       "country": "India"
     },
     {
@@ -15968,7 +16367,7 @@
       "id": "79175",
       "name": "Madras Mount",
       "base": "Community",
-      "members": 18,
+      "members": 15,
       "country": "India"
     },
     {
@@ -15982,7 +16381,7 @@
       "id": "8827470",
       "name": "Madras T. Nagar",
       "base": "Community",
-      "members": 32,
+      "members": 31,
       "country": "India"
     },
     {
@@ -16178,7 +16577,7 @@
       "id": "8828238",
       "name": "SRM IST FSH Ramapuram",
       "base": "University",
-      "members": 27,
+      "members": 23,
       "country": "India"
     },
     {
@@ -16236,7 +16635,7 @@
       "id": "212849",
       "name": "A.M. Jain College - Shift II",
       "base": "University",
-      "members": 67,
+      "members": 56,
       "country": "India"
     },
     {
@@ -16292,7 +16691,7 @@
       "id": "68156",
       "name": "Chennai",
       "base": "Community",
-      "members": 39,
+      "members": 34,
       "country": "India"
     },
     {
@@ -16310,13 +16709,6 @@
       "country": "India"
     },
     {
-      "id": "8823820",
-      "name": "Chennai Central",
-      "base": "Community",
-      "members": 0,
-      "country": "India"
-    },
-    {
       "id": "8826169",
       "name": "Chennai Dynamic Entrepreneurs",
       "base": "Community",
@@ -16327,7 +16719,7 @@
       "id": "218396",
       "name": "Chennai Gems",
       "base": "Community",
-      "members": 21,
+      "members": 22,
       "country": "India"
     },
     {
@@ -16341,7 +16733,7 @@
       "id": "8826475",
       "name": "Chennai Legends",
       "base": "Community",
-      "members": 20,
+      "members": 33,
       "country": "India"
     },
     {
@@ -16439,7 +16831,7 @@
       "id": "215143",
       "name": "Jerusalem College of Engineering",
       "base": "University",
-      "members": 136,
+      "members": 113,
       "country": "India"
     },
     {
@@ -16474,21 +16866,21 @@
       "id": "215829",
       "name": "Madras",
       "base": "Community",
-      "members": 34,
+      "members": 33,
       "country": "India"
     },
     {
       "id": "75856",
       "name": "Madras Central",
       "base": "Community",
-      "members": 46,
+      "members": 40,
       "country": "India"
     },
     {
       "id": "8827320",
       "name": "Madras East",
       "base": "Community",
-      "members": 35,
+      "members": 36,
       "country": "India"
     },
     {
@@ -16551,7 +16943,7 @@
       "id": "8703",
       "name": "New College",
       "base": "University",
-      "members": 28,
+      "members": 16,
       "country": "India"
     },
     {
@@ -16565,7 +16957,7 @@
       "id": "8826109",
       "name": "Prince Shri Venkateshwara Arts and Science College",
       "base": "University",
-      "members": 33,
+      "members": 41,
       "country": "India"
     },
     {
@@ -16670,14 +17062,14 @@
       "id": "8825732",
       "name": "Tamil Nadu Dr. Ambedkar Law University",
       "base": "University",
-      "members": 13,
+      "members": 12,
       "country": "India"
     },
     {
       "id": "8827456",
       "name": "TJS College of Arts and Science",
       "base": "University",
-      "members": 51,
+      "members": 19,
       "country": "India"
     },
     {
@@ -16712,14 +17104,14 @@
       "id": "217223",
       "name": "VIT (Chennai Campus)",
       "base": "University",
-      "members": 8,
+      "members": 104,
       "country": "India"
     },
     {
       "id": "42574",
       "name": "Womens Christian College",
       "base": "University",
-      "members": 4,
+      "members": 34,
       "country": "India"
     },
     {
@@ -16777,7 +17169,7 @@
       "id": "8827910",
       "name": "Agartala Nexus",
       "base": "Community",
-      "members": 11,
+      "members": 13,
       "country": "India"
     },
     {
@@ -16903,7 +17295,7 @@
       "id": "8828373",
       "name": "Eastern Highlands",
       "base": "Community",
-      "members": 16,
+      "members": 13,
       "country": "India"
     },
     {
@@ -16917,7 +17309,7 @@
       "id": "212844",
       "name": "Gangtok Hills",
       "base": "Community",
-      "members": 12,
+      "members": 11,
       "country": "India"
     },
     {
@@ -17043,7 +17435,7 @@
       "id": "8826728",
       "name": "Raniganj Institute of Information Technology",
       "base": "University",
-      "members": 20,
+      "members": 18,
       "country": "India"
     },
     {
@@ -17057,7 +17449,7 @@
       "id": "8827658",
       "name": "Shillong",
       "base": "Community",
-      "members": 13,
+      "members": 12,
       "country": "India"
     },
     {
@@ -17106,7 +17498,7 @@
       "id": "214129",
       "name": "SRM University Sikkim",
       "base": "University",
-      "members": 12,
+      "members": 11,
       "country": "India"
     },
     {
@@ -17127,7 +17519,7 @@
       "id": "216693",
       "name": "Ukhra",
       "base": "Community",
-      "members": 14,
+      "members": 6,
       "country": "India"
     }
   ],
@@ -17227,7 +17619,7 @@
       "id": "8826495",
       "name": "Jamshedpur Green City",
       "base": "Community",
-      "members": 11,
+      "members": 12,
       "country": "India"
     },
     {
@@ -17241,7 +17633,7 @@
       "id": "8827545",
       "name": "Jamshedpur Sevarthah",
       "base": "Community",
-      "members": 16,
+      "members": 15,
       "country": "India"
     },
     {
@@ -17255,7 +17647,7 @@
       "id": "214782",
       "name": "Kalimati Jamshedpur",
       "base": "Community",
-      "members": 11,
+      "members": 8,
       "country": "India"
     },
     {
@@ -17283,7 +17675,7 @@
       "id": "214802",
       "name": "Mrs. KMPM Vocational College",
       "base": "University",
-      "members": 10,
+      "members": 9,
       "country": "India"
     },
     {
@@ -17304,7 +17696,7 @@
       "id": "217659",
       "name": "Netaji Subhas University",
       "base": "University",
-      "members": 4,
+      "members": 14,
       "country": "India"
     },
     {
@@ -17402,14 +17794,14 @@
       "id": "218138",
       "name": "Steel City",
       "base": "Community",
-      "members": 23,
+      "members": 22,
       "country": "India"
     },
     {
       "id": "216250",
       "name": "United Ranchi",
       "base": "Community",
-      "members": 19,
+      "members": 20,
       "country": "India"
     },
     {
@@ -17423,7 +17815,7 @@
       "id": "8826655",
       "name": "Vaishali",
       "base": "Community",
-      "members": 8,
+      "members": 9,
       "country": "India"
     }
   ],
@@ -17433,6 +17825,13 @@
       "name": "Atoma",
       "base": "Community",
       "members": 2,
+      "country": "India"
+    },
+    {
+      "id": "8828585",
+      "name": "Bhilai Greater",
+      "base": "Community",
+      "members": 16,
       "country": "India"
     },
     {
@@ -17496,6 +17895,20 @@
       "name": "NIT Rourkela",
       "base": "Community",
       "members": 1,
+      "country": "India"
+    },
+    {
+      "id": "8828609",
+      "name": "Raipur Ethos",
+      "base": "Community",
+      "members": 15,
+      "country": "India"
+    },
+    {
+      "id": "8828591",
+      "name": "Raipur Queens",
+      "base": "Community",
+      "members": 26,
       "country": "India"
     },
     {
@@ -17697,6 +18110,13 @@
       "country": "India"
     },
     {
+      "id": "8828594",
+      "name": "Bhubaneswar Jayadev",
+      "base": "Community",
+      "members": 12,
+      "country": "India"
+    },
+    {
       "id": "8823391",
       "name": "Bhubaneswar Meadows",
       "base": "Community",
@@ -17749,7 +18169,7 @@
       "id": "218586",
       "name": "Bhubaneswar Utkal Impetus",
       "base": "Community",
-      "members": 12,
+      "members": 2,
       "country": "India"
     },
     {
@@ -17785,6 +18205,13 @@
       "name": "Brahmapur",
       "base": "Community",
       "members": 20,
+      "country": "India"
+    },
+    {
+      "id": "8828588",
+      "name": "Brahmapur Innovative",
+      "base": "Community",
+      "members": 17,
       "country": "India"
     },
     {
@@ -18164,7 +18591,7 @@
       "id": "8827912",
       "name": "Karachi Safe City",
       "base": "Community",
-      "members": 6,
+      "members": 7,
       "country": "Pakistan"
     },
     {
@@ -18234,7 +18661,7 @@
       "id": "8827148",
       "name": "SMBBMU",
       "base": "University",
-      "members": 35,
+      "members": 1,
       "country": "Pakistan"
     },
     {
@@ -18262,7 +18689,7 @@
       "id": "8825881",
       "name": "Umertkot Hope",
       "base": "Community",
-      "members": 5,
+      "members": 7,
       "country": "Pakistan"
     },
     {
@@ -18292,7 +18719,7 @@
       "id": "72774",
       "name": "Bagmati",
       "base": "Community",
-      "members": 33,
+      "members": 35,
       "country": "Nepal"
     },
     {
@@ -18306,14 +18733,14 @@
       "id": "89287",
       "name": "Balaju",
       "base": "Community",
-      "members": 24,
+      "members": 25,
       "country": "Nepal"
     },
     {
       "id": "8826007",
       "name": "Balkumari",
       "base": "Community",
-      "members": 15,
+      "members": 14,
       "country": "Nepal"
     },
     {
@@ -18327,14 +18754,14 @@
       "id": "218578",
       "name": "Baneshwor",
       "base": "Community",
-      "members": 20,
+      "members": 19,
       "country": "Nepal"
     },
     {
       "id": "89551",
       "name": "Baneshwor Royal",
       "base": "Community",
-      "members": 16,
+      "members": 14,
       "country": "Nepal"
     },
     {
@@ -18404,7 +18831,7 @@
       "id": "216820",
       "name": "Birat Medical College Fusion",
       "base": "University",
-      "members": 14,
+      "members": 9,
       "country": "Nepal"
     },
     {
@@ -18425,7 +18852,7 @@
       "id": "89536",
       "name": "Biratnagar Down Town",
       "base": "Community",
-      "members": 18,
+      "members": 7,
       "country": "Nepal"
     },
     {
@@ -18453,14 +18880,14 @@
       "id": "212632",
       "name": "Birtamode Mid-Town",
       "base": "Community",
-      "members": 44,
+      "members": 61,
       "country": "Nepal"
     },
     {
       "id": "72775",
       "name": "Budhanilkanatha",
       "base": "Community",
-      "members": 16,
+      "members": 24,
       "country": "Nepal"
     },
     {
@@ -18481,14 +18908,14 @@
       "id": "56450",
       "name": "Butwal Down Town",
       "base": "Community",
-      "members": 44,
+      "members": 42,
       "country": "Nepal"
     },
     {
       "id": "63178",
       "name": "Butwal South",
       "base": "Community",
-      "members": 40,
+      "members": 29,
       "country": "Nepal"
     },
     {
@@ -18551,7 +18978,7 @@
       "id": "86937",
       "name": "Chandragiri",
       "base": "Community",
-      "members": 29,
+      "members": 44,
       "country": "Nepal"
     },
     {
@@ -18565,28 +18992,28 @@
       "id": "75397",
       "name": "Charumati",
       "base": "Community",
-      "members": 19,
+      "members": 25,
       "country": "Nepal"
     },
     {
       "id": "9539",
       "name": "Chitwan",
       "base": "Community",
-      "members": 43,
+      "members": 49,
       "country": "Nepal"
     },
     {
       "id": "8825471",
       "name": "Chitwan Medical College",
       "base": "University",
-      "members": 24,
+      "members": 25,
       "country": "Nepal"
     },
     {
       "id": "8823900",
       "name": "Dakshinkali",
       "base": "Community",
-      "members": 17,
+      "members": 13,
       "country": "Nepal"
     },
     {
@@ -18607,7 +19034,14 @@
       "id": "214772",
       "name": "Dang",
       "base": "Community",
-      "members": 26,
+      "members": 27,
+      "country": "Nepal"
+    },
+    {
+      "id": "8828563",
+      "name": "Devdaha",
+      "base": "Community",
+      "members": 20,
       "country": "Nepal"
     },
     {
@@ -18628,7 +19062,7 @@
       "id": "212572",
       "name": "Dhangadhi",
       "base": "Community",
-      "members": 11,
+      "members": 9,
       "country": "Nepal"
     },
     {
@@ -18642,7 +19076,7 @@
       "id": "43654",
       "name": "Dharan",
       "base": "Community",
-      "members": 25,
+      "members": 28,
       "country": "Nepal"
     },
     {
@@ -18670,7 +19104,7 @@
       "id": "88996",
       "name": "Durbarmarg",
       "base": "Community",
-      "members": 14,
+      "members": 13,
       "country": "Nepal"
     },
     {
@@ -18698,7 +19132,7 @@
       "id": "8827606",
       "name": "Gokarneshwor",
       "base": "Community",
-      "members": 24,
+      "members": 23,
       "country": "Nepal"
     },
     {
@@ -18740,7 +19174,7 @@
       "id": "8826017",
       "name": "Himalayan Golfers",
       "base": "Community",
-      "members": 16,
+      "members": 17,
       "country": "Nepal"
     },
     {
@@ -18768,7 +19202,7 @@
       "id": "8826972",
       "name": "Janakpurdham",
       "base": "Community",
-      "members": 16,
+      "members": 13,
       "country": "Nepal"
     },
     {
@@ -18789,7 +19223,7 @@
       "id": "214109",
       "name": "Kakarvitta",
       "base": "Community",
-      "members": 17,
+      "members": 13,
       "country": "Nepal"
     },
     {
@@ -18810,7 +19244,7 @@
       "id": "87601",
       "name": "Kantipur Dental College",
       "base": "University",
-      "members": 72,
+      "members": 62,
       "country": "Nepal"
     },
     {
@@ -18838,7 +19272,7 @@
       "id": "8827984",
       "name": "Kathmandu Height",
       "base": "Community",
-      "members": 23,
+      "members": 17,
       "country": "Nepal"
     },
     {
@@ -18859,7 +19293,7 @@
       "id": "78432",
       "name": "Kathmandu Medical College",
       "base": "University",
-      "members": 16,
+      "members": 32,
       "country": "Nepal"
     },
     {
@@ -18873,7 +19307,7 @@
       "id": "65283",
       "name": "Kathmandu Metro",
       "base": "University",
-      "members": 8,
+      "members": 33,
       "country": "Nepal"
     },
     {
@@ -18887,7 +19321,7 @@
       "id": "44168",
       "name": "Kathmandu Mid-Town",
       "base": "Community",
-      "members": 45,
+      "members": 46,
       "country": "Nepal"
     },
     {
@@ -18901,7 +19335,7 @@
       "id": "68744",
       "name": "Kathmandu North East",
       "base": "Community",
-      "members": 20,
+      "members": 19,
       "country": "Nepal"
     },
     {
@@ -18929,7 +19363,7 @@
       "id": "77963",
       "name": "Kathmandu West",
       "base": "Community",
-      "members": 21,
+      "members": 24,
       "country": "Nepal"
     },
     {
@@ -18943,7 +19377,7 @@
       "id": "8823912",
       "name": "Kirtipur",
       "base": "Community",
-      "members": 17,
+      "members": 25,
       "country": "Nepal"
     },
     {
@@ -18964,7 +19398,7 @@
       "id": "91648",
       "name": "Kshitiz International College",
       "base": "University",
-      "members": 13,
+      "members": 7,
       "country": "Nepal"
     },
     {
@@ -18978,14 +19412,14 @@
       "id": "8825466",
       "name": "Lalitpur Midtown",
       "base": "Community",
-      "members": 12,
+      "members": 16,
       "country": "Nepal"
     },
     {
       "id": "8826979",
       "name": "Lamahi",
       "base": "Community",
-      "members": 24,
+      "members": 21,
       "country": "Nepal"
     },
     {
@@ -18999,7 +19433,7 @@
       "id": "90042",
       "name": "Lekhnath",
       "base": "Community",
-      "members": 22,
+      "members": 24,
       "country": "Nepal"
     },
     {
@@ -19013,7 +19447,7 @@
       "id": "89721",
       "name": "Lumbini Banijya Campus",
       "base": "University",
-      "members": 15,
+      "members": 16,
       "country": "Nepal"
     },
     {
@@ -19062,7 +19496,7 @@
       "id": "213114",
       "name": "Makawanpur",
       "base": "Community",
-      "members": 30,
+      "members": 25,
       "country": "Nepal"
     },
     {
@@ -19083,7 +19517,7 @@
       "id": "88815",
       "name": "Manohara",
       "base": "Community",
-      "members": 23,
+      "members": 24,
       "country": "Nepal"
     },
     {
@@ -19104,14 +19538,14 @@
       "id": "215937",
       "name": "Matribhumi Baluwatar IOM",
       "base": "University",
-      "members": 21,
+      "members": 56,
       "country": "Nepal"
     },
     {
       "id": "8823532",
       "name": "Mechinagar",
       "base": "Community",
-      "members": 15,
+      "members": 13,
       "country": "Nepal"
     },
     {
@@ -19157,6 +19591,13 @@
       "country": "Nepal"
     },
     {
+      "id": "8828552",
+      "name": "Nepal Mandal",
+      "base": "Community",
+      "members": 19,
+      "country": "Nepal"
+    },
+    {
       "id": "218266",
       "name": "Nepal National Hospital",
       "base": "Community",
@@ -19188,7 +19629,7 @@
       "id": "8823447",
       "name": "Nobel Medical College Teaching Hospital",
       "base": "University",
-      "members": 14,
+      "members": 13,
       "country": "Nepal"
     },
     {
@@ -19216,7 +19657,7 @@
       "id": "213960",
       "name": "Parbat Pokhara",
       "base": "Community",
-      "members": 6,
+      "members": 11,
       "country": "Nepal"
     },
     {
@@ -19237,7 +19678,7 @@
       "id": "43221",
       "name": "Patan",
       "base": "Community",
-      "members": 22,
+      "members": 21,
       "country": "Nepal"
     },
     {
@@ -19258,14 +19699,14 @@
       "id": "90407",
       "name": "Patan South",
       "base": "Community",
-      "members": 14,
+      "members": 17,
       "country": "Nepal"
     },
     {
       "id": "48154",
       "name": "Patan West",
       "base": "Community",
-      "members": 26,
+      "members": 23,
       "country": "Nepal"
     },
     {
@@ -19279,21 +19720,21 @@
       "id": "8825041",
       "name": "Peoples Dental College",
       "base": "University",
-      "members": 19,
+      "members": 29,
       "country": "Nepal"
     },
     {
       "id": "54240",
       "name": "Pokhara",
       "base": "Community",
-      "members": 21,
+      "members": 18,
       "country": "Nepal"
     },
     {
       "id": "77223",
       "name": "Pokhara Fishtail",
       "base": "Community",
-      "members": 34,
+      "members": 33,
       "country": "Nepal"
     },
     {
@@ -19307,7 +19748,7 @@
       "id": "214771",
       "name": "Pokhara Lakeside",
       "base": "Community",
-      "members": 39,
+      "members": 19,
       "country": "Nepal"
     },
     {
@@ -19321,7 +19762,7 @@
       "id": "218442",
       "name": "Pokhara University",
       "base": "University",
-      "members": 89,
+      "members": 34,
       "country": "Nepal"
     },
     {
@@ -19335,7 +19776,7 @@
       "id": "61643",
       "name": "Rajdhani",
       "base": "Community",
-      "members": 30,
+      "members": 37,
       "country": "Nepal"
     },
     {
@@ -19356,7 +19797,7 @@
       "id": "78425",
       "name": "Reliance College",
       "base": "University",
-      "members": 28,
+      "members": 24,
       "country": "Nepal"
     },
     {
@@ -19377,7 +19818,7 @@
       "id": "90406",
       "name": "Rupandehi",
       "base": "Community",
-      "members": 19,
+      "members": 13,
       "country": "Nepal"
     },
     {
@@ -19391,7 +19832,7 @@
       "id": "89156",
       "name": "Sainbu Bhainsepati",
       "base": "Community",
-      "members": 39,
+      "members": 37,
       "country": "Nepal"
     },
     {
@@ -19412,7 +19853,7 @@
       "id": "8826740",
       "name": "Shankaracharya",
       "base": "Community",
-      "members": 24,
+      "members": 28,
       "country": "Nepal"
     },
     {
@@ -19454,7 +19895,7 @@
       "id": "8824366",
       "name": "Sunsari",
       "base": "Community",
-      "members": 14,
+      "members": 13,
       "country": "Nepal"
     },
     {
@@ -19468,7 +19909,7 @@
       "id": "86487",
       "name": "Swoyambhu",
       "base": "Community",
-      "members": 41,
+      "members": 40,
       "country": "Nepal"
     },
     {
@@ -19496,7 +19937,7 @@
       "id": "218434",
       "name": "Tilottama Suddhodhan",
       "base": "Community",
-      "members": 12,
+      "members": 11,
       "country": "Nepal"
     },
     {
@@ -19510,7 +19951,7 @@
       "id": "216016",
       "name": "Tinau Butwal",
       "base": "Community",
-      "members": 22,
+      "members": 16,
       "country": "Nepal"
     },
     {
@@ -19524,21 +19965,21 @@
       "id": "8827598",
       "name": "Tinkune Kathmandu",
       "base": "Community",
-      "members": 12,
+      "members": 22,
       "country": "Nepal"
     },
     {
       "id": "8825898",
       "name": "Tribhuvan University",
       "base": "University",
-      "members": 33,
+      "members": 47,
       "country": "Nepal"
     },
     {
       "id": "61432",
       "name": "Tripureswor",
       "base": "Community",
-      "members": 29,
+      "members": 28,
       "country": "Nepal"
     },
     {

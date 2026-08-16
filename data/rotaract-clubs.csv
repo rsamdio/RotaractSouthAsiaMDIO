@@ -1,12 +1,297 @@
 district,club_id,club_name,club_base,members,country
-2981,8828530,A. G. Padmavathi College of Nursing,University,20,India
-2981,8824656,A.D.M. College for Women,University,1,India
-2981,91146,A.V.C. Polytechnic College,University,3,India
-2981,8828003,A.V.V.M. Sri Pushpam College,University,19,India
+64,91466,"Aabahanikunja, Dhaka",Community,1,Bangladesh
+64,8823642,Abani Bluez,Community,8,Bangladesh
+64,52680,Abhayanagar,Community,3,Bangladesh
+64,9521,Agri-Varsity,University,2,Bangladesh
+64,76584,Approach Rajshahi,Community,6,Bangladesh
+64,9517,Bagerhat,Community,1,Bangladesh
+64,43235,Bagerhat Central,Community,1,Bangladesh
+64,91778,Banashree Dhaka,University,3,Bangladesh
+64,83295,Barisal Midtown,Community,1,Bangladesh
+64,212568,Barisal University,University,5,Bangladesh
+64,92167,Basundhara Dhaka,Community,2,Bangladesh
+64,212567,"Begum Rokeya University, Rangpur",University,5,Bangladesh
+64,213216,Bhawal Green,Community,7,Bangladesh
+64,215331,BL College Khulna,University,3,Bangladesh
+64,53615,Bogra Newtown,Community,5,Bangladesh
+64,218368,"Cantonment College, Jashore (CCJ)",University,4,Bangladesh
+64,9487,Cosmopolitan Khulna,Community,3,Bangladesh
+64,8824452,Cosmopolitan Khulna Rising,University,6,Bangladesh
+64,212535,Daffodil International University,University,6,Bangladesh
+64,9485,Daulatpur,Community,3,Bangladesh
+64,9483,Dhaka,Community,3,Bangladesh
+64,8825013,Dhaka Amazing,Community,1,Bangladesh
+64,9481,Dhaka Buriganga,Community,4,Bangladesh
+64,54199,Dhaka Commerce College,University,10,Bangladesh
+64,215804,Dhaka Community Medical College,University,8,Bangladesh
+64,9475,Dhaka Cosmopolitan,Community,4,Bangladesh
+64,8824055,Dhaka Dynamic,Community,10,Bangladesh
+64,43251,Dhaka East West,Community,3,Bangladesh
+64,59510,Dhaka Fort,Community,17,Bangladesh
+64,91459,Dhaka Green City,Community,3,Bangladesh
+64,222260,Dhaka Harmony,Community,1,Bangladesh
+64,8824449,Dhaka Hatirjheel,Community,1,Bangladesh
+64,91834,Dhaka Heritage,Community,4,Bangladesh
+64,9471,Dhaka Mahanagari,Community,2,Bangladesh
+64,91640,Dhaka Mega City,Community,5,Bangladesh
+64,8824462,Dhaka Mega City North,Community,7,Bangladesh
+64,9467,Dhaka Midtown,Community,3,Bangladesh
+64,42685,Dhaka New City,Community,8,Bangladesh
+64,8826804,Dhaka NextGen,Community,20,Bangladesh
+64,9465,Dhaka North,Community,11,Bangladesh
+64,213210,Dhaka North South,Community,4,Bangladesh
+64,8824458,Dhaka Old City,Community,2,Bangladesh
+64,91460,Dhaka Paradise,University,4,Bangladesh
+64,212903,Dhaka Paragon,Community,8,Bangladesh
+64,213126,Dhaka Paramount,Community,2,Bangladesh
+64,91465,Dhaka Pioneer,Community,5,Bangladesh
+64,68184,Dhaka Pioneer Fort,Community,3,Bangladesh
+64,91827,Dhaka Prime View,University,3,Bangladesh
+64,8824197,Dhaka Radiant,Community,4,Bangladesh
+64,8824358,Dhaka Rising Stars,Community,3,Bangladesh
+64,43013,Dhaka Rose Vale,Community,2,Bangladesh
+64,8824459,Dhaka Synergy,Community,1,Bangladesh
+64,216789,Dhaka Tilottoma Bright,University,2,Bangladesh
+64,9453,Dhaka Udayan,Community,7,Bangladesh
+64,9451,Dhaka University,University,12,Bangladesh
+64,9447,Dhanmondi,Community,2,Bangladesh
+64,9445,Dhanmondi Lake View,Community,4,Bangladesh
+64,42571,Dilkusha,Community,5,Bangladesh
+64,72473,East West University,University,13,Bangladesh
+64,42684,Eskaton North,Community,9,Bangladesh
+64,56775,Gazipur Banarupa,Community,7,Bangladesh
+64,216545,Gazipur Central,Community,13,Bangladesh
+64,214428,Greater Jessore,Community,2,Bangladesh
+64,213805,Green Bangla,Community,3,Bangladesh
+64,9427,Gulshan,Community,13,Bangladesh
+64,8824879,Gulshan Tigers,Community,4,Bangladesh
+64,214255,Hatirjheel,Community,3,Bangladesh
+64,84604,Hstu,University,2,Bangladesh
+64,42692,Isamoti Pabna,Community,3,Bangladesh
+64,218254,Jahangirnagar University,University,8,Bangladesh
+64,8823489,Jamalpur,Community,10,Bangladesh
+64,8823822,Jashore East,Community,2,Bangladesh
+64,8823303,Jatiya Kabi Kazi Nazrul Islam University,University,3,Bangladesh
+64,9415,Jessore,Community,4,Bangladesh
+64,72451,Jessore Central,Community,4,Bangladesh
+64,68745,Jessore Midcity,Community,8,Bangladesh
+64,9413,Jessore Progoti,Community,4,Bangladesh
+64,216040,Jessore University of Science & Technology,University,2,Bangladesh
+64,8825241,Kaliakair Synergy,Community,8,Bangladesh
+64,9407,Khulna,Community,5,Bangladesh
+64,42512,Khulna City,Community,3,Bangladesh
+64,217870,Khulna Fort,Community,1,Bangladesh
+64,213804,Khulna Medical College,University,2,Bangladesh
+64,9403,Khulna North,Community,2,Bangladesh
+64,91793,Khulna Royals,University,5,Bangladesh
+64,45984,Khulna University,University,7,Bangladesh
+64,218684,Kuakata Beach,Community,5,Bangladesh
+64,213803,KUET,University,3,Bangladesh
+64,8824540,Kushtia City,Community,2,Bangladesh
+64,9393,Lalmonirhat,Community,4,Bangladesh
+64,218748,Leading Dhaka,Community,5,Bangladesh
+64,9391,Mahanagar North West,Community,7,Bangladesh
+64,215867,Mangrove,Community,3,Bangladesh
+64,75116,Mawlana Bhashani Tangil,University,35,Bangladesh
+64,9383,Metropolitan Khulna,Community,6,Bangladesh
+64,57877,Metropolitan Rajshahi,Community,3,Bangladesh
+64,9379,Midtown Sunflower,Community,3,Bangladesh
+64,8823320,Mirpur,Community,1,Bangladesh
+64,216445,Mirpur Dhaka,Community,26,Bangladesh
+64,8824448,MM City College Khulna,University,5,Bangladesh
+64,92234,Mukto Swadesh,Community,1,Bangladesh
+64,72633,Mymensingh Town,Community,2,Bangladesh
+64,8828625,Narayanganj,Community,3,Bangladesh
+64,8824995,Narayanganj Cosmopolitan,Community,5,Bangladesh
+64,8823441,Narayanganj Fort,Community,5,Bangladesh
+64,79288,Narayanganj Midcity,Community,4,Bangladesh
+64,9297,Narayanganj Midtown,Community,6,Bangladesh
+64,8824096,Narayanganj New City,Community,5,Bangladesh
+64,8823183,Narayanganj Royal,Community,3,Bangladesh
+64,213226,Narayanganj Shitalakshya,Community,9,Bangladesh
+64,90773,Narayanganj Uptown,Community,2,Bangladesh
+64,91009,Nilphamari,Community,3,Bangladesh
+64,9309,Noapara,Community,8,Bangladesh
+64,82930,Northern University Khulna,University,5,Bangladesh
+64,213232,North Western University,University,2,Bangladesh
+64,8823528,Notre Dame College,University,18,Bangladesh
+64,9357,Pabna,University,4,Bangladesh
+64,91750,Pabna Medical College,University,1,Bangladesh
+64,91751,Pabna New City,University,1,Bangladesh
+64,82060,Pundrobordhon,Community,4,Bangladesh
+64,76979,Purbasha Plus,Community,8,Bangladesh
+64,91743,Rajdhani Dhaka,Community,6,Bangladesh
+64,59448,Rajdhani Sonargaon,Community,6,Bangladesh
+64,9355,Rajshahi,Community,4,Bangladesh
+64,89562,Rajshahi City,Community,5,Bangladesh
+64,215902,Rajshahi Government College,University,6,Bangladesh
+64,9351,Rajshahi University,University,3,Bangladesh
+64,9349,Ramna,Community,9,Bangladesh
+64,91742,Rangpur Central,Community,8,Bangladesh
+64,73318,Reshom Nagar,Community,2,Bangladesh
+64,91102,Rupkatha Pabna,Community,4,Bangladesh
+64,72634,Rupsha,Community,3,Bangladesh
+64,90770,Saidpur,Community,3,Bangladesh
+64,213539,Shataish Gazipura,Community,8,Bangladesh
+64,91839,She-E Bangla Agricultural University,University,3,Bangladesh
+64,9337,Shyamoli Dhaka,Community,6,Bangladesh
+64,8823297,Sonargaon North,Community,3,Bangladesh
+64,9331,Sundarban,Community,3,Bangladesh
+64,91398,Tilottoma Spondon,Community,3,Bangladesh
+64,217792,University of Asia Pacific (UAP),University,3,Bangladesh
+64,9311,Uttara,Community,20,Bangladesh
+64,214425,Uttara Lake View,Community,4,Bangladesh
+64,45972,Varendra,Community,4,Bangladesh
+64,90766,Voyrob Khulna,Community,3,Bangladesh
+64,9317,Wari,Community,5,Bangladesh
+65,213538,Aaparupa Chittagong,Community,6,Bangladesh
+65,217154,Aaparupa Meghna,Community,3,Bangladesh
+65,217957,Adarsha City,Community,3,Bangladesh
+65,217967,Adarsha Cumilla,Community,3,Bangladesh
+65,9523,Agrabad,Community,10,Bangladesh
+65,8824387,Anchor City Chittagong,Community,1,Bangladesh
+65,8826097,Army Medical College Chittagong,University,6,Bangladesh
+65,83217,Beani Bazar,Community,8,Bangladesh
+65,8826103,BGC Trust Medical College,University,4,Bangladesh
+65,217909,Bir Chattola,Community,2,Bangladesh
+65,217997,Brahmanbaria City,Community,4,Bangladesh
+65,217009,Britania University,University,11,Bangladesh
+65,9507,Chandpur,Community,13,Bangladesh
+65,9505,Chandpur Central,Community,10,Bangladesh
+65,8823709,Chandpur City,Community,6,Bangladesh
+65,8823825,Chandpur Hilsha City,Community,11,Bangladesh
+65,42293,Chandpur Rupashi,Community,10,Bangladesh
+65,9501,Chittagong,Community,22,Bangladesh
+65,8823710,Chittagong Alliance,Community,7,Bangladesh
+65,217015,Chittagong Aristocrat,Community,9,Bangladesh
+65,9499,Chittagong Central,Community,8,Bangladesh
+65,91923,Chittagong Central Town,Community,3,Bangladesh
+65,90848,Chittagong City,Community,8,Bangladesh
+65,82932,Chittagong Cosmopolitan,Community,6,Bangladesh
+65,8823684,Chittagong Crown,Community,5,Bangladesh
+65,9497,Chittagong Down Town,Community,9,Bangladesh
+65,214419,Chittagong East,Community,4,Bangladesh
+65,8823280,Chittagong Glory,Community,8,Bangladesh
+65,82934,Chittagong Green City,Community,3,Bangladesh
+65,216698,Chittagong Heritage,Community,6,Bangladesh
+65,8826088,Chittagong International Dental College,University,4,Bangladesh
+65,8826108,Chittagong International Medical College,University,4,Bangladesh
+65,8823327,Chittagong Karnaphuli,Community,1,Bangladesh
+65,81017,Chittagong Lake City,Community,9,Bangladesh
+65,8826091,Chittagong Maa-O-Shishu Medical College,University,3,Bangladesh
+65,217684,Chittagong Marine City,Community,8,Bangladesh
+65,8826099,Chittagong Medical College,University,4,Bangladesh
+65,9307,Chittagong Midtown,Community,8,Bangladesh
+65,9495,Chittagong Port City,Community,5,Bangladesh
+65,217937,Chittagong Rainbow,Community,5,Bangladesh
+65,214896,Chittagong River Shine,Community,9,Bangladesh
+65,83134,Chittagong Rose Garden,Community,10,Bangladesh
+65,70121,Chittagong Sagorika,Community,14,Bangladesh
+65,64137,Chittagong South,Community,12,Bangladesh
+65,214608,Chittagong Sugandha,Community,1,Bangladesh
+65,216567,Chittagong Veterinary and Animal Sciences University,University,7,Bangladesh
+65,216381,Chittagong Waterfall,Community,5,Bangladesh
+65,9491,Comilla,Community,4,Bangladesh
+65,215073,Comilla Brahmanpara Central,Community,4,Bangladesh
+65,217151,Comilla Elites,Community,4,Bangladesh
+65,59512,Comilla Lalmai,Community,17,Bangladesh
+65,215933,Comilla Mahanagar,Community,6,Bangladesh
+65,84038,Comilla South,Community,6,Bangladesh
+65,217665,Comilla Sunrise,Community,5,Bangladesh
+65,216548,Comilla University,University,13,Bangladesh
+65,90737,Comilla Victoria,Community,4,Bangladesh
+65,217515,Cumilla Elegance,Community,5,Bangladesh
+65,8824553,Cumilla Liberty,Community,4,Bangladesh
+65,8823821,Cumilla Meghna,Community,4,Bangladesh
+65,217548,Cumilla Shine,Community,5,Bangladesh
+65,217551,Cumilla Shining Star,Community,5,Bangladesh
+65,8824554,Dakatia Hajigonj,University,14,Bangladesh
+65,217377,Enlightened Narsingdi,Community,8,Bangladesh
+65,8823725,Feni,Community,7,Bangladesh
+65,214690,Feni Aparupa,Community,6,Bangladesh
+65,212856,Feni Apurba,Community,8,Bangladesh
+65,217996,Feni Belonia,Community,3,Bangladesh
+65,49247,Feni Central,Community,7,Bangladesh
+65,215520,Feni City,Community,5,Bangladesh
+65,213970,Feni Govt. College,University,8,Bangladesh
+65,8823281,Feni Muhuri,Community,3,Bangladesh
+65,217949,Feni New Sun,Community,4,Bangladesh
+65,218671,Feni Rising Sun,Community,4,Bangladesh
+65,8823638,Feni Town,Community,3,Bangladesh
+65,8823639,Feni University,University,5,Bangladesh
+65,80742,Gomoti,Community,5,Bangladesh
+65,217787,Grand Sylhet,Community,2,Bangladesh
+65,216697,Green City Sylhet,Community,3,Bangladesh
+65,55899,Habiganj,Community,10,Bangladesh
+65,80738,Hajiganj,Community,6,Bangladesh
+65,8826096,Institute of Applied Health and Science,University,6,Bangladesh
+65,42709,Islamabad,Community,7,Bangladesh
+65,9419,Jalalabad,Community,10,Bangladesh
+65,82937,Leading University Sylhet,University,8,Bangladesh
+65,52742,Madan Mohan University College,University,7,Bangladesh
+65,8823656,Manchester Narsingdi,Community,1,Bangladesh
+65,8826093,Marine City Medical College,University,7,Bangladesh
+65,8823324,Matlab,Community,5,Bangladesh
+65,8824356,Medical Community,Community,9,Bangladesh
+65,68610,Meghna Narsingdi,Community,5,Bangladesh
+65,90731,Meghna Narsingdi UFFG,Community,7,Bangladesh
+65,9387,Metropolitan Chittagong,Community,12,Bangladesh
+65,91003,Midtown Comilla,Community,3,Bangladesh
+65,8823625,Moheshkhali,Community,2,Bangladesh
+65,9371,Moulvibazar Central,Community,5,Bangladesh
+65,46799,Moulvibazar Govt. College,University,6,Bangladesh
+65,8823663,Moulvibazar Sunflower,Community,6,Bangladesh
+65,8823676,Moulvibazar Sunlight,Community,6,Bangladesh
+65,216940,Moulvibazar Sunrise,Community,6,Bangladesh
+65,46720,Narsingdi,Community,2,Bangladesh
+65,217222,Narsingdi City,Community,2,Bangladesh
+65,217727,Narsingdi City Central,Community,2,Bangladesh
+65,8823655,Narsingdi Elite,Community,1,Bangladesh
+65,217961,Narsingdi Government College,Community,3,Bangladesh
+65,8823666,Narsingdi Riverview,Community,1,Bangladesh
+65,8823664,Narsingdi Royal,Community,1,Bangladesh
+65,217719,Narsingdi Sunbeam,Community,2,Bangladesh
+65,8823665,Noakhali Science and Technology University,University,3,Bangladesh
+65,43047,Rangamati,Community,4,Bangladesh
+65,8823640,Shamshernagar,Community,4,Bangladesh
+65,8826090,Southern Medical College,University,5,Bangladesh
+65,213541,Sunamganj Elites,Community,2,Bangladesh
+65,9329,Sylhet Central SOMC,Community,1,Bangladesh
+65,214166,Sylhet City,Community,3,Bangladesh
+65,217833,Sylhet Cosmopolitan,Community,1,Bangladesh
+65,217971,Sylhet East,Community,3,Bangladesh
+65,215866,Sylhet Elegance,Community,11,Bangladesh
+65,217958,Sylhet Garden City,Community,5,Bangladesh
+65,216765,Sylhet Green,Community,3,Bangladesh
+65,213964,Sylhet Green Buds,Community,26,Bangladesh
+65,88928,Sylhet Green City,Community,14,Bangladesh
+65,217801,Sylhet Green Town,Community,5,Bangladesh
+65,44912,Sylhet Hillcity,Community,6,Bangladesh
+65,217820,Sylhet Holy City,Community,4,Bangladesh
+65,83371,Sylhet International University,University,8,Bangladesh
+65,216768,Sylhet Kushiara,Community,3,Bangladesh
+65,44219,Sylhet M.C. College,University,11,Bangladesh
+65,9327,Sylhet Midtown,Community,7,Bangladesh
+65,216769,Sylhet North,Community,3,Bangladesh
+65,216289,Sylhet Orange City,Community,3,Bangladesh
+65,216826,Sylhet Peach,Community,6,Bangladesh
+65,9325,Sylhet Pioneer,Community,13,Bangladesh
+65,212562,Sylhet Premier,Community,4,Bangladesh
+65,217800,Sylhet Star,Community,3,Bangladesh
+65,217822,Sylhet Sunflower,Community,5,Bangladesh
+65,217913,Sylhet Super Star,Community,4,Bangladesh
+65,216666,Sylhet Supreme,University,4,Bangladesh
+65,9323,Sylhet Surma,Community,9,Bangladesh
+65,8824615,Sylhet Synergy,Community,6,Bangladesh
+65,217765,Sylhet Water Lily,Community,2,Bangladesh
+65,217764,Sylhet Water Lily Garden,Community,1,Bangladesh
 2981,8824847,Aarupadai Veedu Medical College & Hospital,University,1,India
+2981,8824656,A.D.M. College for Women,University,1,India
+2981,8828530,A. G. Padmavathi College of Nursing,University,20,India
 2981,8824022,Arvindar Arts and Science College,University,1,India
+2981,91146,A.V.C. Polytechnic College,University,3,India
 2981,217173,Avvaiyar Govt. College for Women,University,1,India
-2981,8824590,B.P.J College of Arts & Science,University,1,India
+2981,8828003,A.V.V.M. Sri Pushpam College,University,19,India
 2981,8824269,Best Arts and Science College,University,1,India
 2981,8824648,Bharath College of Science & Management,University,1,India
 2981,8823534,"Bharathidasan Government College for Women, Puducherry",University,1,India
@@ -14,6 +299,7 @@ district,club_id,club_name,club_base,members,country
 2981,8823823,"Bon Secours Arts & Science College For Women, Mannargudi",University,1,India
 2981,8828028,Bon Secours College for Women Thanjavur,University,20,India
 2981,8824874,Bon Secours-Literati,University,1,India
+2981,8824590,B.P.J College of Arts & Science,University,1,India
 2981,218035,CSM College of Arts & Science,University,1,India
 2981,8827767,Cuddalore Waves,Community,17,India
 2981,8825038,Dhamapuram Adhinam Arts College,University,1,India
@@ -28,11 +314,11 @@ district,club_id,club_name,club_base,members,country
 2981,8827978,Kasturba Gandhi Nursing College,University,21,India
 2981,8824167,Konagarnadu Sakthi,University,1,India
 2981,8824653,Kurinjipadi,University,1,India
-2981,8825010,M R K Arts and Science College,University,1,India
-2981,213168,M.R.G. Arts College Mannargudi,University,2,India
 2981,8824468,Marutu Pandiyar College,University,1,India
 2981,218694,Meyyathur,Community,1,India
 2981,8824108,Mother Teresa Nursing College,University,1,India
+2981,213168,M.R.G. Arts College Mannargudi,University,2,India
+2981,8825010,M R K Arts and Science College,University,1,India
 2981,8827976,MVIT (MBA) Pondicherry,University,12,India
 2981,8825000,National Institute of Technology Puducherry,University,1,India
 2981,8824168,Pattukkottai,Community,1,India
@@ -52,12 +338,12 @@ district,club_id,club_name,club_base,members,country
 2981,8824121,Saradha Gangadharan College,University,1,India
 2981,8824654,Sir Issac Newton College of Engineering and Technology,University,1,India
 2981,217306,SJCET Thanjavur,University,1,India
-2981,8824582,Sri Raghavendra School of Nursing,University,1,India
-2981,8823721,Sri Venkateshwara College of Engineering & Technology,University,1,India
-2981,8824471,Sri Venkateshwaraa Medical College Hospital & Research Centre,University,1,India
 2981,8824272,Srinivasa Subbaraya Government Polytechnic College,University,1,India
-2981,8827972,St. Joseph College of Arts and Science Cuddalore,University,20,India
+2981,8824582,Sri Raghavendra School of Nursing,University,1,India
+2981,8824471,Sri Venkateshwaraa Medical College Hospital & Research Centre,University,1,India
+2981,8823721,Sri Venkateshwara College of Engineering & Technology,University,1,India
 2981,217466,STET Women's College,University,1,India
+2981,8827972,St. Joseph College of Arts and Science Cuddalore,University,20,India
 2981,217307,Thanjavur AVASC,University,1,India
 2981,8825011,Vadalur Poosalikuppam,University,1,India
 2981,215940,Vaigarai Community College,University,1,India
@@ -70,20 +356,21 @@ district,club_id,club_name,club_base,members,country
 2982,68825,Dr. Hahnemann Homeopathy Medical College & Research C.,University,12,India
 2982,8826388,Government Arts and Science College Sendamangalam,University,15,India
 2982,8828432,Hosur,Community,22,India
-2982,8826466,Hosur Midtown Youngsters,Community,14,India
-2982,8827524,Idappadi,Community,17,India
+2982,8828622,Hosur Dynamic,Community,14,India
+2982,8826466,Hosur Midtown Youngsters,Community,13,India
+2982,8827524,Idappadi,Community,19,India
 2982,217206,Jalakandapuram,Community,16,India
 2982,8827145,Jayarani Arts and Science College for Women,University,32,India
+2982,8827624,Kailash Women's College,University,16,India
+2982,92193,Knowledge Institute of Technology,University,12,India
+2982,8826185,K. S. Rangasamy College of Arts and Science,University,12,India
+2982,8826183,K. S. Rangasamy College of Technology,University,12,India
+2982,8826186,K. S. Rangasamy Institute of Technology,University,12,India
 2982,8826179,K. S. R. College of Arts and Science for Women,University,12,India
 2982,8826184,K. S. R. College of Engineering,University,12,India
 2982,8826180,K. S. R. College of Nursing and Allied Health Science,University,12,India
 2982,8826204,K. S. R. Institute for Engineering and Technology,University,13,India
 2982,8826181,K. S. R. Institute of Dental Science and Research,University,12,India
-2982,8826185,K. S. Rangasamy College of Arts and Science,University,12,India
-2982,8826183,K. S. Rangasamy College of Technology,University,12,India
-2982,8826186,K. S. Rangasamy Institute of Technology,University,12,India
-2982,8827624,Kailash Women's College,University,16,India
-2982,92193,Knowledge Institute of Technology,University,12,India
 2982,8827527,Mettur Dam City,Community,15,India
 2982,8828031,Mettur Government Arts and Science College,University,25,India
 2982,8827493,Mettur Grand,Community,12,India
@@ -95,29 +382,32 @@ district,club_id,club_name,club_base,members,country
 2982,8827068,Salem Central,Community,18,India
 2982,8824120,Salem Gems,Community,11,India
 2982,222275,Salem Gugai,Community,19,India
-2982,8826592,Salem Metropolis,Community,10,India
+2982,8826592,Salem Metropolis,Community,11,India
 2982,8826803,Salem Midtown,Community,16,India
 2982,8826649,Salem Polytechnic College,University,12,India
 2982,8825619,Salem Royals,Community,19,India
 2982,8827765,Salem Vysya College,University,13,India
+2982,8828633,Shri Sakthikailassh Women's College,University,4,India
 2982,8827859,Shri Sowdesvari Women’s College Salem,University,12,India
+2982,8828634,Sivaraj Medical College Salem,University,4,India
 2982,8827548,SKS College of Nursing,University,22,India
 2982,217328,Sri Ayyappa Polytechnic,University,1,India
 2982,8827241,Sri Vijay Vidyalaya College of Nursing,University,20,India
 2982,8826590,"St. Peter's Medical College, Hospital & Research Institute",University,75,India
+2982,8825577,Theivanai Ammal College for Women,University,13,India
 2982,8827570,The Kaavery Paramedical Institutions,University,12,India
 2982,8827700,The Kavery Engineering College,University,15,India
-2982,8825577,Theivanai Ammal College for Women,University,12,India
 2982,89704,Thiruvalluvar Govt. Arts College,University,11,India
+2982,8828580,Valapady,Community,17,India
 2982,8827476,Vanavasi,Community,21,India
 2982,8825576,Vinayaka Missions College of Pharmacy,University,14,India
-3000,8825175,Agri-Horti Trichy,University,3,India
 3000,8826712,Agricultural Engineering College Kumulur,University,21,India
 3000,89035,Agriculture College Madurai,University,20,India
+3000,8825175,Agri-Horti Trichy,University,3,India
 3000,8828435,Allied Health Sciences TSRMMCHRC,University,50,India
+3000,83779,Annai Women's College,University,3,India
 3000,214971,Anna Nagar (OFT),Community,2,India
 3000,91279,Anna University,University,15,India
-3000,83779,Annai Women's College,University,3,India
 3000,8824958,Aranthangi,Community,15,India
 3000,212960,Arasu College of Education for Women,University,3,India
 3000,8827736,Arputha Arts & Science College,University,14,India
@@ -135,28 +425,26 @@ district,club_id,club_name,club_base,members,country
 3000,55980,Cauvery College for Women,University,9,India
 3000,8828450,Chendur Institute of Hotel Management and Health Science Pudukkottai,University,13,India
 3000,83898,Chettinad College of Engineering & Tech.,University,8,India
-3000,90543,Dindigul Rock Fort,Community,9,India
+3000,90543,Dindigul Rock Fort,Community,12,India
 3000,8828463,Doctor's College of Nursing Pudukkottai,University,21,India
 3000,8827036,E.M.G. Yadava Women's College,University,12,India
 3000,5081,Fatima College,University,6,India
-3000,8828078,G.T.N. Arts and Science College,University,24,India
 3000,8827101,Glanis,University,15,India
-3000,8827674,Government Arts & Science College Kurumbalur,University,15,India
 3000,8826756,Government Arts and Science College for Women Kodaikanal,University,15,India
 3000,8826926,Government Arts and Science College Kappalur,University,12,India
-3000,89500,Government Arts College-Karur,University,10,India
+3000,89500,Government Arts College-Karur,University,9,India
+3000,8827674,Government Arts & Science College Kurumbalur,University,15,India
 3000,8828341,Government College of Education Pudukkottai,University,25,India
 3000,8827663,Government ITI Pudukkottai,University,12,India
 3000,8827050,Government Polytechnic College Gandarvakottai,University,14,India
+3000,8828078,G.T.N. Arts and Science College,University,24,India
 3000,8827924,GTN Medical College of Naturopathy and Yogic Science Research Centre,University,33,India
-3000,5063,Holy Cross College,University,7,India
+3000,5063,Holy Cross College,University,4,India
 3000,8826860,Horticultural College and Research Institute Periyakulam,University,45,India
-3000,212787,J.R. Polytechnic College-Alundur,University,4,India
-3000,5061,Jamal Mohamed College,University,6,India
+3000,5061,Jamal Mohamed College,University,7,India
 3000,86531,Jamal Mohamed College for Women,University,8,India
-3000,8828540,Jayaraj Annapackiam College for Women (Autonomous),University,250,India
-3000,8826737,K.L.N. College of Engineering,University,3,India
-3000,8828528,K.P. National College of Arts & Science,University,547,India
+3000,8828540,Jayaraj Annapackiam College for Women (Autonomous),University,"2,119",India
+3000,212787,J.R. Polytechnic College-Alundur,University,4,India
 3000,8827925,KAPV Govt. Medical College,University,20,India
 3000,5057,Karur,Community,25,India
 3000,8825632,Karur Aram,Community,10,India
@@ -168,38 +456,40 @@ district,club_id,club_name,club_base,members,country
 3000,212871,Karur Valalar College of Arts and Science for Women,University,4,India
 3000,8827894,KDM Agri Crown,University,20,India
 3000,8827902,KDM NATRIVA,University,29,India
+3000,8826737,K.L.N. College of Engineering,University,3,India
 3000,8827676,KMC College of Nursing,University,25,India
 3000,8825940,Kongu College,University,8,India
 3000,214597,Kongu College of Arts & Science (women),University,4,India
 3000,8827582,Kongunadu College of Engineering and Technology,University,15,India
+3000,8828528,K.P. National College of Arts & Science,University,547,India
 3000,91278,Lady Doak College Madurai,University,15,India
-3000,8828546,M.A.M College of Engineering and Technology,University,18,India
-3000,8825998,M.A.M. Business School,University,20,India
-3000,214644,M.S Polytechnic,University,6,India
-3000,215568,Madurai Elite,Community,7,India
+3000,215568,Madurai Elite,Community,8,India
 3000,212346,Madurai Gandhi NMR Subbaraman College for Women,University,3,India
 3000,8827221,Madurai Institute of Social Sciences,University,14,India
 3000,8827563,Madurai Kalasam,Community,12,India
 3000,8828398,Madurai Kamaraj University Evening College Dindigul,University,15,India
 3000,8825897,Madurai Medical College,University,14,India
-3000,47480,Madurai North,Community,27,India
+3000,47480,Madurai North,Community,24,India
 3000,8826744,Madurai Pandyas,Community,7,India
 3000,8823943,Madurai Preceptors,Community,24,India
 3000,86373,Madurai Sivakasi Nadars Pioneer Meenakshi Wom. Coll.,University,5,India
 3000,91277,Mahalakshmi Engineering College,University,3,India
 3000,8828074,Malligai,University,24,India
+3000,8825998,M.A.M. Business School,University,20,India
+3000,8828546,M.A.M College of Engineering and Technology,University,18,India
 3000,215928,Mannar Thirumalai Naicker College,University,3,India
 3000,8825924,Mannar Thirumalai Naicker College (SF),University,7,India
 3000,8828465,Meenakshi Arts and Science College Dindigul,University,15,India
 3000,8827564,Mookambigai College of Engineering,University,21,India
 3000,8826761,Mother Teresa Women's University,University,15,India
 3000,8828403,Mount Zion College of Nursing,University,48,India
+3000,214644,M.S Polytechnic,University,6,India
 3000,8826919,MSS Wakf Board College,University,14,India
-3000,8827092,N.M.S S. Vellaichamy Nadar College,University,15,India
-3000,8827095,N.M.S. Sermathai Vasan College For Women,University,15,India
 3000,8828089,Naina Mohamed College,University,15,India
 3000,5019,National College,University,9,India
-3000,8827922,NPR Arts and Science College,University,21,India
+3000,8827095,N.M.S. Sermathai Vasan College For Women,University,15,India
+3000,8827092,N.M.S S. Vellaichamy Nadar College,University,15,India
+3000,8827922,NPR Arts and Science College,University,33,India
 3000,8827929,NPR College of Engineering and Technology,University,25,India
 3000,8827572,NR IAS Academy,University,17,India
 3000,8827544,NRT Educational Institutions,University,15,India
@@ -231,13 +521,13 @@ district,club_id,club_name,club_base,members,country
 3000,8828059,Sourashtra College,University,21,India
 3000,8828055,Sourashtra College for Women,University,20,India
 3000,8828314,Sourashtra College Self Finance Wing,University,20,India
-3000,217254,Sri Amaravathi College of Arts & Science,University,4,India
+3000,217254,Sri Amaravathi College of Arts & Science,University,5,India
 3000,8825306,Sri Bharathi Arts & Science College for Women,University,10,India
 3000,8826765,Sri Bharathi Engineering College for Women,University,15,India
-3000,8827391,Sri Solamalai Polytechnic College,University,14,India
-3000,8828343,Sri Vinayaga College of Education,University,36,India
 3000,8828054,Srimad Andavan Arts and Science College,University,14,India
 3000,8825432,Srinivasan College of Arts and Science,Community,12,India
+3000,8827391,Sri Solamalai Polytechnic College,University,14,India
+3000,8828343,Sri Vinayaga College of Education,University,36,India
 3000,8828427,SRM Trichy College of Nursing,University,50,India
 3000,8827361,SSM College of Arts and Science,University,19,India
 3000,8826745,St. Antony's College,University,15,India
@@ -246,10 +536,10 @@ district,club_id,club_name,club_base,members,country
 3000,91605,Thiagarajar College,University,11,India
 3000,8827165,Thiagarajar College of Engineering,University,3,India
 3000,8826470,Tiruchirapalli Yara,Community,12,India
-3000,8827360,Trichy Celestial,Community,14,India
+3000,8827360,Trichy Celestial,Community,15,India
 3000,8826764,Trichy Diamonds,Community,11,India
 3000,8828425,Trichy SRM Arts & Science College,University,51,India
-3000,8828452,Trichy SRM Medical College Hospital and Research Centre,University,,India
+3000,8828452,Trichy SRM Medical College Hospital and Research Centre,University,"1,854",India
 3000,8828052,Urumu Dhanalakshmi College,University,40,India
 3000,91798,Valluvar College of Science & Management,University,5,India
 3000,8824426,"Velammal College Of Engineering & Technology, Madurai",University,24,India
@@ -264,58 +554,60 @@ district,club_id,club_name,club_base,members,country
 3011,215193,Davim Faridabad,University,22,India
 3011,8826452,Delhi Allure Midwest,Community,16,India
 3011,8828423,Delhi Capital Circle,Community,17,India
-3011,8825852,Delhi Dynamic Leaders,Community,12,India
+3011,8828587,Delhi Catalyst,Community,12,India
+3011,8825852,Delhi Dynamic Leaders,Community,13,India
 3011,8825072,Delhi Ehsaas,Community,20,India
 3011,217240,Delhi Elite,Community,18,India
 3011,8827498,Delhi Genesis,Community,8,India
-3011,8826199,Delhi Genesis Midwest,Community,5,India
-3011,8826601,Delhi Heights,Community,27,India
+3011,8826199,Delhi Genesis Midwest,Community,21,India
+3011,8826601,Delhi Heights,Community,37,India
+3011,8828605,Delhi Imperia,Community,15,India
 3011,212976,Delhi Janak,Community,12,India
 3011,8825116,Delhi MAIMS,University,40,India
 3011,8826105,Delhi Midtown Maitreyi,University,22,India
 3011,8827666,Delhi Nexus,Community,10,India
+3011,8824348,Delhi-Pankh,Community,14,India
 3011,217446,Delhi Philanthropists,Community,8,India
 3011,8826443,Delhi Phoenix Midwest,Community,1,India
 3011,212618,Delhi Rajdhani,Community,24,India
 3011,5211,Delhi South,Community,27,India
 3011,8823652,Delhi South Central,Community,30,India
-3011,8826153,Delhi South East,Community,26,India
+3011,8826153,Delhi South East,Community,21,India
 3011,8826450,Delhi Valiant Midwest,Community,26,India
-3011,8825160,Delhi Yuva,Community,7,India
-3011,8824348,Delhi-Pankh,Community,14,India
+3011,8825160,Delhi Yuva,Community,8,India
 3011,8826360,Don Bosco Institute of Technology (Sankalp),University,2,India
-3011,217457,DPSRU,University,38,India
+3011,217457,DPSRU,University,35,India
 3011,8826826,Dronacharya Govt. College (Gurugram),University,12,India
 3011,89542,DTU Regency,University,33,India
-3011,218073,DUSC,Community,25,India
+3011,218073,DUSC,Community,6,India
 3011,218427,Faridabad Aravalli,Community,40,India
-3011,88674,Galgotia Educational Institute,University,12,India
+3011,88674,Galgotia Educational Institute,University,36,India
 3011,8828087,Galgotias University,University,21,India
 3011,8826750,"GD Goenka University, Sohna",Community,26,India
 3011,8823740,Guru Tegh Bahadur Institute of Technology,University,4,India
 3011,8826684,IILM University Gurugram,University,8,India
-3011,212955,Indira Gandhi Delhi Technical University for Women,University,21,India
+3011,212955,Indira Gandhi Delhi Technical University for Women,University,37,India
 3011,8826848,Indraprastha College For Women (DU),University,12,India
-3011,218201,Ingenious Minds,Community,18,India
+3011,218201,Ingenious Minds,Community,19,India
 3011,8826897,Jagannath Institute of Management Sciences,University,23,India
 3011,8828216,Kirori Mal College,University,16,India
 3011,8826451,KR Manglam University,University,2,India
 3011,8826403,"Lady Shri Ram College, New Delhi",University,18,India
 3011,8826646,Lakshmibai College,University,33,India
-3011,216061,Maharaja Agarsain,Community,5,India
-3011,8823679,Meraki,Community,18,India
-3011,216303,N D I M,University,7,India
-3011,84694,N.S.I.T. Regency,University,12,India
+3011,216061,Maharaja Agarsain,Community,15,India
+3011,8823679,Meraki,Community,12,India
 3011,8827485,National Association for Blind,University,17,India
+3011,216303,N D I M,University,7,India
 3011,5141,New Delhi,Community,58,India
+3011,84694,N.S.I.T. Regency,University,13,India
 3011,217706,Ramanujan College,University,34,India
 3011,8824372,Resilience,Community,17,India
-3011,218552,Rever,Community,15,India
+3011,218552,Rever,Community,10,India
 3011,215722,Saksham,Community,15,India
 3011,8827668,SGT University,University,27,India
 3011,8826151,Shaheed Bhagat Singh College,University,25,India
 3011,91072,Shri Aurobindo College,University,12,India
-3011,8827675,Shri Ram College of Commerce,University,16,India
+3011,8827675,Shri Ram College of Commerce,University,8,India
 3011,88900,Sri Guru Gobind Singh College of Commerce,University,18,India
 3011,8826337,Sri Guru Tegh Bahadur Khalsa College,University,11,India
 3011,8826477,Starex University,University,9,India
@@ -328,10 +620,10 @@ district,club_id,club_name,club_base,members,country
 3011,8826620,World Without Childhood Blindness,Community,13,India
 3011,217456,Young Souvenirs,Community,13,India
 3011,213097,Young Visionaries,Community,0,India
-3012,214267,'DRISHTI' Bhagwan Parshuram Institute of Technology,University,4,India
 3012,215308,ABES Sapphire,University,2,India
+3012,8828619,Ajay Kumar Garg Institute of Management,University,12,India
 3012,8823176,Ardent Creators,Community,10,India
-3012,216961,Ashoka Artisans,Community,11,India
+3012,216961,Ashoka Artisans,Community,12,India
 3012,8826904,Ashoka University Youth,University,15,India
 3012,213233,Capital City New Delhi,Community,13,India
 3012,8828188,Delhi,Community,3,India
@@ -350,17 +642,21 @@ district,club_id,club_name,club_base,members,country
 3012,89636,Delhi School of Professional Study & Research,University,6,India
 3012,8827656,Delhi Shahadra,Community,12,India
 3012,8823373,Delhi Vibrance,Community,8,India
+3012,214267,DRISHTI' Bhagwan Parshuram Institute of Technology,University,6,India
 3012,8823169,Dyal Singh College,University,10,India
-3012,212235,G.I. Bajaj Institute of Technology & Management,University,17,India
 3012,8824922,Ganaur,Community,1,India
+3012,8828620,Ghaziabad Altruism,Community,13,India
 3012,8824849,Ghaziabad Golf Links,Community,1,India
 3012,8824892,Ghaziabad Ideal Umang,Community,11,India
 3012,8823174,Ghaziabad Metro,Community,1,India
 3012,222263,Ghaziabad Prime,Community,1,India
+3012,212235,G.I. Bajaj Institute of Technology & Management,University,14,India
 3012,8827670,Gita Vidya Mandir Girls College,University,19,India
 3012,218044,GVM ITM,University,5,India
 3012,217052,Hansraj College,University,8,India
 3012,8825931,Ideal Institute of Management and Technology,University,6,India
+3012,8828604,IIMT College of Engineering,University,23,India
+3012,8828589,Inmantec Institution,University,14,India
 3012,8827379,IPEM Group of Institutions Ghaziabad,University,22,India
 3012,216062,"Jagannath International Management School, Vasant Kunj",University,2,India
 3012,8827895,Miranda House,University,12,India
@@ -371,22 +667,23 @@ district,club_id,club_name,club_base,members,country
 3012,8823777,O.P. Jindal Global University Alumnus,Community,1,India
 3012,214944,PGDAV (Eve) College,University,13,India
 3012,216147,Physiotherapy Scholars,Community,3,India
+3012,8828607,Ram Chameli Chadha Vishvas Girls College,University,26,India
 3012,215549,Ram Eesh Institute,University,1,India
 3012,8824011,Rishihood University,University,1,India
 3012,8825455,Shaheed Bhagat Singh Evening College,University,4,India
 3012,216304,Shaheed Sukhdev College of Business,University,7,India
 3012,8823168,Shatabdi Elite,Community,1,India
-3012,218274,Sonepat,Community,5,India
+3012,218274,Sonepat,Community,6,India
 3012,8827915,Sri Ramaswamy Memorial University,University,12,India
-3012,215327,USME,University,14,India
+3012,215327,USME,University,17,India
 3012,8824093,Vaishali Excellence,Community,1,India
 3012,216150,Verve,Community,7,India
-3020,8827979,A. S. Raja Mahila Junior College,University,22,India
-3020,8826955,Aarunya of Aditya Degree College,University,19,India
+3020,8826955,Aarunya of Aditya Degree College,University,18,India
 3020,8824456,Aditya Degree College,University,1,India
 3020,218399,Aikya Kakinada,Community,10,India
+3020,8827979,A. S. Raja Mahila Junior College,University,22,India
 3020,8826954,Atoma of Aditya Degree College,University,16,India
-3020,8823977,Coastal Andhra (Tuni),Community,17,India
+3020,8823977,Coastal Andhra (Tuni),Community,15,India
 3020,212347,Dharmapuri,Community,12,India
 3020,218510,Gayatri Vidya Parishad,University,28,India
 3020,76140,GITAM University,University,14,India
@@ -396,33 +693,33 @@ district,club_id,club_name,club_base,members,country
 3020,8826952,KVSR Siddhartha College of Pharmaceutical Sciences,University,14,India
 3020,8823862,M. R. College,University,1,India
 3020,8826262,Naipunya Aditya Degree College Tuni,University,9,India
-3020,8826956,Narthanasala Dance Academy,University,15,India
+3020,8826956,Narthanasala Dance Academy,University,13,India
 3020,8827174,Padmavathi of Pithapur Raja Govt. College,University,24,India
 3020,8825926,Phalguna Kshetram Vijayawada,Community,6,India
 3020,212314,Pragati Surampalem Central,University,3,India
-3020,8823836,PSCMR College of Engineering & Technology,University,15,India
+3020,8823836,PSCMR College of Engineering & Technology,University,22,India
 3020,217138,PVP Siddhartha Institute of Technology,University,11,India
-3020,8823973,Rajahmundry River City,Community,24,India
+3020,8823973,Rajahmundry River City,Community,22,India
 3020,212449,Rajiv Gandhi Institute of Law,University,2,India
 3020,223102,RK College,University,12,India
-3020,8825812,Royal City Bezawada,Community,30,India
+3020,8825812,Royal City Bezawada,Community,32,India
 3020,8825286,RRC AEC Surampalem,University,14,India
-3020,88253,Sabala of Sri Prakash,University,20,India
+3020,88253,Sabala of Sri Prakash,University,19,India
 3020,8824460,Sanjeev Institute of Planning and Management,University,1,India
 3020,8826261,Vanitha Viveka Degree College Tuni,University,4,India
 3020,8827177,Venkateswara of Pithapur Raja Govt. College,University,19,India
 3020,8825191,Vijayawada,Community,13,India
-3020,8826929,Vijayawada Elite League,Community,16,India
-3020,90679,Vijayawada Mid-Town,Community,33,India
-3020,8827185,Vijayawada Sena,Community,11,India
+3020,8826929,Vijayawada Elite League,Community,19,India
+3020,90679,Vijayawada Mid-Town,Community,9,India
+3020,8827185,Vijayawada Sena,Community,13,India
 3020,8826944,Vinanda Degree College,University,18,India
 3020,47217,Visakha Sattelite City,Community,10,India
-3020,8825824,Vizag Champions,Community,15,India
+3020,8825824,Vizag Champions,Community,20,India
 3020,8825696,Vizag Couples PRISM,University,11,India
 3020,8825917,Vizag Diamonds,Community,15,India
 3020,8824255,Vizag Elite,Community,5,India
 3020,8827027,Vizag Royal Claws,Community,13,India
-3020,216101,Vizianagarram Central Ekta,Community,63,India
+3020,216101,Vizianagarram Central Ekta,Community,54,India
 3020,88274,Young Leaders of Sri Prakash,University,13,India
 3020,8826957,Yuvathi of VS Lakshmi Degree College,University,15,India
 3030,92361,ACT-YCCE,University,17,India
@@ -441,14 +738,14 @@ district,club_id,club_name,club_base,members,country
 3030,8827335,Dhanwate National College Nagpur,University,12,India
 3030,216909,Dharampeth M.P. Deo Memorial Science College,University,4,India
 3030,8828443,E-Club of Phoenix Rising,Community,12,India
-3030,8826686,"G H Raisoni College of Arts, Commerce and Science",University,7,India
+3030,217343,Gandhi City Wardha,Community,25,India
+3030,8827654,G.D. Sawant College Nashik,University,30,India
+3030,8826686,"G H Raisoni College of Arts, Commerce and Science",University,5,India
 3030,8827298,G H Raisoni Law College,University,13,India
-3030,8827813,G H Raisoni Skill Tech University,University,23,India
+3030,8827813,G H Raisoni Skill Tech University,University,22,India
 3030,8828446,G H Raisoni Skill Tech University (Science),University,12,India
 3030,8826688,G H Raisoni University Amravati,University,1,India
-3030,8827654,G.D. Sawant College Nashik,University,30,India
-3030,217343,Gandhi City Wardha,Community,25,India
-3030,8826006,Godavari Elite,University,12,India
+3030,8826006,Godavari Elite,University,13,India
 3030,8825315,Government College of Engineering Nagpur,University,10,India
 3030,8825328,Hinganghat,Community,19,India
 3030,8827638,Ignite Nagpur,Community,10,India
@@ -461,18 +758,17 @@ district,club_id,club_name,club_base,members,country
 3030,8826258,KVN Naik Inst. of Pharmaceutical Education & Research (Nashik),University,12,India
 3030,8827687,Malegaon Vision,Community,15,India
 3030,8827820,MGV's Pharmacy College,University,22,India
-3030,8826140,MSGCOPER Nasik Grapecity,University,12,India
+3030,8826140,MSGCOPER Nasik Grapecity,University,17,India
 3030,8827286,MVPS College of Physiotherapy,University,23,India
 3030,8826297,MVP’s Dr Vasantrao Pawar Medical College Hospital & Research Center-Nashik,University,17,India
-3030,213079,N.I.T. Polytechnic,University,1,India
 3030,214845,Nagpur,Community,11,India
-3030,218107,Nagpur Down Town,Community,1,India
+3030,218107,Nagpur Down Town,Community,2,India
 3030,8825992,Nagpur Elite,Community,24,India
 3030,64317,Nagpur Ishanya,Community,32,India
-3030,86045,Nagpur Jit,University,4,India
+3030,86045,Nagpur Jit,University,5,India
 3030,8824017,Nagpur United,Community,5,India
-3030,216137,Nagpur Vision,Community,7,India
-3030,8826732,Nagpur West Illuminate,Community,10,India
+3030,216137,Nagpur Vision,Community,4,India
+3030,8826732,Nagpur West Illuminate,Community,13,India
 3030,8828139,Namco College of Nursing and Research Institute (Nashik),University,14,India
 3030,8826255,Nashik,Community,13,India
 3030,218540,Nashik Airport,Community,0,India
@@ -481,12 +777,14 @@ district,club_id,club_name,club_base,members,country
 3030,218211,Nashik Smart City,Community,18,India
 3030,8827678,Nashik Synergy,Community,0,India
 3030,216127,Nasik Grape Valley,Community,20,India
-3030,8826480,Nasik North,Community,17,India
-3030,218605,Nasik Youth Force,Community,10,India
+3030,8826480,Nasik North,Community,15,India
+3030,218605,Nasik Youth Force,Community,11,India
 3030,218039,National Fire Service College,University,19,India
+3030,213079,N.I.T. Polytechnic,University,1,India
+3030,8828558,Orange City Nagpur,Community,13,India
 3030,8827353,Panjabrao Deshmukh Institute of Management Technology & Research Nagpur,University,12,India
 3030,212929,Priyadarshini College of Engineering,University,7,India
-3030,8826625,Raisoni Jalgaon,University,8,India
+3030,8826625,Raisoni Jalgaon,University,9,India
 3030,217297,"Rajkumar Kewalramani Kanya, Mahavidyalaya",University,1,India
 3030,8828050,Ramdeobaba University (RBU),University,3,India
 3030,89949,RCOEM Nagpur,University,14,India
@@ -499,8 +797,8 @@ district,club_id,club_name,club_base,members,country
 3030,8828506,Skill Tech Visionaries,University,15,India
 3030,8828517,Smt. Binzani Mahila Mahavidyalaya,University,11,India
 3030,217113,Smt. Manorambai Mundle College of Architecture,University,3,India
-3030,8827888,St. Vincent Pallotti College of Engineering and Technology,University,21,India
 3030,8825864,Stepping Stones Nagpur,Community,16,India
+3030,8827888,St. Vincent Pallotti College of Engineering and Technology,University,14,India
 3030,8825810,Symbiosis Law School Nagpur,University,14,India
 3030,212291,TGPCA,University,1,India
 3030,215802,Umang,Community,16,India
@@ -509,28 +807,28 @@ district,club_id,club_name,club_base,members,country
 3030,216214,VSPM Physio,University,10,India
 3030,8827609,Warora,Community,11,India
 3040,8825896,AcroBusiness Royals,University,4,India
-3040,8825807,Acropolis Civil,University,13,India
-3040,213780,Acropolis Professionals,University,9,India
-3040,8823921,Acropolis Royals,University,52,India
+3040,8825807,Acropolis Civil,University,12,India
+3040,213780,Acropolis Professionals,University,8,India
+3040,8823921,Acropolis Royals,University,58,India
 3040,8823998,Bhopal Marvels,Community,2,India
 3040,213762,Bhopal Shahpura,Community,6,India
 3040,217732,Chhindwara,Community,9,India
 3040,8827876,Chhindwara City,Community,15,India
 3040,212912,College of Veterinary Science,University,28,India
-3040,218435,E-Club of Indore North,Community,15,India
-3040,218356,E-Club of Indore Royals,Community,25,India
 3040,8827723,Eastern Hills Bhopal,Community,12,India
+3040,218435,E-Club of Indore North,Community,14,India
+3040,218356,E-Club of Indore Royals,Community,25,India
 3040,8827696,Everest Hills Bhopal,Community,14,India
 3040,8827996,Government College of Dentistry (Indore),University,31,India
 3040,8827724,Himalaya Hills Bhopal,Community,11,India
-3040,212669,IEHE Bhopal,University,22,India
+3040,212669,IEHE Bhopal,University,13,India
 3040,8825816,Indore Activists,Community,10,India
-3040,8826775,Indore Adarsh Tarang,Community,14,India
-3040,8824098,Indore City-Young Leaders,Community,31,India
+3040,8826775,Indore Adarsh Tarang,Community,12,India
+3040,8824098,Indore City-Young Leaders,Community,46,India
 3040,215778,Indore Dynamic,Community,1,India
-3040,71344,Indore Professionals,Community,30,India
+3040,71344,Indore Professionals,Community,28,India
 3040,218416,Indore United,Community,7,India
-3040,8825876,Lake City Bhopal,Community,8,India
+3040,8825876,Lake City Bhopal,Community,13,India
 3040,8826333,Madhyanchal Professional University Bhopal,University,3,India
 3040,8825107,Manovikas Adarsh Special Educators,University,8,India
 3040,8825995,Meghdoot Symbiosis Indore,University,31,India
@@ -538,12 +836,12 @@ district,club_id,club_name,club_base,members,country
 3040,8827697,Nilgiri Hills Bhopal,Community,12,India
 3040,8827705,"People's College Of Dental Sciences, Bhopal",University,12,India
 3040,8824425,Prashanti,University,18,India
-3040,8827443,Ratlam Legacy,Community,12,India
-3040,216153,S V V V,University,2,India
+3040,8827443,Ratlam Legacy,Community,9,India
 3040,8827718,Sahyadri Hills Bhopal,Community,12,India
 3040,8827721,Satpura Hills Bhopal,Community,12,India
 3040,212382,Sheshshayi College,University,8,India
 3040,8827722,Shivalik Hills Bhopal,Community,12,India
+3040,216153,S V V V,University,2,India
 3040,215728,TIT & Science Bhopal,University,9,India
 3040,8827720,Trikuta Hills Bhopal,Community,13,India
 3040,8825285,Ujjain Greater,Community,5,India
@@ -574,16 +872,16 @@ district,club_id,club_name,club_base,members,country
 3053,8824019,Vyas Dental College and Hospital,University,1,India
 3055,216034,Aadarsh Ahmedabad,University,3,India
 3055,218476,Abu Road,Community,3,India
-3055,218141,Ahmedabad Asmita,Community,10,India
+3055,218141,Ahmedabad Asmita,Community,9,India
 3055,8826753,Ahmedabad Bopal,Community,5,India
 3055,8825060,Ahmedabad Eleos,Community,9,India
 3055,8825796,Ahmedabad Elysium,Community,15,India
 3055,214130,Ahmedabad Emerald,Community,13,India
 3055,8827440,Ahmedabad Harmony,Community,25,India
 3055,8828218,Ahmedabad Majestic,Community,13,India
-3055,8828294,Ahmedabad Majesty Stars,Community,14,India
+3055,8828294,Ahmedabad Majesty Stars,Community,15,India
 3055,8824345,Ahmedabad Metro,Community,8,India
-3055,213985,Ahmedabad Midtown,Community,38,India
+3055,213985,Ahmedabad Midtown,Community,37,India
 3055,8828234,Ahmedabad NextGen,Community,15,India
 3055,213279,Ahmedabad Prahladnagar,Community,20,India
 3055,8827436,Ahmedabad Skyline Stars,Community,18,India
@@ -595,27 +893,27 @@ district,club_id,club_name,club_base,members,country
 3055,74890,Ahmedabad Zankar,Community,1,India
 3055,8826748,Ahmedabad Zen,Community,4,India
 3055,5829,Anjar,Community,18,India
-3055,8827431,B J Medical College and Civil hospital (Ahmedabad),University,17,India
 3055,8823490,Balotra,Community,1,India
 3055,8828109,Barmer Youth,Community,18,India
-3055,218251,Deesa,Community,8,India
+3055,8827431,B J Medical College and Civil hospital (Ahmedabad),University,19,India
+3055,218251,Deesa,Community,9,India
 3055,8828255,Deesa Divine Youth,Community,12,India
 3055,8824233,Divine Samarpan,Community,1,India
 3055,216309,"DNP Arts and Commerce College, Deesa",University,3,India
-3055,217174,G I T (Gandhinagar Institute of Technology),University,1,India
 3055,42417,Gandhidham,Community,19,India
 3055,8826101,Gandhidham Yuvas,Community,20,India
 3055,8826242,Gandhinagar Gift City,Community,4,India
+3055,217174,G I T (Gandhinagar Institute of Technology),University,1,India
 3055,217802,GLS Institute of Design,University,1,India
-3055,217372,Indus University,University,18,India
+3055,217372,Indus University,University,11,India
 3055,8826453,Jalore Yuva,Community,10,India
-3055,216107,Kadi,Community,19,India
+3055,216107,Kadi,Community,18,India
 3055,5747,Kankaria,Community,15,India
 3055,215326,L.D.C.E.,University,16,India
 3055,60137,Midtown Bhuj,Community,15,India
 3055,92173,Mundra,Community,44,India
-3055,8825131,New L.J.I.E.T.,University,16,India
-3055,5705,Palanpur,Community,22,India
+3055,8825131,New L.J.I.E.T.,University,15,India
+3055,5705,Palanpur,Community,23,India
 3055,218344,Palanpur Youth Town,Community,3,India
 3055,91339,Pandit Deendayal Energy University,University,26,India
 3055,5699,Patan,Community,19,India
@@ -652,20 +950,20 @@ district,club_id,club_name,club_base,members,country
 3060,217188,Amreli Gir,Community,24,India
 3060,212234,Anand Round Town,Community,56,India
 3060,8823225,Ankleshwar,Community,10,India
-3060,215922,Bardoli,Community,23,India
+3060,215922,Bardoli,Community,22,India
 3060,5993,Bharuch,Community,24,India
 3060,8826458,Bharuch Next,Community,15,India
-3060,43098,Bhavnagar (Youth),Community,69,India
-3060,89957,Bhavnagar Royal,Community,33,India
-3060,8825032,Charusat University,University,7,India
+3060,89957,Bhavnagar Royal,Community,40,India
+3060,43098,Bhavnagar (Youth),Community,64,India
+3060,8825032,Charusat University,University,12,India
 3060,8827709,Daman,Community,10,India
 3060,214057,Dhule Cross Road,Community,32,India
-3060,5963,Dhulia,Community,29,India
+3060,5963,Dhulia,Community,26,India
 3060,213392,GCET College,University,2,India
 3060,8827875,Gujarat Institute of Hotel Management,University,16,India
 3060,213281,Halvad,Community,7,India
-3060,214370,Harijyot,University,14,India
-3060,89948,Jamnagar,Community,51,India
+3060,214370,Harijyot,University,16,India
+3060,89948,Jamnagar,Community,76,India
 3060,8825701,Jamnagar Hope,University,5,India
 3060,215372,Jamnagar Smile,University,12,India
 3060,214090,Junagadh,Community,72,India
@@ -673,27 +971,28 @@ district,club_id,club_name,club_base,members,country
 3060,212381,Mahemdabad,Community,23,India
 3060,8827446,Mahemdabad Femina,Community,16,India
 3060,8827341,Marwadi University,University,20,India
-3060,8828523,Nadiad Next,Community,12,India
+3060,8828523,Nadiad Next,Community,10,India
 3060,217712,NANDNAGARI,Community,8,India
 3060,213467,Narmada Nagari  (Community Based),Community,9,India
 3060,8827321,Navapur,Community,15,India
 3060,214369,Navsari Young Turks,Community,32,India
-3060,215263,Rajkot,Community,38,India
+3060,215263,Rajkot,Community,31,India
 3060,8827482,Rajkot Legacy,Community,20,India
-3060,8827518,RNG Patel Institute of Technology,University,13,India
+3060,8827518,RNG Patel Institute of Technology,University,14,India
 3060,80072,Shindkheda,Community,2,India
 3060,8823549,Surat,Community,1,India
-3060,5881,Surat Community,Community,11,India
+3060,5881,Surat Community,Community,10,India
 3060,91199,Surat Diamond City,Community,27,India
-3060,49489,Surat East,Community,258,India
+3060,49489,Surat East,Community,138,India
 3060,217851,Surendranagar,Community,42,India
 3060,214583,Swami Vivekanand Homoeopathic Medical College,University,15,India
-3060,215199,Tarsadi Kosamba,Community,31,India
+3060,215199,Tarsadi Kosamba,Community,28,India
 3060,218248,TNRAO College,University,3,India
-3060,5869,Umbergaom,Community,22,India
-3060,89451,Vadodara,Community,11,India
+3060,5869,Umbergaom,Community,19,India
+3060,89451,Vadodara,Community,20,India
 3060,91857,Vadodara Sayajinagari,Community,11,India
-3060,5981,Valsad,Community,19,India
+3060,5981,Valsad,Community,20,India
+3060,8828617,Valsad Rangers,Community,21,India
 3060,5857,Vapi,Community,23,India
 3060,8826599,Vapi Phoenix Beacons,Community,28,India
 3060,212862,Vapi Riverside`,Community,18,India
@@ -702,8 +1001,8 @@ district,club_id,club_name,club_base,members,country
 3070,8824275,Adampur City,Community,6,India
 3070,8824152,AIMETC,University,1,India
 3070,8824195,Akhnoor Supreme,Community,19,India
-3070,8823989,Amritsar West,Community,9,India
 3070,216574,Amritsar-Nectar,Community,9,India
+3070,8823989,Amritsar West,Community,10,India
 3070,88469,Apeejay College of Fine Arts,University,4,India
 3070,8828296,Arya Girls College Pathankot,University,21,India
 3070,222319,Bilaspur,Community,1,India
@@ -717,19 +1016,19 @@ district,club_id,club_name,club_base,members,country
 3070,84723,Jammu City,Community,3,India
 3070,8826909,Kanhya Lal Butail Dayanand Anglo Vedic College for Girls (Palampur),University,12,India
 3070,218271,Kapurthala Heritage,Community,5,India
+3070,8824287,"Khalsa College, Amritsar",University,19,India
 3070,8824955,Khalsa College for Women Amritsar,University,22,India
 3070,217559,"Khalsa College for Women, Ghumar Mandi",University,2,India
-3070,8824287,"Khalsa College, Amritsar",University,19,India
-3070,8825721,Lovely Professional University,University,21,India
+3070,8825721,Lovely Professional University,University,22,India
 3070,215082,Ludhiana North,Community,14,India
-3070,8828105,Ludhiana Supporter,Community,23,India
+3070,8828105,Ludhiana Supporter,Community,13,India
 3070,8823392,Mandi,Community,1,India
 3070,8824259,"Medicos RPGMC Tanda, Kangra",University,1,India
 3070,8823443,MLSM College Sunder Nagar,University,1,India
 3070,8824322,Mount Himalayas,Community,8,India
 3070,8826889,Prem Chand Markanda SD College,University,12,India
 3070,8824403,Pt. Mohan Lal S.D. College,University,3,India
-3070,8824099,S.S.S.S. College Of Commerce For Women,University,25,India
+3070,8824099,S.S.S.S. College Of Commerce For Women,University,24,India
 3070,8823285,Sunder Nagar,Community,1,India
 3070,217560,"Swami Ganga Giri Janta Girls College, Raikot",University,4,India
 3070,8824325,Vallabhian,University,1,India
@@ -738,37 +1037,37 @@ district,club_id,club_name,club_base,members,country
 3080,8826813,Amity University Mohali,University,95,India
 3080,8827776,Arya Kanya Mahavidyalya Shahbad,University,14,India
 3080,8823200,"Avyanna, Roorkee",Community,16,India
-3080,8828102,B S Negi Mahila Pravidhik Prashikshan Sansthan,University,21,India
 3080,8827662,Bajrang Institute Rishikesh,University,12,India
 3080,218443,Bhakra Nangal,Community,17,India
+3080,8828102,B S Negi Mahila Pravidhik Prashikshan Sansthan,University,21,India
 3080,6231,Chandigarh,Community,61,India
 3080,8827896,Chandigarh College of Architecture,University,16,India
 3080,8827250,Chandigarh Group of College Jhanjeri,University,73,India
 3080,8827277,Chandigarh Group of College Landran (Mohali),University,92,India
-3080,82399,Chandigarh Himalayan,Community,11,India
+3080,82399,Chandigarh Himalayan,Community,12,India
 3080,6357,Chandigarh Midtown,Community,36,India
 3080,43141,Chandigarh Shivalik,Community,55,India
-3080,8826107,Chandigarh University,University,15,India
+3080,8826107,Chandigarh University,University,14,India
 3080,8826040,Chandigarh University Central,University,56,India
 3080,8827310,"College Of Pharmacy, Bela (Ropar)",University,2,India
-3080,8828300,D.A.V Institute of Physiotherapy & Rehabilitation,University,21,India
 3080,216403,"D.A.V. (C) Dental, Yamuna Nagar",University,39,India
 3080,90878,DAV College Ambala City,University,5,India
 3080,8823358,DAV College for Girls Yamuna Nagar,University,17,India
+3080,8828300,D.A.V Institute of Physiotherapy & Rehabilitation,University,21,India
 3080,8825997,"Dev Samaj College for Women, Sector 45, Chandigarh",University,1,India
 3080,8827637,Doon Ganga Chidderwala,Community,12,India
 3080,8824883,Doon Shivalik Hills,Community,1,India
 3080,8826494,Global Research Group of Institutions Radaur,University,12,India
 3080,8826941,Government College Ropar,University,36,India
 3080,8827684,Government College Sanjauli,University,22,India
-3080,8823498,"Govt. Dental College, Shimla",University,14,India
+3080,8823498,"Govt. Dental College, Shimla",University,22,India
 3080,218134,Guru Gobind Singh College for Women,University,17,India
 3080,8828297,Guru Nanak Girls College,University,12,India
 3080,216132,Guru Nanak Institutes (GNITM),University,11,India
 3080,89525,Guru Nanak Khalsa College,University,17,India
-3080,8827285,Himachal Institute of Dental Sciences (Paonta Sahib),University,17,India
+3080,8827285,Himachal Institute of Dental Sciences (Paonta Sahib),University,10,India
 3080,8828132,Himachal Pradesh University of Legal Studies Nyayapath,University,31,India
-3080,8825274,HPNLU Shimla,University,18,India
+3080,8825274,HPNLU Shimla,University,19,India
 3080,8827496,Ignite Panchkula Greens,Community,46,India
 3080,8827206,IMS Unison University Dehradun,University,12,India
 3080,8828330,Indian Institute of Management – Sirmaur,University,14,India
@@ -781,15 +1080,15 @@ district,club_id,club_name,club_base,members,country
 3080,6305,Ladwa,Community,26,India
 3080,8827619,Ladwa City,Community,12,India
 3080,218740,Law College Dehradun U U,University,6,India
-3080,8824189,Legis Social,Community,68,India
+3080,8824189,Legis Social,Community,70,India
 3080,8827314,Maharaja Agrasen College (Jagadhri North),University,26,India
 3080,8827646,Matu Ram College Ladwa,University,20,India
 3080,8826616,Medserve Rotaract Chandigarh,Community,34,India
 3080,8825136,Mohali City,Community,10,India
 3080,8828298,Narsee Monjee Institute of Management Studies - Chandigarh Campus,University,20,India
-3080,8826498,Noble Nexus,Community,9,India
+3080,8826498,Noble Nexus,Community,8,India
 3080,8828333,Open Hands,Community,6,India
-3080,218463,Panchkula Beautiful,Community,182,India
+3080,218463,Panchkula Beautiful,Community,185,India
 3080,8826254,Panipat Institute of Engineering and Technology (PIET),University,12,India
 3080,8826489,Panjab University Champions,University,13,India
 3080,8827465,Pehowa,Community,14,India
@@ -800,20 +1099,20 @@ district,club_id,club_name,club_base,members,country
 3080,8827681,Rishikesh Royal,Community,12,India
 3080,8827661,Rishikesh Young Central,Community,12,India
 3080,8827466,Roorkee Waves,Community,12,India
-3080,214395,S D College Chandigarh,University,216,India
-3080,88990,S.D. College Ambala Cantt.,University,25,India
 3080,8828522,Sardar Bhagwan Singh University,University,14,India
+3080,88990,S.D. College Ambala Cantt.,University,25,India
+3080,214395,S D College Chandigarh,University,216,India
 3080,213191,Shimla Midtown,Community,19,India
 3080,89633,Soaring Monks Chandigarh,Community,25,India
-3080,8824396,Sri Guru Gobind Singh College,University,21,India
+3080,8824396,Sri Guru Gobind Singh College,University,1,India
 3080,218610,TIET,University,33,India
 3080,8827463,Tricity Social,Community,9,India
-3080,8826331,University College of Business Studies,University,11,India
-3080,8827484,University Institute of Applied Management Sciences,University,18,India
+3080,8826331,University College of Business Studies,University,15,India
+3080,8827484,University Institute of Applied Management Sciences,University,16,India
 3080,8828327,University Institute of Engineering and Technology,University,12,India
 3080,87328,Waknaghat,University,30,India
-3080,212375,Yamuna Nagar Riviera,Community,14,India
 3080,213193,Yamunanagar,Community,37,India
+3080,212375,Yamuna Nagar Riviera,Community,14,India
 3080,8827621,Youth Ambala Central,Community,20,India
 3090,8828319,Behbalpur Champions,Community,12,India
 3090,8827064,Bhiwani Vibrant,Community,4,India
@@ -837,9 +1136,9 @@ district,club_id,club_name,club_base,members,country
 3090,8827473,Pilibanga Pioneering,Community,12,India
 3090,6473,Rajpura,Community,5,India
 3090,218370,Rajpura Greater,Community,1,India
-3090,8823932,Shine-Sunam,Community,1,India
-3090,8826118,Sri Ganganagar Visionaries,Community,6,India
+3090,8823932,Shine-Sunam,Community,2,India
 3090,213301,Sriganganagar East,Community,4,India
+3090,8826118,Sri Ganganagar Visionaries,Community,6,India
 3090,91968,Sunam,Community,20,India
 3090,218367,Sunam Main,Community,1,India
 3090,8827534,Sunam Star,Community,14,India
@@ -853,7 +1152,7 @@ district,club_id,club_name,club_base,members,country
 3100,8828454,Bulandshahr Sewaa Path,Community,12,India
 3100,8828459,Bulandshahr Sitaara,Community,14,India
 3100,8826949,Bulandshahr Youth,Community,12,India
-3100,8826731,Chandausi Optometry,University,9,India
+3100,8826731,Chandausi Optometry,University,10,India
 3100,8827505,Chandausi Sunrise,Community,13,India
 3100,8828418,Gyanoday Meerut,Community,12,India
 3100,216392,Hindu College Moradabad Achievers,University,3,India
@@ -897,9 +1196,9 @@ district,club_id,club_name,club_base,members,country
 3110,8827577,Rudrapur United,Community,15,India
 3110,214134,SC Guria IMT,University,3,India
 3110,218052,Sky Academy,Community,3,India
-3120,8826758,(UG) Arya Mahila PG College Varanasi,University,16,India
 3120,8827780,Allahabad Academia,Community,12,India
 3120,88091,Allahabad Midtown,University,13,India
+3120,8828595,Allahabad University,University,15,India
 3120,8826619,Balrampur Greater,Community,12,India
 3120,8825621,Banaras,Community,12,India
 3120,91715,Barabanki,University,12,India
@@ -908,6 +1207,7 @@ district,club_id,club_name,club_base,members,country
 3120,8827625,Chunar,Community,12,India
 3120,7143,Deoria,Community,14,India
 3120,8826332,Devipatan Tulsipur,Community,12,India
+3120,8828593,EYS Prayagraj,Community,12,India
 3120,45909,Ghazipur 'Ganga',Community,14,India
 3120,8827773,Gola Chhoti Kashi,Community,12,India
 3120,89150,Gola Youth,Community,20,India
@@ -919,6 +1219,7 @@ district,club_id,club_name,club_base,members,country
 3120,8823925,Gorakpur Warriors,Community,12,India
 3120,8825205,Heritage IMS Varanasi,University,12,India
 3120,8823812,Inspiring India,Community,12,India
+3120,8828553,Integrated Federation of Social Activist & Doctors,Community,12,India
 3120,216310,Jaitwara,University,12,India
 3120,8824949,Jaunpur,Community,12,India
 3120,8827622,Kashi Mridul,Community,12,India
@@ -926,20 +1227,27 @@ district,club_id,club_name,club_base,members,country
 3120,8827652,Lucknow School of Management Science (SMS),University,38,India
 3120,91709,Mahatma Gandhi P.G. College Gorakhpur,University,12,India
 3120,218101,Mirzapur Gaurav,Community,15,India
+3120,8828599,Motilal Nehru Medical College,University,16,India
+3120,8828598,Motilal Nehru NIT College,University,25,India
 3120,8827636,Mughalsarai,Community,12,India
 3120,8827503,Panini Kanya Mahavidyalay,University,12,India
+3120,8828616,Prayagraj Initiator,Community,21,India
 3120,8827630,Prayagraj Kumbh,Community,12,India
 3120,8824033,Prayagraj Platinum,Community,12,India
-3120,8826600,Prayagraj Sangam City,Community,15,India
+3120,8826600,Prayagraj Sangam City,Community,13,India
 3120,8825960,Pride Mau,Community,20,India
 3120,8823224,Rae Bareli,Community,12,India
 3120,8827716,Raebareli Elite,Community,15,India
+3120,8828596,Renaissance Allahabad,Community,13,India
 3120,8828524,Sant Kabir Nagar,Community,12,India
 3120,8826396,Sardar Bhagat Singh College of Higher Education,University,12,India
 3120,7021,Satna,Community,20,India
+3120,8828590,State Unani Medical College,University,15,India
 3120,218109,Uday Veer,Community,12,India
+3120,8826758,(UG) Arya Mahila PG College Varanasi,University,16,India
 3120,212155,United Allahabad,University,14,India
 3120,8827628,Varanasi Jai Gange,Community,12,India
+3120,8828611,Varanasi Rudra,Community,12,India
 3120,8827632,Varanasi Shakti,Community,12,India
 3120,216395,Varanasi South,Community,3,India
 3120,8827635,Varanasi Varuna,Community,12,India
@@ -949,52 +1257,52 @@ district,club_id,club_name,club_base,members,country
 3131,217438,AIT,University,13,India
 3131,8826992,Ajeenkya DY Patil Group,University,12,India
 3131,8823837,Alibag Seashore,Community,12,India
-3131,214181,ALUMNI,Community,18,India
+3131,214181,ALUMNI,Community,17,India
 3131,8827442,Anantrao Pawar College Pirangut,University,30,India
 3131,8826390,Anekant Institute of Management Studies,University,16,India
-3131,91876,Aundh,Community,17,India
+3131,91876,Aundh,Community,15,India
 3131,8826236,Aundh Smartcity,Community,18,India
-3131,8826659,Balewadi High Street,Community,7,India
-3131,8824186,Baramati,Community,15,India
+3131,8826659,Balewadi High Street,Community,14,India
+3131,8824186,Baramati,Community,6,India
 3131,8827103,Bavdhan Pioneers,Community,18,India
 3131,8827789,Bharati Vidyapeeth New Law College Pune,University,22,India
-3131,215167,Bibwewadi Pune,Community,58,India
-3131,8826632,Brihan Maharashtra College of Commerce,University,34,India
-3131,8826363,C.K.T. ACS College New Panvel,University,13,India
+3131,215167,Bibwewadi Pune,Community,30,India
+3131,8826632,Brihan Maharashtra College of Commerce,University,11,India
 3131,8826293,Christ University Lavasa,University,11,India
-3131,216012,D. Y. Patil International University,University,43,India
-3131,215158,Daund College,University,17,India
+3131,8826363,C.K.T. ACS College New Panvel,University,13,India
+3131,215158,Daund College,University,19,India
 3131,8825319,Disha Alandi,University,11,India
 3131,8824256,DIVYAZEP (S.P. College Pune),University,26,India
 3131,8826851,Dr. Babasaheb Ambedkar College Aundh,University,50,India
 3131,215185,Dr. D. Y. Patil B School,University,12,India
 3131,8825529,DY Patil College of Engineering,University,40,India
+3131,216012,D. Y. Patil International University,University,19,India
 3131,218200,GEM,Community,14,India
-3131,8826700,Genba Sopanrao Moze College of Engineering,University,23,India
+3131,8826700,Genba Sopanrao Moze College of Engineering,University,13,India
 3131,8827547,Golden Talegaon Dabhade,Community,24,India
 3131,8826699,Government Industrial Training Institute (Male) Mulshi,University,16,India
 3131,217388,Humanitas,Community,5,India
 3131,217518,Indira University,University,34,India
 3131,218738,Indreshwar,Community,6,India
 3131,8826783,International Institute of Management and Human Resource Development (W),University,4,India
-3131,218693,Khopoli,Community,16,India
-3131,8825261,Konkan Gyanpeeth Rahul Dharkar College of Pharmacy Karjat,University,12,India
+3131,218693,Khopoli,Community,15,India
+3131,8825261,Konkan Gyanpeeth Rahul Dharkar College of Pharmacy Karjat,University,25,India
 3131,215663,Koregaon Park,Community,25,India
-3131,8824104,Magarpatta TrendSetters,Community,16,India
-3131,8826014,MGM's Institute of Management Studies and Research,University,47,India
+3131,8824104,Magarpatta TrendSetters,Community,20,India
+3131,8826014,MGM's Institute of Management Studies and Research,University,46,India
 3131,8826782,MIMA Institute of Management,University,31,India
 3131,8824993,MIT Academy of Engineering,University,31,India
-3131,216452,Modern College Ganeshkhind Pune,University,9,India
+3131,216452,Modern College Ganeshkhind Pune,University,8,India
 3131,212931,"Modern College of Arts, Science & Commerce",University,22,India
 3131,8825176,MU College of Commerce Pimpri,University,19,India
 3131,8824138,New Panvel-CKT College,University,3,India
-3131,8825815,Nigdi-Pune,Community,13,India
+3131,8825815,Nigdi-Pune,Community,16,India
 3131,214399,Panvel Central,Community,14,India
 3131,217226,Panvel Elite,Community,15,India
 3131,213849,Panvel Industrial Town,Community,6,India
 3131,217310,Patalganga,Community,14,India
 3131,8826471,Pen Heritage,Community,15,India
-3131,7295,Pimpri,Community,58,India
+3131,7295,Pimpri,Community,45,India
 3131,8825918,Pimpri Elite,Community,22,India
 3131,7283,Poona South,Community,13,India
 3131,8827500,Pune Aurora,Community,9,India
@@ -1004,51 +1312,51 @@ district,club_id,club_name,club_base,members,country
 3131,212790,Pune Cantonment,Community,15,India
 3131,8824015,Pune City,University,14,India
 3131,8823957,Pune City Fortune,Community,20,India
-3131,8826615,Pune City Legends,Community,15,India
+3131,8826615,Pune City Legends,Community,18,India
 3131,8826674,Pune City Prabodhan,Community,9,India
 3131,8826479,Pune Gandhi Bhavan Adhyapak Mahavidyalaya,University,8,India
-3131,213166,Pune Heritage,Community,28,India
+3131,213166,Pune Heritage,Community,20,India
 3131,69048,Pune Kalyani Nagar,Community,23,India
-3131,80991,Pune Katraj,Community,12,India
-3131,8825935,Pune Metro,Community,29,India
+3131,80991,Pune Katraj,Community,13,India
+3131,8825935,Pune Metro,Community,15,India
 3131,85530,Pune Mideast,Community,40,India
 3131,8825267,Pune Nexus,Community,12,India
 3131,8826482,Pune Phoenix,Community,19,India
 3131,90983,Pune Pride,Community,9,India
 3131,218320,Pune Pristine,Community,3,India
-3131,8824344,Pune Pristine Paradise,Community,25,India
+3131,8824344,Pune Pristine Paradise,Community,26,India
 3131,218199,Pune Renaissance,Community,24,India
 3131,214473,Pune Royal,Community,26,India
-3131,8826718,Pune Samrajya,Community,32,India
-3131,45125,Pune Shaniwarwada,Community,9,India
-3131,49040,Pune Sinhagad Road,Community,30,India
+3131,8826718,Pune Samrajya,Community,24,India
+3131,45125,Pune Shaniwarwada,Community,12,India
+3131,49040,Pune Sinhagad Road,Community,29,India
 3131,8825270,Pune Synergy Next Gen,Community,15,India
-3131,8827499,Pune University,University,18,India
+3131,8826497,Pune's Yuva,Community,10,India
+3131,8827499,Pune University,University,19,India
 3131,8826725,Pune Vishwam,Community,12,India
-3131,91641,Pune Warje,Community,21,India
-3131,8826885,Pune Westside,Community,11,India
+3131,91641,Pune Warje,Community,19,India
+3131,8826885,Pune Westside,Community,17,India
 3131,8824638,Pune Wisdom,Community,5,India
 3131,217271,Pune Zenith,Community,20,India
-3131,8826497,Pune's Yuva,Community,10,India
-3131,215402,Rajarshi Shahu College of Engineering- Tathawade,University,4,India
-3131,8824661,Ramkrishna More College,University,10,India
+3131,215402,Rajarshi Shahu College of Engineering- Tathawade,University,5,India
+3131,8824661,Ramkrishna More College,University,11,India
 3131,8827434,Roar NIBM,Community,24,India
-3131,8826968,S. B. Patil College of Architecture and Design,University,15,India
 3131,91148,Sai Balaji Education Society,University,120,India
-3131,8825271,Sancheti Healthcare Academy,University,17,India
+3131,8825271,Sancheti Healthcare Academy,University,6,India
+3131,8826968,S. B. Patil College of Architecture and Design,University,15,India
 3131,8826281,Sinhgad College of Pharmacy,University,29,India
 3131,8825382,Sinhgad Institute of Management and Computer Application,University,13,India
 3131,8828101,Symbiosis Artificial Intelligence Institute,University,45,India
 3131,8825207,Symbiosis Skills and Professional University,University,13,India
 3131,217454,Symboisis Law Viman Nagar,University,80,India
 3131,8827860,Udyognagari Drishti,Community,29,India
-3131,8826658,Universal AI University,University,22,India
+3131,8826658,Universal AI University,University,18,India
 3131,214094,Vibrants,Community,26,India
-3131,215996,Viman Nagar,Community,10,India
+3131,215996,Viman Nagar,Community,21,India
 3131,215650,Vishwakarma Institute of Technology Pune,University,54,India
 3132,218329,Ahmednagar Midtown Vadagao Savatal,Community,1,India
 3132,8824364,Ambajogai City,Community,8,India
-3132,51381,Aurangabad Airport,Community,13,India
+3132,51381,Aurangabad Airport,Community,14,India
 3132,8826648,Balasaheb Desai College,University,14,India
 3132,8826993,Barshi,Community,15,India
 3132,8827222,Beed Diamond,Community,15,India
@@ -1059,12 +1367,12 @@ district,club_id,club_name,club_base,members,country
 3132,7335,Jalna,Community,35,India
 3132,91936,Jalna Central,Community,19,India
 3132,8823776,Jalna Rainbow,Community,13,India
-3132,8823911,Karad City,Community,27,India
+3132,8823911,Karad City,Community,30,India
 3132,8823947,Latur Central,Community,15,India
-3132,7317,Latur Mid-Town,Community,52,India
-3132,8827478,Malkapur,Community,14,India
+3132,7317,Latur Mid-Town,Community,28,India
+3132,8827478,Malkapur,Community,29,India
 3132,217545,"Meenalben Mehta College, Panchgani",University,1,India
-3132,8826044,Panchgani,Community,23,India
+3132,8826044,Panchgani,Community,19,India
 3132,8827052,PES College of Engineering Chhatrapati Sambhajinagar,University,24,India
 3132,218591,Samarthya Solapur,Community,15,India
 3132,8827309,Sanjivani University,University,18,India
@@ -1084,152 +1392,156 @@ district,club_id,club_name,club_base,members,country
 3132,8824630,Walchand College,University,1,India
 3141,90917,Adv. Balasaheb Apte College of Law,University,1,India
 3141,8823869,Amity Global Business School,University,3,India
-3141,7517,Andheri,Community,13,India
+3141,7517,Andheri,Community,33,India
 3141,218484,Anjuman Islam Saiftaybji,University,3,India
 3141,8826859,Bhavan's College,University,15,India
 3141,8826792,Bhavna Trust Degree College,University,3,India
 3141,7513,Bombay,Community,6,India
-3141,214812,Bombay Airport,Community,9,India
-3141,47609,Bombay Chembur West,Community,21,India
+3141,214812,Bombay Airport,Community,29,India
+3141,47609,Bombay Chembur West,Community,30,India
 3141,8827998,Bombay Film City,Community,9,India
 3141,212623,Bombay Hanging Garden,Community,58,India
-3141,84117,Bombay Hills South,Community,4,India
-3141,88876,Bombay Juhu Beach,Community,11,India
+3141,84117,Bombay Hills South,Community,35,India
+3141,88876,Bombay Juhu Beach,Community,25,India
 3141,213470,Bombay Kandivli,Community,12,India
 3141,217563,Bombay Mid-Town,Community,53,India
 3141,8823527,Bombay Mulund Valley,Community,1,India
-3141,90868,Bombay Northwest-Malad,Community,3,India
-3141,218327,Bombay Pier,Community,45,India
+3141,90868,Bombay Northwest-Malad,Community,14,India
+3141,218327,Bombay Pier,Community,53,India
 3141,212610,Bombay Queens Town,Community,7,India
 3141,8824026,Bombay Teachers Training College,University,1,India
-3141,91040,Bombay Uptown,Community,19,India
-3141,7465,Bombay West,Community,3,India
-3141,214699,Borivali Heights,Community,27,India
+3141,91040,Bombay Uptown,Community,25,India
+3141,7465,Bombay West,Community,22,India
+3141,214699,Borivali Heights,Community,25,India
 3141,8826054,Chandivali Mumbai,Community,17,India
-3141,7459,Churchgate,Community,20,India
-3141,7455,Dahisar Coast,Community,4,India
-3141,7451,Deonar,Community,14,India
+3141,7459,Churchgate,Community,29,India
+3141,7455,Dahisar Coast,Community,19,India
+3141,7451,Deonar,Community,13,India
 3141,218546,DGMC/Deviprasad Goenka Management College of Media Studies,University,13,India
 3141,83636,DTSS College of Commerce,University,2,India
 3141,8826354,DY Patil International School,University,16,India
 3141,88864,Fr. Conceicao Rodrigues College of Engineering,University,8,India
+3141,213286,Ghanshyamdas Saraf College,University,29,India
 3141,91260,G.N. Khalsa College,University,10,India
-3141,213286,Ghanshyamdas Saraf College,University,13,India
 3141,8827742,"Gokhale Education Society’s Arts, Commerce & Science College",University,12,India
 3141,7439,Government Dental College,University,6,India
 3141,7435,Hassaram Rijhumal College of Commerce And Economic,University,50,India
-3141,48641,Hinduja College,University,8,India
+3141,48641,Hinduja College,University,16,India
 3141,215091,IBS Mumbai,University,24,India
-3141,8827651,IHM Mumbai,University,7,India
+3141,8827651,IHM Mumbai,University,14,India
 3141,218326,Indian Institute of Management Mumbai,University,4,India
 3141,8823586,ISME,University,34,India
-3141,42321,Jaihind College,University,33,India
+3141,42321,Jaihind College,University,71,India
 3141,8824179,Jalan College,University,10,India
 3141,8827127,JES College - Parivartan,University,20,India
-3141,7373,K.C. College,University,39,India
-3141,215988,K.E.S College of Commerce and Economics,University,3,India
 3141,8824428,Kapol Vidyanidhi College,University,1,India
+3141,7373,K.C. College,University,169,India
+3141,215988,K.E.S College of Commerce and Economics,University,3,India
 3141,90867,Khandwala College,University,12,India
-3141,213174,King's Circle Matunga,Community,8,India
-3141,88252,Lala Lajpat Rai College of Commerce,University,34,India
+3141,213174,King's Circle Matunga,Community,9,India
+3141,88252,Lala Lajpat Rai College of Commerce,University,42,India
 3141,8828515,Laxmichand Golwala College of Commerce & Economics,University,14,India
 3141,212558,Lotus College of Optometry,University,8,India
 3141,8826678,LS Raheja School of Architecture,University,39,India
-3141,218430,M V Mandali's Colleges of Commerce and Science,University,17,India
 3141,90444,Maniben Nanavati Women's College,University,65,India
-3141,218330,Medicrew,Community,16,India
+3141,218330,Medicrew,Community,26,India
 3141,8825387,Mithibai College,University,10,India
 3141,8823750,MMK College,University,3,India
 3141,8828011,Mulund College of Commerce,University,4,India
-3141,92272,Mulund Hill View,Community,10,India
-3141,213037,Mulund Hills,Community,11,India
-3141,91947,Mumbai Anchors,Community,15,India
+3141,213037,Mulund Hills,Community,14,India
+3141,92272,Mulund Hill View,Community,9,India
+3141,91947,Mumbai Anchors,Community,14,India
 3141,90351,Mumbai Bandra Kurla Complex,Community,15,India
-3141,7505,Mumbai Downtown,Community,3,India
-3141,8823907,Mumbai Elegant,Community,5,India
-3141,7503,Mumbai Ghatkopar,Community,28,India
+3141,8828562,Mumbai Bhandup,Community,22,India
+3141,7505,Mumbai Downtown,Community,17,India
+3141,8823907,Mumbai Elegant,Community,7,India
+3141,7503,Mumbai Ghatkopar,Community,29,India
 3141,218512,Mumbai Ghatkopar West,Community,9,India
 3141,8826490,Mumbai Greens,Community,15,India
-3141,222307,Mumbai Jewels,Community,13,India
+3141,222307,Mumbai Jewels,Community,25,India
+3141,8828592,Mumbai JVLR Connect,Community,15,India
 3141,8827159,Mumbai JVPD,Community,20,India
 3141,8825353,Mumbai Lakers,Community,19,India
-3141,8823706,Mumbai Marvels,Community,6,India
+3141,8828554,Mumbai Malabar Hill Coast,Community,19,India
+3141,8823706,Mumbai Marvels,Community,1,India
 3141,8826739,Mumbai Medico Marvels,Community,41,India
-3141,7365,Mumbai Mulund South,Community,19,India
+3141,7365,Mumbai Mulund South,Community,18,India
 3141,218293,Mumbai Nariman Point,Community,45,India
-3141,8824998,Mumbai Nova,Community,8,India
-3141,213245,Mumbai Salt City,Community,8,India
-3141,69205,Mumbai Shivaji Park,Community,25,India
-3141,216900,Mumbai Sky City,Community,12,India
-3141,8827497,Mumbai Southern Empire,Community,9,India
-3141,8828042,Mumbai Versova,Community,16,India
+3141,8824998,Mumbai Nova,Community,9,India
+3141,213245,Mumbai Salt City,Community,16,India
+3141,69205,Mumbai Shivaji Park,Community,16,India
+3141,216900,Mumbai Sky City,Community,26,India
+3141,8827497,Mumbai Southern Empire,Community,14,India
+3141,8828586,Mumbai Spark,Community,13,India
+3141,8828042,Mumbai Versova,Community,28,India
 3141,218120,Mumbai Wadala East,Community,5,India
-3141,213639,Mumbai Western Elite,Community,54,India
-3141,43378,Narsee Monjee College,University,14,India
+3141,213639,Mumbai Western Elite,Community,28,India
+3141,218430,M V Mandali's Colleges of Commerce and Science,University,17,India
+3141,43378,Narsee Monjee College,University,12,India
 3141,8827983,Navneet College,University,27,India
 3141,215365,Nirmala Niketan,University,7,India
 3141,92132,NMIMS' Anil Surendra Modi School of Commerce,University,22,India
-3141,215636,Northern Suburbs,Community,15,India
+3141,215636,Northern Suburbs,Community,16,India
 3141,8825352,NSS College Tardeo,University,8,India
-3141,90680,Palghar,Community,20,India
-3141,43442,Parle Tilak Vidyalaya Association's M.L.Dahanukar College of Commerce,University,42,India
-3141,8824218,Parleshwar GenZ,Community,17,India
+3141,90680,Palghar,Community,22,India
+3141,8824218,Parleshwar GenZ,Community,22,India
+3141,43442,Parle Tilak Vidyalaya Association's M.L.Dahanukar College of Commerce,University,45,India
 3141,217247,Pearl Mumbai,University,14,India
 3141,8825854,Podar World College,University,27,India
 3141,215156,Prabhavati Padamshi Soni International Jr. College,University,15,India
 3141,8827100,Principal K. M. Kundnani College of Pharmacy,University,18,India
-3141,42889,R.J. College,University,8,India
-3141,90344,Ramnarain Ruia College,University,9,India
-3141,217272,S P C E,University,2,India
-3141,90067,S.P.I.T.,University,1,India
-3141,212512,S.P.N. Doshi Womens College,University,23,India
-3141,7415,Sathaye College,University,7,India
+3141,90344,Ramnarain Ruia College,University,36,India
+3141,42889,R.J. College,University,77,India
+3141,7415,Sathaye College,University,32,India
 3141,8828263,Shri MD Shah Mahila College of Arts and Commerce,University,14,India
-3141,89259,SIES College Sion (W),University,4,India
-3141,216121,SIES Sion (East),University,10,India
+3141,89259,SIES College Sion (W),University,49,India
+3141,216121,SIES Sion (East),University,31,India
 3141,8823184,Singapore International School,University,3,India
 3141,215349,Sinhgad College,University,27,India
 3141,217533,SNDT College,University,3,India
 3141,8824122,SOBO,Community,2,India
-3141,214435,Sophia College for Women,University,18,India
+3141,214435,Sophia College for Women,University,87,India
+3141,217272,S P C E,University,3,India
+3141,90067,S.P.I.T.,University,1,India
+3141,212512,S.P.N. Doshi Womens College,University,23,India
 3141,214378,St. Mathew's Jr. College,University,3,India
-3141,218485,Sydenham College,University,8,India
-3141,215309,TCET,University,17,India
+3141,218485,Sydenham College,University,25,India
+3141,215309,TCET,University,48,India
 3141,213377,Thadomal Shahani Engineering College,University,36,India
 3141,8825948,Thakur College of Science and Commerce,University,18,India
 3141,217638,"Universal College of Engineering, Vasai",University,38,India
-3141,69323,"Usha Pravin Gandhi College of Arts, Science and Commerce",University,8,India
+3141,69323,"Usha Pravin Gandhi College of Arts, Science and Commerce",University,17,India
 3141,8825090,Valia C L College of Commerce and Valia L C College of Arts,University,15,India
-3141,213632,VES College of Pharmacy,University,18,India
+3141,213632,VES College of Pharmacy,University,47,India
 3141,213901,Vikhroli,Community,5,India
-3141,8826741,Virar,Community,18,India
+3141,8826741,Virar,Community,21,India
 3141,8823214,Vivek College of Commerce,University,12,India
-3141,91371,Wilson College,University,22,India
-3141,215384,Worli Lalbaug,Community,11,India
+3141,91371,Wilson College,University,57,India
+3141,215384,Worli Lalbaug,Community,25,India
 3142,8823945,Achievers College,University,15,India
 3142,8824583,Amaara Thane,Community,8,India
 3142,7519,Ambarnath,Community,7,India
 3142,91070,Ambarnath East,Community,15,India
 3142,216993,Ambernath Smart City,Community,6,India
-3142,83413,B. K. Birla College,University,27,India
 3142,8826836,Badlapur Smart City,Community,18,India
 3142,77079,Bharati Vidyapeeth Belapur,University,12,India
 3142,213341,Bharati Vidyapeeth Sunrise,University,12,India
+3142,83413,B. K. Birla College,University,27,India
 3142,217042,"CHM College, Ulhasnagar",University,5,India
-3142,8823355,D Y Patil University School of Pharmacy,University,6,India
 3142,8828114,Dnyan Ganga College of Pharmacy,University,20,India
 3142,7449,Dombivli,Community,12,India
 3142,8825127,Dombivli Downtown,Community,12,India
 3142,90349,Dombivli East,Community,18,India
 3142,85652,Dombivli Midtown Youth,Community,7,India
 3142,91529,Dombivli Sun City,Community,12,India
+3142,8823355,D Y Patil University School of Pharmacy,University,6,India
 3142,216651,DYPSBB Satellite City,University,28,India
 3142,71343,Hiranandani Estate,Community,5,India
 3142,8827810,Hiranandani Legends,Community,5,India
 3142,8827597,Indala Group of Institutions,University,20,India
-3142,215455,K.C. College of Engineering and Management Studies and Research,University,23,India
-3142,8827239,Kalyan Heritage City,Community,13,India
+3142,8827239,Kalyan Heritage City,Community,19,India
 3142,8827841,Kalyan West,Community,20,India
+3142,215455,K.C. College of Engineering and Management Studies and Research,University,23,India
 3142,8827803,Lekarz (DY Patil School of Medicine),University,15,India
 3142,7417,Navi Mumbai,Community,27,India
 3142,80490,Navi Mumbai Hillside,Community,8,India
@@ -1243,39 +1555,40 @@ district,club_id,club_name,club_base,members,country
 3142,8825217,New Kalyan,Community,12,India
 3142,216273,NMIMS Sunrise,University,226,India
 3142,8824627,NRI Complex,Community,1,India
-3142,8825257,S. K. College Millennium City,University,39,India
-3142,42507,"S.I.E.S. (Nerul) College of Arts, Science, & Commerce",University,22,India
 3142,89153,Saraswati College,University,31,India
 3142,8827868,Shivajirao S. Jondhale College of Engineering,University,21,India
 3142,8828377,SIES Graduate School of Technology,University,27,India
+3142,42507,"S.I.E.S. (Nerul) College of Arts, Science, & Commerce",University,23,India
 3142,214443,Singhania School,University,6,India
+3142,8825257,S. K. College Millennium City,University,39,India
 3142,213296,Smart City Navi Mumbai,Community,16,India
 3142,218632,Thane,Community,13,India
 3142,217109,Thane Creekside,Community,7,India
 3142,91652,Thane Downtown,Community,31,India
-3142,215136,Thane East,Community,13,India
-3142,8824182,Thane Greenspans,Community,9,India
+3142,215136,Thane East,Community,10,India
+3142,8824182,Thane Greenspans,Community,8,India
 3142,7391,Thane Hills,Community,26,India
 3142,7399,Thane North,Community,29,India
 3142,90376,Thane North End,Community,11,India
 3142,8827232,Thane Royales,Community,11,India
-3142,89852,Thane Suburban,Community,27,India
+3142,89852,Thane Suburban,Community,28,India
 3142,8825626,Thane Titans,Community,14,India
 3142,8826653,Tilak College Navi Mumbai,University,15,India
 3142,90266,Ulhasnagar Sapna Garden,Community,24,India
 3150,218646,Apollo Medical College,University,57,India
-3150,8825385,BBCIT (Bankatlal Badruka College of Information Technology),University,53,India
+3150,8825385,BBCIT (Bankatlal Badruka College of Information Technology),University,46,India
 3150,84602,Bhagyanagar,Community,18,India
-3150,8825322,BVRIT Hyderabad College of Engineering for Women,University,97,India
+3150,8825322,BVRIT Hyderabad College of Engineering for Women,University,108,India
 3150,8827769,Falcon,Community,24,India
 3150,91376,G. Narayanamma Institute of Technology & Science(Women),University,30,India
 3150,8828378,Gokaraju Rangaraju Institute of Engineering and Technology Hyderabad,University,23,India
 3150,8828181,Government Polytechnic Mahabubnagar,University,26,India
 3150,8826963,Government Vocational Junior College,University,20,India
-3150,7675,Guntur (Main),Community,4,India
 3150,8827887,Guntur Aadarsh Abhyudaya,University,8,India
+3150,7675,Guntur (Main),Community,4,India
 3150,8824520,Hyderabad Corporates,Community,14,India
 3150,77962,Hyderabad East,Community,67,India
+3150,8828575,Hyderabad Emerald,Community,17,India
 3150,212682,Hyderabad Himayat Nagar,Community,19,India
 3150,8826412,Hyderabad Medicos,Community,61,India
 3150,8824640,Hyderabad Mega City,Community,22,India
@@ -1292,7 +1605,7 @@ district,club_id,club_name,club_base,members,country
 3150,8828406,KGBV Pothavaram,University,20,India
 3150,8827969,KKR & KSR Institute of Technology and Sciences,University,16,India
 3150,8828323,Kokapet Aureum,Community,14,India
-3150,8826951,Mahindra University,University,30,India
+3150,8826951,Mahindra University,University,16,India
 3150,8827968,Malineni Lakshmaiah Women's Engineering College Guntur,University,18,India
 3150,8826415,Mamata Academy of Medical Sciences,University,135,India
 3150,8827778,Martur,Community,16,India
@@ -1310,55 +1623,56 @@ district,club_id,club_name,club_base,members,country
 3150,8825453,SFC Hyderabad Pearls,University,177,India
 3150,8827926,Sri Harshini Degree College,University,18,India
 3150,66518,St. Ann's Degree College for Women,University,170,India
-3150,90953,St. Peters Engineering College,University,42,India
-3150,84497,Sunrise,Community,20,India
+3150,90953,St. Peters Engineering College,University,37,India
+3150,84497,Sunrise,Community,15,India
 3150,8823475,Utkarsh,Community,25,India
 3150,217441,VILLA MARIE,University,51,India
 3150,8827528,VJ Degree College,University,26,India
-3150,8827312,Woxsen University,University,27,India
-3160,8827396,A.R.M. First Grade College Davanagere,University,20,India
+3150,8827312,Woxsen University,University,20,India
 3160,8824247,Amrutha Ayurveda Medical Colege C.T.A.,University,1,India
 3160,8824246,Amrutha Ayurveda Medical College & Hospital CTA.,University,1,India
 3160,8828110,Anantapur Giving Hands,Community,15,India
-3160,8828236,"B. V. Bhoomaraddi College of Arts, Science and Commerce Bidar",University,20,India
+3160,8827396,A.R.M. First Grade College Davanagere,University,20,India
 3160,8823757,Bidar Heritage,University,1,India
 3160,8823758,Bidar Legacy,University,1,India
+3160,8828236,"B. V. Bhoomaraddi College of Arts, Science and Commerce Bidar",University,13,India
 3160,8828252,Chaitanya Bharathi Institute of Technology Proddaturu,University,7,India
 3160,90434,"College of Agricultural Engineering (CAE), Raichur",University,1,India
-3160,8828527,D. K. Govt. College for Women Nellore,University,14,India
+3160,8828527,D. K. Govt. College for Women Nellore,University,6,India
 3160,216349,DRW College,University,1,India
 3160,8824235,Govt Polytechnic Raichur,University,1,India
 3160,217688,Gulbarga Suncity,Community,1,India
-3160,8827057,Guntakal Elites,Community,10,India
+3160,8827057,Guntakal Elites,Community,7,India
 3160,8827249,Helpinghearts-Rayachoty Govt. Polytechnic College,University,14,India
 3160,8824237,JNTUA CE Ananthapuramu,University,2,India
-3160,8828313,"Karnataka Arts, Science and Commerce College Bidar",University,15,India
+3160,8828313,"Karnataka Arts, Science and Commerce College Bidar",University,8,India
 3160,8824238,M.M. Degree College Raichur,University,1,India
 3160,214621,MSR Degree College,University,1,India
 3160,217170,Navanandi,University,1,India
 3160,8824239,Nellore Sarvodaya,University,1,India
 3160,8824240,Nellore Shakthi,Community,6,India
-3160,8826959,R G Institute of Commerce & Management,University,20,India
 3160,8824225,Rajampet,Community,1,India
+3160,8826959,R G Institute of Commerce & Management,University,20,India
 3160,8824226,Servo,Community,1,India
-3160,8828404,SJM Institute of Technology,University,15,India
+3160,8828404,SJM Institute of Technology,University,6,India
 3160,8824227,Spoorthi,Community,2,India
-3160,8824290,"Sri Virat Degree College, Yapaladinni",University,1,India
 3160,8824230,SRIT Ananthapuramu,University,10,India
+3160,8824290,"Sri Virat Degree College, Yapaladinni",University,1,India
 3160,8828250,Tadipatri Impact Leaders,Community,14,India
 3160,8823828,Vani Sakkare,University,1,India
 3160,8823829,VGFGC,University,1,India
 3160,8824291,"Virat Degree College, Yapaladinni",University,2,India
 3160,8824231,Women's M. M. Degree College Raichur,University,1,India
-3170,217893,A. R. Patil Kanya College Ichalkaranji,University,1,India
+3170,8828572,Anandibai Raorane College Vaibhavwadi,University,15,India
 3170,217897,Annasaheb Dange College Hatkanangale,University,1,India
 3170,8827963,Anuvartik Mirji Bharatesh Institute of Technology Belagavi,University,20,India
+3170,217893,A. R. Patil Kanya College Ichalkaranji,University,1,India
 3170,8827556,ASPM College Sangulwadi,University,15,India
 3170,217899,Atigare,Community,1,India
 3170,7939,Belgaum,Community,5,India
-3170,8827698,Belgaum Elite,Community,14,India
+3170,8827698,Belgaum Elite,Community,21,India
 3170,8823882,Belgaum Lingraj College,University,2,India
-3170,7813,Belgaum South,Community,24,India
+3170,7813,Belgaum South,Community,25,India
 3170,218369,Belgaum Yuva Darpan,Community,29,India
 3170,8824633,Bharat College Dharwad,University,1,India
 3170,92225,Bhatkal,University,4,India
@@ -1367,11 +1681,13 @@ district,club_id,club_name,club_base,members,country
 3170,8827550,Chhatrapati Shivaji College of Agriculture Oros,University,15,India
 3170,43308,Chiplun,Community,12,India
 3170,8827386,Curchorem Sanvordem,Community,16,India
-3170,8828387,D.Y.P. Sunshine,University,15,India
 3170,218716,Dakkhancha Raja Jotiba (Wadiratnagiri),Community,1,India
 3170,8827531,Dharwad Deccan,Community,16,India
 3170,8828046,Dharwad Luminous,Community,11,India
 3170,8824878,Dharwad Pristine,Community,1,India
+3170,8828603,Don Bosco College Panjim,University,17,India
+3170,8828387,D.Y.P. Sunshine,University,15,India
+3170,8828627,GFGC for Women Karwar,University,4,India
 3170,8823356,GIC,University,1,India
 3170,8828357,Goa College of Home Science Achievers,University,12,India
 3170,8824526,Gokak,Community,1,India
@@ -1379,7 +1695,7 @@ district,club_id,club_name,club_base,members,country
 3170,8824637,Government College Navalur,University,1,India
 3170,214491,"Government Polytechnic College, Karwar",University,2,India
 3170,217393,Haveri,Community,29,India
-3170,8827557,Hubbali,Community,11,India
+3170,8827557,Hubbali,Community,10,India
 3170,217852,Hupari,Community,4,India
 3170,8828027,Hupari Pioneers,Community,24,India
 3170,218339,Ichalkaranji Central,Community,1,India
@@ -1391,54 +1707,64 @@ district,club_id,club_name,club_base,members,country
 3170,8827538,JGND Bhartesh College,University,17,India
 3170,8824881,JSS College of Speech & Hearing Dharwad,University,1,India
 3170,8825839,JT College of BBA & BCA Gadag,University,14,India
-3170,8827840,K. E. Board First Grade Arts & Commerce PU College Dharwad,University,14,India
+3170,8828613,Kankavli,Community,15,India
+3170,8828601,Karwar,Community,14,India
 3170,8827416,Karwar Paschim,Community,5,India
+3170,8827840,K. E. Board First Grade Arts & Commerce PU College Dharwad,University,14,India
+3170,8828621,Kharepatan,Community,12,India
 3170,8827542,Khed City,Community,16,India
-3170,216141,KIT Sunshine,University,8,India
+3170,216141,KIT Sunshine,University,7,India
 3170,8827935,KLE BCA College Mahalingpur,University,12,India
 3170,8825559,KLE BCA PCJSC Hubballi,University,27,India
+3170,8825361,KLECBA Hubli,University,25,India
 3170,92030,KLE CBALC,University,8,India
 3170,8827532,KLE College of BCA Khanapur,University,16,India
-3170,8827734,KLE Society's College of BCA Bailhongal,University,15,India
-3170,8825555,KLE Society's College of BCA RLS Institute Belagavi,University,5,India
-3170,8828411,KLE Society's Institute of Management Studies and Research Hubballi,University,23,India
+3170,8828612,KLE MCA PCJSC,University,20,India
 3170,8825974,KLE's College of BBA & BCA Dharwad,University,14,India
 3170,8828113,KLE's College of BCA Sankeshwar,University,19,India
+3170,8828610,"KLE's Degree College, Ankali",University,25,India
 3170,225525,KLE's GH BCA Haveri,University,19,India
 3170,8827510,KLE's GI Bagewadi BCA BBA,University,4,India
 3170,8827552,KLE's MP Commerce College Raibag,University,15,India
-3170,8825361,KLECBA Hubli,University,31,India
-3170,8828041,KLS Gogte Institute of Technology,University,18,India
+3170,8827734,KLE Society's College of BCA Bailhongal,University,15,India
+3170,8825555,KLE Society's College of BCA RLS Institute Belagavi,University,5,India
+3170,8828411,KLE Society's Institute of Management Studies and Research Hubballi,University,23,India
+3170,8828041,KLS Gogte Institute of Technology,University,15,India
 3170,7883,Kolhapur,Community,14,India
 3170,8824924,Kolhapur Central,Community,16,India
+3170,8828582,Kolhapur Legacy,Community,12,India
 3170,43396,Kolhapur Midtown-Phoenix,Community,11,India
 3170,8827758,Kousali Institute of Management Studies Dharwad,University,25,India
 3170,213732,Krishna Valley,Community,20,India
+3170,8828577,Kudal,Community,16,India
+3170,8828581,Kumta Coastal,Community,16,India
 3170,212580,Lote,Community,13,India
-3170,8827401,M.E.S Commerce College,University,1,India
 3170,7867,Mapusa,Community,59,India
 3170,216971,Margao Midtown,University,14,India
 3170,8825628,MES College of Nursing,University,7,India
+3170,8827401,M.E.S Commerce College,University,1,India
+3170,8828631,MES Vasant Joshi College of Arts and Commerce,University,4,India
 3170,8828331,Narayan Zantye College of Commerce Champions,University,12,India
+3170,8828606,Oxford Group of Institutions,University,12,India
 3170,218715,Panhala,Community,1,India
 3170,7849,Panjim,Community,40,India
 3170,8827953,Pattan-Kodoli,Community,25,India
-3170,8827921,Ponda,Community,15,India
+3170,8827921,Ponda,Community,12,India
 3170,218019,Presentation Girl's Composite P.U. College,University,10,India
 3170,217898,"Rajarshi Shahu College, Rukadi",University,2,India
 3170,8825658,Ratnagiri Midtown,Community,11,India
 3170,8825323,Rising Youth Banda,Community,15,India
 3170,8824934,RPD College,University,1,India
-3170,8828108,S. B. Khade Mahavidyalaya Koparde,University,2,India
-3170,8828332,S. S. Dempo College Autonomous,University,44,India
-3170,8826065,S.J.M.V.S. Womens BBA College,University,12,India
 3170,218304,Sahyadri Pashan,Community,12,India
 3170,7839,Sangli,University,5,India
 3170,8825730,Sangli Midtown Synergy,Community,9,India
+3170,8828624,Sanjeevini Ayurveda Medical College & Hospital Elite,University,4,India
 3170,8824549,Sanjeevini Pharmacy College,University,1,India
 3170,216241,"Sarohini College of Pharmacy ""Samarpan""",University,12,India
-3170,218023,Sawantwadi,Community,19,India
+3170,218023,Sawantwadi,Community,18,India
+3170,8828108,S. B. Khade Mahavidyalaya Koparde,University,2,India
 3170,215206,"SDM Degree College, Honnavar",University,2,India
+3170,8828630,SDM Dental Impact,University,4,India
 3170,8824524,Shantiniketan,University,1,India
 3170,8827412,"Shivaji Arts, Commerce and BCA College",University,14,India
 3170,214497,"Shivaji College of Educatin, Baad, Karwar",University,2,India
@@ -1446,23 +1772,31 @@ district,club_id,club_name,club_base,members,country
 3170,217366,Shreeya College of Nursing,University,1,India
 3170,217823,"Shri Santram PU College, Athani",University,1,India
 3170,217724,"SJMVS BBA COLLEGE FOR WOMEN, HUBLI",University,1,India
+3170,8826065,S.J.M.V.S. Womens BBA College,University,12,India
+3170,8828579,Smt. A.R.P. Kanya Mahavidyalaya Ichalkaranji,University,14,India
 3170,8824632,Smt. C. B. Shah Mahila Mahavidyalay,University,4,India
 3170,8828045,Smt. Shakuntala Institute of Nursing Education,University,12,India
+3170,8828626,Sridora Caculo College of Commerce & Management Studies,University,4,India
+3170,8828602,SSA Government College and Research Center Pernem,University,28,India
+3170,8828332,S. S. Dempo College Autonomous,University,44,India
 3170,216092,St. Xaviers College,University,3,India
 3170,8824914,Sunshine Sangli,Community,11,India
 3170,8823546,Swarajya,Community,2,India
 3170,213062,Tasgaon Grape City,Community,15,India
 3170,215190,Trinity College,University,3,India
+3170,8828571,Twin City,Community,15,India
 3170,8827402,Uttara Kannada United,Community,7,India
-3170,7827,Vasco Da Gama,Community,20,India
+3170,7827,Vasco Da Gama,Community,29,India
+3170,8828576,Vengurla,Community,13,India
 3170,90368,Venugram-Belgaum,Community,24,India
 3170,218020,Vidya P Hanchinmani PU Science College,University,1,India
+3170,8828578,Vishrambag Zenith,Community,14,India
 3170,8826216,Vivekanand College Kolhapur,University,7,India
 3181,8828115,Akshaya College,University,14,India
 3181,8826474,Aramane Nagari,Community,20,India
-3181,215995,B.T.C.G. Govt. First Grade College Yadoor,University,1,India
 3181,216654,Besant P.G. Studies in Commerce,University,3,India
 3181,8828201,BIMS University of Mysore,University,21,India
+3181,215995,B.T.C.G. Govt. First Grade College Yadoor,University,1,India
 3181,217825,Canara P.G. Centre For Commerce,University,2,India
 3181,8828240,Cauvery College Gonikoppal,University,12,India
 3181,213039,Coorg Institute of Technology,University,5,India
@@ -1472,11 +1806,11 @@ district,club_id,club_name,club_base,members,country
 3181,217331,GFGC Mudipu,University,2,India
 3181,217329,Government 1st Grade Degree College Vamadapadavu,University,1,India
 3181,8828180,Government First Grade College for Women Madikeri,University,16,India
-3181,217599,Govt First Grade College Punjalakatte,University,1,India
 3181,8828111,Govt. First Grade College Jidekal Puttur,University,15,India
+3181,217599,Govt First Grade College Punjalakatte,University,1,India
 3181,215555,Govt. First Grade College Siddakatte,University,1,India
 3181,8827701,Hindustan First Grade College,University,1,India
-3181,8823284,JSS Law College Mysore North,University,21,India
+3181,8823284,JSS Law College Mysore North,University,9,India
 3181,8828182,Keyyur,Community,20,India
 3181,8825967,Kodagu,Community,20,India
 3181,8827516,Krishnarajanagara,Community,12,India
@@ -1486,11 +1820,12 @@ district,club_id,club_name,club_base,members,country
 3181,8827885,Mangalore Swastika,Community,29,India
 3181,8825968,MIT First Grade College,University,7,India
 3181,7999,Mysore,Community,37,India
-3181,90722,Mysore East,Community,15,India
+3181,90722,Mysore East,Community,12,India
 3181,8826032,Mysore Mid Town,Community,12,India
+3181,8828608,Mysore North,Community,15,India
 3181,8827745,Mysore School of Architecture,University,15,India
 3181,8827703,Mysore School of Design,University,19,India
-3181,8825969,Mysore South East,Community,11,India
+3181,8825969,Mysore South East,Community,10,India
 3181,8827807,Mysuru Trailblazers,Community,12,India
 3181,8827738,National Institute of Engineering Mysore,University,120,India
 3181,8826927,National Institute of Technology Karnataka,University,52,India
@@ -1502,10 +1837,10 @@ district,club_id,club_name,club_base,members,country
 3181,8827691,Seshadripuram Degree College Mysore,University,12,India
 3181,217387,SNM Polytechnic,University,1,India
 3181,215990,Spandan Somwarpet Hills,University,2,India
+3181,215162,Srinivas University College of Engineering & Technology,University,4,India
 3181,8828112,Sri Pragathi Vistara College for Aviation and Management Puttur,University,15,India
 3181,8826347,Sri Vani Vilas Urs Women's First Grade College,University,21,India
-3181,215162,Srinivas University College of Engineering & Technology,University,3,India
-3181,8825680,St Aloysius College,University,12,India
+3181,8825680,St Aloysius College,University,4,India
 3181,215994,St. Joseph Degree College Somwarpet,University,3,India
 3181,217834,Sullia,Community,2,India
 3181,8826341,Sullia United,Community,10,India
@@ -1515,9 +1850,9 @@ district,club_id,club_name,club_base,members,country
 3181,8827694,Trinity College Mysore,University,38,India
 3181,8828228,Vidyavardhaka College of Engineering,University,14,India
 3181,217824,"Yenopaya Institute of Arts, Science, Commerce & Management",University,2,India
-3182,217501,A S S I T I Billady,University,2,India
 3182,8826217,Aaraike,Community,15,India
 3182,217924,Ashothara Seva Jayapura,Community,1,India
+3182,217501,A S S I T I Billady,University,2,India
 3182,217520,Bahubali College of Engineering,University,4,India
 3182,217464,Brahmavar,Community,11,India
 3182,8827099,Chikkamagaluru Institute of Medical Sciences,University,9,India
@@ -1534,7 +1869,6 @@ district,club_id,club_name,club_base,members,country
 3182,215518,Hassan Institute of Medical Sciences,University,4,India
 3182,217601,ITI Pragathi Nagara,University,2,India
 3182,217488,"JNNCE, Shimoga",University,1,India
-3182,216500,K.V.S.M. College Katapady,University,2,India
 3182,8824785,Kadur,Community,1,India
 3182,217813,Kamala Nehru Shimoga,University,1,India
 3182,89844,Karkala,Community,11,India
@@ -1542,10 +1876,12 @@ district,club_id,club_name,club_base,members,country
 3182,216502,Katpady,Community,2,India
 3182,8827774,Kota-Saligrama,Community,13,India
 3182,217569,Koteshwara,Community,22,India
+3182,216500,K.V.S.M. College Katapady,University,2,India
 3182,215339,Malnad College of Engineering,University,4,India
 3182,8003,Manipal,University,13,India
 3182,216443,Manipal Academy of Higher Education,University,4,India
 3182,218444,Manipal Central,Community,12,India
+3182,8828568,Manipal College of Dental Sciences,University,20,India
 3182,217487,Milagres College Kallianpur,University,1,India
 3182,214342,MPMG College,University,2,India
 3182,215303,"Muniyal Ayurveda College, Manipal",University,4,India
@@ -1554,9 +1890,9 @@ district,club_id,club_name,club_base,members,country
 3182,217733,Pragathi Dr. B.B. Hedge First Grade College Kundapura,University,1,India
 3182,8828514,Rajeev Institute of Technology Hassan,University,49,India
 3182,216157,Rajeev Polytechnic,University,4,India
-3182,218004,S D M C Ayurveda Kuthpadi,University,5,India
 3182,215507,Sagri,Community,2,India
 3182,8828004,Sanjeevini Govt. Degree College Menase,University,21,India
+3182,218004,S D M C Ayurveda Kuthpadi,University,5,India
 3182,216781,SDM Royals,Community,1,India
 3182,217876,Seva,Community,2,India
 3182,217761,Sharavathi 1st Grade College,University,2,India
@@ -1569,34 +1905,35 @@ district,club_id,club_name,club_base,members,country
 3182,8827176,Udupi Dhanvanthari College of Nursing,University,12,India
 3182,215571,Udupi Dhnavantari College & School of Nursing,University,5,India
 3182,8828226,Vaidya Institute of Nursing and Paramedical Sciences,University,15,India
-3191,8824329,A P S College of Engineering,University,6,India
 3191,8826961,AMC Engineering College,University,3,India
+3191,8824329,A P S College of Engineering,University,6,India
 3191,216417,Atria Institute of Technology,University,107,India
 3191,212622,Banashankari,Community,22,India
-3191,218259,Bangalore Aagneya,University,31,India
+3191,218259,Bangalore Aagneya,University,27,India
 3191,8825219,Bangalore Advaitha,Community,4,India
 3191,217186,Bangalore East,Community,7,India
-3191,8826633,Bangalore High Grounds,Community,24,India
+3191,8826633,Bangalore High Grounds,Community,23,India
 3191,8825916,Bangalore Institute of Technology,University,9,India
 3191,8185,Bangalore Jayanagar,Community,62,India
 3191,8823877,Bangalore JP Nagar,Community,65,India
 3191,8827862,Bangalore Neo Minds,Community,24,India
-3191,214015,Bangalore Orchards,Community,12,India
+3191,214015,Bangalore Orchards,Community,18,India
 3191,8825970,Bangalore Prime,Community,14,India
 3191,8824988,Bangalore Revolution,Community,19,India
 3191,8828305,Bangalore South,Community,25,India
 3191,91519,Bangalore South Parade,Community,13,India
 3191,215514,Bangalore Southwest,Community,14,India
 3191,8826562,Bangalore Spandana,Community,4,India
-3191,8167,Bangalore Vijayanagar,Community,17,India
+3191,8167,Bangalore Vijayanagar,Community,19,India
 3191,8826661,Bengaluru Avyanna,Community,18,India
-3191,8826232,Bengaluru BTM,Community,28,India
+3191,8828567,Bengaluru Binnypet,Community,15,India
+3191,8826232,Bengaluru BTM,Community,37,India
 3191,8823827,Bengaluru Harmony,Community,14,India
-3191,8823262,Bengaluru HSR,Community,20,India
-3191,217243,Bengaluru South End,Community,21,India
+3191,8823262,Bengaluru HSR,Community,19,India
+3191,217243,Bengaluru South End,Community,26,India
 3191,218214,Bengaluru United,Community,15,India
 3191,89320,Bishop Cotton Womens Christian College,University,17,India
-3191,91509,BMSCE,University,74,India
+3191,91509,BMSCE,University,39,India
 3191,8826343,BSVP First Grade College,University,7,India
 3191,8824902,DA Pandu RV Dental College,University,2,India
 3191,8828097,Dayananda Sagar College of Dental Sciences,University,15,India
@@ -1605,19 +1942,19 @@ district,club_id,club_name,club_base,members,country
 3191,217504,"Govt. First Grade College, Ramanagara",University,6,India
 3191,8825481,Indian Institute of Fashion Technology,University,7,India
 3191,213579,Jain Evening College,University,35,India
-3191,8143,Jyoti Nivas College,University,7,India
-3191,215974,K.G.F. Community,Community,9,India
-3191,8826417,KLE Law College,University,62,India
-3191,89212,Koramangala,Community,40,India
+3191,8143,Jyoti Nivas College,University,20,India
+3191,215974,K.G.F. Community,Community,8,India
+3191,8826417,KLE Law College,University,47,India
+3191,89212,Koramangala,Community,76,India
 3191,8827817,Krupanidhi College of Commerce & Management,University,12,India
-3191,8824521,Krupanidhi Group of Institutions,University,18,India
+3191,8824521,Krupanidhi Group of Institutions,University,1,India
 3191,213238,KSSEM,University,8,India
 3191,8827855,Madanapalle Institute of Technology and Sciences,University,62,India
 3191,8826292,Maharani Lakshmi Ammanni College,University,16,India
 3191,213555,Marathahalli,Community,17,India
 3191,8825064,MEDIKARDIA,Community,20,India
-3191,212627,Mount Carmel College,University,48,India
-3191,8823249,"Narsee Monjee Institute of Mangement Studies, Bangalore",University,47,India
+3191,212627,Mount Carmel (Deemed to be University),University,48,India
+3191,8823249,"Narsee Monjee Institute of Mangement Studies, Bangalore",University,45,India
 3191,8826924,New Horizon College,University,15,India
 3191,8824377,NMIT-MBA,University,8,India
 3191,8828165,NSB Bangalore,University,27,India
@@ -1627,112 +1964,113 @@ district,club_id,club_name,club_base,members,country
 3191,91584,PES University,University,29,India
 3191,8825365,PES University Electronic City,University,5,India
 3191,8824187,Prestige Falcon City,Community,18,India
-3191,8826865,R V College of Architecture,University,24,India
-3191,8826053,R. V. University,University,18,India
-3191,68941,R.V.C.E.,University,57,India
 3191,8827267,Ramaiah College of Law,University,22,India
 3191,8824041,Ramanagara,Community,4,India
 3191,8826516,RNS Institute of Technology,University,17,India
-3191,8827943,S-VYASA,University,17,India
-3191,84598,S.S.M.R.V. College,University,52,India
+3191,68941,R.V.C.E.,University,33,India
+3191,8826865,R V College of Architecture,University,24,India
+3191,8826053,R. V. University,University,18,India
 3191,8828199,Sacred Heart College - UG,University,15,India
 3191,8824817,Sacred Heart Degree College for Women,University,24,India
 3191,8824518,Samarpane RC College,University,28,India
-3191,8826819,SEI College Tejas,University,43,India
+3191,8826819,SEI College Tejas,University,25,India
 3191,8825562,Seshadripuram Academy of Business Studies,University,14,India
-3191,8825547,Seshadripuram Institute of Commerce & Management,University,6,India
-3191,91568,Shantiniketan,University,5,India
+3191,8825547,Seshadripuram Institute of Commerce & Management,University,15,India
+3191,91568,Shantiniketan,University,3,India
 3191,213076,Shishu Mandir,Community,16,India
 3191,8827863,Shri Gnanambica Degree College Madanapalle,University,39,India
 3191,213531,Sri Bhagawan Mahaveer Jain College KGF,University,2,India
 3191,8827781,Sri Saraswathi Vidyanikethana,University,18,India
 3191,8827495,SRNGS Boys Hostel,Community,33,India
+3191,84598,S.S.M.R.V. College,University,51,India
 3191,8824472,St. Francis de Sales College,University,2,India
-3191,8081,St. Joseph's College Of Commerce,University,11,India
+3191,8081,St. Joseph's College Of Commerce,University,4,India
 3191,8828123,SVCE Tirupati,University,106,India
+3191,8827943,S-VYASA,University,17,India
 3191,212680,T.S.M.T.,Community,17,India
 3191,8826526,V.E.T First Grade College JP Nagar,University,15,India
 3192,8827555,Acharya Bangalore B School,University,4,India
 3192,8826946,Aditya Institute of Management Studies,University,44,India
 3192,8824484,Agragami Degree College,University,1,India
 3192,215387,AIMIT College,University,15,India
-3192,216045,AIMS Institute of Higher Education,University,18,India
+3192,216045,AIMS Institute of Higher Education,University,5,India
 3192,8826703,Ambedkar Institute of Technology,University,15,India
 3192,61077,Baldwin Women's Methodist College,University,11,India
 3192,8199,Bangalore,Community,80,India
 3192,217197,Bangalore Basaveshwaranagar,Community,18,India
 3192,8825097,Bangalore Bhuvaneshwari Nagar,Community,13,India
-3192,89917,Bangalore Golden Rock,Community,10,India
+3192,89917,Bangalore Golden Rock,Community,14,India
 3192,8187,Bangalore Indiranagar,Community,13,India
 3192,215774,Bangalore Junction,Community,20,India
 3192,8826766,Bangalore Nandini,Community,20,India
-3192,90196,Bangalore North West,Community,14,India
-3192,8826605,Bangalore Oasis,Community,14,India
-3192,8173,Bangalore R.T. Nagar,Community,9,India
+3192,90196,Bangalore North West,Community,18,India
+3192,8826605,Bangalore Oasis,Community,15,India
 3192,215080,Bangalore Rajmahal Vilas,Community,25,India
-3192,8825840,Bangalore Udyog,Community,32,India
+3192,8173,Bangalore R.T. Nagar,Community,9,India
+3192,8825840,Bangalore Udyog,Community,44,India
 3192,8825975,Bangalore Warriors,Community,10,India
-3192,8165,Bangalore West,Community,32,India
+3192,8165,Bangalore West,Community,31,India
 3192,8826631,Bengaluru Avinya,Community,5,India
 3192,8827481,Bengaluru Compassion Crew,Community,14,India
 3192,8823830,Bengaluru Nagasandra,Community,32,India
-3192,8826606,Bengaluru Nava Chaitanya,Community,9,India
-3192,8823923,Bengaluru Orion Gateway,Community,19,India
+3192,8826606,Bengaluru Nava Chaitanya,Community,10,India
+3192,8823923,Bengaluru Orion Gateway,Community,18,India
 3192,216046,Bishop Cotton Yelahanka,University,3,India
 3192,215552,BMS Yelahanka,University,8,India
 3192,8828021,BNM Institute of Technology,University,18,India
-3192,212785,C M R I T,University,17,India
 3192,8827601,Charan's Degree College,University,12,India
-3192,8827833,Christ University Bangalore Yeshwanthpur Campus,University,163,India
+3192,8827833,Christ University Bangalore Yeshwanthpur Campus,University,168,India
 3192,8828358,Christ University Bannerghatta Road Campus,University,36,India
 3192,8826693,Christ University Central Campus,University,30,India
-3192,8828466,Christ University Kengeri Campus,University,61,India
+3192,8828466,Christ University Kengeri Campus,University,60,India
+3192,212785,C M R I T,University,17,India
 3192,8827752,Dhanwantri Institutions,University,39,India
 3192,8825140,Falcon Youth,Community,19,India
 3192,214320,GEMs B School,University,15,India
 3192,8826418,GITAM Bengaluru,University,12,India
 3192,8828495,Government First Grade College Chikkanayakanahalli Kalpataru Youths,University,15,India
 3192,8827838,Gulmohar KIT MBA Department Tiptur,University,12,India
-3192,8828060,H K Veeranna Gowda College,University,12,India
 3192,8827415,HKBK Group of Institutions,University,15,India
 3192,8827620,HKES Sree Veerendra Patil Degree College,University,15,India
-3192,8826152,Jyothy Institute of Technology,University,28,India
+3192,8828060,H K Veeranna Gowda College,University,12,India
+3192,8826152,Jyothy Institute of Technology,University,27,India
 3192,8827608,Koshys Institute of Management Studies Autonomous,University,20,India
-3192,8827146,"M S Ramaiah College of Arts, Science and Commerce",University,17,India
-3192,8827247,M. S. Engineering College,University,11,India
 3192,8828051,Mandya,Community,24,India
-3192,212892,MES College,University,31,India
+3192,212892,MES College,University,22,India
 3192,8825496,MES Institute of Management,University,2,India
+3192,8828574,MKPM RV Institute of Legal Studies,University,29,India
 3192,8827567,MP Birla Institute of Management,University,17,India
+3192,8827247,M. S. Engineering College,University,11,India
+3192,8827146,"M S Ramaiah College of Arts, Science and Commerce",University,17,India
 3192,8827782,NBC College,University,27,India
 3192,68154,Presidency College,University,18,India
 3192,217365,Presidency University Bangalore,University,10,India
-3192,8827584,Rajanukunte Royals,Community,7,India
+3192,8827584,Rajanukunte Royals,Community,8,India
 3192,8825298,RajaRajeswari College of Engineering,University,1,India
 3192,212992,Ramaiah Institute of Management (RIMS),University,42,India
 3192,8826806,RPA First Grade College Rajajinagar,University,18,India
-3192,8825021,RUAS,University,14,India
+3192,8825021,RUAS,University,15,India
 3192,8827603,Sahakaranagar,Community,12,India
 3192,8825126,Sai Vidya Institute of Technology,University,119,India
 3192,8828032,Seshadripuram College,University,19,India
 3192,214429,Seshadripuram Institute of Management Studies,University,25,India
 3192,8827053,Siddaganga Institute of Technology Tumakuru,University,15,India
-3192,8825501,Silicon City,University,21,India
+3192,8825501,Silicon City,University,23,India
 3192,8827610,Soundarya Institute of Management and Science,University,21,India
 3192,8826279,Sree Siddaganga First Grade College,University,12,India
 3192,8826201,Sri Basaveshwara First Grade College,University,12,India
 3192,8827585,Sri Guru Sai First Grade College,University,45,India
-3192,8828029,Sri Sai College for Women,University,19,India
 3192,8828351,Srirangapatna,Community,14,India
-3192,8824042,St Pauls College,University,1,India
-3192,8826849,St. Anne's First Grade College for Women,University,25,India
+3192,8828029,Sri Sai College for Women,University,19,India
 3192,8826801,St. Annes Degree College for Women,University,14,India
+3192,8826849,St. Anne's First Grade College for Women,University,25,India
 3192,8824314,St. Claret College,University,13,India
+3192,8824042,St Pauls College,University,1,India
 3192,212458,Surana College,University,35,India
 3192,217238,Surana College Peenya,University,7,India
-3192,91484,Swarna Bengaluru,Community,41,India
+3192,91484,Swarna Bengaluru,Community,47,India
 3192,8827200,Triveni College,University,31,India
-3192,8827575,United International Business School,University,30,India
+3192,8827575,United International Business School,University,38,India
 3192,8823940,VBR College,University,19,India
 3192,8827756,Vidya Para Medical College,University,12,India
 3192,215353,Vidyaranyapura,Community,67,India
@@ -1746,7 +2084,8 @@ district,club_id,club_name,club_base,members,country
 3203,8827747,Bharathidasan College of Arts & Science,University,17,India
 3203,8827581,Bishop Thorp College,University,30,India
 3203,8825944,Builders Engineering College,University,22,India
-3203,8828379,Christ The King Engineering College Karamadai Youth,University,20,India
+3203,8828570,Cauvery Nexus,Community,12,India
+3203,8828379,Christ The King Engineering College Karamadai Youth,University,19,India
 3203,8827202,Dharapuram Pride,Community,12,India
 3203,8827579,Dr. R.A.N.M. Arts and Science College,University,27,India
 3203,8827631,Dr. RV Arts and Science College,University,34,India
@@ -1772,15 +2111,16 @@ district,club_id,club_name,club_base,members,country
 3203,8825941,Kangeyam Institute of Commerce,University,14,India
 3203,217564,KEC(Erode),Community,12,India
 3203,8827936,KMC College of Law,University,59,India
-3203,8825553,Kongu Arts and Science College,University,8,India
+3203,8825553,Kongu Arts and Science College,University,6,India
+3203,8828573,Kongu Naturopathy and Yoga Medical College,University,25,India
 3203,8828359,Kumaraguru Institute of Agriculture,University,37,India
 3203,8827730,Nandha Dental College and Hospital,University,77,India
 3203,8828325,Nandha Engineering College,University,52,India
 3203,89722,NGM College,University,10,India
 3203,8826650,Ootacamund Odyssey,Community,1,India
 3203,8828336,Ooty Maatram,Community,13,India
-3203,8827533,P K R Arts College for Women,University,15,India
 3203,8826850,Park's College,University,19,India
+3203,8827533,P K R Arts College for Women,University,15,India
 3203,8823594,Pollachi Green Paradise,Community,15,India
 3203,212424,Pollachi Varnas,Community,6,India
 3203,8828079,Providence College for Women (Autonomous),University,6,India
@@ -1792,18 +2132,21 @@ district,club_id,club_name,club_base,members,country
 3203,8823253,SIIMS,University,20,India
 3203,52125,Sree Saraswathi Thyagaraja College,University,1,India
 3203,8827826,Sri Guru Sarva,University,33,India
+3203,8828569,Sri Vasavi College (Self Finance Wing),University,25,India
 3203,8828364,St. Joseph's College for Women Amarpana,University,30,India
 3203,8828374,St. Joseph's College for Women Smarpana,University,38,India
 3203,8826931,Theeran Chinnamalai College of Arts and Science for Women,University,8,India
+3203,8828632,Tiruppur Maniax,Community,3,India
 3203,8828222,Tirupur Celebration,Community,17,India
 3203,8827806,Tirupur Kumaran College for Women,University,30,India
 3203,8827268,Tirupur Nexus,Community,12,India
 3203,8827593,Tirupur Redeemers,Community,10,India
-3203,8825697,Tirupur Royals,University,5,India
-3203,212277,Tirupur Young Generation,Community,10,India
+3203,8825697,Tirupur Royals,University,18,India
+3203,8828623,Tirupur Smart Unity,Community,4,India
+3203,212277,Tirupur Young Generation,Community,11,India
 3203,8211,Udamalpet Gandhi Nagar,Community,7,India
 3203,90197,Udumalpet Yuvas,Community,15,India
-3203,63181,Velalar College of Engineering and Technology,University,14,India
+3203,63181,Velalar College of Engineering and Technology,University,13,India
 3203,8827602,Vellalar College of Pharmacy,University,5,India
 3203,8827054,VET Institute of Arts and Science,University,12,India
 3203,42389,Vidhyasagar College of Arts & Science,University,6,India
@@ -1815,7 +2158,7 @@ district,club_id,club_name,club_base,members,country
 3204,8824155,Calicut City,Community,1,India
 3204,8824336,Calicut Cybercity Future,Community,1,India
 3204,8824316,Calicut Cybercity Youth,Community,1,India
-3204,8827118,Calicut East,Community,16,India
+3204,8827118,Calicut East,Community,20,India
 3204,8826818,Calicut Eyes Institute of Ophthalmology Mukkam,University,16,India
 3204,8826512,CSWA Cybercity,University,12,India
 3204,8826508,CSWA Kaloor Road,University,12,India
@@ -1836,7 +2179,7 @@ district,club_id,club_name,club_base,members,country
 3204,8827031,St. Joseph's College Pilathara,University,1,India
 3204,8827035,Sunrise College of Advanced Studies Kuttur,University,1,India
 3205,8827999,Christ College (Autonomous) Irinjalakuda,University,20,India
-3205,8828000,Christ College of Engineering (Autonomous),University,31,India
+3205,8828000,Christ College of Engineering (Autonomous),University,33,India
 3205,218263,Cochin Airport,Community,2,India
 3205,8827952,Cochin Arts and Science College,University,29,India
 3205,215316,Cochin East,Community,12,India
@@ -1850,7 +2193,7 @@ district,club_id,club_name,club_base,members,country
 3205,8827511,Indira Gandhi Institute of Dental Sciences Kothamangalam,University,35,India
 3205,8827455,Kerala University of Fisheries and Ocean Studies,University,29,India
 3205,8824770,KMEA,University,13,India
-3205,8828321,Kochi United,Community,18,India
+3205,8828321,Kochi United,Community,17,India
 3205,8824204,Little Flower College,University,1,India
 3205,8825370,Muthoot Institute of Technology and Science,University,20,India
 3205,8828043,Naipunnya Institute of Management and Information Technology Pongam,University,20,India
@@ -1866,7 +2209,7 @@ district,club_id,club_name,club_base,members,country
 3205,8828121,SCMS Cochin School of Business,University,20,India
 3205,8828125,SCMS School of Technology and Management,University,15,India
 3205,8828080,St. Aloysius College Elthuruth Thrissur,University,22,India
-3205,8827831,St. Joseph's College Irinjalakkuda,University,24,India
+3205,8827831,St. Joseph's College Irinjalakkuda,University,34,India
 3205,8826901,St. Mary's College (Autonomous) Thrissur,University,20,India
 3205,217600,St. Teresa's College Cochin,University,16,India
 3205,8828002,St. Thomas College (Autonomous) Thrissur,University,19,India
@@ -1876,98 +2219,98 @@ district,club_id,club_name,club_base,members,country
 3206,218056,Adithya,University,1,India
 3206,217565,Ahalia ASM,University,1,India
 3206,217566,Ahalia ASO,University,2,India
-3206,216522,AIHSHEW,University,18,India
+3206,216522,AIHSHEW,University,13,India
 3206,8828150,AJK College of Arts and Science,University,22,India
-3206,8827856,Akshaya College of Arts and Science,University,22,India
+3206,8827856,Akshaya College of Arts and Science,University,13,India
 3206,92358,Akshaya College of Engineering & Technology,University,17,India
 3206,8826821,Atlanta College,University,20,India
-3206,8827828,Coimbatore Central,Community,27,India
+3206,8827828,Coimbatore Central,Community,26,India
 3206,8827472,Coimbatore Changemakers,Community,15,India
 3206,8823931,Coimbatore City,Community,25,India
-3206,8315,Coimbatore Comito,Community,24,India
-3206,91843,Coimbatore Cosmopolitan,Community,14,India
+3206,8315,Coimbatore Comito,Community,23,India
+3206,91843,Coimbatore Cosmopolitan,Community,25,India
 3206,42238,Coimbatore Cosmos,Community,25,India
-3206,215195,Coimbatore Crystals,Community,21,India
+3206,215195,Coimbatore Crystals,Community,27,India
 3206,87596,Coimbatore Gaalaxy,Community,41,India
-3206,8827477,Coimbatore Green City,Community,14,India
+3206,8827477,Coimbatore Green City,Community,16,India
 3206,8827595,Coimbatore Ignite,Community,17,India
-3206,90938,Coimbatore Ikons,Community,18,India
+3206,90938,Coimbatore Ikons,Community,24,India
 3206,8827345,Coimbatore Infra,Community,17,India
-3206,8331,Coimbatore Institute Of Technology,University,36,India
-3206,77966,Coimbatore Main,Community,12,India
-3206,8329,Coimbatore Majestic,Community,19,India
+3206,8331,Coimbatore Institute Of Technology,University,30,India
+3206,77966,Coimbatore Main,Community,13,India
+3206,8329,Coimbatore Majestic,Community,26,India
 3206,52802,Coimbatore Millennium,Community,15,India
-3206,8825936,Coimbatore New Gen,Community,19,India
-3206,8828315,Coimbatore Nexus,Community,21,India
+3206,8825936,Coimbatore New Gen,Community,27,India
+3206,8828315,Coimbatore Nexus,Community,25,India
 3206,212477,Coimbatore Royals,Community,22,India
-3206,8826467,Coimbatore RS Puram,Community,12,India
-3206,8823645,Coimbatore Smart City,Community,17,India
+3206,8826467,Coimbatore RS Puram,Community,11,India
+3206,8823645,Coimbatore Smart City,Community,19,India
 3206,8827316,Coimbatore Smartcity Umeed,Community,12,India
 3206,87598,Coimbatore Sparks,Community,7,India
 3206,92268,Coimbatore Spectrum,Community,48,India
 3206,42240,Coimbatore Symphony,Community,14,India
-3206,8319,Coimbatore Texcity,Community,36,India
-3206,8826134,Coimbatore Unicorns,Community,15,India
+3206,8319,Coimbatore Texcity,Community,42,India
+3206,8826134,Coimbatore Unicorns,Community,4,India
 3206,50295,Coimbatore Unique,Community,22,India
 3206,91594,Coimbatore Unity,Community,17,India
 3206,91901,Coimbatore Uptown,Community,16,India
 3206,214318,Coimbatore-Vadavalli,Community,16,India
-3206,84140,Cug (Covai User Group),Community,11,India
+3206,84140,Cug (Covai User Group),Community,14,India
 3206,8827225,Dhaanish Ahmed Institute of Technology,University,51,India
-3206,217835,Dr. N.G.P Arts & Science College,University,11,India
+3206,217835,Dr. N.G.P Arts & Science College,University,17,India
 3206,8825316,Dr. N.G.P. Institute of Technology,University,25,India
-3206,90418,GCT Coimbatore,University,0,India
+3206,90418,GCT Coimbatore,University,26,India
 3206,218054,Happy Valley,University,14,India
-3206,92108,HICAS,University,24,India
-3206,218638,Hindusthan College of Engineering and Technology,University,17,India
-3206,89603,Info Institute of Engineering,University,26,India
+3206,92108,HICAS,University,17,India
+3206,218638,Hindusthan College of Engineering and Technology,University,20,India
+3206,89603,Info Institute of Engineering,University,20,India
 3206,8827000,JCT College of Arts and Science,University,20,India
 3206,8826991,JCT College of Engineering and Technology,University,15,India
 3206,8826997,JCT Polytechnic College,University,18,India
 3206,215399,JSS Institute of Naturopathy & Yogic Sciences,University,21,India
 3206,8824843,Karpagam Academy of Higher Education,University,10,India
-3206,8824529,Karpagam College of Engineering,University,10,India
+3206,8824529,Karpagam College of Engineering,University,22,India
 3206,8824429,Karpagam College of Pharmacy,University,1,India
 3206,8824668,Karpagam Institute of Technology,University,22,India
-3206,214602,Karunya School of Management,University,37,India
+3206,214602,Karunya School of Management,University,23,India
 3206,42291,Karunya University,University,14,India
 3206,8826061,Kathir College of Engineering,University,11,India
 3206,8828376,KG College of Arts and Science,University,30,India
 3206,8827255,KGiSL Institute of Technology,University,20,India
 3206,92157,Kovai Knights,Community,18,India
+3206,8823913,KPRCAS,University,20,India
 3206,8825524,KPR Institute of Engineering and Technology,University,8,India
-3206,8823913,KPRCAS,University,13,India
 3206,216632,KSG College of Arts and Science,University,3,India
 3206,8824395,Kumaraguru College of Liberal Arts & Science,University,21,India
-3206,8277,Kumaraguru College of Technology,University,20,India
+3206,8277,Kumaraguru College of Technology,University,21,India
 3206,8824844,Lakshmi Narayana Arts and Science College,University,1,India
 3206,90502,"Lead College of Management, Dhoni",University,26,India
-3206,90062,LIA (Lead India Ahead),Community,8,India
+3206,90062,LIA (Lead India Ahead),Community,13,India
 3206,215845,Martin Homeopathy Medical College,University,55,India
 3206,216420,Monarks IIVM,University,17,India
 3206,217622,Nehru Academy of Law,University,3,India
-3206,91518,Nehru College of Aeronautics and Applied Sciences,University,3,India
-3206,215499,Nehru Institute of Engineering and Technology,University,11,India
+3206,91518,Nehru College of Aeronautics and Applied Sciences,University,1,India
+3206,215499,Nehru Institute of Engineering and Technology,University,12,India
 3206,8824388,Nirmala College for Women,University,2,India
 3206,8824398,PPG Institute Of Technology,University,20,India
-3206,61218,PSG CAS,University,11,India
+3206,61218,PSG CAS,University,22,India
 3206,8823771,PSG iTech,University,19,India
-3206,8255,PSGR Krishnammal College for Women,University,10,India
+3206,8255,PSGR Krishnammal College for Women,University,20,India
 3206,8824416,Rathinam College of Arts and Science,University,8,India
 3206,8827699,Royal Care Institute of Nursing,University,26,India
 3206,215683,RVS Technical Campus,University,25,India
+3206,8247,Saibaba Colony,Community,6,India
 3206,8824046,Sai Ramakrishna NC,University,16,India
-3206,8247,Saibaba Colony,Community,5,India
 3206,212470,Sankara College of Science and Commerce,University,4,India
-3206,8825947,SNS College of Technology,University,23,India
-3206,74476,Sri Krishna Arts & Science College,University,18,India
-3206,92267,Sri Krishna college of Technology,University,7,India
+3206,8825947,SNS College of Technology,University,15,India
+3206,74476,Sri Krishna Arts & Science College,University,21,India
+3206,92267,Sri Krishna College of Engineering and Technology,University,21,India
 3206,8249,Sri Ramakrishna College of Arts and Science,University,4,India
-3206,8826933,Sri Ramakrishna Institute of Technology,University,6,India
+3206,8826933,Sri Ramakrishna Institute of Technology,University,30,India
 3206,76581,Sri Ramalinga Sowdambigai College,University,10,India
-3206,8824228,Sri Shakti Institute of Engineering & Technology,University,22,India
+3206,8824228,Sri Shakti Institute of Engineering & Technology,University,24,India
 3206,8825486,TNAU (Tamil Nadu Agricultural University),University,13,India
-3206,87600,UIT,University,7,India
+3206,87600,UIT,University,18,India
 3206,8824390,United College of Arts and Science,University,16,India
 3206,8824445,United College of Nursing,University,13,India
 3206,8824212,United College of Pharmacy,University,1,India
@@ -1975,7 +2318,7 @@ district,club_id,club_name,club_base,members,country
 3206,8824649,Vadakkencherry,Community,20,India
 3206,8827967,VLB Janakiammal College of Arts and Science,University,60,India
 3206,214199,Western Valley,Community,25,India
-3206,215194,Young Vibrants,Community,17,India
+3206,215194,Young Vibrants,Community,21,India
 3206,215901,Yuvakshetra,University,3,India
 3211,8827822,Aryanadu,Community,18,India
 3211,8827704,BCM College,University,22,India
@@ -1992,7 +2335,7 @@ district,club_id,club_name,club_base,members,country
 3211,8824150,Loyola College Trivandrum,University,1,India
 3211,8827568,Manarcad,University,15,India
 3211,8827777,Mylechal,Community,20,India
-3211,8827205,Paippad,Community,7,India
+3211,8827205,Paippad,Community,9,India
 3211,8827559,PMS College of Dental Science & Research,University,20,India
 3211,8827886,Providence College of Engineering,University,15,India
 3211,8827741,Punalal,Community,16,India
@@ -2010,8 +2353,8 @@ district,club_id,club_name,club_base,members,country
 3211,8827938,Trivandrum Suburban NSSA,Community,41,India
 3211,218635,Udiyankulangara,Community,1,India
 3211,8827920,Venjaramoodu,Community,14,India
-3212,8826995,"A.K.D. Dharma Raja Women's College, Rajapalayam",University,11,India
 3212,8824729,AAA College of Engineering & Technology,University,1,India
+3212,8826995,"A.K.D. Dharma Raja Women's College, Rajapalayam",University,11,India
 3212,8827814,AKDD Liora,University,12,India
 3212,8826278,Alagappa Chettiar Government College of Engineering and Technology Karaikudi,University,9,India
 3212,217546,Amrita College of Engineering and Technology,University,1,India
@@ -2029,8 +2372,8 @@ district,club_id,club_name,club_base,members,country
 3212,8828498,East Coast Ramnad,Community,14,India
 3212,218392,Elite Angels,Community,3,India
 3212,212479,Francis Xavier Engineering College,University,3,India
-3212,8827479,Government Arts & Science College Srivilliputhur,University,15,India
 3212,8824651,Government Arts and Science College Sivakasi,University,4,India
+3212,8827479,Government Arts & Science College Srivilliputhur,University,15,India
 3212,8826357,Government Law College Ramanathapuram,University,12,India
 3212,8827368,Government Nursing School-TVMC,University,12,India
 3212,8828167,Govt Law College Tirunelveli,University,21,India
@@ -2043,7 +2386,7 @@ district,club_id,club_name,club_base,members,country
 3212,8827494,Kanyakumari Government Medical College and Hospital,University,12,India
 3212,8826527,KPATDR-SMPA's Sivakasi Institute of Printing Technology,University,12,India
 3212,8823455,Kumarapuram Thoppur Elite,Community,1,India
-3212,8827596,Literary Wing of Mohamed Sathak Hamid College,University,8,India
+3212,8827596,Literary Wing of Mohamed Sathak Hamid College,University,14,India
 3212,217179,Malankara Catholic College,University,3,India
 3212,8824960,Manonmaniam Sundaranar University College Govindaperi,University,3,India
 3212,214077,Maria College of Engineering and Technology,University,2,India
@@ -2087,7 +2430,6 @@ district,club_id,club_name,club_base,members,country
 3212,213199,The Standard Fireworks Rajaratnam College for Women,Community,5,India
 3212,213613,"Universal College of Education, Valliyoor",University,2,India
 3212,212666,Universal College of Engineering & Technology Valliyur,University,2,India
-3212,8828299,V.V.Vanniaperumal College for Women Youth Force,University,15,India
 3212,8827973,Versatile Wing of Thassim Beevi Abdul Kader College for Women,University,18,India
 3212,8828017,VHNSN College,University,11,India
 3212,213577,"Vins College of Engineering For Women, Kanyakumari",University,1,India
@@ -2095,102 +2437,8 @@ district,club_id,club_name,club_base,members,country
 3212,8826807,Virudhunagar Kamaraj College of Engineering and Technology,University,30,India
 3212,8826960,Virudhunagar Village Kings,Community,18,India
 3212,212834,"Vivek Institute, Kanyakumari",University,3,India
+3212,8828299,V.V.Vanniaperumal College for Women Youth Force,University,16,India
 3212,213581,White Memorial College of Nursing,University,2,India
-3220,88675,Achievers Lanka Business School,University,22,Sri Lanka
-3220,8828405,Aegis Nexus,Community,19,Sri Lanka
-3220,91220,Alumni of University of Moratuwa,Community,51,Sri Lanka
-3220,67964,American National College,University,37,Sri Lanka
-3220,217094,APIIT,University,102,Sri Lanka
-3220,217914,Athugalpura,Community,46,Sri Lanka
-3220,72293,Battaramulla,Community,19,Sri Lanka
-3220,8826934,Batticaloa,Community,16,Sri Lanka
-3220,213975,C F P S,University,16,Sri Lanka
-3220,85447,Centennial United,Community,2,Sri Lanka
-3220,212329,Chulipuram,Community,3,Sri Lanka
-3220,42519,Chunnakam,Community,23,Sri Lanka
-3220,215957,CINEC,University,81,Sri Lanka
-3220,44751,Cinnamon Gardens,Community,67,Sri Lanka
-3220,90435,College of Chemical Sciences,University,28,Sri Lanka
-3220,8613,Colombo,Community,22,Sri Lanka
-3220,8826917,Colombo Citadel,Community,29,Sri Lanka
-3220,8609,Colombo East,Community,33,Sri Lanka
-3220,213876,Colombo Fort,Community,45,Sri Lanka
-3220,8823186,Colombo Heritage,Community,55,Sri Lanka
-3220,8827207,Colombo Infinity,Community,41,Sri Lanka
-3220,8825180,Colombo Metropolitan,Community,32,Sri Lanka
-3220,8603,Colombo Mid-City,Community,14,Sri Lanka
-3220,8601,Colombo Mid-Town,Community,41,Sri Lanka
-3220,8569,Colombo North,Community,75,Sri Lanka
-3220,8825223,Colombo Port City,Community,18,Sri Lanka
-3220,8823460,Colombo Regency,Community,5,Sri Lanka
-3220,42613,Colombo Regent,Community,12,Sri Lanka
-3220,8827805,Colombo South,Community,24,Sri Lanka
-3220,42577,Colombo Up-Town,Community,40,Sri Lanka
-3220,8599,Colombo West,Community,67,Sri Lanka
-3220,8828225,ECU ECC Kandy,University,26,Sri Lanka
-3220,91932,Edith Cowan University,University,78,Sri Lanka
-3220,8828426,Esoft University,University,25,Sri Lanka
-3220,92276,Excellence,Community,28,Sri Lanka
-3220,89963,"Faculty of Law, University of Colombo",University,74,Sri Lanka
-3220,216481,Faculty of Medicine University of Colombo,University,37,Sri Lanka
-3220,8823817,"Faculty of Medicine, Sabaragamuwa Univesity of Sri Lanka",University,15,Sri Lanka
-3220,74274,"Faculty of Science, University of Colombo",University,38,Sri Lanka
-3220,8828235,Galle,Community,23,Sri Lanka
-3220,8826468,Gampaha,Community,42,Sri Lanka
-3220,8828239,Gampaha Wickramarachchi University of Indigenous Medicine - FISSMS,University,31,Sri Lanka
-3220,91117,General Sir John Kotelawala Defence,University,98,Sri Lanka
-3220,8828348,General Sir John Kotelawala Defence University South,University,33,Sri Lanka
-3220,8825008,Horizon Campus,University,88,Sri Lanka
-3220,216053,ICBT,University,27,Sri Lanka
-3220,218404,Imperial College of Business and Studies,University,33,Sri Lanka
-3220,88758,Informatics Institute of Technology,University,104,Sri Lanka
-3220,42564,Jaffna Mid-Town,Community,14,Sri Lanka
-3220,91868,Jaffna Peninsula,Community,3,Sri Lanka
-3220,8591,Kandy,Community,42,Sri Lanka
-3220,8824330,Kandy Hill Capital,Community,18,Sri Lanka
-3220,8823202,Kandy Metropolitan,Community,49,Sri Lanka
-3220,215233,Katugastota Region,Community,33,Sri Lanka
-3220,47135,Kelaniya,Community,3,Sri Lanka
-3220,8823624,Kilinochchi Town,Community,13,Sri Lanka
-3220,8827591,KIU,University,26,Sri Lanka
-3220,213599,Kurunegala,Community,85,Sri Lanka
-3220,8827204,Management & Science University (MSU),University,2,Sri Lanka
-3220,8824925,Mannar Town,Community,19,Sri Lanka
-3220,217832,Matale,Community,50,Sri Lanka
-3220,8823261,Moratuwa,Community,23,Sri Lanka
-3220,214142,Nallur Heritage,Community,7,Sri Lanka
-3220,8826877,National Institute of Business Management Kandy,University,22,Sri Lanka
-3220,91233,National School of Business Management,University,62,Sri Lanka
-3220,90577,Negombo,Community,30,Sri Lanka
-3220,217664,NIBM,University,83,Sri Lanka
-3220,64918,Pamunugama,Community,13,Sri Lanka
-3220,84520,Panadura,Community,34,Sri Lanka
-3220,217172,PanColombo,University,18,Sri Lanka
-3220,55709,Peradeniya University,University,43,Sri Lanka
-3220,8825314,Rajarata University,University,41,Sri Lanka
-3220,8827060,Ratmalana,Community,27,Sri Lanka
-3220,216028,Ratnapura,Community,24,Sri Lanka
-3220,218249,Royal Institute of Colombo,University,30,Sri Lanka
-3220,8826883,Sabaragamuwa University of Sri Lanka,University,26,Sri Lanka
-3220,216165,Saegis Campus,University,36,Sri Lanka
-3220,8828210,Seethawaka Regent,Community,29,Sri Lanka
-3220,91634,Singer Sri Lanka,Community,38,Sri Lanka
-3220,91071,Sri Lanka Institute of Information Technology (SLIIT),University,164,Sri Lanka
-3220,8824798,Sri Lanka Technological Campus,University,30,Sri Lanka
-3220,8575,Trincomalee,Community,22,Sri Lanka
-3220,91894,University Alumni,Community,19,Sri Lanka
-3220,8824929,University of Colombo School of Computing,University,49,Sri Lanka
-3220,88705,"University of Colombo, Arts Faculty",University,44,Sri Lanka
-3220,89105,"University of Colombo, Faculty of Management & Finance",University,144,Sri Lanka
-3220,88865,University of Kelaniya,University,500,Sri Lanka
-3220,42733,University of Moratuwa,University,36,Sri Lanka
-3220,8824712,University of Ruhuna,University,32,Sri Lanka
-3220,89653,University of Sri Jayewardenepura,University,30,Sri Lanka
-3220,8828173,University of Vavuniya,University,49,Sri Lanka
-3220,90872,Uva Wellassa University-Badulla,University,46,Sri Lanka
-3220,8828176,Vavuniya Heritage,Community,13,Sri Lanka
-3220,216669,Wayamba University,University,28,Sri Lanka
-3220,8573,Wellawatte,Community,29,Sri Lanka
 3231,215737,Addon Institute of Medical Mission & Research Centre,University,3,India
 3231,8828098,Arni Industrial Training Institute,University,16,India
 3231,76060,"Arunai Engg. College, Thiruvannamalai",University,3,India
@@ -2198,11 +2446,11 @@ district,club_id,club_name,club_base,members,country
 3231,8826922,Auxilium College,University,12,India
 3231,217636,Best Paramedical College,University,1,India
 3231,8827420,Bhakthavatsalam Polytechnic College,University,21,India
-3231,8827104,C. M. Annamalai Polytechnic College,University,13,India
 3231,217936,CAHCET,Community,1,India
+3231,8827104,C. M. Annamalai Polytechnic College,University,13,India
 3231,8827117,Dharapadavedu,Community,12,India
-3231,8828096,DKM College for Women (Evening),University,12,India
 3231,216950,DKM College for Women Autonomous,University,6,India
+3231,8828096,DKM College for Women (Evening),University,12,India
 3231,8827033,Government Medical College Thiruvallur,University,13,India
 3231,8824767,Government Thiruvannamalai Medical College,University,1,India
 3231,8826962,HIMT Presea College,University,42,India
@@ -2219,11 +2467,11 @@ district,club_id,club_name,club_base,members,country
 3231,8828326,Ranippettai Arts Sciences and Management College,University,25,India
 3231,8827352,RICT Paramedical Institution,University,32,India
 3231,214165,Shanmuga Arts & Science College,University,1,India
+3231,213850,Srikrishna College of Engineering,University,1,India
 3231,8826603,Sri Ramaswamy Memorial Valliammai Engineering College,University,70,India
 3231,8827447,Sri Sankara Arts and Science College,University,20,India
 3231,8827178,Sri Venkateswara Institute of Science & Technology,University,12,India
 3231,92113,"Sri Venkateswara Polytechnic College, Vellore",University,9,India
-3231,213850,Srikrishna College of Engineering,University,1,India
 3231,8828099,SRM Institute of Hotel Management,University,477,India
 3231,92257,"Sun Arts and Science College, Tiruvannamalai",University,4,India
 3231,216114,Thiruvalluvar University,University,1,India
@@ -2251,7 +2499,7 @@ district,club_id,club_name,club_base,members,country
 3233,8826614,Chennai Radiance Raisers,Community,53,India
 3233,91550,Chennai Towers,Community,48,India
 3233,8826867,Crescent,University,137,India
-3233,91893,Dexterous,Community,46,India
+3233,91893,Dexterous,Community,41,India
 3233,8828223,Dhanraj Baid Jain College,University,34,India
 3233,8827166,Don Bosco Arts and Science College,University,3,India
 3233,216828,East Coast Chennai,Community,123,India
@@ -2265,25 +2513,25 @@ district,club_id,club_name,club_base,members,country
 3233,215610,KCG College of Technology,University,14,India
 3233,215310,LICET,University,23,India
 3233,216547,Loyola Institute of Technology,University,35,India
-3233,61097,M.N.M. Jain Engg.,University,25,India
-3233,90693,Madras Cosmos,Community,32,India
+3233,90693,Madras Cosmos,Community,25,India
 3233,8827201,Madras Institute of Hotel Management and Catering Technology,University,61,India
 3233,8637,Madras Institute of Technology,University,3,India
-3233,79175,Madras Mount,Community,18,India
+3233,79175,Madras Mount,Community,15,India
 3233,8826925,Madras School of Social Work,University,2,India
-3233,8827470,Madras T. Nagar,Community,32,India
+3233,8827470,Madras T. Nagar,Community,31,India
 3233,8827005,Mar Gregorios College of Arts & Science,University,65,India
 3233,8828221,MEASI Institute of Management,University,20,India
 3233,8827357,Meenakshi College of Nursing,University,21,India
-3233,8825786,MGR University,University,,India
+3233,8825786,MGR University,University,"2,988",India
+3233,61097,M.N.M. Jain Engg.,University,25,India
 3233,8826617,Patrician College of Arts and Science,University,20,India
 3233,217437,Phoenix,Community,15,India
 3233,217321,Presidency College,University,15,India
 3233,8824646,Prince Shri Balaji Arts & Science College,University,9,India
 3233,8823247,Prince Shri Venkateshwara Padmavathy Engineering College,University,20,India
-3233,54239,R.K.M. Vivekananda College,University,70,India
 3233,89368,Rajalakshmi Engineering College,University,49,India
 3233,215141,Rajalakshmi Institute of Technology,University,51,India
+3233,54239,R.K.M. Vivekananda College,University,70,India
 3233,213826,Sahas,Community,31,India
 3233,213070,Sathyabama University,University,32,India
 3233,8827016,Saveetha College of Allied Health Sciences,University,16,India
@@ -2296,54 +2544,52 @@ district,club_id,club_name,club_base,members,country
 3233,8828224,SIMATS Engineering,University,51,India
 3233,8827143,Soka Ikeda College of Arts and Science for Women,University,37,India
 3233,8828242,Sree Balaji Dental College and Hospital,University,22,India
+3233,8824334,SRIHER,University,598,India
 3233,8824953,Sri Kannika Parameswari College of Arts & Science,University,21,India
 3233,8827363,Sri Lalithambigai Medical College & Hospital,University,190,India
-3233,8824334,SRIHER,University,598,India
-3233,8828238,SRM IST FSH Ramapuram,University,27,India
+3233,8828238,SRM IST FSH Ramapuram,University,23,India
 3233,8826994,SRM IST FSH Vadapalani,University,9,India
-3233,8827739,St. Peter's Institute of Higher Education and Research,University,22,India
 3233,8824839,Stanley Medical College,University,54,India
+3233,8827739,St. Peter's Institute of Higher Education and Research,University,22,India
 3233,8826335,Tagore College of Arts and Science,University,14,India
 3233,43149,Zenith,Community,11,India
 3234,43250,A.C. Tech,University,57,India
-3234,8795,A.M. Jain College,University,11,India
-3234,212849,A.M. Jain College - Shift II,University,67,India
 3234,8827997,Agni College of Technology Chennai,University,22,India
 3234,8633,Ambattur,Community,58,India
 3234,8827837,AMET University,University,50,India
+3234,8795,A.M. Jain College,University,11,India
+3234,212849,A.M. Jain College - Shift II,University,56,India
 3234,8823302,Anna Adarsh College for Women,University,22,India
 3234,47967,Asan Memorial College,University,15,India
 3234,8827949,Asan Memorial College of Engineering and Technology,University,63,India
 3234,42575,Bhakthavatslam Memorial College for Women,University,8,India
-3234,68156,Chennai,Community,39,India
+3234,68156,Chennai,Community,34,India
 3234,8826045,Chennai Bliss,Community,15,India
 3234,8828544,Chennai Bullionaires,Community,27,India
-3234,8823820,Chennai Central,Community,0,India
 3234,8826169,Chennai Dynamic Entrepreneurs,Community,15,India
-3234,218396,Chennai Gems,Community,21,India
+3234,218396,Chennai Gems,Community,22,India
 3234,8825884,Chennai Genesis,Community,15,India
-3234,8826475,Chennai Legends,Community,20,India
+3234,8826475,Chennai Legends,Community,33,India
 3234,8826900,Chennai Premier,Community,15,India
 3234,91154,Coastal Legacy,Community,32,India
 3234,76069,"College of Engineering, Guindy (CEG)",University,13,India
 3234,8824100,D.G. Vaishnav College,University,11,India
-3234,89009,"D.R.B.C.C.C. Hindu College, Pittabiram",University,11,India
 3234,82330,Dhanalakshmi College of Engineering,University,36,India
-3234,81291,Dr. Mgr Janaki College for Women,University,20,India
+3234,89009,"D.R.B.C.C.C. Hindu College, Pittabiram",University,11,India
 3234,8823909,Dream Home,Community,15,India
 3234,212297,Drishti,Community,14,India
+3234,81291,Dr. Mgr Janaki College for Women,University,20,India
 3234,43828,Ethiraj College for Women,University,28,India
 3234,217925,GSS Jain College,University,18,India
 3234,215819,Jeppiaar Engineering College,University,27,India
 3234,8825677,Jeppiaar University,University,18,India
-3234,215143,Jerusalem College of Engineering,University,136,India
+3234,215143,Jerusalem College of Engineering,University,113,India
 3234,8826219,Kings Cornerstone International,University,21,India
 3234,8827030,Kumararani Meena Muthiah College of Arts and Science Adyar,University,14,India
 3234,8824845,Loyola College,University,16,India
-3234,47185,M.O.P. Vaishnav College for Women,University,15,India
-3234,215829,Madras,Community,34,India
-3234,75856,Madras Central,Community,46,India
-3234,8827320,Madras East,Community,35,India
+3234,215829,Madras,Community,33,India
+3234,75856,Madras Central,Community,40,India
+3234,8827320,Madras East,Community,36,India
 3234,8827839,Madras Gold Coast,Community,32,India
 3234,8825641,Madras Knights,Community,11,India
 3234,8824029,Madras Millennia,Community,19,India
@@ -2351,32 +2597,33 @@ district,club_id,club_name,club_base,members,country
 3234,8827474,Madras Steps,Community,16,India
 3234,217073,Mahalakshmi College of Arts and Science,University,3,India
 3234,8826872,Mohamed Sathak College of Arts and Science,University,27,India
+3234,47185,M.O.P. Vaishnav College for Women,University,15,India
 3234,8827554,Nanganallur Elite,Community,12,India
-3234,8703,New College,University,28,India
+3234,8703,New College,University,16,India
 3234,8823322,Panimalar Medical College,University,2,India
-3234,8826109,Prince Shri Venkateshwara Arts and Science College,University,33,India
+3234,8826109,Prince Shri Venkateshwara Arts and Science College,University,41,India
 3234,8824498,S.A. College of Arts & Science,University,45,India
-3234,218488,S.I.V.E.T. College,University,13,India
-3234,47223,S.R.M. Easwari Engineering College,University,21,India
-3234,72847,S.S. Jain College for Women,University,16,India
 3234,8824066,SAGAA,Community,20,India
 3234,216757,Saveetha School of Management,University,14,India
 3234,215818,SDNB Vaishnav College,University,40,India
+3234,218488,S.I.V.E.T. College,University,13,India
 3234,89353,Spectrum,Community,18,India
 3234,8827737,Sree Muthukumaraswamy College,University,30,India
 3234,218487,Sri Venkateswara College of Engineering,University,7,India
+3234,47223,S.R.M. Easwari Engineering College,University,21,India
 3234,217500,SRMKTR,University,38,India
+3234,72847,S.S. Jain College for Women,University,16,India
 3234,8826472,St. Anne’s Arts and Science College,University,35,India
 3234,91054,Stella Maris Chennai,University,22,India
 3234,8826220,Tagore Dental College and Hospital,University,30,India
-3234,8825732,Tamil Nadu Dr. Ambedkar Law University,University,13,India
-3234,8827456,TJS College of Arts and Science,University,51,India
+3234,8825732,Tamil Nadu Dr. Ambedkar Law University,University,12,India
+3234,8827456,TJS College of Arts and Science,University,19,India
 3234,217044,"VELS Institute of Science, Technology & Advanced Studies",University,31,India
 3234,8827549,Vepery,Community,14,India
 3234,217926,Vinayaka Missions Research Foundations Chennai,University,7,India
 3234,46323,Vishwahita,Community,27,India
-3234,217223,VIT (Chennai Campus),University,8,India
-3234,42574,Womens Christian College,University,4,India
+3234,217223,VIT (Chennai Campus),University,104,India
+3234,42574,Womens Christian College,University,34,India
 3234,8826635,YMCA College of Physical Education,University,15,India
 3234,8826989,Youth Organ Donation Awareness (YODA),Community,13,India
 3240,8827326,Aerocity Durgapur,Community,6,India
@@ -2384,7 +2631,7 @@ district,club_id,club_name,club_base,members,country
 3240,218465,Agartala Central,Community,26,India
 3240,8824901,Agartala City,Community,29,India
 3240,8828293,Agartala Medics,Community,28,India
-3240,8827910,Agartala Nexus,Community,11,India
+3240,8827910,Agartala Nexus,Community,13,India
 3240,215698,Agnigarh,Community,6,India
 3240,8827686,AK Chanda Law College Silchar,University,24,India
 3240,212299,Asansol,Community,14,India
@@ -2394,17 +2641,17 @@ district,club_id,club_name,club_base,members,country
 3240,8823905,Burdwan,Community,9,India
 3240,8827959,Cachar College Silchar,University,20,India
 3240,8827942,Cotton University,University,16,India
-3240,8826074,"D R College, Golaghat",University,20,India
 3240,216607,Dharmanagar,Community,27,India
 3240,218554,Dibrugarh,Community,13,India
 3240,213179,Digboi Oil Town,Community,5,India
 3240,8845,Dimapur,Community,11,India
+3240,8826074,"D R College, Golaghat",University,20,India
 3240,217624,DSMS College,University,33,India
 3240,8825991,Durgapur Central Presidency,Community,10,India
+3240,8828373,Eastern Highlands,Community,13,India
 3240,8828460,E-Club of Northeast Catalyst,Community,12,India
-3240,8828373,Eastern Highlands,Community,16,India
+3240,212844,Gangtok Hills,Community,11,India
 3240,215807,"G C College, Silchar",University,9,India
-3240,212844,Gangtok Hills,Community,12,India
 3240,8827785,Govt. Model College Borkhola,University,15,India
 3240,8827056,Greater Silchar,Community,18,India
 3240,8827955,Greater Silchar Royals,Community,16,India
@@ -2421,20 +2668,20 @@ district,club_id,club_name,club_base,members,country
 3240,8825915,North Tripura,Community,12,India
 3240,8827235,NSHM Knowledge Campus (Durgapur),University,7,India
 3240,8827517,Parbati Teacher's Training Institute (B.Ed. College),University,12,India
-3240,8828485,Patkai,Other,16,India
-3240,8826728,Raniganj Institute of Information Technology,University,20,India
+3240,8828485,Patkai,,16,India
+3240,8826728,Raniganj Institute of Information Technology,University,18,India
 3240,212386,Rongali Guwahati,Community,5,India
-3240,8827658,Shillong,Community,13,India
+3240,8827658,Shillong,Community,12,India
 3240,54627,Silchar,Community,39,India
 3240,8828073,Silchar Harmony and Heritage,Community,12,India
-3240,8827690,Silchar Med Visionaries,Community,12,India
 3240,216296,Silchar Medical College & Hospital,University,5,India
+3240,8827690,Silchar Med Visionaries,Community,12,India
 3240,218656,Silchar Royals,Community,5,India
 3240,217260,Southfield College,University,4,India
-3240,214129,SRM University Sikkim,University,12,India
+3240,214129,SRM University Sikkim,University,11,India
 3240,8827788,Tezpur,Community,14,India
 3240,218331,Tinsukia,Community,10,India
-3240,216693,Ukhra,Community,14,India
+3240,216693,Ukhra,Community,6,India
 3250,8828548,Amolwa,Community,20,India
 3250,215146,Amrapali,Community,5,India
 3250,8826717,Arka Jain University (School of Commerce and Management),University,6,India
@@ -2448,45 +2695,48 @@ district,club_id,club_name,club_base,members,country
 3250,216880,DBMS College of Education,University,6,India
 3250,218419,Dhanbad Midtown,Community,3,India
 3250,8828525,"Dr. Shyama Prasad Mukherjee University,",University,28,India
-3250,8826495,Jamshedpur Green City,Community,11,India
+3250,8826495,Jamshedpur Green City,Community,12,India
 3250,8826862,Jamshedpur Humanitarians,Community,4,India
-3250,8827545,Jamshedpur Sevarthah,Community,16,India
+3250,8827545,Jamshedpur Sevarthah,Community,15,India
 3250,8827098,Jamshedpur Srinath University,University,25,India
-3250,214782,Kalimati Jamshedpur,Community,11,India
+3250,214782,Kalimati Jamshedpur,Community,8,India
 3250,90505,Karim City College,University,2,India
 3250,8827274,Koderma Yuwa,Community,21,India
 3250,8826001,MGM Medical College,University,37,India
-3250,214802,Mrs. KMPM Vocational College,University,10,India
+3250,214802,Mrs. KMPM Vocational College,University,9,India
 3250,91211,Muzaffarpur,Community,15,India
 3250,217786,Narkatiaganj,Community,13,India
-3250,217659,Netaji Subhas University,University,4,India
+3250,217659,Netaji Subhas University,University,14,India
 3250,8826983,Patna City,Community,9,India
 3250,215494,Patna Mid-Town,Community,5,India
 3250,8826967,Patna Millennium,Community,13,India
-3250,216638,R.B. Memorial School of Nursing,University,3,India
 3250,8828547,Ranchi Elites,Community,10,India
 3250,90326,Ranchi ICWAI,Community,9,India
+3250,216638,R.B. Memorial School of Nursing,University,3,India
 3250,8826666,Rising Ranchi,Community,13,India
 3250,8826460,RK Mahila College,University,14,India
 3250,8827351,Sarala Birla University Ranchi,University,15,India
 3250,215178,Saran City,Community,13,India
 3250,214603,Social Revolution,University,17,India
 3250,8828428,Srinath College of Education,University,21,India
+3250,218138,Steel City,Community,22,India
 3250,91569,St. Xavier's College,University,15,India
-3250,218138,Steel City,Community,23,India
-3250,216250,United Ranchi,Community,19,India
+3250,216250,United Ranchi,Community,20,India
 3250,8827364,Usha Martin University Ranchi,University,8,India
-3250,8826655,Vaishali,Community,8,India
+3250,8826655,Vaishali,Community,9,India
 3261,218105,Atoma,Community,2,India
+3261,8828585,Bhilai Greater,Community,16,India
 3261,218176,Cogent College,University,1,India
-3261,216270,G.S. College,University,1,India
 3261,216874,"Gandhi Mahavidyalaya, Rourkela",University,10,India
 3261,8827763,Gayatri College of Pharmacy Sambalpur,University,15,India
+3261,216270,G.S. College,University,1,India
 3261,8824860,Hrushikesh Ray Degree Mahavidyalaya Rourkela,University,1,India
 3261,217367,Jabalpur City,Community,1,India
 3261,8824288,Millennium Bilaspur,Community,1,India
 3261,216379,Navyug College,University,1,India
 3261,218110,NIT Rourkela,Community,1,India
+3261,8828609,Raipur Ethos,Community,15,India
+3261,8828591,Raipur Queens,Community,26,India
 3261,8828441,Raipur Royal,Community,12,India
 3261,217368,Ranjhi Jabalpur,Community,1,India
 3261,8824868,Rourkela Institute of Management Studies,University,12,India
@@ -2515,6 +2765,7 @@ district,club_id,club_name,club_base,members,country
 3262,91476,Bhubaneswar Friends,Community,15,India
 3262,8824466,Bhubaneswar Harmony,Community,1,India
 3262,8828436,Bhubaneswar Icons,Community,15,India
+3262,8828594,Bhubaneswar Jayadev,Community,12,India
 3262,8823391,Bhubaneswar Meadows,Community,1,India
 3262,218403,Bhubaneswar Neeladri,Community,1,India
 3262,213394,Bhubaneswar Royal,Community,31,India
@@ -2522,16 +2773,17 @@ district,club_id,club_name,club_base,members,country
 3262,8823277,Bhubaneswar Smile,Community,7,India
 3262,8824044,Bhubaneswar Sunshine,Community,14,India
 3262,217059,Bhubaneswar Toshali,Community,25,India
-3262,218586,Bhubaneswar Utkal Impetus,Community,12,India
+3262,218586,Bhubaneswar Utkal Impetus,Community,2,India
 3262,8824250,Bhubaneswar Utkal Ollywood,Community,1,India
 3262,8824038,Bhubaneswar Utkal Sakha,Community,1,India
 3262,8823510,Birupa,Community,10,India
 3262,8828399,Biswa Bharati Dhenkanal,Community,14,India
 3262,8827645,Brahmapur,Community,20,India
+3262,8828588,Brahmapur Innovative,Community,17,India
 3262,215279,Byasabhoomi,Community,1,India
 3262,218218,Byasabhoomi Jajpur Road,Community,25,India
-3262,8823279,C I T Bhadrak,University,5,India
 3262,8824342,Chilika-Balugaon,Community,2,India
+3262,8823279,C I T Bhadrak,University,5,India
 3262,8823647,CPS Mohuda,University,1,India
 3262,8827574,Cuttack,Community,12,India
 3262,8824489,Cuttack Barabati Fort,Community,3,India
@@ -2567,6 +2819,230 @@ district,club_id,club_name,club_base,members,country
 3262,8827772,Synergy Institute of Engineering and Technology,University,13,India
 3262,8827818,UNIITECH Degree College (Nayagarh),University,14,India
 3262,8824032,Vedbyash Brahmapur,University,3,India
+3292,88879,Annapurna,Community,19,Nepal
+3292,89716,Baglung,Community,24,Nepal
+3292,72774,Bagmati,Community,35,Nepal
+3292,215188,Bajra Manasalu,Community,20,Nepal
+3292,89287,Balaju,Community,25,Nepal
+3292,8826007,Balkumari,Community,14,Nepal
+3292,89717,Banepa,Community,44,Nepal
+3292,218578,Baneshwor,Community,19,Nepal
+3292,89551,Baneshwor Royal,Community,14,Nepal
+3292,218204,Bardibas,University,20,Nepal
+3292,212617,Bhadgaon,Community,8,Nepal
+3292,217336,Bhadrapur,Community,14,Nepal
+3292,214692,Bhairahawa,Community,29,Nepal
+3292,8824051,Bhairahawa Chautari,Community,13,Nepal
+3292,72475,Bhaktapur,Community,30,Nepal
+3292,8824081,Bhanu,Community,10,Nepal
+3292,65597,Bharatpur,Community,31,Nepal
+3292,217204,Bharatpur Height,Community,37,Nepal
+3292,216820,Birat Medical College Fusion,University,9,Nepal
+3292,66517,Biratnagar,Community,33,Nepal
+3292,217203,Biratnagar Central,Community,15,Nepal
+3292,89536,Biratnagar Down Town,Community,7,Nepal
+3292,9655,Birganj,Community,21,Nepal
+3292,214883,Birgunj Metropolis,Community,16,Nepal
+3292,91637,Birtamode,Community,32,Nepal
+3292,212632,Birtamode Mid-Town,Community,61,Nepal
+3292,72775,Budhanilkanatha,Community,24,Nepal
+3292,44951,Butwal,Community,19,Nepal
+3292,217627,Butwal Chautari,Community,16,Nepal
+3292,56450,Butwal Down Town,Community,42,Nepal
+3292,63178,Butwal South,Community,29,Nepal
+3292,215519,Butwal Synergy,Community,12,Nepal
+3292,8823369,Central Bouddha Land,Community,15,Nepal
+3292,213949,Central Butwal,Community,21,Nepal
+3292,214905,Central Lumbini,Community,18,Nepal
+3292,8825187,Central Rohini,Community,15,Nepal
+3292,217338,Central Rupandehi,Community,18,Nepal
+3292,8823370,Central Siyari,Community,15,Nepal
+3292,8825986,Central Valley Kasthamandap,Community,12,Nepal
+3292,86937,Chandragiri,Community,44,Nepal
+3292,8827982,Changu,Community,26,Nepal
+3292,75397,Charumati,Community,25,Nepal
+3292,9539,Chitwan,Community,49,Nepal
+3292,8825471,Chitwan Medical College,University,25,Nepal
+3292,8823900,Dakshinkali,Community,13,Nepal
+3292,215882,Damak,Community,38,Nepal
+3292,59803,Damauli,Community,32,Nepal
+3292,214772,Dang,Community,27,Nepal
+3292,8828563,Devdaha,Community,20,Nepal
+3292,8825177,Devdaha Medical College,University,15,Nepal
+3292,8826734,Dhading,Community,24,Nepal
+3292,212572,Dhangadhi,Community,9,Nepal
+3292,8828211,Dhangadhi Next Gen,Community,18,Nepal
+3292,43654,Dharan,Community,28,Nepal
+3292,63997,Dharan Ghopa,University,14,Nepal
+3292,80113,Dhulikhel,Community,18,Nepal
+3292,52653,Dillibazar-Kathmandu,Community,44,Nepal
+3292,88996,Durbarmarg,Community,13,Nepal
+3292,216442,Gaidakot,Community,18,Nepal
+3292,8823562,"Galkot, Baglung",Community,17,Nepal
+3292,8828026,Gandaki University,University,20,Nepal
+3292,8827606,Gokarneshwor,Community,23,Nepal
+3292,8827599,Gongabu North,Community,15,Nepal
+3292,8824537,"Gyaneswor, CiST",University,19,Nepal
+3292,90587,Hemja,Community,14,Nepal
+3292,213986,Hetauda,Community,59,Nepal
+3292,8826017,Himalayan Golfers,Community,17,Nepal
+3292,8827866,Himalayan White House International College,University,16,Nepal
+3292,67987,Himalaya Patan,Community,23,Nepal
+3292,218457,Itabhatta Municipal,Community,15,Nepal
+3292,81544,Itahari,Community,34,Nepal
+3292,8826972,Janakpurdham,Community,13,Nepal
+3292,72801,Jawalakhel,Community,5,Nepal
+3292,81870,Jawalakhel Manjushree,Community,15,Nepal
+3292,214109,Kakarvitta,Community,13,Nepal
+3292,8826811,Kamaladi,Community,17,Nepal
+3292,57147,Kantipur,Community,27,Nepal
+3292,87601,Kantipur Dental College,University,62,Nepal
+3292,213526,Kapilvastu,Community,14,Nepal
+3292,76282,Kasthamandap Kathmandu,Community,14,Nepal
+3292,9591,Kathmandu,Community,54,Nepal
+3292,8827984,Kathmandu Height,Community,17,Nepal
+3292,8828338,Kathmandu Horizon,Community,16,Nepal
+3292,8827634,Kathmandu Kalanki,Community,18,Nepal
+3292,78432,Kathmandu Medical College,University,32,Nepal
+3292,218541,Kathmandu Medical College- Duwakot,University,11,Nepal
+3292,65283,Kathmandu Metro,University,33,Nepal
+3292,213989,Kathmandu Metropolis,Community,23,Nepal
+3292,44168,Kathmandu Mid-Town,Community,46,Nepal
+3292,47049,Kathmandu North,Community,32,Nepal
+3292,68744,Kathmandu North East,Community,19,Nepal
+3292,212230,Kathmandu University,University,16,Nepal
+3292,90321,Kathmandu University Medical School (KUMS),University,135,Nepal
+3292,8825853,Kathmandu University School of Management,University,18,Nepal
+3292,77963,Kathmandu West,Community,24,Nepal
+3292,217628,Kawasoti,Community,30,Nepal
+3292,8823912,Kirtipur,Community,25,Nepal
+3292,214695,KIST Medical College,University,37,Nepal
+3292,76283,Kopundol,Community,18,Nepal
+3292,91648,Kshitiz International College,University,7,Nepal
+3292,46026,Lalitpur,Community,12,Nepal
+3292,8825466,Lalitpur Midtown,Community,16,Nepal
+3292,8826979,Lamahi,Community,21,Nepal
+3292,77220,Lamjung,Community,11,Nepal
+3292,90042,Lekhnath,Community,24,Nepal
+3292,90200,Liberty College,University,20,Nepal
+3292,89721,Lumbini Banijya Campus,University,16,Nepal
+3292,8823368,Lumbini Buddha,Community,25,Nepal
+3292,8828334,Lumbini Medical College,University,60,Nepal
+3292,90676,Lumbini Siddharthanagar,Community,20,Nepal
+3292,217873,Lumbini Stars,Community,24,Nepal
+3292,89712,Madhyapur,Community,36,Nepal
+3292,72816,Mahabouddha,Community,23,Nepal
+3292,213114,Makawanpur,Community,25,Nepal
+3292,218489,Manigram,Community,30,Nepal
+3292,90045,Manipal College of Medical Sciences,University,55,Nepal
+3292,88815,Manohara,Community,24,Nepal
+3292,8824674,Marchwar,Community,1,Nepal
+3292,8827726,Matribhumi Baluwatar,Community,20,Nepal
+3292,215937,Matribhumi Baluwatar IOM,University,56,Nepal
+3292,8823532,Mechinagar,Community,13,Nepal
+3292,90153,Metro City,Community,16,Nepal
+3292,89802,Narayangarh,Community,37,Nepal
+3292,75237,Narayani Mid Town,Community,33,Nepal
+3292,8827867,National Medical College,University,28,Nepal
+3292,8823813,Nawalpur City,Community,21,Nepal
+3292,8826910,Naxal Shakti,Community,25,Nepal
+3292,8825215,Nepalgunj Medical College,University,11,Nepal
+3292,8828552,Nepal Mandal,Community,19,Nepal
+3292,218266,Nepal National Hospital,Community,24,Nepal
+3292,64638,New Road City Kathmandu,Community,15,Nepal
+3292,91413,Newroad Pokhara,Community,22,Nepal
+3292,8823447,Nobel Medical College Teaching Hospital,University,13,Nepal
+3292,89485,Palpa Tansen,Community,15,Nepal
+3292,215079,Panauti,Community,20,Nepal
+3292,89600,Parbat,Community,20,Nepal
+3292,213960,Parbat Pokhara,Community,11,Nepal
+3292,46877,Pashupati-Kathmandu,Community,24,Nepal
+3292,218566,Pashupati Nepal Law Campus,University,20,Nepal
+3292,43221,Patan,Community,21,Nepal
+3292,67996,Patan Durbar Square,Community,27,Nepal
+3292,8825231,Patan Heritage,Community,32,Nepal
+3292,90407,Patan South,Community,17,Nepal
+3292,48154,Patan West,Community,23,Nepal
+3292,89341,People's Campus,Community,21,Nepal
+3292,8825041,Peoples Dental College,University,29,Nepal
+3292,54240,Pokhara,Community,18,Nepal
+3292,77223,Pokhara Fishtail,Community,33,Nepal
+3292,213879,Pokhara GMC,Community,76,Nepal
+3292,214771,Pokhara Lakeside,Community,19,Nepal
+3292,62117,Pokhara Midtown,Community,28,Nepal
+3292,218442,Pokhara University,University,34,Nepal
+3292,218468,Purbi Chitwan,Community,26,Nepal
+3292,61643,Rajdhani,Community,37,Nepal
+3292,217374,Rammani Multiple Campus,University,6,Nepal
+3292,53092,Ratnanagar,Community,38,Nepal
+3292,78425,Reliance College,University,24,Nepal
+3292,70789,Rudramati,Community,21,Nepal
+3292,90367,Rudramati-Babarmahal-Kathmandu,Community,30,Nepal
+3292,90406,Rupandehi,Community,13,Nepal
+3292,213976,Sainamaina,Community,16,Nepal
+3292,89156,Sainbu Bhainsepati,Community,37,Nepal
+3292,217723,Sankhu,Community,19,Nepal
+3292,8827913,Saptagandaki Multiple Campus,University,14,Nepal
+3292,8826740,Shankaracharya,Community,28,Nepal
+3292,217626,Shikhalapur,Community,14,Nepal
+3292,8827049,Siddharthanagar,Community,15,Nepal
+3292,218490,Sindhuligadi,Community,15,Nepal
+3292,217232,Sukedhara,Community,17,Nepal
+3292,8823901,Sundarharaicha,Community,12,Nepal
+3292,8824366,Sunsari,Community,13,Nepal
+3292,218437,Surunga,Community,29,Nepal
+3292,86487,Swoyambhu,Community,40,Nepal
+3292,58049,Thames International College,University,18,Nepal
+3292,8825625,Tilottama,Community,19,Nepal
+3292,91075,Tilottama Devdaha,Community,35,Nepal
+3292,213959,Tilottama-Rupandehi,Community,27,Nepal
+3292,218434,Tilottama Suddhodhan,Community,11,Nepal
+3292,216016,Tinau Butwal,Community,16,Nepal
+3292,214197,Tinau City,Community,25,Nepal
+3292,8827598,Tinkune Kathmandu,Community,22,Nepal
+3292,8825898,Tribhuvan University,University,47,Nepal
+3292,61432,Tripureswor,Community,28,Nepal
+3292,213643,Tulsipur,Community,23,Nepal
+3292,217625,United Birgunj,Community,21,Nepal
+3292,218574,Urlabari,Community,24,Nepal
+3292,218433,Vedavyasa,Community,16,Nepal
+3292,8828354,Vision Kathmandu,Community,19,Nepal
+3292,8823378,Waling,Community,11,Nepal
+3292,43427,Yala,Community,19,Nepal
+3292,8825044,Yeti Health,University,9,Nepal
+63,212719,Bahauddin Zakariya University,University,19,Pakistan
+63,215865,Farooqabad City,Community,9,Pakistan
+63,77160,Forman Christian College,University,18,Pakistan
+63,213032,Gujranwala,Community,4,Pakistan
+63,8824083,Gujrat,Community,1,Pakistan
+63,8824075,Hunza,Community,2,Pakistan
+63,8824082,Islamabad Bright,Community,2,Pakistan
+63,8825856,Islamabad Downtown,Community,3,Pakistan
+63,8827380,Islamabad Metropolitan City,Community,5,Pakistan
+63,8824142,Khanewal,Community,2,Pakistan
+63,76009,Lahore,Community,19,Pakistan
+63,8825698,Lahore Comrades,Community,2,Pakistan
+63,43484,Lahore Garrison,Community,5,Pakistan
+63,218436,Lahore Greater Shaheen,Community,1,Pakistan
+63,8825702,Lahore Jurists,Community,4,Pakistan
+63,91896,Lahore Midtown,Community,2,Pakistan
+63,217335,Lahore Royals,Community,1,Pakistan
+63,9241,Lahore Sharqi,Community,6,Pakistan
+63,213071,Lahore South,Community,4,Pakistan
+63,8824202,Lyallpur,Community,3,Pakistan
+63,8824071,Mardan,Community,1,Pakistan
+63,213113,Multan Change Makers,Community,17,Pakistan
+63,88530,Multan Metropolitan,University,3,Pakistan
+63,8823881,Multant Cantt,Community,1,Pakistan
+63,8825645,Multan Uptown,Community,3,Pakistan
+63,8824143,Muzzaffargarh,Community,2,Pakistan
+63,217818,POST GRADUATE INSTITUTE OF ALLIED HEALTH SCIENCES (PGIAHS),University,2,Pakistan
+63,215622,Rawalpindi City,Community,2,Pakistan
+63,8825982,Rawalpindi Gladiators,Community,7,Pakistan
+63,218493,Sahiwal Healers 101,University,1,Pakistan
+63,8827403,Shifa Tameer-e-Millat University (STMU) Islamabad,University,19,Pakistan
+63,216374,Toba Tek Singh,Community,4,Pakistan
+63,215301,University of Agriculture Faisalabad,University,31,Pakistan
 3271,63999,Hyderabad,Community,5,Pakistan
 3271,8825985,Hyderabad Elites,Community,7,Pakistan
 3271,218183,Hyderabad Falcon,Community,10,Pakistan
@@ -2581,7 +3057,7 @@ district,club_id,club_name,club_base,members,country
 3271,8825733,Karachi Game Changers,Community,7,Pakistan
 3271,215792,Karachi Kehkashan Kings,University,7,Pakistan
 3271,91789,Karachi Kolachi,Community,19,Pakistan
-3271,8827912,Karachi Safe City,Community,6,Pakistan
+3271,8827912,Karachi Safe City,Community,7,Pakistan
 3271,215573,Karachi Sunrise,Community,19,Pakistan
 3271,8827977,Karachi Sunset Millennium MOK Global Community,Community,12,Pakistan
 3271,91753,Khairpur Green City,Community,13,Pakistan
@@ -2591,198 +3067,104 @@ district,club_id,club_name,club_base,members,country
 3271,217956,Mirpurkhas,Community,11,Pakistan
 3271,8825246,Mirpurkhas Central Democratic,Community,9,Pakistan
 3271,8823753,Mirpurkhas Saradar Yasin Malik,Community,6,Pakistan
-3271,8827148,SMBBMU,University,35,Pakistan
+3271,8827148,SMBBMU,University,1,Pakistan
 3271,9213,Sukkur,Community,8,Pakistan
 3271,8828531,Thar Desert,Community,11,Pakistan
 3271,8824975,The Incredible's,Community,9,Pakistan
-3271,8825881,Umertkot Hope,Community,5,Pakistan
+3271,8825881,Umertkot Hope,Community,7,Pakistan
 3271,8827163,Young Researchers,Community,8,Pakistan
-3292,88879,Annapurna,Community,19,Nepal
-3292,89716,Baglung,Community,24,Nepal
-3292,72774,Bagmati,Community,33,Nepal
-3292,215188,Bajra Manasalu,Community,20,Nepal
-3292,89287,Balaju,Community,24,Nepal
-3292,8826007,Balkumari,Community,15,Nepal
-3292,89717,Banepa,Community,44,Nepal
-3292,218578,Baneshwor,Community,20,Nepal
-3292,89551,Baneshwor Royal,Community,16,Nepal
-3292,218204,Bardibas,University,20,Nepal
-3292,212617,Bhadgaon,Community,8,Nepal
-3292,217336,Bhadrapur,Community,14,Nepal
-3292,214692,Bhairahawa,Community,29,Nepal
-3292,8824051,Bhairahawa Chautari,Community,13,Nepal
-3292,72475,Bhaktapur,Community,30,Nepal
-3292,8824081,Bhanu,Community,10,Nepal
-3292,65597,Bharatpur,Community,31,Nepal
-3292,217204,Bharatpur Height,Community,37,Nepal
-3292,216820,Birat Medical College Fusion,University,14,Nepal
-3292,66517,Biratnagar,Community,33,Nepal
-3292,217203,Biratnagar Central,Community,15,Nepal
-3292,89536,Biratnagar Down Town,Community,18,Nepal
-3292,9655,Birganj,Community,21,Nepal
-3292,214883,Birgunj Metropolis,Community,16,Nepal
-3292,91637,Birtamode,Community,32,Nepal
-3292,212632,Birtamode Mid-Town,Community,44,Nepal
-3292,72775,Budhanilkanatha,Community,16,Nepal
-3292,44951,Butwal,Community,19,Nepal
-3292,217627,Butwal Chautari,Community,16,Nepal
-3292,56450,Butwal Down Town,Community,44,Nepal
-3292,63178,Butwal South,Community,40,Nepal
-3292,215519,Butwal Synergy,Community,12,Nepal
-3292,8823369,Central Bouddha Land,Community,15,Nepal
-3292,213949,Central Butwal,Community,21,Nepal
-3292,214905,Central Lumbini,Community,18,Nepal
-3292,8825187,Central Rohini,Community,15,Nepal
-3292,217338,Central Rupandehi,Community,18,Nepal
-3292,8823370,Central Siyari,Community,15,Nepal
-3292,8825986,Central Valley Kasthamandap,Community,12,Nepal
-3292,86937,Chandragiri,Community,29,Nepal
-3292,8827982,Changu,Community,26,Nepal
-3292,75397,Charumati,Community,19,Nepal
-3292,9539,Chitwan,Community,43,Nepal
-3292,8825471,Chitwan Medical College,University,24,Nepal
-3292,8823900,Dakshinkali,Community,17,Nepal
-3292,215882,Damak,Community,38,Nepal
-3292,59803,Damauli,Community,32,Nepal
-3292,214772,Dang,Community,26,Nepal
-3292,8825177,Devdaha Medical College,University,15,Nepal
-3292,8826734,Dhading,Community,24,Nepal
-3292,212572,Dhangadhi,Community,11,Nepal
-3292,8828211,Dhangadhi Next Gen,Community,18,Nepal
-3292,43654,Dharan,Community,25,Nepal
-3292,63997,Dharan Ghopa,University,14,Nepal
-3292,80113,Dhulikhel,Community,18,Nepal
-3292,52653,Dillibazar-Kathmandu,Community,44,Nepal
-3292,88996,Durbarmarg,Community,14,Nepal
-3292,216442,Gaidakot,Community,18,Nepal
-3292,8823562,"Galkot, Baglung",Community,17,Nepal
-3292,8828026,Gandaki University,University,20,Nepal
-3292,8827606,Gokarneshwor,Community,24,Nepal
-3292,8827599,Gongabu North,Community,15,Nepal
-3292,8824537,"Gyaneswor, CiST",University,19,Nepal
-3292,90587,Hemja,Community,14,Nepal
-3292,213986,Hetauda,Community,59,Nepal
-3292,67987,Himalaya Patan,Community,23,Nepal
-3292,8826017,Himalayan Golfers,Community,16,Nepal
-3292,8827866,Himalayan White House International College,University,16,Nepal
-3292,218457,Itabhatta Municipal,Community,15,Nepal
-3292,81544,Itahari,Community,34,Nepal
-3292,8826972,Janakpurdham,Community,16,Nepal
-3292,72801,Jawalakhel,Community,5,Nepal
-3292,81870,Jawalakhel Manjushree,Community,15,Nepal
-3292,214109,Kakarvitta,Community,17,Nepal
-3292,8826811,Kamaladi,Community,17,Nepal
-3292,57147,Kantipur,Community,27,Nepal
-3292,87601,Kantipur Dental College,University,72,Nepal
-3292,213526,Kapilvastu,Community,14,Nepal
-3292,76282,Kasthamandap Kathmandu,Community,14,Nepal
-3292,9591,Kathmandu,Community,54,Nepal
-3292,8827984,Kathmandu Height,Community,23,Nepal
-3292,8828338,Kathmandu Horizon,Community,16,Nepal
-3292,8827634,Kathmandu Kalanki,Community,18,Nepal
-3292,78432,Kathmandu Medical College,University,16,Nepal
-3292,218541,Kathmandu Medical College- Duwakot,University,11,Nepal
-3292,65283,Kathmandu Metro,University,8,Nepal
-3292,213989,Kathmandu Metropolis,Community,23,Nepal
-3292,44168,Kathmandu Mid-Town,Community,45,Nepal
-3292,47049,Kathmandu North,Community,32,Nepal
-3292,68744,Kathmandu North East,Community,20,Nepal
-3292,212230,Kathmandu University,University,16,Nepal
-3292,90321,Kathmandu University Medical School (KUMS),University,135,Nepal
-3292,8825853,Kathmandu University School of Management,University,18,Nepal
-3292,77963,Kathmandu West,Community,21,Nepal
-3292,217628,Kawasoti,Community,30,Nepal
-3292,8823912,Kirtipur,Community,17,Nepal
-3292,214695,KIST Medical College,University,37,Nepal
-3292,76283,Kopundol,Community,18,Nepal
-3292,91648,Kshitiz International College,University,13,Nepal
-3292,46026,Lalitpur,Community,12,Nepal
-3292,8825466,Lalitpur Midtown,Community,12,Nepal
-3292,8826979,Lamahi,Community,24,Nepal
-3292,77220,Lamjung,Community,11,Nepal
-3292,90042,Lekhnath,Community,22,Nepal
-3292,90200,Liberty College,University,20,Nepal
-3292,89721,Lumbini Banijya Campus,University,15,Nepal
-3292,8823368,Lumbini Buddha,Community,25,Nepal
-3292,8828334,Lumbini Medical College,University,60,Nepal
-3292,90676,Lumbini Siddharthanagar,Community,20,Nepal
-3292,217873,Lumbini Stars,Community,24,Nepal
-3292,89712,Madhyapur,Community,36,Nepal
-3292,72816,Mahabouddha,Community,23,Nepal
-3292,213114,Makawanpur,Community,30,Nepal
-3292,218489,Manigram,Community,30,Nepal
-3292,90045,Manipal College of Medical Sciences,University,55,Nepal
-3292,88815,Manohara,Community,23,Nepal
-3292,8824674,Marchwar,Community,1,Nepal
-3292,8827726,Matribhumi Baluwatar,Community,20,Nepal
-3292,215937,Matribhumi Baluwatar IOM,University,21,Nepal
-3292,8823532,Mechinagar,Community,15,Nepal
-3292,90153,Metro City,Community,16,Nepal
-3292,89802,Narayangarh,Community,37,Nepal
-3292,75237,Narayani Mid Town,Community,33,Nepal
-3292,8827867,National Medical College,University,28,Nepal
-3292,8823813,Nawalpur City,Community,21,Nepal
-3292,8826910,Naxal Shakti,Community,25,Nepal
-3292,218266,Nepal National Hospital,Community,24,Nepal
-3292,8825215,Nepalgunj Medical College,University,11,Nepal
-3292,64638,New Road City Kathmandu,Community,15,Nepal
-3292,91413,Newroad Pokhara,Community,22,Nepal
-3292,8823447,Nobel Medical College Teaching Hospital,University,14,Nepal
-3292,89485,Palpa Tansen,Community,15,Nepal
-3292,215079,Panauti,Community,20,Nepal
-3292,89600,Parbat,Community,20,Nepal
-3292,213960,Parbat Pokhara,Community,6,Nepal
-3292,218566,Pashupati Nepal Law Campus,University,20,Nepal
-3292,46877,Pashupati-Kathmandu,Community,24,Nepal
-3292,43221,Patan,Community,22,Nepal
-3292,67996,Patan Durbar Square,Community,27,Nepal
-3292,8825231,Patan Heritage,Community,32,Nepal
-3292,90407,Patan South,Community,14,Nepal
-3292,48154,Patan West,Community,26,Nepal
-3292,89341,People's Campus,Community,21,Nepal
-3292,8825041,Peoples Dental College,University,19,Nepal
-3292,54240,Pokhara,Community,21,Nepal
-3292,77223,Pokhara Fishtail,Community,34,Nepal
-3292,213879,Pokhara GMC,Community,76,Nepal
-3292,214771,Pokhara Lakeside,Community,39,Nepal
-3292,62117,Pokhara Midtown,Community,28,Nepal
-3292,218442,Pokhara University,University,89,Nepal
-3292,218468,Purbi Chitwan,Community,26,Nepal
-3292,61643,Rajdhani,Community,30,Nepal
-3292,217374,Rammani Multiple Campus,University,6,Nepal
-3292,53092,Ratnanagar,Community,38,Nepal
-3292,78425,Reliance College,University,28,Nepal
-3292,70789,Rudramati,Community,21,Nepal
-3292,90367,Rudramati-Babarmahal-Kathmandu,Community,30,Nepal
-3292,90406,Rupandehi,Community,19,Nepal
-3292,213976,Sainamaina,Community,16,Nepal
-3292,89156,Sainbu Bhainsepati,Community,39,Nepal
-3292,217723,Sankhu,Community,19,Nepal
-3292,8827913,Saptagandaki Multiple Campus,University,14,Nepal
-3292,8826740,Shankaracharya,Community,24,Nepal
-3292,217626,Shikhalapur,Community,14,Nepal
-3292,8827049,Siddharthanagar,Community,15,Nepal
-3292,218490,Sindhuligadi,Community,15,Nepal
-3292,217232,Sukedhara,Community,17,Nepal
-3292,8823901,Sundarharaicha,Community,12,Nepal
-3292,8824366,Sunsari,Community,14,Nepal
-3292,218437,Surunga,Community,29,Nepal
-3292,86487,Swoyambhu,Community,41,Nepal
-3292,58049,Thames International College,University,18,Nepal
-3292,8825625,Tilottama,Community,19,Nepal
-3292,91075,Tilottama Devdaha,Community,35,Nepal
-3292,218434,Tilottama Suddhodhan,Community,12,Nepal
-3292,213959,Tilottama-Rupandehi,Community,27,Nepal
-3292,216016,Tinau Butwal,Community,22,Nepal
-3292,214197,Tinau City,Community,25,Nepal
-3292,8827598,Tinkune Kathmandu,Community,12,Nepal
-3292,8825898,Tribhuvan University,University,33,Nepal
-3292,61432,Tripureswor,Community,29,Nepal
-3292,213643,Tulsipur,Community,23,Nepal
-3292,217625,United Birgunj,Community,21,Nepal
-3292,218574,Urlabari,Community,24,Nepal
-3292,218433,Vedavyasa,Community,16,Nepal
-3292,8828354,Vision Kathmandu,Community,19,Nepal
-3292,8823378,Waling,Community,11,Nepal
-3292,43427,Yala,Community,19,Nepal
-3292,8825044,Yeti Health,University,9,Nepal
+3220,88675,Achievers Lanka Business School,University,35,Sri Lanka
+3220,8828405,Aegis Nexus,Community,21,Sri Lanka
+3220,91220,Alumni of University of Moratuwa,Community,75,Sri Lanka
+3220,67964,American National College,University,34,Sri Lanka
+3220,217094,APIIT,University,96,Sri Lanka
+3220,217914,Athugalpura,Community,46,Sri Lanka
+3220,72293,Battaramulla,Community,19,Sri Lanka
+3220,8826934,Batticaloa,Community,15,Sri Lanka
+3220,85447,Centennial United,Community,2,Sri Lanka
+3220,213975,C F P S,University,16,Sri Lanka
+3220,212329,Chulipuram,Community,3,Sri Lanka
+3220,42519,Chunnakam,Community,31,Sri Lanka
+3220,215957,CINEC,University,94,Sri Lanka
+3220,44751,Cinnamon Gardens,Community,73,Sri Lanka
+3220,90435,College of Chemical Sciences,University,43,Sri Lanka
+3220,8613,Colombo,Community,22,Sri Lanka
+3220,8826917,Colombo Citadel,Community,30,Sri Lanka
+3220,8609,Colombo East,Community,31,Sri Lanka
+3220,213876,Colombo Fort,Community,50,Sri Lanka
+3220,8823186,Colombo Heritage,Community,40,Sri Lanka
+3220,8827207,Colombo Infinity,Community,25,Sri Lanka
+3220,8825180,Colombo Metropolitan,Community,39,Sri Lanka
+3220,8603,Colombo Mid-City,Community,17,Sri Lanka
+3220,8601,Colombo Mid-Town,Community,42,Sri Lanka
+3220,8569,Colombo North,Community,72,Sri Lanka
+3220,8825223,Colombo Port City,Community,46,Sri Lanka
+3220,8823460,Colombo Regency,Community,11,Sri Lanka
+3220,42613,Colombo Regent,Community,17,Sri Lanka
+3220,8827805,Colombo South,Community,27,Sri Lanka
+3220,42577,Colombo Up-Town,Community,38,Sri Lanka
+3220,8599,Colombo West,Community,81,Sri Lanka
+3220,8828225,ECU ECC Kandy,University,26,Sri Lanka
+3220,91932,Edith Cowan University,University,77,Sri Lanka
+3220,8828426,Esoft University,University,25,Sri Lanka
+3220,92276,Excellence,Community,28,Sri Lanka
+3220,89963,"Faculty of Law, University of Colombo",University,70,Sri Lanka
+3220,8823817,"Faculty of Medicine, Sabaragamuwa Univesity of Sri Lanka",University,26,Sri Lanka
+3220,216481,Faculty of Medicine University of Colombo,University,62,Sri Lanka
+3220,74274,"Faculty of Science, University of Colombo",University,64,Sri Lanka
+3220,8828235,Galle,Community,25,Sri Lanka
+3220,8826468,Gampaha,Community,40,Sri Lanka
+3220,8828239,Gampaha Wickramarachchi University of Indigenous Medicine - FISSMS,University,31,Sri Lanka
+3220,91117,General Sir John Kotelawala Defence,University,48,Sri Lanka
+3220,8828348,General Sir John Kotelawala Defence University South,University,26,Sri Lanka
+3220,8825008,Horizon Campus,University,41,Sri Lanka
+3220,216053,ICBT,University,26,Sri Lanka
+3220,218404,Imperial College of Business and Studies,University,38,Sri Lanka
+3220,88758,Informatics Institute of Technology,University,44,Sri Lanka
+3220,42564,Jaffna Mid-Town,Community,14,Sri Lanka
+3220,91868,Jaffna Peninsula,Community,3,Sri Lanka
+3220,8591,Kandy,Community,40,Sri Lanka
+3220,8824330,Kandy Hill Capital,Community,26,Sri Lanka
+3220,8823202,Kandy Metropolitan,Community,48,Sri Lanka
+3220,215233,Katugastota Region,Community,41,Sri Lanka
+3220,47135,Kelaniya,Community,3,Sri Lanka
+3220,8823624,Kilinochchi Town,Community,23,Sri Lanka
+3220,8827591,KIU,University,33,Sri Lanka
+3220,213599,Kurunegala,Community,85,Sri Lanka
+3220,8827204,Management & Science University (MSU),University,33,Sri Lanka
+3220,8824925,Mannar Town,Community,22,Sri Lanka
+3220,217832,Matale,Community,50,Sri Lanka
+3220,8823261,Moratuwa,Community,23,Sri Lanka
+3220,214142,Nallur Heritage,Community,7,Sri Lanka
+3220,8826877,National Institute of Business Management Kandy,University,24,Sri Lanka
+3220,91233,National School of Business Management,University,76,Sri Lanka
+3220,90577,Negombo,Community,36,Sri Lanka
+3220,217664,NIBM,University,97,Sri Lanka
+3220,64918,Pamunugama,Community,13,Sri Lanka
+3220,84520,Panadura,Community,36,Sri Lanka
+3220,217172,PanColombo,University,27,Sri Lanka
+3220,55709,Peradeniya University,University,42,Sri Lanka
+3220,8825314,Rajarata University,University,41,Sri Lanka
+3220,8827060,Ratmalana,Community,27,Sri Lanka
+3220,216028,Ratnapura,Community,29,Sri Lanka
+3220,218249,Royal Institute of Colombo,University,42,Sri Lanka
+3220,8826883,Sabaragamuwa University of Sri Lanka,University,26,Sri Lanka
+3220,216165,Saegis Campus,University,36,Sri Lanka
+3220,8828210,Seethawaka Regent,Community,30,Sri Lanka
+3220,91634,Singer Sri Lanka,Community,38,Sri Lanka
+3220,91071,Sri Lanka Institute of Information Technology (SLIIT),University,162,Sri Lanka
+3220,8824798,Sri Lanka Technological Campus,University,28,Sri Lanka
+3220,8575,Trincomalee,Community,22,Sri Lanka
+3220,91894,University Alumni,Community,19,Sri Lanka
+3220,88705,"University of Colombo, Arts Faculty",University,26,Sri Lanka
+3220,89105,"University of Colombo, Faculty of Management & Finance",University,151,Sri Lanka
+3220,8824929,University of Colombo School of Computing,University,28,Sri Lanka
+3220,88865,University of Kelaniya,University,144,Sri Lanka
+3220,42733,University of Moratuwa,University,46,Sri Lanka
+3220,8824712,University of Ruhuna,University,25,Sri Lanka
+3220,89653,University of Sri Jayewardenepura,University,33,Sri Lanka
+3220,8828173,University of Vavuniya,University,49,Sri Lanka
+3220,90872,Uva Wellassa University-Badulla,University,73,Sri Lanka
+3220,8828176,Vavuniya Heritage,Community,13,Sri Lanka
+3220,216669,Wayamba University,University,28,Sri Lanka
+3220,8573,Wellawatte,Community,32,Sri Lanka
