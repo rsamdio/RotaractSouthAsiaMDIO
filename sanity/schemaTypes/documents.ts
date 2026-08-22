@@ -1,13 +1,14 @@
+import React from "react";
 import { defineField, defineType } from "sanity";
 import { seoField } from "./seo";
 
-/** Shared markdown body — full EasyMDE toolbar via MarkdownBodyInput. */
+/** Shared markdown body, full EasyMDE toolbar via MarkdownBodyInput. */
 const markdownBody = defineField({
   name: "body",
   title: "Body",
   type: "markdown",
   description:
-    "Markdown body — toolbar covers headings, strike, lists, checklist, table, HR, code, and images. The image button opens a preview (alt + optional caption); Insert uploads to Media, Cancel discards.",
+    "Markdown body. The image button opens a preview with alt and caption; Insert uploads to Media, Cancel discards.",
 });
 
 export const story = defineType({
@@ -35,11 +36,26 @@ export const story = defineType({
       validation: (r) => r.required(),
     }),
     defineField({
-      name: "category",
-      title: "Category label",
-      type: "string",
-      description: 'Short label on cards, e.g. "Service" or "Leadership".',
-      initialValue: "Service",
+      name: "categoryRef",
+      title: "Category",
+      type: "reference",
+      to: [{ type: "category" }],
+      description: "Select the primary category from the managed list or click + to create a new one.",
+      validation: (r) => r.required(),
+    }),
+    defineField({
+      name: "tags",
+      title: "Tags / Labels",
+      type: "array",
+      of: [{ type: "reference", to: [{ type: "tag" }] }],
+      description: "Multi-select relevant tags/labels or click + to create new ones.",
+    }),
+    defineField({
+      name: "colorRef",
+      title: "Badge / Accent Color override",
+      type: "reference",
+      to: [{ type: "brandColor" }],
+      description: "Optional custom badge color. If left empty, inherits the color from the selected Category.",
     }),
     defineField({
       name: "featured",
@@ -52,13 +68,14 @@ export const story = defineType({
       title: "Hero / card image",
       type: "image",
       options: { hotspot: true },
+      description: "Recommended: 1200 × 675 px (16:9 landscape) or 1200 × 630 px. High-resolution JPG or WebP.",
     }),
     defineField({
       name: "excerpt",
       title: "Excerpt",
       type: "text",
       rows: 3,
-      description: "Card teaser & search/social summary.",
+      description: "Card teaser and search/social summary.",
       validation: (r) => r.required().max(280),
     }),
     markdownBody,
@@ -72,7 +89,31 @@ export const story = defineType({
     },
   ],
   preview: {
-    select: { title: "title", subtitle: "date", media: "image" },
+    select: {
+      title: "title",
+      subtitle: "date",
+      categoryName: "categoryRef.title",
+      colorHex: "colorRef.hex",
+      media: "image",
+    },
+    prepare({ title, subtitle, categoryName, colorHex, media }) {
+      const cat = categoryName || "Story";
+      return {
+        title,
+        subtitle: `${cat} · ${subtitle ?? ""}`,
+        media:
+          media ||
+          (() =>
+            React.createElement("div", {
+              style: {
+                backgroundColor: colorHex || "#D41B69",
+                width: "100%",
+                height: "100%",
+                borderRadius: "4px",
+              },
+            })),
+      };
+    },
   },
 });
 
@@ -101,10 +142,26 @@ export const announcement = defineType({
       validation: (r) => r.required(),
     }),
     defineField({
-      name: "category",
-      title: "Category label",
-      type: "string",
-      initialValue: "Announcement",
+      name: "categoryRef",
+      title: "Category",
+      type: "reference",
+      to: [{ type: "category" }],
+      description: "Select the primary category from the managed list or click + to create a new one.",
+      validation: (r) => r.required(),
+    }),
+    defineField({
+      name: "tags",
+      title: "Tags / Labels",
+      type: "array",
+      of: [{ type: "reference", to: [{ type: "tag" }] }],
+      description: "Multi-select relevant tags/labels or click + to create new ones.",
+    }),
+    defineField({
+      name: "colorRef",
+      title: "Badge / Accent Color override",
+      type: "reference",
+      to: [{ type: "brandColor" }],
+      description: "Optional custom badge color. If left empty, inherits the color from the selected Category.",
     }),
     defineField({
       name: "featured",
@@ -117,13 +174,14 @@ export const announcement = defineType({
       title: "Hero / card image",
       type: "image",
       options: { hotspot: true },
+      description: "Recommended: 1200 × 675 px (16:9 landscape) or 1200 × 630 px. High-resolution JPG or WebP.",
     }),
     defineField({
       name: "excerpt",
       title: "Excerpt",
       type: "text",
       rows: 3,
-      description: "Card teaser & search/social summary.",
+      description: "Card teaser and search/social summary.",
       validation: (r) => r.required().max(280),
     }),
     markdownBody,
@@ -137,7 +195,31 @@ export const announcement = defineType({
     },
   ],
   preview: {
-    select: { title: "title", subtitle: "date", media: "image" },
+    select: {
+      title: "title",
+      subtitle: "date",
+      categoryName: "categoryRef.title",
+      colorHex: "colorRef.hex",
+      media: "image",
+    },
+    prepare({ title, subtitle, categoryName, colorHex, media }) {
+      const cat = categoryName || "Announcement";
+      return {
+        title,
+        subtitle: `${cat} · ${subtitle ?? ""}`,
+        media:
+          media ||
+          (() =>
+            React.createElement("div", {
+              style: {
+                backgroundColor: colorHex || "#D41B69",
+                width: "100%",
+                height: "100%",
+                borderRadius: "4px",
+              },
+            })),
+      };
+    },
   },
 });
 
@@ -178,15 +260,22 @@ export const chronicleEdition = defineType({
       title: "Cover image (A4 portrait)",
       type: "image",
       options: { hotspot: true },
-      description: "Upload a portrait cover — shown as an A4 preview on the site.",
+      description: "Upload a portrait cover (recommended 1200 × 1697 px or A4 aspect ratio 1:1.414). Shown as an A4 preview on the site.",
       validation: (r) => r.required(),
     }),
     defineField({
       name: "readerUrl",
       title: "Reader URL",
       type: "url",
-      description: "External edition reader (publications hub).",
+      description: "External edition reader on the publications hub.",
       validation: (r) => r.required().uri({ scheme: ["http", "https"] }),
+    }),
+    defineField({
+      name: "colorRef",
+      title: "Accent / Highlight Color",
+      type: "reference",
+      to: [{ type: "brandColor" }],
+      description: "Optional custom highlight color for this edition.",
     }),
   ],
   orderings: [
@@ -199,7 +288,7 @@ export const chronicleEdition = defineType({
   preview: {
     select: { title: "editionName", subtitle: "date", media: "coverImage" },
     prepare: ({ title, subtitle, media }) => ({
-      title: `RSA Chronicles — ${title}`,
+      title: `RSA Chronicles, ${title}`,
       subtitle,
       media,
     }),
@@ -244,6 +333,7 @@ export const event = defineType({
       title: "Hero image",
       type: "image",
       options: { hotspot: true },
+      description: "Recommended: 1200 × 675 px (16:9 landscape) or 1400 × 800 px. High-resolution JPG or WebP.",
     }),
     defineField({
       name: "kind",
@@ -262,18 +352,11 @@ export const event = defineType({
       validation: (r) => r.required(),
     }),
     defineField({
-      name: "accent",
-      title: "Accent color",
-      type: "string",
-      options: {
-        list: [
-          { title: "Pink", value: "pink" },
-          { title: "Gold", value: "gold" },
-          { title: "Blue", value: "blue" },
-        ],
-        layout: "radio",
-      },
-      initialValue: "pink",
+      name: "colorRef",
+      title: "Accent / Badge Color",
+      type: "reference",
+      to: [{ type: "brandColor" }],
+      description: "Select an official color or click + to create a new one.",
     }),
     defineField({
       name: "signature",
@@ -291,7 +374,7 @@ export const event = defineType({
       name: "endDate",
       title: "End date",
       type: "date",
-      description: "Optional — for multi-day events.",
+      description: "Optional, for multi-day events.",
     }),
     defineField({
       name: "startTime",
@@ -375,11 +458,19 @@ export const programInitiative = defineType({
       validation: (r) => r.required(),
     }),
     defineField({
-      name: "category",
-      title: "Category label",
-      type: "string",
-      description: 'Short label on cards, e.g. "Service" or "Sports".',
+      name: "categoryRef",
+      title: "Category",
+      type: "reference",
+      to: [{ type: "category" }],
+      description: "Select the category from the managed list or click + to create a new one.",
       validation: (r) => r.required(),
+    }),
+    defineField({
+      name: "colorRef",
+      title: "Badge / Accent Color override",
+      type: "reference",
+      to: [{ type: "brandColor" }],
+      description: "Optional custom badge color. If left empty, inherits the color from the selected Category.",
     }),
     defineField({
       name: "status",
@@ -417,11 +508,21 @@ export const programInitiative = defineType({
       type: "string",
       options: {
         list: [
-          { title: "Service", value: "service" },
-          { title: "Sports", value: "sports" },
-          { title: "Leadership", value: "leadership" },
-          { title: "Fellowship", value: "fellowship" },
-          { title: "Environment", value: "environment" },
+          { title: "Service (Handshake / Heart)", value: "service" },
+          { title: "Sports & Athletics (Trophy)", value: "sports" },
+          { title: "Leadership & Speaking (Mic)", value: "leadership" },
+          { title: "Fellowship & Community (Users)", value: "fellowship" },
+          { title: "Environment & Green (Leaf)", value: "environment" },
+          { title: "Education & Literacy (Book / Graduation)", value: "education" },
+          { title: "Health & Wellness (Activity / Stethoscope)", value: "health" },
+          { title: "Peace & Conflict Resolution (Dove / Shield)", value: "peace" },
+          { title: "Global & Cross-Border (Globe)", value: "globe" },
+          { title: "Recognition & Awards (Award)", value: "award" },
+          { title: "Innovation & Ideas (Lightbulb)", value: "lightbulb" },
+          { title: "Campaigns & Special Projects (Sparkles)", value: "sparkles" },
+          { title: "Calendar & Milestones (Calendar)", value: "calendar" },
+          { title: "Compass / Direction (Compass)", value: "compass" },
+          { title: "Target & Goals (Target)", value: "target" },
         ],
         layout: "dropdown",
       },
@@ -429,18 +530,11 @@ export const programInitiative = defineType({
       validation: (r) => r.required(),
     }),
     defineField({
-      name: "accent",
-      title: "Accent color",
-      type: "string",
-      description: "Hex color for badges, e.g. #D41B69.",
-      initialValue: "#D41B69",
-      validation: (r) => r.required(),
-    }),
-    defineField({
       name: "image",
       title: "Hero / card image",
       type: "image",
       options: { hotspot: true },
+      description: "Recommended: 1200 × 675 px (16:9 landscape) or 1200 × 630 px. High-resolution JPG or WebP.",
       validation: (r) => r.required(),
     }),
     defineField({
@@ -451,9 +545,17 @@ export const programInitiative = defineType({
     }),
     defineField({
       name: "ctaLabel",
-      title: "Card CTA label",
+      title: "Card CTA button label",
       type: "string",
+      description: 'Text on the card action button, e.g. "Learn more", "Explore program", "Register now".',
       initialValue: "Learn more",
+    }),
+    defineField({
+      name: "ctaUrl",
+      title: "Card CTA redirect link (optional)",
+      type: "url",
+      description: "Optional external or custom redirect link. If left blank, clicking goes to this initiative's detail page.",
+      validation: (r) => r.uri({ scheme: ["http", "https"], allowRelative: true }),
     }),
     markdownBody,
     seoField,
@@ -468,14 +570,28 @@ export const programInitiative = defineType({
   preview: {
     select: {
       title: "title",
-      subtitle: "category",
+      categoryName: "categoryRef.title",
+      colorHex: "colorRef.hex",
       media: "image",
       status: "status",
     },
-    prepare: ({ title, subtitle, media, status }) => ({
-      title,
-      subtitle: `${subtitle ?? "Program"} · ${status ?? ""}`,
-      media,
-    }),
+    prepare({ title, categoryName, colorHex, media, status }) {
+      const cat = categoryName || "Program";
+      return {
+        title,
+        subtitle: `${cat} · ${status ?? ""}`,
+        media:
+          media ||
+          (() =>
+            React.createElement("div", {
+              style: {
+                backgroundColor: colorHex || "#D41B69",
+                width: "100%",
+                height: "100%",
+                borderRadius: "4px",
+              },
+            })),
+      };
+    },
   },
 });

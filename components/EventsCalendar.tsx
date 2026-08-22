@@ -10,10 +10,11 @@ import {
 
 const WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-const accentClass: Record<SiteEvent["accent"], string> = {
+const accentClass: Record<string, string> = {
   pink: "bg-[#D41B69]",
   gold: "bg-[#F7A81B]",
   blue: "bg-[#17458F]",
+  green: "bg-[#059669]",
 };
 
 function daysInMonth(year: number, monthIndex: number) {

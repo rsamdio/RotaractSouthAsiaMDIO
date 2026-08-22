@@ -5,6 +5,31 @@ export const structure: StructureResolver = (S) =>
     .title("Content")
     .items([
       S.listItem()
+        .title("Colors & Accents")
+        .schemaType("brandColor")
+        .child(
+          S.documentTypeList("brandColor")
+            .title("Badge / Accent Colors")
+            .defaultOrdering([{ field: "name", direction: "asc" }])
+        ),
+      S.listItem()
+        .title("Categories")
+        .schemaType("category")
+        .child(
+          S.documentTypeList("category")
+            .title("Categories")
+            .defaultOrdering([{ field: "title", direction: "asc" }])
+        ),
+      S.listItem()
+        .title("Tags")
+        .schemaType("tag")
+        .child(
+          S.documentTypeList("tag")
+            .title("Tags")
+            .defaultOrdering([{ field: "title", direction: "asc" }])
+        ),
+      S.divider(),
+      S.listItem()
         .title("Stories")
         .schemaType("story")
         .child(S.documentTypeList("story").title("Stories").defaultOrdering([{ field: "date", direction: "desc" }])),

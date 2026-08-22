@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
@@ -157,6 +157,20 @@ export default async function ProgramDetailPage({ params }: Props) {
                   <dd className="mt-1 leading-relaxed text-slate-600">{program.livingNote}</dd>
                 </div>
               </dl>
+
+              {program.ctaUrl ? (
+                <div className="mt-6 border-t border-slate-200 pt-5">
+                  <a
+                    href={program.ctaUrl}
+                    target={/^https?:\/\//i.test(program.ctaUrl) ? "_blank" : undefined}
+                    rel={/^https?:\/\//i.test(program.ctaUrl) ? "noopener noreferrer" : undefined}
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#D41B69] px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#9A0E4E]"
+                  >
+                    {program.ctaLabel || "Visit program link"}
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
+              ) : null}
             </aside>
           </div>
         </section>

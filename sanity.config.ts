@@ -10,6 +10,7 @@ import { structure } from "./sanity/structure";
 import { StudioLogo } from "./sanity/components/StudioLogo";
 import { MarkdownBodyInput } from "./sanity/components/MarkdownBodyInput";
 import { dataset, projectId } from "./sanity/env";
+import { initialValueTemplates } from "./sanity/templates";
 import "easymde/dist/easymde.min.css";
 
 const brandTheme = buildLegacyTheme({
@@ -49,5 +50,6 @@ export default defineConfig({
   ],
   schema: {
     types: schemaTypes,
+    templates: (prev) => [...prev, ...initialValueTemplates],
   },
 });

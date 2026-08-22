@@ -3,7 +3,7 @@
  * Live editorial content comes from Sanity (`event` documents).
  */
 
-export type EventAccent = "pink" | "gold" | "blue";
+export type EventAccent = "pink" | "gold" | "blue" | "green" | "custom";
 export type EventKind = "signature" | "regional" | "training" | "session";
 
 export type SiteEvent = {
@@ -23,6 +23,8 @@ export type SiteEvent = {
   image?: string;
   kind: EventKind;
   accent: EventAccent;
+  /** Custom hex color code when accent is custom (or override) */
+  customAccent?: string;
   registrationUrl?: string;
   registrationLabel?: string;
   signature?: boolean;

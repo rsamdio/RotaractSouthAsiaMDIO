@@ -118,6 +118,23 @@ export default async function NewsDetailPage({ params }: Props) {
               />
             ) : null}
             <MarkdownContent source={post.body} className="text-lg" />
+
+            {post.tags && post.tags.length > 0 ? (
+              <div className="mt-8 flex flex-wrap items-center gap-2">
+                <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                  Tags:
+                </span>
+                {post.tags.map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600 transition hover:bg-slate-200"
+                  >
+                    #{t}
+                  </span>
+                ))}
+              </div>
+            ) : null}
+
             <ShareBar
               path={path}
               title={post.title}

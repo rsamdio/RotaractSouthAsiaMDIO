@@ -29,7 +29,7 @@ export const seo = defineType({
       type: "image",
       options: { hotspot: true },
       description:
-        "1200×630 preferred. Leave blank to use the hero/cover image, then the site default.",
+        "Recommended: 1200 × 630 px (landscape). Leave blank to use the hero/cover image, then the site default.",
     }),
   ],
 });

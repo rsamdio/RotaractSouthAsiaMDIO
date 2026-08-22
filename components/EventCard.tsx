@@ -8,10 +8,11 @@ import {
   type SiteEvent,
 } from "@/config/events";
 
-const accentDot: Record<SiteEvent["accent"], string> = {
+const accentDot: Record<string, string> = {
   pink: "bg-[#D41B69]",
   gold: "bg-[#F7A81B]",
   blue: "bg-[#17458F]",
+  green: "bg-[#059669]",
 };
 
 const kindLabel: Record<SiteEvent["kind"], string> = {
@@ -26,6 +27,7 @@ export function EventCard({ event }: { event: SiteEvent }) {
   const time = formatEventTime(event);
   const past = isPastEvent(event);
   const href = `/events/${event.slug}`;
+  const dotColor = event.customAccent || (event.accent === "custom" ? "#D41B69" : undefined);
 
   return (
     <Link
@@ -61,7 +63,10 @@ export function EventCard({ event }: { event: SiteEvent }) {
 
       <div className="flex flex-1 flex-col p-4">
         <div className="mb-2 flex flex-wrap items-center gap-2">
-          <span className={`h-1.5 w-1.5 rounded-full ${accentDot[event.accent]}`} />
+          <span
+            className={`h-1.5 w-1.5 rounded-full ${!dotColor ? (accentDot[event.accent] ?? "bg-[#D41B69]") : ""}`}
+            style={dotColor ? { backgroundColor: dotColor } : undefined}
+          />
           <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
             {kindLabel[event.kind]}
           </span>

@@ -28,10 +28,16 @@ function ProgramCard({
   featured?: boolean;
 }) {
   const Icon = getProgramIcon(program.icon);
+  const targetHref = program.ctaUrl || `/initiatives/${program.slug}`;
+  const isExternal = Boolean(program.ctaUrl && /^https?:\/\//i.test(program.ctaUrl));
+
+  const linkProps = isExternal
+    ? { href: targetHref, target: "_blank", rel: "noopener noreferrer" }
+    : { href: targetHref };
 
   return (
     <Link
-      href={`/initiatives/${program.slug}`}
+      {...linkProps}
       className={`group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white transition hover:border-[#D41B69]/25 hover:shadow-lg sm:rounded-[2rem] ${
         featured ? "sm:flex-row" : ""
       }`}
@@ -52,7 +58,7 @@ function ProgramCard({
         <div className="absolute inset-0 bg-gradient-to-t from-[#0B1426]/50 to-transparent" />
         <span
           className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white"
-          style={{ backgroundColor: program.accent }}
+          style={{ backgroundColor: program.accent || "#D41B69" }}
         >
           <Icon className="h-3 w-3" />
           {program.category}

@@ -8,7 +8,17 @@ export type ProgramIconKey =
   | "sports"
   | "leadership"
   | "fellowship"
-  | "environment";
+  | "environment"
+  | "education"
+  | "health"
+  | "peace"
+  | "globe"
+  | "award"
+  | "lightbulb"
+  | "sparkles"
+  | "calendar"
+  | "compass"
+  | "target";
 
 export type ProgramInitiative = {
   slug: string;
@@ -26,6 +36,8 @@ export type ProgramInitiative = {
   body?: string;
   featured?: boolean;
   ctaLabel?: string;
+  /** Optional custom redirect URL (external or relative) */
+  ctaUrl?: string;
   seo?: {
     title?: string;
     description?: string;

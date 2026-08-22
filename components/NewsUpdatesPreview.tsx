@@ -129,10 +129,12 @@ export async function NewsUpdatesPreview() {
 function KindBadge({
   kind,
   category,
+  customColor,
   onDark = false,
 }: {
   kind: NewsKind;
   category: string;
+  customColor?: string;
   /** Solid chips for photo overlays (matches /news featured card). */
   onDark?: boolean;
 }) {
@@ -150,6 +152,22 @@ function KindBadge({
       </span>
     );
   }
+
+  if (customColor) {
+    return (
+      <span
+        className="inline-flex rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider"
+        style={
+          onDark
+            ? { backgroundColor: customColor, color: "#0B1426" }
+            : { backgroundColor: `${customColor}18`, color: customColor }
+        }
+      >
+        {category}
+      </span>
+    );
+  }
+
   return (
     <span
       className={
@@ -182,7 +200,12 @@ function FeaturedPost({ post }: { post: FeedItem }) {
       <div className="absolute inset-0 bg-gradient-to-t from-[#0B1426]/90 via-[#0B1426]/35 to-transparent" />
       <div className="relative mt-auto p-6 sm:p-8">
         <div className="flex flex-wrap items-center gap-2">
-          <KindBadge kind={post.kind} category={post.category} onDark />
+          <KindBadge kind={post.kind} category={post.category} customColor={post.customColor} onDark />
+          {post.tags?.slice(0, 2).map((t) => (
+            <span key={t} className="rounded-full bg-white/20 px-2.5 py-1 text-[10px] font-semibold text-white backdrop-blur-sm">
+              #{t}
+            </span>
+          ))}
           <span className="text-[11px] font-semibold text-white/70">
             {formatDate(post.date)}
           </span>
@@ -210,7 +233,7 @@ function CompactPost({ post }: { post: FeedItem }) {
       href={`/news/${post.slug}`}
       className="group flex h-full flex-col rounded-[1.5rem] border border-slate-200 bg-slate-50/80 p-4 transition hover:border-[#D41B69]/25 hover:shadow-md sm:p-5"
     >
-      <KindBadge kind={post.kind} category={post.category} />
+      <KindBadge kind={post.kind} category={post.category} customColor={post.customColor} />
       <h3
         className="mt-3 line-clamp-3 text-sm font-bold leading-snug text-[#0B1426] transition group-hover:text-[#D41B69]"
       >

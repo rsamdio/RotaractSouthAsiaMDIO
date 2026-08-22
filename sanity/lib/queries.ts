@@ -7,7 +7,9 @@ export const seoProjection = `seo {
 export const storiesQuery = `*[_type == "story"] | order(date desc) {
   "slug": slug.current,
   title,
-  category,
+  "category": coalesce(categoryRef->title, "Story"),
+  "tags": tags[]->title,
+  "customColor": coalesce(colorRef->hex, categoryRef->colorRef->hex, "#D41B69"),
   excerpt,
   body,
   date,
@@ -19,7 +21,9 @@ export const storiesQuery = `*[_type == "story"] | order(date desc) {
 export const storyBySlugQuery = `*[_type == "story" && slug.current == $slug][0] {
   "slug": slug.current,
   title,
-  category,
+  "category": coalesce(categoryRef->title, "Story"),
+  "tags": tags[]->title,
+  "customColor": coalesce(colorRef->hex, categoryRef->colorRef->hex, "#D41B69"),
   excerpt,
   body,
   date,
@@ -31,7 +35,9 @@ export const storyBySlugQuery = `*[_type == "story" && slug.current == $slug][0]
 export const announcementsQuery = `*[_type == "announcement"] | order(date desc) {
   "slug": slug.current,
   title,
-  category,
+  "category": coalesce(categoryRef->title, "Announcement"),
+  "tags": tags[]->title,
+  "customColor": coalesce(colorRef->hex, categoryRef->colorRef->hex, "#17458F"),
   excerpt,
   body,
   date,
@@ -43,7 +49,9 @@ export const announcementsQuery = `*[_type == "announcement"] | order(date desc)
 export const announcementBySlugQuery = `*[_type == "announcement" && slug.current == $slug][0] {
   "slug": slug.current,
   title,
-  category,
+  "category": coalesce(categoryRef->title, "Announcement"),
+  "tags": tags[]->title,
+  "customColor": coalesce(colorRef->hex, categoryRef->colorRef->hex, "#17458F"),
   excerpt,
   body,
   date,
@@ -58,7 +66,8 @@ export const chroniclesQuery = `*[_type == "chronicleEdition"] | order(date desc
   date,
   preview,
   "heroImage": coverImage.asset->url,
-  readerUrl
+  readerUrl,
+  "customAccent": colorRef->hex
 }`;
 
 export const eventsQuery = `*[_type == "event"] | order(startDate asc) {
@@ -75,7 +84,8 @@ export const eventsQuery = `*[_type == "event"] | order(startDate asc) {
   location,
   venue,
   kind,
-  accent,
+  "accent": "custom",
+  "customAccent": coalesce(colorRef->hex, "#D41B69"),
   signature,
   registrationUrl,
   registrationLabel,
@@ -97,7 +107,8 @@ export const eventBySlugQuery = `*[_type == "event" && slug.current == $slug][0]
   location,
   venue,
   kind,
-  accent,
+  "accent": "custom",
+  "customAccent": coalesce(colorRef->hex, "#D41B69"),
   signature,
   registrationUrl,
   registrationLabel,
@@ -108,15 +119,16 @@ export const eventBySlugQuery = `*[_type == "event" && slug.current == $slug][0]
 export const programsQuery = `*[_type == "programInitiative"] | order(title asc) {
   "slug": slug.current,
   title,
-  category,
+  "category": coalesce(categoryRef->title, "Program"),
   status,
   summary,
   livingNote,
   icon,
-  accent,
+  "accent": coalesce(colorRef->hex, categoryRef->colorRef->hex, "#D41B69"),
   body,
   featured,
   ctaLabel,
+  ctaUrl,
   "image": image.asset->url,
   ${seoProjection}
 }`;
@@ -124,15 +136,16 @@ export const programsQuery = `*[_type == "programInitiative"] | order(title asc)
 export const programBySlugQuery = `*[_type == "programInitiative" && slug.current == $slug][0] {
   "slug": slug.current,
   title,
-  category,
+  "category": coalesce(categoryRef->title, "Program"),
   status,
   summary,
   livingNote,
   icon,
-  accent,
+  "accent": coalesce(colorRef->hex, categoryRef->colorRef->hex, "#D41B69"),
   body,
   featured,
   ctaLabel,
+  ctaUrl,
   "image": image.asset->url,
   ${seoProjection}
 }`;

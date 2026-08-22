@@ -13,6 +13,8 @@ export type Story = {
   slug: string;
   title: string;
   category: string;
+  tags?: string[];
+  customColor?: string;
   excerpt: string;
   body: string;
   image: string;
@@ -26,11 +28,73 @@ export type Announcement = Story;
 
 export type NewsPost = Story & { kind: NewsKind };
 
+export const standardColors = [
+  // Rotary & RSAMDIO Core Brand
+  { name: "Crimson (Primary Brand)", hex: "#D41B69", description: "Primary RSAMDIO Brand Color" },
+  { name: "Crimson Dark", hex: "#9A0E4E", description: "Hover state / deep accent" },
+  { name: "Navy Blue (Institutional)", hex: "#17458F", description: "Rotary Royal Blue / institutional chrome" },
+  { name: "Navy Deep", hex: "#0B1426", description: "Ink / dark headers" },
+  { name: "Rotary Gold", hex: "#F7A81B", description: "Rotary Gold / awards / highlights" },
+  { name: "Amber Gold", hex: "#D97706", description: "Warm amber for alerts and milestones" },
+
+  // Service & Programs Palette
+  { name: "Emerald Green", hex: "#059669", description: "Community service / environment" },
+  { name: "Forest Green", hex: "#15803D", description: "Sustainability & ecology" },
+  { name: "Teal", hex: "#0F766E", description: "Certify / health / water" },
+  { name: "Cyan / Aqua", hex: "#0891B2", description: "Innovation / youth projects" },
+  { name: "Sky Blue", hex: "#0284C7", description: "Regional summits / fellowship" },
+  { name: "Royal Purple", hex: "#7C3AED", description: "International service / leadership" },
+  { name: "Indigo", hex: "#4F46E5", description: "Digital ecosystem & technology" },
+  { name: "Fuchsia / Magenta", hex: "#C026D3", description: "Campaigns & public image" },
+  { name: "Rose Coral", hex: "#E11D48", description: "Youth exchange & fellowship" },
+  { name: "Warm Orange", hex: "#EA580C", description: "Disaster response & athletics" },
+
+  // Neutrals / Slate
+  { name: "Slate Blue", hex: "#475569", description: "Neutral editorial / announcements" },
+  { name: "Charcoal Slate", hex: "#334155", description: "Governance & constitutional models" },
+];
+
+export const standardCategories = [
+  { title: "Community Service", slug: "community-service", color: "#D41B69" },
+  { title: "Professional Development", slug: "professional-development", color: "#17458F" },
+  { title: "Leadership & Training", slug: "leadership-training", color: "#F7A81B" },
+  { title: "Fellowship & Networking", slug: "fellowship-networking", color: "#0284C7" },
+  { title: "Sports & Athletics", slug: "sports-athletics", color: "#EA580C" },
+  { title: "Environment & Sustainability", slug: "environment-sustainability", color: "#059669" },
+  { title: "International Service", slug: "international-service", color: "#7C3AED" },
+  { title: "Peace & Conflict Resolution", slug: "peace-conflict-resolution", color: "#0F766E" },
+  { title: "Health & Wellness", slug: "health-wellness", color: "#E11D48" },
+  { title: "Public Image & Brand", slug: "public-image-brand", color: "#C026D3" },
+  { title: "Youth Exchange & RYLA", slug: "youth-exchange-ryla", color: "#0891B2" },
+  { title: "Disaster Relief & Response", slug: "disaster-relief", color: "#EA580C" },
+];
+
+export const standardTags = [
+  { title: "Announcement", slug: "announcement" },
+  { title: "Awareness Campaign", slug: "awareness-campaign" },
+  { title: "Campaigns & Initiatives", slug: "campaigns" },
+  { title: "Hosting & Exchange", slug: "hosting-exchange" },
+  { title: "Joint Project", slug: "joint-project" },
+  { title: "Awards & Recognition", slug: "awards-recognition" },
+  { title: "District Conference", slug: "district-conference" },
+  { title: "Training Seminar", slug: "training-seminar" },
+  { title: "Youth Exchange", slug: "youth-exchange" },
+  { title: "Disaster Relief", slug: "disaster-relief" },
+  { title: "Clean Water & Sanitation", slug: "clean-water" },
+  { title: "Regional Summit", slug: "regional-summit" },
+  { title: "Digital Platform", slug: "digital-platform" },
+  { title: "Ecosystem Tool", slug: "ecosystem-tool" },
+  { title: "Bylaws & Governance", slug: "governance" },
+  { title: "Official Guide", slug: "official-guide" },
+];
+
 export const stories: Story[] = [
   {
     slug: "rebuilding-after-floods-district-3220",
     title: "Rebuilding After Floods in District 3220",
-    category: "Service",
+    category: "Community Service",
+    tags: ["Disaster Relief", "Joint Project", "Campaigns"],
+    customColor: "#D41B69",
     excerpt:
       "A joint effort that provided temporary housing for over 500 displaced families across coastal Sri Lanka.",
     body: "Clubs across District 3220 mobilized within 48 hours of seasonal flooding, coordinating temporary housing, clean water access, and school-supply drives for over 500 displaced families. The relief effort drew volunteers from 12 clubs and was supported by a Rotary Foundation disaster-response grant.",
@@ -43,6 +107,8 @@ export const stories: Story[] = [
     slug: "south-asia-summit-record-attendance",
     title: "South Asia Summit Concludes With Record Attendance",
     category: "Leadership",
+    tags: ["Regional Summit", "Training Seminar", "Awareness"],
+    customColor: "#F7A81B",
     excerpt:
       "Over 1,200 delegates from 8 nations gathered for three days of leadership training and fellowship.",
     body: "This year's regional summit drew the largest delegate turnout in MDIO history, with representatives from every member nation attending workshops on governance, public image, and cross-border project design.",
@@ -53,7 +119,9 @@ export const stories: Story[] = [
   {
     slug: "clean-water-project-nepal",
     title: "Clean Water Access Reaches Three Himalayan Villages",
-    category: "Service",
+    category: "Community Service",
+    tags: ["Clean Water", "Joint Project", "Campaigns"],
+    customColor: "#059669",
     excerpt:
       "District 3292 clubs installed sand-filtration systems benefiting over 450 schoolchildren.",
     body: "Rotaractors in District 3292 partnered with local health authorities to install heavy-duty sand filtration systems in three rural schools, providing safe drinking water to more than 450 children daily.",
@@ -68,6 +136,8 @@ export const announcements: Announcement[] = [
     slug: "ananta-2026-announcement",
     title: "RSAMDIO Announces ANANTA 2026 Installation Ceremony",
     category: "Announcement",
+    tags: ["Announcement", "Hosting", "Awards & Recognition"],
+    customColor: "#D41B69",
     excerpt:
       "The 17th RSAMDIO Installation Ceremony and ROAR Awards will be hosted in Bengaluru, India, marking the start of RY 2026–27.",
     body: "Rotaract South Asia MDIO is pleased to announce ANANTA 2026, the 17th RSAMDIO Installation Ceremony and ROAR Awards, to be hosted in Bengaluru, India. The gathering will mark the formal start of Rotary Year 2026–27 and bring together District Rotaract Representatives, Executive Board members, and Rotaractors from across the region.",
@@ -80,6 +150,8 @@ export const announcements: Announcement[] = [
     slug: "new-drr-appointments",
     title: "DRR Appointments Confirmed for RY 2026–27",
     category: "Announcement",
+    tags: ["Announcement", "Leadership"],
+    customColor: "#17458F",
     excerpt:
       "District Rotaract Representatives have been confirmed across the region's member nations for the incoming Rotary Year.",
     body: "RSAMDIO has confirmed District Rotaract Representative appointments for Rotary Year 2026–27 across member nations. DRRs will coordinate district-level Rotaract activity, represent their districts in regional forums, and work with the Executive Board on shared priorities for the year ahead.",

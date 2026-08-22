@@ -42,6 +42,8 @@ type SanityPost = {
   slug: string;
   title: string;
   category?: string;
+  tags?: string[] | null;
+  customColor?: string | null;
   excerpt: string;
   body?: string;
   date: string;
@@ -57,6 +59,7 @@ type SanityChronicle = {
   preview: string;
   heroImage?: string | null;
   readerUrl: string;
+  customAccent?: string | null;
 };
 
 type SanityEvent = {
@@ -74,6 +77,7 @@ type SanityEvent = {
   venue?: string;
   kind: EventKind;
   accent: EventAccent;
+  customAccent?: string | null;
   signature?: boolean;
   registrationUrl?: string;
   registrationLabel?: string;
@@ -93,6 +97,7 @@ type SanityProgram = {
   body?: string;
   featured?: boolean;
   ctaLabel?: string;
+  ctaUrl?: string;
   image?: string | null;
   seo?: SanitySeo | null;
 };
@@ -112,7 +117,9 @@ function mapPost(p: SanityPost): Story {
   return {
     slug: p.slug,
     title: p.title,
-    category: p.category || "Update",
+    category: p.category || "Story",
+    tags: p.tags?.filter(Boolean) as string[] | undefined,
+    customColor: p.customColor || undefined,
     excerpt: p.excerpt,
     body: p.body || p.excerpt,
     image: p.image || "",
@@ -149,6 +156,7 @@ function mapEvent(e: SanityEvent): SiteEvent {
     venue: e.venue,
     kind: e.kind,
     accent: e.accent,
+    customAccent: e.customAccent || undefined,
     signature: e.signature,
     registrationUrl: e.registrationUrl,
     registrationLabel: e.registrationLabel,
@@ -163,6 +171,16 @@ const programIconKeys: ProgramIconKey[] = [
   "leadership",
   "fellowship",
   "environment",
+  "education",
+  "health",
+  "peace",
+  "globe",
+  "award",
+  "lightbulb",
+  "sparkles",
+  "calendar",
+  "compass",
+  "target",
 ];
 
 function mapProgram(p: SanityProgram): ProgramInitiative {
@@ -180,6 +198,7 @@ function mapProgram(p: SanityProgram): ProgramInitiative {
     body: p.body || p.summary,
     featured: p.featured,
     ctaLabel: p.ctaLabel,
+    ctaUrl: p.ctaUrl,
     seo: mapSeo(p.seo),
   };
 }

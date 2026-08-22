@@ -29,9 +29,30 @@ export function PostSecondaryCard({
       href={`${hrefBase}/${post.slug}`}
       className="block rounded-[2rem] bg-slate-50 p-7 shadow-xl transition hover:-translate-y-1"
     >
-      <span className="rounded-full bg-blush px-3 py-1 text-xs font-bold text-crimson">
-        {post.category}
-      </span>
+      <div className="flex flex-wrap items-center gap-1.5">
+        <span
+          className={
+            post.customColor
+              ? "rounded-full px-3 py-1 text-xs font-bold"
+              : "rounded-full bg-blush px-3 py-1 text-xs font-bold text-crimson"
+          }
+          style={
+            post.customColor
+              ? {
+                  backgroundColor: `${post.customColor}18`,
+                  color: post.customColor,
+                }
+              : undefined
+          }
+        >
+          {post.category}
+        </span>
+        {post.tags?.slice(0, 2).map((t) => (
+          <span key={t} className="rounded-full bg-slate-200/70 px-2.5 py-0.5 text-[11px] font-medium text-slate-600">
+            #{t}
+          </span>
+        ))}
+      </div>
       <h3 className="mt-5 text-xl font-bold tracking-tight text-ink">{post.title}</h3>
       <p className="mt-3 text-sm leading-7 text-slate-600">{post.excerpt}</p>
       <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-crimson">
@@ -79,10 +100,23 @@ export function PostGrid({
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent" />
             <div className="absolute bottom-8 left-8 right-8">
-              <span className="rounded-full bg-gold px-4 py-2 text-xs font-bold uppercase tracking-wide text-ink">
-                {posts[0].category}
-              </span>
-              <h3 className="mt-5 text-3xl font-bold tracking-tight text-white">
+              <div className="flex flex-wrap items-center gap-2">
+                <span
+                  className="rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wide"
+                  style={{
+                    backgroundColor: posts[0].customColor || "#F7A81B",
+                    color: "#0B1426",
+                  }}
+                >
+                  {posts[0].category}
+                </span>
+                {posts[0].tags?.slice(0, 2).map((t) => (
+                  <span key={t} className="rounded-full bg-white/20 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+                    #{t}
+                  </span>
+                ))}
+              </div>
+              <h3 className="mt-4 text-3xl font-bold tracking-tight text-white">
                 {posts[0].title}
               </h3>
             </div>
