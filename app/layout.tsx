@@ -94,6 +94,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@rsa_mdio",
+    creator: "@rsa_mdio",
     title: "Rotaract South Asia MDIO (RSAMDIO)",
     description: siteDescription,
     images: [DEFAULT_OG_PATH],

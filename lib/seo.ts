@@ -104,6 +104,8 @@ export function buildPageMetadata({
     },
     twitter: {
       card: "summary_large_image",
+      site: "@rsa_mdio",
+      creator: "@rsa_mdio",
       title: displayTitle,
       description: desc,
       images: [imagePath],
