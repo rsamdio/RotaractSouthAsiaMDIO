@@ -24,6 +24,7 @@ npm run dev               # predev imports member CSVs, then next dev
 npm run build             # prebuild imports member CSVs, then next build
 npm run import:member-data
 npm run lint
+npm run indexnow          # submit sitemap URLs to IndexNow (Bing, Yandex, etc.)
 npm run sanity            # standalone Studio on :3333 (optional; site uses /admin)
 ```
 
@@ -107,6 +108,7 @@ District UI conventions:
 - **RI Zones** in chrome: **1, 4, 5, 6, 7, and 8** (write Zone 1, not 1(b)). Always use `siteConfig.rotaryYear` for the current year.
 - Prefer `siteConfig.description` for Footer + root metadata + Organization JSON-LD so blurbs do not drift.
 - **SEO / GEO:** Use `lib/seo.ts` helpers (`buildPageMetadata`, JSON-LD builders). Optional Sanity `seo` object on story/announcement/event/programInitiative overrides leaf meta. No `/chronicles/[slug]`. No `keywords` meta. No `parentOrganization` to Rotary International.
+- **IndexNow:** Key file at `public/33caed80d6750051fe7e123e4ed79c85.txt` (`https://rsamdio.org/33caed80d6750051fe7e123e4ed79c85.txt`). Submit URLs with `npm run indexnow` (`scripts/submit-indexnow.mjs`). Netlify production builds (`CONTEXT=production`) submit automatically via `postbuild`.
 
 ## Homepage composition (current)
 
