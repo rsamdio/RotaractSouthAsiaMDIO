@@ -18,7 +18,7 @@ import {
   type ProgramInitiative,
   type ProgramStatus,
 } from "@/config/initiatives";
-import { useFilesystemContent } from "../env";
+import { shouldUseFilesystemContent } from "../env";
 import { sanityFetch } from "./client";
 import {
   announcementBySlugQuery,
@@ -204,55 +204,55 @@ function mapProgram(p: SanityProgram): ProgramInitiative {
 }
 
 export async function loadStories(): Promise<Story[]> {
-  if (useFilesystemContent()) return fsStories;
+  if (shouldUseFilesystemContent()) return fsStories;
   const data = await sanityFetch<SanityPost[]>(storiesQuery);
   return (data ?? []).map(mapPost);
 }
 
 export async function loadStory(slug: string): Promise<Story | undefined> {
-  if (useFilesystemContent()) return fsStories.find((s) => s.slug === slug);
+  if (shouldUseFilesystemContent()) return fsStories.find((s) => s.slug === slug);
   const data = await sanityFetch<SanityPost | null>(storyBySlugQuery, { slug });
   return data ? mapPost(data) : undefined;
 }
 
 export async function loadAnnouncements(): Promise<Announcement[]> {
-  if (useFilesystemContent()) return fsAnnouncements;
+  if (shouldUseFilesystemContent()) return fsAnnouncements;
   const data = await sanityFetch<SanityPost[]>(announcementsQuery);
   return (data ?? []).map(mapPost);
 }
 
 export async function loadAnnouncement(slug: string): Promise<Announcement | undefined> {
-  if (useFilesystemContent()) return fsAnnouncements.find((a) => a.slug === slug);
+  if (shouldUseFilesystemContent()) return fsAnnouncements.find((a) => a.slug === slug);
   const data = await sanityFetch<SanityPost | null>(announcementBySlugQuery, { slug });
   return data ? mapPost(data) : undefined;
 }
 
 export async function loadChronicles(): Promise<ChronicleEdition[]> {
-  if (useFilesystemContent()) return fsChronicles;
+  if (shouldUseFilesystemContent()) return fsChronicles;
   const data = await sanityFetch<SanityChronicle[]>(chroniclesQuery);
   return (data ?? []).map(mapChronicle);
 }
 
 export async function loadEvents(): Promise<SiteEvent[]> {
-  if (useFilesystemContent()) return fsEvents;
+  if (shouldUseFilesystemContent()) return fsEvents;
   const data = await sanityFetch<SanityEvent[]>(eventsQuery);
   return (data ?? []).map(mapEvent);
 }
 
 export async function loadEvent(slug: string): Promise<SiteEvent | undefined> {
-  if (useFilesystemContent()) return fsEvents.find((e) => e.slug === slug);
+  if (shouldUseFilesystemContent()) return fsEvents.find((e) => e.slug === slug);
   const data = await sanityFetch<SanityEvent | null>(eventBySlugQuery, { slug });
   return data ? mapEvent(data) : undefined;
 }
 
 export async function loadPrograms(): Promise<ProgramInitiative[]> {
-  if (useFilesystemContent()) return fsPrograms;
+  if (shouldUseFilesystemContent()) return fsPrograms;
   const data = await sanityFetch<SanityProgram[]>(programsQuery);
   return (data ?? []).map(mapProgram);
 }
 
 export async function loadProgram(slug: string): Promise<ProgramInitiative | undefined> {
-  if (useFilesystemContent()) return fsPrograms.find((p) => p.slug === slug);
+  if (shouldUseFilesystemContent()) return fsPrograms.find((p) => p.slug === slug);
   const data = await sanityFetch<SanityProgram | null>(programBySlugQuery, { slug });
   return data ? mapProgram(data) : undefined;
 }

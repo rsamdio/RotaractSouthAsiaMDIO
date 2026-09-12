@@ -8,9 +8,17 @@ import {
   ChronicleCards,
   ChronicleSectionHeader,
 } from "@/components/ChronicleCards";
+import { JsonLd } from "@/components/JsonLd";
 import { loadAnnouncements, loadChronicles, loadStories } from "@/sanity/lib/content";
 import type { Metadata } from "next";
-import { buildPageMetadata } from "@/lib/seo";
+import {
+  breadcrumbNode,
+  buildPageMetadata,
+  collectionPageNode,
+  graph,
+  organizationNode,
+  webSiteNode,
+} from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   title: 'News & Updates',
@@ -35,8 +43,35 @@ export default async function NewsPage() {
     .sort((a, b) => b.date.localeCompare(a.date))
     .slice(0, 3);
 
+  const newsItems = [
+    ...recentStories.map((s) => ({
+      name: s.title,
+      path: `/news/${s.slug}`,
+      description: [s.date, s.category, s.excerpt].filter(Boolean).join(" · "),
+    })),
+    ...recentAnnouncements.map((a) => ({
+      name: a.title,
+      path: `/news/${a.slug}`,
+      description: [a.date, a.category, a.excerpt].filter(Boolean).join(" · "),
+    })),
+  ];
+
   return (
     <>
+      <JsonLd
+        data={graph(
+          organizationNode(),
+          webSiteNode(),
+          breadcrumbNode([{ name: "News & Updates", path: "/news" }]),
+          collectionPageNode({
+            name: "News & Updates",
+            description:
+              "Stories of impact from across South Asia, plus official updates and RSA Chronicles from Rotaract South Asia MDIO.",
+            path: "/news",
+            items: newsItems,
+          })
+        )}
+      />
       <Navbar />
       <PillNav
         items={[

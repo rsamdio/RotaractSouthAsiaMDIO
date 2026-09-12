@@ -1,14 +1,14 @@
-import { createClient, type SanityClient } from "next-sanity";
+import { createClient } from "next-sanity";
 import {
   apiVersion,
   dataset,
   projectId,
-  useFilesystemContent,
+  shouldUseFilesystemContent,
   writeToken,
 } from "../env";
 
 /** Public published reads (CDN). Safe in browser when project id is public. */
-export const sanityClient: SanityClient | null = projectId
+export const sanityClient = projectId
   ? createClient({
       projectId,
       dataset,
@@ -22,7 +22,7 @@ export const sanityClient: SanityClient | null = projectId
  * Authenticated client for local scripts / server mutations.
  * Uses SANITY_API_WRITE_TOKEN from `.env.local` — never expose to the browser.
  */
-export const sanityWriteClient: SanityClient | null =
+export const sanityWriteClient =
   projectId && writeToken
     ? createClient({
         projectId,
@@ -38,7 +38,7 @@ export async function sanityFetch<T>(
   query: string,
   params: Record<string, unknown> = {}
 ): Promise<T | null> {
-  if (useFilesystemContent() || !sanityClient) return null;
+  if (shouldUseFilesystemContent() || !sanityClient) return null;
   // Prefer write client locally when present — fresher reads, no CDN lag while authoring.
   const client =
     typeof window === "undefined" && sanityWriteClient ? sanityWriteClient : sanityClient;

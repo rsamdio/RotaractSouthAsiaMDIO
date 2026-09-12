@@ -260,8 +260,72 @@ export function eventMonthYear(event: SiteEvent) {
     day: d.getDate(),
   };
 }
-export function isPastEvent(event: SiteEvent) {
+export function isPastEvent(event: SiteEvent, nowMs?: number) {
+  if (typeof nowMs === "number") {
+    return isEventConcluded(event, nowMs);
+  }
   return (event.endDate ?? event.startDate) < todayIso();
+}
+
+/**
+ * Calculates the exact Unix millisecond timestamp when an event concludes.
+ * - Safely handles missing or inverted end dates (clamped to startDate).
+ * - Normalizes 24-hour endTime (e.g. "21:00" -> "21:00:00") or defaults to end-of-day (23:59:59).
+ * - Applies South Asian IST offset (+05:30) for universal timezone parity.
+ */
+export function getEventEndTimestamp(event: SiteEvent): number {
+  let dateStr = event.startDate;
+  if (event.endDate && event.endDate >= event.startDate) {
+    dateStr = event.endDate;
+  }
+
+  let timeStr = "23:59:59";
+  if (event.endTime && /^\d{1,2}:\d{2}$/.test(event.endTime.trim())) {
+    timeStr = `${event.endTime.trim().padStart(5, "0")}:00`;
+  }
+
+  // RSAMDIO events default to IST (+05:30) if timezoneLabel is IST or unspecified
+  const tz = event.timezoneLabel === "IST" || !event.timezoneLabel ? "+05:30" : "";
+  const iso = `${dateStr}T${timeStr}${tz}`;
+  const parsed = Date.parse(iso);
+  if (!Number.isNaN(parsed)) return parsed;
+
+  const fallback = Date.parse(`${dateStr}T23:59:59+05:30`);
+  return Number.isNaN(fallback) ? 0 : fallback;
+}
+
+export function isEventConcluded(event: SiteEvent, nowMs = Date.now()): boolean {
+  return getEventEndTimestamp(event) <= nowMs;
+}
+
+export function partitionEvents(
+  events: SiteEvent[],
+  nowMs = Date.now()
+): {
+  upcoming: SiteEvent[];
+  past: SiteEvent[];
+  signature: SiteEvent[];
+} {
+  const upcoming: SiteEvent[] = [];
+  const past: SiteEvent[] = [];
+  const signature: SiteEvent[] = [];
+
+  for (const event of events) {
+    if (isEventConcluded(event, nowMs)) {
+      past.push(event);
+    } else {
+      upcoming.push(event);
+    }
+    if (event.signature) {
+      signature.push(event);
+    }
+  }
+
+  upcoming.sort(byStartAsc);
+  past.sort(byStartDesc);
+  signature.sort(byStartAsc);
+
+  return { upcoming, past, signature };
 }
 
 /** Helpers that operate on an arbitrary list (Sanity or FS seed). */

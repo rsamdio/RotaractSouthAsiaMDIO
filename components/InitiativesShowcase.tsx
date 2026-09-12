@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { CheckCircle2, ExternalLink } from "lucide-react";
 import {
   platformTools,
@@ -99,12 +100,12 @@ export function InitiativesShowcase() {
                 <ExternalLink className="h-3.5 w-3.5 sm:h-4 sm:w-4" />{" "}
                 {active.primaryBtnText}
               </a>
-              <a
+              <Link
                 href="/initiatives"
                 className="inline-flex cursor-pointer items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-xs font-bold text-slate-700 transition hover:bg-slate-50 sm:px-7 sm:py-3.5 sm:text-sm"
               >
                 Explore platforms & programs
-              </a>
+              </Link>
             </div>
           </div>
 

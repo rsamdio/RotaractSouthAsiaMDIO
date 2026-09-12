@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo";
-import Link from "next/link";
 import { Mail } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { Navbar } from "@/components/Navbar";

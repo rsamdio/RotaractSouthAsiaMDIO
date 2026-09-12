@@ -2,11 +2,11 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { filterUpcoming } from "@/config/events";
 import { loadEvents } from "@/sanity/lib/content";
-import { EventCard, EventCardEmpty } from "./EventCard";
+import { UpcomingEventsList } from "./UpcomingEventsList";
 import { Reveal } from "./Reveal";
 
 export async function UpcomingEventsPreview() {
-  const events = filterUpcoming(await loadEvents(), 3);
+  const candidateEvents = filterUpcoming(await loadEvents(), 8);
 
   return (
     <section
@@ -33,17 +33,7 @@ export async function UpcomingEventsPreview() {
           </p>
         </Reveal>
 
-        {events.length === 0 ? (
-          <EventCardEmpty />
-        ) : (
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {events.map((ev, i) => (
-              <Reveal key={ev.slug} delay={i * 0.08} className="h-full">
-                <EventCard event={ev} />
-              </Reveal>
-            ))}
-          </div>
-        )}
+        <UpcomingEventsList events={candidateEvents} limit={3} />
 
         <div className="mt-10 text-center">
           <Link

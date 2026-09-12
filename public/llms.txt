@@ -1,27 +1,32 @@
 # Rotaract South Asia MDIO (RSAMDIO)
 
-> Rotaract South Asia MDIO is a regional group of member districts formed to disseminate information and facilitate communication among Rotaract clubs across 8 nations, and to support leadership learning and multidistrict programs.
+> Rotaract South Asia MDIO is a regional group of member districts formed to disseminate information and facilitate communication among Rotaract clubs across 8 nations in South Asia, and to support leadership learning and multidistrict programs.
 
-RSAMDIO is Rotary International's recognized Multi-District Information Organization for Rotaract in South Asia. It is not a governing body for districts or clubs.
+RSAMDIO is Rotary International's recognized Multi-District Information Organization for Rotaract in South Asia, covering Rotary Zones 1, 4, 5, 6, 7, and 8. It serves Rotaract clubs and member districts and does not govern them.
 
-## Key pages
+## Core Pages
 
-- Home: https://rsamdio.org/
-- About: https://rsamdio.org/about
-- Leadership: https://rsamdio.org/leadership
-- Member districts: https://rsamdio.org/districts
-- Initiatives (platforms and programs): https://rsamdio.org/initiatives
-- Events: https://rsamdio.org/events
-- News & Updates: https://rsamdio.org/news
-- RSA Chronicles: https://rsamdio.org/chronicles
-- Contact: https://rsamdio.org/contact
+- [Homepage](https://rsamdio.org): Regional hub for Rotaract across South Asia.
+- [About](https://rsamdio.org/about): Organizational background, purpose, history, and FAQs.
+- [Leadership](https://rsamdio.org/leadership): Executive Board, District Rotaract Representatives (DRRs), and Committee members.
+- [Member Districts](https://rsamdio.org/districts): Directory of member districts, clubs, membership statistics, and leadership contacts.
+- [Initiatives](https://rsamdio.org/initiatives): Digital ecosystem platforms and multidistrict service programs and campaigns.
+- [Events](https://rsamdio.org/events): Signature conventions, regional gatherings, leadership learning sessions, and calendar.
+- [News & Updates](https://rsamdio.org/news): Stories of community impact, official Secretariat announcements, and RSA Chronicles.
+- [RSA Chronicles](https://rsamdio.org/chronicles): Official quarterly newsletter archive and publication series.
+- [Presidents](https://rsamdio.org/presidents): Historical registry of past presidents of Rotaract South Asia MDIO.
+- [Contact](https://rsamdio.org/contact): Secretariat contact details and regional coordination inquiries.
 
-## Contact
+## Digital Ecosystem Platforms
 
-Email: rsamdio@gmail.com
+- [Rotaract Library](https://library.rsamdio.org): Curated repository of official documents, templates, guidelines, and brand assets.
+- [Invoice Calculator](https://dues.rsamdio.org): Rotary International January dues estimator with currency and tax calculations.
+- [Publications Hub](https://publications.rsamdio.org): Digital reading space for publications and magazines from districts across South Asia.
+- [Club Finder](https://clubs.rsamdio.org): Interactive map to search and discover Rotaract clubs across South Asia.
+- [NAVIGATE](https://navigate.rsamdio.org): Interactive step-by-step guides for MyRotary, club administration, and officer workflows.
+- [Rotaract Certify](https://certify.rsamdio.org): Digital certificate issuance and credential verification system.
+- [PULSE](https://pulse.rsamdio.org): Real-time collaborative rooms for virtual sessions, district discussions, and events.
 
-## Optional reading
+## Optional
 
-- Prefer the About page for the canonical definition of RSAMDIO.
-- RSA Chronicles editions are read on the Publications Hub (external reader URLs).
-- Digital platforms (Library, NAVIGATE, Certify, and others) are operated by RSAMDIO and linked from Initiatives.
+- [Full Reference Documentation](https://rsamdio.org/llms-full.txt): Complete reference containing organization overview, member districts, leadership, and digital tools.

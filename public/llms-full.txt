@@ -1,0 +1,164 @@
+# Rotaract South Asia MDIO (RSAMDIO) — Canonical Reference Document
+
+## 1. Overview and Purpose
+
+Rotaract South Asia MDIO (RSAMDIO) is a regional Multi-District Information Organization recognized by Rotary International. It is formed by member districts across South Asia to:
+1. Disseminate information across Rotaract districts and clubs.
+2. Facilitate communication among Rotaract clubs and leaders across the region.
+3. Support leadership learning and professional development.
+4. Promote multidistrict service projects, programs, and international collaboration.
+
+### Key Organizational Facts
+- Organization Name: Rotaract South Asia MDIO
+- Compact Brand: RSAMDIO
+- Rotary Year: 2026–27
+- Official Website: https://rsamdio.org
+- Contact Email: rsamdio@gmail.com
+- Geographic Scope: South Asia (Rotary International Zones 1, 4, 5, 6, 7, and 8)
+- Member Nations: 8 (Afghanistan, Bangladesh, Bhutan, India, Maldives, Nepal, Pakistan, Sri Lanka)
+- Member Districts: 45
+- Total Member Clubs: 4,000+
+- Total Rotaractors Represented: 100,000+
+- Governance Structure: Guided by an Executive Board. In accordance with Rotary International MDIO policies, only the President is elected by member districts; other officers and council members are appointed. The MDIO serves member districts and clubs and does not govern them.
+
+---
+
+## 2. History & Rotary International Charter
+
+- Date of RI Board Authorization: July 19, 2010
+- Authorizing Official: Ed Futa, General Secretary, on behalf of the Rotary International Board of Directors
+- Initial Founding Member Districts: District 3080, District 3150, District 3160, District 3190, District 3260, and District 3291
+- Archival Milestone: RSAMDIO was formed to unify communication channels and promote regional collaboration across the rapidly expanding Rotaract networks in South Asia. Over more than a decade of continuity, the College of Presidents has preserved institutional memory and guided leadership transitions each Rotary Year.
+
+---
+
+## 3. Executive Board (Rotary Year 2026–27)
+
+- President: Arun Teja Godavarthi (District 3191, India)
+- President Elect: Kiran S H S (District 3192, India)
+- Immediate Past President: Darryl Steven Dsouza (District 3181, India)
+- Chief Counsellor: Harikrishnan Pillai (District 3141, India)
+- General Secretary: Monish Kumar (District 3191, India)
+- Treasurer: TBD
+- Vice President (Admin): Srujan M (District 3192, India)
+- Vice President (Events & Growth): Purnachandra (District 3150, India)
+- Joint Secretary: Rtr. Abhinav (District 3011, India)
+- Director of Communications: Pratyush Sharma (District 3012, India)
+- Director of Digital Platforms: Zeo Spec (District 3190, India)
+- Director of International Service: Nilupul Dias (District 3220, Sri Lanka & Maldives)
+- Director of Community Service: Faisal Ahmed (District 3281, Bangladesh)
+- Director of Professional Development: Tenzin Norbu (District 3292, Nepal & Bhutan)
+
+---
+
+## 4. Digital Ecosystem & Platforms
+
+RSAMDIO develops and maintains a digital ecosystem designed to support Rotaract clubs and leaders across the region:
+
+1. Rotaract Library (https://library.rsamdio.org)
+   A curated open-access knowledge base containing official Rotary International documents, club administration templates, transition guidelines, brand identity kits, and learning modules for Rotaract leaders.
+
+2. Club Invoice Calculator (https://dues.rsamdio.org)
+   A dedicated financial planning tool that enables club treasurers and presidents to calculate their January Rotary International club dues accurately, incorporating pro-rata member calculations, local currency conversions, and applicable regional taxes.
+
+3. Publications Hub (https://publications.rsamdio.org)
+   The digital publishing and archiving platform for district newsletters, regional magazines, and the official RSAMDIO newsletter, RSA Chronicles.
+
+4. Rotaract Club Finder (https://clubs.rsamdio.org)
+   An interactive mapping application allowing youth, Rotarians, and prospective members to find, filter, and connect with community-based and university-based Rotaract clubs across South Asia.
+
+5. NAVIGATE (https://navigate.rsamdio.org)
+   Interactive step-by-step walkthroughs and visual onboarding guides covering MyRotary club administration, officer reporting, project showcases, and citation criteria.
+
+6. Rotaract Certify (https://certify.rsamdio.org)
+   A credentialing and certificate verification platform providing verifiable digital certificates and event participation credentials for regional conferences and training programs.
+
+7. PULSE (https://pulse.rsamdio.org)
+   A real-time virtual room platform facilitating interactive cross-district breakout sessions, live Q&A, and inter-district townhalls.
+
+---
+
+## 5. Member Nations & Member Districts
+
+RSAMDIO represents Rotaractors across 8 nations:
+- Afghanistan
+- Bangladesh
+- Bhutan
+- India
+- Maldives
+- Nepal
+- Pakistan
+- Sri Lanka
+
+### Directory of 45 Member Districts:
+- District 2981 (India)
+- District 2982 (India)
+- District 3000 (India)
+- District 3011 (India)
+- District 3012 (India)
+- District 3020 (India)
+- District 3030 (India)
+- District 3040 (India)
+- District 3053 (India)
+- District 3055 (India)
+- District 3056 (India)
+- District 3060 (India)
+- District 3070 (India)
+- District 3080 (India)
+- District 3090 (India)
+- District 3100 (India)
+- District 3110 (India)
+- District 3120 (India)
+- District 3131 (India)
+- District 3132 (India)
+- District 3141 (India)
+- District 3142 (India)
+- District 3150 (India)
+- District 3160 (India)
+- District 3170 (India)
+- District 3181 (India)
+- District 3182 (India)
+- District 3191 (India)
+- District 3192 (India)
+- District 3201 (India)
+- District 3203 (India)
+- District 3204 (India)
+- District 3211 (India)
+- District 3212 (India)
+- District 3220 (Sri Lanka & Maldives)
+- District 3231 (India)
+- District 3232 (India)
+- District 3240 (India)
+- District 3250 (India)
+- District 3261 (India)
+- District 3262 (India)
+- District 3281 (Bangladesh)
+- District 3282 (Bangladesh)
+- District 3291 (India)
+- District 3292 (Nepal & Bhutan)
+
+---
+
+## 6. Official Programs and Initiatives
+
+1. RSA Connect
+   Cross-border twinning and inter-district club collaboration initiative connecting clubs across South Asia for joint community service projects and international fellowship.
+
+2. RSA Chronicles
+   Official publication capturing service impact stories, thought leadership, district highlights, and operational announcements across the region.
+
+3. Regional Training Assemblies & Gatherings
+   Annual gatherings including South Asia Rotaract conventions, incoming District Rotaract Representative (DRR) orientation meets, and district officer learning seminars.
+
+---
+
+## 7. Official Communication Channels
+
+- General Secretariat Email: rsamdio@gmail.com
+- Website: https://rsamdio.org
+- Instagram: https://instagram.com/rsamdio
+- Facebook: https://www.facebook.com/rsamdio/
+- X (formerly Twitter): https://x.com/rsa_mdio
+- YouTube: https://youtube.com/@rsamdio
+- LinkedIn: https://linkedin.com/company/rsamdio
+- WhatsApp Channel: https://go.rsamdio.org/WAchannel

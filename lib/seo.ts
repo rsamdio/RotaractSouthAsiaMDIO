@@ -131,6 +131,24 @@ export function organizationNode(): Record<string, unknown> {
     description: siteConfig.description,
     email: siteConfig.contact.general,
     logo: absoluteUrl("/img/favicon.png"),
+    foundingDate: "2009",
+    areaServed: [
+      { "@type": "Country", name: "India" },
+      { "@type": "Country", name: "Sri Lanka" },
+      { "@type": "Country", name: "Bangladesh" },
+      { "@type": "Country", name: "Nepal" },
+      { "@type": "Country", name: "Bhutan" },
+      { "@type": "Country", name: "Maldives" },
+      { "@type": "AdministrativeArea", name: "South Asia" },
+    ],
+    knowsAbout: [
+      "Rotaract",
+      "Rotary International",
+      "Youth Leadership",
+      "Community Service South Asia",
+      "Professional Development",
+      "Multidistrict Information Organization",
+    ],
     sameAs: Object.values(siteConfig.social),
     contactPoint: [
       {
@@ -176,6 +194,68 @@ export function breadcrumbNode(items: BreadcrumbItem[]): Record<string, unknown>
       position: index + 1,
       name: item.name,
       item: absoluteUrl(item.path),
+    })),
+  };
+}
+
+export function collectionPageNode(input: {
+  name: string;
+  description: string;
+  path: string;
+  items?: { name: string; path: string; description?: string }[];
+}): Record<string, unknown> {
+  const node: Record<string, unknown> = {
+    "@type": "CollectionPage",
+    "@id": `${absoluteUrl(input.path)}#collection`,
+    url: absoluteUrl(input.path),
+    name: input.name,
+    description: truncateMeta(input.description),
+    isPartOf: { "@id": WEBSITE_ID },
+    publisher: { "@id": ORGANIZATION_ID },
+  };
+
+  if (input.items && input.items.length > 0) {
+    node.mainEntity = {
+      "@type": "ItemList",
+      itemListElement: input.items.map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.name,
+        url: absoluteUrl(item.path),
+        ...(item.description ? { description: truncateMeta(item.description) } : {}),
+      })),
+    };
+  }
+
+  return node;
+}
+
+export function itemListPersonNode(input: {
+  name: string;
+  path: string;
+  members: { name: string; title: string; district?: string; country?: string }[];
+}): Record<string, unknown> {
+  return {
+    "@type": "ItemList",
+    name: input.name,
+    url: absoluteUrl(input.path),
+    itemListElement: input.members.map((member, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Person",
+        name: member.name,
+        jobTitle: member.title,
+        ...(member.district || member.country
+          ? {
+              affiliation: {
+                "@type": "Organization",
+                name: [member.district, member.country].filter(Boolean).join(", "),
+              },
+            }
+          : {}),
+        worksFor: { "@id": ORGANIZATION_ID },
+      },
     })),
   };
 }

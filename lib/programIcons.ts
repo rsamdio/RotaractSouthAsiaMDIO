@@ -1,3 +1,4 @@
+import { createElement } from "react";
 import {
   HeartHandshake,
   Trophy,
@@ -38,4 +39,9 @@ const programIcons: Record<ProgramIconKey, LucideIcon> = {
 
 export function getProgramIcon(key: ProgramIconKey): LucideIcon {
   return programIcons[key] ?? HeartHandshake;
+}
+
+export function renderProgramIcon(key: ProgramIconKey, className?: string) {
+  const Icon = programIcons[key] ?? HeartHandshake;
+  return createElement(Icon, { className });
 }

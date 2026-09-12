@@ -3,11 +3,28 @@ import { SITE_URL } from "@/lib/seo";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      allow: "/",
-      disallow: ["/admin/", "/admin/dashboard"],
-    },
+    rules: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/admin/", "/admin/dashboard"],
+      },
+      {
+        userAgent: [
+          "GPTBot",
+          "ChatGPT-User",
+          "PerplexityBot",
+          "ClaudeBot",
+          "Claude-Web",
+          "Google-Extended",
+          "Applebot-Extended",
+          "cohere-ai",
+          "Diffbot",
+        ],
+        allow: "/",
+        disallow: ["/admin/", "/admin/dashboard"],
+      },
+    ],
     sitemap: `${SITE_URL}/sitemap.xml`,
   };
 }

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { ProgramInitiative, ProgramStatus } from "@/config/initiatives";
-import { getProgramIcon } from "@/lib/programIcons";
+import { renderProgramIcon } from "@/lib/programIcons";
 import { Reveal } from "@/components/Reveal";
 import { SectionNavLink } from "@/components/SectionNavLink";
 
@@ -27,7 +27,6 @@ function ProgramCard({
   program: ProgramInitiative;
   featured?: boolean;
 }) {
-  const Icon = getProgramIcon(program.icon);
   const targetHref = program.ctaUrl || `/initiatives/${program.slug}`;
   const isExternal = Boolean(program.ctaUrl && /^https?:\/\//i.test(program.ctaUrl));
 
@@ -60,7 +59,7 @@ function ProgramCard({
           className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white"
           style={{ backgroundColor: program.accent || "#D41B69" }}
         >
-          <Icon className="h-3 w-3" />
+          {renderProgramIcon(program.icon, "h-3 w-3")}
           {program.category}
         </span>
       </div>

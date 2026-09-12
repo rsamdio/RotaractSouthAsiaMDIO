@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import {
   CalendarDays,
   Clock,
-  ExternalLink,
   MapPin,
   ArrowLeft,
 } from "lucide-react";
@@ -30,6 +29,11 @@ import {
   webSiteNode,
 } from "@/lib/seo";
 import { Metadata } from "next";
+
+import {
+  EventDetailEyebrow,
+  EventDetailRegistrationCta,
+} from "@/components/EventDetailRegistrationCta";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -95,7 +99,7 @@ export default async function EventDetailPage({ params }: Props) {
       <Navbar />
       <main id="main-content">
         <PageHero
-          eyebrow={past ? "Past Event" : "Event"}
+          eyebrow={<EventDetailEyebrow event={event} initialPast={past} />}
           title={event.title}
           description={event.tagline}
           crumbs={[
@@ -177,35 +181,7 @@ export default async function EventDetailPage({ params }: Props) {
                 )}
               </dl>
 
-              {event.registrationUrl && !past && (
-                <a
-                  href={event.registrationUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#D41B69] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#9A0E4E]"
-                >
-                  {event.registrationLabel ?? "Register"}
-                  <ExternalLink className="h-4 w-4" />
-                </a>
-              )}
-
-              {event.registrationUrl && past && (
-                <a
-                  href={event.registrationUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-5 py-3 text-sm font-bold text-slate-700 transition hover:border-[#D41B69]/40 hover:text-[#D41B69]"
-                >
-                  Event site
-                  <ExternalLink className="h-4 w-4" />
-                </a>
-              )}
-
-              {!event.registrationUrl && !past && (
-                <p className="mt-7 text-sm leading-6 text-slate-500">
-                  Registration details will be announced by the Secretariat.
-                </p>
-              )}
+              <EventDetailRegistrationCta event={event} initialPast={past} />
             </aside>
           </div>
         </section>

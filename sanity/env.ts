@@ -15,10 +15,12 @@ export const writeToken =
   process.env.SANITY_API_WRITE_TOKEN || process.env.SANITY_API_TOKEN || "";
 
 /** Use static config seeds when Sanity is not configured (local / pre-project). */
-export function useFilesystemContent() {
+export function shouldUseFilesystemContent() {
   if (process.env.USE_FS_CONTENT === "1") return true;
   return !projectId;
 }
+
+export const useFilesystemContent = shouldUseFilesystemContent;
 
 export function assertSanityConfigured() {
   if (!projectId) {

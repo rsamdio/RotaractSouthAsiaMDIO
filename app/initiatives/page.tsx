@@ -5,9 +5,17 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { PillNav } from "@/components/PillNav";
 import { InitiativesExplorer } from "@/components/initiatives/InitiativesExplorer";
 import { ProgramsInitiatives } from "@/components/initiatives/ProgramsInitiatives";
+import { JsonLd } from "@/components/JsonLd";
 import { loadPrograms } from "@/sanity/lib/content";
 import type { Metadata } from "next";
-import { buildPageMetadata } from "@/lib/seo";
+import {
+  breadcrumbNode,
+  buildPageMetadata,
+  collectionPageNode,
+  graph,
+  organizationNode,
+  webSiteNode,
+} from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   title: 'Initiatives',
@@ -18,9 +26,28 @@ export const metadata: Metadata = buildPageMetadata({
 
 export default async function InitiativesPage() {
   const programs = await loadPrograms();
+  const programItems = programs.map((p) => ({
+    name: p.title,
+    path: `/initiatives/${p.slug}`,
+    description: p.summary,
+  }));
 
   return (
     <>
+      <JsonLd
+        data={graph(
+          organizationNode(),
+          webSiteNode(true),
+          breadcrumbNode([{ name: "Initiatives", path: "/initiatives" }]),
+          collectionPageNode({
+            name: "Programs & Campaigns",
+            description:
+              "Multidistrict programs and campaigns for Rotaract clubs across South Asia.",
+            path: "/initiatives",
+            items: programItems,
+          })
+        )}
+      />
       <Navbar />
       <PillNav
         items={[

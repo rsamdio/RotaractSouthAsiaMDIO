@@ -22,10 +22,16 @@ const kindLabel: Record<SiteEvent["kind"], string> = {
   session: "Session",
 };
 
-export function EventCard({ event }: { event: SiteEvent }) {
+export function EventCard({
+  event,
+  isPast,
+}: {
+  event: SiteEvent;
+  isPast?: boolean;
+}) {
   const { month, year, day } = eventMonthYear(event);
   const time = formatEventTime(event);
-  const past = isPastEvent(event);
+  const past = typeof isPast === "boolean" ? isPast : isPastEvent(event);
   const href = `/events/${event.slug}`;
   const dotColor = event.customAccent || (event.accent === "custom" ? "#D41B69" : undefined);
 

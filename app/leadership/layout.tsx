@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/config/site";
-import { buildPageMetadata } from "@/lib/seo";
+import { executiveBoard } from "@/config/leadership";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  breadcrumbNode,
+  buildPageMetadata,
+  graph,
+  itemListPersonNode,
+  organizationNode,
+  webSiteNode,
+} from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Leadership & DRRs",
@@ -9,5 +18,21 @@ export const metadata: Metadata = buildPageMetadata({
 });
 
 export default function LeadershipLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <JsonLd
+        data={graph(
+          organizationNode(),
+          webSiteNode(),
+          breadcrumbNode([{ name: "Leadership & DRRs", path: "/leadership" }]),
+          itemListPersonNode({
+            name: `Executive Board RY ${siteConfig.rotaryYear}`,
+            path: "/leadership",
+            members: executiveBoard,
+          })
+        )}
+      />
+      {children}
+    </>
+  );
 }

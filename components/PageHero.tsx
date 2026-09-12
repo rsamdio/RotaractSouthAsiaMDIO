@@ -6,7 +6,7 @@ import { Reveal } from "./Reveal";
 type Crumb = { label: string; href?: string };
 
 type Props = {
-  eyebrow: string;
+  eyebrow: ReactNode;
   title: string;
   description?: ReactNode;
   crumbs?: Crumb[];

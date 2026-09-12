@@ -7,7 +7,7 @@ import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { MarkdownContent } from "@/components/MarkdownContent";
 import { ShareBar } from "@/components/ShareBar";
-import { getProgramIcon } from "@/lib/programIcons";
+import { renderProgramIcon } from "@/lib/programIcons";
 import { loadProgram, loadPrograms } from "@/sanity/lib/content";
 import { JsonLd } from "@/components/JsonLd";
 import {
@@ -67,7 +67,6 @@ export default async function ProgramDetailPage({ params }: Props) {
   const program = await loadProgram(slug);
   if (!program) notFound();
 
-  const Icon = getProgramIcon(program.icon);
   const body = program.body || program.summary;
 
   return (
@@ -131,7 +130,7 @@ export default async function ProgramDetailPage({ params }: Props) {
                   className="flex h-11 w-11 items-center justify-center rounded-2xl text-white"
                   style={{ backgroundColor: program.accent }}
                 >
-                  <Icon className="h-5 w-5" />
+                  {renderProgramIcon(program.icon, "h-5 w-5")}
                 </span>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">

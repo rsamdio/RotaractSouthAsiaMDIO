@@ -20,6 +20,12 @@ export function LiveSitePreview({ tool, tall = false }: Props) {
   const [metrics, setMetrics] = useState<{ scale: number; height: number } | null>(
     null
   );
+  const [prevUrl, setPrevUrl] = useState(tool.previewUrl);
+  if (prevUrl !== tool.previewUrl) {
+    setPrevUrl(tool.previewUrl);
+    setLoaded(false);
+  }
+
   const previewBg = tool.previewBg ?? "#ffffff";
   const minH = tall
     ? "min-h-[380px] sm:min-h-[440px] lg:min-h-[520px]"
@@ -45,7 +51,6 @@ export function LiveSitePreview({ tool, tall = false }: Props) {
 
   useEffect(() => {
     if (!metrics) return;
-    setLoaded(false);
     const failsafe = window.setTimeout(() => setLoaded(true), 1800);
     return () => window.clearTimeout(failsafe);
   }, [tool.previewUrl, metrics]);
@@ -119,6 +124,7 @@ export function LiveSitePreview({ tool, tall = false }: Props) {
           ref={iframeRef}
           key={tool.previewUrl}
           src={tool.previewUrl}
+          loading="lazy"
           title={`${tool.title} live preview`}
           referrerPolicy="no-referrer-when-downgrade"
           className="absolute left-0 top-0 border-0"

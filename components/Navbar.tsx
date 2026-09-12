@@ -58,9 +58,11 @@ export function Navbar() {
   const pathname = usePathname();
 
   // Close the sheet on navigation.
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setMobileOpen(false);
-  }, [pathname]);
+  }
 
   // Lock page + Lenis scroll while the mobile menu is open so only the sheet scrolls.
   useEffect(() => {

@@ -7,6 +7,7 @@ import {
   useLayoutEffect,
   useRef,
   useState,
+  useSyncExternalStore,
 } from "react";
 import { createPortal } from "react-dom";
 import { Check, Link2, Send, Share2 } from "lucide-react";
@@ -20,6 +21,7 @@ type Props = {
   tag?: string;
 };
 
+const emptySubscribe = () => () => {};
 const VIEWPORT_PAD = 8;
 
 function XIcon({ className }: { className?: string }) {
@@ -56,34 +58,31 @@ const menuItemClass =
   "flex w-full items-center gap-3 px-3.5 py-2.5 text-left text-sm font-medium text-[#0B1426] transition hover:bg-[#FCE8F1]";
 
 export function ShareBar({ path, title, tag }: Props) {
-  const absoluteUrl = `${siteConfig.url}${path.startsWith("/") ? path : `/${path}`}`;
+  const fullUrl = `${siteConfig.url.replace(/\/$/, "")}${path}`;
+  const absoluteUrl = fullUrl.startsWith("http") ? fullUrl : `https://${fullUrl}`;
   const encodedUrl = encodeURIComponent(absoluteUrl);
   const encodedTitle = encodeURIComponent(title);
 
   const menuId = useId();
-  const rootRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const triggerBtnRef = useRef<HTMLButtonElement>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
 
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
   const [open, setOpen] = useState(false);
   const [canNativeShare, setCanNativeShare] = useState(false);
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (typeof navigator === "undefined" || typeof navigator.share !== "function") {
-      setCanNativeShare(false);
-      return;
-    }
-    const payload = { title, text: title, url: absoluteUrl };
-    try {
-      setCanNativeShare(!navigator.canShare || navigator.canShare(payload));
-    } catch {
-      setCanNativeShare(true);
+    if (typeof navigator !== "undefined" && typeof navigator.share === "function") {
+      const payload = { title, text: title, url: absoluteUrl };
+      try {
+        if (!navigator.canShare || navigator.canShare(payload)) {
+          queueMicrotask(() => setCanNativeShare(true));
+        }
+      } catch {
+        queueMicrotask(() => setCanNativeShare(true));
+      }
     }
   }, [absoluteUrl, title]);
 

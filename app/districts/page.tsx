@@ -3,8 +3,17 @@ import { PageHero } from "@/components/PageHero";
 import { Footer } from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { MemberDistrictDirectory } from "@/components/MemberDistrictDirectory";
+import { JsonLd } from "@/components/JsonLd";
+import { memberDistricts } from "@/config/memberDistricts";
 import type { Metadata } from "next";
-import { buildPageMetadata } from "@/lib/seo";
+import {
+  breadcrumbNode,
+  buildPageMetadata,
+  collectionPageNode,
+  graph,
+  organizationNode,
+  webSiteNode,
+} from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   title: 'Member Districts',
@@ -14,8 +23,28 @@ export const metadata: Metadata = buildPageMetadata({
 });
 
 export default function DistrictsPage() {
+  const districtItems = memberDistricts.map((d) => ({
+    name: `District ${d.number}`,
+    path: `/districts/${d.number}`,
+    description: `${d.countriesLabel} · ${d.clubs} clubs · ${d.members} members`,
+  }));
+
   return (
     <>
+      <JsonLd
+        data={graph(
+          organizationNode(),
+          webSiteNode(),
+          breadcrumbNode([{ name: "Member Districts", path: "/districts" }]),
+          collectionPageNode({
+            name: "Member Districts",
+            description:
+              "Browse Rotaract South Asia member nations and member districts: DRR details, clubs, members, coverage, and highlights.",
+            path: "/districts",
+            items: districtItems,
+          })
+        )}
+      />
       <Navbar />
       <main id="main-content">
         <PageHero

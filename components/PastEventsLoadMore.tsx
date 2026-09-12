@@ -26,7 +26,11 @@ export function PastEventsLoadMore({
     );
   }
 
-  const visible = events.slice(0, visibleCount);
+  const effectiveCount = Math.max(
+    visibleCount,
+    Math.min(pageSize, events.length)
+  );
+  const visible = events.slice(0, effectiveCount);
 
   return (
     <div>
@@ -37,11 +41,11 @@ export function PastEventsLoadMore({
       </div>
       {events.length > pageSize && (
         <LoadMoreButton
-          showing={visibleCount}
+          showing={Math.min(effectiveCount, events.length)}
           total={events.length}
           itemLabel="past events"
           onLoadMore={() =>
-            setVisibleCount((n) => Math.min(n + pageSize, events.length))
+            setVisibleCount((n) => Math.min(Math.max(n, effectiveCount) + pageSize, events.length))
           }
         />
       )}

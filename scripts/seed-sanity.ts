@@ -23,13 +23,19 @@ const client = createClient({
   useCdn: false,
 });
 
+type SeedDoc = {
+  _id: string;
+  _type: string;
+  [key: string]: unknown;
+};
+
 async function seed() {
   console.log(`Starting seed to Sanity (${projectId}/${dataset})...`);
 
   // 1. Seed Brand Colors
   console.log("\n--- Seeding Colors & Accents ---");
   const colorMap: Record<string, string> = {}; // hex -> docId
-  for (const [index, c] of standardColors.entries()) {
+  for (const c of standardColors) {
     const docId = `brandColor-${c.hex.replace("#", "").toLowerCase()}`;
     const doc = {
       _id: docId,
@@ -51,7 +57,7 @@ async function seed() {
     const colorHex = cat.color?.toLowerCase();
     const colorDocId = colorHex ? colorMap[colorHex] : undefined;
 
-    const doc: any = {
+    const doc: SeedDoc = {
       _id: docId,
       _type: "category",
       title: cat.title,
@@ -91,7 +97,7 @@ async function seed() {
     const colorHex = s.customColor?.toLowerCase();
     const colorDocId = colorHex ? colorMap[colorHex] : undefined;
 
-    const doc: any = {
+    const doc: SeedDoc = {
       _id: docId,
       _type: "story",
       title: s.title,
@@ -128,7 +134,7 @@ async function seed() {
     const colorHex = a.customColor?.toLowerCase();
     const colorDocId = colorHex ? colorMap[colorHex] : undefined;
 
-    const doc: any = {
+    const doc: SeedDoc = {
       _id: docId,
       _type: "announcement",
       title: a.title,
@@ -161,7 +167,7 @@ async function seed() {
   console.log("\n--- Seeding RSA Chronicles ---");
   for (const c of rsaChronicles) {
     const docId = `chronicle-${c.slug}`;
-    const doc: any = {
+    const doc: SeedDoc = {
       _id: docId,
       _type: "chronicleEdition",
       editionName: c.editionName,
@@ -182,7 +188,7 @@ async function seed() {
     const colorHex = p.accent?.toLowerCase();
     const colorDocId = colorHex ? colorMap[colorHex] : undefined;
 
-    const doc: any = {
+    const doc: SeedDoc = {
       _id: docId,
       _type: "programInitiative",
       title: p.title,
@@ -210,7 +216,7 @@ async function seed() {
   console.log("\n--- Seeding Events ---");
   for (const e of siteEvents) {
     const docId = `event-${e.slug}`;
-    const doc: any = {
+    const doc: SeedDoc = {
       _id: docId,
       _type: "event",
       title: e.title,
