@@ -15,13 +15,6 @@ const accentDot: Record<string, string> = {
   green: "bg-[#059669]",
 };
 
-const kindLabel: Record<SiteEvent["kind"], string> = {
-  signature: "Signature",
-  regional: "Regional",
-  training: "Training",
-  session: "Session",
-};
-
 export function EventCard({
   event,
   isPast,
@@ -74,7 +67,7 @@ export function EventCard({
             style={dotColor ? { backgroundColor: dotColor } : undefined}
           />
           <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-            {kindLabel[event.kind]}
+            {event.kind}
           </span>
         </div>
         <h3 className="text-sm font-bold leading-snug text-[#0B1426] transition group-hover:text-[#D41B69]">

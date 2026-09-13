@@ -336,19 +336,11 @@ export const event = defineType({
       description: "Recommended: 1200 × 675 px (16:9 landscape) or 1400 × 800 px. High-resolution JPG or WebP.",
     }),
     defineField({
-      name: "kind",
+      name: "kindRef",
       title: "Kind",
-      type: "string",
-      options: {
-        list: [
-          { title: "Signature", value: "signature" },
-          { title: "Regional", value: "regional" },
-          { title: "Training", value: "training" },
-          { title: "Session", value: "session" },
-        ],
-        layout: "radio",
-      },
-      initialValue: "session",
+      type: "reference",
+      to: [{ type: "eventKind" }],
+      description: "Select the kind from the managed list or click + to create a new one.",
       validation: (r) => r.required(),
     }),
     defineField({
@@ -386,13 +378,30 @@ export const event = defineType({
       name: "endTime",
       title: "End time",
       type: "string",
+      description:
+        'Optional. 24h local time in the timezone below, e.g. "17:00". Leave blank if no published end time.',
     }),
     defineField({
       name: "timezoneLabel",
       title: "Timezone label",
       type: "string",
+      options: {
+        list: [
+          { title: "IST - India / Sri Lanka (UTC+05:30)", value: "IST" },
+          { title: "PKT - Pakistan (UTC+05:00)", value: "PKT" },
+          { title: "MVT - Maldives (UTC+05:00)", value: "MVT" },
+          { title: "NPT - Nepal (UTC+05:45)", value: "NPT" },
+          { title: "BST - Bangladesh (UTC+06:00)", value: "BST" },
+          { title: "BTT - Bhutan (UTC+06:00)", value: "BTT" },
+          { title: "AFT - Afghanistan (UTC+04:30)", value: "AFT" },
+        ],
+        layout: "dropdown",
+      },
       initialValue: "IST",
+      description:
+        "Prefer IST for regional MDIO timings. Pick another zone only when the published local time is for that country.",
     }),
+
     defineField({
       name: "location",
       title: "Location",
@@ -429,7 +438,7 @@ export const event = defineType({
       title: "title",
       subtitle: "startDate",
       media: "image",
-      kind: "kind",
+      kind: "kindRef.title",
     },
     prepare: ({ title, subtitle, media, kind }) => ({
       title,

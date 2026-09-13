@@ -4,7 +4,8 @@
  */
 
 export type EventAccent = "pink" | "gold" | "blue" | "green" | "custom";
-export type EventKind = "signature" | "regional" | "training" | "session";
+/** Display label for event kind (from Sanity eventKind.title or FS seed). */
+export type EventKind = string;
 
 export type SiteEvent = {
   slug: string;
@@ -35,6 +36,25 @@ export type SiteEvent = {
   };
 };
 
+/** Managed Event Kind presets for Sanity Studio templates + seed. */
+export const standardEventKinds = [
+  { title: "Signature", slug: "signature" },
+  { title: "Regional", slug: "regional" },
+  { title: "Training", slug: "training" },
+  { title: "Session", slug: "session" },
+] as const;
+
+/** South Asia timezone label → UTC offset used for Past/Upcoming partitioning. */
+export const eventTimezoneOffsets: Record<string, string> = {
+  IST: "+05:30",
+  PKT: "+05:00",
+  MVT: "+05:00",
+  NPT: "+05:45",
+  BST: "+06:00",
+  BTT: "+06:00",
+  AFT: "+04:30",
+};
+
 export const siteEvents: SiteEvent[] = [
   {
     slug: "ananta-2026",
@@ -51,7 +71,7 @@ export const siteEvents: SiteEvent[] = [
     venue: "Ramada by Wyndham Yelahanka",
     image:
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1400&q=80",
-    kind: "signature",
+    kind: "Signature",
     accent: "gold",
     signature: true,
     registrationUrl: "https://ananta.rsamdio.org/",
@@ -72,7 +92,7 @@ export const siteEvents: SiteEvent[] = [
     venue: "To be announced",
     image:
       "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1400&q=80",
-    kind: "training",
+    kind: "Training",
     accent: "pink",
     signature: true,
     registrationUrl: "https://rsamdio.org/contact",
@@ -92,7 +112,7 @@ export const siteEvents: SiteEvent[] = [
     location: "Colombo, Sri Lanka",
     image:
       "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1400&q=80",
-    kind: "regional",
+    kind: "Regional",
     accent: "blue",
     signature: true,
   },
@@ -109,7 +129,7 @@ export const siteEvents: SiteEvent[] = [
     location: "South Asia (host city TBA)",
     image:
       "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1400&q=80",
-    kind: "signature",
+    kind: "Signature",
     accent: "gold",
     signature: true,
   },
@@ -125,7 +145,7 @@ export const siteEvents: SiteEvent[] = [
     timezoneLabel: "IST",
     location: "Online",
     venue: "Zoom",
-    kind: "session",
+    kind: "Session",
     accent: "pink",
     registrationUrl: "https://rsamdio.org/contact",
     registrationLabel: "Register via Secretariat",
@@ -141,7 +161,7 @@ export const siteEvents: SiteEvent[] = [
     endTime: "20:00",
     timezoneLabel: "IST",
     location: "Online",
-    kind: "session",
+    kind: "Session",
     accent: "blue",
     registrationUrl: "https://rsamdio.org/contact",
     registrationLabel: "Save your seat",
@@ -157,7 +177,7 @@ export const siteEvents: SiteEvent[] = [
     endTime: "18:00",
     timezoneLabel: "IST",
     location: "Online",
-    kind: "session",
+    kind: "Session",
     accent: "gold",
   },
   {
@@ -172,7 +192,7 @@ export const siteEvents: SiteEvent[] = [
     location: "South Asia",
     image:
       "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1400&q=80",
-    kind: "regional",
+    kind: "Regional",
     accent: "pink",
     signature: true,
   },
@@ -187,7 +207,7 @@ export const siteEvents: SiteEvent[] = [
     endTime: "17:30",
     timezoneLabel: "IST",
     location: "Online",
-    kind: "session",
+    kind: "Session",
     accent: "blue",
   },
 ];
@@ -285,12 +305,13 @@ export function getEventEndTimestamp(event: SiteEvent): number {
   }
 
   // RSAMDIO events default to IST (+05:30) if timezoneLabel is IST or unspecified
-  const tz = event.timezoneLabel === "IST" || !event.timezoneLabel ? "+05:30" : "";
+  const label = event.timezoneLabel || "IST";
+  const tz = eventTimezoneOffsets[label] ?? eventTimezoneOffsets.IST;
   const iso = `${dateStr}T${timeStr}${tz}`;
   const parsed = Date.parse(iso);
   if (!Number.isNaN(parsed)) return parsed;
 
-  const fallback = Date.parse(`${dateStr}T23:59:59+05:30`);
+  const fallback = Date.parse(`${dateStr}T23:59:59${eventTimezoneOffsets.IST}`);
   return Number.isNaN(fallback) ? 0 : fallback;
 }
 

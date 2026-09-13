@@ -1,5 +1,6 @@
 import { Template } from "sanity";
 import { standardColors, standardCategories, standardTags } from "@/config/news";
+import { standardEventKinds } from "@/config/events";
 
 export const initialValueTemplates: Template[] = [
   ...standardColors.map((c, i) => ({
@@ -28,6 +29,15 @@ export const initialValueTemplates: Template[] = [
     value: {
       title: t.title,
       slug: { _type: "slug", current: t.slug },
+    },
+  })),
+  ...standardEventKinds.map((k, i) => ({
+    id: `eventKind-preset-${i}`,
+    title: `Event Kind: ${k.title}`,
+    schemaType: "eventKind",
+    value: {
+      title: k.title,
+      slug: { _type: "slug", current: k.slug },
     },
   })),
 ];

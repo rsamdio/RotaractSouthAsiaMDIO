@@ -67,7 +67,7 @@ lib/                 Shared helpers (markdown, section scroll, news nav, etc.)
 
 Types in `sanity/schemaTypes/`: `story`, `announcement`, `chronicleEdition`, `event`, `programInitiative`.
 
-Studio Structure labels: Stories, Announcements, RSA Chronicles, Events, **Initiatives** (`programInitiative`).
+Studio Structure labels: Stories, Announcements, RSA Chronicles, Events, **Initiatives** (`programInitiative`). Taxonomy: Colors & Accents, Categories, Tags, **Event Kinds** (`eventKind`).
 
 Fetch via `sanity/lib/content.ts`:
 

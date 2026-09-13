@@ -1,6 +1,6 @@
 import { createClient } from "next-sanity";
 import { standardColors, standardCategories, standardTags, stories, announcements, rsaChronicles } from "../config/news";
-import { siteEvents } from "../config/events";
+import { siteEvents, standardEventKinds } from "../config/events";
 import { programInitiatives } from "../config/initiatives";
 import * as dotenv from "dotenv";
 
@@ -87,6 +87,28 @@ async function seed() {
     await client.createOrReplace(doc);
     tagMap[t.title] = docId;
     console.log(`✓ Tag: ${t.title} -> ${docId}`);
+  }
+
+  // 3b. Seed Event Kinds
+  console.log("\n--- Seeding Event Kinds ---");
+  const eventKindMap: Record<string, string> = {}; // slug or title (lower) -> docId
+  for (const k of standardEventKinds) {
+    const docId = `eventKind-${k.slug}`;
+    const doc = {
+      _id: docId,
+      _type: "eventKind",
+      title: k.title,
+      slug: { _type: "slug", current: k.slug },
+    };
+    await client.createOrReplace(doc);
+    eventKindMap[k.slug] = docId;
+    eventKindMap[k.title.toLowerCase()] = docId;
+    console.log(`✓ Event Kind: ${k.title} -> ${docId}`);
+  }
+
+  function resolveEventKindId(kind: string): string {
+    const key = kind.trim().toLowerCase();
+    return eventKindMap[key] || eventKindMap.session;
   }
 
   // 4. Seed Stories (if not already seeded)
@@ -216,6 +238,7 @@ async function seed() {
   console.log("\n--- Seeding Events ---");
   for (const e of siteEvents) {
     const docId = `event-${e.slug}`;
+    const kindDocId = resolveEventKindId(e.kind);
     const doc: SeedDoc = {
       _id: docId,
       _type: "event",
@@ -231,7 +254,7 @@ async function seed() {
       timezoneLabel: e.timezoneLabel || "IST",
       location: e.location,
       venue: e.venue,
-      kind: e.kind,
+      kindRef: { _type: "reference", _ref: kindDocId },
       signature: e.signature ?? false,
       registrationUrl: e.registrationUrl,
       registrationLabel: e.registrationLabel,
@@ -244,7 +267,27 @@ async function seed() {
     }
 
     await client.createOrReplace(doc);
+    // Drop legacy string kind if present from earlier schema
+    await client.patch(docId).unset(["kind"]).commit().catch(() => undefined);
     console.log(`✓ Event: ${e.title}`);
+  }
+
+  // 8b. Migrate any remaining events that still have string kind and no kindRef
+  console.log("\n--- Migrating legacy event kinds ---");
+  const legacyEvents = await client.fetch<
+    { _id: string; kind?: string }[]
+  >(`*[_type == "event" && defined(kind) && !defined(kindRef)]{ _id, kind }`);
+  for (const ev of legacyEvents) {
+    const kindDocId = resolveEventKindId(ev.kind || "session");
+    await client
+      .patch(ev._id)
+      .set({ kindRef: { _type: "reference", _ref: kindDocId } })
+      .unset(["kind"])
+      .commit();
+    console.log(`✓ Migrated kind on ${ev._id} (${ev.kind} -> ${kindDocId})`);
+  }
+  if (legacyEvents.length === 0) {
+    console.log("✓ No legacy event kinds to migrate");
   }
 
   console.log("\n✅ All Sanity data seeded successfully!");

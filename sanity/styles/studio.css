@@ -49,3 +49,14 @@
 .editor-preview-side {
   background: #fff !important;
 }
+
+/* Fallback list contrast (primary fix is theme + StudioListContrast inject) */
+.admin-studio [data-ui="PreviewCard"][data-selected],
+.admin-studio [data-ui="PreviewCard"][data-pressed] {
+  --card-muted-fg-color: #ffffff !important;
+}
+
+.admin-studio [data-ui="PreviewCard"][data-selected] [data-ui="Text"],
+.admin-studio [data-ui="PreviewCard"][data-pressed] [data-ui="Text"] {
+  color: #ffffff !important;
+}

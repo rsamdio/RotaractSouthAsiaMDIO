@@ -28,7 +28,16 @@ export const structure: StructureResolver = (S) =>
             .title("Tags")
             .defaultOrdering([{ field: "title", direction: "asc" }])
         ),
+      S.listItem()
+        .title("Event Kinds")
+        .schemaType("eventKind")
+        .child(
+          S.documentTypeList("eventKind")
+            .title("Event Kinds")
+            .defaultOrdering([{ field: "title", direction: "asc" }])
+        ),
       S.divider(),
+
       S.listItem()
         .title("Stories")
         .schemaType("story")
