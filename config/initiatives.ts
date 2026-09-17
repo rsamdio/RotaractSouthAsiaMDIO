@@ -1,7 +1,7 @@
 // Program & campaign initiatives (filesystem seed when Sanity is unset).
 // Digital tools live in config/platformTools.ts (not CMS).
 
-export type ProgramStatus = "active" | "upcoming" | "seasonal" | "completed";
+export type ProgramStatus = "ongoing" | "upcoming" | "seasonal" | "completed" | "active";
 
 export type ProgramIconKey =
   | "service"
@@ -51,7 +51,7 @@ export const programInitiatives: ProgramInitiative[] = [
     slug: "south-asia-service-week",
     title: "South Asia Service Week",
     category: "Service",
-    status: "active",
+    status: "ongoing",
     summary:
       "A region-wide week of coordinated club and district service: health camps, literacy drives, and community clean-ups under one shared banner.",
     livingNote: "RY 2026–27 window · Clubs report projects through their DRR",
@@ -99,7 +99,7 @@ Districts may submit hosting bids to the Secretariat. Dates for the next meet wi
     slug: "leaders-series",
     title: "Leaders Series",
     category: "Leadership",
-    status: "active",
+    status: "ongoing",
     summary:
       "A continuing conversation series with Rotary leaders, alumni, and changemakers. Hybrid sessions designed for club and district boards.",
     livingNote: "Monthly sessions · Next guest announced via News",
@@ -142,7 +142,7 @@ Club presidents, district officers, and Rotaractors preparing for leadership rol
     slug: "green-south-asia",
     title: "Green South Asia",
     category: "Environment",
-    status: "active",
+    status: "ongoing",
     summary:
       "A shared environmental campaign: tree planting, climate literacy, and local conservation projects with a common regional impact story.",
     livingNote: "Year-round · District green champions coordinate locally",

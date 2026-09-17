@@ -26,8 +26,9 @@ type Props = {
 
 function statusLabel(status: string) {
   switch (status) {
+    case "ongoing":
     case "active":
-      return "Active";
+      return "Ongoing";
     case "upcoming":
       return "Upcoming";
     case "seasonal":
@@ -94,7 +95,12 @@ export default async function ProgramDetailPage({ params }: Props) {
       <Navbar />
       <main id="main-content">
         <PageHero
-          eyebrow={program.category}
+          eyebrow={
+            <span className="inline-flex items-center gap-1.5">
+              {renderProgramIcon(program.icon, "h-3.5 w-3.5")}
+              {program.category}
+            </span>
+          }
           title={program.title}
           description={program.summary}
           crumbs={[
@@ -103,127 +109,128 @@ export default async function ProgramDetailPage({ params }: Props) {
           ]}
         />
 
-        <section className="bg-white px-5 py-24 sm:px-6 lg:px-8">
-          <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-            <div>
-              {program.image ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={program.image}
-                  alt={program.title}
-                  className="mb-8 aspect-video w-full rounded-[2rem] object-cover shadow-lg"
-                />
-              ) : null}
-              <MarkdownContent source={body} className="text-lg" />
-              <ShareBar
-                path={`/initiatives/${program.slug}`}
-                title={program.title}
-                tag={program.category}
+        <section className="bg-white px-5 py-20 sm:px-6 sm:py-24 lg:px-8">
+          <div className="mx-auto max-w-3xl">
+            {program.image ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={program.image}
+                alt={program.title}
+                className="mb-8 aspect-video w-full rounded-[2rem] object-cover shadow-xl"
               />
+            ) : null}
 
-              <nav aria-label="Initiatives navigation" className="mt-14 border-t border-slate-200 pt-10">
-                <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
-                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">
-                    Initiatives
-                  </p>
-                  <Link
-                    href="/initiatives"
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-500 transition hover:text-[#D41B69]"
-                  >
-                    <ArrowLeft className="h-4 w-4" />
-                    All programs & campaigns
-                  </Link>
-                </div>
-
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {prevProgram ? (
-                    <Link
-                      href={`/initiatives/${prevProgram.slug}`}
-                      className="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-[#D41B69]/30 hover:bg-[#FCE8F1]/40"
-                    >
-                      <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-400 group-hover:text-[#D41B69]">
-                        <ArrowLeft className="h-3.5 w-3.5" />
-                        Previous initiative
-                      </span>
-                      <p className="mt-2 text-base font-bold leading-snug text-[#0B1426] group-hover:text-[#D41B69]">
-                        {prevProgram.title}
-                      </p>
-                    </Link>
-                  ) : (
-                    <div className="hidden sm:block" aria-hidden />
-                  )}
-
-                  {nextProgram ? (
-                    <Link
-                      href={`/initiatives/${nextProgram.slug}`}
-                      className="group rounded-2xl border border-slate-200 bg-slate-50 p-5 text-right transition hover:border-[#D41B69]/30 hover:bg-[#FCE8F1]/40 sm:justify-self-stretch"
-                    >
-                      <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-400 group-hover:text-[#D41B69]">
-                        Next initiative
-                        <ArrowRight className="h-3.5 w-3.5" />
-                      </span>
-                      <p className="mt-2 text-base font-bold leading-snug text-[#0B1426] group-hover:text-[#D41B69]">
-                        {nextProgram.title}
-                      </p>
-                    </Link>
-                  ) : null}
-                </div>
-              </nav>
-            </div>
-
-            <aside className="h-fit rounded-[2rem] border border-slate-200 bg-slate-50 p-6 sm:p-7 lg:sticky lg:top-28">
-              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#D41B69]">
-                Program details
-              </p>
-
-              <div className="mt-5 flex items-center gap-3">
+            {/* Editorial line setup for status, living note, and optional link */}
+            <div className="mb-10 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-200/80 bg-slate-50/90 px-4 py-3 sm:px-5 sm:py-3.5">
+              <div className="flex flex-wrap items-center gap-2 text-xs">
                 <span
-                  className="flex h-11 w-11 items-center justify-center rounded-2xl text-white shadow-sm"
+                  className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 font-bold uppercase tracking-wider text-white shadow-xs"
                   style={{ backgroundColor: program.accent || "#D41B69" }}
                 >
-                  {renderProgramIcon(program.icon, "h-5 w-5")}
+                  {renderProgramIcon(program.icon, "h-3 w-3")}
+                  {program.category}
                 </span>
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                    Category
-                  </p>
-                  <p className="font-semibold text-[#0B1426]">{program.category}</p>
-                </div>
+                <span className="rounded-full border border-slate-200 bg-white px-2.5 py-1 font-bold uppercase tracking-wider text-slate-700 shadow-xs">
+                  {statusLabel(program.status)}
+                </span>
+                {program.livingNote ? (
+                  <span className="font-semibold text-slate-500">
+                    · {program.livingNote}
+                  </span>
+                ) : null}
               </div>
 
-              <dl className="mt-6 space-y-4 text-sm">
-                <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                    Status
-                  </dt>
-                  <dd className="mt-1 font-semibold text-[#0B1426]">
-                    {statusLabel(program.status)}
-                  </dd>
-                </div>
-                {program.livingNote ? (
-                  <div>
-                    <dt className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                      At a glance
-                    </dt>
-                    <dd className="mt-1 leading-relaxed text-slate-600">{program.livingNote}</dd>
-                  </div>
-                ) : null}
-              </dl>
-
               {program.ctaUrl ? (
-                <div className="mt-6 border-t border-slate-200 pt-5">
-                  <a
-                    href={program.ctaUrl}
-                    target={/^https?:\/\//i.test(program.ctaUrl) ? "_blank" : undefined}
-                    rel={/^https?:\/\//i.test(program.ctaUrl) ? "noopener noreferrer" : undefined}
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#D41B69] px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#9A0E4E]"
-                  >
-                    {program.ctaLabel || "Visit program link"}
-                    <ArrowRight className="h-4 w-4" />
-                  </a>
-                </div>
+                <a
+                  href={program.ctaUrl}
+                  target={/^https?:\/\//i.test(program.ctaUrl) ? "_blank" : undefined}
+                  rel={/^https?:\/\//i.test(program.ctaUrl) ? "noopener noreferrer" : undefined}
+                  className="inline-flex items-center gap-1.5 rounded-full bg-[#D41B69] px-4 py-1.5 text-xs font-bold text-white shadow-xs transition hover:bg-[#9A0E4E]"
+                >
+                  {program.ctaLabel || "Learn more"}
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </a>
               ) : null}
-            </aside>
+            </div>
+
+            <MarkdownContent source={body} className="text-lg" />
+
+            {program.ctaUrl ? (
+              <div className="mt-10 rounded-2xl border border-[#D41B69]/20 bg-[#FCE8F1]/40 p-6 text-center sm:flex sm:items-center sm:justify-between sm:text-left">
+                <div>
+                  <p className="text-base font-bold text-[#0B1426]">
+                    Interested in this initiative?
+                  </p>
+                  <p className="mt-1 text-xs text-slate-500">
+                    Explore the program portal, registration, or relevant guidelines.
+                  </p>
+                </div>
+                <a
+                  href={program.ctaUrl}
+                  target={/^https?:\/\//i.test(program.ctaUrl) ? "_blank" : undefined}
+                  rel={/^https?:\/\//i.test(program.ctaUrl) ? "noopener noreferrer" : undefined}
+                  className="mt-4 inline-flex items-center justify-center gap-2 rounded-full bg-[#D41B69] px-6 py-3 text-sm font-bold text-white shadow-sm transition hover:bg-[#9A0E4E] sm:mt-0"
+                >
+                  {program.ctaLabel || "Learn more"}
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+            ) : null}
+
+            <ShareBar
+              path={`/initiatives/${program.slug}`}
+              title={program.title}
+              tag={program.category}
+            />
+
+            <nav aria-label="Initiatives navigation" className="mt-14 border-t border-slate-200 pt-10">
+              <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">
+                  Initiatives
+                </p>
+                <Link
+                  href="/initiatives"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-500 transition hover:text-[#D41B69]"
+                >
+                  <ArrowLeft className="h-4 w-4" />
+                  All programs & campaigns
+                </Link>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                {prevProgram ? (
+                  <Link
+                    href={`/initiatives/${prevProgram.slug}`}
+                    className="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-[#D41B69]/30 hover:bg-[#FCE8F1]/40"
+                  >
+                    <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-400 group-hover:text-[#D41B69]">
+                      <ArrowLeft className="h-3.5 w-3.5" />
+                      Previous initiative
+                    </span>
+                    <p className="mt-2 text-base font-bold leading-snug text-[#0B1426] group-hover:text-[#D41B69]">
+                      {prevProgram.title}
+                    </p>
+                  </Link>
+                ) : (
+                  <div className="hidden sm:block" aria-hidden />
+                )}
+
+                {nextProgram ? (
+                  <Link
+                    href={`/initiatives/${nextProgram.slug}`}
+                    className="group rounded-2xl border border-slate-200 bg-slate-50 p-5 text-right transition hover:border-[#D41B69]/30 hover:bg-[#FCE8F1]/40 sm:justify-self-stretch"
+                  >
+                    <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-400 group-hover:text-[#D41B69]">
+                      Next initiative
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </span>
+                    <p className="mt-2 text-base font-bold leading-snug text-[#0B1426] group-hover:text-[#D41B69]">
+                      {nextProgram.title}
+                    </p>
+                  </Link>
+                ) : null}
+              </div>
+            </nav>
           </div>
         </section>
       </main>

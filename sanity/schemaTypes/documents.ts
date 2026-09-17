@@ -489,14 +489,14 @@ export const programInitiative = defineType({
       type: "string",
       options: {
         list: [
-          { title: "Active", value: "active" },
+          { title: "Ongoing", value: "ongoing" },
           { title: "Upcoming", value: "upcoming" },
           { title: "Seasonal", value: "seasonal" },
           { title: "Completed", value: "completed" },
         ],
         layout: "radio",
       },
-      initialValue: "active",
+      initialValue: "ongoing",
       validation: (r) => r.required(),
     }),
     defineField({

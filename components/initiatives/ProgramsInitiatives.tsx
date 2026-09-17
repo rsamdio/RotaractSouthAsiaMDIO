@@ -7,8 +7,9 @@ import { SectionNavLink } from "@/components/SectionNavLink";
 
 function statusLabel(status: ProgramStatus) {
   switch (status) {
+    case "ongoing":
     case "active":
-      return "Active";
+      return "Ongoing";
     case "upcoming":
       return "Upcoming";
     case "seasonal":
