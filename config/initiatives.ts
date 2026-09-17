@@ -1,7 +1,7 @@
 // Program & campaign initiatives (filesystem seed when Sanity is unset).
 // Digital tools live in config/platformTools.ts (not CMS).
 
-export type ProgramStatus = "active" | "upcoming" | "seasonal";
+export type ProgramStatus = "active" | "upcoming" | "seasonal" | "completed";
 
 export type ProgramIconKey =
   | "service"

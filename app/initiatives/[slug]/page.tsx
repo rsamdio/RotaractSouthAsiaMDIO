@@ -32,6 +32,8 @@ function statusLabel(status: string) {
       return "Upcoming";
     case "seasonal":
       return "Seasonal";
+    case "completed":
+      return "Completed";
     default:
       return status;
   }
@@ -66,6 +68,14 @@ export default async function ProgramDetailPage({ params }: Props) {
   const { slug } = await params;
   const program = await loadProgram(slug);
   if (!program) notFound();
+
+  const allPrograms = await loadPrograms();
+  const currentIndex = allPrograms.findIndex((p) => p.slug === slug);
+  const prevProgram = currentIndex > 0 ? allPrograms[currentIndex - 1] : null;
+  const nextProgram =
+    currentIndex >= 0 && currentIndex < allPrograms.length - 1
+      ? allPrograms[currentIndex + 1]
+      : null;
 
   const body = program.body || program.summary;
 
@@ -111,13 +121,54 @@ export default async function ProgramDetailPage({ params }: Props) {
                 tag={program.category}
               />
 
-              <Link
-                href="/initiatives"
-                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-slate-500 transition hover:text-[#D41B69]"
-              >
-                <ArrowLeft className="h-4 w-4" />
-                All programs & campaigns
-              </Link>
+              <nav aria-label="Initiatives navigation" className="mt-14 border-t border-slate-200 pt-10">
+                <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
+                  <p className="text-xs font-bold uppercase tracking-[0.18em] text-slate-400">
+                    Initiatives
+                  </p>
+                  <Link
+                    href="/initiatives"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-500 transition hover:text-[#D41B69]"
+                  >
+                    <ArrowLeft className="h-4 w-4" />
+                    All programs & campaigns
+                  </Link>
+                </div>
+
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {prevProgram ? (
+                    <Link
+                      href={`/initiatives/${prevProgram.slug}`}
+                      className="group rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-[#D41B69]/30 hover:bg-[#FCE8F1]/40"
+                    >
+                      <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-400 group-hover:text-[#D41B69]">
+                        <ArrowLeft className="h-3.5 w-3.5" />
+                        Previous initiative
+                      </span>
+                      <p className="mt-2 text-base font-bold leading-snug text-[#0B1426] group-hover:text-[#D41B69]">
+                        {prevProgram.title}
+                      </p>
+                    </Link>
+                  ) : (
+                    <div className="hidden sm:block" aria-hidden />
+                  )}
+
+                  {nextProgram ? (
+                    <Link
+                      href={`/initiatives/${nextProgram.slug}`}
+                      className="group rounded-2xl border border-slate-200 bg-slate-50 p-5 text-right transition hover:border-[#D41B69]/30 hover:bg-[#FCE8F1]/40 sm:justify-self-stretch"
+                    >
+                      <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-400 group-hover:text-[#D41B69]">
+                        Next initiative
+                        <ArrowRight className="h-3.5 w-3.5" />
+                      </span>
+                      <p className="mt-2 text-base font-bold leading-snug text-[#0B1426] group-hover:text-[#D41B69]">
+                        {nextProgram.title}
+                      </p>
+                    </Link>
+                  ) : null}
+                </div>
+              </nav>
             </div>
 
             <aside className="h-fit rounded-[2rem] border border-slate-200 bg-slate-50 p-6 sm:p-7 lg:sticky lg:top-28">
@@ -127,8 +178,8 @@ export default async function ProgramDetailPage({ params }: Props) {
 
               <div className="mt-5 flex items-center gap-3">
                 <span
-                  className="flex h-11 w-11 items-center justify-center rounded-2xl text-white"
-                  style={{ backgroundColor: program.accent }}
+                  className="flex h-11 w-11 items-center justify-center rounded-2xl text-white shadow-sm"
+                  style={{ backgroundColor: program.accent || "#D41B69" }}
                 >
                   {renderProgramIcon(program.icon, "h-5 w-5")}
                 </span>
@@ -149,12 +200,14 @@ export default async function ProgramDetailPage({ params }: Props) {
                     {statusLabel(program.status)}
                   </dd>
                 </div>
-                <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                    At a glance
-                  </dt>
-                  <dd className="mt-1 leading-relaxed text-slate-600">{program.livingNote}</dd>
-                </div>
+                {program.livingNote ? (
+                  <div>
+                    <dt className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                      At a glance
+                    </dt>
+                    <dd className="mt-1 leading-relaxed text-slate-600">{program.livingNote}</dd>
+                  </div>
+                ) : null}
               </dl>
 
               {program.ctaUrl ? (

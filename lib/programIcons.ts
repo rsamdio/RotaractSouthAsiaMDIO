@@ -41,7 +41,16 @@ export function getProgramIcon(key: ProgramIconKey): LucideIcon {
   return programIcons[key] ?? HeartHandshake;
 }
 
-export function renderProgramIcon(key: ProgramIconKey, className?: string) {
+export function renderProgramIcon(
+  key: ProgramIconKey,
+  className?: string,
+  options?: { size?: number; strokeWidth?: number; style?: React.CSSProperties }
+) {
   const Icon = programIcons[key] ?? HeartHandshake;
-  return createElement(Icon, { className });
+  return createElement(Icon, {
+    className,
+    size: options?.size,
+    strokeWidth: options?.strokeWidth,
+    style: options?.style,
+  });
 }

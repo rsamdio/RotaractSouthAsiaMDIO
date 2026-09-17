@@ -13,6 +13,8 @@ function statusLabel(status: ProgramStatus) {
       return "Upcoming";
     case "seasonal":
       return "Seasonal";
+    case "completed":
+      return "Completed";
     default: {
       const _exhaustive: never = status;
       return _exhaustive;
@@ -27,16 +29,11 @@ function ProgramCard({
   program: ProgramInitiative;
   featured?: boolean;
 }) {
-  const targetHref = program.ctaUrl || `/initiatives/${program.slug}`;
-  const isExternal = Boolean(program.ctaUrl && /^https?:\/\//i.test(program.ctaUrl));
-
-  const linkProps = isExternal
-    ? { href: targetHref, target: "_blank", rel: "noopener noreferrer" }
-    : { href: targetHref };
+  const href = `/initiatives/${program.slug}`;
 
   return (
     <Link
-      {...linkProps}
+      href={href}
       className={`group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white transition hover:border-[#D41B69]/25 hover:shadow-lg sm:rounded-[2rem] ${
         featured ? "sm:flex-row" : ""
       }`}
@@ -48,12 +45,21 @@ function ProgramCard({
             : "aspect-[16/10]"
         }`}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={program.image}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-        />
+        {program.image ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={program.image}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-slate-100 via-[#FCE8F1]/40 to-slate-200">
+            {renderProgramIcon(
+              program.icon,
+              "h-14 w-14 text-slate-300 transition duration-500 group-hover:scale-110 group-hover:text-crimson/50"
+            )}
+          </div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0B1426]/50 to-transparent" />
         <span
           className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-white"
@@ -80,9 +86,11 @@ function ProgramCard({
         <p className="mt-2 text-sm leading-relaxed text-slate-600 line-clamp-3">
           {program.summary}
         </p>
-        <p className="mt-3 text-xs font-semibold text-slate-400">{program.livingNote}</p>
+        {program.livingNote ? (
+          <p className="mt-3 text-xs font-semibold text-slate-400">{program.livingNote}</p>
+        ) : null}
         <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-[#D41B69]">
-          {program.ctaLabel ?? "Learn more"}
+          Learn more
           <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
         </span>
       </div>

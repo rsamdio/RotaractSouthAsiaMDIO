@@ -36,6 +36,14 @@ export const structure: StructureResolver = (S) =>
             .title("Event Kinds")
             .defaultOrdering([{ field: "title", direction: "asc" }])
         ),
+      S.listItem()
+        .title("Initiative Icons")
+        .schemaType("initiativeIcon")
+        .child(
+          S.documentTypeList("initiativeIcon")
+            .title("Initiative Icons")
+            .defaultOrdering([{ field: "title", direction: "asc" }])
+        ),
       S.divider(),
 
       S.listItem()

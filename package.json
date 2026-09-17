@@ -13,7 +13,8 @@
     "start": "next start",
     "lint": "eslint",
     "sanity": "sanity dev --port 3333",
-    "sanity:deploy": "sanity deploy"
+    "sanity:deploy": "sanity deploy",
+    "seed:icons": "node scripts/seed-initiative-icons.mjs"
   },
   "dependencies": {
     "@next/third-parties": "^16.2.6",

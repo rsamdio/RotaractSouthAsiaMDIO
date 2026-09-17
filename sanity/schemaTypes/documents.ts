@@ -1,5 +1,7 @@
 import React from "react";
 import { defineField, defineType } from "sanity";
+import { renderProgramIcon } from "@/lib/programIcons";
+import type { ProgramIconKey } from "@/config/initiatives";
 import { seoField } from "./seo";
 
 /** Shared markdown body, full EasyMDE toolbar via MarkdownBodyInput. */
@@ -490,6 +492,7 @@ export const programInitiative = defineType({
           { title: "Active", value: "active" },
           { title: "Upcoming", value: "upcoming" },
           { title: "Seasonal", value: "seasonal" },
+          { title: "Completed", value: "completed" },
         ],
         layout: "radio",
       },
@@ -512,31 +515,17 @@ export const programInitiative = defineType({
       validation: (r) => r.required().max(160),
     }),
     defineField({
-      name: "icon",
+      name: "iconRef",
       title: "Icon",
+      type: "reference",
+      to: [{ type: "initiativeIcon" }],
+      description: "Select an icon from the managed list or click + to create a new one.",
+    }),
+    defineField({
+      name: "icon",
+      title: "Legacy Icon Key (Fallback)",
       type: "string",
-      options: {
-        list: [
-          { title: "Service (Handshake / Heart)", value: "service" },
-          { title: "Sports & Athletics (Trophy)", value: "sports" },
-          { title: "Leadership & Speaking (Mic)", value: "leadership" },
-          { title: "Fellowship & Community (Users)", value: "fellowship" },
-          { title: "Environment & Green (Leaf)", value: "environment" },
-          { title: "Education & Literacy (Book / Graduation)", value: "education" },
-          { title: "Health & Wellness (Activity / Stethoscope)", value: "health" },
-          { title: "Peace & Conflict Resolution (Dove / Shield)", value: "peace" },
-          { title: "Global & Cross-Border (Globe)", value: "globe" },
-          { title: "Recognition & Awards (Award)", value: "award" },
-          { title: "Innovation & Ideas (Lightbulb)", value: "lightbulb" },
-          { title: "Campaigns & Special Projects (Sparkles)", value: "sparkles" },
-          { title: "Calendar & Milestones (Calendar)", value: "calendar" },
-          { title: "Compass / Direction (Compass)", value: "compass" },
-          { title: "Target & Goals (Target)", value: "target" },
-        ],
-        layout: "dropdown",
-      },
-      initialValue: "service",
-      validation: (r) => r.required(),
+      hidden: true,
     }),
     defineField({
       name: "image",
@@ -554,16 +543,16 @@ export const programInitiative = defineType({
     }),
     defineField({
       name: "ctaLabel",
-      title: "Card CTA button label",
+      title: "Detail page action button label",
       type: "string",
-      description: 'Text on the card action button, e.g. "Learn more", "Explore program", "Register now".',
+      description: 'Button text for the primary action button on the initiative detail page, e.g. "Register now", "Join cohort", "Visit website".',
       initialValue: "Learn more",
     }),
     defineField({
       name: "ctaUrl",
-      title: "Card CTA redirect link (optional)",
+      title: "Detail page action link / Registration URL (optional)",
       type: "url",
-      description: "Optional external or custom redirect link. If left blank, clicking goes to this initiative's detail page.",
+      description: "Optional external or custom link (e.g. registration form, event portal, external website). Displayed as the primary action button on the initiative's detail page.",
       validation: (r) => r.uri({ scheme: ["http", "https"], allowRelative: true }),
     }),
     markdownBody,
@@ -581,25 +570,38 @@ export const programInitiative = defineType({
       title: "title",
       categoryName: "categoryRef.title",
       colorHex: "colorRef.hex",
+      catColorHex: "categoryRef.colorRef.hex",
       media: "image",
       status: "status",
+      iconKey: "iconRef.key",
+      legacyIcon: "icon",
     },
-    prepare({ title, categoryName, colorHex, media, status }) {
+    prepare({ title, categoryName, colorHex, catColorHex, media, status, iconKey, legacyIcon }) {
       const cat = categoryName || "Program";
+      const icon = (iconKey || legacyIcon) as ProgramIconKey | undefined;
+      const bg = colorHex || catColorHex || "#D41B69";
       return {
         title,
         subtitle: `${cat} · ${status ?? ""}`,
         media:
           media ||
           (() =>
-            React.createElement("div", {
-              style: {
-                backgroundColor: colorHex || "#D41B69",
-                width: "100%",
-                height: "100%",
-                borderRadius: "4px",
+            React.createElement(
+              "div",
+              {
+                style: {
+                  backgroundColor: bg,
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: "4px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "#ffffff",
+                },
               },
-            })),
+              icon ? renderProgramIcon(icon, undefined, { size: 18, strokeWidth: 2 }) : null
+            )),
       };
     },
   },
