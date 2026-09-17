@@ -7,13 +7,18 @@ import {
   writeToken,
 } from "../env";
 
-/** Public published reads (CDN). Safe in browser when project id is public. */
+/**
+ * Published content client.
+ * In Next.js App Router with on-demand ISR, server components fetch directly
+ * from Sanity (`useCdn: false`) so updates are immediate without Fastly CDN TTL lag.
+ * Netlify Edge Cache already caches the generated HTML output globally for visitors.
+ */
 export const sanityClient = projectId
   ? createClient({
       projectId,
       dataset,
       apiVersion,
-      useCdn: true,
+      useCdn: false,
       perspective: "published",
     })
   : null;

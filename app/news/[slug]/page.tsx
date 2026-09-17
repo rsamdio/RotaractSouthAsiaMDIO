@@ -50,6 +50,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   const [stories, announcements] = await Promise.all([
     loadStories(),

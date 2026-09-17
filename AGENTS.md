@@ -74,7 +74,7 @@ Fetch via `sanity/lib/content.ts`:
 - If `NEXT_PUBLIC_SANITY_PROJECT_ID` is set → Sanity
 - Else (or `USE_FS_CONTENT=1`) → filesystem seeds in `config/news.ts`, `config/events.ts`, and `config/initiatives.ts`
 
-Site pages are largely **static**. Publish live by wiring Sanity webhooks → Netlify build hook (see `docs/CMS.md`). Never put `SANITY_API_WRITE_TOKEN` on Netlify.
+Site pages are largely **static** with **On-Demand ISR**. Publish live via Sanity webhook → `/api/revalidate` route handler (see `docs/CMS.md`). Never put `SANITY_API_WRITE_TOKEN` on Netlify. Keep `SANITY_REVALIDATE_SECRET` configured in Netlify env.
 
 Markdown bodies share one renderer (`lib/markdown.ts`) and one preview stylesheet (`styles/markdown-preview.css`) between public pages (`MarkdownContent`) and Studio EasyMDE (`MarkdownBodyInput`).
 

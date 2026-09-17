@@ -50,14 +50,33 @@ Leave blank to use title + excerpt/tagline/summary. Do **not** claim RSAMDIO gov
 
 Canonical meta and JSON-LD live in `lib/seo.ts`. Definitional copy for Organization schema comes from `siteConfig.description`.
 
-## Publish → live site
+## Publish → live site (On-Demand ISR Webhook)
 
-Pages are static. Wire:
+Publishing uses **On-Demand Incremental Static Regeneration (ISR)** via Next.js App Router (`/api/revalidate`), eliminating full CI/CD builds for editorial updates while updating live pages in under 1 second.
 
-1. Netlify **Build hook**
-2. Sanity webhook on create/update/delete for `story`, `announcement`, `chronicleEdition`, `event`, `programInitiative` → that hook
+### Setup in Sanity Manage (`sanity.io/manage` → Project `gsebaki2` → API → Webhooks):
 
-Optional: daily scheduled rebuild so upcoming/past event buckets stay accurate.
+1. **Name:** `RSAMDIO Live Revalidate`
+2. **URL:** `https://rsamdio.org/api/revalidate`
+3. **Dataset:** `production`
+4. **Trigger on:** Create, Update, Delete
+5. **Filter:**
+   ```groq
+   !(_id in path("drafts.**")) && _type in ["story", "announcement", "chronicleEdition", "event", "programInitiative", "category", "tag", "eventKind", "initiativeIcon"]
+   ```
+6. **Projection:**
+   ```groq
+   {
+     _type,
+     "slug": coalesce(slug.current, before().slug.current),
+     "previousSlug": before().slug.current
+   }
+   ```
+7. **Secret:** Generate a random 32-character secret. Enter it in Sanity Manage and add it as **`SANITY_REVALIDATE_SECRET`** in Netlify (`Site configuration → Environment variables`) and `.env.local`.
+
+Live updates are instantaneous (< 1s) and consume 0 Netlify build minutes. IndexNow is also automatically alerted with only the exact URLs that changed.
+
+Code deployments (Git pushes) and member CSV updates continue to run full builds via Netlify CI as normal.
 
 ## Tokens
 
