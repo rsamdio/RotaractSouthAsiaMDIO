@@ -88,6 +88,7 @@ type SanityEvent = {
 type SanityProgram = {
   slug: string;
   title: string;
+  order?: number;
   category: string;
   status: ProgramStatus;
   summary: string;
@@ -188,6 +189,7 @@ function mapProgram(p: SanityProgram): ProgramInitiative {
   return {
     slug: p.slug,
     title: p.title,
+    order: p.order,
     category: p.category,
     status: p.status,
     summary: p.summary,

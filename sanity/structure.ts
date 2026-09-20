@@ -82,6 +82,9 @@ export const structure: StructureResolver = (S) =>
         .child(
           S.documentTypeList("programInitiative")
             .title("Initiatives")
-            .defaultOrdering([{ field: "title", direction: "asc" }])
+            .defaultOrdering([
+              { field: "order", direction: "asc" },
+              { field: "title", direction: "asc" },
+            ])
         ),
     ]);

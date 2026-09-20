@@ -35,6 +35,7 @@ export type ProgramInitiative = {
   /** Markdown body for detail page */
   body?: string;
   featured?: boolean;
+  order?: number;
   ctaLabel?: string;
   /** Optional custom redirect URL (external or relative) */
   ctaUrl?: string;

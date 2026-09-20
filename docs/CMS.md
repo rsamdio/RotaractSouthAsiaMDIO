@@ -62,16 +62,19 @@ Publishing uses **On-Demand Incremental Static Regeneration (ISR)** via Next.js 
 4. **Trigger on:** Create, Update, Delete
 5. **Filter:**
    ```groq
-   !(_id in path("drafts.**")) && _type in ["story", "announcement", "chronicleEdition", "event", "programInitiative", "category", "tag", "eventKind", "initiativeIcon"]
+   !(_id in path("drafts.**")) && coalesce(_type, before()._type) in ["story", "announcement", "chronicleEdition", "event", "programInitiative", "category", "tag", "eventKind", "initiativeIcon", "brandColor"]
    ```
+   *(Note: `coalesce(_type, before()._type)` ensures document deletion events are not filtered out when the document no longer exists in the after-state).*
 6. **Projection:**
    ```groq
    {
-     _type,
+     "operation": select(before() == null => "create", after() == null => "delete", "update"),
+     "_type": coalesce(_type, before()._type),
      "slug": coalesce(slug.current, before().slug.current),
      "previousSlug": before().slug.current
    }
    ```
+   *(Note: `coalesce` preserves the deleted document's type and slug from `before()` so the webhook can purge the deleted page from Next.js ISR cache).*
 7. **Secret:** Generate a random 32-character secret. Enter it in Sanity Manage and add it as **`SANITY_REVALIDATE_SECRET`** in Netlify (`Site configuration → Environment variables`) and `.env.local`.
 
 Live updates are instantaneous (< 1s) and consume 0 Netlify build minutes. IndexNow is also automatically alerted with only the exact URLs that changed.

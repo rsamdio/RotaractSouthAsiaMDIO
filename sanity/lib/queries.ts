@@ -116,9 +116,10 @@ export const eventBySlugQuery = `*[_type == "event" && slug.current == $slug][0]
   ${seoProjection}
 }`;
 
-export const programsQuery = `*[_type == "programInitiative"] | order(title asc) {
+export const programsQuery = `*[_type == "programInitiative"] | order(coalesce(order, 999) asc, title asc) {
   "slug": slug.current,
   title,
+  order,
   "category": coalesce(categoryRef->title, "Program"),
   status,
   summary,
@@ -136,6 +137,7 @@ export const programsQuery = `*[_type == "programInitiative"] | order(title asc)
 export const programBySlugQuery = `*[_type == "programInitiative" && slug.current == $slug][0] {
   "slug": slug.current,
   title,
+  order,
   "category": coalesce(categoryRef->title, "Program"),
   status,
   summary,

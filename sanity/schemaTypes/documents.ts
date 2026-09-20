@@ -28,7 +28,21 @@ export const story = defineType({
       name: "slug",
       title: "Slug",
       type: "slug",
-      options: { source: "title", maxLength: 96 },
+      options: {
+        source: "title",
+        maxLength: 96,
+        isUnique: async (slug, context) => {
+          const { document, getClient } = context;
+          if (!document) return true;
+          const client = getClient({ apiVersion: "2024-01-01" });
+          const id = document._id.replace(/^drafts\./, "");
+          const count = await client.fetch<number>(
+            `count(*[_type in ["story", "announcement"] && !(_id in [$id, "drafts." + $id]) && slug.current == $slug])`,
+            { id, slug }
+          );
+          return count === 0;
+        },
+      },
       validation: (r) => r.required(),
     }),
     defineField({
@@ -134,7 +148,21 @@ export const announcement = defineType({
       name: "slug",
       title: "Slug",
       type: "slug",
-      options: { source: "title", maxLength: 96 },
+      options: {
+        source: "title",
+        maxLength: 96,
+        isUnique: async (slug, context) => {
+          const { document, getClient } = context;
+          if (!document) return true;
+          const client = getClient({ apiVersion: "2024-01-01" });
+          const id = document._id.replace(/^drafts\./, "");
+          const count = await client.fetch<number>(
+            `count(*[_type in ["story", "announcement"] && !(_id in [$id, "drafts." + $id]) && slug.current == $slug])`,
+            { id, slug }
+          );
+          return count === 0;
+        },
+      },
       validation: (r) => r.required(),
     }),
     defineField({
@@ -536,6 +564,12 @@ export const programInitiative = defineType({
       validation: (r) => r.required(),
     }),
     defineField({
+      name: "order",
+      title: "Display priority / Order number",
+      type: "number",
+      description: "Priority number for ordering on the site (e.g. 1 for top priority, 2, 3...). Lower numbers appear first. If left blank, items sort alphabetically.",
+    }),
+    defineField({
       name: "featured",
       title: "Featured on homepage",
       type: "boolean",
@@ -560,6 +594,14 @@ export const programInitiative = defineType({
   ],
   orderings: [
     {
+      title: "Display Order (1, 2, 3...)",
+      name: "orderAsc",
+      by: [
+        { field: "order", direction: "asc" },
+        { field: "title", direction: "asc" },
+      ],
+    },
+    {
       title: "Title, A–Z",
       name: "titleAsc",
       by: [{ field: "title", direction: "asc" }],
@@ -575,14 +617,16 @@ export const programInitiative = defineType({
       status: "status",
       iconKey: "iconRef.key",
       legacyIcon: "icon",
+      order: "order",
     },
-    prepare({ title, categoryName, colorHex, catColorHex, media, status, iconKey, legacyIcon }) {
+    prepare({ title, categoryName, colorHex, catColorHex, media, status, iconKey, legacyIcon, order }) {
       const cat = categoryName || "Program";
       const icon = (iconKey || legacyIcon) as ProgramIconKey | undefined;
       const bg = colorHex || catColorHex || "#D41B69";
+      const orderPrefix = typeof order === "number" ? `[#${order}] ` : "";
       return {
         title,
-        subtitle: `${cat} · ${status ?? ""}`,
+        subtitle: `${orderPrefix}${cat} · ${status ?? ""}`,
         media:
           media ||
           (() =>

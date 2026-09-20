@@ -132,7 +132,7 @@ Cross-page section jumps use hash-free scroll (`lib/scrollToSection.ts`, `Sectio
 ## Initiatives (two spectra)
 
 1. **Digital ecosystem** — `config/platformTools.ts` + live iframe embeds (`InitiativesShowcase` on home, `InitiativesExplorer` on `/initiatives` under `#ecosystem`). Embeds stay visible on mobile.
-2. **Programs & campaigns** — Sanity `programInitiative` (Studio: **Initiatives**; seed fallback in `config/initiatives.ts`) + `ProgramsInitiatives` on home (featured) and `/initiatives` (full list). Detail routes: `/initiatives/[slug]`.
+2. **Programs & campaigns** — Sanity `programInitiative` (Studio: **Initiatives**; seed fallback in `config/initiatives.ts`) + `ProgramsInitiatives` on home (featured) and `/initiatives` (full list). Detail routes: `/initiatives/[slug]`. Manual display priority via `order` integer field (`coalesce(order, 999) asc, title asc`). Detail page has clean "All programs & campaigns" return CTA (no artificial prev/next navigation).
 
 Homepage order places Programs directly under the digital showcase. `/initiatives` hero covers both; PillNav switches Ecosystem ↔ Programs.
 
