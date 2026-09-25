@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin/", "/admin/dashboard"],
+        disallow: ["/admin", "/admin/*"],
       },
       {
         userAgent: [
@@ -22,7 +22,7 @@ export default function robots(): MetadataRoute.Robots {
           "Diffbot",
         ],
         allow: "/",
-        disallow: ["/admin/", "/admin/dashboard"],
+        disallow: ["/admin", "/admin/*"],
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,

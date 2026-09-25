@@ -61,6 +61,9 @@ export function MemberCard({
             <img
               src={member.image}
               alt={member.name}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               onError={() => setImageError(true)}
               className="w-full h-full object-cover object-top"
             />
@@ -109,6 +112,8 @@ export function MemberCard({
           <img
             src={member.image}
             alt={member.name}
+            loading="lazy"
+            decoding="async"
             onError={() => setImageError(true)}
             className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
           />
