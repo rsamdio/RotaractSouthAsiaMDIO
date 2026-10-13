@@ -265,6 +265,7 @@ export function articleNode(input: {
   description: string;
   path: string;
   datePublished: string;
+  dateModified?: string;
   image?: string | null;
   kind?: "story" | "announcement";
 }): Record<string, unknown> {
@@ -274,7 +275,7 @@ export function articleNode(input: {
     headline: input.title,
     description: truncateMeta(input.description),
     datePublished: input.datePublished,
-    dateModified: input.datePublished,
+    dateModified: input.dateModified || input.datePublished,
     mainEntityOfPage: absoluteUrl(input.path),
     image: [image.startsWith("http") ? image : absoluteUrl(image)],
     author: { "@id": ORGANIZATION_ID },

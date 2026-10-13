@@ -16,6 +16,7 @@ export type SiteEvent = {
   body?: string;
   startDate: string;
   endDate?: string;
+  updatedAt?: string;
   startTime?: string;
   endTime?: string;
   timezoneLabel?: string;

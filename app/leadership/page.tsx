@@ -1,5 +1,5 @@
 "use client";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { Star, Landmark, Search, X, UserCheck } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { PageHero } from "@/components/PageHero";
@@ -17,22 +17,25 @@ export default function LeadershipPage() {
   const zones = ["All", "Zone 1", "Zone 4", "Zone 5", "Zone 6", "Zone 7", "Zone 8"];
 
   // Filter functions
-  const matchesSearch = (m: LeadershipMember) => {
-    if (!searchQuery.trim()) return true;
-    const q = searchQuery.toLowerCase();
-    return (
-      m.name.toLowerCase().includes(q) ||
-      m.title.toLowerCase().includes(q) ||
-      m.district.toLowerCase().includes(q) ||
-      m.country.toLowerCase().includes(q) ||
-      (m.homeClub && m.homeClub.toLowerCase().includes(q)) ||
-      (m.committee && m.committee.toLowerCase().includes(q))
-    );
-  };
+  const matchesSearch = useCallback(
+    (m: LeadershipMember) => {
+      if (!searchQuery.trim()) return true;
+      const q = searchQuery.toLowerCase();
+      return (
+        m.name.toLowerCase().includes(q) ||
+        m.title.toLowerCase().includes(q) ||
+        m.district.toLowerCase().includes(q) ||
+        m.country.toLowerCase().includes(q) ||
+        (m.homeClub && m.homeClub.toLowerCase().includes(q)) ||
+        (m.committee && m.committee.toLowerCase().includes(q))
+      );
+    },
+    [searchQuery]
+  );
 
   const filteredBoard = useMemo(
     () => executiveBoard.filter(matchesSearch),
-    [searchQuery]
+    [matchesSearch]
   );
 
   const filteredDRRs = useMemo(() => {
@@ -48,7 +51,7 @@ export default function LeadershipPage() {
       })
       .slice()
       .sort((a, b) => districtNumber(a.district) - districtNumber(b.district));
-  }, [selectedZone, searchQuery]);
+  }, [selectedZone, matchesSearch]);
 
   const filteredCommittee = useMemo(
     () =>
@@ -56,7 +59,7 @@ export default function LeadershipPage() {
         .filter(matchesSearch)
         .slice()
         .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" })),
-    [searchQuery]
+    [matchesSearch]
   );
 
   const totalResults =

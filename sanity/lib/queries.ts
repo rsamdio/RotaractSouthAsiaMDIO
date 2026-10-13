@@ -13,6 +13,7 @@ export const storiesQuery = `*[_type == "story"] | order(date desc) {
   excerpt,
   body,
   date,
+  "updatedAt": _updatedAt,
   featured,
   "image": image.asset->url,
   ${seoProjection}
@@ -27,6 +28,7 @@ export const storyBySlugQuery = `*[_type == "story" && slug.current == $slug][0]
   excerpt,
   body,
   date,
+  "updatedAt": _updatedAt,
   featured,
   "image": image.asset->url,
   ${seoProjection}
@@ -41,6 +43,7 @@ export const announcementsQuery = `*[_type == "announcement"] | order(date desc)
   excerpt,
   body,
   date,
+  "updatedAt": _updatedAt,
   featured,
   "image": image.asset->url,
   ${seoProjection}
@@ -55,6 +58,7 @@ export const announcementBySlugQuery = `*[_type == "announcement" && slug.curren
   excerpt,
   body,
   date,
+  "updatedAt": _updatedAt,
   featured,
   "image": image.asset->url,
   ${seoProjection}
@@ -78,6 +82,7 @@ export const eventsQuery = `*[_type == "event"] | order(startDate asc) {
   body,
   startDate,
   endDate,
+  "updatedAt": _updatedAt,
   startTime,
   endTime,
   timezoneLabel,
@@ -101,6 +106,7 @@ export const eventBySlugQuery = `*[_type == "event" && slug.current == $slug][0]
   body,
   startDate,
   endDate,
+  "updatedAt": _updatedAt,
   startTime,
   endTime,
   timezoneLabel,
@@ -127,6 +133,7 @@ export const programsQuery = `*[_type == "programInitiative"] | order(coalesce(o
   "icon": coalesce(iconRef->key, icon, "service"),
   "accent": coalesce(colorRef->hex, categoryRef->colorRef->hex, "#D41B69"),
   body,
+  "updatedAt": _updatedAt,
   featured,
   ctaLabel,
   ctaUrl,
@@ -145,6 +152,7 @@ export const programBySlugQuery = `*[_type == "programInitiative" && slug.curren
   "icon": coalesce(iconRef->key, icon, "service"),
   "accent": coalesce(colorRef->hex, categoryRef->colorRef->hex, "#D41B69"),
   body,
+  "updatedAt": _updatedAt,
   featured,
   ctaLabel,
   ctaUrl,

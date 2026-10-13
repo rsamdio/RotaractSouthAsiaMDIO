@@ -47,6 +47,7 @@ type SanityPost = {
   excerpt: string;
   body?: string;
   date: string;
+  updatedAt?: string;
   featured?: boolean;
   image?: string | null;
   seo?: SanitySeo | null;
@@ -70,6 +71,7 @@ type SanityEvent = {
   body?: string;
   startDate: string;
   endDate?: string;
+  updatedAt?: string;
   startTime?: string;
   endTime?: string;
   timezoneLabel?: string;
@@ -99,6 +101,7 @@ type SanityProgram = {
   featured?: boolean;
   ctaLabel?: string;
   ctaUrl?: string;
+  updatedAt?: string;
   image?: string | null;
   seo?: SanitySeo | null;
 };
@@ -125,6 +128,7 @@ function mapPost(p: SanityPost): Story {
     body: p.body || p.excerpt,
     image: p.image || "",
     date: p.date,
+    updatedAt: p.updatedAt,
     featured: p.featured,
     seo: mapSeo(p.seo),
   };
@@ -150,6 +154,7 @@ function mapEvent(e: SanityEvent): SiteEvent {
     body: e.body,
     startDate: e.startDate,
     endDate: e.endDate,
+    updatedAt: e.updatedAt,
     startTime: e.startTime,
     endTime: e.endTime,
     timezoneLabel: e.timezoneLabel,
@@ -199,6 +204,7 @@ function mapProgram(p: SanityProgram): ProgramInitiative {
     image: p.image || "",
     body: p.body || p.summary,
     featured: p.featured,
+    updatedAt: p.updatedAt,
     ctaLabel: p.ctaLabel,
     ctaUrl: p.ctaUrl,
     seo: mapSeo(p.seo),

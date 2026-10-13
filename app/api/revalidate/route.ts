@@ -259,20 +259,19 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // In production or when forced, dispatch targeted IndexNow ping (non-blocking)
+    // In production or when forced, dispatch targeted IndexNow ping (guarded with 3s timeout)
     const shouldSubmitIndexNow =
       process.env.CONTEXT === "production" ||
       process.env.NODE_ENV === "production" ||
       process.env.INDEXNOW_SUBMIT === "1";
 
     if (shouldSubmitIndexNow && indexNowUrls.length > 0) {
-      submitToIndexNow(indexNowUrls)
-        .then((res) => {
-          if (!res.ok) console.warn("[Revalidate] IndexNow notice:", res.message);
-        })
-        .catch((err) => {
-          console.error("[Revalidate] IndexNow error:", err);
-        });
+      try {
+        const res = await submitToIndexNow(indexNowUrls);
+        if (!res.ok) console.warn("[Revalidate] IndexNow notice:", res.message);
+      } catch (err) {
+        console.error("[Revalidate] IndexNow error:", err);
+      }
     }
 
     return NextResponse.json({

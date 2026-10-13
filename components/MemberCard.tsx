@@ -39,12 +39,12 @@ function FacebookThumbnail({ initials }: { initials: string }) {
 
 export function MemberCard({
   member,
-  index,
+  index = 0,
   isFeatured = false,
   showProfession = true,
 }: {
   member: LeadershipMember;
-  index: number;
+  index?: number;
   isFeatured?: boolean;
   showProfession?: boolean;
 }) {
@@ -112,7 +112,7 @@ export function MemberCard({
           <img
             src={member.image}
             alt={member.name}
-            loading="lazy"
+            loading={index < 4 ? "eager" : "lazy"}
             decoding="async"
             onError={() => setImageError(true)}
             className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"

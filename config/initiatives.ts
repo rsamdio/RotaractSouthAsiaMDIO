@@ -39,6 +39,7 @@ export type ProgramInitiative = {
   ctaLabel?: string;
   /** Optional custom redirect URL (external or relative) */
   ctaUrl?: string;
+  updatedAt?: string;
   seo?: {
     title?: string;
     description?: string;

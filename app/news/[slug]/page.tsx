@@ -57,7 +57,10 @@ export async function generateStaticParams() {
     loadStories(),
     loadAnnouncements(),
   ]);
-  return [...stories, ...announcements].map((p) => ({ slug: p.slug }));
+  const uniqueSlugs = Array.from(
+    new Set([...stories, ...announcements].map((p) => p.slug))
+  );
+  return uniqueSlugs.map((slug) => ({ slug }));
 }
 
 export default async function NewsDetailPage({ params }: Props) {
@@ -86,6 +89,7 @@ export default async function NewsDetailPage({ params }: Props) {
             description: post.excerpt,
             path,
             datePublished: post.date,
+            dateModified: post.updatedAt || post.date,
             image: post.seo?.ogImage || post.image,
             kind,
           }),

@@ -11,9 +11,12 @@ import {
 /** Stable lastmod for evergreen hub pages (avoid build-time "now"). */
 const HUB_LASTMOD = new Date("2026-08-01T00:00:00.000Z");
 
+/** Revalidate sitemap in the background every hour, or on-demand via Sanity webhook. */
+export const revalidate = 3600;
+
 function parseDate(value?: string): Date {
   if (!value) return HUB_LASTMOD;
-  const d = new Date(`${value}T12:00:00.000Z`);
+  const d = new Date(value.includes("T") ? value : `${value}T12:00:00.000Z`);
   return Number.isNaN(d.getTime()) ? HUB_LASTMOD : d;
 }
 
@@ -121,21 +124,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const newsRoutes: MetadataRoute.Sitemap = [...stories, ...announcements].map((p) => ({
     url: `${SITE_URL}/news/${p.slug}`,
-    lastModified: parseDate(p.date),
+    lastModified: parseDate(p.updatedAt || p.date),
     changeFrequency: "monthly",
     priority: 0.7,
   }));
 
   const eventRoutes: MetadataRoute.Sitemap = events.map((e) => ({
     url: `${SITE_URL}/events/${e.slug}`,
-    lastModified: parseDate(e.startDate),
+    lastModified: parseDate(e.updatedAt || e.startDate),
     changeFrequency: "weekly",
     priority: 0.8,
   }));
 
   const programRoutes: MetadataRoute.Sitemap = programs.map((p) => ({
     url: `${SITE_URL}/initiatives/${p.slug}`,
-    lastModified: HUB_LASTMOD,
+    lastModified: parseDate(p.updatedAt),
     changeFrequency: "monthly",
     priority: 0.7,
   }));

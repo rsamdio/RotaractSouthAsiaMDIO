@@ -19,6 +19,7 @@ export type Story = {
   body: string;
   image: string;
   date: string; // ISO date
+  updatedAt?: string; // ISO timestamp
   featured?: boolean;
   seo?: ContentSeo;
 };
