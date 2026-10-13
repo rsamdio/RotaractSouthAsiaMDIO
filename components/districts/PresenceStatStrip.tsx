@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 
 export type PresenceStat = {
   key: string;
@@ -15,19 +15,41 @@ type Props = {
   className?: string;
 };
 
+const emptySubscribe = () => () => {};
+
+function useIsHydrated() {
+  return useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
+}
+
 function AnimatedStatValue({ value }: { value: string }) {
+  const isHydrated = useIsHydrated();
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   const target = Number(value.replace(/,/g, "").replace(/\+/g, "")) || 0;
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true);
+        if (entry.isIntersecting) {
+          if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            setHasAnimated(true);
+          } else {
+            setIsVisible(true);
+          }
+          observer.disconnect();
+        }
       },
       { threshold: 0.2 }
     );
@@ -36,9 +58,10 @@ function AnimatedStatValue({ value }: { value: string }) {
   }, []);
 
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isVisible || hasAnimated || target === 0) return;
     const duration = 1600;
     const startTime = performance.now();
+    let frameId: number;
 
     const updateCount = (currentTime: number) => {
       const elapsed = currentTime - startTime;
@@ -47,16 +70,20 @@ function AnimatedStatValue({ value }: { value: string }) {
       setCount(Math.floor(easeOut * target));
 
       if (progress < 1) {
-        requestAnimationFrame(updateCount);
+        frameId = requestAnimationFrame(updateCount);
       } else {
         setCount(target);
+        setHasAnimated(true);
       }
     };
 
-    requestAnimationFrame(updateCount);
-  }, [isVisible, target]);
+    frameId = requestAnimationFrame(updateCount);
+    return () => cancelAnimationFrame(frameId);
+  }, [isVisible, hasAnimated, target]);
 
-  const displayNum = isVisible ? count.toLocaleString("en-US") : "0";
+  // SSR / pre-hydration or completed animation renders the real formatted value for crawlers and screen readers.
+  // While hydrated and awaiting / in-flight animation, shows animated count.
+  const displayNum = !isHydrated || hasAnimated ? value : isVisible ? count.toLocaleString("en-US") : "0";
 
   return (
     <div
