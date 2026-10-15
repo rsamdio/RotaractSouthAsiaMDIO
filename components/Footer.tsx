@@ -107,6 +107,7 @@ const footerColumns: FooterColumn[] = [
       { label: "Invoice Calculator", href: "https://dues.rsamdio.org/", external: true },
       { label: "Publications Hub", href: "https://publications.rsamdio.org/", external: true },
       { label: "Club Finder", href: "https://clubs.rsamdio.org/", external: true },
+      { label: "Insights", href: "https://insights.rsamdio.org/", external: true },
       { label: "Rotaract Certify", href: "https://certify.rsamdio.org/", external: true },
       { label: "PULSE", href: "https://pulse.rsamdio.org/", external: true },
       { label: "NAVIGATE", href: "https://navigate.rsamdio.org/", external: true },

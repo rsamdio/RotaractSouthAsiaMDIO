@@ -6,6 +6,7 @@ import {
   Receipt,
   Radio,
   MapPin,
+  ChartColumn,
   type LucideIcon,
 } from "lucide-react";
 
@@ -14,6 +15,7 @@ export type PlatformKey =
   | "invoice"
   | "publications"
   | "clubs"
+  | "insights"
   | "certify"
   | "pulse"
   | "navigate";
@@ -116,6 +118,25 @@ export const platformTools: PlatformTool[] = [
     ],
     primaryBtnText: "Open Club Finder",
     primaryBtnUrl: "https://clubs.rsamdio.org/",
+  },
+  {
+    key: "insights",
+    label: "Insights",
+    eyebrow: "Data & Analytics",
+    title: "Insights",
+    copy: "Live Rotaract membership, growth, compliance, and integration metrics for South Asia member districts, with zone and district drill-downs.",
+    displayUrl: "insights.rsamdio.org",
+    previewUrl: "https://insights.rsamdio.org/",
+    embeddable: true,
+    icon: ChartColumn,
+    checklist: [
+      "Membership & Club Growth",
+      "Zone & District Drill-Downs",
+      "Compliance & Outstanding Dues",
+      "Rotary, Rotaract & Interact Integration",
+    ],
+    primaryBtnText: "Open Insights",
+    primaryBtnUrl: "https://insights.rsamdio.org/",
   },
   {
     key: "navigate",
